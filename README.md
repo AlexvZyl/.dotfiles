@@ -1,6 +1,6 @@
 # DotFiles
 
-The dotfiles for my personal setup.
+The dotfiles for my personal setup.  It is written for EndeavourOS with Gnome as the DE.
 
 ## Screenshots
 

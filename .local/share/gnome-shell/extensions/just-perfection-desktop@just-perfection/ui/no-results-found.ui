@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+
+  <object class="GtkFrame" id="no_results_found">
+    <property name="visible">False</property>
+    <property name="can-focus">False</property>
+    <property name="label-xalign">0</property>
+            
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-start">12</property>
+        <property name="margin-end">12</property>
+        <property name="margin-top">12</property>
+        <property name="margin-bottom">12</property>
+        <property name="orientation">vertical</property>
+
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="valign">center</property>
+            <property name="halign">center</property>
+            <property name="label" translatable="yes">No Matches</property>
+            <property name="hexpand">1</property>
+          </object>
+        </child>
+
+      </object>
+    </child>
+        
+  </object>
+
+</interface>

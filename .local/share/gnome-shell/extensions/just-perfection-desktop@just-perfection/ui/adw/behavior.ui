@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  
+  <object class="AdwPreferencesPage" id="behavior">
+    <property name="name">behavior</property>
+    <property name="title" translatable="yes">Behavior</property>
+    <property name="icon-name">applications-engineering-symbolic</property>
+
+    <child>
+      <object class="AdwPreferencesGroup" id="behavior_group">
+      <property name="title" translatable="yes">Behavior</property>
+
+        <child>
+          <object class="AdwActionRow" id="hot_corner_row">
+            <property name="title" translatable="yes">Hot Corner</property>
+            <property name="activatable-widget">hot_corner_switch</property>
+            <child>
+              <object class="GtkSwitch" id="hot_corner_switch">
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwActionRow" id="gesture_row">
+            <property name="title" translatable="yes">App Gesture</property>
+            <property name="subtitle" translatable="yes"></property>
+            <property name="activatable-widget">gesture_switch</property>
+            <child>
+              <object class="GtkSwitch" id="gesture_switch">
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        
+        <child>
+          <object class="AdwActionRow" id="workspace_wrap_around_row">
+            <property name="title" translatable="yes">Workspace Wraparound</property>
+            <property name="subtitle" translatable="yes">Next workspace will be the first workspace when you are in the last workspace. and previous workspace will be the last workspace when you are in the first workspace.</property>
+            <property name="activatable-widget">workspace_wrap_around_switch</property>
+            <child>
+              <object class="GtkSwitch" id="workspace_wrap_around_switch">
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwActionRow" id="window_demands_attention_focus_row">
+            <property name="title" translatable="yes">Window Demands Attention Focus</property>
+            <property name="subtitle" translatable="yes">Removes window is ready notification and focus on the window</property>
+            <property name="activatable-widget">window_demands_attention_focus_switch</property>
+            <child>
+              <object class="GtkSwitch" id="window_demands_attention_focus_switch">
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwActionRow" id="type_to_search_row">
+            <property name="title" translatable="yes">Type to Search</property>
+            <property name="subtitle" translatable="yes">You can start search without search entry or even focusing on it in overview</property>
+            <property name="activatable-widget">type_to_search_switch</property>
+            <child>
+              <object class="GtkSwitch" id="type_to_search_switch">
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwActionRow" id="workspace_switcher_should_show_row">
+            <property name="title" translatable="yes">Always Show Workspace Switcher</property>
+            <property name="subtitle" translatable="yes">Shows workspace switcher even when only one workspace used with dynamic workspaces</property>
+            <property name="activatable-widget">workspace_switcher_should_show_switch</property>
+            <child>
+              <object class="GtkSwitch" id="workspace_switcher_should_show_switch">
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwActionRow" id="double_super_to_appgrid_row">
+            <property name="title" translatable="yes">Double Super to App Grid</property>
+            <property name="subtitle" translatable="yes">Shows app grid when you double hit super key fast</property>
+            <property name="activatable-widget">double_super_to_appgrid_switch</property>
+            <child>
+              <object class="GtkSwitch" id="double_super_to_appgrid_switch">
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwComboRow" id="startup_status_row">
+            <property name="title" translatable="yes">Startup Status</property>
+            <property name="subtitle" translatable="yes">When GNOME Shell is starting up for the first time</property>
+            <property name="model">startup_status_model</property>
+          </object>
+        </child>
+
+      </object>
+    </child>
+    
+  </object>
+
+  <object class="GtkStringList" id="startup_status_model">
+    <items>
+      <item translatable="yes">Desktop</item>
+      <item translatable="yes">Overview</item>
+    </items>
+  </object>
+  
+</interface>

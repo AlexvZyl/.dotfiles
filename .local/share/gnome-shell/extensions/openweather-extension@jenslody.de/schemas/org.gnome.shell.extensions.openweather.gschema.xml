@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="gnome-shell-extension-openweather">
+  <enum id="org.gnome.shell.extensions.openweather.weather-provider">
+    <value value="0" nick="openweathermap"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.openweather.geolocation-provider">
+    <value value="0" nick="openstreetmaps"/>
+    <value value="1" nick="geocode"/>
+    <value value="2" nick="mapquest"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.openweather.unit">
+    <value value="0" nick="celsius"/>
+    <value value="1" nick="fahrenheit"/>
+    <value value="2" nick="kelvin"/>
+    <value value="3" nick="rankine"/>
+    <value value="4" nick="reaumur"/>
+    <value value="5" nick="roemer"/>
+    <value value="6" nick="delisle"/>
+    <value value="7" nick="newton"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.openweather.pressure-unit">
+    <value value="0" nick="hPa"/>
+    <value value="1" nick="inHg"/>
+    <value value="2" nick="bar"/>
+    <value value="3" nick="Pa"/>
+    <value value="4" nick="kPa"/>
+    <value value="5" nick="atm"/>
+    <value value="6" nick="at"/>
+    <value value="7" nick="Torr"/>
+    <value value="8" nick="psi"/>
+    <value value="9" nick="mmHg"/>
+    <value value="10" nick="mbar"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.openweather.wind-speed-unit">
+    <value value="0" nick="kph"/>
+    <value value="1" nick="mph"/>
+    <value value="2" nick="m/s"/>
+    <value value="3" nick="knots"/>
+    <value value="4" nick="ft/s"/>
+    <value value="5" nick="Beaufort"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.openweather.wind-dir-indicators">
+    <value value="0" nick="arrows"/>
+    <value value="1" nick="letters"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.openweather.position">
+    <value value="0" nick="center"/>
+    <value value="1" nick="right"/>
+    <value value="2" nick="left"/>
+  </enum>
+  <schema path="/org/gnome/shell/extensions/openweather/" id="org.gnome.shell.extensions.openweather">
+    <key name="weather-provider" enum="org.gnome.shell.extensions.openweather.weather-provider">
+      <default>'openweathermap'</default>
+      <summary>Weather Provider</summary>
+    </key>
+    <key name="geolocation-provider" enum="org.gnome.shell.extensions.openweather.geolocation-provider">
+      <default>'openstreetmaps'</default>
+      <summary>Geolocation Provider</summary>
+    </key>
+    <key name="unit" enum="org.gnome.shell.extensions.openweather.unit">
+      <default>'celsius'</default>
+      <summary>Temperature Unit</summary>
+    </key>
+    <key name="pressure-unit" enum="org.gnome.shell.extensions.openweather.pressure-unit">
+      <default>'kPa'</default>
+      <summary>Pressure Unit</summary>
+    </key>
+    <key name="wind-speed-unit" enum="org.gnome.shell.extensions.openweather.wind-speed-unit">
+      <default>'kph'</default>
+      <summary>Wind Speed Units</summary>
+      <description>Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/s', 'knots', 'ft/s' or 'Beaufort'.</description>
+    </key>
+    <key type="b" name="wind-direction">
+      <default>false</default>
+      <summary>Wind Direction by Arrows</summary>
+      <description>Choose whether to display wind direction through arrows or letters.</description>
+    </key>
+    <key type="s" name="city">
+      <default>'43.6534817,-79.3839347>Toronto >0'</default>
+      <summary>City to be displayed</summary>
+    </key>
+    <key type="i" name="actual-city">
+      <default>0</default>
+      <summary>Actual City</summary>
+    </key>
+    <key type="b" name="translate-condition">
+      <default>true</default>
+      <summary>Translate Conditions</summary>
+    </key>
+    <key type="b" name="owm-api-translate">
+      <default>false</default>
+      <summary>OpenWeatherMap Multilingual Support (weather descriptions only)</summary>
+    </key>
+    <key type="b" name="use-system-icons">
+      <default>true</default>
+      <summary>System Icons</summary>
+    </key>
+    <key type="b" name="show-text-in-panel">
+      <default>true</default>
+      <summary>Temperature in Panel</summary>
+    </key>
+    <key type="b" name="show-comment-in-panel">
+      <default>false</default>
+      <summary>Conditions in Panel</summary>
+    </key>
+    <key type="b" name="disable-forecast">
+      <default>false</default>
+      <summary>Disable Forecast</summary>
+    </key>
+    <key type="b" name="show-comment-in-forecast">
+      <default>true</default>
+      <summary>Conditions in Forecast</summary>
+    </key>
+    <key name="position-in-panel" enum="org.gnome.shell.extensions.openweather.position">
+      <default>'center'</default>
+      <summary>Position in Panel</summary>
+    </key>
+    <key type="i" name="position-index">
+      <default>0</default>
+      <summary>Position in Panel</summary>
+    </key>
+    <key name="menu-alignment" type="d">
+      <default>75.0</default>
+      <summary>Horizontal position of menu-box.</summary>
+    </key>
+    <key type="i" name="refresh-interval-current">
+      <default>600</default>
+      <summary>Refresh interval (actual weather)</summary>
+    </key>
+    <key type="i" name="location-text-length">
+      <default>0</default>
+      <summary>Maximal length of the location text</summary>
+    </key>
+    <key type="i" name="refresh-interval-forecast">
+      <default>3600</default>
+      <summary>Refresh interval (forecast)</summary>
+    </key>
+    <key type="b" name="center-forecast">
+      <default>true</default>
+      <summary>Center forecastbox.</summary>
+    </key>
+    <key type="b" name="expand-forecast">
+      <default>false</default>
+      <summary>Always keep forecast expanded</summary>
+    </key>
+    <key type="i" name="days-forecast">
+      <default>2</default>
+      <summary>Number of days in forecast</summary>
+    </key>
+    <key type="i" name="decimal-places">
+      <default>1</default>
+      <summary>Maximal number of digits after the decimal point</summary>
+    </key>
+    <key type="s" name="appid">
+      <default>''</default>
+      <summary>Your personal API key from openweathermap.org</summary>
+    </key>
+    <key type="b" name="use-default-owm-key">
+      <default>true</default>
+      <summary>Use the extensions default API key from openweathermap.org</summary>
+    </key>
+    <key type="s" name="geolocation-appid-mapquest">
+      <default>''</default>
+      <summary>Your personal AppKey from developer.mapquest.com</summary>
+    </key>
+    <key type="i" name="delay-ext-init">
+      <default>5</default>
+      <summary>Seconds to delay popup initialization and data fetch on the first load</summary>
+    </key>
+    <key type="i" name="prefs-default-width">
+      <default>700</default>
+      <summary>Default width for the preferences window</summary>
+    </key>
+    <key type="i" name="prefs-default-height">
+      <default>600</default>
+      <summary>Default height for the preferences window</summary>
+    </key>
+  </schema>
+</schemalist>

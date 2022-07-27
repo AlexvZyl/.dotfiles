@@ -1,0 +1,60 @@
+<!-- SPDX-License-Identifier: GPL-3.0-or-later -->
+<!-- Copyright Contributors to the gnome-nvidia-extension project.-->
+<schemalist gettext-domain="gse-nvidiautil">
+   <schema id="org.gnome.shell.extensions.nvidiautil" path="/org/gnome/shell/extensions/nvidiautil/">
+     <key name="refreshrate" type="i">
+       <default>5</default>
+       <summary>Refresh Interval (s)</summary>
+       <description>
+         The time between refreshes in seconds
+       </description>
+     </key>
+     <key name="tempformat" type="i">
+       <default>0</default>
+       <summary>Temperature Unit</summary>
+       <description>
+         Set the temperature to be displated in either Centigrade (C) or Fahrenheit (F)
+       </description>
+     </key>
+     <key name="position" type="i">
+       <default>2</default>
+       <summary>Extension Position</summary>
+       <description>
+         Set the position of the extension
+       </description>
+     </key>
+     <key name="provider" type="i">
+       <default>0</default>
+       <summary>Properties Provider</summary>
+       <description>
+         Select the properties provider to use
+       </description>
+     </key>
+     <key name="spacing" type="i">
+       <default>5</default>
+       <summary>Spacing (px)</summary>
+       <description>
+         Set the label spacing distance
+       </description>
+     </key>
+     <key name="icons" type="b">
+       <default>true</default>
+       <summary>Show Icons in Bar</summary>
+       <description>
+         Show icons in bar
+       </description>
+     </key>
+     <key name="settingsconfig" type="as">
+       <default>[]</default>
+     </key>
+     <key name="smiconfig" type="as">
+       <default>[]</default>
+     </key>
+     <key name="settingsandsmiconfig" type="as">
+       <default>[]</default>
+     </key>
+     <key name="optimusconfig" type="as">
+       <default>[]</default>
+     </key>
+  </schema>
+</schemalist>

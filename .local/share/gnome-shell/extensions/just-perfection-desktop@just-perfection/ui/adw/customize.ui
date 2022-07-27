@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  
+  <object class="AdwPreferencesPage" id="customize">
+    <property name="name">customize</property>
+    <property name="title" translatable="yes">Customize</property>
+    <property name="icon-name">applications-utilities-symbolic</property>
+
+    <child>
+      <object class="AdwPreferencesGroup" id="customize_group">
+      <property name="title" translatable="yes">Customize</property>
+
+        <child>
+          <object class="AdwComboRow" id="workspace_background_corner_size_row">
+            <property name="title" translatable="yes">Workspace Background Corner Size</property>
+            <property name="subtitle" translatable="yes">Workspace background corner size in overview</property>
+            <property name="model">workspace_background_corner_size_model</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwComboRow" id="panel_size_row">
+            <property name="title" translatable="yes">Panel Size</property>
+            <property name="model">panel_size_model</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwComboRow" id="panel_icon_size_row">
+            <property name="title" translatable="yes">Panel Icon Size</property>
+            <property name="model">panel_icon_size_model</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwComboRow" id="panel_button_padding_size_row">
+            <property name="title" translatable="yes">Panel Button Padding Size</property>
+            <property name="model">panel_button_padding_size_model</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwComboRow" id="panel_indicator_padding_size_row">
+            <property name="title" translatable="yes">Panel Indicator Padding Size</property>
+            <property name="model">panel_indicator_padding_size_model</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwComboRow" id="panel_corner_size_row">
+            <property name="title" translatable="yes">Panel Corner Size</property>
+            <property name="model">panel_corner_size_model</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwComboRow" id="top_panel_position_row">
+            <property name="title" translatable="yes">Panel Position</property>
+            <property name="model">top_panel_position_model</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwComboRow" id="clock_menu_position_row">
+            <property name="title" translatable="yes">Clock Menu Position</property>
+            <property name="model">clock_menu_position_model</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwComboRow" id="clock_menu_position_offset_row">
+            <property name="title" translatable="yes">Clock Menu Position Offset</property>
+            <property name="model">clock_menu_position_offset_model</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwComboRow" id="workspace_switcher_size_row">
+            <property name="title" translatable="yes">Workspace Switcher Size</property>
+            <property name="model">workspace_switcher_size_model</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwComboRow" id="animation_row">
+            <property name="title" translatable="yes">Animation</property>
+            <property name="model">animation_model</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwComboRow" id="dash_icon_size_row">
+            <property name="title" translatable="yes">Dash Icon Size</property>
+            <property name="model">dash_icon_size_model</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwComboRow" id="notification_banner_position_row">
+            <property name="title" translatable="yes">Notification Banner Position</property>
+            <property name="subtitle" translatable="yes">Notification popup position when notifications show up on the screen</property>
+            <property name="model">notification_banner_position_model</property>
+          </object>
+        </child>
+
+      </object>
+    </child>
+    
+  </object>
+
+  <object class="GtkStringList" id="workspace_background_corner_size_model">
+    <items>
+      <item translatable="yes">By Shell Theme</item>
+      <item>0px</item>
+      <item>1px</item>
+      <item>2px</item>
+      <item>3px</item>
+      <item>4px</item>
+      <item>5px</item>
+      <item>6px</item>
+      <item>7px</item>
+      <item>8px</item>
+      <item>9px</item>
+      <item>10px</item>
+      <item>11px</item>
+      <item>12px</item>
+      <item>13px</item>
+      <item>14px</item>
+      <item>15px</item>
+      <item>16px</item>
+      <item>17px</item>
+      <item>18px</item>
+      <item>19px</item>
+      <item>20px</item>
+      <item>21px</item>
+      <item>22px</item>
+      <item>23px</item>
+      <item>24px</item>
+      <item>25px</item>
+      <item>26px</item>
+      <item>27px</item>
+      <item>28px</item>
+      <item>29px</item>
+      <item>30px</item>
+      <item>31px</item>
+      <item>32px</item>
+      <item>33px</item>
+      <item>34px</item>
+      <item>35px</item>
+      <item>36px</item>
+      <item>37px</item>
+      <item>38px</item>
+      <item>39px</item>
+      <item>40px</item>
+      <item>41px</item>
+      <item>42px</item>
+      <item>43px</item>
+      <item>44px</item>
+      <item>45px</item>
+      <item>46px</item>
+      <item>47px</item>
+      <item>48px</item>
+      <item>49px</item>
+      <item>50px</item>
+      <item>51px</item>
+      <item>52px</item>
+      <item>53px</item>
+      <item>54px</item>
+      <item>55px</item>
+      <item>56px</item>
+      <item>57px</item>
+      <item>58px</item>
+      <item>59px</item>
+      <item>60px</item>
+    </items>
+  </object>
+
+
+  <object class="GtkStringList" id="panel_size_model">
+    <items>
+      <item translatable="yes">By Shell Theme</item>
+      <item>1px</item>
+      <item>2px</item>
+      <item>3px</item>
+      <item>4px</item>
+      <item>5px</item>
+      <item>6px</item>
+      <item>7px</item>
+      <item>8px</item>
+      <item>9px</item>
+      <item>10px</item>
+      <item>11px</item>
+      <item>12px</item>
+      <item>13px</item>
+      <item>14px</item>
+      <item>15px</item>
+      <item>16px</item>
+      <item>17px</item>
+      <item>18px</item>
+      <item>19px</item>
+      <item>20px</item>
+      <item>21px</item>
+      <item>22px</item>
+      <item>23px</item>
+      <item>24px</item>
+      <item>25px</item>
+      <item>26px</item>
+      <item>27px</item>
+      <item>28px</item>
+      <item>29px</item>
+      <item>30px</item>
+      <item>31px</item>
+      <item>32px</item>
+      <item>33px</item>
+      <item>34px</item>
+      <item>35px</item>
+      <item>36px</item>
+      <item>37px</item>
+      <item>38px</item>
+      <item>39px</item>
+      <item>40px</item>
+      <item>41px</item>
+      <item>42px</item>
+      <item>43px</item>
+      <item>44px</item>
+      <item>45px</item>
+      <item>46px</item>
+      <item>47px</item>
+      <item>48px</item>
+      <item>49px</item>
+      <item>50px</item>
+      <item>51px</item>
+      <item>52px</item>
+      <item>53px</item>
+      <item>54px</item>
+      <item>55px</item>
+      <item>56px</item>
+      <item>57px</item>
+      <item>58px</item>
+      <item>59px</item>
+      <item>60px</item>
+    </items>
+  </object>
+
+  <object class="GtkStringList" id="panel_icon_size_model">
+    <items>
+      <item translatable="yes">By Shell Theme</item>
+      <item>1px</item>
+      <item>2px</item>
+      <item>3px</item>
+      <item>4px</item>
+      <item>5px</item>
+      <item>6px</item>
+      <item>7px</item>
+      <item>8px</item>
+      <item>9px</item>
+      <item>10px</item>
+      <item>11px</item>
+      <item>12px</item>
+      <item>13px</item>
+      <item>14px</item>
+      <item>15px</item>
+      <item>16px</item>
+      <item>17px</item>
+      <item>18px</item>
+      <item>19px</item>
+      <item>20px</item>
+      <item>21px</item>
+      <item>22px</item>
+      <item>23px</item>
+      <item>24px</item>
+      <item>25px</item>
+      <item>26px</item>
+      <item>27px</item>
+      <item>28px</item>
+      <item>29px</item>
+      <item>30px</item>
+      <item>31px</item>
+      <item>32px</item>
+      <item>33px</item>
+      <item>34px</item>
+      <item>35px</item>
+      <item>36px</item>
+      <item>37px</item>
+      <item>38px</item>
+      <item>39px</item>
+      <item>40px</item>
+      <item>41px</item>
+      <item>42px</item>
+      <item>43px</item>
+      <item>44px</item>
+      <item>45px</item>
+      <item>46px</item>
+      <item>47px</item>
+      <item>48px</item>
+      <item>49px</item>
+      <item>50px</item>
+      <item>51px</item>
+      <item>52px</item>
+      <item>53px</item>
+      <item>54px</item>
+      <item>55px</item>
+      <item>56px</item>
+      <item>57px</item>
+      <item>58px</item>
+      <item>59px</item>
+      <item>60px</item>
+    </items>
+  </object>
+  
+  <object class="GtkStringList" id="panel_button_padding_size_model">
+    <items>
+      <item translatable="yes">By Shell Theme</item>
+      <item>0px</item>
+      <item>1px</item>
+      <item>2px</item>
+      <item>3px</item>
+      <item>4px</item>
+      <item>5px</item>
+      <item>6px</item>
+      <item>7px</item>
+      <item>8px</item>
+      <item>9px</item>
+      <item>10px</item>
+      <item>11px</item>
+      <item>12px</item>
+      <item>13px</item>
+      <item>14px</item>
+      <item>15px</item>
+      <item>16px</item>
+      <item>17px</item>
+      <item>18px</item>
+      <item>19px</item>
+      <item>20px</item>
+      <item>21px</item>
+      <item>22px</item>
+      <item>23px</item>
+      <item>24px</item>
+      <item>25px</item>
+      <item>26px</item>
+      <item>27px</item>
+      <item>28px</item>
+      <item>29px</item>
+      <item>30px</item>
+      <item>31px</item>
+      <item>32px</item>
+      <item>33px</item>
+      <item>34px</item>
+      <item>35px</item>
+      <item>36px</item>
+      <item>37px</item>
+      <item>38px</item>
+      <item>39px</item>
+      <item>40px</item>
+      <item>41px</item>
+      <item>42px</item>
+      <item>43px</item>
+      <item>44px</item>
+      <item>45px</item>
+      <item>46px</item>
+      <item>47px</item>
+      <item>48px</item>
+      <item>49px</item>
+      <item>50px</item>
+      <item>51px</item>
+      <item>52px</item>
+      <item>53px</item>
+      <item>54px</item>
+      <item>55px</item>
+      <item>56px</item>
+      <item>57px</item>
+      <item>58px</item>
+      <item>59px</item>
+      <item>60px</item>
+    </items>
+  </object>
+
+  <object class="GtkStringList" id="panel_indicator_padding_size_model">
+    <items>
+      <item translatable="yes">By Shell Theme</item>
+      <item>0px</item>
+      <item>1px</item>
+      <item>2px</item>
+      <item>3px</item>
+      <item>4px</item>
+      <item>5px</item>
+      <item>6px</item>
+      <item>7px</item>
+      <item>8px</item>
+      <item>9px</item>
+      <item>10px</item>
+      <item>11px</item>
+      <item>12px</item>
+      <item>13px</item>
+      <item>14px</item>
+      <item>15px</item>
+      <item>16px</item>
+      <item>17px</item>
+      <item>18px</item>
+      <item>19px</item>
+      <item>20px</item>
+      <item>21px</item>
+      <item>22px</item>
+      <item>23px</item>
+      <item>24px</item>
+      <item>25px</item>
+      <item>26px</item>
+      <item>27px</item>
+      <item>28px</item>
+      <item>29px</item>
+      <item>30px</item>
+      <item>31px</item>
+      <item>32px</item>
+      <item>33px</item>
+      <item>34px</item>
+      <item>35px</item>
+      <item>36px</item>
+      <item>37px</item>
+      <item>38px</item>
+      <item>39px</item>
+      <item>40px</item>
+      <item>41px</item>
+      <item>42px</item>
+      <item>43px</item>
+      <item>44px</item>
+      <item>45px</item>
+      <item>46px</item>
+      <item>47px</item>
+      <item>48px</item>
+      <item>49px</item>
+      <item>50px</item>
+      <item>51px</item>
+      <item>52px</item>
+      <item>53px</item>
+      <item>54px</item>
+      <item>55px</item>
+      <item>56px</item>
+      <item>57px</item>
+      <item>58px</item>
+      <item>59px</item>
+      <item>60px</item>
+    </items>
+  </object>
+
+  <object class="GtkStringList" id="panel_corner_size_model">
+    <items>
+      <item translatable="yes">By Shell Theme</item>
+      <item translatable="yes">No Corner</item>
+      <item>1</item>
+      <item>2</item>
+      <item>3</item>
+      <item>4</item>
+      <item>5</item>
+      <item>6</item>
+      <item>7</item>
+      <item>8</item>
+      <item>9</item>
+      <item>10</item>
+      <item>11</item>
+      <item>12</item>
+      <item>13</item>
+      <item>14</item>
+      <item>15</item>
+      <item>16</item>
+      <item>17</item>
+      <item>18</item>
+      <item>19</item>
+      <item>20</item>
+      <item>21</item>
+      <item>22</item>
+      <item>23</item>
+      <item>24</item>
+      <item>25</item>
+      <item>26</item>
+      <item>27</item>
+      <item>28</item>
+      <item>29</item>
+      <item>30</item>
+      <item>31</item>
+      <item>32</item>
+      <item>33</item>
+      <item>34</item>
+      <item>35</item>
+      <item>36</item>
+      <item>37</item>
+      <item>38</item>
+      <item>39</item>
+      <item>40</item>
+      <item>41</item>
+      <item>42</item>
+      <item>43</item>
+      <item>44</item>
+      <item>45</item>
+      <item>46</item>
+      <item>47</item>
+      <item>48</item>
+      <item>49</item>
+      <item>50</item>
+      <item>51</item>
+      <item>52</item>
+      <item>53</item>
+      <item>54</item>
+      <item>55</item>
+      <item>56</item>
+      <item>57</item>
+      <item>58</item>
+      <item>59</item>
+      <item>60</item>
+    </items>
+  </object>
+
+  <object class="GtkStringList" id="top_panel_position_model">
+    <items>
+      <item translatable="yes">Top</item>
+      <item translatable="yes">Bottom</item>
+    </items>
+  </object>
+
+  <object class="GtkStringList" id="clock_menu_position_model">
+    <items>
+      <item translatable="yes">Center</item>
+      <item translatable="yes">Right</item>
+      <item translatable="yes">Left</item>
+    </items>
+  </object>
+
+  <object class="GtkStringList" id="clock_menu_position_offset_model">
+    <items>
+      <item>0</item>
+      <item>1</item>
+      <item>2</item>
+      <item>3</item>
+      <item>4</item>
+      <item>5</item>
+      <item>6</item>
+      <item>7</item>
+      <item>8</item>
+      <item>9</item>
+    </items>
+  </object>
+
+  <object class="GtkStringList" id="workspace_switcher_size_model">
+    <items>
+      <item translatable="yes">Default</item>
+      <item>1%</item>
+      <item>2%</item>
+      <item>3%</item>
+      <item>4%</item>
+      <item>5%</item>
+      <item>6%</item>
+      <item>7%</item>
+      <item>8%</item>
+      <item>9%</item>
+      <item>10%</item>
+      <item>11%</item>
+      <item>12%</item>
+      <item>13%</item>
+      <item>14%</item>
+      <item>15%</item>
+      <item>16%</item>
+      <item>17%</item>
+      <item>18%</item>
+      <item>19%</item>
+      <item>20%</item>
+      <item>21%</item>
+      <item>22%</item>
+      <item>23%</item>
+      <item>24%</item>
+      <item>25%</item>
+      <item>26%</item>
+      <item>27%</item>
+      <item>28%</item>
+      <item>29%</item>
+      <item>30%</item>
+    </items>
+  </object>
+
+  <object class="GtkStringList" id="animation_model">
+    <items>
+      <item translatable="yes">No Animation</item>
+      <item translatable="yes">Default Speed</item>
+      <item translatable="yes">Fastest</item>
+      <item translatable="yes">Faster</item>
+      <item translatable="yes">Fast</item>
+      <item translatable="yes">Slow</item>
+      <item translatable="yes">Slower</item>
+      <item translatable="yes">Slowest</item>
+    </items>
+  </object>
+
+  <object class="GtkStringList" id="dash_icon_size_model">
+    <items>
+      <item translatable="yes">Default</item>
+      <item>32px</item>
+      <item>48px</item>
+      <item>64px</item>
+    </items>
+  </object>
+
+  <object class="GtkStringList" id="notification_banner_position_model">
+    <items>
+      <item translatable="yes">Top Start</item>
+      <item translatable="yes">Top Center</item>
+      <item translatable="yes">Top End</item>
+      <item translatable="yes">Bottom Start</item>
+      <item translatable="yes">Bottom Center</item>
+      <item translatable="yes">Bottom End</item>
+    </items>
+  </object>
+
+</interface>

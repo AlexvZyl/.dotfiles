@@ -1,0 +1,19 @@
+/* SPDX-License-Identifier: GPL-3.0-or-later */
+/* SPDX-FileCopyrightText: Contributors to the gnome-nvidia-extension project. */
+
+.label {
+  text-align: left;
+}
+
+.gpulabel {
+  margin-left: 10px;
+  margin-right: 5px;
+  margin-top: 3px;
+  text-align: left;
+}
+
+.gpulabelleft {
+  margin-right: 5px;
+  margin-top: 3px;
+  text-align: left;
+}

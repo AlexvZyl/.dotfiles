@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  
+  <object class="GtkBox" id="override">
+    <property name="visible">True</property>
+    <property name="can-focus">True</property>
+    <property name="orientation">vertical</property>
+    
+    <child>
+      <object class="GtkBox" id="override_title">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-bottom">12</property>
+        
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Override</property>
+            <attributes>
+              <attribute name="weight" value="bold"/>
+            </attributes>
+          </object>
+        </child>
+        
+      </object>
+    </child>
+    
+    <child>
+      <object class="GtkFrame" id="override_frame">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="label-xalign">0</property>
+        <property name="margin-bottom">36</property>
+        
+        <child>
+          <object class="GtkListBox" id="override_listbox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="selection-mode">none</property>
+            <!-- supported on gtk4 not 3. uncomment after 3.x EOS -->
+            <!-- <property name="show-separators">True</property> -->
+            
+            <child>
+              <object class="GtkListBoxRow" id="theme_row">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                
+                <child>
+                  <object class="GtkBox" id="theme_box">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="margin-start">12</property>
+                    <property name="margin-end">12</property>
+                    <property name="margin-top">12</property>
+                    <property name="margin-bottom">12</property>
+                    <property name="orientation">vertical</property>
+                    
+                    <child>
+                      <object class="GtkBox" id="theme_box2">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="spacing">32</property>
+                        
+                        <child>
+                          <object class="GtkBox">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="hexpand">1</property>
+                            <property name="vexpand">1</property>
+                            <property name="orientation">vertical</property>
+                          
+                            <child>
+                              <object class="GtkLabel" id="theme_txt">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <property name="valign">center</property>
+                                <property name="label" translatable="yes">Shell Theme</property>
+                                <property name="xalign">0</property>
+                                <property name="hexpand">1</property>
+                              </object>
+                            </child>
+                            
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <property name="valign">center</property>
+                                <property name="label" translatable="yes">Overrides the shell theme partially to create a minimal desktop</property>
+                                <property name="xalign">0</property>
+                                <property name="wrap">True</property>
+                                <property name="width-chars">0</property>
+                                <property name="margin-top">12</property>
+                                <style>
+                                  <class name="dim-label"/>
+                                </style>
+                                <attributes>
+                                  <attribute name="scale" value="0.9"/>
+                                </attributes>
+                              </object>
+                            </child>
+                          
+                          </object>
+                        </child>
+                        
+                        <child>
+                          <object class="GtkSwitch" id="theme_switch">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="valign">center</property>
+                          </object>
+                        </child>
+                        
+                      </object>
+                    </child>
+                    
+                  </object>
+                </child>
+                
+              </object>
+            </child>
+            
+          </object>
+        </child>
+        
+      </object>
+    </child>
+    
+  </object>
+  
+</interface>

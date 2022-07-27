@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  
+  <object class="GtkBox" id="profile">
+    <property name="visible">True</property>
+    <property name="can-focus">True</property>
+    <property name="orientation">vertical</property>
+    <property name="margin-bottom">36</property>
+    
+    <child>
+      <object class="GtkBox" id="profile_title">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="margin-bottom">12</property>
+        <property name="orientation">vertical</property>
+        
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Profile</property>
+            <property name="xalign">0</property>
+            <attributes>
+              <attribute name="weight" value="bold"/>
+            </attributes>
+          </object>
+        </child>
+        
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="valign">center</property>
+            <property name="label" translatable="yes">You can choose between pre-defined profiles or you can simply use your own customized settings</property>
+            <property name="xalign">0</property>
+            <property name="wrap">True</property>
+            <property name="width-chars">0</property>
+            <property name="margin-top">12</property>
+            <property name="margin-bottom">12</property>
+            <style>
+              <class name="dim-label"/>
+            </style>
+            <attributes>
+              <attribute name="scale" value="0.9"/>
+            </attributes>
+          </object>
+        </child>
+        
+        <child>
+          <object class="GtkBox">
+              <property name="visible">True</property>
+              <property name="can-focus">True</property>
+              <child>
+                  <object class="GtkToggleButton" id="profile_default">
+                      <property name="visible">True</property>
+                      <property name="can-focus">True</property>
+                      <property name="label" translatable="yes">Default</property>
+                      <property name="active">1</property>
+                      <property name="hexpand">1</property>
+                      <property name="vexpand">1</property>
+                  </object>
+              </child>
+              <child>
+                  <object class="GtkToggleButton" id="profile_custom">
+                      <property name="visible">True</property>
+                      <property name="can-focus">True</property>
+                      <property name="label" translatable="yes">Custom</property>
+                      <property name="group">profile_default</property>
+                      <property name="hexpand">1</property>
+                      <property name="vexpand">1</property>
+                  </object>
+              </child>
+              <child>
+                  <object class="GtkToggleButton" id="profile_minimal">
+                      <property name="visible">True</property>
+                      <property name="can-focus">True</property>
+                      <property name="label" translatable="yes">Minimal</property>
+                      <property name="group">profile_default</property>
+                      <property name="hexpand">1</property>
+                      <property name="vexpand">1</property>
+                  </object>
+              </child>
+              <child>
+                  <object class="GtkToggleButton" id="profile_superminimal">
+                      <property name="visible">True</property>
+                      <property name="can-focus">True</property>
+                      <property name="label" translatable="yes">Super Minimal</property>
+                      <property name="group">profile_default</property>
+                      <property name="hexpand">1</property>
+                      <property name="vexpand">1</property>
+                  </object>
+              </child>
+              <style>
+                <class name="linked"/>
+              </style>
+          </object>
+        </child>
+        
+      </object>
+    </child>
+    
+  </object>
+  
+</interface>

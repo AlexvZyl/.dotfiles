@@ -1,0 +1,171 @@
+.openweather-button {
+	border-radius: 32px;
+	padding: 13px;
+}
+
+.openweather-button:hover {
+	border: none;
+	padding: 14px;
+}
+
+.openweather-button > StIcon {
+	icon-size: 6px;
+}
+
+.openweather-button > StLabel {
+	padding: 6px;
+}
+
+.openweather-menu-button-container {
+	padding: 0px;
+}
+
+.openweather-button-box {
+	padding: 0px;
+	spacing: 12px;
+}
+
+.openweather-current-summarybox,
+.openweather-forecast-icon,
+.openweather-current-databox-captions,
+.openweather-current-databox-values,
+.openweather-current-icon,
+.openweather-forecast-summary,
+.openweather-forecast-temperature {
+	border-radius: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+.openweather-current-summarybox {
+	padding-top: 5px;
+	padding-right: 60px;
+}
+
+.openweather-current-summary {
+	font-size: 36px;
+}
+
+.openweather-current-databox {
+	padding: 5px 15px 0px;
+}
+
+.openweather-current-icon {
+	padding-right: 40px;
+}
+
+.openweather-current-iconbox {
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+.openweather-icon:ltr {
+	padding-right: 5px;
+}
+
+.openweather-icon:rtl {
+	padding-left: 5px;
+}
+
+.openweather-label {
+	padding-right: 6px;
+}
+
+.openweather-current-databox-captions {
+	text-align: right;
+	padding-right: 5px;
+	spacing: 0;
+}
+
+.openweather-today-box {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.openweather-forecast-expander {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.openweather-forecast-box {
+	padding-top: 15px;
+}
+
+.openweather-forecast-icon {
+	padding-right: 10px;
+}
+
+.openweather-forecasts {
+	-st-hfade-offset: 60px;
+}
+
+.openweather-today-databox {
+	text-align: center;
+	padding-right: 35px;
+	padding-left: 35px;
+}
+
+.openweather-forecast-databox {
+	text-align: center;
+	min-width: 180px;
+	min-height: 120px;
+}
+
+.openweather-forecast-day {
+	min-height: 120px;
+	padding: 0px 2px 0px 0px;
+	text-align: right;
+	font-weight: bold;
+	font-size: 90%;
+	spacing: 0;
+}
+
+.openweather-forcast-time {
+	font-size: 85%;
+	padding-bottom: 5px;
+	spacing: 0;
+}
+
+.openweather-forecast-iconbox {
+	text-align: center;
+	vertical-align: top;
+}
+
+.openweather-forecast-summary {
+	padding-top: 5px;
+	font-size: 80%;
+}
+
+.openweather-sunrise-icon {
+	padding-right: 5px;
+}
+
+.openweather-sunset-icon {
+	padding-left: 15px;
+	padding-right: 5px;
+}
+
+.openweather-build-icon {
+	padding-left: 15px;
+	padding-right: 5px;
+}
+
+.openweather-button-action {
+	-st-icon-style: symbolic;
+	border-radius: 32px;
+	margin: 0px;
+	min-height: 22px;
+	min-width: 22px;
+	padding: 10px;
+	font-size: 100%;
+}
+
+.openweather-button-action:hover,
+.openweather-button-action:focus {
+	border: none;
+	padding: 11px;
+}
+
+.openweather-button-action > StIcon {
+	icon-size: 16px;
+}

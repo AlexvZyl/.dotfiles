@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+
+  <object class="GtkBox" id="intro">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="margin-bottom">36</property>
+    <property name="valign">center</property>
+    <property name="halign">center</property>
+
+    <child>
+      <object class="GtkLinkButton">
+        <property name="visible">True</property>
+        <property name="can-focus">True</property>
+        <property name="halign">start</property>
+        <property name="valign">start</property>
+        <property name="hexpand">0</property>
+        <property name="vexpand">0</property>
+        <property name="uri">https://www.patreon.com/justperfection</property>
+
+        <child>
+          <object class="GtkBox" id="intro_image_box">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">center</property>
+            <property name="orientation">vertical</property>
+          </object>
+        </child>
+      
+      </object>
+    </child>
+        
+  </object>
+  
+</interface>

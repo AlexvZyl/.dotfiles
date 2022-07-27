@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  
+  <object class="AdwPreferencesPage" id="icons">
+    <property name="name">icons</property>
+    <property name="title" translatable="yes">Icons</property>
+    <property name="icon-name">emblem-photos-symbolic</property>
+
+    <child>
+      <object class="AdwPreferencesGroup" id="icons_group">
+      <property name="title" translatable="yes">Icons</property>
+        
+        <child>
+          <object class="AdwActionRow" id="app_menu_icon_row">
+            <property name="title" translatable="yes">App Menu Icon</property>
+            <property name="activatable-widget">app_menu_icon_switch</property>
+            <child>
+              <object class="GtkSwitch" id="app_menu_icon_switch">
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwActionRow" id="panel_notification_icon_row">
+            <property name="title" translatable="yes">Panel Notification Icon</property>
+            <property name="activatable-widget">panel_notification_icon_switch</property>
+            <child>
+              <object class="GtkSwitch" id="panel_notification_icon_switch">
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwActionRow" id="power_icon_row">
+            <property name="title" translatable="yes">Power Icon</property>
+            <property name="activatable-widget">power_icon_switch</property>
+            <child>
+              <object class="GtkSwitch" id="power_icon_switch">
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwActionRow" id="panel_arrow_row">
+            <property name="title" translatable="yes">Panel Arrow</property>
+            <property name="activatable-widget">panel_arrow_switch</property>
+            <child>
+              <object class="GtkSwitch" id="panel_arrow_switch">
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwActionRow" id="window_picker_icon_row">
+            <property name="title" translatable="yes">Window Picker Icon</property>
+            <property name="subtitle" translatable="yes">The icon under window preview in overview</property>
+            <property name="activatable-widget">window_picker_icon_switch</property>
+            <child>
+              <object class="GtkSwitch" id="window_picker_icon_switch">
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwActionRow" id="activities_button_icon_path_row">
+            <property name="title" translatable="yes">Activities Button Icon</property>
+            <property name="subtitle" translatable="yes">The icon under window preview in overview</property>
+            <property name="activatable-widget">activities_button_icon_path_button</property>
+            <child>
+              <object class="GtkBox">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="orientation">horizontal</property>
+                
+                <child>
+                  <object class="GtkButton" id="activities_button_icon_path_empty_button">
+                    <property name="visible">False</property>
+                    <property name="can-focus">True</property>
+                    <property name="focus-on-click">True</property>
+                    <property name="receives-default">True</property>
+                    
+                    <child>
+                      <object class="GtkImage" id="activities_button_icon_path_empty_button_icon">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="icon-name">edit-delete-symbolic</property>
+                        <property name="icon-size">1</property>
+                      </object>
+                    </child>
+                    
+                  </object>
+                </child>
+                
+                <child>
+                  <object class="GtkButton" id="activities_button_icon_path_button">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="focus-on-click">True</property>
+                    <property name="receives-default">True</property>
+                    
+                    <child>
+                      <object class="GtkImage" id="activities_button_icon_path_preview">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="icon-name">document-open-symbolic</property>
+                        <property name="icon-size">1</property>
+                      </object>
+                    </child>
+                    
+                  </object>
+                </child>
+                
+                <child>
+                  <object class="GtkEntry" id="activities_button_icon_path_entry">
+                    <property name="visible">False</property>
+                    <property name="can-focus">False</property>
+                  </object>
+                </child>
+                
+                <style>
+                  <class name="linked"/>
+                </style>
+                
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwActionRow" id="activities_button_icon_monochrome_row">
+            <property name="title" translatable="yes">Activities Button Icon in Monochrome</property>
+            <property name="activatable-widget">activities_button_icon_monochrome_switch</property>
+            <child>
+              <object class="GtkSwitch" id="activities_button_icon_monochrome_switch">
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwActionRow" id="activities_button_label_row">
+            <property name="title" translatable="yes">Activities Button Icon With Label</property>
+            <property name="subtitle" translatable="yes">Only works when you have selected an icon for activities button</property>
+            <property name="activatable-widget">activities_button_label_switch</property>
+            <child>
+              <object class="GtkSwitch" id="activities_button_label_switch">
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+      </object>
+    </child>
+    
+  </object>
+  
+</interface>

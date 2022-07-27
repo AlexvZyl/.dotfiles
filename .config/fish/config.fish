@@ -16,3 +16,5 @@ set -g tide_left_prompt_items os context pwd git newline character
 # Icons. 
 set -g tide_git_icon 
 set -g tide_status_icon_failure 
+
+neofetch

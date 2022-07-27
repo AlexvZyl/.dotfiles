@@ -1,3 +1,6 @@
+# Install Nerd Fonts.
+sudo pamac install nerd-fonts-complete
+
 # Setup alacritty.
 sudo pamac install alacritty
 

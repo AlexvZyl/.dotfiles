@@ -11,6 +11,9 @@ yay -S libpamac-aur pamac-aur
 sudo pamac install --no-confirm brave-bin 
 sudo pamac remove firefox --no-confirm
 
+# Office.
+sudo pamac install onlyoffice-bin --no-confirm
+
 # Fonts.  This is very large, maybe use smaller package.
 sudo pamac install nerd-fonts-complete --no-confirm
 

@@ -4,7 +4,22 @@ The dotfiles for my personal setup.  Currently only supports Arch based distros 
 
 ## Installation
 
-Clone the repo and run `install.sh`.  Make sure you do not clone into `~/` directly.
+To install everything, simply copy and paste this into the terminal.
+
+```bash
+git clone https://github.com/Alex-vZyl/DotFiles
+cd DotFiles
+sudo chmod +x install.sh
+./install.sh
+```
+
+If you want to configure the terminal, open `alacritty` and run
+
+```fish
+tide configure
+```
+
+and follow the steps.
 
 ## Screenshots
 

@@ -14,5 +14,5 @@ Clone the repo and run `install.sh`.  Make sure you do not clone into `~/` direc
 ![image](https://user-images.githubusercontent.com/81622310/181454707-cb86d1ae-7eef-4793-8a4f-6f6e17c0e2d5.png)
 *[Alacritty](https://github.com/alacritty/alacritty) with [fish](https://github.com/fish-shell/fish-shell) and [tide](https://github.com/IlanCosman/tide).*
 
-![image](https://user-images.githubusercontent.com/81622310/181455860-7cb4dafc-968b-4670-ae33-71c5f8807d8a.png)
+![image](https://user-images.githubusercontent.com/81622310/181458526-bda18060-eaa5-4119-a90f-eb8f80d81431.png)
 *Default gnome overview with [nice icons](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) and blur effect.*

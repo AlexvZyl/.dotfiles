@@ -16,3 +16,6 @@ Clone the repo and run `install.sh`.  Make sure you do not clone into `~/` direc
 
 ![image](https://user-images.githubusercontent.com/81622310/181458526-bda18060-eaa5-4119-a90f-eb8f80d81431.png)
 *Default gnome overview with [nice icons](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) and blur effect.*
+
+![image](https://user-images.githubusercontent.com/81622310/179122222-5815861b-6082-4fa6-b9be-4c14da944f65.png)
+*Adds my [neovim](https://github.com/neovim/neovim) [setup](https://github.com/Alex-vZyl/NeovimConfig).  Also installs [neovide](https://github.com/neovide/neovide), so use that!*

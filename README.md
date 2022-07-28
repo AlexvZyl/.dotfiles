@@ -1,6 +1,6 @@
 # DotFiles
 
-The dotfiles for my personal setup.  It is written for EndeavourOS with Gnome as the DE.
+The dotfiles for my personal setup.  Currently only supports Arch based distros using Gnome.
 
 ## Installation
 

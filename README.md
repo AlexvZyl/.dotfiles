@@ -13,7 +13,7 @@ sudo chmod +x install.sh
 ./install.sh
 ```
 
-If you want to configure the terminal, open `alacritty` and run
+If you want to configure the terminal, open `alacritty` (or any `fish` instance) and run
 
 ```fish
 tide configure

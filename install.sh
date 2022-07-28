@@ -20,6 +20,9 @@ sudo pamac install nerd-fonts-complete --no-confirm
 # Icons.
 sudo pamac install papirus-icon-theme --no-confirm
 
+# Required for Gnome extensions.
+sudo pamac install gnome-browser-connector --no-confirm
+
 # Terminal.
 sudo pamac install alacritty --no-confirm
 

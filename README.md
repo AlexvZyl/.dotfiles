@@ -11,4 +11,4 @@ The dotfiles for my personal setup.  It is written for EndeavourOS with Gnome as
 *Alacritty with fish.*
 
 ![image](https://user-images.githubusercontent.com/81622310/181455860-7cb4dafc-968b-4670-ae33-71c5f8807d8a.png)
-*Default gnome overview with nice icons.*
+*Default gnome overview with nice icons and blur effect.*

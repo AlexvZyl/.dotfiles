@@ -3,6 +3,17 @@
 # Ensure submodules are updated.
 git submodule update
 
+# Make the function keys on the keyboard default.
+# (This is currently specific to my keychron keyboard)
+FILE=/etc/modprobe.d/hid_apple.conf
+if test -f "$FILE"; 
+then
+    sudo sh -c "echo 'options hid_apple fnmode=2' >> $FILE"
+else
+    sudo touch "$FILE"
+    sudo sh -c "echo 'options hid_apple fnmode=2' > $FILE"
+fi
+
 # Use yay to get pamac (installed by default on EndeavourOS).
 # yay -S libpamac-aur pamac-all # The full version is not currently building.
 yay -S libpamac-aur pamac-aur

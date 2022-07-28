@@ -8,7 +8,7 @@ The dotfiles for my personal setup.  It is written for EndeavourOS with Gnome as
 *Desktop with gnome extensions.*
 
 ![image](https://user-images.githubusercontent.com/81622310/181454707-cb86d1ae-7eef-4793-8a4f-6f6e17c0e2d5.png)
-*Alacritty with fish.*
+*Alacritty with fish and tide.*
 
 ![image](https://user-images.githubusercontent.com/81622310/181455860-7cb4dafc-968b-4670-ae33-71c5f8807d8a.png)
 *Default gnome overview with nice icons and blur effect.*

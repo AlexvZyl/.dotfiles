@@ -15,6 +15,8 @@ sudo chmod +x .setup/install.sh
 ./.setup/install.sh
 ```
 
+`config` is an alias that makes using the bare repo easier.  It is already added to `fish` and `bash`.
+
 If you want to configure the terminal, open `alacritty` (or any `fish` instance) and run:
 
 ```fish

@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Ensure submodules are updated.
-git submodule update
-
 # Make the function keys on the keyboard default.
 # (This is currently specific to my keychron keyboard)
 FILE=/etc/modprobe.d/hid_apple.conf

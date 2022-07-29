@@ -215,6 +215,15 @@ end
 vim.api.nvim_set_keymap("n", "<C-B>", "<Cmd>lua _btop_toggle()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("t", "<C-B>", "<Cmd>lua _btop_toggle()<CR>", {noremap = true, silent = true})
 
+-- Fish with toggleterm.
+local Terminal  = require('toggleterm.terminal').Terminal
+local fish = Terminal:new({ cmd = "fish", hidden = true, direction = "float" })
+function _fish_toggle()
+  fish:toggle()
+end
+vim.api.nvim_set_keymap("n", "<F3>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("t", "<F3>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
+
 -- Setup tree.
 
 require("nvim-tree").setup({
@@ -425,8 +434,6 @@ autocmd TermLeave <silent> <Esc>
 augroup end
 
 " Terminal mappings.
-nnoremap <silent> <F3> <Cmd>ToggleTerm<CR>
-tnoremap <silent> <F3> <Cmd>ToggleTerm<CR>
 :au BufEnter * if &buftype == 'terminal' | :startinsert | endif " Make terminal default mode insert mode.
 tnoremap <silent> <Esc> <C-\><C-n>
 

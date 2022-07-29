@@ -44,6 +44,7 @@ sudo pamac install whatsapp-nativefier discord signal-desktop --no-confirm
 
 # Programming languages.
 sudo pamac install julia-bin --no-confirm
+sudo pamac install cmake --no-confirm
 
 # Setup fish (shell).
 sudo pamac install fish --no-confirm

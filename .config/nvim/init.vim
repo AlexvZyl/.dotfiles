@@ -461,6 +461,9 @@ nnoremap <silent> U     <Cmd><CR>
 nnoremap <silent> <C-Z> <Cmd>undo<CR>
 inoremap <silent> <C-Z> <Cmd>undo<CR>
 vnoremap <silent> <C-Z> <Cmd>undo<CR>
+nnoremap <silent> <C-Y> <Cmd>redo<CR>
+inoremap <silent> <C-Y> <Cmd>redo<CR>
+vnoremap <silent> <C-Y> <Cmd>redo<CR>
 
 " -------------------------
 " RUST PLUGIN CONFIGURARION

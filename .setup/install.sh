@@ -20,6 +20,9 @@ sudo pamac install onlyoffice-bin --no-confirm
 # Fonts.  This is very large, maybe use smaller package.
 sudo pamac install nerd-fonts-complete --no-confirm
 
+# Utilities.
+sudo pamac install btop nvtop --no-confirm
+
 # Icons.
 sudo pamac install papirus-icon-theme --no-confirm
 
@@ -30,13 +33,11 @@ sudo pamac install gnome-browser-connector --no-confirm
 sudo pamac install alacritty --no-confirm
 
 # Coding stuff.
-sudo pamac install neovim --no-confirm
-sudo pamac install neovide --no-confirm
+sudo pamac install neovim neovide --no-confirm
 # Install plugin for nvim.
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-sudo pamac install github-desktop --no-confirm
-sudo pamac install code --no-confirm
+sudo pamac install github-desktop code --no-confirm
 
 # Communication.
 sudo pamac install whatsapp-nativefier discord signal-desktop --no-confirm

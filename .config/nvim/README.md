@@ -5,4 +5,4 @@ The configuration files for my Neovim setup.
 
 ## Installation
 
-Clone this repo into `.config/nvim/` and run `:PlugInstall`.
+Run `:PlugInstall` after the dotfiles installation script.  The DotFiles installer installs the plugin manager.

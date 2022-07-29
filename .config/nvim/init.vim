@@ -26,7 +26,7 @@ Plug 'karb94/neoscroll.nvim'
 " Git.
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-" Plug 'kdheepak/lazygit.nvim'
+Plug 'kdheepak/lazygit.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'sindrets/diffview.nvim'
 
@@ -380,7 +380,7 @@ let g:lsp_settings = {
 :set nowrap
 
 " Setup bufferline.
-:set termguicolors
+" :set termguicolors
 
 " Allow FAR to undo.
 let g:far#enable_undo=1

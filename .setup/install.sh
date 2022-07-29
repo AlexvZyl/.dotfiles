@@ -29,6 +29,9 @@ sudo pamac install papirus-icon-theme --no-confirm
 # Required for Gnome extensions.
 sudo pamac install gnome-browser-connector --no-confirm
 
+# Enable BT on startup.
+sudo sed 's/#AutoEnable=false/AutoEnable=true/g' /etc/bluetooth/main.conf
+
 # Terminal.
 sudo pamac install alacritty --no-confirm
 
@@ -45,6 +48,11 @@ sudo pamac install whatsapp-nativefier discord signal-desktop --no-confirm
 # Programming languages.
 sudo pamac install julia-bin --no-confirm
 sudo pamac install cmake --no-confirm
+
+# Setup optimus manager.
+# NB: For Nvidia cards only!
+sudo pamac install optimus-manager gdm-prime --no-confirm 
+sudo sed 's/#WaylandEnable=false/WaylandEnable=fals/g' /etc/gdm/custom.conf
 
 # Setup fish (shell).
 sudo pamac install fish --no-confirm

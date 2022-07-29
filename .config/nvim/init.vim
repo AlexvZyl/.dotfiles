@@ -398,6 +398,7 @@ nnoremap <silent> <F2> <Cmd>Telescope find_files<CR>
 nnoremap <silent> <F1> <Cmd>NvimTreeToggle<CR>
 inoremap <silent> <F1> <Cmd>NvimTreeToggle<CR>
 vnoremap <silent> <F1> <Cmd>NvimTreeToggle<CR>
+tnoremap <silent> <F1> <Cmd>NvimTreeToggle<CR>
 nnoremap <silent> <C-t> <Cmd>Telescope oldfiles<CR>
 
 " Cheatsheet.

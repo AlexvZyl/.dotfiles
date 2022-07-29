@@ -1,0 +1,26 @@
+{
+    "julia.executablePath": "~/Software/julia/julia",
+    "julia.NumThreads": 16,
+    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/14.0.3/clangd_14.0.3/bin/clangd",
+
+    //"languageserver": {
+    //  "efm": {
+    //    "command": "efm-langserver",
+    //    "args": ["-c", "/.config/nvim/efm-languageserver/config.yaml"],
+    //    "filetypes": ["vim", "eruby", "markdown"]
+    //  }
+    //}     
+      
+    "languageserver": {
+        "ccls": {      
+            "command": "ccls",     
+            "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],  
+            "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"], 
+            "initializationOptions": {  
+                "cache": {  
+                  "directory": "/tmp/ccls" 
+                } 
+            } 
+        } 
+    }
+}

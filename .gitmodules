@@ -1,6 +1,0 @@
-[submodule ".config/nvim"]
-	path = .config/nvim
-	url = https://github.com/Alex-vZyl/NeovimConfig
-[submodule ".config/synth-shell"]
-	path = .config/synth-shell
-	url = https://github.com/Alex-vZyl/synth-shell

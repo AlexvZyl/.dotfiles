@@ -42,7 +42,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}  " Big boy!
 Plug 'tpope/vim-commentary'  " Alllow commenting with <C-/>.
 Plug 'mhartington/formatter.nvim'
 " Plug 'mattn/vim-lsp-settings'  " Can be used to install language servers, but is giving me issues!
-Plug 'puremourning/vimspector'  " Multi-language debugger.
+" Plug 'puremourning/vimspector'  " Multi-language debugger.
 
 " Neovim helpers.
 Plug 'folke/which-key.nvim'
@@ -334,7 +334,7 @@ let g:everforest_background = 'hard'
 :let g:scrollview_excluded_filetypes = ['nerdtree', 'NvimTree']
 
 " Font.
-set guifont=JetBrainsMono\ Nerd\ Font:h11
+set guifont=JetBrainsMono\ Nerd\ Font:h11.75 
 
 " Explicitly enable efm langserver.
 let g:lsp_settings = {
@@ -380,7 +380,7 @@ let g:lsp_settings = {
 :set nowrap
 
 " Setup bufferline.
-" :set termguicolors
+:set termguicolors
 
 " Allow FAR to undo.
 let g:far#enable_undo=1

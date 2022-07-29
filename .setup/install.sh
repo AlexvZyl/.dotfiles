@@ -11,7 +11,7 @@ sudo sh -c "echo 'options hid_apple fnmode=2' >> $FILE"
 yay -S libpamac-aur pamac-aur
 
 # Browser.
-sudo pamac install --no-confirm brave-bin 
+sudo pamac install brave-bin --no-confirm
 sudo pamac remove firefox --no-confirm
 
 # Office.
@@ -52,3 +52,6 @@ fish <<'END_FISH'
 	curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 	fisher install IlanCosman/tide@v5t
 END_FISH
+
+# For some reason EndeavourOS comes with a bunch of terminals...
+sudo pamac remove endeavouros-xfce4-terminal-colors xfce4-terminal xterm --no-confirm

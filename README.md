@@ -7,19 +7,19 @@ The dotfiles for my personal setup.  Currently only supports Arch based distros 
 To install everything, simply copy and paste this into the terminal.
 
 ```bash
-git clone https://github.com/Alex-vZyl/DotFiles
-cd DotFiles
-sudo chmod +x install.sh
-./install.sh
+cd ~
+mkdir .dotfiles
+config clone --bare https://github.com/Alex-vZyl/DotFiles .dotfiles/
+config checkout
+sudo chmod +x .setup/install.sh
+./.setup/install.sh
 ```
 
-If you want to configure the terminal, open `alacritty` (or any `fish` instance) and run
+If you want to configure the terminal, open `alacritty` (or any `fish` instance) and run:
 
 ```fish
 tide configure
 ```
-
-and follow the steps.
 
 ## Screenshots
 
@@ -33,4 +33,4 @@ and follow the steps.
 *Default gnome overview with [nice icons](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) and blur effect.*
 
 ![image](https://user-images.githubusercontent.com/81622310/179122222-5815861b-6082-4fa6-b9be-4c14da944f65.png)
-*Adds my [neovim](https://github.com/neovim/neovim) [setup](https://github.com/Alex-vZyl/NeovimConfig).  Also installs [neovide](https://github.com/neovide/neovide), so use that!*
+*Adds my [neovim](https://github.com/neovim/neovim) config.  Also installs [neovide](https://github.com/neovide/neovide), so use that!*

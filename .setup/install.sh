@@ -53,9 +53,3 @@ fish <<'END_FISH'
 	curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 	fisher install IlanCosman/tide@v5t
 END_FISH
-
-# Copy data over.
-# For now I do not want the home directory to be a git repo, so copy the relevant folders over.
-rsync -a -r .config/ ~/.config/
-rsync -a -r .local/ ~/.local/
-rsync -a -r .profile ~/.profile

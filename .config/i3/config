@@ -68,6 +68,7 @@ floating_modifier $mod
 # switch/iterate between workspaces
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
+# bindsym Alt+Tab exec --no-startup-id rofi combi -combi-modi window -show combi
 
 # switch to workspace
 bindsym $mod+1    workspace  $ws1
@@ -171,7 +172,7 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 ######################################
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+t exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -192,7 +193,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # keybinding in fancy rofi (automated):
-bindsym F1 exec ~/.config/i3/scripts/keyhint-2
+bindsym F11 exec ~/.config/i3/scripts/keyhint-2
 # alternative
 # keybinding list in editor:
 # bindsym $mod+F1 exec xed ~/.config/i3/keybindings
@@ -559,8 +560,8 @@ bindsym $mod+d exec rofi -modi drun -show drun \
 
 ## rofi bindings for window menu ($mod+t /F10 optional disabled)
 
-bindsym $mod+t exec rofi -show window \
-		-config ~/.config/rofi/rofidmenu.rasi
+#bindsym $mod+t exec rofi -show window \
+#		-config ~/.config/rofi/rofidmenu.rasi
 
 #bindsym F10 exec rofi -show window \
 #		-config ~/.config/rofi/rofidmenu.rasi
@@ -568,5 +569,5 @@ bindsym $mod+t exec rofi -show window \
 ## rofi bindings to manage clipboard (install rofi-greenclip from the AUR)
 
 #exec --no-startup-id greenclip daemon>/dev/null
-#bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard \
-#		-config ~/.config/rofi/rofidmenu.rasi
+#bindsym $mod+v exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard \
+		# -config ~/.config/rofi/rofidmenu.rasi

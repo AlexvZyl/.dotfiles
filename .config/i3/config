@@ -344,7 +344,7 @@ for_window [class=TelegramDesktop] focus
 # For modifications, it can be copied to ~/.config/picom/picom.conf or ~/.config/picom.conf
 #
 # using default config 
-#exec_always --no-startup-id picom -b
+exec_always --no-startup-id picom -b
 #
 # for custom config:
 #exec_always --no-startup-id picom --config  ~/.config/picom.conf
@@ -382,7 +382,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
 exec --no-startup-id sleep 2 && nitrogen --restore
-exec --no-startup-id feh --bg-fill ~/.wallpapers/WallpaperDog-20492269.jpg
+exec --no-startup-id feh --bg-scale .wallpapers/WallpaperDog-20492269.jpg
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
@@ -393,7 +393,6 @@ exec --no-startup-id xset s 480 dpms 600 600 600
 # use xautolock to use autosuspend rules for mobile devices
 # https://wiki.archlinux.org/title/Session_lock#xautolock
 #exec --no-startup-id xautolock -time 60 -locker "systemctl suspend"
-
 
 # xscreensaver
 # https://www.jwz.org/xscreensaver
@@ -421,7 +420,7 @@ exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/ende
 # you need to have tray apps started manually one by one:
 
 # start blueberry app for managing bluetooth devices from tray:
-#exec --no-startup-id blueberry-tray
+exec --no-startup-id blueberry-tray
 
 # networkmanager-applet
 #exec --no-startup-id nm-applet

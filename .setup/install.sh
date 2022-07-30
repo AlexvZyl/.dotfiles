@@ -21,7 +21,7 @@ sudo pamac install onlyoffice-bin --no-confirm
 sudo pamac install nerd-fonts-complete --no-confirm
 
 # Utilities.
-sudo pamac install btop nvtop --no-confirm
+sudo pamac install btop nvtop lazygit --no-confirm
 
 # Icons.
 sudo pamac install papirus-icon-theme --no-confirm

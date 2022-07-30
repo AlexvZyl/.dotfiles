@@ -10,10 +10,9 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
 " UI improvements.
-" Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
-Plug 'Alex-vZyl/toggleterm.nvim', {'tag' : 'v2.*'}
+Plug 'akinsho/toggleterm.nvim'
+" Plug 'Alex-vZyl/toggleterm.nvim', {'tag' : 'v2.*'}
 Plug 'dstein64/nvim-scrollview'
-Plug 'glepnir/dashboard-nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'mg979/vim-visual-multi'
 Plug 'rcarriga/nvim-notify'	
@@ -22,6 +21,7 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/bufferline.nvim'
 Plug 'karb94/neoscroll.nvim'
+Plug 'mhinz/vim-startify'
 
 " Git.
 Plug 'tpope/vim-fugitive'
@@ -29,10 +29,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'sindrets/diffview.nvim'
-
-" Sessions.
-Plug 'rmagatti/auto-session'
-Plug 'rmagatti/session-lens'
 
 " General langage.
 Plug 'nvim-treesitter/nvim-treesitter'  " Syntax highlighting.
@@ -82,13 +78,12 @@ call plug#end()
 lua <<EOF
 
 -- require("rust-tools").setup({})
-require("session-lens").setup({})
 
 -- Lualine setup.
 
 require("lualine").setup({
     options = { 
-        disabled_filetypes = {"NvimTree"}
+        disabled_filetypes = {"NvimTree", "startify" }
     },
     extensions = {
         "toggleterm",
@@ -151,17 +146,16 @@ require("bufferline").setup {
 
 -- Indentation.
 
-require("indent_blankline").setup({
+require("indent_blankline").setup {
     show_end_of_line = true,
     show_current_context = true,
-    show_current_context_start = true
-})
+    show_current_context_start = true,
+    filetype_exclude = { 'NvimTree', 'startify' }
+}
 
 -- Formatter setup [TODO]
 
-require("formatter").setup({
-
-})    
+require("formatter").setup {}    
 
 -- Setup telescope.
 
@@ -175,7 +169,6 @@ ts.setup({
         }
     }
 })
-ts.load_extension("session-lens")
 ts.load_extension("notify")
 
 -- Setup default notifications.
@@ -208,7 +201,7 @@ vim.api.nvim_set_keymap("t", "<C-G>", "<Cmd>lua _lazygit_toggle()<CR>", {noremap
 
 -- BTop++ with toggleterm.
 local Terminal  = require('toggleterm.terminal').Terminal
-local btop = Terminal:new({ cmd = "btop", hidden = true, direction = "float" })
+local btop = Terminal:new({ cmd = "btop --utf-force", hidden = true, direction = "float" })
 function _btop_toggle()
   btop:toggle()
 end
@@ -225,7 +218,6 @@ vim.api.nvim_set_keymap("n", "<F3>", "<Cmd>lua _fish_toggle()<CR>", {noremap = t
 vim.api.nvim_set_keymap("t", "<F3>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
 
 -- Setup tree.
-
 require("nvim-tree").setup({
     view = {
         mappings = {
@@ -239,40 +231,6 @@ require("nvim-tree").setup({
     },
     auto_reload_on_write = true,
 })
-
--- Setup Dashboard.
-
-local home = os.getenv('HOME')
-local db = require('dashboard')
-
-db.preview_file_height = 12
-db.preview_file_width = 80
-db.custom_center = {
-    {
-        icon = '  ',
-        desc = 'Recent Sessions                         ',
-        shortcut = 'SPC s l',
-        action ='SearchSession'
-    },
-    {
-        icon = '  ',
-        desc = 'Recent Files                            ',
-        action =  'Telescope oldfiles',
-        shortcut = 'SPC f h'
-    },
-    {
-        icon = '  ',
-        desc = 'Open  File                              ',
-        action = 'Telescope find_files',
-        shortcut = 'SPC f f' 
-    },
-    {
-        icon = '  ',
-        desc = 'Find  Word                              ',
-        action = 'Telescope live_grep',
-        shortcut = 'SPC f w'
-    },
-} 
 
 -- Configure tree sitter.
 require'nvim-treesitter.configs'.setup {
@@ -348,8 +306,8 @@ let g:lsp_settings = {
 " ----------------
 
 " Setup sessions.
-:let g:auto_session_enabled =0
-:let g:auto_save_enabled =1
+" :let g:auto_session_enabled =0
+" :let g:auto_save_enabled =1
 
 " Allow cpoying from other apps.
 :set clipboard=unnamedplus
@@ -366,21 +324,21 @@ let g:lsp_settings = {
 :set smartcase
 
 " Setup tabbing.
-:set tabstop	=4
-:set softtabstop=4
-:set shiftwidth =4
-:set textwidth	=0
-:set expandtab
-:set autoindent
+set tabstop	=4
+set softtabstop=4
+set shiftwidth =4
+set textwidth	=0
+set expandtab
+set autoindent
 
 " Show matching brackets.
-:set showmatch
+set showmatch
 
 " Disable text wrap around.
-:set nowrap
+set nowrap
 
 " Setup bufferline.
-:set termguicolors
+set termguicolors
 
 " Allow FAR to undo.
 let g:far#enable_undo=1
@@ -388,6 +346,18 @@ let g:far#enable_undo=1
 " Disable VM exit message and statusline.
 let g:VM_set_statusline = 0
 let g:VM_silent_exit = 1
+
+" Setup startify.
+let g:startify_custom_header =
+          \ 'startify#center(startify#fortune#cowsay())'
+let g:startify_lists = [
+    \ { 'type': 'files',     'header': ['   MRU']            },
+    \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+    \ { 'type': 'sessions',  'header': ['   Sessions']       },
+    \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+    \ { 'type': 'commands',  'header': ['   Commands']       },
+\ ]
+
 
 " ----------
 " KEYMAPPING
@@ -414,7 +384,7 @@ nnoremap <silent> <C-t> <Cmd>Telescope oldfiles<CR>
 nnoremap <silent> <F12> <Cmd>Cheatsheet<CR>
 
 " Sessions.
-nnoremap <silent> <F5> <Cmd>SaveSession<CR> <Cmd>lua vim.notify(" Saved current session.", "success", { title = " Session"} )<CR>
+nnoremap <silent> <F5> <Cmd>SSave! y<Enter><CR> <Cmd>lua vim.notify(" Saved current session.", "success", { title = " Session"} )<CR>
 
 " Moving windows.
 nnoremap <silent> <C-h> <Cmd>wincmd h<CR>

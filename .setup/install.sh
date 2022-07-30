@@ -45,6 +45,9 @@ sudo pamac install github-desktop code --no-confirm
 # Communication.
 sudo pamac install whatsapp-nativefier discord signal-desktop --no-confirm
 
+# i3 stuff.
+sudo pamac install feh --no-confirm
+
 # Programming languages.
 sudo pamac install julia-bin --no-confirm
 sudo pamac install cmake --no-confirm

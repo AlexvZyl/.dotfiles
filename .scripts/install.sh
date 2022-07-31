@@ -46,7 +46,7 @@ sudo pamac install github-desktop github-cli code --no-confirm
 sudo pamac install whatsapp-nativefier discord signal-desktop --no-confirm
 
 # i3 stuff.
-sudo pamac install feh cronie rofi-greenclip --no-confirm
+sudo pamac install feh cronie rofi-greenclip picom-pijulius-git --no-confirm
 
 # Programming languages.
 sudo pamac install julia-bin --no-confirm

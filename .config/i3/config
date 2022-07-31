@@ -53,8 +53,8 @@ new_window pixel 1
 # hide_edge_borders both
 
 # Set inner/outer gaps
-gaps inner 3
-gaps outer 3
+gaps inner 4
+gaps outer 4
 
 # show window title bars (not officially supported with i3gaps)
 # default_border normal
@@ -174,6 +174,12 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 # start a terminal
 bindsym $mod+t exec alacritty
 
+# Start editor.
+bindsym $mod+n exec neovide
+
+# Start resource viewers.
+bindsym $mod+b exec btop --utf-force
+
 # kill focused window
 bindsym $mod+q kill
 
@@ -205,7 +211,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -5 && notify-send "Brightness - $(
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-bindsym $mod+b focus up
+# bindsym $mod+b focus up
 bindsym $mod+o focus right
 
 # alternatively, you can use the cursor keys:
@@ -491,11 +497,11 @@ bar {
 		font pango: JetBrainsMono Nerd Font 10
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	    	position top
-#	    	i3bar_command i3bar --transparency
+	    	# i3bar_command i3bar --transparency
 # it could be that you have no primary display set: set one (xrandr --output <output> --primary)
 # reference: https://i3wm.org/docs/userguide.html#_tray_output
 		    tray_output primary
-		    tray_padding 0
+		    tray_padding 3
 
 # When strip_workspace_numbers is set to yes,
 # any workspace that has a name of the form
@@ -560,7 +566,7 @@ bindsym $mod+d exec rofi -modi drun -show drun \
 
 ## rofi bindings for window menu ($mod+t /F10 optional disabled)
 
-#bindsym $mod+t exec rofi -show window \
+#bindsym $mod+Tab exec rofi -show window \
 #		-config ~/.config/rofi/rofidmenu.rasi
 
 #bindsym F10 exec rofi -show window \

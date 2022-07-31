@@ -7,12 +7,11 @@ The dotfiles for my personal setup.  Currently only supports Arch based distros 
 To install everything, simply copy and paste this into the terminal.
 
 ```bash
-cd ~
-mkdir .dotfiles
-config clone --bare https://github.com/Alex-vZyl/DotFiles .dotfiles/
+mkdir ~/.dotfiles
+config clone --bare https://github.com/Alex-vZyl/DotFiles ~/.dotfiles/
 config checkout
-sudo chmod +x .setup/install.sh
-./.setup/install.sh
+sudo chmod +x ~/.setup/install.sh
+./~/.setup/install.sh
 ```
 
 `config` is an alias that makes using the bare repo easier.  It is already added to `fish` and `bash`.

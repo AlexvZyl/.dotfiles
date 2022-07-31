@@ -36,7 +36,7 @@ workspace_layout default
 
 # i3 stacking layout:
 # Each window will be fullscreen and tabbed top to bottom.
-#workspace_layout stacking
+# workspace_layout stacking
 
 # i3 tabbed layout:
 # Each new window will open fullscreen as a tab (left to right)
@@ -70,12 +70,14 @@ floating_modifier $mod
 # bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+Tab exec --no-startup-id rofi combi -combi-modi window -show combi
 
+set $monitors HDMI-0 DP-0 eDP-1-1
+
 # switch to workspace
 bindsym $mod+1    workspace  $ws1
-bindsym $mod+2    workspace  $ws2
-bindsym $mod+3    workspace  $ws3
-bindsym $mod+4    workspace  $ws4
-bindsym $mod+5    workspace  $ws5
+bindsym $mod+2    workspace  $ws2 
+bindsym $mod+3    workspace  $ws3 
+bindsym $mod+4    workspace  $ws4 
+bindsym $mod+5    workspace  $ws5 
 bindsym $mod+6    workspace  $ws6
 bindsym $mod+7    workspace  $ws7
 bindsym $mod+8    workspace  $ws8
@@ -468,8 +470,10 @@ for_window [class="urxvt"] border pixel 1
 ######################################
 
 # Define colors variables:
-set $darkbluetrans	#08052be6
-set $darkblue		#08052b
+# set $darkbluetrans	#08052be6
+# set $darkblue		#08052b
+set $darkbluetrans	#000000b5
+set $darkblue		#000000b5
 set $lightblue		#5294e2
 set $urgentred		#e53935
 set $white		#ffffff

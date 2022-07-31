@@ -40,7 +40,7 @@ sudo pamac install neovim neovide --no-confirm
 # Install plugin for nvim.
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-sudo pamac install github-desktop code --no-confirm
+sudo pamac install github-desktop github-cli code --no-confirm
 
 # Communication.
 sudo pamac install whatsapp-nativefier discord signal-desktop --no-confirm

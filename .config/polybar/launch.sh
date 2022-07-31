@@ -1,14 +1,23 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-# Terminate already running bar instances
-# If all your bars have ipc enabled, you can use 
-polybar-msg cmd quit
-# Otherwise you can use the nuclear option:
-# killall -q polybar
+# if type "xrandr" > /dev/null; then
+    # for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+        # MONITOR=$m polybar --reload mainbar-i3 -c ~/.config/polybar/config &
+    # done
+# else
+    # polybar --reload mainbar-i3 -c ~/.config/polybar/config &
+# fi
 
-# Launch bar1 and bar2
-echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
-polybar bar1 2>&1 | tee -a /tmp/polybar1.log & disown
-polybar bar2 2>&1 | tee -a /tmp/polybar2.log & disown
+# second polybar at bottom
+# if type "xrandr" > /dev/null; then
+#   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+#     MONITOR=$m polybar --reload mainbar-i3-extra -c ~/.config/polybar/config &
+#   done
+# else
+# polybar --reload mainbar-i3-extra -c ~/.config/polybar/config &
+# fi
+#;;
 
-echo "Bars launched..."
+polybar --reload mainbar-i3 -c ~/.config/polybar/config &
+
+

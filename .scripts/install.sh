@@ -54,11 +54,12 @@ sudo pamac install cmake --no-confirm
 
 # Setup optimus manager.
 # NB: For Nvidia cards only!
-sudo pamac install optimus-manager gdm-prime nvidia-settings --no-confirm 
+sudo pamac install optimus-manager gdm-prime nvidia-settings nvidia-force-composition-pipeline --no-confirm 
 sudo sed 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm/custom.conf
 sudo touch /etc/optimus-manager/optimus-manager.conf 
 sudo sh -c "echo '[optimus]' > /etc/optimus-manager/optimus-manager.conf" 
 sudo sh -c "echo 'startup_mode=nvidia' > /etc/optimus-manager/optimus-manager.conf" 
+nvidia-force-composition-pipeline
 
 # Setup fish (shell).
 sudo pamac install fish --no-confirm

@@ -305,12 +305,8 @@ let g:lsp_settings = {
 " GENERAL SETTINGS
 " ----------------
 
-" Setup sessions.
-" :let g:auto_session_enabled =0
-" :let g:auto_save_enabled =1
-
-" Allow cpoying from other apps.
-:set clipboard=unnamedplus
+" Clipboard. 
+:set clipboard+=unnamedplus 
 
 " Enable mouse input.
 :set mouse=a

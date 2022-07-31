@@ -397,3 +397,17 @@ Use --utf-force argument to force start if you're sure your terminal can handle 
 
 2022/07/31 (13:04:15) | ===> btop++ v.1.2.8
 2022/07/31 (13:04:15) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+
+2022/07/31 (13:29:16) | ===> btop++ v.1.2.8
+2022/07/31 (13:29:16) | ERROR: No UTF-8 locale detected!
+Use --utf-force argument to force start if you're sure your terminal can handle it.
+
+2022/07/31 (13:29:20) | ===> btop++ v.1.2.8
+2022/07/31 (13:29:20) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+
+2022/07/31 (13:37:30) | ===> btop++ v.1.2.8
+2022/07/31 (13:37:30) | ERROR: No UTF-8 locale detected!
+Use --utf-force argument to force start if you're sure your terminal can handle it.
+
+2022/07/31 (13:37:32) | ===> btop++ v.1.2.8
+2022/07/31 (13:37:32) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.

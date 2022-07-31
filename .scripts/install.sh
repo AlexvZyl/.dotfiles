@@ -36,7 +36,7 @@ sudo sed 's/#AutoEnable=false/AutoEnable=true/g' /etc/bluetooth/main.conf
 sudo pamac install alacritty --no-confirm
 
 # Coding stuff.
-sudo pamac install neovim neovide --no-confirm
+sudo pamac install neovim neovide xclip --no-confirm
 # Install plugin for nvim.
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'

@@ -53,8 +53,8 @@ new_window pixel 1
 # hide_edge_borders both
 
 # Set inner/outer gaps
-gaps inner 3
-gaps outer 3
+gaps inner 4
+gaps outer 4
 
 # show window title bars (not officially supported with i3gaps)
 # default_border normal
@@ -583,7 +583,7 @@ bindsym $mod+d exec rofi -modi drun -show drun \
 ####################
 
 exec ./.screenlayout/default_triple_monitor.sh
-exec ./.config/polybar/launch.sh --material
+exec ./.config/polybar/launch.sh
 
 ################
 # Colorscheme: #

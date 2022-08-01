@@ -18,7 +18,8 @@
 
 [colors]
 # background = #282A2E
-background = #B5000000
+# background = #B5000000
+background = #DB000000
 background-alt = #373B41
 foreground = #C5C8C6
 primary = #F0C674

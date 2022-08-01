@@ -273,7 +273,7 @@ EOF
 " ----------
 
 " Neovide settings.
-let g:neovide_transparency=1
+let g:neovide_transparency=0.95
 let g:neovide_fullscreen=v:false
 let g:neovide_profiler=v:false
 let g:neovide_cursor_animation_length=0.004

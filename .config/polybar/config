@@ -19,13 +19,15 @@
 [colors]
 # background = #282A2E
 # background = #B5000000
-background = #DB000000
-background-alt = #373B41
-foreground = #C5C8C6
-primary = #F0C674
+# background = #DB000000
+background = #BF101010
+background-alt = #323232
+foreground = #ebdbb2
+primary = #d79921
 secondary = #8ABEB7
 alert = #A54242
-disabled = #707880
+disabled = #458588
+red = #cc241d
 
 [bar/mainbar-i3]
 width = 100%
@@ -49,7 +51,7 @@ padding-right = 1
 module-margin = 1
 
 separator = |
-separator-foreground = ${colors.disabled}
+separator-foreground = ${colors.red}
 
 font-0 = JetBrainsMono Nerd Font;2
 
@@ -151,7 +153,7 @@ label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
 [module/wlan]
 inherit = network-base
 interface-type = wireless
-label-connected = %{F#F0C675}WIFI%{F-} %essid%
+label-connected = %{F#d79921}WIFI%{F-} %essid%
 
 ; [module/eth]
 ; inherit = network-base

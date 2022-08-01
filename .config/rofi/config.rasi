@@ -1,3 +1,4 @@
-@theme "/themes/gruvbox-black-hard.rasi"
+//@theme "/themes/gruvbox-black-hard.rasi"
 // @theme "/themes/gruvbox-dark-hard.rasi"
 // @theme "/themes/tokyonight-black.rasi"
+@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"

@@ -590,6 +590,12 @@ bindsym $mod+Tab exec rofi -show window
 exec ./.screenlayout/default_triple_monitor.sh
 exec ./.config/polybar/launch.sh
 
+####################
+# Custom keybinds: #
+####################
+
+bindsym $mod+Shift+s exec flameshot gui
+
 ################
 # Colorscheme: #
 ################

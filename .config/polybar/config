@@ -20,7 +20,7 @@
 # background = #282A2E
 # background = #B5000000
 # background = #DB000000
-background = #BF101010
+background = #BF090909
 background-alt = #323232
 foreground = #ebdbb2
 primary = #d79921

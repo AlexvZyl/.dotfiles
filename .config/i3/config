@@ -295,11 +295,11 @@ bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:"
-set $ws2 "2:"
-set $ws3 "3:"
-set $ws4 "4:"
-set $ws5 "5:"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -481,7 +481,7 @@ set $black		#000000
 set $purple		#e345ff
 set $darkgrey		#383c4a
 set $grey		#b0b5bd
-set $mediumgrey		#8b8b8b
+set $mediumgrey		#ebdbb2aa
 set $yellowbrown	#e1b700
 
 # define colors for windows:

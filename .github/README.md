@@ -22,18 +22,29 @@ If you want to configure the terminal, open `alacritty` (or any `fish` instance)
 tide configure
 ```
 
-## Gnome Screenshots
+# Screenshots
+
+I still have a lot of ricing that I want to do!
+
+## Gnome
 
 ![image](https://user-images.githubusercontent.com/81622310/181455188-7a945390-8758-4bcf-8d50-ebf0683b19f6.png)
 *Desktop with gnome extensions.*
 
-![image](https://user-images.githubusercontent.com/81622310/181454707-cb86d1ae-7eef-4793-8a4f-6f6e17c0e2d5.png)
-*[Alacritty](https://github.com/alacritty/alacritty) with [fish](https://github.com/fish-shell/fish-shell) and [tide](https://github.com/IlanCosman/tide).*
-
 ![image](https://user-images.githubusercontent.com/81622310/181458526-bda18060-eaa5-4119-a90f-eb8f80d81431.png)
 *Default gnome overview with [nice icons](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) and blur effect.*
 
-![image](https://user-images.githubusercontent.com/81622310/179122222-5815861b-6082-4fa6-b9be-4c14da944f65.png)
-*Adds my [neovim](https://github.com/neovim/neovim) config.  Also installs [neovide](https://github.com/neovide/neovide), so use that!*
+## i3
 
-## i3 Screenshots
+![image](https://user-images.githubusercontent.com/81622310/182231211-524bb73d-4db2-495c-bbdb-72b7ba86c813.png)
+*[i3](https://github.com/i3/i3) split windows with [polybar](https://github.com/polybar/polybar).*
+
+## Terminal
+
+![image](https://user-images.githubusercontent.com/81622310/182230693-461cca7f-572d-4010-b5c6-72dbeaa3690c.png)
+*[Alacritty](https://github.com/alacritty/alacritty) with [fish](https://github.com/fish-shell/fish-shell) and [tide](https://github.com/IlanCosman/tide).*
+
+## Neovim
+
+![image](https://user-images.githubusercontent.com/81622310/182230490-e73244f4-bfb7-4612-bc03-36eec132bd01.png)
+*Adds my [neovim](https://github.com/neovim/neovim) config.  Also installs [neovide](https://github.com/neovide/neovide), so use that!*

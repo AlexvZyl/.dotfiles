@@ -68,7 +68,6 @@ floating_modifier $mod
 # switch/iterate between workspaces
 # bindsym $mod+Tab workspace next
 # bindsym $mod+Shift+Tab workspace prev
-bindsym $mod+Tab exec --no-startup-id rofi combi -combi-modi window -show combi
 
 # set $monitors HDMI-0 DP-0 eDP-1-1
 
@@ -562,15 +561,17 @@ client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 
 ## rofi bindings fancy application menu ($mod+d /F9 optional disabled)
 
-bindsym $mod+d exec rofi -modi drun -show drun \
-		-config ~/.config/rofi/rofidmenu.rasi
+##bindsym $mod+d exec rofi -show drun \
+#		-config ~/.config/rofi/rofidmenu.rasi
+
+bindsym $mod+d exec rofi -show combi -modes combi -combi-modes "window"
 
 #bindsym F9 exec rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi
 
 ## rofi bindings for window menu ($mod+t /F10 optional disabled)
 
-#bindsym $mod+Tab exec rofi -show window \
+bindsym $mod+Tab exec rofi -show window
 #		-config ~/.config/rofi/rofidmenu.rasi
 
 #bindsym F10 exec rofi -show window \

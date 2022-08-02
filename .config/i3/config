@@ -481,7 +481,7 @@ set $black		#000000
 set $purple		#e345ff
 set $darkgrey		#383c4a
 set $grey		#b0b5bd
-set $mediumgrey		#ebdbb2aa
+set $mediumgrey		#ebdbb2dd
 set $yellowbrown	#e1b700
 
 # define colors for windows:

@@ -36,8 +36,11 @@ I still have a lot of ricing that I want to do!
 
 ## i3
 
-![image](https://user-images.githubusercontent.com/81622310/182231211-524bb73d-4db2-495c-bbdb-72b7ba86c813.png)
+![image](https://user-images.githubusercontent.com/81622310/182259303-18c68a39-02b4-420a-8522-95f8dfdb1624.png)
 *[i3](https://github.com/i3/i3) split windows with [polybar](https://github.com/polybar/polybar).*
+
+![image](https://user-images.githubusercontent.com/81622310/182259199-36a333a9-6775-4e9c-a353-ea1cf77a9f72.png)
+*Just the desktop.*
 
 ## Terminal
 

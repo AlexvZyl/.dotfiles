@@ -164,7 +164,7 @@ label-connected = %{F#d79921}WIFI%{F-} %essid%
 [module/date]
 type = internal/date
 interval = 1
-date = %Y-%m-%d
+date = %d-%m-%Y
 label = %date%
 label-foreground = ${colors.primary}
 

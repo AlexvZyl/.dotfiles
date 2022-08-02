@@ -170,8 +170,8 @@ label-foreground = ${colors.primary}
 
 [module/time]
 type = internal/date
-interval = 1
-date = %H:%M:%S
+interval = 60
+date = %H:%M
 label = %date%
 label-foreground = ${colors.primary}
 

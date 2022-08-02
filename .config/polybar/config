@@ -56,7 +56,7 @@ separator-foreground = ${colors.red}
 font-0 = JetBrainsMono Nerd Font;2
 
 modules-left = xworkspaces xwindow
-modules-right = filesystem cpu memory pulseaudio wlan date
+modules-right = filesystem cpu memory pulseaudio wlan date time
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -163,11 +163,14 @@ label-connected = %{F#d79921}WIFI%{F-} %essid%
 [module/date]
 type = internal/date
 interval = 1
+date = %Y-%m-%d
+label = %date%
+label-foreground = ${colors.primary}
 
-#date = %H:%M
-#date-alt = %Y-%m-%d %H:%M:%S
-date = %Y-%m-%d %H:%M:%S
-
+[module/time]
+type = internal/date
+interval = 1
+date = %H:%M:%S
 label = %date%
 label-foreground = ${colors.primary}
 

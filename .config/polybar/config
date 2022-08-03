@@ -135,14 +135,14 @@ label-muted-foreground = ${colors.disabled}
 [module/cpu]
 type = internal/cpu
 interval = 1
-format-prefix = "   "
+format-prefix = "  "
 format-prefix-foreground = ${colors.primary}
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 1
-format-prefix = "力  "
+format-prefix = "  "
 format-prefix-foreground = ${colors.primary}
 label = %used:2%
 

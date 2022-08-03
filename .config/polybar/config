@@ -165,14 +165,14 @@ label-connected = %{F#d79921} %{F-} %essid%
 type = internal/date
 interval = 1
 date = %d-%m-%Y
-label = %date%
+label =  %date%
 label-foreground = ${colors.primary}
 
 [module/time]
 type = internal/date
 interval = 30
 date = %H:%M
-label = %date%
+label =  %date%
 label-foreground = ${colors.primary}
 
 [settings]

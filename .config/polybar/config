@@ -40,7 +40,7 @@ radius = 6
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 1pt
+line-size = 2pt
 
 border-size = 4pt
 border-color = #00000000

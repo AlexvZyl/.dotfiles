@@ -109,7 +109,7 @@ label = %title:0:55:...%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume-prefix = "VOL "
+format-volume-prefix = "墳 "
 format-volume-prefix-foreground = ${colors.primary}
 format-volume = <label-volume>
 
@@ -132,15 +132,15 @@ label-muted-foreground = ${colors.disabled}
 
 [module/cpu]
 type = internal/cpu
-interval = 2
-format-prefix = "CPU "
+interval = 1
+format-prefix = "   "
 format-prefix-foreground = ${colors.primary}
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
-interval = 2
-format-prefix = "RAM "
+interval = 1
+format-prefix = "  "
 format-prefix-foreground = ${colors.primary}
 label = %used:2%
 
@@ -154,7 +154,7 @@ label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
 [module/wlan]
 inherit = network-base
 interface-type = wireless
-label-connected = %{F#d79921}WIFI%{F-} %essid%
+label-connected = %{F#d79921} %{F-} %essid%
 
 ; [module/eth]
 ; inherit = network-base

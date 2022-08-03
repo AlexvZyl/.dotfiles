@@ -93,7 +93,7 @@ label-empty-padding = 1
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:55:...%
+label =%{F#d79921}  %{F-}%title:0:55:...%
 
 ; [module/filesystem]
 ; type = internal/fs
@@ -165,14 +165,14 @@ label-connected = %{F#d79921} %{F-} %essid%
 type = internal/date
 interval = 1
 date = %d-%m-%Y
-label =  %date%
+label =  %{F#ebdbb2}%date%
 label-foreground = ${colors.primary}
 
 [module/time]
 type = internal/date
 interval = 30
 date = %H:%M
-label =  %date%
+label =  %{F#ebdbb2}%date%
 label-foreground = ${colors.primary}
 
 [settings]

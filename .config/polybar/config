@@ -16,6 +16,9 @@
 ;
 ;==========================================================
 
+[global/wm]
+include-file=~/.config/polybar/modules.ini 
+
 [colors]
 # background = #282A2E
 # background = #B5000000
@@ -40,7 +43,7 @@ radius = 6
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 2pt
+line-size = 2pt 
 
 border-size = 4pt
 border-color = #00000000
@@ -57,7 +60,7 @@ font-0 = JetBrainsMono Nerd Font;2
 
 modules-left = xworkspaces xwindow
 modules-center = time date
-modules-right = filesystem cpu memory pulseaudio wlan
+modules-right = filesystem cpu memory wlan volume battery
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -114,8 +117,7 @@ format-volume-prefix-foreground = ${colors.primary}
 format-volume = <label-volume>
 
 label-volume = %percentage%%
-
-label-muted = muted
+label-muted = %percentage%%
 label-muted-foreground = ${colors.disabled}
 
 ; [module/xkeyboard]
@@ -140,7 +142,7 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 1
-format-prefix = "  "
+format-prefix = "力  "
 format-prefix-foreground = ${colors.primary}
 label = %used:2%
 

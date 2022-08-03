@@ -66,8 +66,8 @@ title_align center
 floating_modifier $mod
 
 # switch/iterate between workspaces
-# bindsym $mod+Tab workspace next
-# bindsym $mod+Shift+Tab workspace prev
+#bindsym Alt+Tab workspace next
+#bindsym Alt+Shift+Tab workspace prev
 
 # set $monitors HDMI-0 DP-0 eDP-1-1
 
@@ -474,16 +474,16 @@ for_window [class="urxvt"] border pixel 1
 # Define colors variables:
 # set $darkbluetrans	#08052be6
 # set $darkblue		#08052b
-set $darkbluetrans	#000000db
-set $darkblue		#000000db
-set $lightblue		#5294e2
+set $darkbluetrans	#090909bf
+set $darkblue		#090909bf
+set $lightblue		#458588
 set $urgentred		#e53935
 set $white		#ffffff
 set $black		#000000
 set $purple		#e345ff
 set $darkgrey		#383c4a
 set $grey		#b0b5bd
-set $mediumgrey		#ebdbb2aa
+set $mediumgrey		#ebdbb2
 set $yellowbrown	#e1b700
 
 # define colors for windows:

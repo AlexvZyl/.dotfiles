@@ -1,4 +1,4 @@
-# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
 
 # Import additional configuration files
 #
@@ -189,12 +189,11 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: false
 
-# Colors (Tomorrow Night)
-colors:
+# colors:
   # Default colors
-  primary:
+  #primary:
   #background: '#000000'
-   background: '#090909'
+   #background: '#090909'
    # foreground: '#c5c8c6'
 
     # Bright and dim foreground colors
@@ -878,3 +877,67 @@ shell:
 
   # Print all received window events.
   #print_events: false
+
+# Colors (Gruvbox dark)
+colors:
+  # Default colors
+  primary:
+    # hard contrast
+    # background: '0x1d2021'
+    # default
+    # background: '0x282828' 
+    # soft contrast 
+    # background: '0x32302f'
+    # black
+    background: '#090909'
+    
+    foreground: '0xebdbb2'
+
+  # Normal colors
+  normal:
+    black:   '0x282828'
+    red:     '0xcc241d'
+    green:   '0x98971a'
+    yellow:  '0xd79921'
+    blue:    '0x458588'
+    magenta: '0xb16286'
+    cyan:    '0x689d6a'
+    white:   '0xa89984'
+
+  # Bright colors
+  bright:
+    black:   '0x928374'
+    red:     '0xfb4934'
+    green:   '0xb8bb26'
+    yellow:  '0xfabd2f'
+    blue:    '0x83a598'
+    magenta: '0xd3869b'
+    cyan:    '0x8ec07c'
+    white:   '0xebdbb2'
+
+
+# Colors (Gruvbox Material Dark Medium)
+# colors:
+#   primary:
+#     background: '0x282828'
+#     foreground: '0xdfbf8e'
+#  
+#   normal:
+#     black:   '0x665c54'
+#     red:     '0xea6962'
+#     green:   '0xa9b665'
+#     yellow:  '0xe78a4e'
+#     blue:    '0x7daea3'
+#     magenta: '0xd3869b'
+#     cyan:    '0x89b482'
+#     white:   '0xdfbf8e'
+#  
+#   bright:
+#     black:   '0x928374'
+#     red:     '0xea6962'
+#     green:   '0xa9b665'
+#     yellow:  '0xe3a84e'
+#     blue:    '0x7daea3'
+#     magenta: '0xd3869b'
+#     cyan:    '0x89b482'
+#     white:   '0xdfbf8e'  

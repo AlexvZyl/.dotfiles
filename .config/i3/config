@@ -567,7 +567,9 @@ client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 ##bindsym $mod+d exec rofi -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi
 
-bindsym $mod+d exec rofi -show combi -modes combi -combi-modes "window"
+bindsym $mod+r exec rofi -show run
+
+bindsym $mod+d exec rofi -show drun
 
 #bindsym F9 exec rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi

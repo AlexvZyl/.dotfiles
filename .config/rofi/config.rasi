@@ -2,4 +2,16 @@
 // @theme "/themes/gruvbox-dark-hard.rasi"
 // @theme "/themes/tokyonight-black.rasi"
 //@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
-@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
+//@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
+@theme "~/.config/rofi/themes/gruvbox-dark-hard.rasi"
+
+configuration {
+    display-drun: "Applications";
+    display-window: "Windows";
+    display-run: "Run";
+    show-icons: true;
+    icon-theme: "Papirus";
+    font: "JetBrainsMono Nerd Font Medium 12";
+    drun-display-format:  "{icon} {name}";
+    modi: "window,run,drun";
+}

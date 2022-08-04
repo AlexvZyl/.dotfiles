@@ -58,7 +58,7 @@ separator-foreground = ${colors.red}
 
 font-0 = JetBrainsMono Nerd Font;2
 
-modules-left = xworkspaces xwindow
+modules-left = xworkspaces
 modules-center = time date
 modules-right = filesystem cpu memory wlan volume battery
 
@@ -78,19 +78,21 @@ enable-ipc = true
 [module/xworkspaces]
 type = internal/xworkspaces
 
+; label-prefix =  
+
 label-active = %name%
 label-active-background = ${colors.background-alt}
 label-active-underline= ${colors.primary}
 label-active-padding = 1
 
-label-occupied = %name%
+label-occupied =%name%
 label-occupied-padding = 1
 
-label-urgent = %name%
+label-urgent =%name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
-label-empty = %name%
+label-empty =%name%
 label-empty-foreground = ${colors.disabled}
 label-empty-padding = 1
 
@@ -156,7 +158,8 @@ label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
 [module/wlan]
 inherit = network-base
 interface-type = wireless
-label-connected = %{F#d79921} %{F-} %essid%
+label-connected = %{F#d79921} %{F-} %essid:1:8:...%
+label-disconnected = %{F#cc241d} %{F-} Disconnected 
 
 ; [module/eth]
 ; inherit = network-base

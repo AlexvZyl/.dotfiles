@@ -6,12 +6,109 @@
 @theme "~/.config/rofi/themes/gruvbox-dark-hard.rasi"
 
 configuration {
-    display-drun: "Applications";
-    display-window: "Windows";
-    display-run: "Run";
+    display-drun: "  Applications";
+    display-window: "   Windows";
+    display-run: "  Run";
     show-icons: true;
     icon-theme: "Papirus";
     font: "JetBrainsMono Nerd Font Medium 12";
     drun-display-format:  "{icon} {name}";
+    run-display-format:  "{name}";
     modi: "window,run,drun";
+    terminal: "alacritty";
+    hide-scrollbar: true;
+}
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    height: 52.5%;
+    width: 35%;
+    /* border: 3px; */
+    border-color: @border-col;
+    background-color: @bg-col;
+    border-radius: 12px;
+}
+
+mainbox {
+    background-color: @bg-col;
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: @bg-col;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: @blue;
+    padding: 6px;
+    text-color: @bg-col;
+    border-radius: 8px;
+    margin: 20px 0px 0px 20px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    margin: 20px 0px 0px 10px;
+    text-color: @fg-col;
+    background-color: @bg-col;
+}
+
+listview {
+    padding: 10 10 0;
+    margin: 10 10 0 10;
+    columns: 5;
+    background-color: @bg-col;
+}
+
+element {
+    padding: 15 10 15;
+    background-color: @bg-col;
+    text-color: @fg-col  ;
+    orientation: vertical;
+}
+
+element-icon {
+    size: 56px;
+    horizontal-align: 0.5;
+}
+
+element selected {
+    background-color:  @selected-col ;
+    text-color: @blue ;
+    border-radius: 8px;
+}
+
+element-text {
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+    expand: true;
+    font: "JetBrainsMono Nerd Font Medium 10";
+  }
+
+mode-switcher {
+    spacing: 0;
+  }
+
+button {
+    padding: 10px;
+    background-color: @bg-col;
+    text-color: @empty;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+button selected {
+  background-color: @bg-col;
+  text-color: @blue;
 }

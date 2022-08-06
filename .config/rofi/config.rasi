@@ -47,7 +47,7 @@ inputbar {
 prompt {
     background-color: @blue;
     padding: 6px;
-    text-color: @bg-col;
+    text-color: @gruvbox-dark-yellow-light;
     border-radius: 8px;
     margin: 20px 0px 0px 20px;
 }
@@ -60,7 +60,7 @@ textbox-prompt-colon {
 entry {
     padding: 6px;
     margin: 20px 0px 0px 10px;
-    text-color: @fg-col;
+    text-color: @gruvbox-dark-fg0;
     background-color: @bg-col;
 }
 

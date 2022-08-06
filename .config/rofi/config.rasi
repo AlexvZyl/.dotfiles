@@ -30,7 +30,7 @@ window {
     /* border: 3px; */
     border-color: @border-col;
     background-color: @bg-col;
-    border-radius: 12px;
+    border-radius: 0px;
 }
 
 mainbox {

@@ -11,8 +11,9 @@ sudo sh -c "echo 'options hid_apple fnmode=2' >> $FILE"
 yay -S libpamac-aur pamac-aur
 
 # Browser.
-sudo pamac install brave-bin --no-confirm
-sudo pamac remove firefox --no-confirm
+# Keep firefox since some programs use it by default.
+# (for example cargo)
+sudo pamac install firefox brave-bin --no-confirm
 
 # Office.
 sudo pamac install onlyoffice-bin --no-confirm

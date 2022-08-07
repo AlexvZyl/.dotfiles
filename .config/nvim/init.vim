@@ -55,9 +55,9 @@ Plug 'prabirshrestha/vim-lsp'
 " Julia.
 Plug 'JuliaEditorSupport/julia-vim'
 " Rust.
-Plug 'simrat39/rust-tools.nvim'
-Plug 'mfussenegger/nvim-dap' " Debugger?
-Plug 'rust-lang/rust.vim'
+" Plug 'simrat39/rust-tools.nvim'
+" Plug 'mfussenegger/nvim-dap' " Debugger?
+" Plug 'rust-lang/rust.vim'
 " Lua.
 Plug 'sumneko/lua-language-server' 
 
@@ -286,6 +286,7 @@ EOF
 
 " Neovide settings.
 let g:neovide_transparency=1
+" let g:neovide_transparency=0.9
 let g:neovide_fullscreen=v:false
 let g:neovide_profiler=v:false
 let g:neovide_cursor_animation_length=0.004

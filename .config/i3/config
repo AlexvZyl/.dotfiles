@@ -629,3 +629,10 @@ bindsym $mod+Shift+s exec flameshot gui
 # client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
 # client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
 # client.urgent           $red $red $white $red $red
+
+###################
+# Focus settings: #
+###################
+
+focus_follows_mouse no
+mouse_warping none 

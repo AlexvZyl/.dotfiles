@@ -17,6 +17,9 @@ sudo pamac remove firefox --no-confirm
 # Office.
 sudo pamac install onlyoffice-bin --no-confirm
 
+# Some aesthetic stuff.
+sudo pamac install cmatrix bonsai.sh-git pipes.sh --no-confirm
+
 # Fonts.  This is very large, maybe use smaller package.
 sudo pamac install nerd-fonts-complete --no-confirm
 

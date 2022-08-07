@@ -449,6 +449,8 @@ vnoremap <silent> <C-Y> <Cmd>redo<CR>
 
 " Zen mode.
 nnoremap <silent> <C-a> <Cmd>TZAtaraxis<CR>
+vnoremap <silent> <C-a> <Cmd>TZAtaraxis<CR>
+inoremap <silent> <C-a> <Cmd>TZAtaraxis<CR>
 
 " -------------------------
 " RUST PLUGIN CONFIGURARION

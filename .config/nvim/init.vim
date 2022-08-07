@@ -22,6 +22,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/bufferline.nvim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'mhinz/vim-startify'
+Plug 'Pocco81/true-zen.nvim' " Zen mode!
 
 " Git.
 Plug 'tpope/vim-fugitive'
@@ -77,8 +78,6 @@ call plug#end()
 
 lua <<EOF
 
--- require("rust-tools").setup({})
-
 -- Lualine setup.
 
 require("lualine").setup({
@@ -90,6 +89,19 @@ require("lualine").setup({
         "nvim-tree"
     }
 })
+
+-- Zen mode.
+
+require("true-zen").setup {
+    modes = {
+        ataraxis = {
+
+        }
+    },
+    integrations = {
+        lualine = true
+    }
+}
 
 -- Setup neoscroll.
 
@@ -433,6 +445,9 @@ vnoremap <silent> <C-Z> <Cmd>undo<CR>
 nnoremap <silent> <C-Y> <Cmd>redo<CR>
 inoremap <silent> <C-Y> <Cmd>redo<CR>
 vnoremap <silent> <C-Y> <Cmd>redo<CR>
+
+" Zen mode.
+nnoremap <silent> <C-a> <Cmd>TZAtaraxis<CR>
 
 " -------------------------
 " RUST PLUGIN CONFIGURARION

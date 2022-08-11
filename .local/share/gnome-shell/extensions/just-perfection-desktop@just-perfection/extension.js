@@ -30,6 +30,8 @@ const Workspace = imports.ui.workspace;
 const LookingGlass = imports.ui.lookingGlass;
 const MessageTray = imports.ui.messageTray;
 const OSDWindow = imports.ui.osdWindow;
+const WindowMenu = imports.ui.windowMenu;
+const AltTab = imports.ui.altTab;
 
 let manager;
 let api;
@@ -75,6 +77,8 @@ function enable()
         LookingGlass,
         MessageTray,
         OSDWindow,
+        WindowMenu,
+        AltTab,
         St,
         Gio,
         GLib,

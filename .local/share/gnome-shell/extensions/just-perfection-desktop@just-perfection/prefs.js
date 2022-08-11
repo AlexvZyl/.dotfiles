@@ -22,13 +22,15 @@ const binFolderPath = Me.dir.get_child('bin').get_path();
 /**
  * prefs widget
  *
+ * @param {boolean} isAdw whether it is calling for adw ui
+ *
  * @returns {Prefs.Prefs}
  */
-function getPrefs()
+function getPrefs(isAdw)
 {
     let builder = new Gtk.Builder();
     let settings = ExtensionUtils.getSettings();
-    let prefsKeys = new PrefsKeys.PrefsKeys(shellVersion);
+    let prefsKeys = new PrefsKeys.PrefsKeys(shellVersion, isAdw);
 
     return new Prefs.Prefs(
         {
@@ -62,7 +64,7 @@ function init()
  */
 function fillPreferencesWindow(window)
 {
-    getPrefs().fillPrefsWindow(window, UIFolderPath, binFolderPath, gettextDomain);
+    getPrefs(true).fillPrefsWindow(window, UIFolderPath, binFolderPath, gettextDomain);
 }
 
 /**
@@ -72,6 +74,6 @@ function fillPreferencesWindow(window)
  */
 function buildPrefsWidget()
 {
-    return getPrefs().getMainPrefs(UIFolderPath, binFolderPath, gettextDomain);
+    return getPrefs(false).getPrefsWidget(UIFolderPath, binFolderPath, gettextDomain);
 }
 

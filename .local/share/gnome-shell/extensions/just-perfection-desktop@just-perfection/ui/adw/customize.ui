@@ -103,6 +103,49 @@
           </object>
         </child>
 
+        <child>
+          <object class="AdwComboRow" id="osd_position_row">
+            <property name="title" translatable="yes">OSD Position</property>
+            <property name="subtitle" translatable="yes">OSD position when on screen display shows up on the screen</property>
+            <property name="model">osd_position_model</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwComboRow" id="alt_tab_window_preview_size_row">
+            <property name="title" translatable="yes">Alt Tab Window Preview Size</property>
+            <property name="model">alt_tab_window_preview_size_model</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwComboRow" id="alt_tab_small_icon_size_row">
+            <property name="title" translatable="yes">Alt Tab Window Preview Icon Size</property>
+            <property name="model">alt_tab_small_icon_size_model</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwComboRow" id="alt_tab_icon_size_row">
+            <property name="title" translatable="yes">Alt Tab Icon Size</property>
+            <property name="model">alt_tab_icon_size_model</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwComboRow" id="looking_glass_width_row">
+            <property name="title" translatable="yes">Looking Glass Width</property>
+            <property name="model">looking_glass_width_model</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwComboRow" id="looking_glass_height_row">
+            <property name="title" translatable="yes">Looking Glass Height</property>
+            <property name="model">looking_glass_height_model</property>
+          </object>
+        </child>
+
       </object>
     </child>
     
@@ -605,6 +648,84 @@
       <item translatable="yes">Bottom Start</item>
       <item translatable="yes">Bottom Center</item>
       <item translatable="yes">Bottom End</item>
+    </items>
+  </object>
+
+  <object class="GtkStringList" id="osd_position_model">
+    <items>
+      <item translatable="yes">Default</item>
+      <item translatable="yes">Top Start</item>
+      <item translatable="yes">Top Center</item>
+      <item translatable="yes">Top End</item>
+      <item translatable="yes">Bottom Start</item>
+      <item translatable="yes">Bottom Center</item>
+      <item translatable="yes">Bottom End</item>
+      <item translatable="yes">Center Start</item>
+      <item translatable="yes">Center</item>
+      <item translatable="yes">Center End</item>
+    </items>
+  </object>
+
+  <object class="GtkStringList" id="alt_tab_window_preview_size_model">
+    <items>
+      <item translatable="yes">Default</item>
+      <item>32</item>
+      <item>64</item>
+      <item>128</item>
+      <item>256</item>
+      <item>512</item>
+    </items>
+  </object>
+
+  <object class="GtkStringList" id="alt_tab_small_icon_size_model">
+    <items>
+      <item translatable="yes">Default</item>
+      <item>32</item>
+      <item>64</item>
+      <item>128</item>
+      <item>256</item>
+      <item>512</item>
+    </items>
+  </object>
+
+  <object class="GtkStringList" id="alt_tab_icon_size_model">
+    <items>
+      <item translatable="yes">Default</item>
+      <item>32</item>
+      <item>64</item>
+      <item>128</item>
+      <item>256</item>
+      <item>512</item>
+    </items>
+  </object>
+
+  <object class="GtkStringList" id="looking_glass_width_model">
+    <items>
+      <item translatable="yes">Default</item>
+      <item>10%</item>
+      <item>20%</item>
+      <item>30%</item>
+      <item>40%</item>
+      <item>50%</item>
+      <item>60%</item>
+      <item>70%</item>
+      <item>80%</item>
+      <item>90%</item>
+    </items>
+  </object>
+
+  <object class="GtkStringList" id="looking_glass_height_model">
+    <items>
+      <item translatable="yes">Default</item>
+      <item>10%</item>
+      <item>20%</item>
+      <item>30%</item>
+      <item>40%</item>
+      <item>50%</item>
+      <item>60%</item>
+      <item>70%</item>
+      <item>80%</item>
+      <item>90%</item>
     </items>
   </object>
 

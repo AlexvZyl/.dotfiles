@@ -386,6 +386,7 @@ nnoremap <silent> gb :BufferLinePick<CR>
 
 " File explorer.
 nnoremap <silent> <F2> <Cmd>Telescope find_files<CR>
+
 nnoremap <silent> <F1> <Cmd>NvimTreeToggle<CR>
 inoremap <silent> <F1> <Cmd>NvimTreeToggle<CR>
 vnoremap <silent> <F1> <Cmd>NvimTreeToggle<CR>
@@ -437,6 +438,11 @@ vnoremap <silent> <C-TAB> <Cmd>Telescope buffers<CR>
 nnoremap <silent> <C-f> <Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>
 inoremap <silent> <C-f> <Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>
 vnoremap <silent> <C-f> <Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>
+
+" Disable the search highlight when hitting esc.
+nnoremap <silent> <Esc> <Cmd>noh<CR>
+inoremap <silent> <Esc> <Cmd>stopinsert<CR> <Cmd>noh<CR>
+vnoremap <silent> <Esc> <Cmd>noh<CR>
 
 " Redo and undo.
 nnoremap <silent> U     <Cmd><CR>

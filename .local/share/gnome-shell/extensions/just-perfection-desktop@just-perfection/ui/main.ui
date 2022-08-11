@@ -7,12 +7,6 @@
   <menu id="primary_menu">
     <section>
       <item>
-        <attribute name="label" translatable="yes">Preferences Intro</attribute>
-        <attribute name="action">prefs.show-intro</attribute>
-      </item>
-    </section>
-    <section>
-      <item>
         <attribute name="label" translatable="yes">Bug Report</attribute>
         <attribute name="action">prefs.show-bug-report</attribute>
       </item>
@@ -145,7 +139,7 @@
     <child>
       <object class="GtkScrolledWindow" id="items_container">
         <property name="width-request">450</property>
-        <property name="height-request">640</property>
+        <property name="height-request">450</property>
         <property name="hscrollbar-policy">never</property>
         <property name="visible">True</property>
         <property name="can-focus">True</property>

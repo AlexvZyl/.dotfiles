@@ -6,6 +6,38 @@ We go to the next version after each release on [GNOME Shell Extensions website]
 
 ## [Unreleased]
 
+## [21.0.0 Reynolds] - 2022-08-06
+
+### Changed
+
+- Prefs compatibility layer checking to GTK and Adw instead of GNOME Shell version.
+
+### Fixed
+
+- Application button visibility in Ubuntu 22.04.
+- Prefs window size for scaled displays.
+- Prefs window size for small displays in GNOME Shell 42.
+- Racy prefs window size.
+- Window caption going out of display area when dash is disabled in GNOME Shell 40 and higher.
+- Russian translation by [@librusekus35790](https://gitlab.gnome.org/librusekus35790).
+- Spanish translation by [@Luci](https://gitlab.gnome.org/Luci).
+
+### Added
+
+- Alt Tab window preview icon size.
+- Alt Tab window preview size.
+- Alt Tab icon size.
+- Dash separator visibility.
+- Looking glass size by [@AdvendraDeswanta](https://gitlab.gnome.org/AdvendraDeswanta).
+- OSD position.
+- Take screenshot button in window menu visibility.
+
+### Removed
+
+- Gesture API for GNOME Shell 40 and higher.
+- List box separators for GNOME Shell 40 and 41 (EOS).
+- Prefs intro.
+
 ## [20.0.0 Hayez] - 2022-04-01
 
 ### Fixed
@@ -368,4 +400,4 @@ We go to the next version after each release on [GNOME Shell Extensions website]
 - Hide workspace switcher.
 - Hot corner to toggle overview visibility.
 
-
+.

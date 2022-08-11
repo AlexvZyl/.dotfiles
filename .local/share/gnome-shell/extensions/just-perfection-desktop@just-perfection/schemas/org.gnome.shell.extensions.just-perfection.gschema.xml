@@ -4,12 +4,6 @@
   <schema id="org.gnome.shell.extensions.just-perfection"
     path="/org/gnome/shell/extensions/just-perfection/">
     
-    <key type="b" name="show-prefs-intro">
-      <default>true</default>
-      <summary>Show Prefs Intro</summary>
-      <description>Show Prefs Intro Status</description>
-    </key>
-    
     <key type="b" name="panel">
       <default>true</default>
       <summary>Panel</summary>
@@ -342,7 +336,60 @@
       <description>Panel Icon Size</description>
     </key>
     
+    <key type="b" name="dash-separator">
+      <default>true</default>
+      <summary>Dash Separator Visibility</summary>
+      <description>Dash Separator Visibility Status</description>
+    </key>
+
+    <key type="i" name="looking-glass-width">
+      <default>0</default>
+      <range min="0" max="9"/>
+      <summary>Width Size in percent, 0 means use default size</summary>
+      <description>Looking Glass Width size</description>
+    </key>
+
+    <key type="i" name="looking-glass-height">
+      <default>0</default>
+      <range min="0" max="9"/>
+      <summary>Height Size in percent, 0 means use default size</summary>
+      <description>Looking Glass Height size</description>
+    </key>
+
+    <key type="i" name="osd-position">
+      <default>0</default>
+      <range min="0" max="9"/>
+      <summary>OSD Position</summary>
+      <description>OSD Position Status</description>
+    </key>
+
+    <key type="b" name="window-menu-take-screenshot-button">
+      <default>true</default>
+      <summary>Window Menu Take Screenshot Button Visibility</summary>
+      <description>Window Menu Take Screenshot Button Visibility Status</description>
+    </key>
+
+    <key type="i" name="alt-tab-window-preview-size">
+      <default>0</default>
+      <range min="0" max="512"/>
+      <summary>0 means default size</summary>
+      <description>Alt Tab Window Preview Size</description>
+    </key>
+
+    <key type="i" name="alt-tab-small-icon-size">
+      <default>0</default>
+      <range min="0" max="512"/>
+      <summary>0 means default size</summary>
+      <description>Alt Tab Small Icon Size (Window Preview Icon Size)</description>
+    </key>
+
+    <key type="i" name="alt-tab-icon-size">
+      <default>0</default>
+      <range min="0" max="512"/>
+      <summary>0 means default size</summary>
+      <description>Alt Tab Icon Size</description>
+    </key>
+
   </schema>
   
 </schemalist>
-

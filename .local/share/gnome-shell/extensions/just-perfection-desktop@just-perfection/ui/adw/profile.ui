@@ -106,42 +106,6 @@
     </child>
 
     <child>
-      <object class="AdwPreferencesGroup" id="intro">
-
-        <child>
-          
-          <object class="GtkBox">
-            <property name="can-focus">False</property>
-            <property name="valign">center</property>
-            <property name="halign">center</property>
-
-            <child>
-              <object class="GtkLinkButton">
-                <property name="can-focus">True</property>
-                <property name="halign">start</property>
-                <property name="valign">start</property>
-                <property name="hexpand">0</property>
-                <property name="vexpand">0</property>
-                <property name="uri">https://www.patreon.com/justperfection</property>
-
-                <child>
-                  <object class="GtkBox" id="intro_image_box">
-                    <property name="can-focus">False</property>
-                    <property name="halign">center</property>
-                    <property name="orientation">vertical</property>
-                  </object>
-                </child>
-              
-              </object>
-            </child>
-                
-          </object>
-        </child>
-
-      </object>
-    </child>
-
-    <child>
       <object class="AdwPreferencesGroup" id="override_group">
         <property name="title" translatable="yes">Override</property>
         
@@ -152,25 +116,6 @@
             <property name="activatable-widget">theme_switch</property>
             <child>
               <object class="GtkSwitch" id="theme_switch">
-                <property name="valign">center</property>
-              </object>
-            </child>
-          </object>
-        </child>
-        
-      </object>
-    </child>
-
-    <child>
-      <object class="AdwPreferencesGroup" id="prefs_group">
-        <property name="title" translatable="yes">Preferences Intro</property>
-        
-        <child>
-          <object class="AdwActionRow" id="prefs_intro_row">
-            <property name="title" translatable="yes">Preferences Intro</property>
-            <property name="activatable-widget">prefs_intro_switch</property>
-            <child>
-              <object class="GtkSwitch" id="prefs_intro_switch">
                 <property name="valign">center</property>
               </object>
             </child>

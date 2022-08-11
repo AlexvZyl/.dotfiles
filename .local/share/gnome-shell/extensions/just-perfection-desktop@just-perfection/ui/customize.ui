@@ -1193,6 +1193,388 @@
               </object>
             </child>
             
+            <child>
+              <object class="GtkListBoxRow" id="osd_position_row">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                
+                <child>
+                  <object class="GtkBox" id="osd_position_box">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="margin-start">12</property>
+                    <property name="margin-end">12</property>
+                    <property name="margin-top">12</property>
+                    <property name="margin-bottom">12</property>
+                    <property name="orientation">vertical</property>
+                    
+                    <child>
+                      <object class="GtkBox" id="osd_position_box2">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="spacing">32</property>
+                        
+                        <child>
+                          <object class="GtkBox">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="orientation">vertical</property>
+                            
+                            <child>
+                              <object class="GtkLabel" id="osd_position_txt">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <property name="valign">center</property>
+                                <property name="label" translatable="yes">OSD Position</property>
+                                <property name="xalign">0</property>
+                                <property name="hexpand">1</property>
+                              </object>
+                            </child>
+                          
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <property name="valign">center</property>
+                                <property name="label" translatable="yes">OSD position when on screen display shows up on the screen</property>
+                                <property name="xalign">0</property>
+                                <property name="wrap">True</property>
+                                <property name="width-chars">0</property>
+                                <property name="margin-top">12</property>
+                                <style>
+                                  <class name="dim-label"/>
+                                </style>
+                                <attributes>
+                                  <attribute name="scale" value="0.9"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            
+                          </object>
+                        </child>
+                        
+                        <child>
+                          <object class="GtkComboBoxText" id="osd_position_comboboxtext">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="valign">center</property>
+                            <items>
+                              <item translatable="yes">Default</item>
+                              <item translatable="yes">Top Start</item>
+                              <item translatable="yes">Top Center</item>
+                              <item translatable="yes">Top End</item>
+                              <item translatable="yes">Bottom Start</item>
+                              <item translatable="yes">Bottom Center</item>
+                              <item translatable="yes">Bottom End</item>
+                              <item translatable="yes">Center Start</item>
+                              <item translatable="yes">Center</item>
+                              <item translatable="yes">Center End</item>
+                            </items>
+                          </object>
+                        </child>
+                        
+                      </object>
+                    </child>
+                    
+                  </object>
+                </child>
+                
+              </object>
+            </child>
+            
+            <child>
+              <object class="GtkListBoxRow" id="alt_tab_window_preview_size_row">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                
+                <child>
+                  <object class="GtkBox" id="alt_tab_window_preview_size_box">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="margin-start">12</property>
+                    <property name="margin-end">12</property>
+                    <property name="margin-top">12</property>
+                    <property name="margin-bottom">12</property>
+                    <property name="orientation">vertical</property>
+                    
+                    <child>
+                      <object class="GtkBox" id="alt_tab_window_preview_size_box2">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="spacing">32</property>
+                        
+                        <child>
+                          <object class="GtkLabel" id="alt_tab_window_preview_size_txt">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="valign">center</property>
+                            <property name="label" translatable="yes">Alt Tab Window Preview Size</property>
+                            <property name="xalign">0</property>
+                            <property name="hexpand">1</property>
+                          </object>
+                        </child>
+                        
+                        <child>
+                          <object class="GtkComboBoxText" id="alt_tab_window_preview_size_comboboxtext">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="valign">center</property>
+                            <items>
+                              <item translatable="yes">Default</item>
+                              <item>32</item>
+                              <item>64</item>
+                              <item>128</item>
+                              <item>256</item>
+                              <item>512</item>
+                            </items>
+                          </object>
+                        </child>
+                        
+                      </object>
+                    </child>
+                    
+                  </object>
+                </child>
+                
+              </object>
+            </child>
+            
+            <child>
+              <object class="GtkListBoxRow" id="alt_tab_small_icon_size_row">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                
+                <child>
+                  <object class="GtkBox" id="alt_tab_small_icon_size_box">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="margin-start">12</property>
+                    <property name="margin-end">12</property>
+                    <property name="margin-top">12</property>
+                    <property name="margin-bottom">12</property>
+                    <property name="orientation">vertical</property>
+                    
+                    <child>
+                      <object class="GtkBox" id="alt_tab_small_icon_size_box2">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="spacing">32</property>
+                        
+                        <child>
+                          <object class="GtkLabel" id="alt_tab_small_icon_size_txt">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="valign">center</property>
+                            <property name="label" translatable="yes">Alt Tab Window Preview Icon Size</property>
+                            <property name="xalign">0</property>
+                            <property name="hexpand">1</property>
+                          </object>
+                        </child>
+                        
+                        <child>
+                          <object class="GtkComboBoxText" id="alt_tab_small_icon_size_comboboxtext">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="valign">center</property>
+                            <items>
+                              <item translatable="yes">Default</item>
+                              <item>32</item>
+                              <item>64</item>
+                              <item>128</item>
+                              <item>256</item>
+                              <item>512</item>
+                            </items>
+                          </object>
+                        </child>
+                        
+                      </object>
+                    </child>
+                    
+                  </object>
+                </child>
+                
+              </object>
+            </child>
+
+            <child>
+              <object class="GtkListBoxRow" id="alt_tab_icon_size_row">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                
+                <child>
+                  <object class="GtkBox" id="alt_tab_icon_size_box">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="margin-start">12</property>
+                    <property name="margin-end">12</property>
+                    <property name="margin-top">12</property>
+                    <property name="margin-bottom">12</property>
+                    <property name="orientation">vertical</property>
+                    
+                    <child>
+                      <object class="GtkBox" id="alt_tab_icon_size_box2">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="spacing">32</property>
+                        
+                        <child>
+                          <object class="GtkLabel" id="alt_tab_icon_size_txt">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="valign">center</property>
+                            <property name="label" translatable="yes">Alt Tab Icon Size</property>
+                            <property name="xalign">0</property>
+                            <property name="hexpand">1</property>
+                          </object>
+                        </child>
+                        
+                        <child>
+                          <object class="GtkComboBoxText" id="alt_tab_icon_size_comboboxtext">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="valign">center</property>
+                            <items>
+                              <item translatable="yes">Default</item>
+                              <item>32</item>
+                              <item>64</item>
+                              <item>128</item>
+                              <item>256</item>
+                              <item>512</item>
+                            </items>
+                          </object>
+                        </child>
+                        
+                      </object>
+                    </child>
+                    
+                  </object>
+                </child>
+                
+              </object>
+            </child>
+            
+            <child>
+              <object class="GtkListBoxRow" id="looking_glass_width_row">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                
+                <child>
+                  <object class="GtkBox" id="looking_glass_width_box">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="margin-start">12</property>
+                    <property name="margin-end">12</property>
+                    <property name="margin-top">12</property>
+                    <property name="margin-bottom">12</property>
+                    <property name="orientation">vertical</property>
+                    
+                    <child>
+                      <object class="GtkBox" id="looking_glass_width_box2">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="spacing">32</property>
+                        
+                        <child>
+                          <object class="GtkLabel" id="looking_glass_width_txt">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="valign">center</property>
+                            <property name="label" translatable="yes">Looking Glass Width</property>
+                            <property name="xalign">0</property>
+                            <property name="hexpand">1</property>
+                          </object>
+                        </child>
+                        
+                        <child>
+                          <object class="GtkComboBoxText" id="looking_glass_width_comboboxtext">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="valign">center</property>
+                            <items>
+                              <item translatable="yes">Default</item>
+                              <item>10%</item>
+                              <item>20%</item>
+                              <item>30%</item>
+                              <item>40%</item>
+                              <item>50%</item>
+                              <item>60%</item>
+                              <item>70%</item>
+                              <item>80%</item>
+                              <item>90%</item>
+                            </items>
+                          </object>
+                        </child>
+                        
+                      </object>
+                    </child>
+                    
+                  </object>
+                </child>
+                
+              </object>
+            </child>
+
+            <child>
+              <object class="GtkListBoxRow" id="looking_glass_height_row">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                
+                <child>
+                  <object class="GtkBox" id="looking_glass_height_box">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="margin-start">12</property>
+                    <property name="margin-end">12</property>
+                    <property name="margin-top">12</property>
+                    <property name="margin-bottom">12</property>
+                    <property name="orientation">vertical</property>
+                    
+                    <child>
+                      <object class="GtkBox" id="looking_glass_height_box2">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="spacing">32</property>
+                        
+                        <child>
+                          <object class="GtkLabel" id="looking_glass_height_txt">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="valign">center</property>
+                            <property name="label" translatable="yes">Looking Glass Height</property>
+                            <property name="xalign">0</property>
+                            <property name="hexpand">1</property>
+                          </object>
+                        </child>
+                        
+                        <child>
+                          <object class="GtkComboBoxText" id="looking_glass_height_comboboxtext">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="valign">center</property>
+                            <items>
+                              <item translatable="yes">Default</item>
+                              <item>10%</item>
+                              <item>20%</item>
+                              <item>30%</item>
+                              <item>40%</item>
+                              <item>50%</item>
+                              <item>60%</item>
+                              <item>70%</item>
+                              <item>80%</item>
+                              <item>90%</item>
+                            </items>
+                          </object>
+                        </child>
+                        
+                      </object>
+                    </child>
+                    
+                  </object>
+                </child>
+                
+              </object>
+            </child>
+            
           </object>
         </child>
         

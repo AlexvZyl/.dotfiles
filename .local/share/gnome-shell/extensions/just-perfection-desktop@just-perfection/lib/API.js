@@ -6,13 +6,16 @@
  * @license    GPL-3.0-only
  */
 
-const NOTIFICATION_BANNER_POSITION = {
+const XY_POSITION = {
     TOP_START: 0,
     TOP_CENTER: 1,
     TOP_END: 2,
     BOTTOM_START: 3,
     BOTTOM_CENTER: 4,
     BOTTOM_END: 5,
+    CENTER_START: 6,
+    CENTER_CENTER: 7,
+    CENTER_END: 8,
 };
 
 const PANEL_POSITION = {
@@ -68,6 +71,8 @@ var API = class
      *   'LookingGlass' reference to ui::lookingGlass
      *   'MessageTray' reference to ui::messageTray
      *   'OSDWindow' reference to ui::osdTray
+     *   'WindowMenu' reference to ui::windowMenu
+     *   'AltTab' reference to ui::altTab
      *   'St' reference to St
      *   'Gio' reference to Gio
      *   'GLib' reference to GLib
@@ -94,6 +99,8 @@ var API = class
         this._lookingGlass = dependencies['LookingGlass'] || null;
         this._messageTray = dependencies['MessageTray'] || null;
         this._osdWindow = dependencies['OSDWindow'] || null;
+        this._windowMenu = dependencies['WindowMenu'] || null;
+        this._altTab = dependencies['AltTab'] || null;
         this._st = dependencies['St'] || null;
         this._gio = dependencies['Gio'] || null;
         this._glib = dependencies['GLib'] || null;
@@ -147,6 +154,55 @@ var API = class
         for (let [name, id] of Object.entries(this._timeoutIds)) {
             this._glib.source_remove(id);
             delete(this._timeoutIds[name]);
+        }
+    }
+
+    /**
+     * get x and y align for position
+     *
+     * @param int pos position
+     *   see XY_POSITION
+     *
+     * @returns {array}
+     *  - 0 Clutter.ActorAlign
+     *  - 1 Clutter.ActorAlign
+     */
+    _xyAlignGet(pos)
+    {
+        if (XY_POSITION.TOP_START === pos) {
+            return [this._clutter.ActorAlign.START, this._clutter.ActorAlign.START];
+        }
+
+        if (XY_POSITION.TOP_CENTER === pos) {
+            return [this._clutter.ActorAlign.CENTER, this._clutter.ActorAlign.START];
+        }
+
+        if (XY_POSITION.TOP_END === pos) {
+            return [this._clutter.ActorAlign.END, this._clutter.ActorAlign.START];
+        }
+
+        if (XY_POSITION.CENTER_START === pos) {
+            return [this._clutter.ActorAlign.START, this._clutter.ActorAlign.CENTER];
+        }
+
+        if (XY_POSITION.CENTER_CENTER === pos) {
+            return [this._clutter.ActorAlign.CENTER, this._clutter.ActorAlign.CENTER];
+        }
+
+        if (XY_POSITION.CENTER_END === pos) {
+            return [this._clutter.ActorAlign.END, this._clutter.ActorAlign.CENTER];
+        }
+
+        if (XY_POSITION.BOTTOM_START === pos) {
+            return [this._clutter.ActorAlign.START, this._clutter.ActorAlign.END];
+        }
+
+        if (XY_POSITION.BOTTOM_CENTER === pos) {
+            return [this._clutter.ActorAlign.CENTER, this._clutter.ActorAlign.END];
+        }
+
+        if (XY_POSITION.BOTTOM_END === pos) {
+            return [this._clutter.ActorAlign.END, this._clutter.ActorAlign.END];
         }
     }
 
@@ -209,6 +265,10 @@ var API = class
      *  no-world-clocks
      *  panel-icon-size
      *  no-events-button
+     *  osd-position-top
+     *  osd-position-bottom
+     *  osd-position-center
+     *  no-dash-separator
      *
      * @returns {string}
      */
@@ -245,6 +305,10 @@ var API = class
             'no-world-clocks',
             'panel-icon-size',
             'no-events-button',
+            'osd-position-top',
+            'osd-position-bottom',
+            'osd-position-center',
+            'no-dash-separator',
         ];
 
         if (!possibleTypes.includes(type)) {
@@ -637,6 +701,8 @@ var API = class
             this._main.overview.dash.width = -1;
             this._main.overview.dash._maxHeight = -1;
         }
+
+        this._updateWindowPreviewOverlap();
     }
 
     /**
@@ -659,6 +725,36 @@ var API = class
         } else {
             this._main.overview.dash.width = 0;
         }
+
+        this._updateWindowPreviewOverlap();
+    }
+
+    /**
+     * update window preview overlap
+     *
+     * @returns {void}
+     */
+    _updateWindowPreviewOverlap()
+    {
+        if (this._shellVersion < 40) {
+            return;
+        }
+        
+        let wpp = this._windowPreview.WindowPreview.prototype;
+        
+        if (this.isDashVisible() && wpp.overlapHeightsOld) {
+            wpp.overlapHeights = wpp.overlapHeightsOld;
+            delete(wpp.overlapHeightsOld);
+            return;
+        }
+        
+        if (!this.isDashVisible()) {
+            wpp.overlapHeightsOld = wpp.overlapHeights;
+            wpp.overlapHeights = function () {
+                let [top, bottom] = this.overlapHeightsOld();
+                return [top + 24, bottom + 24];
+            };
+        }
     }
 
     /**
@@ -668,6 +764,10 @@ var API = class
      */
     gestureEnable()
     {
+        if (this._shellVersion >= 40) {
+            return;
+        }
+
         global.stage.get_actions().forEach(a => {
             a.enabled = true;
         });
@@ -680,6 +780,10 @@ var API = class
      */
     gestureDisable()
     {
+        if (this._shellVersion >= 40) {
+            return;
+        }
+
         global.stage.get_actions().forEach(a => {
             a.enabled = false;
         });
@@ -1194,16 +1298,6 @@ var API = class
     }
 
     /**
-     * toggle overview visibility
-     *
-     * @returns {void}
-     */
-    overviewToggle()
-    {
-        this._main.overview.toggle();
-    }
-
-    /**
      * add element to stage
      *
      * @param {St.Widget} element widget 
@@ -1424,11 +1518,7 @@ var API = class
      */
     isLocked()
     {
-        if (this._main.sessionMode.currentMode === 'unlock-dialog') {
-            return true;
-        }
-
-        return false;
+        return this._main.sessionMode.isLocked;
     }
 
     /**
@@ -1739,12 +1829,7 @@ var API = class
      */
     showAppsButtonEnable()
     {
-        if (!this._main.overview.dash) {
-            return;
-        }
-
-        let container = this._main.overview.dash.showAppsButton.get_parent();
-        container.remove_style_class_name(this._getAPIClassname('no-show-apps-button'));
+        this.UIStyleClassRemove(this._getAPIClassname('no-show-apps-button'));
     }
 
     /**
@@ -1754,12 +1839,7 @@ var API = class
      */
     showAppsButtonDisable()
     {
-        if (!this._main.overview.dash) {
-            return;
-        }
-
-        let container = this._main.overview.dash.showAppsButton.get_parent();
-        container.add_style_class_name(this._getAPIClassname('no-show-apps-button'));
+        this.UIStyleClassAdd(this._getAPIClassname('no-show-apps-button'));
     }
 
     /**
@@ -2168,7 +2248,7 @@ var API = class
      * change notification banner position
      *
      * @param {number} pos
-     *   see NOTIFICATION_BANNER_POSITION for available positions
+     *   see XY_POSITION for available positions
      *
      * @returns {void}
      */
@@ -2194,17 +2274,17 @@ var API = class
 
         bannerBin.set_y_align(this._clutter.ActorAlign.START);
 
-        if (pos === NOTIFICATION_BANNER_POSITION.TOP_START) {
+        if (pos === XY_POSITION.TOP_START) {
             messageTray.bannerAlignment = this._clutter.ActorAlign.START;
             return;
         }
 
-        if (pos === NOTIFICATION_BANNER_POSITION.TOP_END) {
+        if (pos === XY_POSITION.TOP_END) {
             messageTray.bannerAlignment = this._clutter.ActorAlign.END;
             return;
         }
 
-        if (pos === NOTIFICATION_BANNER_POSITION.TOP_CENTER) {
+        if (pos === XY_POSITION.TOP_CENTER) {
             messageTray.bannerAlignment = this._clutter.ActorAlign.CENTER;
             return;
         }
@@ -2271,17 +2351,17 @@ var API = class
 
         bannerBin.set_y_align(this._clutter.ActorAlign.END);
 
-        if (pos === NOTIFICATION_BANNER_POSITION.BOTTOM_START) {
+        if (pos === XY_POSITION.BOTTOM_START) {
             messageTray.bannerAlignment = this._clutter.ActorAlign.START;
             return;
         }
 
-        if (pos === NOTIFICATION_BANNER_POSITION.BOTTOM_END) {
+        if (pos === XY_POSITION.BOTTOM_END) {
             messageTray.bannerAlignment = this._clutter.ActorAlign.END;
             return;
         }
 
-        if (pos === NOTIFICATION_BANNER_POSITION.BOTTOM_CENTER) {
+        if (pos === XY_POSITION.BOTTOM_CENTER) {
             messageTray.bannerAlignment = this._clutter.ActorAlign.CENTER;
             return;
         }
@@ -2695,71 +2775,103 @@ var API = class
      *
      * @returns {void}
      */
-    osdSetDefaultPosition()
+    osdPositionSetDefault()
     {
-        if (!this._originals['osdWindowRelayout']) {
+        if (this._shellVersion < 42) {
+            return;
+        }
+
+        if (!this._originals['osdWindowShow']) {
             return;
         }
 
         let osdWindowProto = this._osdWindow.OsdWindow.prototype;
 
-        osdWindowProto._relayout = this._originals['osdWindowRelayout'];
+        osdWindowProto.show = this._originals['osdWindowShow'];
 
-        delete(osdWindowProto._oldRelayout);
-        delete(this._originals['osdWindowRelayout']);
+        delete(osdWindowProto._oldShow);
+        delete(this._originals['osdWindowShow']);
+        
+        if (
+            this._originals['osdWindowXAlign'] !== undefined && 
+            this._originals['osdWindowYAlign'] !== undefined
+        ) {
+            let osdWindows = this._main.osdWindowManager._osdWindows;
+            osdWindows.forEach(osdWindow => {
+                osdWindow.x_align = this._originals['osdWindowXAlign'];
+                osdWindow.y_align = this._originals['osdWindowYAlign'];
+            });
+            delete(this._originals['osdWindowXAlign']);
+            delete(this._originals['osdWindowYAlign']);
+        }
 
-        let osdWindows = this._main.osdWindowManager._osdWindows;
-        osdWindows.forEach(osdWindow => {
-            osdWindow._box.translation_x = 0;
-            osdWindow._relayout();
-        });
+        this.UIStyleClassRemove(this._getAPIClassname('osd-position-top'));
+        this.UIStyleClassRemove(this._getAPIClassname('osd-position-bottom'));
+        this.UIStyleClassRemove(this._getAPIClassname('osd-position-center'));
     }
 
     /**
      * set OSD position
      *
-     * @param int x percentage 0 - 100
-     * @param int y percentage 0 - 100
+     * @param int pos position XY_POSITION
      *
      * @returns {void}
      */
-    osdSetPosition(x, y)
+    osdPositionSet(pos)
     {
+        if (this._shellVersion < 42) {
+            return;
+        }
+
         let osdWindowProto = this._osdWindow.OsdWindow.prototype;
 
-        if (!this._originals['osdWindowRelayout']) {
-            this._originals['osdWindowRelayout'] = osdWindowProto._relayout;
+        if (!this._originals['osdWindowShow']) {
+            this._originals['osdWindowShow'] = osdWindowProto.show;
         }
 
-        if (osdWindowProto._oldRelayout === undefined) {
-            osdWindowProto._oldRelayout = this._originals['osdWindowRelayout'];
+        if (
+            this._originals['osdWindowXAlign'] === undefined || 
+            this._originals['osdWindowYAlign'] === undefined
+        ) {
+            let osdWindows = this._main.osdWindowManager._osdWindows;
+            this._originals['osdWindowXAlign'] = osdWindows[0].x_align;
+            this._originals['osdWindowYAlign'] = osdWindows[0].y_align;
         }
 
-        const Main = this._main;
+        if (osdWindowProto._oldShow === undefined) {
+            osdWindowProto._oldShow = this._originals['osdWindowShow'];
+        }
 
-        osdWindowProto._relayout = function () {
-            this._oldRelayout();
-
-            let monitor = Main.layoutManager.monitors[this._monitorIndex];
-            if (!monitor) {
-                return;
-            }
-
-            let negativeX = (x < 50) ? -1 : 1;
-            let negativeY = (y < 50) ? -1 : 1;
-
-            // TODO we need to get actual size of OSD and then subtract to half of that
-            // so we have more accurate translation for both x and y
-            this._box.translation_x
-            = Math.round((monitor.width * x) / 100 - (monitor.width / 2)) * negativeX;
-            this._box.translation_y
-            = Math.round((monitor.height * y) / 100 - (monitor.height / 2)) * negativeY;
+        let [xAlign, yAlign] = this._xyAlignGet(pos);
+        osdWindowProto.show = function () {
+            this.x_align = xAlign;
+            this.y_align = yAlign;
+            this._oldShow();
         };
 
-        let osdWindows = this._main.osdWindowManager._osdWindows;
-        osdWindows.forEach(osdWindow => {
-            osdWindow._relayout();
-        });
+        if (
+            pos === XY_POSITION.TOP_START ||
+            pos === XY_POSITION.TOP_CENTER ||
+            pos === XY_POSITION.TOP_END
+        ) {
+            this.UIStyleClassAdd(this._getAPIClassname('osd-position-top'));
+        }
+        
+        if (
+            pos === XY_POSITION.BOTTOM_START ||
+            pos === XY_POSITION.BOTTOM_CENTER ||
+            pos === XY_POSITION.BOTTOM_END
+        ) {
+            this.UIStyleClassAdd(this._getAPIClassname('osd-position-bottom'));
+        }
+        
+        if (
+            pos === XY_POSITION.CENTER_START ||
+            pos === XY_POSITION.CENTER_CENTER ||
+            pos === XY_POSITION.CENTER_END
+        ) {
+            this.UIStyleClassAdd(this._getAPIClassname('osd-position-center'));
+        }
     }
 
     /**
@@ -2908,6 +3020,275 @@ var API = class
         }
 
         return this._panel.PANEL_ICON_SIZE;
+    }
+
+    /**
+     * show dash separator
+     *
+     * @returns {void}
+     */
+    dashSeparatorShow()
+    {
+        if (this._shellVersion < 40) {
+            return;
+        }
+
+        this.UIStyleClassRemove(this._getAPIClassname('no-dash-separator'));
+    }
+
+    /**
+     * hide dash separator
+     *
+     * @returns {void}
+     */
+    dashSeparatorHide()
+    {
+        if (this._shellVersion < 40) {
+            return;
+        }
+
+        this.UIStyleClassAdd(this._getAPIClassname('no-dash-separator'));
+    }
+
+    /**
+     * get looking glass size
+     *
+     * @returns {array}
+     *  width: int
+     *  height: int
+     */
+    _lookingGlassGetSize()
+    {
+        let lookingGlass = this._main.createLookingGlass();
+
+        return [lookingGlass.width, lookingGlass.height];
+    }
+
+    /**
+     * set default looking glass size
+     *
+     * @returns {void}
+     */
+    lookingGlassSetDefaultSize()
+    {
+        if (!this._lookingGlassShowSignal) {
+            return;
+        }
+
+        this._main.lookingGlass.disconnect(this._lookingGlassShowSignal);
+        this._main.lookingGlass._resize();
+
+        delete(this._lookingGlassShowSignal);
+        delete(this._lookingGlassOriginalSize);
+        delete(this._monitorsChangedSignal);
+    }
+
+    /**
+     * set looking glass size
+     *
+     * @param {number} width in float
+     * @param {number} height in float
+     *
+     * @returns {void}
+     */
+    lookingGlassSetSize(width, height)
+    {
+        let lookingGlass = this._main.createLookingGlass();
+
+        if (!this._lookingGlassOriginalSize) {
+            this._lookingGlassOriginalSize = this._lookingGlassGetSize();
+        }
+
+        if (this._lookingGlassShowSignal) {
+            lookingGlass.disconnect(this._lookingGlassShowSignal);
+            delete(this._lookingGlassShowSignal);
+        }
+
+        this._lookingGlassShowSignal = lookingGlass.connect('show', () => {
+            let [, currentHeight] = this._lookingGlassGetSize();
+            let [originalWidth, originalHeight] = this._lookingGlassOriginalSize;
+
+            let monitorInfo = this.monitorGetInfo();
+
+            let dialogWidth
+            =   (width !== null)
+            ?   monitorInfo.width * width
+            :   originalWidth;
+
+            let x = monitorInfo.x + (monitorInfo.width - dialogWidth) / 2;
+            lookingGlass.set_x(x);
+
+            let keyboardHeight = this._main.layoutManager.keyboardBox.height;
+            let availableHeight = monitorInfo.height - keyboardHeight;
+            let dialogHeight
+            = (height !== null)
+            ? Math.min(monitorInfo.height * height, availableHeight * 0.9)
+            : originalHeight;
+
+            let hiddenY = lookingGlass._hiddenY + currentHeight - dialogHeight;
+            lookingGlass.set_y(hiddenY);
+            lookingGlass._hiddenY = hiddenY;
+
+            lookingGlass.set_size(dialogWidth, dialogHeight);
+        });
+
+        if (!this._monitorsChangedSignal) {
+            this._monitorsChangedSignal = this._main.layoutManager.connect('monitors-changed',
+            () => {
+                    this.lookingGlassSetSize(width, height);
+            });
+        }
+    }
+
+    /**
+     * show screenshot in window menu
+     *
+     * @returns {void}
+     */
+    screenshotInWindowMenuShow()
+    {
+        if (this._shellVersion < 42) {
+            return;
+        }
+
+        let windowMenuProto = this._windowMenu.WindowMenu.prototype;
+
+        if (windowMenuProto._oldBuildMenu === undefined) {
+            return;
+        }
+
+        windowMenuProto._buildMenu = this._originals['WindowMenubuildMenu'];
+
+        delete(windowMenuProto._oldBuildMenu);
+    }
+
+    /**
+     * hide screenshot in window menu
+     *
+     * @returns {void}
+     */
+    screenshotInWindowMenuHide()
+    {
+        if (this._shellVersion < 42) {
+            return;
+        }
+
+        let windowMenuProto = this._windowMenu.WindowMenu.prototype;
+
+        if (!this._originals['WindowMenubuildMenu']) {
+            this._originals['WindowMenubuildMenu'] = windowMenuProto._buildMenu;
+        }
+
+        if (windowMenuProto._oldBuildMenu === undefined) {
+            windowMenuProto._oldBuildMenu = this._originals['WindowMenubuildMenu'];
+        }
+
+        windowMenuProto._buildMenu = function (window) {
+            this._oldBuildMenu(window);
+            this.firstMenuItem.hide();
+        };
+    }
+
+    /**
+     * set default alt tab window preview size
+     *
+     * @returns {void}
+     */
+    altTabWindowPreviewSetDefaultSize()
+    {
+        if (!this._originals['altTabWindowPreviewSize']) {
+            return;
+        }
+
+        this._altTab.WINDOW_PREVIEW_SIZE = this._originals['altTabWindowPreviewSize'];
+    }
+
+    /**
+     * set alt tab window preview size
+     *
+     * @param {number} size 1-512
+     *
+     * @returns {void}
+     */
+    altTabWindowPreviewSetSize(size)
+    {
+        if (size < 1 || size > 512) {
+            return;
+        }
+
+        if (!this._originals['altTabWindowPreviewSize']) {
+            this._originals['altTabWindowPreviewSize'] = this._altTab.WINDOW_PREVIEW_SIZE;
+        }
+
+        this._altTab.WINDOW_PREVIEW_SIZE = size;
+    }
+
+    /**
+     * set default alt tab small icon size
+     *
+     * @returns {void}
+     */
+    altTabSmallIconSetDefaultSize()
+    {
+        if (!this._originals['altTabAppIconSizeSmall']) {
+            return;
+        }
+
+        this._altTab.APP_ICON_SIZE_SMALL = this._originals['altTabAppIconSizeSmall'];
+    }
+
+    /**
+     * set alt tab small icon size
+     *
+     * @param {number} size 1-512
+     *
+     * @returns {void}
+     */
+    altTabSmallIconSetSize(size)
+    {
+        if (size < 1 || size > 512) {
+            return;
+        }
+
+        if (!this._originals['altTabAppIconSizeSmall']) {
+            this._originals['altTabAppIconSizeSmall'] = this._altTab.APP_ICON_SIZE_SMALL;
+        }
+
+        this._altTab.APP_ICON_SIZE_SMALL = size;
+    }
+
+    /**
+     * set default alt tab icon size
+     *
+     * @returns {void}
+     */
+    altTabIconSetDefaultSize()
+    {
+        if (!this._originals['altTabAppIconSize']) {
+            return;
+        }
+
+        this._altTab.APP_ICON_SIZE = this._originals['altTabAppIconSize'];
+    }
+
+    /**
+     * set alt tab icon size
+     *
+     * @param {number} size 1-512
+     *
+     * @returns {void}
+     */
+    altTabIconSetSize(size)
+    {
+        if (size < 1 || size > 512) {
+            return;
+        }
+
+        if (!this._originals['altTabAppIconSize']) {
+            this._originals['altTabAppIconSize'] = this._altTab.APP_ICON_SIZE;
+        }
+
+        this._altTab.APP_ICON_SIZE = size;
     }
 }
 

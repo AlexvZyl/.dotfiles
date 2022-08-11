@@ -16,7 +16,7 @@ yay -S libpamac-aur pamac-aur
 sudo pamac install firefox brave-bin --no-confirm
 
 # Office.
-sudo pamac install onlyoffice-bin --no-confirm
+sudo pamac install onlyoffice-bin xournalpp --no-confirm
 
 # Some aesthetic stuff.
 sudo pamac install cmatrix bonsai.sh-git pipes.sh --no-confirm

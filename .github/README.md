@@ -1,3 +1,5 @@
+**NOTE:** This repo still needs a lot of work and is far from stable.
+
 # DotFiles
 
 The dotfiles for my personal setup.  Currently only supports Arch based distros using Gnome and/or i3.  I plan on expanding the install scripts and supporting more platforms so that I can easily direct new people that wants to use Linux to this repo.  There will be basic installers (just browser, office tools, etc.), development installers (github, neovide, vscode, etc.) and then the full installer that I use personally.

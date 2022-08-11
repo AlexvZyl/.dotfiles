@@ -47,7 +47,7 @@ workspace_layout default
 ##############################
 
 #border indicator on windows:
-new_window pixel 1
+new_window pixel 2
 
 # thin borders
 # hide_edge_borders both
@@ -206,8 +206,8 @@ bindsym F11 exec ~/.config/i3/scripts/keyhint-2
 # bindsym $mod+F1 exec xed ~/.config/i3/keybindings
 
 # Backlight control
-bindsym XF86MonBrightnessUp exec xbacklight +5 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
-bindsym XF86MonBrightnessDown exec xbacklight -5 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
+bindsym XF86MonBrightnessUp exec  --no-startup-id brightnessctl set +5% && notify-send "Brightness - $(brightnessctl -get | cut -d '.' -f 1)%"
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%- && notify-send "Brightness - $(brightnessctl -get | cut -d '.' -f 1)%"
 
 # change focus
 bindsym $mod+h focus left
@@ -458,8 +458,7 @@ for_window [class="Pamac-manager"] floating enable
 for_window [window_role="About"] floating enable
 
 # set border of floating window
-for_window [class="urxvt"] border pixel 1
-for_window [class="neovide"] border pixel 1
+for_window [class="urxvt"] border pixel 2
 
 # set size of floating window
 #for_window [window_role="(?i)GtkFileChooserDialog"] resize set 640 480 #to set size of file choose dialog
@@ -488,11 +487,11 @@ set $mediumgrey		#ebdbb2aa
 set $yellowbrown	#e1b700
 
 # define colors for windows:
-#class		        	border		bground		text		indicator	child_border
-client.focused		    	$lightblue	$darkblue	$white		$mediumgrey	$mediumgrey
-client.unfocused	    	$darkblue	$darkblue	$grey		$darkgrey	$darkgrey
-client.focused_inactive		$darkblue	$darkblue	$grey		$black		$black
-client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
+#class		        	    border		bground		text		indicator	   child_border
+client.focused		    	$lightblue	$darkblue	$white		$mediumgrey	   $mediumgrey
+client.unfocused	    	$darkblue	$darkblue	$grey		$darkgrey	   $darkgrey
+client.focused_inactive		$darkblue	$darkblue	$grey		$black		   $black
+client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown   $yellowbrown
 
 ############################################
 # bar settings (input comes from i3blocks) #

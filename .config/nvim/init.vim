@@ -445,7 +445,7 @@ inoremap <silent> <Esc> <Cmd>stopinsert<CR> <Cmd>noh<CR>
 vnoremap <silent> <Esc> <Cmd>noh<CR>
 
 " Redo and undo.
-nnoremap <silent> U     <Cmd><CR>
+nnoremap <silent> <U> 
 nnoremap <silent> <C-Z> <Cmd>undo<CR>
 inoremap <silent> <C-Z> <Cmd>undo<CR>
 vnoremap <silent> <C-Z> <Cmd>undo<CR>

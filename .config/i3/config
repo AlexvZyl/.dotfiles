@@ -176,7 +176,7 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 bindsym $mod+t exec alacritty
 
 # Start editor.
-bindsym $mod+n exec neovide
+bindsym $mod+n exec neovide --multigrid
 
 # Start resource viewers.
 bindsym $mod+b exec btop --utf-force

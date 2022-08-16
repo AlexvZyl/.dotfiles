@@ -97,7 +97,7 @@ require 'lualine'.setup {
     }
 }
 
---------------
+------------- -
 -- Zen mode --
 --------------
 
@@ -398,6 +398,7 @@ let g:neovide_fullscreen=v:false
 let g:neovide_profiler=v:false
 let g:neovide_cursor_animation_length=0.004
 let g:neovide_cursor_animation_size=0.95
+let g:neovide_scroll_animation_length = 0
 
 " Setup themes.
 let g:gruvbox_material_foreground = 'original'

@@ -38,6 +38,8 @@ Plug 'preservim/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}  " Big boy!
 Plug 'tpope/vim-commentary'  " Alllow commenting with <C-/>.
 Plug 'mhartington/formatter.nvim'
+Plug 'glepnir/lspsaga.nvim'
+Plug 'neovim/nvim-lspconfig'
 " Plug 'mattn/vim-lsp-settings'  " Can be used to install language servers, but is giving me issues!
 " Plug 'puremourning/vimspector'  " Multi-language debugger.
 
@@ -52,12 +54,15 @@ Plug 'brooth/far.vim'
 
 " VIM Script.
 Plug 'prabirshrestha/vim-lsp'
+
 " Julia.
 Plug 'JuliaEditorSupport/julia-vim'
+
 " Rust.
 " Plug 'simrat39/rust-tools.nvim'
 " Plug 'mfussenegger/nvim-dap' " Debugger?
 " Plug 'rust-lang/rust.vim'
+
 " Lua.
 Plug 'sumneko/lua-language-server' 
 
@@ -78,9 +83,11 @@ call plug#end()
 
 lua <<EOF
 
--- Lualine setup.
+-------------------
+-- Lualine setup --
+-------------------
 
-require("lualine").setup({
+require 'lualine'.setup {
     options = { 
         disabled_filetypes = {"NvimTree", "startify" }
     },
@@ -88,11 +95,13 @@ require("lualine").setup({
         "toggleterm",
         "nvim-tree"
     }
-})
+}
 
--- Zen mode.
+--------------
+-- Zen mode --
+--------------
 
-require("true-zen").setup {
+require 'true-zen'.setup {
     modes = {
         ataraxis = {
 
@@ -103,19 +112,23 @@ require("true-zen").setup {
     }
 }
 
--- Setup neoscroll.
+---------------------
+-- Setup neoscroll --
+---------------------
 
-require('neoscroll').setup({
+require 'neoscroll'.setup {
     erasing_function = 'quadratic'
-})
+}
 local t = {}
-t['<C-u>'] = {'scroll', {'-vim.wo.scroll*2', 'true', '350', nil}}
-t['<C-d>'] = {'scroll', { 'vim.wo.scroll*2', 'true', '350', nil}}
+t['<C-u>'] = {'scroll', {'-vim.wo.scroll * 2', 'true', '350', nil}}
+t['<C-d>'] = {'scroll', { 'vim.wo.scroll * 2', 'true', '350', nil}}
 require('neoscroll.config').set_mappings(t)
 
--- Bufferline.
+----------------
+-- Bufferline --
+----------------
 
-require("bufferline").setup {
+require 'bufferline'.setup {
     options = {    
         diagnostics = "coc",   
         offsets = { 
@@ -156,7 +169,9 @@ require("bufferline").setup {
     }
 }
 
--- Indentation.
+-----------------
+-- Indentation --
+-----------------
 
 require("indent_blankline").setup {
     show_end_of_line = true,
@@ -165,11 +180,15 @@ require("indent_blankline").setup {
     filetype_exclude = { 'NvimTree', 'startify' }
 }
 
--- Formatter setup [TODO]
+----------------------------
+-- Formatter setup [TODO] -- 
+----------------------------
 
 require("formatter").setup {}    
 
--- Setup telescope.
+---------------------
+-- Setup telescope --
+---------------------
 
 local ts = require("telescope")
 ts.setup({
@@ -183,13 +202,17 @@ ts.setup({
 })
 ts.load_extension("notify")
 
--- Setup default notifications.
+---------------------------------
+-- Setup default notifications -- 
+---------------------------------
 
 local notify = require("notify")
 notify.setup({})
 vim.notify = notify
 
--- Setup toggleterm.
+----------------------
+-- Setup toggleterm --
+----------------------
 
 require("toggleterm").setup {
     on_open = function(term)
@@ -202,7 +225,10 @@ require("toggleterm").setup {
     }
 }
 
--- Lazygit with toggleterm.
+-----------------------------
+-- Lazygit with toggleterm --
+-----------------------------
+ 
 local Terminal  = require('toggleterm.terminal').Terminal
 local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float" })
 function _lazygit_toggle()
@@ -211,7 +237,10 @@ end
 vim.api.nvim_set_keymap("n", "<C-G>", "<Cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("t", "<C-G>", "<Cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
 
--- BTop++ with toggleterm.
+----------------------------
+-- BTop++ with toggleterm --
+----------------------------
+
 local Terminal  = require('toggleterm.terminal').Terminal
 local btop = Terminal:new({ cmd = "btop --utf-force", hidden = true, direction = "float" })
 function _btop_toggle()
@@ -220,7 +249,10 @@ end
 vim.api.nvim_set_keymap("n", "<C-B>", "<Cmd>lua _btop_toggle()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("t", "<C-B>", "<Cmd>lua _btop_toggle()<CR>", {noremap = true, silent = true})
 
--- Fish with toggleterm.
+--------------------------
+-- Fish with toggleterm --
+--------------------------
+
 local Terminal  = require('toggleterm.terminal').Terminal
 local fish = Terminal:new({ cmd = "fish", hidden = true, direction = "float" })
 function _fish_toggle()
@@ -229,7 +261,10 @@ end
 vim.api.nvim_set_keymap("n", "<F3>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("t", "<F3>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
 
--- Setup tree.
+----------------
+-- Setup tree --
+----------------
+
 require("nvim-tree").setup({
     view = {
         mappings = {
@@ -245,10 +280,12 @@ require("nvim-tree").setup({
 })
 
 -- Configure tree sitter.
-require'nvim-treesitter.configs'.setup {
+
+require 'nvim-treesitter.configs'.setup {
 
     -- A list of parser names, or "all"
     ensure_installed = { "c", "lua", "rust", "cpp", "julia" },
+    -- ensure_installed = {  },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
@@ -278,6 +315,76 @@ require'nvim-treesitter.configs'.setup {
     },
 }
 
+--------------------
+-- LSP Saga setup -- 
+--------------------
+
+local saga = require 'lspsaga'
+local kind = require('lspsaga.lspkind')
+saga.init_lsp_saga {}
+
+-----------------------------
+-- Neovim LSP Config Setup --
+-----------------------------
+
+-- Mappings.
+local opts = { noremap=true, silent=true }
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
+local on_attach = function(client, bufnr)
+  -- Enable completion triggered by <c-x><c-o>
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  -- Mappings.
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+  vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+  vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+  vim.keymap.set('n', '<space>wl', function()
+    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+  end, bufopts)
+  vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
+  vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+  vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+end
+
+local lsp_flags = {
+  -- This is the default in Nvim 0.7+
+  debounce_text_changes = 150,
+}
+require('lspconfig')['pyright'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')['ccls'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')['tsserver'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')['rust_analyzer'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+    -- Server-specific settings...
+    settings = {
+      ["rust-analyzer"] = {}
+    }
+}
+
 EOF
 
 " ----------
@@ -285,8 +392,8 @@ EOF
 " ----------
 
 " Neovide settings.
+" let g:neovide_transparency=0.95
 let g:neovide_transparency=1
-" let g:neovide_transparency=0.9
 let g:neovide_fullscreen=v:false
 let g:neovide_profiler=v:false
 let g:neovide_cursor_animation_length=0.004
@@ -317,6 +424,9 @@ let g:lsp_settings = {
 " ----------------
 " GENERAL SETTINGS
 " ----------------
+
+" Enable colors for neovim usage in the terminal.
+set termguicolors
 
 " Clipboard. 
 :set clipboard+=unnamedplus 
@@ -369,7 +479,6 @@ let g:startify_lists = [
     \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
     \ { 'type': 'commands',  'header': ['   Commands']       },
 \ ]
-
 
 " ----------
 " KEYMAPPING
@@ -623,6 +732,7 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
 "------"
 " MISC "
 "------"

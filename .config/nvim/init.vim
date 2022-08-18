@@ -38,10 +38,10 @@ Plug 'preservim/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}  " Big boy!
 Plug 'tpope/vim-commentary'  " Alllow commenting with <C-/>.
 Plug 'mhartington/formatter.nvim'
-Plug 'glepnir/lspsaga.nvim'
-Plug 'neovim/nvim-lspconfig'
-" Plug 'mattn/vim-lsp-settings'  " Can be used to install language servers, but is giving me issues!
-" Plug 'puremourning/vimspector'  " Multi-language debugger.
+
+" LSP using built in and not COC.
+" Plug 'glepnir/lspsaga.nvim'
+" Plug 'neovim/nvim-lspconfig'
 
 " Neovim helpers.
 Plug 'folke/which-key.nvim'
@@ -82,47 +82,6 @@ call plug#end()
 " ----------
 
 lua <<EOF
-
--------------------
--- Lualine setup --
--------------------
-
-require 'lualine'.setup {
-    options = { 
-        disabled_filetypes = { "NvimTree", "startify" }
-    },
-    extensions = {
-        "toggleterm",
-        "nvim-tree"
-    }
-}
-
-------------- -
--- Zen mode --
---------------
-
-require 'true-zen'.setup {
-    modes = {
-        ataraxis = {
-
-        }
-    },
-    integrations = {
-        lualine = true
-    }
-}
-
----------------------
--- Setup neoscroll --
----------------------
-
-require 'neoscroll'.setup {
-    erasing_function = 'quadratic'
-}
-local t = { }
-t['<C-u>'] = {'scroll', {'-vim.wo.scroll * 2', 'true', '400', nil}}
-t['<C-d>'] = {'scroll', { 'vim.wo.scroll * 2', 'true', '400', nil}}
-require('neoscroll.config').set_mappings(t)
 
 ----------------
 -- Bufferline --
@@ -169,11 +128,52 @@ require 'bufferline'.setup {
     }
 }
 
+-------------------
+-- Lualine setup --
+-------------------
+
+require 'lualine'.setup {
+    options = { 
+        disabled_filetypes = { "NvimTree", "startify" }
+    },
+    extensions = {
+        "toggleterm",
+        "nvim-tree"
+    }
+}
+
+--------------
+-- Zen mode --
+--------------
+
+require 'true-zen'.setup {
+    modes = {
+        ataraxis = {
+
+        }
+    },
+    integrations = {
+        lualine = true
+    }
+}
+
+---------------------
+-- Setup neoscroll --
+---------------------
+
+require 'neoscroll'.setup {
+    erasing_function = 'quadratic'
+}
+local t = { }
+t['<C-u>'] = {'scroll', {'-vim.wo.scroll * 2', 'true', '400', nil}}
+t['<C-d>'] = {'scroll', { 'vim.wo.scroll * 2', 'true', '400', nil}}
+require('neoscroll.config').set_mappings(t)
+
 -----------------
 -- Indentation --
 -----------------
 
-require("indent_blankline").setup {
+require 'indent_blankline'.setup {
     show_end_of_line = true,
     show_current_context = true,
     show_current_context_start = true,
@@ -184,13 +184,13 @@ require("indent_blankline").setup {
 -- Formatter setup [TODO] -- 
 ----------------------------
 
-require("formatter").setup {}    
+require 'formatter'.setup {}    
 
 ---------------------
 -- Setup telescope --
 ---------------------
 
-local ts = require("telescope")
+local ts = require 'telescope'
 ts.setup({
     defaults = {
         sort_mru = true,
@@ -266,7 +266,7 @@ vim.api.nvim_set_keymap("t", "<F3>", "<Cmd>lua _fish_toggle()<CR>", {noremap = t
 -- Setup tree --
 ----------------
 
-require("nvim-tree").setup({
+Require 'nvim-tree'.setup {
     view = {
         mappings = {
             list = {
@@ -278,7 +278,7 @@ require("nvim-tree").setup({
         width = 35
     },
     auto_reload_on_write = true,
-})
+}
 
 ---------------------------
 -- Configure tree sitter --
@@ -322,14 +322,15 @@ require 'nvim-treesitter.configs'.setup {
 -- LSP Saga setup -- 
 --------------------
 
-local saga = require 'lspsaga'
-local kind = require('lspsaga.lspkind')
-saga.init_lsp_saga {}
+-- local saga = require 'lspsaga'
+-- local kind = require('lspsaga.lspkind')
+-- saga.init_lsp_saga {}
 
 -----------------------------
 -- Neovim LSP Config Setup --
 -----------------------------
 
+--[[
 -- Mappings.
 local opts = { noremap=true, silent=true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
@@ -387,6 +388,7 @@ require('lspconfig')['rust_analyzer'].setup{
       ["rust-analyzer"] = {}
     }
 }
+--]]
 
 EOF
 
@@ -399,7 +401,7 @@ EOF
 let g:neovide_transparency=1
 let g:neovide_fullscreen=v:false
 let g:neovide_profiler=v:false
-let g:neovide_cursor_animation_length = 0.01
+let g:neovide_cursor_animation_length = 0.0
 let g:neovide_cursor_animation_size=0.95
 let g:neovide_scroll_animation_length = 0.1
 
@@ -430,21 +432,22 @@ let g:lsp_settings = {
 " ----------------
 
 " Enable colors for neovim usage in the terminal.
+" This is not fixing the issue?
 set termguicolors
 
 " Clipboard. 
-:set clipboard+=unnamedplus 
+set clipboard+=unnamedplus 
 
 " Enable mouse input.
-:set mouse=a
+set mouse=a
 
 " Syntax.
-:syntax on
-:set number
-:set cursorline
-:set hlsearch
-:set ignorecase
-:set smartcase
+syntax on
+set number
+set cursorline
+set hlsearch
+set ignorecase
+set smartcase
 
 " Coc setup.
 set pumheight=10 " Limit the height of the seggestion window.
@@ -499,15 +502,27 @@ nnoremap <silent> gb :BufferLinePick<CR>
 
 " File explorer.
 nnoremap <silent> <F2> <Cmd>Telescope find_files<CR>
+inoremap <silent> <F2> <Cmd>Telescope find_files<CR>
+vnoremap <silent> <F2> <Cmd>Telescope find_files<CR>
+tnoremap <silent> <F2> <Cmd>Telescope find_files<CR>
 
+" Toggle the file explorer.
 nnoremap <silent> <F1> <Cmd>NvimTreeToggle<CR>
 inoremap <silent> <F1> <Cmd>NvimTreeToggle<CR>
 vnoremap <silent> <F1> <Cmd>NvimTreeToggle<CR>
 tnoremap <silent> <F1> <Cmd>NvimTreeToggle<CR>
+
+" Search for old files.
 nnoremap <silent> <C-t> <Cmd>Telescope oldfiles<CR>
+inoremap <silent> <C-t> <Cmd>Telescope oldfiles<CR>
+vnoremap <silent> <C-t> <Cmd>Telescope oldfiles<CR>
+tnoremap <silent> <C-t> <Cmd>Telescope oldfiles<CR>
 
 " Cheatsheet.
 nnoremap <silent> <F12> <Cmd>Cheatsheet<CR>
+inoremap <silent> <F12> <Cmd>Cheatsheet<CR>
+vnoremap <silent> <F12> <Cmd>Cheatsheet<CR>
+tnoremap <silent> <F12> <Cmd>Cheatsheet<CR>
 
 " Sessions.
 nnoremap <silent> <F5> <Cmd>SSave! y<Enter><CR> <Cmd>lua vim.notify(" Saved current session.", "success", { title = " Session"} )<CR>
@@ -530,7 +545,7 @@ autocmd TermLeave <silent> <Esc>
 augroup end
 
 " Terminal mappings.
-:au BufEnter * if &buftype == 'terminal' | :startinsert | endif " Make terminal default mode insert mode.
+au BufEnter * if &buftype == 'terminal' | :startinsert | endif " Make terminal default mode insert mode.
 tnoremap <silent> <Esc> <C-\><C-n>
 
 " Commenting.
@@ -558,7 +573,6 @@ inoremap <silent> <Esc> <Cmd>stopinsert<CR> <Cmd>noh<CR>
 vnoremap <silent> <Esc> <Cmd>noh<CR>
 
 " Redo and undo.
-nnoremap <silent> <U> 
 nnoremap <silent> <C-Z> <Cmd>undo<CR>
 inoremap <silent> <C-Z> <Cmd>undo<CR>
 vnoremap <silent> <C-Z> <Cmd>undo<CR>

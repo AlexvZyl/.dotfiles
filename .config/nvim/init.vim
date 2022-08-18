@@ -89,7 +89,7 @@ lua <<EOF
 
 require 'lualine'.setup {
     options = { 
-        disabled_filetypes = {"NvimTree", "startify" }
+        disabled_filetypes = { "NvimTree", "startify" }
     },
     extensions = {
         "toggleterm",
@@ -119,9 +119,9 @@ require 'true-zen'.setup {
 require 'neoscroll'.setup {
     erasing_function = 'quadratic'
 }
-local t = {}
-t['<C-u>'] = {'scroll', {'-vim.wo.scroll * 2', 'true', '350', nil}}
-t['<C-d>'] = {'scroll', { 'vim.wo.scroll * 2', 'true', '350', nil}}
+local t = { }
+t['<C-u>'] = {'scroll', {'-vim.wo.scroll * 2', 'true', '400', nil}}
+t['<C-d>'] = {'scroll', { 'vim.wo.scroll * 2', 'true', '400', nil}}
 require('neoscroll.config').set_mappings(t)
 
 ----------------
@@ -219,6 +219,7 @@ require("toggleterm").setup {
         vim.cmd("startinsert")
     end,
     direction = "float",
+    size = 20,
     float_opts = {
         border = 'single',
         winblend = 0,
@@ -254,7 +255,7 @@ vim.api.nvim_set_keymap("t", "<C-B>", "<Cmd>lua _btop_toggle()<CR>", {noremap = 
 --------------------------
 
 local Terminal  = require('toggleterm.terminal').Terminal
-local fish = Terminal:new({ cmd = "fish", hidden = true, direction = "float" })
+local fish = Terminal:new({ cmd = "fish", hidden = true, direction = "horizontal" })
 function _fish_toggle()
   fish:toggle()
 end
@@ -279,7 +280,9 @@ require("nvim-tree").setup({
     auto_reload_on_write = true,
 })
 
--- Configure tree sitter.
+---------------------------
+-- Configure tree sitter --
+---------------------------
 
 require 'nvim-treesitter.configs'.setup {
 
@@ -396,9 +399,9 @@ EOF
 let g:neovide_transparency=1
 let g:neovide_fullscreen=v:false
 let g:neovide_profiler=v:false
-let g:neovide_cursor_animation_length=0.004
+let g:neovide_cursor_animation_length = 0.01
 let g:neovide_cursor_animation_size=0.95
-let g:neovide_scroll_animation_length = 0
+let g:neovide_scroll_animation_length = 0.1
 
 " Setup themes.
 let g:gruvbox_material_foreground = 'original'

@@ -532,3 +532,28 @@ btop++ needs an interactive shell to run.
 
 2022/08/16 (13:17:28) | ===> btop++ v.1.2.8
 2022/08/16 (13:17:28) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+
+2022/08/16 (17:00:01) | ===> btop++ v.1.2.8
+2022/08/16 (17:00:01) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+
+2022/08/16 (18:01:15) | ===> btop++ v.1.2.8
+2022/08/16 (18:01:15) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+
+2022/08/16 (19:45:35) | ===> btop++ v.1.2.8
+2022/08/16 (19:45:35) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+
+2022/08/16 (20:02:33) | ===> btop++ v.1.2.8
+2022/08/16 (20:02:33) | ERROR: No UTF-8 locale detected!
+Use --utf-force argument to force start if you're sure your terminal can handle it.
+
+2022/08/16 (20:02:36) | ===> btop++ v.1.2.8
+2022/08/16 (20:02:36) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+
+2022/08/16 (20:59:50) | ===> btop++ v.1.2.8
+2022/08/16 (20:59:50) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+
+2022/08/17 (12:47:17) | ===> btop++ v.1.2.8
+2022/08/17 (12:47:17) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+
+2022/08/17 (15:00:29) | ===> btop++ v.1.2.8
+2022/08/17 (15:00:29) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.

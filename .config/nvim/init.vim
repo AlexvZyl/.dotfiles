@@ -36,7 +36,7 @@ Plug 'nvim-treesitter/nvim-treesitter'  " Syntax highlighting.
 Plug 'dense-analysis/ale'  " Linting engine.
 Plug 'preservim/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}  " Big boy!
-Plug 'tpope/vim-commentary'  " Alllow commenting with <C-/>.
+Plug 'tpope/vim-commentary'  " Allow commenting with <C-/>.
 Plug 'mhartington/formatter.nvim'
 
 " LSP using built in and not COC.
@@ -89,13 +89,14 @@ lua <<EOF
 
 require 'bufferline'.setup {
     options = {    
+        mode = "buffers",
         diagnostics = "coc",   
         offsets = { 
             {
                 filetype = "NvimTree",
                 text = "File Explorer",
                 highlight = "Directory",
-                text_align = "left"
+                text_align = "center"
             }
         },
         custom_areas = {
@@ -124,7 +125,9 @@ require 'bufferline'.setup {
             end
             return result
           end,
-        }
+        },
+        separator_style = "padded_slant",
+        -- separator_style = "thick",
     }
 }
 
@@ -219,7 +222,7 @@ require("toggleterm").setup {
         vim.cmd("startinsert")
     end,
     direction = "float",
-    size = 16,
+    size = 13,
     float_opts = {
         border = 'single',
         winblend = 0,
@@ -757,4 +760,11 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " For stuff that has to be run at the end.
 
 " Ensure cmd is not larger than it needs to be.
-:set cmdheight =1
+set cmdheight =1
+
+" For some reason neovim is not laoding the init file properly, so I have to
+" add this so that it gets loaded on startup.
+if !exists('$DEBUG_LOADED')
+    let $DEBUG_LOADED = 'TRUE'
+    so ~/.config/nvim/init.vim 
+end

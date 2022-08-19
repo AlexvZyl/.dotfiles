@@ -219,7 +219,7 @@ require("toggleterm").setup {
         vim.cmd("startinsert")
     end,
     direction = "float",
-    size = 20,
+    size = 16,
     float_opts = {
         border = 'single',
         winblend = 0,
@@ -266,7 +266,7 @@ vim.api.nvim_set_keymap("t", "<F3>", "<Cmd>lua _fish_toggle()<CR>", {noremap = t
 -- Setup tree --
 ----------------
 
-Require 'nvim-tree'.setup {
+require 'nvim-tree'.setup {
     view = {
         mappings = {
             list = {

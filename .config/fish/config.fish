@@ -18,6 +18,3 @@ set -g tide_character_icon " "
 
 # Add alias for dotfile tracking with git.
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
-# Add neofetch on startup.
-neofetch

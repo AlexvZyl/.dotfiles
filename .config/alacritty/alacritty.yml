@@ -435,9 +435,9 @@ draw_bold_text_with_bright_colors: false
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
- program: /bin/fish
+ program: /bin/fish 
  args:
-   - --login
+   - --init-command=neofetch
 
 # Startup directory
 #

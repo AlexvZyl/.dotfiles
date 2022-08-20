@@ -28,8 +28,8 @@ window {
     height: 52.5%;
     width: 35%;
     /* border: 3px; */
-    border-color: @border-col;
-    background-color: @bg-col;
+    border-color: @border-color;
+    background-color: @background;
     border-radius: 0px;
 }
 
@@ -45,7 +45,7 @@ inputbar {
 }
 
 prompt {
-    background-color: @blue;
+    background-color: inherit;
     padding: 6px;
     text-color: @gruvbox-dark-yellow-light;
     border-radius: 8px;
@@ -74,7 +74,7 @@ listview {
 element {
     padding: 15 10 15;
     background-color: @bg-col;
-    text-color: @fg-col  ;
+    text-color: inherit;
     orientation: vertical;
 }
 
@@ -85,7 +85,7 @@ element-icon {
 
 element selected {
     background-color:  @selected-col ;
-    text-color: @blue ;
+    text-color: inherit;
     border-radius: 8px;
 }
 
@@ -103,12 +103,12 @@ mode-switcher {
 button {
     padding: 10px;
     background-color: @bg-col;
-    text-color: @empty;
+    text-color: inherit;
     vertical-align: 0.5; 
     horizontal-align: 0.5;
 }
 
 button selected {
   background-color: @bg-col;
-  text-color: @blue;
+  text-color: inherit;
 }

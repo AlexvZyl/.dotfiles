@@ -30,7 +30,9 @@
 
     /* Theme colors */
     background:                  @gruvbox-dark-bg0-hard;
+    bg-col:                      @background;
     background-color:            @background;
+    selected-col:                @selected-normal-background;
     foreground:                  @gruvbox-dark-fg1;
     border-color:                @gruvbox-dark-gray;
     separatorcolor:              @border-color;

@@ -23,7 +23,8 @@ include-file=~/.config/polybar/modules.ini
 # background = #282A2E
 # background = #B5000000
 # background = #DB000000
-background = #BF090909
+# background = #BF090909
+background = #CF090909
 background-alt = #323232
 foreground = #ebdbb2
 primary = #d79921
@@ -45,7 +46,7 @@ foreground = ${colors.foreground}
 
 line-size = 2pt 
 
-border-size = 4pt
+border-size = 5pt
 ; border-size = 0pt
 border-color = #00000000
 
@@ -159,8 +160,8 @@ label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
 [module/wlan]
 inherit = network-base
 interface-type = wireless
-label-connected = %{F#d79921} %{F-} %essid:1:8:...%
-label-disconnected = %{F#cc241d} %{F-} Disconnected 
+label-connected = %{F#d79921} %{F-} Online
+label-disconnected = %{F#cc241d} %{F-} Offline 
 
 ; [module/eth]
 ; inherit = network-base

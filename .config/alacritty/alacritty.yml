@@ -29,9 +29,9 @@ window:
   # Number of lines/columns (not pixels) in the terminal. The number of columns
   # must be at least `2`, while using a value of `0` for columns and lines will
   # fall back to the window manager's recommended size.
-  #dimensions:
-  #  columns: 0
-  #  lines: 0
+  dimensions:
+    columns: 0
+    lines: 0
 
   # Window position (changes require restart)
   #
@@ -68,7 +68,8 @@ window:
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
   # opacity: 0.86
-  opacity: 0.75
+  # opacity: 0.75
+  opacity: 0.6
 
   # Startup Mode (changes require restart)
   #
@@ -184,7 +185,13 @@ font:
   # If `true`, Alacritty will use a custom built-in font for box drawing
   # characters (Unicode points 2500 - 259f).
   #
-  builtin_box_drawing: false
+  builtin_box_drawing: true
+
+  # Scale the font size based on the monitor's DPI. This will lead to bigger text on HiDPI
+  # screens and make reading text a little easier.
+  # On X11 it is possible to change the DPI for each instance of alacritty by using
+  # `WINIT_HIDPI_FACTOR=1.0 alacritty` to scale the font.
+  scale_with_dpi: true
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: false

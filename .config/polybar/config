@@ -34,9 +34,9 @@ red = #cc241d
 
 [bar/mainbar-i3]
 width = 100%
-# height = 24pt
 height = 19pt
 radius = 6
+; radius = 0
 
 ; dpi = 96
 
@@ -46,6 +46,7 @@ foreground = ${colors.foreground}
 line-size = 2pt 
 
 border-size = 4pt
+; border-size = 0pt
 border-color = #00000000
 
 padding-left = 0
@@ -71,7 +72,7 @@ enable-ipc = true
 
 ; wm-restack = generic
 ; wm-restack = bspwm
-; wm-restack = i3
+wm-restack = i3
 
 ; override-redirect = true
 

@@ -246,7 +246,8 @@ vim.api.nvim_set_keymap("t", "<C-G>", "<Cmd>lua _lazygit_toggle()<CR>", {noremap
 ----------------------------
 
 local Terminal  = require('toggleterm.terminal').Terminal
-local btop = Terminal:new({ cmd = "btop --utf-force", hidden = true, direction = "float" })
+-- local btop = Terminal:new({ cmd = "btop --utf-force", hidden = true, direction = "float" })
+local btop = Terminal:new({ cmd = "btm", hidden = true, direction = "float" })
 function _btop_toggle()
   btop:toggle()
 end

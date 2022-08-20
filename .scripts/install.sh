@@ -30,6 +30,10 @@ sudo pamac install btop nvtop lazygit flameshot brightnessctl pfetch bottom --no
 # Icons.
 sudo pamac install papirus-icon-theme --no-confirm
 
+# Bootloader.
+sudo pamac install refind --no-confirm
+refind-install
+
 # Required for Gnome extensions.
 sudo pamac install gnome-browser-connector --no-confirm
 

@@ -13,7 +13,7 @@ configuration {
     icon-theme: "Papirus";
     font: "JetBrainsMono Nerd Font Medium 12";
     drun-display-format:  "{icon} {name}";
-    run-display-format:  "{name}";
+    run-display-format:  "{icon} {name}";
     modi: "window,run,drun";
     terminal: "alacritty";
     hide-scrollbar: true;
@@ -25,9 +25,9 @@ element-text, element-icon , mode-switcher {
 }
 
 window {
-    height: 52.5%;
+    height: 50%;
     width: 35%;
-    /* border: 3px; */
+    border: 3px;
     border-color: @border-color;
     background-color: @background;
     border-radius: 0px;
@@ -49,7 +49,8 @@ prompt {
     padding: 6px;
     text-color: @gruvbox-dark-yellow-light;
     border-radius: 8px;
-    margin: 20px 0px 0px 20px;
+    margin: 20px 0px 10px 20px;
+    font: "JetBrainsMono Nerd Font Bold 12";
 }
 
 textbox-prompt-colon {
@@ -76,6 +77,8 @@ element {
     background-color: @bg-col;
     text-color: inherit;
     orientation: vertical;
+    border-radius: 8px;
+    text-color: @gruvbox-dark-fg0;
 }
 
 element-icon {

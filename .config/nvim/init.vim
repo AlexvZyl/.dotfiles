@@ -407,7 +407,7 @@ let g:neovide_fullscreen=v:false
 let g:neovide_profiler=v:false
 let g:neovide_cursor_animation_length = 0.0
 let g:neovide_cursor_animation_size=0.95
-let g:neovide_scroll_animation_length = 0.1
+let g:neovide_scroll_animation_length = 0.0
 
 " Setup themes.
 let g:gruvbox_material_foreground = 'original'
@@ -484,11 +484,9 @@ let g:VM_silent_exit = 1
 let g:startify_custom_header =
           \ 'startify#center(startify#fortune#cowsay())'
 let g:startify_lists = [
-    \ { 'type': 'files',     'header': ['   MRU']            },
-    \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
     \ { 'type': 'sessions',  'header': ['   Sessions']       },
-    \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-    \ { 'type': 'commands',  'header': ['   Commands']       },
+    \ { 'type': 'dir',       'header': ['   Recents']       },
+    \ { 'type': 'files',     'header': ['   Global Recents']         },
 \ ]
 
 " ----------
@@ -529,7 +527,7 @@ vnoremap <silent> <F12> <Cmd>Cheatsheet<CR>
 tnoremap <silent> <F12> <Cmd>Cheatsheet<CR>
 
 " Sessions.
-nnoremap <silent> <F5> <Cmd>SSave! y<Enter><CR> <Cmd>lua vim.notify(" Saved current session.", "success", { title = " Session"} )<CR>
+nnoremap <silent> <F5> <Cmd>SSave!<CR> <Cmd>lua vim.notify(" Saved current session.", "success", { title = " Session"} )<CR>
 
 " Moving windows.
 nnoremap <silent> <C-h> <Cmd>wincmd h<CR>

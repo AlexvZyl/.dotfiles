@@ -19,7 +19,7 @@ sudo pamac install firefox brave-bin --no-confirm
 sudo pamac install onlyoffice-bin xournalpp --no-confirm
 
 # Some aesthetic stuff.
-sudo pamac install cmatrix bonsai.sh-git pipes.sh --no-confirm
+sudo pamac install cmatrix bonsai.sh-git pipes.sh lolcat --no-confirm
 
 # Fonts.  This is very large, maybe use smaller package.
 sudo pamac install nerd-fonts-complete --no-confirm

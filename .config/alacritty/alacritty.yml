@@ -444,7 +444,7 @@ draw_bold_text_with_bright_colors: false
 shell:
  program: /bin/fish 
  args:
-   - --init-command=pfetch
+   - --init-command=cowsay Dala what you must | lolcat
 
 # Startup directory
 #

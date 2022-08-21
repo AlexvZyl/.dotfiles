@@ -60,7 +60,7 @@ separator-foreground = ${colors.red}
 
 font-0 = JetBrainsMono Nerd Font;2
 
-modules-left = xworkspaces
+modules-left = xworkspaces xwindow
 modules-center = time date
 modules-right = filesystem cpu memory wlan volume battery
 
@@ -100,7 +100,9 @@ label-empty-padding = 1
 
 [module/xwindow]
 type = internal/xwindow
-label =%{F#d79921}  %{F-}%title:0:55:...%
+label =%{F#d79921}  %{F-}%title:0:42:...%
+icon = test
+format = <label> <icon>
 
 ; [module/filesystem]
 ; type = internal/fs

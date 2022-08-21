@@ -34,11 +34,15 @@ sudo pamac install papirus-icon-theme --no-confirm
 sudo pamac install refind --no-confirm
 refind-install
 
-# Login manager.
+# LY Login manager.
 sudo pamac install ly --no-confirm
-sudo systemctl disable gdm.service # Not sure how to check which ons is installed. 
-sudo systemctl enable ly.service
-sudo systemctl start ly.service
+
+# SDDM Login Manager
+sudo pamac install sddm-sugar-dark sddm-sugar-candy-git archlinux-tweak-tool-git -no-confirm
+sudo touch /etc/sddm.conf
+sudo sh -c "echo '[Theme]' >> /etc/sddm.conf"
+sudo sh -c "echo 'Current=Sugar-Candy' >> /etc/sddm.conf"
+sudo cp ~/.wallpapers/wall_secondary.png /usr/share/sddm/themes/Sugar-Candy/
 
 # Required for Gnome extensions.
 sudo pamac install gnome-browser-connector --no-confirm

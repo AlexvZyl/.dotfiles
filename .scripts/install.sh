@@ -19,7 +19,7 @@ sudo pamac install firefox brave-bin --no-confirm
 sudo pamac install onlyoffice-bin xournalpp --no-confirm
 
 # Some aesthetic stuff.
-sudo pamac install cmatrix bonsai.sh-git pipes.sh lolcat --no-confirm
+sudo pamac install cmatrix bonsai.sh-git pipes.sh lolcat shell-color-scripts --no-confirm
 
 # Fonts.  This is very large, maybe use smaller package.
 sudo pamac install nerd-fonts-complete --no-confirm
@@ -33,6 +33,12 @@ sudo pamac install papirus-icon-theme --no-confirm
 # Bootloader.
 sudo pamac install refind --no-confirm
 refind-install
+
+# Login manager.
+sudo pamac install ly --no-confirm
+# Might need to disable the current login manager here as well.
+sudo systemctl enable ly.service
+sudo systemctl start ly.service
 
 # Required for Gnome extensions.
 sudo pamac install gnome-browser-connector --no-confirm

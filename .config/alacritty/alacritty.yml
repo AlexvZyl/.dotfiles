@@ -446,8 +446,8 @@ shell:
  args:
    # - --init-command=cowsay -e "OO" -T "U " "Dala what you must" | lolcat
    # - --init-command=colorscript random
-   # - --init-command=colorscript -e elfman
-   - --init-command=colorscript -e jangofett
+   - --init-command=colorscript -e elfman
+   # - --init-command=colorscript -e jangofett
 # Startup directory
 #
 # Directory the shell is started in. If this is unset, or `None`, the working

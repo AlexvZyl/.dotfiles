@@ -36,7 +36,7 @@ refind-install
 
 # Login manager.
 sudo pamac install ly --no-confirm
-# Might need to disable the current login manager here as well.
+sudo systemctl disable gdm.service # Not sure how to check which ons is installed. 
 sudo systemctl enable ly.service
 sudo systemctl start ly.service
 
@@ -72,8 +72,11 @@ sudo pamac install optimus-manager gdm-prime nvidia-settings nvidia-force-compos
 sudo sed 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm/custom.conf
 sudo touch /etc/optimus-manager/optimus-manager.conf 
 sudo sh -c "echo '[optimus]' > /etc/optimus-manager/optimus-manager.conf" 
-sudo sh -c "echo 'startup_mode=nvidia' > /etc/optimus-manager/optimus-manager.conf" 
+sudo sh -c "echo 'startup_mode=hybrid' > /etc/optimus-manager/optimus-manager.conf" 
 nvidia-force-composition-pipeline
+
+# For some reason EndeavourOS comes with a bunch of terminals...
+sudo pamac remove endeavouros-xfce4-terminal-colors xfce4-terminal xterm --no-confirm
 
 # Setup fish (shell).
 sudo pamac install fish --no-confirm
@@ -81,6 +84,3 @@ fish <<'END_FISH'
 	curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 	fisher install IlanCosman/tide@v5t
 END_FISH
-
-# For some reason EndeavourOS comes with a bunch of terminals...
-sudo pamac remove endeavouros-xfce4-terminal-colors xfce4-terminal xterm --no-confirm

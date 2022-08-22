@@ -599,3 +599,7 @@ Use --utf-force argument to force start if you're sure your terminal can handle 
 
 2022/08/20 (23:05:50) | ===> btop++ v.1.2.8
 2022/08/20 (23:05:50) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+
+2022/08/22 (21:44:59) | ===> btop++ v.1.2.8
+2022/08/22 (21:44:59) | ERROR: No tty detected!
+btop++ needs an interactive shell to run.

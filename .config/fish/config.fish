@@ -18,3 +18,9 @@ set -g tide_character_icon " "
 
 # Add alias for dotfile tracking with git.
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# Configure pfetch.
+set -gx PF_INFO "ascii title kernel os wm uptime pkgs memory palette"
+set -gx PF_COL1 "4"
+set -gx PF_COL2 "9"
+set -gx PF_COL3 "1"

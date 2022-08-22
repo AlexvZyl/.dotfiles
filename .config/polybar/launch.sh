@@ -18,6 +18,6 @@
 # fi
 #;;
 
-polybar --reload mainbar-i3 -c ~/.config/polybar/config &
+polybar --quiet --reload mainbar-i3 -c ~/.config/polybar/config.ini &
 
 

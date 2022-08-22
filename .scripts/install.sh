@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Update package.
+sudo pacman -Syu
+
 # Make the function keys on the keyboard default.
 # (This is currently specific to my keychron keyboard)
 FILE=/etc/modprobe.d/hid_apple.conf

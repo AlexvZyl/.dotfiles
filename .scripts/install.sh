@@ -37,7 +37,7 @@ sudo pamac install cmatrix bonsai.sh-git pipes.sh lolcat shell-color-scripts --n
 sudo pamac install nerd-fonts-complete --no-confirm
 
 # Utilities.
-sudo pamac install btop nvtop thunar lazygit flameshot brightnessctl pfetch bottom dunst --no-confirm
+sudo pamac install balena-etcher btop nvtop thunar lazygit flameshot brightnessctl pfetch bottom dunst --no-confirm
 
 # Icons.
 sudo pamac install papirus-icon-theme --no-confirm
@@ -79,13 +79,22 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 sudo pamac install nodejs github-desktop github-cli code --no-confirm
 
 # Communication.
-sudo pamac install whatsapp-nativefier discord signal-desktop --no-confirm
+sudo pamac install thunderbird whatsapp-nativefier discord signal-desktop --no-confirm
 
 # i3 stuff.
 sudo pamac install feh cronie rofi rofi-greenclip picom polybar --no-confirm
 
 # Sound stuff.
-sudo pamac install pavucontrol --no-confirm
+sudo pamac install pulseaudio pavucontrol --no-confirm
+# Prevent the crackling sound.
+sudo sed -i 's/load-module module-udev-detect/load-module module-udev-detect tsched=0/g' /etc/pulse/default.pa
+
+# Power management.
+sudo pamac install tlp --no-confirm
+systemctl enable tlp.service
+systemctl mask systemd-rfkill.service
+systemctl mask systemd-rfkill.socket
+sudo tlp start
 
 # Programming.
 sudo pamac install julia-bin cmake python --no-confirm

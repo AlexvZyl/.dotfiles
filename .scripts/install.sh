@@ -56,7 +56,7 @@ sudo systemctl disable display-manager && sudo systemctl enable sddm
 sudo touch /etc/sddm.conf
 sudo sh -c "echo '[Theme]' >> /etc/sddm.conf"
 sudo sh -c "echo 'Current=Sugar-Candy' >> /etc/sddm.conf"
-sudo cp ~/.wallpapers/wall_secondary.png /usr/share/sddm/themes/Sugar-Candy/
+sudo cp ~/.wallpapers/wall_secondary.png /usr/share/sddm/themes/sugar-candy/
 
 # Required for Gnome extensions.
 sudo pamac install gnome-browser-connector --no-confirm

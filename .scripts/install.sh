@@ -19,7 +19,7 @@ cd ~/GitHub/yay/ && makepkg -si && cd ~
 # Use yay to get pamac.
 # yay -S libpamac-aur pamac-all # The full version is not currently building.
 yay -S libpamac-aur pamac-aur
-sudo pacman -Syu polkit-gnome --no-confirm
+sudo pacman -Syu polkit-gnome
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 sudo sed -Ei '/EnableAUR/s/^#//' /etc/pamac.conf
 
@@ -84,7 +84,7 @@ sudo pamac install julia-bin cmake --no-confirm
 
 # Setup optimus manager.
 # NB: For Nvidia cards only!
-sudo pamac install optimus-manager gdm-prime nvidia-settings nvidia-force-composition-pipeline --no-confirm 
+sudo pamac install optimus-manager gdm-prime nvidia-settings nvidia-force-comp-pipeline --no-confirm 
 sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm/custom.conf
 sudo sed -i 's/DisplayCommand/#DisplayCommand/g' /etc/sddm.conf
 sudo sed -i 's/DisplayStopCommand/#DisplayStopCommand/g' /etc/sddm.conf

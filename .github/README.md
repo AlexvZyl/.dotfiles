@@ -16,6 +16,7 @@ config clone --bare https://github.com/Alex-vZyl/DotFiles ~/.dotfiles/
 config checkout -f
 sudo chmod +x ~/.scripts/install.sh
 ~/.scripts/install.sh
+reboot
 ```
 
 `config` is an alias that makes using the bare repo easier.  It is already added to `fish` and `bash`.

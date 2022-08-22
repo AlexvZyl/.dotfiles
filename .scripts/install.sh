@@ -10,7 +10,7 @@ sudo touch $FILE
 sudo sh -c "echo 'options hid_apple fnmode=2' >> $FILE"
 
 # Essentials.
-sudo pacman -S git base-devel --no-confirm
+sudo pacman -S git base-devel
 
 # Install yay.
 git clone https://aur.archlinux.org/yay.git ~/GitHub/yay/
@@ -19,7 +19,7 @@ cd ~/GitHub/yay/ && makepkg -si && cd ~
 # Use yay to get pamac.
 # yay -S libpamac-aur pamac-all # The full version is not currently building.
 yay -S libpamac-aur pamac-aur
-sudo pacman -Syu polkit-gnome --no-confirm
+sudo pacman -Syu polkit-gnome
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 sudo sed -Ei '/EnableAUR/s/^#//' /etc/pamac.conf
 
@@ -51,11 +51,12 @@ sudo chmod +x ~/.scripts/setup_refind.sh && /~.scripts/setup_refind
 sudo pamac install ly --no-confirm
 
 # SDDM Login Manager
-sudo pamac install sddm-sugar-dark sddm-sugar-candy-git archlinux-tweak-tool-git -no-confirm
+sudo pamac install sddm sddm-sugar-dark sddm-sugar-candy-git archlinux-tweak-tool-git --no-confirm
+sudo systemctl disable display-manager && sudo systemctl enable sddm
 sudo touch /etc/sddm.conf
 sudo sh -c "echo '[Theme]' >> /etc/sddm.conf"
-sudo sh -c "echo 'Current=Sugar-Candy' >> /etc/sddm.conf"
-sudo cp ~/.wallpapers/wall_secondary.png /usr/share/sddm/themes/Sugar-Candy/Backgrounds 
+sudo sh -c "echo 'Current=sugar-candy' >> /etc/sddm.conf"
+sudo cp ~/.wallpapers/wall_secondary.png /usr/share/sddm/themes/sugar-candy/
 
 # Required for Gnome extensions.
 sudo pamac install gnome-browser-connector --no-confirm
@@ -77,21 +78,23 @@ sudo pamac install nodejs github-desktop github-cli code --no-confirm
 sudo pamac install whatsapp-nativefier discord signal-desktop --no-confirm
 
 # i3 stuff.
-sudo pamac install feh cronie rofi-greenclip picom-pijulius-git polybar --no-confirm
+sudo pamac install feh cronie rofi rofi-greenclip picom polybar --no-confirm
 
 # Programming.
 sudo pamac install julia-bin cmake --no-confirm
 
 # Setup optimus manager.
 # NB: For Nvidia cards only!
-sudo pamac install optimus-manager gdm-prime nvidia-settings nvidia-force-composition-pipeline --no-confirm 
+sudo pamac install optimus-manager gdm-prime nvidia-settings nvidia-force-comp-pipeline --no-confirm 
 sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm/custom.conf
 sudo sed -i 's/DisplayCommand/#DisplayCommand/g' /etc/sddm.conf
 sudo sed -i 's/DisplayStopCommand/#DisplayStopCommand/g' /etc/sddm.conf
 sudo touch /etc/optimus-manager/optimus-manager.conf 
+
 sudo sh -c "echo '[optimus]' > /etc/optimus-manager/optimus-manager.conf" 
 sudo sh -c "echo 'startup_mode=hybrid' > /etc/optimus-manager/optimus-manager.conf" 
 nvidia-force-composition-pipeline
+systemctl enable optimus-manager && systemctl enable optimus-manager &
 
 # Setup fish (shell).
 sudo pamac install fish --no-confirm

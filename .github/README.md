@@ -12,7 +12,7 @@ To install everything, simply copy and paste this into the terminal.
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 mkdir ~/.dotfiles
 config clone --bare https://github.com/Alex-vZyl/DotFiles ~/.dotfiles/
-config checkout
+config checkout -f
 sudo chmod +x ~/.setup/install.sh
 ./~/.setup/install.sh
 ```

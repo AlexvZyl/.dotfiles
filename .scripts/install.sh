@@ -68,7 +68,7 @@ sudo sed -i 's/#AutoEnable=false/AutoEnable=true/g' /etc/bluetooth/main.conf
 sudo pamac install alacritty --no-confirm
 
 # Coding stuff.
-sudo pamac install neovim neovide xclip --no-confirm
+sudo ripgrep pamac install neovim neovide xclip --no-confirm
 # Install plugin for nvim.
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -86,7 +86,6 @@ sudo pamac install julia-bin cmake python --no-confirm
 # Setup optimus manager.
 # NB: For Nvidia cards only!
 sudo pamac install optimus-manager gdm-prime nvidia-settings nvidia-force-comp-pipeline --no-confirm 
-sudo touch /etc/sddm.conf
 sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm/custom.conf
 sudo sed -i 's/DisplayCommand/#DisplayCommand/g' /etc/sddm.conf
 sudo sed -i 's/DisplayStopCommand/#DisplayStopCommand/g' /etc/sddm.conf

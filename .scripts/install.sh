@@ -20,7 +20,7 @@ cd ~/GitHub/yay/ && makepkg -si --no-confirm && cd ~
 # yay -S libpamac-aur pamac-all # The full version is not currently building.
 yay -S libpamac-aur pamac-aur
 sudo pacman -Syu polkit-gnome --no-confirm
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 sudo sed -Ei '/EnableAUR/s/^#//' /etc/pamac.conf
 
 # Browser.

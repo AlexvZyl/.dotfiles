@@ -13,8 +13,8 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 mkdir ~/.dotfiles
 config clone --bare https://github.com/Alex-vZyl/DotFiles ~/.dotfiles/
 config checkout -f
-sudo chmod +x ~/.setup/install.sh
-./~/.setup/install.sh
+sudo chmod +x ~/.scripts/install.sh
+./~/.scripts/install.sh
 ```
 
 `config` is an alias that makes using the bare repo easier.  It is already added to `fish` and `bash`.

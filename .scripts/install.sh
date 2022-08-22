@@ -6,6 +6,9 @@ FILE=/etc/modprobe.d/hid_apple.conf
 sudo touch $FILE
 sudo sh -c "echo 'options hid_apple fnmode=2' >> $FILE"
 
+# Ensure yay is installed.
+
+
 # Use yay to get pamac (installed by default on EndeavourOS).
 # yay -S libpamac-aur pamac-all # The full version is not currently building.
 yay -S libpamac-aur pamac-aur
@@ -66,9 +69,8 @@ sudo pamac install whatsapp-nativefier discord signal-desktop --no-confirm
 # i3 stuff.
 sudo pamac install feh cronie rofi-greenclip picom-pijulius-git polybar --no-confirm
 
-# Programming languages.
-sudo pamac install julia-bin --no-confirm
-sudo pamac install cmake --no-confirm
+# Programming.
+sudo pamac install julia-bin git cmake --no-confirm
 
 # Setup optimus manager.
 # NB: For Nvidia cards only!

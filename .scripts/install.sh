@@ -13,8 +13,8 @@ sudo sh -c "echo 'options hid_apple fnmode=2' >> $FILE"
 sudo pacman -S git base-devel --no-confirm
 
 # Install yay.
-git clone https://aur.archlinux.org/yay.git GitHub/yay/
-cd GitHub/yay/ && makepkg -si --no-confirm && cd ~
+git clone https://aur.archlinux.org/yay.git ~/GitHub/yay/
+cd ~/GitHub/yay/ && makepkg -si --no-confirm && cd ~
 
 # Use yay to get pamac.
 # yay -S libpamac-aur pamac-all # The full version is not currently building.

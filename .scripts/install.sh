@@ -14,7 +14,7 @@ sudo pacman -S git base-devel --no-confirm
 
 # Install yay.
 git clone https://aur.archlinux.org/yay.git ~/GitHub/yay/
-cd ~/GitHub/yay/ && makepkg -si --no-confirm && cd ~
+cd ~/GitHub/yay/ && makepkg -si && cd ~
 
 # Use yay to get pamac.
 # yay -S libpamac-aur pamac-all # The full version is not currently building.

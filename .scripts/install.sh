@@ -10,7 +10,7 @@ sudo touch $FILE
 sudo sh -c "echo 'options hid_apple fnmode=2' >> $FILE"
 
 # Essentials.
-sudo pacman -S git base-devel --no-confirm
+sudo pacman -S git base-devel
 
 # Install yay.
 git clone https://aur.archlinux.org/yay.git ~/GitHub/yay/

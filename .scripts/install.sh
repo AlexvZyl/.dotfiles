@@ -19,6 +19,8 @@ cd ~/GitHub/yay/ && makepkg -si --no-confirm && cd ~
 # Use yay to get pamac.
 # yay -S libpamac-aur pamac-all # The full version is not currently building.
 yay -S libpamac-aur pamac-aur
+sudo pacman -Syu polkit-gnome
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Browser.
 # Keep firefox since some programs use it by default.

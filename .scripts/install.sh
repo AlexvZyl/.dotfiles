@@ -51,7 +51,8 @@ refind-install
 sudo pamac install ly --no-confirm
 
 # SDDM Login Manager
-sudo pamac install sddm-sugar-dark sddm-sugar-candy-git archlinux-tweak-tool-git -no-confirm
+sudo pamac install sddm sddm-sugar-dark sddm-sugar-candy-git archlinux-tweak-tool-git --no-confirm
+sudo systemctl disable display-manager && sudo systemctl enable sddm
 sudo touch /etc/sddm.conf
 sudo sh -c "echo '[Theme]' >> /etc/sddm.conf"
 sudo sh -c "echo 'Current=Sugar-Candy' >> /etc/sddm.conf"

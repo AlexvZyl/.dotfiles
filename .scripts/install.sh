@@ -21,6 +21,7 @@ cd ~/GitHub/yay/ && makepkg -si --no-confirm && cd ~
 yay -S libpamac-aur pamac-aur
 sudo pacman -Syu polkit-gnome
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+sudo sed -Ei '/EnableAUR/s/^#//' /etc/pamac.conf
 
 # Browser.
 # Keep firefox since some programs use it by default.

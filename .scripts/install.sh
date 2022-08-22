@@ -90,9 +90,11 @@ sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm/custom.conf
 sudo sed -i 's/DisplayCommand/#DisplayCommand/g' /etc/sddm.conf
 sudo sed -i 's/DisplayStopCommand/#DisplayStopCommand/g' /etc/sddm.conf
 sudo touch /etc/optimus-manager/optimus-manager.conf 
+
 sudo sh -c "echo '[optimus]' > /etc/optimus-manager/optimus-manager.conf" 
 sudo sh -c "echo 'startup_mode=hybrid' > /etc/optimus-manager/optimus-manager.conf" 
 nvidia-force-composition-pipeline
+systemctl enable optimus-manager && systemctl enable optimus-manager &
 
 # Setup fish (shell).
 sudo pamac install fish --no-confirm

@@ -6,10 +6,14 @@ FILE=/etc/modprobe.d/hid_apple.conf
 sudo touch $FILE
 sudo sh -c "echo 'options hid_apple fnmode=2' >> $FILE"
 
-# Ensure yay is installed.
+# Essentials.
+sudo pacman -S git base-devel --no-confirm
 
+# Install yay.
+git clone https://aur.archlinux.org/yay.git GitHub/yay/
+cd GitHub/yay/ && makepkg -si --no-confirm && cd ~
 
-# Use yay to get pamac (installed by default on EndeavourOS).
+# Use yay to get pamac.
 # yay -S libpamac-aur pamac-all # The full version is not currently building.
 yay -S libpamac-aur pamac-aur
 
@@ -70,7 +74,7 @@ sudo pamac install whatsapp-nativefier discord signal-desktop --no-confirm
 sudo pamac install feh cronie rofi-greenclip picom-pijulius-git polybar --no-confirm
 
 # Programming.
-sudo pamac install julia-bin git cmake --no-confirm
+sudo pamac install julia-bin cmake --no-confirm
 
 # Setup optimus manager.
 # NB: For Nvidia cards only!
@@ -82,9 +86,6 @@ sudo touch /etc/optimus-manager/optimus-manager.conf
 sudo sh -c "echo '[optimus]' > /etc/optimus-manager/optimus-manager.conf" 
 sudo sh -c "echo 'startup_mode=hybrid' > /etc/optimus-manager/optimus-manager.conf" 
 nvidia-force-composition-pipeline
-
-# For some reason EndeavourOS comes with a bunch of terminals...
-sudo pamac remove endeavouros-xfce4-terminal-colors xfce4-terminal xterm --no-confirm
 
 # Setup fish (shell).
 sudo pamac install fish --no-confirm

@@ -99,3 +99,7 @@ fish <<'END_FISH'
 	curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 	fisher install IlanCosman/tide@v5t
 END_FISH
+
+# Setup github.
+sudo chmod +x ~/.scripts/setup_git.sh
+/~.scripts/setup_git.sh

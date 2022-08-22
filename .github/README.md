@@ -9,6 +9,7 @@ The dotfiles for my personal setup.  Currently only supports Arch based distros 
 To install everything, simply copy and paste this into the terminal.
 
 ```bash
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 mkdir ~/.dotfiles
 config clone --bare https://github.com/Alex-vZyl/DotFiles ~/.dotfiles/
 config checkout

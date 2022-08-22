@@ -81,18 +81,18 @@ sudo pamac install whatsapp-nativefier discord signal-desktop --no-confirm
 sudo pamac install feh cronie rofi rofi-greenclip picom polybar --no-confirm
 
 # Programming.
-sudo pamac install julia-bin cmake --no-confirm
+sudo pamac install julia-bin cmake python --no-confirm
 
 # Setup optimus manager.
 # NB: For Nvidia cards only!
 sudo pamac install optimus-manager gdm-prime nvidia-settings nvidia-force-comp-pipeline --no-confirm 
+sudo touch /etc/sddm.conf
 sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm/custom.conf
 sudo sed -i 's/DisplayCommand/#DisplayCommand/g' /etc/sddm.conf
 sudo sed -i 's/DisplayStopCommand/#DisplayStopCommand/g' /etc/sddm.conf
 sudo touch /etc/optimus-manager/optimus-manager.conf 
-
 sudo sh -c "echo '[optimus]' > /etc/optimus-manager/optimus-manager.conf" 
-sudo sh -c "echo 'startup_mode=hybrid' > /etc/optimus-manager/optimus-manager.conf" 
+sudo sh -c "echo 'startup_mode=nvidia' > /etc/optimus-manager/optimus-manager.conf" 
 nvidia-force-composition-pipeline
 systemctl enable optimus-manager && systemctl enable optimus-manager &
 

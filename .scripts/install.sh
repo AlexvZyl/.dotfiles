@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Update package.
+# Ensure packages are up to date.
 sudo pacman -Syu
 
-# Make the function keys on the keyboard default.
+# Make the function keys on the keyboard default over media keys.
 # (This is currently specific to my keychron keyboard)
 FILE=/etc/modprobe.d/hid_apple.conf
 sudo touch $FILE
@@ -24,8 +24,7 @@ sudo pacman -Syu polkit-gnome --no-confirm
 sudo sed -Ei '/EnableAUR/s/^#//' /etc/pamac.conf
 
 # Browser.
-# Keep firefox since some programs use it by default.
-# (for example cargo)
+# Keep firefox since some programs use it by default (for example cargo).
 sudo pamac install firefox brave-bin --no-confirm
 
 # Office.
@@ -46,6 +45,7 @@ sudo pamac install papirus-icon-theme --no-confirm
 # Bootloader.
 sudo pamac install refind --no-confirm
 refind-install
+sudo chmod +x ~/.scripts/setup_refind.sh && /~.scripts/setup_refind
 
 # LY Login manager.
 sudo pamac install ly --no-confirm
@@ -55,7 +55,7 @@ sudo pamac install sddm-sugar-dark sddm-sugar-candy-git archlinux-tweak-tool-git
 sudo touch /etc/sddm.conf
 sudo sh -c "echo '[Theme]' >> /etc/sddm.conf"
 sudo sh -c "echo 'Current=Sugar-Candy' >> /etc/sddm.conf"
-sudo cp ~/.wallpapers/wall_secondary.png /usr/share/sddm/themes/Sugar-Candy/
+sudo cp ~/.wallpapers/wall_secondary.png /usr/share/sddm/themes/Sugar-Candy/Backgrounds 
 
 # Required for Gnome extensions.
 sudo pamac install gnome-browser-connector --no-confirm
@@ -71,7 +71,7 @@ sudo pamac install neovim neovide xclip --no-confirm
 # Install plugin for nvim.
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-sudo pamac install github-desktop github-cli code --no-confirm
+sudo pamac install nodejs github-desktop github-cli code --no-confirm
 
 # Communication.
 sudo pamac install whatsapp-nativefier discord signal-desktop --no-confirm

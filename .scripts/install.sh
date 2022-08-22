@@ -37,7 +37,7 @@ sudo pamac install cmatrix bonsai.sh-git pipes.sh lolcat shell-color-scripts --n
 sudo pamac install nerd-fonts-complete --no-confirm
 
 # Utilities.
-sudo pamac install btop nvtop lazygit flameshot brightnessctl pfetch bottom --no-confirm
+sudo pamac install btop nvtop lazygit flameshot brightnessctl pfetch bottom dunst --no-confirm
 
 # Icons.
 sudo pamac install papirus-icon-theme --no-confirm

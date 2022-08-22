@@ -37,10 +37,14 @@ sudo pamac install cmatrix bonsai.sh-git pipes.sh lolcat shell-color-scripts --n
 sudo pamac install nerd-fonts-complete --no-confirm
 
 # Utilities.
-sudo pamac install btop nvtop lazygit flameshot brightnessctl pfetch bottom dunst --no-confirm
+sudo pamac install btop nvtop thunar lazygit flameshot brightnessctl pfetch bottom dunst --no-confirm
 
 # Icons.
 sudo pamac install papirus-icon-theme --no-confirm
+
+# GUI stuff (Need snapd for some cool themes).
+sudo pamac install lxappearance-gtk3 gruvbox-material-gtk-theme-git --no-confirm
+sudo snap install gtk-common-themes
 
 # Bootloader.
 sudo pamac install refind --no-confirm
@@ -79,6 +83,9 @@ sudo pamac install whatsapp-nativefier discord signal-desktop --no-confirm
 
 # i3 stuff.
 sudo pamac install feh cronie rofi rofi-greenclip picom polybar --no-confirm
+
+# Sound stuff.
+sudo pamac install pavucontrol --no-confirm
 
 # Programming.
 sudo pamac install julia-bin cmake python --no-confirm

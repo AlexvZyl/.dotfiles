@@ -138,7 +138,7 @@ require 'bufferline'.setup {
 require 'lualine'.setup {
     options = { 
         disabled_filetypes = { "NvimTree", "startify" }
-    },
+        },
     extensions = {
         "toggleterm",
         "nvim-tree"

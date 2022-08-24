@@ -42,9 +42,8 @@ sudo pamac install fuse-common balena-etcher btop nvtop thunar lazygit flameshot
 # Icons.
 sudo pamac install papirus-icon-theme --no-confirm
 
-# GUI stuff (Need snapd for some cool themes).
+# GUI stuff.
 sudo pamac install lxappearance-gtk3 gruvbox-material-gtk-theme-git --no-confirm
-sudo snap install gtk-common-themes
 
 # Bootloader.
 sudo pamac install refind --no-confirm
@@ -72,7 +71,7 @@ sudo sed -i 's/#AutoEnable=false/AutoEnable=true/g' /etc/bluetooth/main.conf
 sudo pamac install alacritty --no-confirm
 
 # Coding stuff.
-sudo ripgrep pamac install neovim neovide xclip --no-confirm
+sudo pamac install neovim ripgrep neovide xclip --no-confirm
 # Install plugin for nvim.
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -109,7 +108,7 @@ sudo touch /etc/optimus-manager/optimus-manager.conf
 sudo sh -c "echo '[optimus]' > /etc/optimus-manager/optimus-manager.conf" 
 sudo sh -c "echo 'startup_mode=nvidia' > /etc/optimus-manager/optimus-manager.conf" 
 nvidia-force-composition-pipeline
-systemctl enable optimus-manager && systemctl enable optimus-manager &
+systemctl enable optimus-manager && systemctl start optimus-manager &
 
 # Setup fish (shell).
 sudo pamac install fish --no-confirm

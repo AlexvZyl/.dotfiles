@@ -39,7 +39,7 @@
     scale = 0
 
     # Maximum number of notification (0 means no limit)
-    notification_limit = 5
+    notification_limit = 0
 
     ### Progress bar ###
 
@@ -230,7 +230,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 6
+    corner_radius = 8
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this

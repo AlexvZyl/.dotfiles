@@ -1,7 +1,7 @@
 {
-    "julia.executablePath": "~/Software/julia/julia",
+    "julia.executablePath": "/usr/bin/julia",
     "julia.NumThreads": 16,
-    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/14.0.3/clangd_14.0.3/bin/clangd",
+    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/14.0.3/clangd_14.0.3/bin/clangd"
 
     //"languageserver": {
     //  "efm": {
@@ -10,27 +10,4 @@
     //    "filetypes": ["vim", "eruby", "markdown"]
     //  }
     //}     
-      
-    //"languageserver": {
-    //    "ccls": {      
-    //        "command": "ccls",     
-    //        "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],  
-    //        "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"], 
-    //        "initializationOptions": {  
-    //            "cache": {  
-    //              "directory": "/tmp/ccls" 
-    //            } 
-    //        }
-    //    }
-    //}
-
-    "languageserver": {
-      "julia": {
-        "command": "/usr/bin/julia",
-        "args" : ["--startup-file=no", "--history-file=no", "-e",
-        "using LanguageServer;\n       using Pkg;\n       import StaticLint;\n       import SymbolServer;\n       env_path = dirname(Pkg.Types.Context().env.project_file);\n       debug = false;\n       server = LanguageServer.LanguageServerInstance(stdin, stdout, debug, env_path, \"\");\n       server.runlinter = true;\n       run(server);" ],
-        "filetypes": ["julia"]
-      }
-    }
-
 }

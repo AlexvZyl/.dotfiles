@@ -108,7 +108,7 @@ sudo touch /etc/optimus-manager/optimus-manager.conf
 sudo sh -c "echo '[optimus]' > /etc/optimus-manager/optimus-manager.conf" 
 sudo sh -c "echo 'startup_mode=nvidia' > /etc/optimus-manager/optimus-manager.conf" 
 nvidia-force-composition-pipeline
-systemctl enable optimus-manager && systemctl enable optimus-manager &
+systemctl enable optimus-manager && systemctl start optimus-manager &
 
 # Setup fish (shell).
 sudo pamac install fish --no-confirm

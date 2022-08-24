@@ -4,7 +4,7 @@ The dotfiles for my personal setup.  Currently only supports Arch based distros 
 
 ## Installation
 
-To install everything, simply copy and paste this into the terminal.
+To install everything, simply copy and paste this into the terminal.  Reboot after the scripts is done.
 
 ```bash
 sudo pacman -S git
@@ -14,7 +14,6 @@ config clone --bare https://github.com/Alex-vZyl/DotFiles ~/.dotfiles/
 config checkout -f
 sudo chmod +x ~/.scripts/install.sh
 ~/.scripts/install.sh
-reboot
 ```
 
 `config` is an alias that makes using the bare repo easier.  It is already added to `fish` and `bash`.

@@ -633,6 +633,7 @@ mouse_warping none
 #
 # using default config 
 exec_always --no-startup-id picom -b --experimental-backend
+exec --no-startup-id xborders --config $HOME/.config/xborder/config.json --disable-version-warning
 # exec_always --no-startup-id picom -b
 
 #

@@ -64,8 +64,10 @@ sudo cp ~/.wallpapers/wall_secondary.png /usr/share/sddm/themes/sugar-candy/
 # Required for Gnome extensions.
 sudo pamac install gnome-browser-connector --no-confirm
 
-# Enable BT on startup.
-sudo sed -i 's/#AutoEnable=false/AutoEnable=true/g' /etc/bluetooth/main.conf
+# Bluetooth.
+sudo pamac install blueman --no-confirm 
+systemctl enable bluetooth.service && systemctl restart bluetooth.service
+sudo sed -i 's/#AutoEnable=false/AutoEnable=true/g' /etc/bluetooth/main.conf # Enable on startup.
 
 # Terminal.
 sudo pamac install alacritty --no-confirm

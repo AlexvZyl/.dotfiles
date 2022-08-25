@@ -179,7 +179,7 @@ bindsym $mod+t exec alacritty
 bindsym $mod+n exec neovide --multigrid
 
 # Start resource viewers.
-bindsym $mod+b exec btop --utf-force
+bindsym $mod+b exec alacritty --command=btop
 
 # kill focused window
 bindsym $mod+q kill
@@ -449,12 +449,12 @@ set $darkbluetrans	#090909bf
 set $darkblue		#090909bf
 set $lightblue		#458588
 set $urgentred		#e53935
-set $white		#ffffff
-set $black		#000000
-set $purple		#e345ff
+set $white		    #ffffff
+set $black		    #000000
+set $purple		    #e345ff
 set $darkgrey		#383c4a
-set $grey		#b0b5bd
-set $mediumgrey		#ebdbb2aa
+set $grey		    #b0b5bd
+set $mediumgrey		#ebdbb288
 set $yellowbrown	#e1b700
 
 # define colors for windows:

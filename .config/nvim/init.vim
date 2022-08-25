@@ -285,7 +285,7 @@ require 'nvim-tree'.setup {
 require 'nvim-treesitter.configs'.setup {
 
     -- A list of parser names, or "all"
-    ensure_installed = { "c", "lua", "rust", "cpp", "julia" },
+    ensure_installed = { "c", "lua", "rust", "cpp", "julia", "python" },
     -- ensure_installed = {  },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -449,7 +449,7 @@ vnoremap <silent> <F12> <Cmd>Cheatsheet<CR>
 tnoremap <silent> <F12> <Cmd>Cheatsheet<CR>
 
 " Sessions.
-nnoremap <silent> <F5> <Cmd>SSave!<CR> <Cmd>lua vim.notify(" Saved current session.", "success", { title = " Session"} )<CR>
+nnoremap <silent> <F5> <Cmd>SSave<CR> " <Cmd>lua vim.notify(" Saved current session.", "success", { title = " Session"} )<CR>
 
 " Moving windows.
 nnoremap <silent> <C-h> <Cmd>wincmd h<CR>
@@ -474,6 +474,8 @@ tnoremap <silent> <Esc> <C-\><C-n>
 
 " Commenting.
 nnoremap <silent> <C-/> <Cmd>Commentary<CR>
+inoremap <silent> <C-/> <Cmd>Commentary<CR>
+vnoremap <silent> <C-/> <Cmd>Commentary<CR>
 
 " Saving.
 nnoremap <silent> <C-s> <Cmd>w!<CR> <Cmd>lua vim.notify(" Saved to \"" .. vim.fn.expand('%') .. "\".", "success", { render = "minimal"} )<CR>

@@ -67,7 +67,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.4
+  opacity: 0.5
 
   # Startup Mode (changes require restart)
   #
@@ -444,11 +444,8 @@ shell:
  args:
    # - --init-command=cowsay -e "OO" -T "U " "Dala what you must" | lolcat
    # - --init-command=colorscript random
-   # - --init-command=colorscript -e elfman
+   - --init-command=colorscript -e elfman
    # - --init-command=colorscript -e jangofett
-   # - --init-command=neofetch
-   - --init-command=pfetch
-   # - --init-command=paleofetch
 # Startup directory
 #
 # Directory the shell is started in. If this is unset, or `None`, the working

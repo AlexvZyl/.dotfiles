@@ -17,8 +17,8 @@ git clone https://aur.archlinux.org/yay.git ~/GitHub/yay/
 cd ~/GitHub/yay/ && makepkg -si && cd ~
 
 # Use yay to get pamac.
-# yay -S libpamac-aur pamac-all # The full version is not currently building.
-yay -S libpamac-aur pamac-aur
+# yay -S libpamac-full pamac-all # Support for snap and flatpak.
+yay -S libpamac-aur pamac-aur # Only AUR.
 sudo pacman -Syu polkit-gnome
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 sudo sed -Ei '/EnableAUR/s/^#//' /etc/pamac.conf

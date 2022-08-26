@@ -259,6 +259,7 @@ function _fish_toggle()
 end
 vim.api.nvim_set_keymap("n", "<F3>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("t", "<F3>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("v", "<F3>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
 
 ----------------
 -- Setup tree --

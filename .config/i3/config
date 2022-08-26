@@ -53,7 +53,7 @@ new_window pixel 2
 # hide_edge_borders both
 
 # Set inner/outer gaps
-gaps inner 6
+gaps inner 8
 gaps outer 0
 
 # show window title bars (not officially supported with i3gaps)

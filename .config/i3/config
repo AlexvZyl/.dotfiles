@@ -563,9 +563,7 @@ bindsym $mod+Tab exec rofi -show window
 # Startup scripts: #
 ####################
 
-exec ./.screenlayout/default_triple_monitor.sh
-# exec ./.screenlayout/default_laptop_monitor.sh
-exec ./.config/polybar/launch.sh
+exec ~/.scripts/startup.sh
 
 ####################
 # Custom keybinds: #

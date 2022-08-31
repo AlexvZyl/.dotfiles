@@ -86,8 +86,8 @@ _open_files_for_editing() {
 # Alias for config.
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-
-
+# Use lazygit with config.
+alias lazygit-dotfiles='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # alias pacdiff=eos-pacdiff
 ################################################################################

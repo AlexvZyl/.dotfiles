@@ -24,3 +24,6 @@ set -gx PF_INFO "ascii title kernel os wm uptime pkgs memory palette"
 set -gx PF_COL1 "4"
 set -gx PF_COL2 "9"
 set -gx PF_COL3 "1"
+
+# Use lazygit with the config.
+alias lazygit-dotfiles='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

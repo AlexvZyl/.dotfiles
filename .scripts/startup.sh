@@ -9,3 +9,6 @@
 # Get rid of that screen tearing.
 # Unsure if this will make startup slower?...
 nvidia-force-comp-pipeline
+
+# Start compositor.
+picom -b --experimental-backend

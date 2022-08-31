@@ -86,7 +86,7 @@ sudo pamac install thunderbird whatsapp-nativefier discord signal-desktop --no-c
 sudo pamac install feh xborder-git cronie rofi rofi-greenclip picom polybar --no-confirm
 
 # Sound stuff.
-sudo pamac install pulseaudio pavucontrol --no-confirm
+sudo pamac install pulseaudio pavucontrol alsa-utils --no-confirm
 # Prevent the crackling sound.
 sudo sed -i 's/load-module module-udev-detect/load-module module-udev-detect tsched=0/g' /etc/pulse/default.pa
 

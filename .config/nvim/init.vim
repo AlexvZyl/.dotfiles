@@ -68,6 +68,8 @@ Plug 'EdenEast/nightfox.nvim'
 Plug 'sainnhe/everforest'
 Plug 'sainnhe/edge'
 Plug 'shaunsingh/nord.nvim'
+Plug 'dracula/vim'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 

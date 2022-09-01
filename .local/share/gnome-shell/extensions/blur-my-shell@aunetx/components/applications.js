@@ -1,6 +1,7 @@
 'use strict';
 
 const { Shell, Clutter, Meta, GLib } = imports.gi;
+const Main = imports.ui.main;
 
 const Me = imports.misc.extensionUtils.getCurrentExtension();
 const { PaintSignals } = Me.imports.effects.paint_signals;
@@ -41,6 +42,45 @@ var ApplicationsBlur = class ApplicationsBlur {
                 }
             }
         );
+
+        this.connect_to_overview();
+    }
+
+    /// Connect to the overview being opened/closed to force the blur being
+    /// shown on every window of the workspaces viewer.
+    connect_to_overview() {
+        this.connections.disconnect_all_for(Main.overview);
+
+        if (this.prefs.applications.BLUR_ON_OVERVIEW) {
+            // when the overview is opened, show every window actors (which
+            // allows the blur to be shown too)
+            this.connections.connect(
+                Main.overview, 'showing',
+                _ => this.window_map.forEach((meta_window, _pid) => {
+                    let window_actor = meta_window.get_compositor_private();
+                    window_actor.show();
+                })
+            );
+
+            // when the overview is closed, hide every actor that is not on the
+            // current workspace (to mimic the original behaviour)
+            this.connections.connect(
+                Main.overview, 'hidden',
+                _ => {
+                    let active_workspace =
+                        global.workspace_manager.get_active_workspace();
+
+                    this.window_map.forEach((meta_window, _pid) => {
+                        let window_actor = meta_window.get_compositor_private();
+
+                        if (
+                            meta_window.get_workspace() !== active_workspace
+                        )
+                            window_actor.hide();
+                    });
+                }
+            );
+        }
     }
 
     /// Iterate through all existing windows and add blur as needed.
@@ -139,6 +179,11 @@ var ApplicationsBlur = class ApplicationsBlur {
             && ((enable_all && !blacklist.includes(window_wm_class))
                 || (!enable_all && whitelist.includes(window_wm_class))
             )
+            && [
+                Meta.FrameType.NORMAL,
+                Meta.FrameType.DIALOG,
+                Meta.FrameType.MODAL_DIALOG
+            ].includes(meta_window.get_frame_type())
         ) {
             this._log(`application ${pid} listed, blurring it`);
 
@@ -293,7 +338,7 @@ var ApplicationsBlur = class ApplicationsBlur {
         );
 
         // if hacks are selected, force to repaint the window
-        if (this.prefs.HACKS_LEVEL >= 1) {
+        if (this.prefs.HACKS_LEVEL === 1 || this.prefs.HACKS_LEVEL === 2) {
             this._log("applications hack level 1 or 2");
 
             this.paint_signals.disconnect_all();
@@ -302,7 +347,15 @@ var ApplicationsBlur = class ApplicationsBlur {
             this.paint_signals.disconnect_all();
         }
 
+        // insert the blurred widget
         window_actor.insert_child_at_index(blur_actor, 0);
+
+        // make sure window is blurred in overview
+        if (this.prefs.applications.BLUR_ON_OVERVIEW)
+            this.enforce_window_visibility_on_overview_for(window_actor);
+
+        // set the window actor's opacity
+        this.set_window_opacity(window_actor, this.prefs.applications.OPACITY);
 
         // register the blur actor/effect
         blur_actor['blur_provider_pid'] = pid;
@@ -327,6 +380,38 @@ var ApplicationsBlur = class ApplicationsBlur {
                 }
             }
         );
+    }
+
+    /// Makes sure that, when the overview is visible, the window actor will
+    /// stay visible no matter what.
+    /// We can instead hide the last child of the window actor, which will
+    /// improve performances without hiding the blur effect.
+    enforce_window_visibility_on_overview_for(window_actor) {
+        this.connections.connect(window_actor, 'notify::visible',
+            _ => {
+                if (this.prefs.applications.BLUR_ON_OVERVIEW) {
+                    if (
+                        !window_actor.visible
+                        && Main.overview.visible
+                    ) {
+                        window_actor.show();
+                        window_actor.get_last_child().hide();
+                    }
+                    else if (
+                        window_actor.visible
+                    )
+                        window_actor.get_last_child().show();
+                }
+            }
+        );
+    }
+
+    /// Set the opacity of the window actor that sits on top of the blur effect.
+    set_window_opacity(window_actor, opacity) {
+        window_actor.get_children().forEach(child => {
+            if (child.name !== "blur-actor")
+                child.opacity = opacity;
+        });
     }
 
     // Compute the offset constraints for a blur actor relative to the size and
@@ -385,25 +470,26 @@ var ApplicationsBlur = class ApplicationsBlur {
     remove_blur(pid) {
         this._log(`removing blur for pid ${pid}`);
 
-        // global.window_group is null when restarting the shell, causing an
-        // innocent crash
-        if (global.window_group == null)
-            return;
-
-
         let meta_window = this.window_map.get(pid);
         // disconnect needed signals and untrack window
         if (meta_window) {
             this.window_map.delete(pid);
+            let window_actor = meta_window.get_compositor_private();
 
-            // remove blur actor and untrack it
             let blur_actor = this.blur_actor_map.get(pid);
             if (blur_actor) {
                 this.blur_actor_map.delete(pid);
 
-                let window_actor = meta_window.get_compositor_private();
-                if (window_actor)
+                if (window_actor) {
+                    // reset the opacity
+                    this.set_window_opacity(window_actor, 255);
+
+                    // remove the blurred actor
                     window_actor.remove_child(blur_actor);
+
+                    // disconnect the signals about overview animation etc
+                    this.connections.disconnect_all_for(window_actor);
+                }
             }
         }
     }
@@ -419,6 +505,16 @@ var ApplicationsBlur = class ApplicationsBlur {
 
         this.connections.disconnect_all();
         this.paint_signals.disconnect_all();
+    }
+
+    /// Update the opacity of all window actors.
+    set_opacity() {
+        let opacity = this.prefs.applications.OPACITY;
+
+        this.window_map.forEach(((meta_window, _pid) => {
+            let window_actor = meta_window.get_compositor_private();
+            this.set_window_opacity(window_actor, opacity);
+        }));
     }
 
     /// Updates each blur effect to use new sigma value

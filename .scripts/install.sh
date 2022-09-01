@@ -62,7 +62,7 @@ sudo sh -c "echo 'Current=sugar-candy' >> /etc/sddm.conf"
 sudo cp ~/.wallpapers/wall_secondary.png /usr/share/sddm/themes/sugar-candy/
 
 # Gnome stuff.
-sudo pamac install gnome-browser-connector gnome-tweaks --no-confirm
+sudo pamac install pop-launcher gnome-browser-connector gnome-tweaks --no-confirm
 
 # Bluetooth.
 sudo pamac install blueman --no-confirm 

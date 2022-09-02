@@ -276,8 +276,8 @@ bindsym $mod+XF86AudioLowerVolume exec amixer -D pulse sset Master 1%- && pkill 
 bindsym XF86AudioMute exec amixer sset Master toggle && killall -USR1 i3blocks
 
 # audio control
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 

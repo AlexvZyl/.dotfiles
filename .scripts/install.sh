@@ -112,6 +112,11 @@ sudo sh -c "echo 'startup_mode=nvidia' > /etc/optimus-manager/optimus-manager.co
 nvidia-force-composition-pipeline
 systemctl enable optimus-manager && systemctl start optimus-manager &
 
+# Enable SysRq keys.
+sudo touch /etc/sysctl.d/99-sysctl.conf
+sudo sh -c "echo 'kernel.sysrq=1' >> /etc/sysctl.d/99-sysctl.conf"
+
+
 # Setup fish (shell).
 sudo pamac install fish --no-confirm
 fish <<'END_FISH'

@@ -90,6 +90,9 @@ sudo pamac install pulseaudio pavucontrol alsa-utils --no-confirm
 # Prevent the crackling sound.
 sudo sed -i 's/load-module module-udev-detect/load-module module-udev-detect tsched=0/g' /etc/pulse/default.pa
 
+# Media.
+sudo pamac install playerctl --no-confirm
+
 # Power management.
 sudo pamac install tlp --no-confirm
 systemctl enable tlp.service

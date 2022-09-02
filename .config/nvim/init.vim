@@ -398,6 +398,9 @@ set textwidth	=0
 set expandtab
 set autoindent
 
+" Timeout (for which-key)
+set timeoutlen =1000
+
 " Show matching brackets.
 set showmatch
 

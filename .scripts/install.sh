@@ -37,7 +37,7 @@ sudo pamac install cmatrix bonsai.sh-git pipes.sh lolcat shell-color-scripts --n
 sudo pamac install nerd-fonts-complete --no-confirm
 
 # Utilities.
-sudo pamac install fuse-common gnome-calculator balena-etcher btop nvtop thunar lazygit flameshot brightnessctl pfetch bottom dunst --no-confirm
+sudo pamac install fuse-common speedtest-cli gnome-calculator balena-etcher btop nvtop thunar lazygit flameshot brightnessctl pfetch bottom dunst --no-confirm
 
 # Icons.
 sudo pamac install papirus-icon-theme --no-confirm
@@ -115,7 +115,6 @@ systemctl enable optimus-manager && systemctl start optimus-manager &
 # Enable SysRq keys.
 sudo touch /etc/sysctl.d/99-sysctl.conf
 sudo sh -c "echo 'kernel.sysrq=1' >> /etc/sysctl.d/99-sysctl.conf"
-
 
 # Setup fish (shell).
 sudo pamac install fish --no-confirm

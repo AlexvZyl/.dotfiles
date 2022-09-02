@@ -181,6 +181,9 @@ bindsym $mod+n exec neovide --multigrid
 # Start resource viewers.
 bindsym $mod+b exec alacritty --command=btop
 
+# Start lazygit with dotfiles.
+bindsym $mod+g exec alacritty --command=lazygit-dotfiles
+
 # kill focused window
 bindsym $mod+q kill
 
@@ -244,7 +247,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+g layout tabbed
+bindsym $mod+Shift+g layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating

@@ -226,7 +226,7 @@ require("toggleterm").setup {
         vim.cmd("startinsert")
     end,
     direction = "float",
-    size = 13,
+    size = 15,
     float_opts = {
         border = 'single',
         winblend = 0,

@@ -60,6 +60,9 @@ Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh
 " Lua.
 Plug 'sumneko/lua-language-server' 
 
+" Rust.
+Plug 'simrat39/rust-tools.nvim'
+
 " Themes.
 Plug 'sainnhe/gruvbox-material'
 Plug 'morhetz/gruvbox'
@@ -287,6 +290,9 @@ require 'nvim-tree'.setup {
         width = 35
     },
     auto_reload_on_write = true,
+    git = {
+        ignore = false
+    }
 }
 
 ---------------------------

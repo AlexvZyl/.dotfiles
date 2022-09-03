@@ -25,8 +25,8 @@ Plug 'mhinz/vim-startify'
 Plug 'Pocco81/true-zen.nvim' " Zen mode!
 
 " Git.
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+" Plug 'tpope/vim-fugitive'
+" Plug 'airblade/vim-gitgutter'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'sindrets/diffview.nvim'
@@ -130,14 +130,38 @@ require 'bufferline'.setup {
     }
 }
 
+--------------
+-- Gitsigns --
+--------------
+
+require 'gitsigns'.setup {
+    signcolumn = false,
+    numhl = true
+}
+
 -------------------
 -- Lualine setup --
 -------------------
 
-require 'lualine'.setup {
+-- Show git status.
+local function diff_source()
+    local gitsigns = vim.b.gitsigns_status_dict
+    if gitsigns then
+        return {
+          added = gitsigns.added,
+          modified = gitsigns.changed,
+          removed = gitsigns.removed
+        }
+    end
+end
+
+require'lualine'.setup {
+    sections = {
+      lualine_b = { {'diff', source = diff_source}, },
+    },
     options = { 
         disabled_filetypes = { "NvimTree", "startify" }
-        },
+    },
     extensions = {
         "toggleterm",
         "nvim-tree"

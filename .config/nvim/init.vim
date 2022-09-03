@@ -388,6 +388,7 @@ set mouse=a
 " Syntax.
 syntax on
 set number
+set relativenumber
 set cursorline
 set hlsearch
 set ignorecase
@@ -497,11 +498,8 @@ vnoremap <silent> <C-/> <Cmd>Commentary<CR>
 
 " Saving.
 nnoremap <silent> <C-s> <Cmd>w!<CR>
-" <Cmd>lua vim.notify(" Saved to \"" .. vim.fn.expand('%') .. "\".", "success", { render = "minimal"} )<CR>
 vnoremap <silent> <C-s> <Cmd>w!<CR>
-" <Cmd>lua vim.notify(" Saved to \"" .. vim.fn.expand('%') .. "\".", "success", { render = "minimal"} )<CR>
 inoremap <silent> <C-s> <Cmd>w!<CR>
-" <Cmd>lua vim.notify(" Saved to \"" .. vim.fn.expand('%') .. "\".", "success", { render = "minimal"} )<CR>
 
 " Buffers.
 nnoremap <silent> <C-TAB> <Cmd>Telescope buffers<CR>

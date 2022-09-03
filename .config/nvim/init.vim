@@ -349,6 +349,16 @@ let g:neovide_fullscreen=v:false
 let g:neovide_profiler=v:false
 let g:neovide_cursor_animation_length = 0.01
 let g:neovide_scroll_animation_length = 0.0
+let g:neovide_cursor_antialiasing = v:true
+
+" Fun particles.
+" Available options: railgun, torpedo, boom, pixiedust, ripple, wireframe.
+let g:neovide_cursor_vfx_mode = "pixiedust"
+" Particle settings.
+let g:neovide_cursor_vfx_opacity=175.0 " / 256.0
+let g:neovide_cursor_vfx_particle_lifetime=0.9
+let g:neovide_cursor_vfx_particle_density=7.0
+let g:neovide_cursor_vfx_particle_speed=10.0
 
 " Has to be set before colorscheme is set.
 set termguicolors

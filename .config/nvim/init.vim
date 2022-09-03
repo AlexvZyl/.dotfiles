@@ -706,3 +706,5 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " Ensure cmd is not larger than it needs to be.
 set cmdheight =1
+
+

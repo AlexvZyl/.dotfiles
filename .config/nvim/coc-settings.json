@@ -12,14 +12,14 @@
     // Ale.
     // "diagnostic.displayByAle": true,
 
-    // Efm.
-    "languageserver": {
-      "efm": {
-        "command": "efm-langserver",
-        "args": ["-c", "/.config/nvim/efm-languageserver/config.yaml"],
-        "filetypes": ["vim", "eruby", "markdown"]
-      }
-    },
+    // Efm.  This is not working atm.
+    // "languageserver": {
+    //   "efm": {
+    //     "command": "efm-langserver",
+    //     "args": ["-c", "~/.config/nvim/efm-languageserver/config.yaml"],
+    //     "filetypes": ["vim", "eruby", "markdown"]
+    //   }
+    // },
 
     // Linting LSP.
     "diagnostic.warningSign": "",

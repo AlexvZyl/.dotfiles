@@ -4,7 +4,7 @@ The dotfiles for my personal setup.  Currently only supports Arch based distros 
 
 ## Installation
 
-To install everything, simply copy and paste this into the terminal.  Reboot after the scripts is done.
+To install everything, simply copy and paste this into the terminal.  Reboot after it is done.
 
 ```bash
 sudo pacman -S git

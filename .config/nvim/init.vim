@@ -339,13 +339,15 @@ EOF
 " APPEARANCE
 " ----------
 
+" Remove vertical split bars.
+set fillchars+=vert:\ "
+
 " Neovide settings.
 " let g:neovide_transparency=0.95
 let g:neovide_transparency=1
 let g:neovide_fullscreen=v:false
 let g:neovide_profiler=v:false
-let g:neovide_cursor_animation_length = 0.0
-let g:neovide_cursor_animation_size=0.95
+let g:neovide_cursor_animation_length = 0.01
 let g:neovide_scroll_animation_length = 0.0
 
 " Has to be set before colorscheme is set.

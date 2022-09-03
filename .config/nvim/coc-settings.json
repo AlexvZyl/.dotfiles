@@ -12,11 +12,25 @@
     // Ale.
     // "diagnostic.displayByAle": true,
 
-    //"languageserver": {
-    //  "efm": {
-    //    "command": "efm-langserver",
-    //    "args": ["-c", "/.config/nvim/efm-languageserver/config.yaml"],
-    //    "filetypes": ["vim", "eruby", "markdown"]
-    //  }
-    //}     
+    // Efm.
+    "languageserver": {
+      "efm": {
+        "command": "efm-langserver",
+        "args": ["-c", "/.config/nvim/efm-languageserver/config.yaml"],
+        "filetypes": ["vim", "eruby", "markdown"]
+      }
+    },
+
+    // Linting LSP.
+    "diagnostic.warningSign": "",
+    "diagnostic.errorSign": "",
+    "diagnostic.infoSign": "",
+    "diagnostic.hintSign": "",
+
+    // Linting git.
+    "git.removedSign.text": "│",    
+    "git.changedSign.text": "│",
+    "git.addedSign.text": "│",
+    "git.changeRemovedSign.text": "│",
+    "git.topRemovedSign.text": "│"
 }

@@ -39,9 +39,9 @@ Plug 'brooth/far.vim'
 
 " General langage.
 Plug 'nvim-treesitter/nvim-treesitter'  " Syntax highlighting.
-Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdcommenter' " More commenting functions.
 Plug 'tpope/vim-commentary'  " Allow commenting with <C-/>.
-Plug 'mhartington/formatter.nvim'
+Plug 'mhartington/formatter.nvim' " TODO.
 
 " Main LSP engine.
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
@@ -107,7 +107,6 @@ require 'bufferline'.setup {
             }
         },
         separator_style = "padded_slant",
-
         -- separator_style = "thick",
     }
 }
@@ -116,6 +115,7 @@ require 'bufferline'.setup {
 -- Gitsigns --
 --------------
 
+-- Currently using Coc for this as well.  Keeping it here for now.
 require 'gitsigns'.setup {
     signs = {
         add          = { text = '│' },
@@ -124,7 +124,7 @@ require 'gitsigns'.setup {
         topdelete    = { text = '│' },
         changedelete = { text = '│' }
     },
-    signcolumn = true,
+    signcolumn = false,
     numhl = false
 }
 
@@ -347,7 +347,6 @@ require 'nvim-tree'.setup {
 ---------------------------
 
 require 'nvim-treesitter.configs'.setup {
-
     -- A list of parser names, or "all"
     ensure_installed = { "c", "lua", "rust", "cpp", "julia", "python" },
     -- ensure_installed = {  },
@@ -605,14 +604,15 @@ set completeopt=menuone,noinsert,noselect
 "-----------"
 
 " Extensions.
-let g:coc_extensions = [
+let g:coc_global_extensions = [
     \ 'coc-clangd',
     \ 'coc-json',
     \ 'coc-julia',
     \ 'coc-pyright',
     \ 'coc-rust-analyzer',
+    \ 'coc-lua',
+    \ 'coc-git',
 \ ]
-call coc#add_extension(join(get(s:, 'coc_extensions', [])))
 
 " Some servers have issues with backup files, see #649.
 set nobackup
@@ -811,14 +811,5 @@ endfunction
 
 " notifications
 " autocmd User CocNvimInit call s:InitCoc()
-autocmd User CocDiagnosticChange call s:DiagnosticNotify()
+" autocmd User CocDiagnosticChange call s:DiagnosticNotify()
 autocmd User CocStatusChange call s:StatusNotify()
-
-"------"
-" MISC "
-"------"
-
-" For stuff that has to be run at the end.
-
-" Ensure cmd is not larger than it needs to be.
-

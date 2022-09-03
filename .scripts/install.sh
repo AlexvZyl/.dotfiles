@@ -104,7 +104,7 @@ systemctl mask systemd-rfkill.socket
 sudo tlp start
 
 # Programming.
-sudo pamac install julia-bin cmake python --no-confirm
+sudo pamac install julia-bin emf-langserver cmake python --no-confirm
 
 # Setup optimus manager.
 # NB: For Nvidia cards only!

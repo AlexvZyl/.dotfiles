@@ -12,16 +12,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 mkdir ~/.dotfiles
 config clone --bare https://github.com/Alex-vZyl/DotFiles ~/.dotfiles/
 config checkout -f
-sudo chmod +x ~/.scripts/install.sh
-~/.scripts/install.sh
-```
-
-`config` is an alias that makes using the bare repo easier.  It is already added to `fish` and `bash`.
-
-If you want to configure the terminal, open `alacritty` (or any `fish` instance) and run:
-
-```fish
-tide configure
+sudo chmod +x ~/.scripts/install.sh && ~/.scripts/install.sh
 ```
 
 # Screenshots

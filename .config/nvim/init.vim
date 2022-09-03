@@ -455,7 +455,7 @@ syntax on
 " Setup themes.
 let g:gruvbox_material_foreground = 'mix'
 let g:gruvbox_material_background = 'hard'
-let background = 'downrk'
+let background = 'dark'
 let g:everforest_background = 'hard'
 :colorscheme gruvbox-material
 let g:gruvbox_contrast_dark = 'hard'

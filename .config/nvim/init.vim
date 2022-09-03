@@ -16,7 +16,6 @@ Plug 'dstein64/nvim-scrollview'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'mg979/vim-visual-multi'
 Plug 'rcarriga/nvim-notify'	
-Plug 'majutsushi/tagbar'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/bufferline.nvim'
@@ -25,8 +24,6 @@ Plug 'mhinz/vim-startify'
 Plug 'Pocco81/true-zen.nvim' " Zen mode!
 
 " Git.
-" Plug 'tpope/vim-fugitive'
-" Plug 'airblade/vim-gitgutter'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'sindrets/diffview.nvim'
@@ -42,7 +39,6 @@ Plug 'brooth/far.vim'
 
 " General langage.
 Plug 'nvim-treesitter/nvim-treesitter'  " Syntax highlighting.
-Plug 'dense-analysis/ale'  " Linting engine.
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-commentary'  " Allow commenting with <C-/>.
 Plug 'mhartington/formatter.nvim'
@@ -74,6 +70,9 @@ Plug 'shaunsingh/nord.nvim'
 Plug 'dracula/vim'
 Plug 'joshdick/onedark.vim'
 
+" Setup nefore plugins are loaded.
+let g:ale_disable_lsp = 1
+
 call plug#end()
 
 " ----------
@@ -90,6 +89,15 @@ require 'bufferline'.setup {
     options = {    
         mode = "buffers",
         diagnostics = "coc",   
+        diagnostics_indicator = function(count, level, diagnostics_dict, context)
+          local s = " "
+          for e, n in pairs(diagnostics_dict) do
+            local sym = e == "error" and " "
+              or (e == "warning" and " " or "  " )
+            s = s .. sym .. n
+          end
+          return s
+        end,
         offsets = { 
             {
                 filetype = "NvimTree",
@@ -98,34 +106,8 @@ require 'bufferline'.setup {
                 text_align = "center"
             }
         },
-        custom_areas = {
-          right = function()
-            local result = {}
-            local seve = vim.diagnostic.severity
-            local error = #vim.diagnostic.get(0, {severity = seve.ERROR})
-            local warning = #vim.diagnostic.get(0, {severity = seve.WARN})
-            local info = #vim.diagnostic.get(0, {severity = seve.INFO})
-            local hint = #vim.diagnostic.get(0, {severity = seve.HINT})
-    
-            if error ~= 0 then
-              table.insert(result, {text = "  " .. error, guifg = "#EC5241"})
-            end
-    
-            if warning ~= 0 then
-              table.insert(result, {text = "  " .. warning, guifg = "#EFB839"})
-            end
-    
-            if hint ~= 0 then
-              table.insert(result, {text = "  " .. hint, guifg = "#A3BA5E"})
-            end
-    
-            if info ~= 0 then
-              table.insert(result, {text = "  " .. info, guifg = "#7EA9A7"})
-            end
-            return result
-          end,
-        },
         separator_style = "padded_slant",
+
         -- separator_style = "thick",
     }
 }
@@ -241,15 +223,49 @@ ts.setup({
         }
     }
 })
-ts.load_extension("notify")
+ts.load_extension 'notify'
 
 ---------------------------------
 -- Setup default notifications -- 
 ---------------------------------
 
-local notify = require("notify")
-notify.setup({})
+local notify = require 'notify'
+notify.setup {}
 vim.notify = notify
+
+-------------------------------
+-- Integrate COC with notify --
+-------------------------------
+
+local coc_status_record = {}
+
+function coc_status_notify(msg, level)
+  local notify_opts = { title = "LSP Status", timeout = 500, hide_from_history = true, on_close = reset_coc_status_record }
+  -- if coc_status_record is not {} then add it to notify_opts to key called "replace"
+  if coc_status_record ~= {} then
+    notify_opts["replace"] = coc_status_record.id
+  end
+  coc_status_record = vim.notify(msg, level, notify_opts)
+end
+
+function reset_coc_status_record(window)
+  coc_status_record = {}
+end
+
+local coc_diag_record = {}
+
+function coc_diag_notify(msg, level)
+  local notify_opts = { title = "LSP Diagnostics", timeout = 500, on_close = reset_coc_diag_record }
+  -- if coc_diag_record is not {} then add it to notify_opts to key called "replace"
+  if coc_diag_record ~= {} then
+    notify_opts["replace"] = coc_diag_record.id
+  end
+  coc_diag_record = vim.notify(msg, level, notify_opts)
+end
+
+function reset_coc_diag_record(window)
+  coc_diag_record = {}
+end
 
 ----------------------
 -- Setup toggleterm --
@@ -378,7 +394,7 @@ set fillchars+=vert:\ "
 let g:neovide_transparency=1
 let g:neovide_fullscreen=v:false
 let g:neovide_profiler=v:false
-let g:neovide_cursor_animation_length = 0.01
+let g:neovide_cursor_animation_length = 0.015
 let g:neovide_scroll_animation_length = 0.0
 let g:neovide_cursor_antialiasing = v:true
 
@@ -387,12 +403,13 @@ let g:neovide_cursor_antialiasing = v:true
 let g:neovide_cursor_vfx_mode = "pixiedust"
 " Particle settings.
 let g:neovide_cursor_vfx_opacity=175.0 " / 256.0
-let g:neovide_cursor_vfx_particle_lifetime=0.9
-let g:neovide_cursor_vfx_particle_density=7.0
+let g:neovide_cursor_vfx_particle_lifetime=0.8
+let g:neovide_cursor_vfx_particle_density=8.0
 let g:neovide_cursor_vfx_particle_speed=10.0
 
 " Has to be set before colorscheme is set.
 set termguicolors
+syntax on
 
 " Setup themes.
 let g:gruvbox_material_foreground = 'mix'
@@ -429,7 +446,6 @@ set clipboard+=unnamedplus
 set mouse=a
 
 " Syntax.
-syntax on
 set number
 set relativenumber
 set cursorline
@@ -588,6 +604,16 @@ set completeopt=menuone,noinsert,noselect
 " COC SETUP "
 "-----------"
 
+" Extensions.
+let g:coc_extensions = [
+    \ 'coc-clangd',
+    \ 'coc-json',
+    \ 'coc-julia',
+    \ 'coc-pyright',
+    \ 'coc-rust-analyzer',
+\ ]
+call coc#add_extension(join(get(s:, 'coc_extensions', [])))
+
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
@@ -739,6 +765,55 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+"-------------------
+" COC Notifications.
+"-------------------
+
+function! s:DiagnosticNotify() abort
+  let l:info = get(b:, 'coc_diagnostic_info', {})
+  if empty(l:info) | return '' | endif
+  let l:msgs = []
+  let l:level = 'info'
+   if get(l:info, 'warning', 0)
+    let l:level = 'warn'
+  endif
+  if get(l:info, 'error', 0)
+    let l:level = 'error'
+  endif
+ 
+  if get(l:info, 'error', 0)
+    call add(l:msgs, ' Errors: ' . l:info['error'])
+  endif
+  if get(l:info, 'warning', 0)
+    call add(l:msgs, ' Warnings: ' . l:info['warning'])
+  endif
+  if get(l:info, 'information', 0)
+    call add(l:msgs, ' Infos: ' . l:info['information'])
+  endif
+  if get(l:info, 'hint', 0)
+    call add(l:msgs, ' Hints: ' . l:info['hint'])
+  endif
+  let l:msg = join(l:msgs, "\n")
+  if empty(l:msg) | let l:msg = ' All OK' | endif
+  call v:lua.coc_diag_notify(l:msg, l:level)
+endfunction
+
+function! s:StatusNotify() abort
+  let l:status = get(g:, 'coc_status', '')
+  let l:level = 'info'
+  if empty(l:status) | return '' | endif
+  call v:lua.coc_status_notify(l:status, l:level)
+endfunction
+
+function! s:InitCoc() abort
+  execute "lua vim.notify('Initialized coc.nvim for LSP support', 'info', { title = 'LSP Status' })"
+endfunction
+
+" notifications
+" autocmd User CocNvimInit call s:InitCoc()
+autocmd User CocDiagnosticChange call s:DiagnosticNotify()
+autocmd User CocStatusChange call s:StatusNotify()
+
 "------"
 " MISC "
 "------"
@@ -746,6 +821,4 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " For stuff that has to be run at the end.
 
 " Ensure cmd is not larger than it needs to be.
-set cmdheight =1
-
 

@@ -149,10 +149,12 @@ end
 
 require'lualine'.setup {
     sections = {
-      lualine_b = { {'diff', source = diff_source}, },
+      lualine_b = { 'branch', {'diff', source = diff_source}, },
+      lualine_x = { 'filetype' },
     },
     options = { 
-        disabled_filetypes = { "NvimTree", "startify" }
+        disabled_filetypes = { "startify" },
+        globalstatus = true,
     },
     extensions = {
         "toggleterm",
@@ -208,9 +210,7 @@ require 'formatter'.setup {}
 -- Setup which-key --
 ---------------------
 
-require 'which-key'.setup {
-    
-}
+require 'which-key'.setup {}
 
 ---------------------
 -- Setup telescope --
@@ -387,6 +387,9 @@ EOF
 " ----------
 " APPEARANCE
 " ----------
+
+" Fish already has a theme, so prevent neovim from adding a theme on top of that.
+let $COLORTERM="truecolor"
 
 " Remove vertical split bars.
 set fillchars+=vert:\ "
@@ -590,6 +593,10 @@ vnoremap <silent> <C-Y> <Cmd>redo<CR>
 nnoremap <silent> <C-a> <Cmd>TZAtaraxis<CR>
 vnoremap <silent> <C-a> <Cmd>TZAtaraxis<CR>
 inoremap <silent> <C-a> <Cmd>TZAtaraxis<CR>
+
+" Multiline.
+" nnoremap <silent> <C-Down> <Down><Cmd>vm-add-cursors<CR>
+" nnoremap <silent> <C-Up> <Cmd>vm-add-cursors<CR>
 
 " -------------------------
 " RUST PLUGIN CONFIGURARION

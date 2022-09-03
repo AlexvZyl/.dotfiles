@@ -11,7 +11,7 @@ configuration {
     run-display-format:  "{icon} {name}";
     modi: "window,run,drun";
     terminal: "alacritty";
-    monitor: -4;
+    monitor: -1;
 }
 
 element-text, element-icon , mode-switcher {

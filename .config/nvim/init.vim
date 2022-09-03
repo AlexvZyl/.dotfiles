@@ -348,12 +348,16 @@ let g:neovide_cursor_animation_length = 0.0
 let g:neovide_cursor_animation_size=0.95
 let g:neovide_scroll_animation_length = 0.0
 
+" Has to be set before colorscheme is set.
+set termguicolors
+
 " Setup themes.
-let g:gruvbox_material_foreground = 'original'
+let g:gruvbox_material_foreground = 'mix'
 let g:gruvbox_material_background = 'hard'
 let background = 'dark'
 let g:everforest_background = 'hard'
 :colorscheme gruvbox-material
+let g:gruvbox_contrast_dark = 'hard'
 
 " Scrollbar settings.
 :let g:scrollview_column =1
@@ -374,10 +378,6 @@ let g:lsp_settings = {
 " ----------------
 " GENERAL SETTINGS
 " ----------------
-
-" Enable colors for neovim usage in the terminal.
-" This is not fixing the issue?
-set termguicolors
 
 " Clipboard. 
 set clipboard+=unnamedplus 
@@ -412,9 +412,6 @@ set showmatch
 
 " Disable text wrap around.
 set nowrap
-
-" Setup bufferline.
-set termguicolors
 
 " Allow FAR to undo.
 let g:far#enable_undo=1

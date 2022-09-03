@@ -135,8 +135,15 @@ require 'bufferline'.setup {
 --------------
 
 require 'gitsigns'.setup {
-    signcolumn = false,
-    numhl = true
+    signs = {
+        add          = { text = '│' },
+        change       = { text = '│' },
+        delete       = { text = '│' },
+        topdelete    = { text = '│' },
+        changedelete = { text = '│' }
+    },
+    signcolumn = true,
+    numhl = false
 }
 
 -------------------

@@ -89,6 +89,10 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # Use lazygit with config.
 alias lazygit-dotfiles='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+# Use neovim as manpage pager.
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
+
 # alias pacdiff=eos-pacdiff
 ################################################################################
 

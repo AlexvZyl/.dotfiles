@@ -87,6 +87,9 @@ lua <<EOF
 
 require 'bufferline'.setup {
     options = {    
+        tab_size = 12, -- Minimum size.
+        buffer_close_icon ='',
+        max_name_length = 20,
         mode = "buffers",
         diagnostics = "coc",   
         diagnostics_indicator = function(count, level, diagnostics_dict, context)
@@ -393,7 +396,7 @@ set fillchars+=vert:\ "
 let g:neovide_transparency=1
 let g:neovide_fullscreen=v:false
 let g:neovide_profiler=v:false
-let g:neovide_cursor_animation_length = 0.015
+let g:neovide_cursor_animation_length = 0.01
 let g:neovide_scroll_animation_length = 0.0
 let g:neovide_cursor_antialiasing = v:true
 

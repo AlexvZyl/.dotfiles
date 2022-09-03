@@ -706,10 +706,3 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " Ensure cmd is not larger than it needs to be.
 set cmdheight =1
-
-" For some reason neovim is not laoding the init file properly, so I have to
-" add this so that it gets reloaded on startup.  I am assuming there is something wrong in my config.
-if !exists('$INIT_RELOADED')
-    let $INIT_RELOADED = 'TRUE'
-    so ~/.config/nvim/init.vim 
-end

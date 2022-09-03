@@ -114,6 +114,17 @@ require 'bufferline'.setup {
     }
 }
 
+----------------
+-- Scrollview --
+----------------
+
+require 'scrollview'.setup {
+    column = 1,
+    hide_on_intersect = 1,
+    scrollview_excluded_filetypes = {'nerdtree', 'NvimTree'},   
+    current_only = true
+}
+
 --------------
 -- Gitsigns --
 --------------
@@ -382,6 +393,30 @@ require 'nvim-treesitter.configs'.setup {
     },
 }
 
+------------------------------
+-- Set Seperators (borders) --
+------------------------------
+
+-- vim.opt.fillchars = {
+--   horiz = '━',
+--   horizup = '┻',
+--   horizdown = '┳',
+--   vert = '┃',
+--   vertleft  = '┫',
+--   vertright = '┣',
+--   verthoriz = '╋',
+-- }
+
+vim.opt.fillchars = {
+  horiz = ' ',
+  horizup = ' ',
+  horizdown = ' ',
+  vert = ' ',
+  vertleft  = ' ',
+  vertright = ' ',
+  verthoriz = ' ',
+}
+
 EOF
 
 " ----------
@@ -392,7 +427,8 @@ EOF
 let $COLORTERM="truecolor"
 
 " Remove vertical split bars.
-set fillchars+=vert:\ "
+" set fillchars+=vert:\ "
+" set fillchars+=horz:\ "
 
 " Neovide settings.
 " let g:neovide_transparency=0.95
@@ -419,15 +455,10 @@ syntax on
 " Setup themes.
 let g:gruvbox_material_foreground = 'mix'
 let g:gruvbox_material_background = 'hard'
-let background = 'dark'
+let background = 'downrk'
 let g:everforest_background = 'hard'
 :colorscheme gruvbox-material
 let g:gruvbox_contrast_dark = 'hard'
-
-" Scrollbar settings.
-:let g:scrollview_column =1
-:let g:hide_on_intersect =1
-:let g:scrollview_excluded_filetypes = ['nerdtree', 'NvimTree']
 
 " Font.
 set guifont=JetBrainsMono\ Nerd\ Font:h10.75

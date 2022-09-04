@@ -95,8 +95,8 @@ require 'bufferline'.setup {
         diagnostics_indicator = function(count, level, diagnostics_dict, context)
           local s = " "
           for e, n in pairs(diagnostics_dict) do
-            local sym = e == "error" and " "
-              or (e == "warning" and " " or "  " )
+            local sym = e == "error" and "  "
+              or (e == "warning" and " " or " " )
             s = s .. sym .. n
           end
           return s
@@ -110,7 +110,6 @@ require 'bufferline'.setup {
             }
         },
         separator_style = "padded_slant",
-        -- separator_style = "thick",
     }
 }
 
@@ -165,8 +164,31 @@ require 'lualine'.setup {
             'branch', 
         },
         lualine_c = { 
-            {'diff', source = diff_source}, 
-            { 'diagnostics', sources = {'coc'} },
+            {
+                'diff', 
+                source = diff_source, 
+                symbols = { 
+                    added = ' ', 
+                    modified = 'ﯽ ', 
+                    removed = ' ' 
+                } 
+            }, 
+            { 
+                'diagnostics', 
+                sources = {'coc'}, 
+                symbols = { 
+                    error = ' ', 
+                    warn = ' ', 
+                    info = ' ', 
+                    hint = ' ',
+                },  
+                diagnostics_color = {
+                    error = 'Red', 
+                    warn = 'Yellow',
+                    info = 'Blue',
+                    hint = 'Green',
+                }
+            },
         },
         lualine_x = { 'filetype' },
         lualine_z = { 'hostname' },    
@@ -467,6 +489,9 @@ let g:neovide_cursor_vfx_particle_speed=10.0
 " Has to be set before colorscheme is set.
 set termguicolors
 syntax on
+
+" Remove the padding in a terminal.
+autocmd TermOpen * setlocal signcolumn=no
 
 " Setup themes.
 let g:gruvbox_material_foreground = 'mix'

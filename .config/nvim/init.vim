@@ -432,12 +432,19 @@ EOF
 " APPEARANCE
 " ----------
 
+" List of available colors in nvim:
+"     Red		LightRed	    DarkRed
+"     Green	    LightGreen	    DarkGreen	    SeaGreen
+"     Blue	    LightBlue	    DarkBlue	    SlateBlue
+"     Cyan	    LightCyan	    DarkCyan
+"     Magenta	LightMagenta	DarkMagenta
+"     Yellow	LightYellow	    Brown		    DarkYellow
+"     Gray	    LightGray	    DarkGray
+"     Black	    White
+"     Orange	Purple		Violet
+
 " Fish already has a theme, so prevent neovim from adding a theme on top of that.
 let $COLORTERM="truecolor"
-
-" Remove vertical split bars.
-" set fillchars+=vert:\ "
-" set fillchars+=horz:\ "
 
 " Neovide settings.
 " let g:neovide_transparency=0.95
@@ -466,8 +473,11 @@ let g:gruvbox_material_foreground = 'mix'
 let g:gruvbox_material_background = 'hard'
 let background = 'dark'
 let g:everforest_background = 'hard'
-:colorscheme gruvbox-material
+colorscheme gruvbox-material
 let g:gruvbox_contrast_dark = 'hard'
+
+" Set the current line number's color.
+highlight CursorLineNr guifg=Orange
 
 " Font.
 set guifont=JetBrainsMono\ Nerd\ Font:h10.75
@@ -494,9 +504,20 @@ set mouse=a
 set number
 set relativenumber
 set cursorline
+set cursorlineopt=both
 set hlsearch
 set ignorecase
 set smartcase
+
+" Disable the cursorline when a window is not focused.
+" Keep the number highlight.
+augroup CursorLine
+    au!
+    au VimEnter * setlocal cursorlineopt=both
+    au WinEnter * setlocal cursorlineopt=both
+    au BufWinEnter * setlocal cursorlineopt=both
+    au WinLeave * setlocal cursorlineopt=number
+augroup END
 
 " Coc setup.
 set pumheight=10 " Limit the height of the seggestion window.

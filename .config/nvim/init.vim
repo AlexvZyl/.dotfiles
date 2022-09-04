@@ -12,7 +12,7 @@ Plug 'nvim-telescope/telescope.nvim'
 " UX.
 Plug 'akinsho/toggleterm.nvim'
 " Plug 'Alex-vZyl/toggleterm.nvim', {'tag' : 'v2.*'}
-Plug 'dstein64/nvim-scrollview'
+" Plug 'dstein64/nvim-scrollview'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'mg979/vim-visual-multi'
 Plug 'rcarriga/nvim-notify'	
@@ -22,6 +22,7 @@ Plug 'akinsho/bufferline.nvim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'mhinz/vim-startify'
 Plug 'Pocco81/true-zen.nvim' " Zen mode!
+" Plug 'petertriho/nvim-scrollbar'
 
 " Git.
 Plug 'kdheepak/lazygit.nvim'
@@ -133,16 +134,24 @@ require 'bufferline'.setup {
     }
 }
 
+---------------
+-- Scrollbar --
+---------------
+
+-- require 'scrollbar'.setup {
+--     show_in_active_only = true
+-- } 
+
 ----------------
 -- Scrollview --
 ----------------
 
-require 'scrollview'.setup {
-    column = 1,
-    hide_on_intersect = 1,
-    scrollview_excluded_filetypes = {'nerdtree', 'NvimTree'},   
-    current_only = true
-}
+-- require 'scrollview'.setup {
+--     column = 1,
+--     hide_on_intersect = 1,
+--     scrollview_excluded_filetypes = {'nerdtree', 'NvimTree'},   
+--     current_only = true
+-- }
 
 --------------
 -- Gitsigns --
@@ -183,13 +192,7 @@ require 'lualine'.setup {
     sections = {
         lualine_a = { 
             'mode', 
-            { 
-                'filename' ,
-                symbols = {
-                    modified = ' ',
-                    readonly = ' ',
-                },
-            },
+            'progress',
         },
         lualine_b = { 
             'branch', 
@@ -229,8 +232,16 @@ require 'lualine'.setup {
                 colored = true,
             },
         },
-        lualine_x = { 'filetype' },
-        lualine_y = { 'filesize', 'location' },
+        lualine_y = { 
+            { 
+                'filename' ,
+                symbols = {
+                    modified = ' ',
+                    readonly = ' ',
+                },
+            },
+        },
+        lualine_x = { 'filesize', 'location', 'filetype' },
         lualine_z = { 'hostname', 'fileformat' },    
     },
     options = { 

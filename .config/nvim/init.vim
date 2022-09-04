@@ -11,8 +11,6 @@ Plug 'nvim-telescope/telescope.nvim'
 
 " UX.
 Plug 'akinsho/toggleterm.nvim'
-" Plug 'Alex-vZyl/toggleterm.nvim', {'tag' : 'v2.*'}
-" Plug 'dstein64/nvim-scrollview'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'mg979/vim-visual-multi'
 Plug 'rcarriga/nvim-notify'	
@@ -22,6 +20,12 @@ Plug 'akinsho/bufferline.nvim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'mhinz/vim-startify'
 Plug 'Pocco81/true-zen.nvim' " Zen mode!
+
+" For when I make the PR.
+" Plug 'Alex-vZyl/toggleterm.nvim', {'tag' : 'v2.*'}
+
+" Scrollbar plugins.  Both of them have one issue I do not like.
+" Plug 'dstein64/nvim-scrollview'
 " Plug 'petertriho/nvim-scrollbar'
 
 " Git.
@@ -196,6 +200,13 @@ require 'lualine'.setup {
         },
         lualine_b = { 
             'branch', 
+            { 
+                'filename' ,
+                symbols = {
+                    modified = ' ',
+                    readonly = ' ',
+                },
+            },
         },
         lualine_c = { 
             {
@@ -233,16 +244,16 @@ require 'lualine'.setup {
             },
         },
         lualine_y = { 
-            { 
-                'filename' ,
-                symbols = {
-                    modified = ' ',
-                    readonly = ' ',
-                },
-            },
+            'filetype',
         },
-        lualine_x = { 'filesize', 'location', 'filetype' },
-        lualine_z = { 'hostname', 'fileformat' },    
+        lualine_x = { 
+            'filesize', 
+            'location', 
+        },
+        lualine_z = { 
+            'hostname', 
+            'fileformat' 
+        },    
     },
     options = { 
         disabled_filetypes = { "startify" },
@@ -288,8 +299,15 @@ require 'neoscroll.config'.set_mappings(t)
 require 'indent_blankline'.setup {
     show_end_of_line = true,
     show_current_context = true,
-    show_current_context_start = true,
-    filetype_exclude = { 'NvimTree', 'startify' }
+    show_current_context_start = false,
+    filetype_exclude = { 'NvimTree', 'startify' },
+    use_treesitter = true,
+    -- context_char = '┃',
+    context_char = '│',
+    -- char = '│',
+    -- char = '',
+    -- ['|', '¦', '┆', '┊']   
+    char = '┆',
 }
 
 ----------------------------

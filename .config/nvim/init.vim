@@ -70,11 +70,28 @@ Plug 'shaunsingh/nord.nvim'
 Plug 'dracula/vim'
 Plug 'joshdick/onedark.vim'
 
+" Set the theme so that the plugins can have access to the colors.
+call plug#end()
+
 " Setup nefore plugins are loaded.
 let g:ale_disable_lsp = 1
 
-" Set the theme so that the plugins can have access to the colors.
-call plug#end()
+" The colorscheme has to be set here so that the plugings can access it.
+
+" Has to be set before colorscheme is set.
+set termguicolors
+syntax on
+
+" Setup themes.
+let g:gruvbox_material_foreground = 'mix'
+let g:gruvbox_material_background = 'hard'
+let background = 'dark'
+let g:everforest_background = 'hard'
+colorscheme gruvbox-material
+let g:gruvbox_contrast_dark = 'hard'
+
+" Set the current line number's color.
+highlight CursorLineNr guifg=Orange
 
 " ----------
 " LUA CONFIG
@@ -505,22 +522,6 @@ let g:neovide_cursor_vfx_opacity=175.0 " / 256.0
 let g:neovide_cursor_vfx_particle_lifetime=0.8
 let g:neovide_cursor_vfx_particle_density=7.0
 let g:neovide_cursor_vfx_particle_speed=10.0
-
-" Has to be set before colorscheme is set.
-set termguicolors
-syntax on
-
-" Setup themes.
-let g:gruvbox_material_foreground = 'mix'
-let g:gruvbox_material_background = 'hard'
-let background = 'dark'
-let g:everforest_background = 'hard'
-colorscheme gruvbox-material
-let g:gruvbox_contrast_dark = 'hard'
-
-" Set the current line number's color.
-highlight CursorLineNr guifg=Orange
-
 
 " Remove the padding in a terminal.
 autocmd TermOpen * setlocal signcolumn=no

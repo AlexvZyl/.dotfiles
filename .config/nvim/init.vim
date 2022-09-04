@@ -435,7 +435,7 @@ let $COLORTERM="truecolor"
 let g:neovide_transparency=1
 let g:neovide_fullscreen=v:false
 let g:neovide_profiler=v:false
-let g:neovide_cursor_animation_length = 0.01
+let g:neovide_cursor_animation_length = 0.005
 let g:neovide_scroll_animation_length = 0.0
 let g:neovide_cursor_antialiasing = v:true
 
@@ -445,7 +445,7 @@ let g:neovide_cursor_vfx_mode = "pixiedust"
 " Particle settings.
 let g:neovide_cursor_vfx_opacity=175.0 " / 256.0
 let g:neovide_cursor_vfx_particle_lifetime=0.8
-let g:neovide_cursor_vfx_particle_density=8.0
+let g:neovide_cursor_vfx_particle_density=7.0
 let g:neovide_cursor_vfx_particle_speed=10.0
 
 " Has to be set before colorscheme is set.

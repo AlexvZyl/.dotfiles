@@ -169,8 +169,8 @@ require 'lualine'.setup {
             { 'diagnostics', sources = {'coc'} },
         },
         lualine_x = { 'filetype' },
-        lualine_y = { 'filesize' },    
-        lualine_z = { 'location' },
+        lualine_z = { 'hostname' },    
+        lualine_y = { 'filesize', 'location' },
     },
     options = { 
         disabled_filetypes = { "startify" },

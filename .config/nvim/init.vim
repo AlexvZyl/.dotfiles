@@ -158,10 +158,19 @@ local function diff_source()
     end
 end
 
-require'lualine'.setup {
+require 'lualine'.setup {
     sections = {
-      lualine_b = { 'branch', {'diff', source = diff_source}, },
-      lualine_x = { 'filetype' },
+        lualine_a = { 'mode', 'filename' },
+        lualine_b = { 
+            'branch', 
+        },
+        lualine_c = { 
+            {'diff', source = diff_source}, 
+            { 'diagnostics', sources = {'coc'} },
+        },
+        lualine_x = { 'filetype' },
+        lualine_y = { 'filesize' },    
+        lualine_z = { 'location' },
     },
     options = { 
         disabled_filetypes = { "startify" },
@@ -198,7 +207,7 @@ require 'neoscroll'.setup {
 local t = { }
 t['<C-u>'] = {'scroll', {'-vim.wo.scroll * 2', 'true', '400', nil}}
 t['<C-d>'] = {'scroll', { 'vim.wo.scroll * 2', 'true', '400', nil}}
-require('neoscroll.config').set_mappings(t)
+require 'neoscroll.config'.set_mappings(t)
 
 -----------------
 -- Indentation --
@@ -285,7 +294,7 @@ end
 -- Setup toggleterm --
 ----------------------
 
-require("toggleterm").setup {
+require 'toggleterm'.setup {
     on_open = function(term)
         vim.cmd("startinsert")
     end,

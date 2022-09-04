@@ -180,19 +180,26 @@ require 'lualine'.setup {
                 'diff', 
                 source = diff_source, 
                 symbols = { 
-                    added = ' ', 
-                    modified = 'ﯽ ', 
-                    removed = ' ' 
+                    -- added = ' ', 
+                    -- modified = 'ﯽ ', 
+                    -- removed = ' ' 
+                    added = ' ', 
+                    modified = ' ', 
+                    removed = ' '
                 } 
             }, 
             { 
                 'diagnostics', 
                 sources = { 'coc' }, 
                 symbols = { 
-                    error = ' ', 
-                    warn = ' ', 
-                    info = ' ', 
-                    hint = ' ',
+                    -- error = ' ', 
+                    -- warn = ' ', 
+                    -- info = ' ', 
+                    -- hint = ' ',
+                    error = ' ', 
+                    warn = ' ', 
+                    info = ' ', 
+                    hint = ' ',
                 },  
                 diagnostics_color = {
                     error = { fg=get_color('Red', 'fg')    }, 
@@ -204,8 +211,8 @@ require 'lualine'.setup {
             },
         },
         lualine_x = { 'filetype' },
-        lualine_z = { 'hostname' },    
         lualine_y = { 'filesize', 'location' },
+        lualine_z = { 'hostname', 'fileformat' },    
     },
     options = { 
         disabled_filetypes = { "startify" },

@@ -485,6 +485,7 @@ vim.opt.fillchars = {
   vertleft  = ' ',
   vertright = ' ',
   verthoriz = ' ',
+  eob = ' ',
 }
 
 EOF

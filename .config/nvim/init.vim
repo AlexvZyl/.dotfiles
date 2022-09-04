@@ -73,6 +73,7 @@ Plug 'joshdick/onedark.vim'
 " Setup nefore plugins are loaded.
 let g:ale_disable_lsp = 1
 
+" Set the theme so that the plugins can have access to the colors.
 call plug#end()
 
 " ----------
@@ -157,9 +158,20 @@ local function diff_source()
     end
 end
 
+local get_color = require'lualine.utils.utils'.extract_highlight_colors
+
 require 'lualine'.setup {
     sections = {
-        lualine_a = { 'mode', 'filename' },
+        lualine_a = { 
+            'mode', 
+            { 
+                'filename' ,
+                symbols = {
+                    modified = ' ',
+                    readonly = ' ',
+                },
+            },
+        },
         lualine_b = { 
             'branch', 
         },
@@ -175,7 +187,7 @@ require 'lualine'.setup {
             }, 
             { 
                 'diagnostics', 
-                sources = {'coc'}, 
+                sources = { 'coc' }, 
                 symbols = { 
                     error = ' ', 
                     warn = ' ', 
@@ -183,11 +195,12 @@ require 'lualine'.setup {
                     hint = ' ',
                 },  
                 diagnostics_color = {
-                    error = 'Red', 
-                    warn = 'Yellow',
-                    info = 'Blue',
-                    hint = 'Green',
-                }
+                    error = { fg=get_color('Red', 'fg')    }, 
+                    warn =  { fg=get_color('Yellow', 'fg') },
+                    info =  { fg=get_color('Blue', 'fg')   },
+                    hint =  { fg=get_color('Green', 'fg')  },
+                }, 
+                colored = true,
             },
         },
         lualine_x = { 'filetype' },
@@ -490,9 +503,6 @@ let g:neovide_cursor_vfx_particle_speed=10.0
 set termguicolors
 syntax on
 
-" Remove the padding in a terminal.
-autocmd TermOpen * setlocal signcolumn=no
-
 " Setup themes.
 let g:gruvbox_material_foreground = 'mix'
 let g:gruvbox_material_background = 'hard'
@@ -503,6 +513,10 @@ let g:gruvbox_contrast_dark = 'hard'
 
 " Set the current line number's color.
 highlight CursorLineNr guifg=Orange
+
+
+" Remove the padding in a terminal.
+autocmd TermOpen * setlocal signcolumn=no
 
 " Font.
 set guifont=JetBrainsMono\ Nerd\ Font:h10.75

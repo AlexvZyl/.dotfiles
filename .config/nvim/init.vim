@@ -111,13 +111,15 @@ require 'bufferline'.setup {
         mode = "buffers",
         diagnostics = "coc",   
         diagnostics_indicator = function(count, level, diagnostics_dict, context)
-          local s = " "
-          for e, n in pairs(diagnostics_dict) do
-            local sym = e == "error" and "  "
-              or (e == "warning" and " " or " " )
-            s = s .. sym .. n
-          end
-          return s
+            local s = " "
+            for e, n in pairs(diagnostics_dict) do
+                if e == 'error' then
+                    s = s .. ' ' .. n
+                elseif e == 'warning' then
+                    s = s .. ' ' .. n
+                end
+            end
+            return s
         end,
         offsets = { 
             {

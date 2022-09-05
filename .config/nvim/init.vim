@@ -158,15 +158,35 @@ require 'illuminate'.configure {
 -- Incline --
 -------------
 
+function get_file_from_buffer(buf)
+    local bufname = vim.api.nvim_buf_get_name(buf)
+    local res = bufname ~= '' and vim.fn.fnamemodify(bufname, ':t') or '[No Name]'
+    return res
+end
+
+function render_incline(render_props)
+    return {
+        {
+            get_file_from_buffer(render_props.buf),
+            guibg = 'None',
+            gui = 'italic',
+            blend = 100,
+        }
+    }
+end
+
 require 'incline'.setup {
+    render = render_incline,
     window = {
+        padding = 1,
+        padding_char = " ",
         margin = {
             horizontal = 0,
             vertical = 0
         },
         placement = {
             horizontal = 'right',
-            vertical = 'top'
+            vertical = 'bottom'
         },
         options = {
             signcolumn = 'no',

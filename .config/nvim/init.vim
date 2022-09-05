@@ -258,6 +258,15 @@ end
 
 local get_color = require'lualine.utils.utils'.extract_highlight_colors
 
+-- Get the OS to display in Lualine.
+-- Just gonna hard code Arch for now.
+function get_os()
+    -- return '  '
+    return 'Archlinux  '
+    -- return ' '
+    -- return 'Windows  '
+end
+
 require 'lualine'.setup {
     sections = {
         lualine_a = { 
@@ -311,16 +320,16 @@ require 'lualine'.setup {
         lualine_x = { 
             'encoding',
             'filesize', 
-            -- 'filetype',
+            'location'
         },
         lualine_y = { 
-            'location', 
+            -- 'location', 
             'progress',
+            'filetype'
         },
         lualine_z = { 
-            'filetype',
-            'hostname', 
-            -- 'fileformat',
+            -- 'filetype',
+            get_os
         },    
     },
     options = { 

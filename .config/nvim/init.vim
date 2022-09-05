@@ -20,12 +20,13 @@ Plug 'akinsho/bufferline.nvim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'mhinz/vim-startify'
 Plug 'Pocco81/true-zen.nvim' " Zen mode!
+Plug 'RRethy/vim-illuminate'
+Plug 'b0o/incline.nvim'
 
 " For when I make the PR.
 " Plug 'Alex-vZyl/toggleterm.nvim', {'tag' : 'v2.*'}
 
-" Scrollbar plugins.  Both of them have one issue I do not like.
-" Plug 'dstein64/nvim-scrollview'
+" Not yet ready.
 " Plug 'petertriho/nvim-scrollbar'
 
 " Git.
@@ -84,7 +85,9 @@ let g:ale_disable_lsp = 1
 " The colorscheme has to be set here so that the plugings can access it.
 
 " Has to be set before colorscheme is set.
-set termguicolors
+if has('termguicolors')
+    set termguicolors
+end
 syntax on
 
 " Setup themes.
@@ -92,8 +95,12 @@ let g:gruvbox_material_foreground = 'mix'
 let g:gruvbox_material_background = 'hard'
 let background = 'dark'
 let g:everforest_background = 'hard'
-colorscheme gruvbox-material
 let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_material_better_performance = 1
+let g:gruvbox_material_ui_contrast = 'low'
+let g:gruvbox_material_disable_terminal_colors = 1
+let g:gruvbox_material_statusline_style = 'default'
+colorscheme gruvbox-material
 
 " Set the current line number's color.
 highlight CursorLineNr guifg=Orange
@@ -138,24 +145,54 @@ require 'bufferline'.setup {
     }
 }
 
+----------------
+-- Illuminate --
+----------------
+
+require 'illuminate'.configure {
+    under_cursor = false,
+    delay = 500
+}
+
+-------------
+-- Incline --
+-------------
+
+require 'incline'.setup {
+    window = {
+        margin = {
+            horizontal = 0,
+            vertical = 0
+        },
+        placement = {
+            horizontal = 'right',
+            vertical = 'top'
+        },
+        options = {
+            signcolumn = 'no',
+        }, 
+    },
+    hide = {
+        focused_win = true
+    }
+}
+
 ---------------
 -- Scrollbar --
 ---------------
 
 -- require 'scrollbar'.setup {
---     show_in_active_only = true
+--     show_in_active_only = true,
+--     set_highlights = false,
+--     marks = {
+--         Search = { color = 'Orange' },
+--         Error = { color = 'Red' },
+--         Warn = { color = 'Yellow' },
+--         Info = { color = 'Blue' },
+--         Hint = { color = 'Green' },
+--         Misc = { color = 'Purple' }
+--     }
 -- } 
-
-----------------
--- Scrollview --
-----------------
-
--- require 'scrollview'.setup {
---     column = 1,
---     hide_on_intersect = 1,
---     scrollview_excluded_filetypes = {'nerdtree', 'NvimTree'},   
---     current_only = true
--- }
 
 --------------
 -- Gitsigns --
@@ -258,6 +295,10 @@ require 'lualine'.setup {
     options = { 
         disabled_filetypes = { "startify" },
         globalstatus = true,
+        component_separators = { left = '', right = ''},
+        section_separators = { left = '', right = ''},
+        -- component_separators = { left = '', right = '' },
+        -- section_separators = { left = '', right = '' },
     },
     extensions = {
         "toggleterm",
@@ -496,15 +537,15 @@ require 'nvim-treesitter.configs'.setup {
 -- Set Seperators (borders) --
 ------------------------------
 
--- vim.opt.fillchars = {
---   horiz = '━',
---   horizup = '┻',
---   horizdown = '┳',
---   vert = '┃',
---   vertleft  = '┫',
---   vertright = '┣',
---   verthoriz = '╋',
--- }
+--  vim.opt.fillchars = {
+--    horiz = '━',
+--    horizup = '┻',
+--    horizdown = '┳',
+--    vert = '┃',
+--    vertleft  = '┫',
+--    vertright = '┣',
+--    verthoriz = '╋',
+--  }
 
 vim.opt.fillchars = {
   horiz = ' ',
@@ -515,7 +556,7 @@ vim.opt.fillchars = {
   vertright = ' ',
   verthoriz = ' ',
   eob = ' ',
-}
+} 
 
 EOF
 
@@ -559,7 +600,7 @@ let g:neovide_cursor_vfx_particle_speed=10.0
 autocmd TermOpen * setlocal signcolumn=no
 
 " Font.
-set guifont=JetBrainsMono\ Nerd\ Font:h10.75
+set guifont=JetBrainsMonoMedium\ Nerd\ Font:h10.75
 " set guifont=JetBrainsMono\ Nerd\ Font:h11.75
 
 " Explicitly enable efm langserver.

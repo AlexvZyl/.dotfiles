@@ -9,25 +9,34 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-" UX.
+" Gui.
 Plug 'akinsho/toggleterm.nvim'
-Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'mg979/vim-visual-multi'
 Plug 'rcarriga/nvim-notify'	
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/bufferline.nvim'
-Plug 'karb94/neoscroll.nvim'
 Plug 'mhinz/vim-startify'
-Plug 'Pocco81/true-zen.nvim' " Zen mode!
-Plug 'RRethy/vim-illuminate'
 Plug 'b0o/incline.nvim'
+Plug 'Pocco81/true-zen.nvim' " Zen mode!
 
+" UX.
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'mg979/vim-visual-multi'
+Plug 'karb94/neoscroll.nvim'
+Plug 'RRethy/vim-illuminate'
+Plug 'tpope/vim-repeat'
+Plug 'ggandor/leap.nvim'
+
+" Still need to setup.
+" Plug 'mhartington/formatter.nvim'
+" Still need to setup.
+" Plug 'windwp/nvim-autopairs'
 " For when I make the PR.
 " Plug 'Alex-vZyl/toggleterm.nvim', {'tag' : 'v2.*'}
-
 " Not yet ready.
 " Plug 'petertriho/nvim-scrollbar'
+" Image viewing.  Not set up currently. 
+" Plug 'edluffy/hologram.nvim'
 
 " Git.
 Plug 'kdheepak/lazygit.nvim'
@@ -48,22 +57,13 @@ Plug 'brooth/far.vim'
 Plug 'nvim-treesitter/nvim-treesitter'  " Syntax highlighting.
 Plug 'preservim/nerdcommenter' " More commenting functions.
 Plug 'tpope/vim-commentary'  " Allow commenting with <C-/>.
-Plug 'mhartington/formatter.nvim' " TODO.
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'} " Main LSP.
 
-" Main LSP engine.
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
-
-" VIM Script.
+" Language specific plugins.
 Plug 'prabirshrestha/vim-lsp'
-
-" Julia.
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
-
-" Lua.
 Plug 'sumneko/lua-language-server' 
-
-" Rust.
 Plug 'simrat39/rust-tools.nvim'
 
 " Themes.
@@ -116,7 +116,7 @@ lua <<EOF
 -- Git Conflict --
 ------------------
 
-require 'git-conflict'.setup {
+require 'git-conflictj.setup {
 
 }
 
@@ -153,6 +153,16 @@ require 'bufferline'.setup {
         separator_style = "padded_slant",
     }
 }
+
+----------
+-- Leap --
+----------
+
+local leap = require 'leap'
+leap.setup {
+        
+}
+leap.set_default_keymaps(true)
 
 ----------------
 -- Illuminate --
@@ -263,8 +273,10 @@ local get_color = require'lualine.utils.utils'.extract_highlight_colors
 function get_os()
     -- return '  '
     return 'Archlinux  '
-    -- return ' '
+    -- return '  '
     -- return 'Windows  '
+    -- return '  '
+    -- return 'Debian  '
 end
 
 require 'lualine'.setup {
@@ -382,7 +394,8 @@ require 'indent_blankline'.setup {
     show_current_context = true,
     show_current_context_start = false,
     filetype_exclude = { 'NvimTree', 'startify' },
-    use_treesitter = true,
+    use_treesitter = false,
+    use_treesitter_scope = true,
     -- context_char = '┃',
     context_char = '│',
     -- char = '│',
@@ -395,7 +408,7 @@ require 'indent_blankline'.setup {
 -- Formatter setup [TODO] -- 
 ----------------------------
 
-require 'formatter'.setup {}    
+-- require 'formatter'.setup {}    
 
 ---------------------
 -- Setup which-key --

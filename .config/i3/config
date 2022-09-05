@@ -177,6 +177,7 @@ bindsym $mod+t exec alacritty
 
 # Start editor.
 bindsym $mod+n exec neovide --multigrid
+# bindsym $mod+n exec alacritty --command=nvim
 
 # Start resource viewers.
 bindsym $mod+b exec alacritty --command=btop

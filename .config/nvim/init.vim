@@ -33,6 +33,7 @@ Plug 'b0o/incline.nvim'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'sindrets/diffview.nvim'
+Plug 'akinsho/git-conflict.nvim'
 
 " Neovim helpers.
 Plug 'folke/which-key.nvim'
@@ -110,6 +111,14 @@ highlight CursorLineNr guifg=Orange
 " ----------
 
 lua <<EOF
+
+------------------
+-- Git Conflict --
+------------------
+
+require 'git-conflict'.setup {
+
+}
 
 ----------------
 -- Bufferline --
@@ -253,7 +262,6 @@ require 'lualine'.setup {
     sections = {
         lualine_a = { 
             'mode', 
-            'progress',
         },
         lualine_b = { 
             'branch', 
@@ -300,16 +308,19 @@ require 'lualine'.setup {
                 colored = true,
             },
         },
-        lualine_y = { 
-            'filetype',
-        },
         lualine_x = { 
+            'encoding',
             'filesize', 
+            -- 'filetype',
+        },
+        lualine_y = { 
             'location', 
+            'progress',
         },
         lualine_z = { 
+            'filetype',
             'hostname', 
-            'fileformat' 
+            -- 'fileformat',
         },    
     },
     options = { 
@@ -508,7 +519,7 @@ require 'nvim-tree'.setup {
                 { key = "<C-k>", action = "" }
             }
         },
-        width = 35
+        width = 40
     },
     auto_reload_on_write = true,
     git = {
@@ -568,14 +579,16 @@ require 'nvim-treesitter.configs'.setup {
 --  }
 
 vim.opt.fillchars = {
-  horiz = ' ',
-  horizup = ' ',
-  horizdown = ' ',
+  -- horiz = '―',
+  -- horizup = '―',
+  horiz = '⎯',
+  horizup = '⎯',
+  horizdown = '⎯',
   vert = ' ',
   vertleft  = ' ',
   vertright = ' ',
   verthoriz = ' ',
-  eob = ' ',
+  eob =' ',
 } 
 
 EOF

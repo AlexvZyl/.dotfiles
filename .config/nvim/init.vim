@@ -5,9 +5,10 @@
 call plug#begin()
 
 " Telecope.
+Plug 'nvim-telescope/telescope.nvim'
+" Telescope deps.
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
 
 " Gui.
 Plug 'akinsho/toggleterm.nvim'
@@ -17,30 +18,21 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/bufferline.nvim'
 Plug 'mhinz/vim-startify'
 Plug 'b0o/incline.nvim'
-Plug 'Pocco81/true-zen.nvim' " Zen mode!
 
 " UX.
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'mg979/vim-visual-multi'
 Plug 'karb94/neoscroll.nvim'
 Plug 'RRethy/vim-illuminate'
-Plug 'tpope/vim-repeat'
-Plug 'ggandor/leap.nvim'
+Plug 'Pocco81/true-zen.nvim' " Zen mode!
 
-" Still need to setup.
-" Plug 'mhartington/formatter.nvim'
-" Still need to setup.
-" Plug 'windwp/nvim-autopairs'
-" For when I make the PR.
-" Plug 'Alex-vZyl/toggleterm.nvim', {'tag' : 'v2.*'}
-" Not yet ready.
-" Plug 'petertriho/nvim-scrollbar'
-" Image viewing.  Not set up currently. 
-" Plug 'edluffy/hologram.nvim'
+" Motions.
+Plug 'ggandor/leap.nvim'
+" Leap deps.
+Plug 'tpope/vim-repeat'
 
 " Git.
-Plug 'kdheepak/lazygit.nvim'
-Plug 'lewis6991/gitsigns.nvim'
+Plug 'lewis6991/gitsigns.nvim' 
 Plug 'sindrets/diffview.nvim'
 Plug 'akinsho/git-conflict.nvim'
 
@@ -57,7 +49,7 @@ Plug 'brooth/far.vim'
 Plug 'nvim-treesitter/nvim-treesitter'  " Syntax highlighting.
 Plug 'preservim/nerdcommenter' " More commenting functions.
 Plug 'tpope/vim-commentary'  " Allow commenting with <C-/>.
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'} " Main LSP.
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'} " Main LSP.  Also adds git stuff.
 
 " Language specific plugins.
 Plug 'prabirshrestha/vim-lsp'
@@ -67,7 +59,8 @@ Plug 'sumneko/lua-language-server'
 Plug 'simrat39/rust-tools.nvim'
 
 " Themes.
-Plug 'sainnhe/gruvbox-material'
+Plug 'sainnhe/gruvbox-material' " My fav.
+Plug 'catppuccin/nvim' " This one is nice.
 Plug 'morhetz/gruvbox'
 Plug 'folke/tokyonight.nvim'
 Plug 'EdenEast/nightfox.nvim'
@@ -76,6 +69,19 @@ Plug 'sainnhe/edge'
 Plug 'shaunsingh/nord.nvim'
 Plug 'dracula/vim'
 Plug 'joshdick/onedark.vim'
+
+" Alternative motion plugin.
+" Plug 'phaazon/hop.nvim'
+" Still need to setup.
+" Plug 'mhartington/formatter.nvim'
+" Still need to setup.
+" Plug 'windwp/nvim-autopairs'
+" For when I make the PR.
+" Plug 'Alex-vZyl/toggleterm.nvim', {'tag' : 'v2.*'}
+" Not yet ready.
+" Plug 'petertriho/nvim-scrollbar'
+" Image viewing.  Not set up currently. 
+" Plug 'edluffy/hologram.nvim'
 
 " Set the theme so that the plugins can have access to the colors.
 call plug#end()
@@ -116,8 +122,25 @@ lua <<EOF
 -- Git Conflict --
 ------------------
 
-require 'git-conflictj.setup {
+require 'git-conflict'.setup {
 
+}
+
+----------------
+-- Catppuccin --
+----------------
+
+-- latte, frappe, macchiato, mocha
+vim.g.catppuccin_flavour = 'mocha'
+require 'catppuccin' .setup {
+    integrations = {
+        gitsigns = true,
+        leap = true,
+        telescope = true,
+        which_key = true,
+        notify = true,
+        treesitter_context = true,
+    }
 }
 
 ----------------
@@ -177,19 +200,21 @@ require 'illuminate'.configure {
 -- Incline --
 -------------
 
+-- Get the buffer's filename.
 function get_file_from_buffer(buf)
     local bufname = vim.api.nvim_buf_get_name(buf)
     local res = bufname ~= '' and vim.fn.fnamemodify(bufname, ':t') or '[No Name]'
     return res
 end
 
+-- Custom incline rendering.
 function render_incline(render_props)
     return {
         {
             get_file_from_buffer(render_props.buf),
-            guibg = 'None',
+            -- guibg = 'None',
             gui = 'italic',
-            blend = 100,
+            blend = 0,
         }
     }
 end
@@ -237,7 +262,9 @@ require 'incline'.setup {
 -- Gitsigns --
 --------------
 
--- Currently using Coc for this as well.  Keeping it here for now.
+-- Currently using this to get the git diag.
+-- Using COC to display it.
+-- Displaying git signs displays the results wrong...
 require 'gitsigns'.setup {
     signs = {
         add          = { text = '│' },
@@ -266,8 +293,6 @@ local function diff_source()
     end
 end
 
-local get_color = require'lualine.utils.utils'.extract_highlight_colors
-
 -- Get the OS to display in Lualine.
 -- Just gonna hard code Arch for now.
 function get_os()
@@ -278,6 +303,9 @@ function get_os()
     -- return '  '
     -- return 'Debian  '
 end
+
+-- Required to properly set the colors.
+local get_color = require'lualine.utils.utils'.extract_highlight_colors
 
 require 'lualine'.setup {
     sections = {
@@ -365,13 +393,22 @@ require 'lualine'.setup {
 require 'true-zen'.setup {
     modes = {
         ataraxis = {
-
+            shade = 'dark',
+            left = {
+                hidden_number = false,
+                hidden_relativenumber = false,
+                hidden_signcolumn = "no",
+                shown_number = true,
+                shown_relativenumber = true,
+                shown_signcolumn = "yes"
+            }
         }
     },
-    integrations = {
+   integrations = {
         lualine = true
-    } 
-}
+    },
+    
+} 
 
 ---------------------
 -- Setup neoscroll --
@@ -404,17 +441,20 @@ require 'indent_blankline'.setup {
     char = '┆',
 }
 
-----------------------------
--- Formatter setup [TODO] -- 
-----------------------------
+---------------------
+-- Formatter setup -- 
+---------------------
 
+-- Todo.
 -- require 'formatter'.setup {}    
 
 ---------------------
 -- Setup which-key --
 ---------------------
 
-require 'which-key'.setup {}
+require 'which-key'.setup {
+
+}
 
 ---------------------
 -- Setup telescope --
@@ -606,6 +646,7 @@ vim.opt.fillchars = {
   horiz = '⎯',
   horizup = '⎯',
   horizdown = '⎯',
+  -- vert = ' ',
   vert = ' ',
   vertleft  = ' ',
   vertright = ' ',
@@ -654,9 +695,9 @@ let g:neovide_cursor_vfx_particle_speed=10.0
 " Remove the padding in a terminal.
 autocmd TermOpen * setlocal signcolumn=no
 
-" Font.
-set guifont=JetBrainsMonoMedium\ Nerd\ Font:h10.75
-" set guifont=JetBrainsMono\ Nerd\ Font:h11.75
+" Font.  This sets the font for neovide.
+" set guifont=JetBrainsMonoMedium\ Nerd\ Font:h10.75
+set guifont=JetBrainsMonoMedium\ Nerd\ Font:h11.75
 
 " Explicitly enable efm langserver.
 let g:lsp_settings = {
@@ -833,6 +874,12 @@ inoremap <silent> <C-a> <Cmd>TZAtaraxis<CR>
 " Multiline.
 " nnoremap <silent> <C-Down> <Down><Cmd>vm-add-cursors<CR>
 " nnoremap <silent> <C-Up> <Cmd>vm-add-cursors<CR>
+
+"------- "
+" EVENTS "
+"------- "
+
+
 
 " -------------------------
 " RUST PLUGIN CONFIGURARION

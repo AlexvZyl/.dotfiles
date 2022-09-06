@@ -28,6 +28,7 @@
     "diagnostic.hintSign": "",
 
     // Linting git.
+    "git.enableGutters": true,
     "git.removedSign.text": "│",    
     "git.changedSign.text": "│",
     "git.addedSign.text": "│",

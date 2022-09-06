@@ -18,13 +18,14 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'akinsho/bufferline.nvim'
 Plug 'mhinz/vim-startify'
 Plug 'b0o/incline.nvim'
+Plug 'Pocco81/true-zen.nvim' " Zen mode!
 
-" UX.
+" Programming experience.
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'mg979/vim-visual-multi'
 Plug 'karb94/neoscroll.nvim'
 Plug 'RRethy/vim-illuminate'
-Plug 'Pocco81/true-zen.nvim' " Zen mode!
+Plug 'windwp/nvim-autopairs'
 
 " Motions.
 Plug 'ggandor/leap.nvim'
@@ -74,8 +75,6 @@ Plug 'joshdick/onedark.vim'
 " Plug 'phaazon/hop.nvim'
 " Still need to setup.
 " Plug 'mhartington/formatter.nvim'
-" Still need to setup.
-" Plug 'windwp/nvim-autopairs'
 " For when I make the PR.
 " Plug 'Alex-vZyl/toggleterm.nvim', {'tag' : 'v2.*'}
 " Not yet ready.
@@ -105,7 +104,7 @@ let g:everforest_background = 'hard'
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_material_better_performance = 1
 let g:gruvbox_material_ui_contrast = 'low'
-let g:gruvbox_material_disable_terminal_colors = 1
+" let g:gruvbox_material_disable_terminal_colors = 1
 let g:gruvbox_material_statusline_style = 'default'
 colorscheme gruvbox-material
 
@@ -142,6 +141,43 @@ require 'catppuccin' .setup {
         treesitter_context = true,
     }
 }
+
+----------------
+-- Auto pairs --
+----------------
+
+require 'nvim-autopairs'.setup {
+    map_cr = false
+}
+
+-- Setup for COC.
+
+local remap = vim.api.nvim_set_keymap
+local npairs = require('nvim-autopairs')
+npairs.setup({map_cr=false})
+
+-- skip it, if you use another global object
+_G.MUtils= {}
+
+-- old version
+-- MUtils.completion_confirm=function()
+  -- if vim.fn["coc#pum#visible"]() ~= 0 then
+    -- return vim.fn["coc#_select_confirm"]()
+  -- else
+    -- return npairs.autopairs_cr()
+  -- end
+-- end
+
+-- new version for custom pum
+MUtils.completion_confirm=function()
+    if vim.fn["coc#pum#visible"]() ~= 0  then
+        return vim.fn["coc#pum#confirm"]()
+    else
+        return npairs.autopairs_cr()
+    end
+end
+
+remap('i' , '<CR>','v:lua.MUtils.completion_confirm()', {expr = true , noremap = true})
 
 ----------------
 -- Bufferline --
@@ -360,15 +396,13 @@ require 'lualine'.setup {
         lualine_x = { 
             'encoding',
             'filesize', 
-            'location'
-        },
-        lualine_y = { 
-            -- 'location', 
-            'progress',
             'filetype'
         },
+        lualine_y = { 
+            'location',
+            'progress',
+        },
         lualine_z = { 
-            -- 'filetype',
             get_os
         },    
     },
@@ -377,8 +411,13 @@ require 'lualine'.setup {
         globalstatus = true,
         component_separators = { left = '', right = ''},
         section_separators = { left = '', right = ''},
+        -- component_separators = { left = '', right = ''},
+        -- section_separators = { left = '', right = ''},
         -- component_separators = { left = '', right = '' },
         -- section_separators = { left = '', right = '' },
+        -- component_separators = { left = '', right = '' },
+        -- section_separators = { left = '┃', right = '┃' },
+
     },
     extensions = {
         "toggleterm",
@@ -672,7 +711,7 @@ EOF
 "     Orange	Purple		Violet
 
 " Fish already has a theme, so prevent neovim from adding a theme on top of that.
-let $COLORTERM="truecolor"
+" let $COLORTERM="truecolor"
 
 " Neovide settings.
 " let g:neovide_transparency=0.95
@@ -689,7 +728,7 @@ let g:neovide_cursor_vfx_mode = "pixiedust"
 " Particle settings.
 let g:neovide_cursor_vfx_opacity=175.0 " / 256.0
 let g:neovide_cursor_vfx_particle_lifetime=0.8
-let g:neovide_cursor_vfx_particle_density=7.0
+let g:neovide_cursor_vfx_particle_density=6.0
 let g:neovide_cursor_vfx_particle_speed=10.0
 
 " Remove the padding in a terminal.
@@ -697,7 +736,7 @@ autocmd TermOpen * setlocal signcolumn=no
 
 " Font.  This sets the font for neovide.
 " set guifont=JetBrainsMonoMedium\ Nerd\ Font:h10.75
-set guifont=JetBrainsMonoMedium\ Nerd\ Font:h11.75
+set guifont=JetBrainsMono\ Nerd\ Font:h10.5
 
 " Explicitly enable efm langserver.
 let g:lsp_settings = {
@@ -874,12 +913,6 @@ inoremap <silent> <C-a> <Cmd>TZAtaraxis<CR>
 " Multiline.
 " nnoremap <silent> <C-Down> <Down><Cmd>vm-add-cursors<CR>
 " nnoremap <silent> <C-Up> <Cmd>vm-add-cursors<CR>
-
-"------- "
-" EVENTS "
-"------- "
-
-
 
 " -------------------------
 " RUST PLUGIN CONFIGURARION

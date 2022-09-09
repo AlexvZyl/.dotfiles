@@ -31,7 +31,7 @@ rate = 1000
 #temperature_type = "c"
 #temperature_type = "kelvin"
 #temperature_type = "fahrenheit"
-#temperature_type = "celsius"
+temperature_type = "celsius"
 # The default time interval (in milliseconds).
 #default_time_value = 60000
 # The time delta on each zoom in/out action (in milliseconds).
@@ -42,7 +42,7 @@ rate = 1000
 #default_widget_type = "proc"
 #default_widget_count = 1
 # Use basic mode
-basic = true
+basic = false
 # Use the old network legend style
 #use_old_network_legend = false
 # Remove space in tables

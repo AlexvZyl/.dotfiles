@@ -96,15 +96,27 @@ if has('termguicolors')
 end
 syntax on
 
+" Apply custom highlights on colorscheme change.
+" Must be declared before executing ':colorscheme'.
+augroup custom_highlights_gruvboxmaterial
+  autocmd!
+  " floating popups
+  autocmd ColorScheme gruvbox-material 
+  \       hi NvimTreeNormal      guibg=#181818 |
+  \       hi NvimTreeEndOfBuffer guibg=#181818
+augroup END
+
 " Setup themes.
+" let g:gruvbox_material_foreground = 'original'
 let g:gruvbox_material_foreground = 'mix'
+" let g:gruvbox_material_foreground = 'material'
 let g:gruvbox_material_background = 'hard'
 let background = 'dark'
 let g:everforest_background = 'hard'
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_material_better_performance = 1
 let g:gruvbox_material_ui_contrast = 'low'
-" let g:gruvbox_material_disable_terminal_colors = 1
+let g:gruvbox_material_disable_terminal_colors = 0
 let g:gruvbox_material_statusline_style = 'default'
 colorscheme gruvbox-material
 
@@ -587,7 +599,8 @@ vim.api.nvim_set_keymap("t", "<C-G>", "<Cmd>lua _lazygit_toggle()<CR>", {noremap
 
 local Terminal  = require('toggleterm.terminal').Terminal
 -- local btop = Terminal:new({ cmd = "btop --utf-force", hidden = true, direction = "float" })
-local btop = Terminal:new({ cmd = "btop", hidden = true, direction = "float" })
+-- local btop = Terminal:new({ cmd = "btop", hidden = true, direction = "float" })
+local btop = Terminal:new({ cmd = "btm", hidden = true, direction = "float" })
 function _btop_toggle()
   btop:toggle()
 end
@@ -607,12 +620,14 @@ vim.api.nvim_set_keymap("n", "<F3>", "<Cmd>lua _fish_toggle()<CR>", {noremap = t
 vim.api.nvim_set_keymap("t", "<F3>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("v", "<F3>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
 
-----------------
--- Setup tree --
-----------------
+---------------
+-- Nvim tree --
+---------------
 
 require 'nvim-tree'.setup {
     view = {
+        hide_root_folder = true,
+        signcolumn = 'no',
         mappings = {
             list = {
                 -- Allow moving out of the explorer.
@@ -711,7 +726,8 @@ EOF
 "     Orange	Purple		Violet
 
 " Fish already has a theme, so prevent neovim from adding a theme on top of that.
-" let $COLORTERM="truecolor"
+let $COLORTERM="truecolor"
+let $TERM="alacritty"
 
 " Neovide settings.
 " let g:neovide_transparency=0.95
@@ -1138,4 +1154,4 @@ endfunction
 " notifications
 " autocmd User CocNvimInit call s:InitCoc()
 " autocmd User CocDiagnosticChange call s:DiagnosticNotify()
-autocmd User CocStatusChange call s:StatusNotify()
+" autocmd User CocStatusChange call s:StatusNotify()

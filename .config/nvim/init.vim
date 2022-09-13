@@ -640,7 +640,16 @@ require 'nvim-tree'.setup {
     auto_reload_on_write = true,
     git = {
         ignore = false
-    }
+    },
+    sync_root_with_cwd = true,
+    renderer = {
+        indent_markers = {
+            enable = true   
+        }
+    },
+    diagnostics = {
+        enable = true
+    },
 }
 
 ---------------------------

@@ -406,8 +406,8 @@ require 'lualine'.setup {
             },
         },
         lualine_x = { 
-            'encoding',
-            'filesize', 
+            -- 'encoding',
+            -- 'filesize', 
             'filetype'
         },
         lualine_y = { 

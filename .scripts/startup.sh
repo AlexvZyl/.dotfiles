@@ -12,4 +12,4 @@ nvidia-force-comp-pipeline
 picom -b --experimental-backend
 
 # Launch polybar.
-~/.config/polybar/launch.sh
+~/.config/polybar.personal/launch.sh

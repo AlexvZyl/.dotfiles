@@ -86,7 +86,9 @@ sudo pamac install nodejs github-desktop github-cli code --no-confirm
 sudo pamac install thunderbird whatsapp-nativefier discord signal-desktop --no-confirm
 
 # i3 stuff.
-sudo pamac install feh xborder-git cronie rofi rofi-greenclip picom polybar --no-confirm
+sudo pamac install feh xborder-git cronie rofi rofi-greenclip picom --no-confirm
+# Stuff for polybar.
+sudo pamac install polybar python-pywal pywal-git networkmanager-dmenu-git calc --no-confirm
 
 # Sound stuff.
 sudo pamac install pulseaudio pavucontrol alsa-utils --no-confirm

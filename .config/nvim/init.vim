@@ -743,7 +743,8 @@ let $TERM="alacritty"
 let g:neovide_transparency=1
 let g:neovide_fullscreen=v:false
 let g:neovide_profiler=v:false
-let g:neovide_cursor_animation_length = 0.005
+let g:neovide_cursor_animation_length = 0.007
+" let g:neovide_scroll_animation_length = 0.18
 let g:neovide_scroll_animation_length = 0.0
 let g:neovide_cursor_antialiasing = v:true
 
@@ -753,7 +754,7 @@ let g:neovide_cursor_vfx_mode = "pixiedust"
 " Particle settings.
 let g:neovide_cursor_vfx_opacity=175.0 " / 256.0
 let g:neovide_cursor_vfx_particle_lifetime=0.8
-let g:neovide_cursor_vfx_particle_density=6.0
+let g:neovide_cursor_vfx_particle_density=5.0
 let g:neovide_cursor_vfx_particle_speed=10.0
 
 " Remove the padding in a terminal.
@@ -860,6 +861,12 @@ inoremap <silent> <F1> <Cmd>NvimTreeToggle<CR>
 vnoremap <silent> <F1> <Cmd>NvimTreeToggle<CR>
 tnoremap <silent> <F1> <Cmd>NvimTreeToggle<CR>
 
+" Grep for a string in the current directory.
+nnoremap <silent> <F4> <Cmd>Telescope live_grep<CR>
+inoremap <silent> <F4> <Cmd>Telescope live_grep<CR>
+vnoremap <silent> <F4> <Cmd>Telescope live_grep<CR>
+tnoremap <silent> <F4> <Cmd>Telescope live_grep<CR>
+
 " Search for old files.
 nnoremap <silent> <C-t> <Cmd>Telescope oldfiles<CR>
 inoremap <silent> <C-t> <Cmd>Telescope oldfiles<CR>
@@ -915,8 +922,6 @@ vnoremap <silent> <C-TAB> <Cmd>Telescope buffers<CR>
 " Finding.
 nnoremap <silent> <C-f> <Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>
 inoremap <silent> <C-f> <Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>
-vnoremap <silent> <C-f> <Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>
-
 " Disable the search highlight when hitting esc.
 nnoremap <silent> <Esc> <Cmd>noh<CR>
 inoremap <silent> <Esc> <Cmd>stopinsert<CR> <Cmd>noh<CR>

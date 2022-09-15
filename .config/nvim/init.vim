@@ -361,13 +361,17 @@ require 'lualine'.setup {
             'mode', 
         },
         lualine_b = { 
-            'branch', 
+            {
+                'branch', 
+                icon = '',
+            },
             { 
                 'filename' ,
                 symbols = {
-                    modified = ' ',
-                    readonly = ' ',
+                    modified = ' [  ]',
+                    readonly = ' [  ]',
                 },
+                icon = '',
             },
         },
         lualine_c = { 
@@ -381,11 +385,13 @@ require 'lualine'.setup {
                     added = ' ', 
                     modified = ' ', 
                     removed = ' '
-                } 
+                },
+                separator = '',
             }, 
             { 
                 'diagnostics', 
                 sources = { 'coc' }, 
+                separator = '',
                 symbols = { 
                     -- error = ' ', 
                     -- warn = ' ', 
@@ -421,9 +427,9 @@ require 'lualine'.setup {
     options = { 
         disabled_filetypes = { "startify" },
         globalstatus = true,
-        component_separators = { left = '', right = ''},
-        section_separators = { left = '', right = ''},
-        -- component_separators = { left = '', right = ''},
+        -- component_separators = { left = '', right = ''},
+        section_separators = { left ='', right = '' },
+        component_separators = { left = '', right = ''},
         -- section_separators = { left = '', right = ''},
         -- component_separators = { left = '', right = '' },
         -- section_separators = { left = '', right = '' },
@@ -832,7 +838,7 @@ let g:startify_custom_header =
           \ 'startify#center(startify#fortune#cowsay())'
 let g:startify_lists = [
     \ { 'type': 'sessions',  'header': ['   Sessions']       },
-    \ { 'type': 'dir',       'header': ['   Recents']       },
+    \ { 'type': 'dir',       'header': ['   Local Recents']       },
     \ { 'type': 'files',     'header': ['   Global Recents']         },
 \ ]
 

@@ -118,10 +118,21 @@ let g:gruvbox_material_better_performance = 1
 let g:gruvbox_material_ui_contrast = 'low'
 let g:gruvbox_material_disable_terminal_colors = 0
 let g:gruvbox_material_statusline_style = 'default'
-colorscheme gruvbox-material
 
-" Set the current line number's color.
-highlight CursorLineNr guifg=Orange
+" Custom colors for gruvbox-material.
+function! s:gruvbox_material_custom() abort
+    " Init palette used.
+    let l:palette = gruvbox_material#get_palette(g:gruvbox_material_background, g:gruvbox_material_foreground, {})
+    call gruvbox_material#highlight('CursorLineNr', l:palette.orange, l:palette.none)
+    call gruvbox_material#highlight('TabLineSel', l:palette.orange, l:palette.none)
+endfunction
+augroup GruvboxMaterialCustom
+    autocmd!
+    autocmd ColorScheme gruvbox-material call s:gruvbox_material_custom()
+augroup END
+
+" Apply the colorscheme.
+colorscheme gruvbox-material
 
 " ----------
 " LUA CONFIG
@@ -197,8 +208,12 @@ remap('i' , '<CR>','v:lua.MUtils.completion_confirm()', {expr = true , noremap =
 
 require 'bufferline'.setup {
     options = {    
+        indicator = {
+            style = 'underline',
+        },
         tab_size = 12, -- Minimum size.
         buffer_close_icon ='',
+        modified_icon = '',
         max_name_length = 20,
         mode = "buffers",
         diagnostics = "coc",   
@@ -368,8 +383,8 @@ require 'lualine'.setup {
             { 
                 'filename' ,
                 symbols = {
-                    modified = ' [  ]',
-                    readonly = ' [  ]',
+                    modified = '',
+                    readonly = ' ',
                 },
                 icon = '',
             },
@@ -738,7 +753,7 @@ EOF
 "     Yellow	LightYellow	    Brown		    DarkYellow
 "     Gray	    LightGray	    DarkGray
 "     Black	    White
-"     Orange	Purple		Violet
+"     Orange	Purple		    Violet
 
 " Fish already has a theme, so prevent neovim from adding a theme on top of that.
 let $COLORTERM="truecolor"

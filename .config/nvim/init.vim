@@ -126,6 +126,7 @@ function! s:gruvbox_material_custom() abort
     call gruvbox_material#highlight('CursorLineNr', l:palette.orange, l:palette.none)
     call gruvbox_material#highlight('TabLineSel', l:palette.orange, l:palette.none)
 endfunction
+
 augroup GruvboxMaterialCustom
     autocmd!
     autocmd ColorScheme gruvbox-material call s:gruvbox_material_custom()
@@ -378,7 +379,10 @@ require 'lualine'.setup {
         lualine_b = { 
             {
                 'branch', 
-                icon = '',
+                icon = {
+                    '',
+                    color = { fg = get_color('Orange', 'fg') },
+                },
             },
             { 
                 'filename' ,
@@ -386,7 +390,10 @@ require 'lualine'.setup {
                     modified = '',
                     readonly = ' ',
                 },
-                icon = '',
+                icon = {
+                    '',
+                    color = { fg = get_color('Orange', 'fg') },
+                },
             },
         },
         lualine_c = { 
@@ -429,11 +436,30 @@ require 'lualine'.setup {
         lualine_x = { 
             -- 'encoding',
             -- 'filesize', 
-            'filetype'
+            {
+                'filetype',
+                icon = {
+                    align = 'right'         
+                }
+            }
         },
         lualine_y = { 
-            'location',
-            'progress',
+            {
+                'location',
+                icon = {
+                    '',
+                    align = 'right',
+                    color = { fg = get_color('Orange', 'fg') },
+                }
+            },
+            {
+                'progress',
+                icon = {
+                    'ﯼ',
+                    align = 'right',
+                    color = { fg = get_color('Orange', 'fg') },
+                }
+            }
         },
         lualine_z = { 
             get_os
@@ -637,9 +663,9 @@ local fish = Terminal:new({ cmd = "fish", hidden = true, direction = "horizontal
 function _fish_toggle()
   fish:toggle()
 end
-vim.api.nvim_set_keymap("n", "<F3>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("t", "<F3>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("v", "<F3>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<F4>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("t", "<F4>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("v", "<F4>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
 
 ---------------
 -- Nvim tree --
@@ -883,10 +909,10 @@ vnoremap <silent> <F1> <Cmd>NvimTreeToggle<CR>
 tnoremap <silent> <F1> <Cmd>NvimTreeToggle<CR>
 
 " Grep for a string in the current directory.
-nnoremap <silent> <F4> <Cmd>Telescope live_grep<CR>
-inoremap <silent> <F4> <Cmd>Telescope live_grep<CR>
-vnoremap <silent> <F4> <Cmd>Telescope live_grep<CR>
-tnoremap <silent> <F4> <Cmd>Telescope live_grep<CR>
+nnoremap <silent> <F3> <Cmd>Telescope live_grep<CR>
+inoremap <silent> <F3> <Cmd>Telescope live_grep<CR>
+vnoremap <silent> <F3> <Cmd>Telescope live_grep<CR>
+tnoremap <silent> <F3> <Cmd>Telescope live_grep<CR>
 
 " Search for old files.
 nnoremap <silent> <C-t> <Cmd>Telescope oldfiles<CR>

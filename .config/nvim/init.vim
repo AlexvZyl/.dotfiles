@@ -388,7 +388,7 @@ require 'lualine'.setup {
                 'filename' ,
                 symbols = {
                     modified = '',
-                    readonly = ' ',
+                    readonly = '',
                 },
                 icon = {
                     '',
@@ -663,9 +663,9 @@ local fish = Terminal:new({ cmd = "fish", hidden = true, direction = "horizontal
 function _fish_toggle()
   fish:toggle()
 end
-vim.api.nvim_set_keymap("n", "<F4>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("t", "<F4>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("v", "<F4>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<F1>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("t", "<F1>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("v", "<F1>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
 
 ---------------
 -- Nvim tree --
@@ -810,6 +810,8 @@ autocmd TermOpen * setlocal signcolumn=no
 " Font.  This sets the font for neovide.
 " set guifont=JetBrainsMonoMedium\ Nerd\ Font:h10.75
 set guifont=JetBrainsMono\ Nerd\ Font:h10.5
+" set guifont=FiraCode\ Nerd\ Font:h11.75
+" set guifont=FiraCode\ Nerd\ Font:h10.0
 
 " Explicitly enable efm langserver.
 let g:lsp_settings = {
@@ -897,22 +899,22 @@ nnoremap <silent> db <Cmd>BufferLinePickClose<CR>
 nnoremap <silent> gb :BufferLinePick<CR>
 
 " File explorer.
-nnoremap <silent> <F2> <Cmd>Telescope find_files<CR>
-inoremap <silent> <F2> <Cmd>Telescope find_files<CR>
-vnoremap <silent> <F2> <Cmd>Telescope find_files<CR>
-tnoremap <silent> <F2> <Cmd>Telescope find_files<CR>
+nnoremap <silent> <F3> <Cmd>Telescope find_files<CR>
+inoremap <silent> <F3> <Cmd>Telescope find_files<CR>
+vnoremap <silent> <F3> <Cmd>Telescope find_files<CR>
+tnoremap <silent> <F3> <Cmd>Telescope find_files<CR>
 
 " Toggle the file explorer.
-nnoremap <silent> <F1> <Cmd>NvimTreeToggle<CR>
-inoremap <silent> <F1> <Cmd>NvimTreeToggle<CR>
-vnoremap <silent> <F1> <Cmd>NvimTreeToggle<CR>
-tnoremap <silent> <F1> <Cmd>NvimTreeToggle<CR>
+nnoremap <silent> <F2> <Cmd>NvimTreeToggle<CR>
+inoremap <silent> <F2> <Cmd>NvimTreeToggle<CR>
+vnoremap <silent> <F2> <Cmd>NvimTreeToggle<CR>
+tnoremap <silent> <F2> <Cmd>NvimTreeToggle<CR>
 
 " Grep for a string in the current directory.
-nnoremap <silent> <F3> <Cmd>Telescope live_grep<CR>
-inoremap <silent> <F3> <Cmd>Telescope live_grep<CR>
-vnoremap <silent> <F3> <Cmd>Telescope live_grep<CR>
-tnoremap <silent> <F3> <Cmd>Telescope live_grep<CR>
+nnoremap <silent> <F4> <Cmd>Telescope live_grep<CR>
+inoremap <silent> <F4> <Cmd>Telescope live_grep<CR>
+vnoremap <silent> <F4> <Cmd>Telescope live_grep<CR>
+tnoremap <silent> <F4> <Cmd>Telescope live_grep<CR>
 
 " Search for old files.
 nnoremap <silent> <C-t> <Cmd>Telescope oldfiles<CR>

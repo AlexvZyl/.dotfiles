@@ -9,7 +9,8 @@
 nvidia-force-comp-pipeline
 
 # Start compositor.
-picom -b --experimental-backend
+# picom -b --experimental-backend
+picom -b 
 
 # Launch polybar.
 ~/.config/polybar.personal/launch.sh

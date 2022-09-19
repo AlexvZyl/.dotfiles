@@ -57,7 +57,7 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
 Plug 'sumneko/lua-language-server' 
-Plug 'simrat39/rust-tools.nvim'
+" Plug 'simrat39/rust-tools.nvim'
 
 " Themes.
 Plug 'sainnhe/gruvbox-material' " My fav.
@@ -148,6 +148,23 @@ lua <<EOF
 require 'git-conflict'.setup {
 
 }
+
+----------------
+-- Rust tools --
+----------------
+
+-- local rt = require 'rust-tools'
+-- 
+-- rt.setup({
+--   server = {
+--     on_attach = function(_, bufnr)
+--       -- Hover actions
+--       vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+--       -- Code action groups
+--       vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+--     end,
+--   },
+-- })
 
 ----------------
 -- Catppuccin --
@@ -374,7 +391,10 @@ local get_color = require'lualine.utils.utils'.extract_highlight_colors
 require 'lualine'.setup {
     sections = {
         lualine_a = { 
-            'mode', 
+            {
+                'mode', 
+                icon = { '' },
+            },
         },
         lualine_b = { 
             {
@@ -646,8 +666,8 @@ vim.api.nvim_set_keymap("t", "<C-G>", "<Cmd>lua _lazygit_toggle()<CR>", {noremap
 
 local Terminal  = require('toggleterm.terminal').Terminal
 -- local btop = Terminal:new({ cmd = "btop --utf-force", hidden = true, direction = "float" })
--- local btop = Terminal:new({ cmd = "btop", hidden = true, direction = "float" })
-local btop = Terminal:new({ cmd = "btm", hidden = true, direction = "float" })
+local btop = Terminal:new({ cmd = "btop", hidden = true, direction = "float" })
+-- local btop = Terminal:new({ cmd = "btm", hidden = true, direction = "float" })
 function _btop_toggle()
   btop:toggle()
 end

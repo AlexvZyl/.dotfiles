@@ -40,7 +40,7 @@ sudo pamac install nerd-fonts-complete --no-confirm
 sudo pamac install man-db --no-confirm
 
 # Utilities.
-sudo pamac install fuse-common powertop speedtest-cli gnome-calculator balena-etcher btop nvtop thunar lazygit flameshot brightnessctl pfetch bottom dunst --no-confirm
+sudo pamac install scrot fuse-common powertop speedtest-cli gnome-calculator balena-etcher btop nvtop thunar lazygit flameshot brightnessctl pfetch bottom dunst --no-confirm
 
 # Icons.
 sudo pamac install papirus-icon-theme --no-confirm

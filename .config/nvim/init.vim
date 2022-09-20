@@ -274,7 +274,11 @@ leap.set_default_keymaps(true)
 
 require 'illuminate'.configure {
     under_cursor = false,
-    delay = 500
+    delay = 500,
+    filetypes_denylist = {
+        'startify',
+        'NvimTree'
+    }
 }
 
 -------------
@@ -904,6 +908,9 @@ let g:startify_lists = [
     \ { 'type': 'dir',       'header': ['   Local Recents']       },
     \ { 'type': 'files',     'header': ['   Global Recents']         },
 \ ]
+let g:startify_files_number = 15
+" TODO!
+" let g:startify_custom_footer = [ '***' ]
 
 " ----------
 " KEYMAPPING

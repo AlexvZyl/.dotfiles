@@ -145,5 +145,4 @@ fish <<'END_FISH'
 END_FISH
 
 # Setup github.
-sudo chmod +x ~/.scripts/setup_git.sh
-/~.scripts/setup_git.sh
+sudo chmod +x ~/.scripts/setup_git.sh && ~/.scripts/setup_git.sh

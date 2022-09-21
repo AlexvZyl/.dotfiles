@@ -141,6 +141,10 @@ colorscheme gruvbox-material
 
 lua <<EOF
 
+-- Nvim-Tree.lua advises to do this at the start.
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
 ------------------
 -- Git Conflict --
 ------------------
@@ -697,7 +701,7 @@ vim.api.nvim_set_keymap("v", "<F1>", "<Cmd>lua _fish_toggle()<CR>", {noremap = t
 
 require 'nvim-tree'.setup {
     view = {
-        hide_root_folder = true,
+        hide_root_folder = false,
         signcolumn = 'no',
         mappings = {
             list = {

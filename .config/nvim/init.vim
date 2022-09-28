@@ -36,6 +36,7 @@ Plug 'tpope/vim-repeat'
 Plug 'lewis6991/gitsigns.nvim' 
 Plug 'sindrets/diffview.nvim'
 Plug 'akinsho/git-conflict.nvim'
+Plug 'kdheepak/lazygit.nvim'
 
 " Neovim helpers.
 Plug 'folke/which-key.nvim'
@@ -102,8 +103,8 @@ augroup custom_highlights_gruvboxmaterial
   autocmd!
   " floating popups
   autocmd ColorScheme gruvbox-material 
-  \       hi NvimTreeNormal      guibg=#181818 |
-  \       hi NvimTreeEndOfBuffer guibg=#181818
+  \       hi NvimTreeNormal      guibg=#141617 |
+  \       hi NvimTreeEndOfBuffer guibg=#141617
 augroup END
 
 " Setup themes.
@@ -427,6 +428,10 @@ require 'lualine'.setup {
         lualine_c = { 
             {
                 'diff', 
+                -- icon = {
+                --     '',
+                --     color = { fg = get_color('Orange', 'fg') },
+                -- },
                 source = diff_source, 
                 symbols = { 
                     -- added = ' ', 
@@ -597,6 +602,7 @@ ts.setup({
     }
 })
 ts.load_extension 'notify'
+ts.load_extension 'lazygit'
 
 ---------------------------------
 -- Setup default notifications -- 
@@ -655,18 +661,6 @@ require 'toggleterm'.setup {
         winblend = 0,
     }
 }
-
------------------------------
--- Lazygit with toggleterm --
------------------------------
- 
-local Terminal  = require('toggleterm.terminal').Terminal
-local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float" })
-function _lazygit_toggle()
-  lazygit:toggle()
-end
-vim.api.nvim_set_keymap("n", "<C-G>", "<Cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("t", "<C-G>", "<Cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
 
 ----------------------------
 -- BTop++ with toggleterm --
@@ -784,7 +778,6 @@ vim.opt.fillchars = {
   horiz = '⎯',
   horizup = '⎯',
   horizdown = '⎯',
-  -- vert = ' ',
   vert = ' ',
   vertleft  = ' ',
   vertright = ' ',
@@ -958,6 +951,18 @@ nnoremap <silent> <F12> <Cmd>Cheatsheet<CR>
 inoremap <silent> <F12> <Cmd>Cheatsheet<CR>
 vnoremap <silent> <F12> <Cmd>Cheatsheet<CR>
 tnoremap <silent> <F12> <Cmd>Cheatsheet<CR>
+
+" Lazygit.
+nnoremap <silent> <C-g> <Cmd>LazyGit<CR>
+tnoremap <silent> <C-g> <Cmd>LazyGit<CR>
+vnoremap <silent> <C-g> <Cmd>LazyGit<CR>
+inoremap <silent> <C-g> <Cmd>LazyGit<CR>
+
+" Change lazygit repo.
+nnoremap <silent> <C-r> <Cmd>lua require("telescope").extensions.lazygit.lazygit()<CR>
+tnoremap <silent> <C-r> <Cmd>lua require("telescope").extensions.lazygit.lazygit()<CR>
+vnoremap <silent> <C-r> <Cmd>lua require("telescope").extensions.lazygit.lazygit()<CR>
+inoremap <silent> <C-r> <Cmd>lua require("telescope").extensions.lazygit.lazygit()<CR>
 
 " Sessions.
 nnoremap <silent> <F5> <Cmd>SSave<CR> " <Cmd>lua vim.notify(" Saved current session.", "success", { title = " Session"} )<CR>

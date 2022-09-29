@@ -1,4 +1,4 @@
-# DotFiles
+# .dotfiles
 
 The configuration files for my Linux desktop.  Supports Arch based distros using Gnome and/or i3.
 

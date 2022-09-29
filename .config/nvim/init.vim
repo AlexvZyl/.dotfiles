@@ -488,7 +488,9 @@ require 'lualine'.setup {
             {
                 'progress',
                 icon = {
-                    'ﯼ',
+                    -- 'ﯼ',
+                    -- '',
+                    '',
                     align = 'right',
                     color = { fg = get_color('Orange', 'fg') },
                 }

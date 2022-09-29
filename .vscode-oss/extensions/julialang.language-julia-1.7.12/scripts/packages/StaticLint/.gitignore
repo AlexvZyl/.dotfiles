@@ -1,0 +1,7 @@
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+*.jstore
+*.log
+.vscode
+Manifest.toml

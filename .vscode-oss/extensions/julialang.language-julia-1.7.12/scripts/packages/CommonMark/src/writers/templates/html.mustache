@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="${lang}">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="CommonMark.jl" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta name="keywords" content="${#keywords}${.}${^.[end]} ${/.[end]}${/keywords}" />
+    ${#authors}
+    <meta name="author" content="${.}" />
+    ${/authors}
+    <title>${title}</title>
+    ${#html.css}
+    <link rel="stylesheet" href="${.}" />
+    ${/html.css}
+    ${#html.js}
+    <script src="${.}"></script>
+    ${/html.js}
+    ${{html.header}}
+</head>
+<body>
+${{body}}
+${{html.footer}}
+</body>
+</html>

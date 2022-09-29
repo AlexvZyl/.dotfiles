@@ -1,0 +1,6 @@
+[deps]
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+FilePathsBase = "48062228-2e41-5def-b9a4-89aafe57970f"
+
+[compat]
+Documenter = "0.26"

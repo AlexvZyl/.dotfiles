@@ -1,0 +1,15 @@
+name = "URIParser"
+uuid = "30578b45-9adc-5946-b283-645ec420af67"
+version = "0.4.1"
+
+[deps]
+Unicode = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[compat]
+julia = "0.7, 1"
+
+[targets]
+test = ["Test"]

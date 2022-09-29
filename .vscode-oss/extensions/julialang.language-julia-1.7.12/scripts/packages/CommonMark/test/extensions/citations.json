@@ -1,0 +1,609 @@
+[
+	{
+		"id": "bezanson2017",
+		"type": "article-journal",
+		"container-title": "SIAM review",
+		"issue": "1",
+		"note": "publisher: SIAM",
+		"page": "65–98",
+		"title": "Julia: A fresh approach to numerical computing",
+		"title-short": "Julia",
+		"volume": "59",
+		"author": [
+			{
+				"family": "Bezanson",
+				"given": "Jeff"
+			},
+			{
+				"family": "Edelman",
+				"given": "Alan"
+			},
+			{
+				"family": "Karpinski",
+				"given": "Stefan"
+			},
+			{
+				"family": "Shah",
+				"given": "Viral B."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2017"
+				]
+			]
+		}
+	},
+	{
+		"id": "edelman2015",
+		"type": "paper-conference",
+		"container-title": "2015 IEEE International Parallel and Distributed Processing Symposium",
+		"page": "517–517",
+		"publisher": "IEEE",
+		"title": "Julia: A fresh approach to parallel programming",
+		"title-short": "Julia",
+		"author": [
+			{
+				"family": "Edelman",
+				"given": "Alan"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		}
+	},
+	{
+		"id": "cabutto2018",
+		"type": "paper-conference",
+		"container-title": "Proceedings of the 2018 International Conference on Computing and Big Data",
+		"page": "87–91",
+		"title": "An Overview of the Julia Programming Language",
+		"author": [
+			{
+				"family": "Cabutto",
+				"given": "Tyler A."
+			},
+			{
+				"family": "Heeney",
+				"given": "Sean P."
+			},
+			{
+				"family": "Ault",
+				"given": "Shaun V."
+			},
+			{
+				"family": "Mao",
+				"given": "Guifen"
+			},
+			{
+				"family": "Wang",
+				"given": "Jin"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2018"
+				]
+			]
+		}
+	},
+	{
+		"id": "novosel2019",
+		"type": "paper-conference",
+		"container-title": "8th Symposium on Languages, Applications and Technologies (SLATE 2019)",
+		"publisher": "Schloss Dagstuhl-Leibniz-Zentrum fuer Informatik",
+		"title": "Beyond Classical Parallel Programming Frameworks: Chapel vs Julia",
+		"title-short": "Beyond Classical Parallel Programming Frameworks",
+		"author": [
+			{
+				"family": "Novosel",
+				"given": "Rok"
+			},
+			{
+				"family": "Slivnik",
+				"given": "Bostjan"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2019"
+				]
+			]
+		}
+	},
+	{
+		"id": "aruoba2015",
+		"type": "article-journal",
+		"container-title": "Journal of Economic Dynamics and Control",
+		"note": "publisher: Elsevier",
+		"page": "265–273",
+		"title": "A comparison of programming languages in macroeconomics",
+		"volume": "58",
+		"author": [
+			{
+				"family": "Aruoba",
+				"given": "S. Borağan"
+			},
+			{
+				"family": "Fernández-Villaverde",
+				"given": "Jesús"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		}
+	},
+	{
+		"id": "elmqvist2016",
+		"type": "paper-conference",
+		"container-title": "International Symposium on Leveraging Applications of Formal Methods",
+		"page": "198–217",
+		"publisher": "Springer",
+		"title": "Systems modeling and programming in a unified environment based on Julia",
+		"author": [
+			{
+				"family": "Elmqvist",
+				"given": "Hilding"
+			},
+			{
+				"family": "Henningsson",
+				"given": "Toivo"
+			},
+			{
+				"family": "Otter",
+				"given": "Martin"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2016"
+				]
+			]
+		}
+	},
+	{
+		"id": "masthay2017",
+		"type": "article-journal",
+		"container-title": "arXiv preprint arXiv:1706.08569",
+		"title": "Parareal Algorithm Implementation and Simulation in Julia",
+		"author": [
+			{
+				"family": "Masthay",
+				"given": "Tyler M."
+			},
+			{
+				"family": "Perugini",
+				"given": "Saverio"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2017"
+				]
+			]
+		}
+	},
+	{
+		"id": "lubin2015",
+		"type": "article-journal",
+		"container-title": "INFORMS Journal on Computing",
+		"issue": "2",
+		"note": "publisher: INFORMS",
+		"page": "238–248",
+		"title": "Computing in operations research using Julia",
+		"volume": "27",
+		"author": [
+			{
+				"family": "Lubin",
+				"given": "Miles"
+			},
+			{
+				"family": "Dunning",
+				"given": "Iain"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2015"
+				]
+			]
+		}
+	},
+	{
+		"id": "fieker2017",
+		"type": "paper-conference",
+		"container-title": "Proceedings of the 2017 acm on international symposium on symbolic and algebraic computation",
+		"page": "157–164",
+		"title": "Nemo/Hecke: computer algebra and number theory packages for the Julia programming language",
+		"title-short": "Nemo/Hecke",
+		"author": [
+			{
+				"family": "Fieker",
+				"given": "Claus"
+			},
+			{
+				"family": "Hart",
+				"given": "William"
+			},
+			{
+				"family": "Hofmann",
+				"given": "Tommy"
+			},
+			{
+				"family": "Johansson",
+				"given": "Fredrik"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2017"
+				]
+			]
+		}
+	},
+	{
+		"id": "mogensen2018",
+		"type": "article-journal",
+		"container-title": "Journal of Open Source Software",
+		"issue": "24",
+		"note": "publisher: Open Journals",
+		"title": "Optim: A mathematical optimization package for Julia",
+		"title-short": "Optim",
+		"volume": "3",
+		"author": [
+			{
+				"family": "Mogensen",
+				"given": "Patrick Kofod"
+			},
+			{
+				"family": "Riseth",
+				"given": "Asbjørn Nilsen"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2018"
+				]
+			]
+		}
+	},
+	{
+		"id": "bezanson2012",
+		"type": "article-journal",
+		"container-title": "arXiv preprint arXiv:1209.5145",
+		"title": "Julia: A fast dynamic language for technical computing",
+		"title-short": "Julia",
+		"author": [
+			{
+				"family": "Bezanson",
+				"given": "Jeff"
+			},
+			{
+				"family": "Karpinski",
+				"given": "Stefan"
+			},
+			{
+				"family": "Shah",
+				"given": "Viral B."
+			},
+			{
+				"family": "Edelman",
+				"given": "Alan"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2012"
+				]
+			]
+		}
+	},
+	{
+		"id": "besard2018",
+		"type": "article-journal",
+		"container-title": "IEEE Transactions on Parallel and Distributed Systems",
+		"issue": "4",
+		"note": "publisher: IEEE",
+		"page": "827–841",
+		"title": "Effective extensible programming: Unleashing julia on gpus",
+		"title-short": "Effective extensible programming",
+		"volume": "30",
+		"author": [
+			{
+				"family": "Besard",
+				"given": "Tim"
+			},
+			{
+				"family": "Foket",
+				"given": "Christophe"
+			},
+			{
+				"family": "De Sutter",
+				"given": "Bjorn"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2018"
+				]
+			]
+		}
+	},
+	{
+		"id": "udell2014",
+		"type": "paper-conference",
+		"container-title": "2014 First Workshop for High Performance Technical Computing in Dynamic Languages",
+		"page": "18–28",
+		"publisher": "IEEE",
+		"title": "Convex optimization in Julia",
+		"author": [
+			{
+				"family": "Udell",
+				"given": "Madeleine"
+			},
+			{
+				"family": "Mohan",
+				"given": "Karanveer"
+			},
+			{
+				"family": "Zeng",
+				"given": "David"
+			},
+			{
+				"family": "Hong",
+				"given": "Jenny"
+			},
+			{
+				"family": "Diamond",
+				"given": "Steven"
+			},
+			{
+				"family": "Boyd",
+				"given": "Stephen"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2014"
+				]
+			]
+		}
+	},
+	{
+		"id": "rackauckas2017",
+		"type": "article-journal",
+		"container-title": "The Journal of Open Research Software",
+		"DOI": "10.5334/jors.151",
+		"issue": "1",
+		"title": "DifferentialEquations.jl – a performant and feature-rich ecosystem for solving differential equations in julia",
+		"URL": "https://app.dimensions.ai/details/publication/pub.1085583166",
+		"volume": "5",
+		"author": [
+			{
+				"family": "Rackauckas",
+				"given": "Christopher"
+			},
+			{
+				"family": "Nie",
+				"given": "Qing"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2017"
+				]
+			]
+		}
+	},
+	{
+		"id": "cusumano-towner2019",
+		"type": "paper-conference",
+		"collection-title": "PLDI 2019",
+		"container-title": "Proceedings of the 40th ACM SIGPLAN conference on programming language design and implementation",
+		"DOI": "10.1145/3314221.3314642",
+		"event-place": "New York, NY, USA",
+		"ISBN": "978-1-4503-6712-7",
+		"note": "number-of-pages: 16\npublisher-place: Phoenix, AZ, USA\ntex.acmid: 3314642",
+		"page": "221–236",
+		"publisher": "ACM",
+		"publisher-place": "New York, NY, USA",
+		"title": "Gen: A general-purpose probabilistic programming system with programmable inference",
+		"URL": "http://doi.acm.org/10.1145/3314221.3314642",
+		"author": [
+			{
+				"family": "Cusumano-Towner",
+				"given": "Marco F."
+			},
+			{
+				"family": "Saad",
+				"given": "Feras A."
+			},
+			{
+				"family": "Lew",
+				"given": "Alexander K."
+			},
+			{
+				"family": "Mansinghka",
+				"given": "Vikash K."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2019"
+				]
+			]
+		}
+	},
+	{
+		"id": "ge2018",
+		"type": "paper-conference",
+		"container-title": "International conference on artificial intelligence and statistics, AISTATS 2018, 9-11 april 2018, playa blanca, lanzarote, canary islands, spain",
+		"note": "tex.biburl: https://dblp.org/rec/bib/conf/aistats/GeXG18",
+		"page": "1682–1690",
+		"title": "Turing: a language for flexible probabilistic inference",
+		"URL": "http://proceedings.mlr.press/v84/ge18b.html",
+		"author": [
+			{
+				"family": "Ge",
+				"given": "Hong"
+			},
+			{
+				"family": "Xu",
+				"given": "Kai"
+			},
+			{
+				"family": "Ghahramani",
+				"given": "Zoubin"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2018"
+				]
+			]
+		}
+	},
+	{
+		"id": "chen2016",
+		"type": "article-journal",
+		"container-title": "arXiv e-prints",
+		"note": "arXiv: 1608.04295 [cs.PF]\ntex.adsnote: Provided by the SAO/NASA Astrophysics Data System\ntex.adsurl: https://ui.adsabs.harvard.edu/abs/2016arXiv160804295C\ntex.eid: arXiv:1608.04295",
+		"title": "Robust benchmarking in noisy environments",
+		"author": [
+			{
+				"family": "Chen",
+				"given": "Jiahao"
+			},
+			{
+				"family": "Revels",
+				"given": "Jarrett"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2016",
+					8
+				]
+			]
+		}
+	},
+	{
+		"id": "innes2018a",
+		"type": "article-journal",
+		"container-title": "CoRR",
+		"note": "arXiv: 1811.01457\ntex.bibsource: dblp computer science bibliography, https://dblp.org\ntex.biburl: https://dblp.org/rec/bib/journals/corr/abs-1811-01457\ntex.timestamp: Thu, 22 Nov 2018 17:58:30 +0100",
+		"title": "Fashionable modelling with flux",
+		"URL": "http://arxiv.org/abs/1811.01457",
+		"volume": "abs/1811.01457",
+		"author": [
+			{
+				"family": "Innes",
+				"given": "Michael"
+			},
+			{
+				"family": "Saba",
+				"given": "Elliot"
+			},
+			{
+				"family": "Fischer",
+				"given": "Keno"
+			},
+			{
+				"family": "Gandhi",
+				"given": "Dhairya"
+			},
+			{
+				"family": "Rudilosso",
+				"given": "Marco Concetto"
+			},
+			{
+				"family": "Joy",
+				"given": "Neethu Mariya"
+			},
+			{
+				"family": "Karmali",
+				"given": "Tejan"
+			},
+			{
+				"family": "Pal",
+				"given": "Avik"
+			},
+			{
+				"family": "Shah",
+				"given": "Viral"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2018"
+				]
+			]
+		}
+	},
+	{
+		"id": "innes2018b",
+		"type": "article-journal",
+		"container-title": "Journal of Open Source Software",
+		"DOI": "10.21105/joss.00602",
+		"title": "Flux: Elegant machine learning with julia",
+		"author": [
+			{
+				"family": "Innes",
+				"given": "Mike"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2018"
+				]
+			]
+		}
+	},
+	{
+		"id": "innes2018",
+		"type": "article-journal",
+		"container-title": "CoRR",
+		"note": "arXiv: 1810.07951\ntex.bibsource: dblp computer science bibliography, https://dblp.org\ntex.biburl: https://dblp.org/rec/bib/journals/corr/abs-1810-07951\ntex.timestamp: Tue, 30 Oct 2018 20:39:56 +0100",
+		"title": "Don't unroll adjoint: Differentiating SSA-Form programs",
+		"URL": "http://arxiv.org/abs/1810.07951",
+		"volume": "abs/1810.07951",
+		"author": [
+			{
+				"family": "Innes",
+				"given": "Michael"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2018"
+				]
+			]
+		}
+	}
+]

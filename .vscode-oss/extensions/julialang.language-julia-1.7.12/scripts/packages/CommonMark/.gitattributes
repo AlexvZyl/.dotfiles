@@ -1,0 +1,3 @@
+/src/writers/templates/* linguist-vendored
+/test/samples/cmark/* linguist-vendored
+/test/templates/* linguist-vendored

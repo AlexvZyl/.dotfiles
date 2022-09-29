@@ -1,0 +1,3 @@
+[deps]
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+SymbolServer = "cf896787-08d5-524d-9de7-132aaa0cb996"

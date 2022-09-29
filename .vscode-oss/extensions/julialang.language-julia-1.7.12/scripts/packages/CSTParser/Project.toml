@@ -1,0 +1,17 @@
+name = "CSTParser"
+uuid = "00ebfdb7-1f24-5e51-bd34-a7502290713f"
+authors = ["Zac Nugent <zac.nugent@gmail.com>"]
+version = "3.3.7-DEV"
+
+[deps]
+Tokenize = "0796e94c-ce3b-5d07-9a54-7f471281c624"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[compat]
+julia = "1"
+Tokenize = "0.5.24"
+
+[targets]
+test = ["Test"]

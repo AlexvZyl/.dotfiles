@@ -2,3 +2,4 @@
 .local/share/gnome-shell/extensions/** linguist-vendored
 .config/i3/scripts/** linguist-vendored
 .config/polybar/** linguist-vendored
+.config/fish/functions/** linguist-vendored

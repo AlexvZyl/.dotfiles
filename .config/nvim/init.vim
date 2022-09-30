@@ -19,6 +19,9 @@ Plug 'akinsho/bufferline.nvim'
 Plug 'mhinz/vim-startify'
 Plug 'b0o/incline.nvim'
 Plug 'Pocco81/true-zen.nvim' " Zen mode!
+Plug 'folke/lsp-colors.nvim'
+" This only supports native lsp...
+Plug 'folke/trouble.nvim' 
 
 " Programming experience.
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -154,6 +157,15 @@ require 'git-conflict'.setup {
 
 }
 
+---------------------------
+-- Trouble (diagnostics) --
+---------------------------
+
+require 'trouble'.setup {
+    use_diagnostic_signs = true,
+    position = 'right'
+}
+
 ----------------
 -- Rust tools --
 ----------------
@@ -170,6 +182,17 @@ require 'git-conflict'.setup {
 --     end,
 --   },
 -- })
+
+----------------
+-- LSP colors --
+----------------
+
+require("lsp-colors").setup({
+  Error = "#db4b4b",
+  Warning = "#e0af68",
+  Information = "#0db9d7",
+  Hint = "#10B981"
+})
 
 ----------------
 -- Catppuccin --
@@ -441,7 +464,7 @@ end
 function get_coc_lsp_compact()
     local lsp_status = get_coc_lsp_status()
     if lsp_status == '' then
-        return 'None'
+        return 'none'
     end
     return lsp_status
 end

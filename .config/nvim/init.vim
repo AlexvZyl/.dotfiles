@@ -394,6 +394,49 @@ function get_os()
     -- return 'Debian  '
 end
 
+-- Get the lsp of the current buffer, when using native lsp.
+function get_native_lsp()
+    local msg = 'None' 
+    local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+    local clients = vim.lsp.get_active_clients()
+    if next(clients) == nil then
+      return msg
+    end
+    for _, client in ipairs(clients) do
+      local filetypes = client.config.filetypes
+      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+        return client.name
+      end
+    end
+    return msg
+end
+
+-- Get the lsp of the current buffer, when using coc.
+function get_coc_lsp()
+    lsp_stats = vim.fn.CocAction('services')
+    local current_lang = vim.api.nvim_buf_get_option(0, 'filetype')
+    for _, lsp in pairs(lsp_stats) do
+        for _, lang in pairs(lsp['languageIds']) do
+            if lang == current_lang then
+                return lsp['id']
+            end
+        end
+    end
+    return 'None'
+end
+
+-- Get the status of the LSP.
+function get_lsp_status()
+    current_lsp = get_coc_lsp()
+    lsp_stats = vim.fn.CocAction('services')
+    for _, lsp in pairs(lsp_stats) do
+        if lsp['id'] == current_lsp then
+            return lsp['state']
+        end
+    end
+    return ''
+end
+
 -- Required to properly set the colors.
 local get_color = require'lualine.utils.utils'.extract_highlight_colors
 
@@ -428,15 +471,8 @@ require 'lualine'.setup {
         lualine_c = { 
             {
                 'diff', 
-                -- icon = {
-                --     '',
-                --     color = { fg = get_color('Orange', 'fg') },
-                -- },
                 source = diff_source, 
                 symbols = { 
-                    -- added = ' ', 
-                    -- modified = 'ﯽ ', 
-                    -- removed = ' ' 
                     added = ' ', 
                     modified = ' ', 
                     removed = ' '
@@ -448,10 +484,6 @@ require 'lualine'.setup {
                 sources = { 'coc' }, 
                 separator = '',
                 symbols = { 
-                    -- error = ' ', 
-                    -- warn = ' ', 
-                    -- info = ' ', 
-                    -- hint = ' ',
                     error = ' ', 
                     warn = ' ', 
                     info = ' ', 
@@ -466,52 +498,63 @@ require 'lualine'.setup {
                 colored = true,
             },
         },
-        lualine_x = { 
-            -- 'encoding',
-            -- 'filesize', 
+        lualine_x = {  
             {
                 'filetype',
                 icon = {
-                    align = 'right'         
+                    align = 'left'         
                 }
-            }
+            },
         },
         lualine_y = { 
             {
+                get_coc_lsp,
+                icon = {
+                    ' ', 
+                    align = 'left',
+                    color = { 
+                        fg = get_color('Orange', 'fg'), 
+                        gui = 'bold' 
+                    }
+                } 
+            },
+            {
+                get_lsp_status,
+                icon = {
+                    '', 
+                    align = 'left',
+                    color = { 
+                        fg = get_color('Orange', 'fg'), 
+                        gui = 'bold' 
+                    }
+                }
+            },
+
+        },
+        lualine_z = { 
+            { 
                 'location',
                 icon = {
                     '',
-                    align = 'right',
-                    color = { fg = get_color('Orange', 'fg') },
+                    align = 'left',
+                    color = { fg = get_color('Black', 'fg') },
                 }
             },
             {
                 'progress',
                 icon = {
-                    -- 'ﯼ',
-                    -- '',
                     '',
-                    align = 'right',
-                    color = { fg = get_color('Orange', 'fg') },
+                    align = 'left',
+                    color = { fg = get_color('Black', 'fg') },
                 }
             }
-        },
-        lualine_z = { 
-            get_os
         },    
     },
     options = { 
         disabled_filetypes = { "startify" },
         globalstatus = true,
-        -- component_separators = { left = '', right = ''},
         section_separators = { left ='', right = '' },
         component_separators = { left = '', right = ''},
-        -- section_separators = { left = '', right = ''},
-        -- component_separators = { left = '', right = '' },
-        -- section_separators = { left = '', right = '' },
-        -- component_separators = { left = '', right = '' },
-        -- section_separators = { left = '┃', right = '┃' },
-
     },
     extensions = {
         "toggleterm",
@@ -846,6 +889,9 @@ let g:lsp_settings = {
 " ----------------
 " GENERAL SETTINGS
 " ----------------
+
+" Redraw status when coc status changes.
+autocmd User CocStatusChange redrawstatus
 
 " Do not show the current mode in cmdline.
 set noshowmode

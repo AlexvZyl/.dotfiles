@@ -413,9 +413,9 @@ end
 
 -- Get the lsp of the current buffer, when using coc.
 function get_coc_lsp()
-    lsp_stats = vim.fn.CocAction('services')
+    local services = vim.fn.CocAction('services')
     local current_lang = vim.api.nvim_buf_get_option(0, 'filetype')
-    for _, lsp in pairs(lsp_stats) do
+    for _, lsp in pairs(services) do
         for _, lang in pairs(lsp['languageIds']) do
             if lang == current_lang then
                 return lsp['id']
@@ -426,15 +426,24 @@ function get_coc_lsp()
 end
 
 -- Get the status of the LSP.
-function get_lsp_status()
-    current_lsp = get_coc_lsp()
-    lsp_stats = vim.fn.CocAction('services')
-    for _, lsp in pairs(lsp_stats) do
+function get_coc_lsp_status()
+    local current_lsp = get_coc_lsp()
+    local services = vim.fn.CocAction('services')
+    for _, lsp in pairs(services) do
         if lsp['id'] == current_lsp then
             return lsp['state']
         end
     end
     return ''
+end
+
+-- Display the lsp status, otherwise display none.
+function get_coc_lsp_compact()
+    local lsp_status = get_lsp_status()
+    if lsp_status == '' then
+        return 'None'
+    end
+    return lsp_status
 end
 
 -- Required to properly set the colors.
@@ -508,26 +517,16 @@ require 'lualine'.setup {
         },
         lualine_y = { 
             {
-                get_coc_lsp,
+                get_coc_lsp_compact,
                 icon = {
-                    ' ', 
+                    '  LSP',
+                    -- '', 
                     align = 'left',
                     color = { 
                         fg = get_color('Orange', 'fg'), 
                         gui = 'bold' 
                     }
                 } 
-            },
-            {
-                get_lsp_status,
-                icon = {
-                    '', 
-                    align = 'left',
-                    color = { 
-                        fg = get_color('Orange', 'fg'), 
-                        gui = 'bold' 
-                    }
-                }
             },
 
         },

@@ -520,7 +520,6 @@ require 'lualine'.setup {
                 get_coc_lsp_compact,
                 icon = {
                     '  LSP',
-                    -- '', 
                     align = 'left',
                     color = { 
                         fg = get_color('Orange', 'fg'), 
@@ -528,7 +527,6 @@ require 'lualine'.setup {
                     }
                 } 
             },
-
         },
         lualine_z = { 
             { 

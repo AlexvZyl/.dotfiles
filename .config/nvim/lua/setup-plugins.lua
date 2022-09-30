@@ -167,14 +167,14 @@ require 'illuminate'.configure {
 -------------
 
 -- Get the buffer's filename.
-function get_file_from_buffer(buf)
+local function get_file_from_buffer(buf)
     local bufname = vim.api.nvim_buf_get_name(buf)
     local res = bufname ~= '' and vim.fn.fnamemodify(bufname, ':t') or '[No Name]'
     return res
 end
 
 -- Custom incline rendering.
-function render_incline(render_props)
+local function render_incline(render_props)
     return {
         {
             get_file_from_buffer(render_props.buf),

@@ -1,11 +1,7 @@
 filetype plugin on
 
-lua require 'plugins'
-
+source ~/.config/nvim/lua/plugins.lua
 source ~/.config/nvim/setup-before.vim
-
-lua require 'init'
-
+source ~/.config/nvim/lua/init.lua
+source ~/.config/nvim/lua/setup-plugins.lua
 source ~/.config/nvim/setup-after.vim
-
-

@@ -1,2 +1,1 @@
 require 'keybindings'
-require 'setup'

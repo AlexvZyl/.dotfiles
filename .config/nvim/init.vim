@@ -439,7 +439,7 @@ end
 
 -- Display the lsp status, otherwise display none.
 function get_coc_lsp_compact()
-    local lsp_status = get_lsp_status()
+    local lsp_status = get_coc_lsp_status()
     if lsp_status == '' then
         return 'None'
     end

@@ -847,6 +847,9 @@ let g:lsp_settings = {
 " GENERAL SETTINGS
 " ----------------
 
+" Do not show the current mode in cmdline.
+set noshowmode
+
 " Clipboard. 
 set clipboard+=unnamedplus 
 

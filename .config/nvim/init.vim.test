@@ -1,5 +1,0 @@
-call plug#begin()
-Plug 'sainnhe/gruvbox-material'
-call plug#end()
-
-" let g:gruvbox_material_disable_terminal_colors = 1

@@ -451,6 +451,9 @@ end
 -- Get the status of the LSP.
 function get_coc_lsp_status()
     local current_lsp = get_coc_lsp()
+    if current_lsp == 'None' then
+        return ''
+    end
     local services = vim.fn.CocAction('services')
     for _, lsp in pairs(services) do
         if lsp['id'] == current_lsp then
@@ -461,6 +464,8 @@ function get_coc_lsp_status()
 end
 
 -- Display the lsp status, otherwise display none.
+-- Making 'none' lower case here so that it fits in with the
+-- way coc displays status.
 function get_coc_lsp_compact()
     local lsp_status = get_coc_lsp_status()
     if lsp_status == '' then
@@ -470,7 +475,7 @@ function get_coc_lsp_compact()
 end
 
 -- Required to properly set the colors.
-local get_color = require'lualine.utils.utils'.extract_highlight_colors
+local get_color = require 'lualine.utils.utils'.extract_highlight_colors
 
 require 'lualine'.setup {
     sections = {
@@ -960,6 +965,10 @@ set showmatch
 
 " Disable text wrap around.
 set nowrap
+
+" Make the cmdline disappear when not in use.
+" Currently this is not wokring.
+" set cmdheight=0
 
 " Allow FAR to undo.
 let g:far#enable_undo=1

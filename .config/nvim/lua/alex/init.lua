@@ -9,8 +9,9 @@ require 'alex.theme'
 -- The order of these does not matter.
 require 'alex.plugins'
 require 'alex.neovide'
-require 'alex.general'
-require 'alex.lsp'
+require 'alex.terminal'
+require 'alex.options'
+require 'alex.lang'
 
 -- Run this last to ensure they do not get overridden.
-require 'alex.keybindings'
+require 'alex.key-bindings'

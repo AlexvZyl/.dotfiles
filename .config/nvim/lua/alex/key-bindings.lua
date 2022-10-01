@@ -69,6 +69,7 @@ map('n', '<C-h>','<Cmd>wincmd h<CR>', default_settings)
 map('n', '<C-j>','<Cmd>wincmd j<CR>', default_settings)
 map('n', '<C-k>','<Cmd>wincmd k<CR>', default_settings)
 map('n', '<C-l>','<Cmd>wincmd l<CR>', default_settings)
+
 -- Allow moving out of the terminal.
 map('t', '<C-h>', '<Cmd>wincmd h<CR>', default_settings)
 map('t', '<C-j>', '<Cmd>wincmd j<CR>', default_settings)
@@ -103,8 +104,9 @@ map('v', '<Esc>', '<Cmd>noh<CR>', default_settings)
 -- Undo.
 map('n', '<C-Z>', '<Cmd>undo<CR>', default_settings)
 map('i', '<C-Z>', '<Cmd>undo<CR>', default_settings)
--- Redo.
 map('v', '<C-Z>', '<Cmd>undo<CR>', default_settings)
+
+-- Redo.
 map('n', '<C-Y>', '<Cmd>redo<CR>', default_settings)
 map('i', '<C-Y>', '<Cmd>redo<CR>', default_settings)
 map('v', '<C-Y>', '<Cmd>redo<CR>', default_settings)

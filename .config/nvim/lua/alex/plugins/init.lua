@@ -1,3 +1,10 @@
+----------------------
+-- Find and Replace --
+----------------------
+
+-- Allow FAR to undo.
+vim.cmd('let g:far#enable_undo=1')
+
 ----------------------------------
 -- Load, init and setup plugins --
 ----------------------------------
@@ -182,6 +189,24 @@ require 'incline'.setup {
     }
 }
 
+-------------
+-- Sartify --
+-------------
+
+-- Setup startify.
+vim.cmd([[
+    let g:startify_custom_header =
+              \ 'startify#center(startify#fortune#cowsay())'
+    let g:startify_lists = [
+        \ { 'type': 'sessions',  'header': ['   Sessions']       },
+        \ { 'type': 'dir',       'header': ['   Local Recents']       },
+        \ { 'type': 'files',     'header': ['   Global Recents']         },
+    \ ]
+    let g:startify_files_number = 15
+    " TODO!
+    " let g:startify_custom_footer = [ '***' ]
+]])
+
 ---------------
 -- Scrollbar --
 ---------------
@@ -247,7 +272,7 @@ end
 
 -- Get the lsp of the current buffer, when using native lsp.
 local function get_native_lsp()
-    local msg = 'None' 
+    local msg = 'None'
     local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
     local clients = vim.lsp.get_active_clients()
     if next(clients) == nil then
@@ -436,8 +461,7 @@ require 'true-zen'.setup {
    integrations = {
         lualine = true
     },
-    
-} 
+}
 
 ---------------------
 -- Setup neoscroll --
@@ -510,83 +534,6 @@ local notify = require 'notify'
 notify.setup {}
 vim.notify = notify
 
--------------------------------
--- Integrate COC with notify --
--------------------------------
-
-local coc_status_record = {}
-
-function coc_status_notify(msg, level)
-  local notify_opts = { title = "LSP Status", timeout = 500, hide_from_history = true, on_close = reset_coc_status_record }
-  -- if coc_status_record is not {} then add it to notify_opts to key called "replace"
-  if coc_status_record ~= {} then
-    notify_opts["replace"] = coc_status_record.id
-  end
-  coc_status_record = vim.notify(msg, level, notify_opts)
-end
-
-function reset_coc_status_record(window)
-  coc_status_record = {}
-end
-
-local coc_diag_record = {}
-
-function coc_diag_notify(msg, level)
-  local notify_opts = { title = "LSP Diagnostics", timeout = 500, on_close = reset_coc_diag_record }
-  -- if coc_diag_record is not {} then add it to notify_opts to key called "replace"
-  if coc_diag_record ~= {} then
-    notify_opts["replace"] = coc_diag_record.id
-  end
-  coc_diag_record = vim.notify(msg, level, notify_opts)
-end
-
-function reset_coc_diag_record(window)
-  coc_diag_record = {}
-end
-
-----------------------
--- Setup toggleterm --
-----------------------
-
-require 'toggleterm'.setup {
-    on_open = function(term)
-        vim.cmd("startinsert")
-    end,
-    direction = "float",
-    size = 15,
-    float_opts = {
-        border = 'single',
-        winblend = 0,
-    }
-}
-
-----------------------------
--- BTop++ with toggleterm --
-----------------------------
-
-local Terminal  = require('toggleterm.terminal').Terminal
--- local btop = Terminal:new({ cmd = "btop --utf-force", hidden = true, direction = "float" })
-local btop = Terminal:new({ cmd = "btop", hidden = true, direction = "float" })
--- local btop = Terminal:new({ cmd = "btm", hidden = true, direction = "float" })
-function _btop_toggle()
-  btop:toggle()
-end
-vim.api.nvim_set_keymap("n", "<C-B>", "<Cmd>lua _btop_toggle()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("t", "<C-B>", "<Cmd>lua _btop_toggle()<CR>", {noremap = true, silent = true})
-
---------------------------
--- Fish with toggleterm --
---------------------------
-
-local Terminal  = require('toggleterm.terminal').Terminal
-local fish = Terminal:new({ cmd = "fish", hidden = true, direction = "horizontal" })
-function _fish_toggle()
-  fish:toggle()
-end
-vim.api.nvim_set_keymap("n", "<F1>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("t", "<F1>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("v", "<F1>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
-
 ---------------
 -- Nvim tree --
 ---------------
@@ -619,66 +566,4 @@ require 'nvim-tree'.setup {
     },
 }
 
----------------------------
--- Configure tree sitter --
----------------------------
 
-require 'nvim-treesitter.configs'.setup {
-    -- A list of parser names, or "all"
-    ensure_installed = { "c", "lua", "rust", "cpp", "julia", "python", "yaml", "vim" },
-    -- ensure_installed = {  },
-
-    -- Install parsers synchronously (only applied to `ensure_installed`)
-    sync_install = false,
-
-    -- Automatically install missing parsers when entering buffer
-    auto_install = true,
-
-    -- List of parsers to ignore installing (for "all")
-    -- ignore_install = { "" },
-
-    highlight = {
-
-        -- `false` will disable the whole extension
-        enable = true,
-
-        -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
-        -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
-        -- the name of the parser)
-        -- list of language that will be disabled
-        -- disable = { "" },
-
-        -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-        -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-        -- Using this option may slow down your editor, and you may see some duplicate highlights.
-        -- Instead of true it can also be a list of languages
-        additional_vim_regex_highlighting = false,
-    },
-}
-
-------------------------------
--- Set Seperators (borders) --
-------------------------------
-
---  vim.opt.fillchars = {
---    horiz = '━',
---    horizup = '┻',
---    horizdown = '┳',
---    vert = '┃',
---    vertleft  = '┫',
---    vertright = '┣',
---    verthoriz = '╋',
---  }
-
-vim.opt.fillchars = {
-  -- horiz = '―',
-  -- horizup = '―',
-  horiz = '⎯',
-  horizup = '⎯',
-  horizdown = '⎯',
-  vert = ' ',
-  vertleft  = ' ',
-  vertright = ' ',
-  verthoriz = ' ',
-  eob =' ',
-}

@@ -2,7 +2,7 @@
 -- Colorscheme and theme settings --
 ------------------------------------
 
--- List of available colors in nvim:
+--    List of available colors in nvim:
 --    Red		LightRed	    DarkRed
 --    Green	    LightGreen	    DarkGreen	    SeaGreen
 --    Blue	    LightBlue	    DarkBlue	    SlateBlue
@@ -12,7 +12,6 @@
 --    Gray	    LightGray	    DarkGray
 --    Black	    White
 --    Orange	Purple		    Violet
-
 
 -- Has to be set before colorscheme is set.
 if vim.fn.has('termguicolors') then
@@ -35,7 +34,7 @@ vim.cmd([[
 -- vim.g.gruvbox_material_foreground = 'mix'
 vim.g.gruvbox_material_foreground = 'material'
 vim.g.gruvbox_material_background = 'hard'
--- background = 'dark'
+vim.opt.background = 'dark'
 vim.g.everforest_background = 'hard'
 vim.g.gruvbox_contrast_dark = 'hard'
 vim.g.gruvbox_material_better_performance = 1
@@ -57,5 +56,27 @@ vim.cmd([[
     augroup END
 ]])
 
+-- Fish already has a theme, so prevent neovim from adding a theme on top of that.
+vim.cmd('let $COLORTERM="truecolor"')
+vim.cmd('let $TERM="alacritty"')
+
+-- Disable the cursorline when a window is not focused.
+-- Keep the number highlight.
+vim.cmd([[
+    augroup CursorLine
+        au!
+        au VimEnter * setlocal cursorlineopt=both
+        au WinEnter * setlocal cursorlineopt=both
+        au BufWinEnter * setlocal cursorlineopt=both
+        au WinLeave * setlocal cursorlineopt=number
+    augroup END
+]])
+
 -- Apply the colorscheme.
 vim.cmd('colorscheme gruvbox-material')
+
+-- Font.
+-- set guifont=JetBrainsMonoMedium\ Nerd\ Font:h10.75
+vim.cmd([[set guifont=JetBrainsMono\ Nerd\ Font:h10.5]])
+-- vim.cmd('set guifont=FiraCode\ Nerd\ Font:h11.75')
+-- vim.cmd('set guifont=FiraCode\ Nerd\ Font:h10.0')

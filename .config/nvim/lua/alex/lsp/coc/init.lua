@@ -2,6 +2,33 @@
 -- COC SETUP --
 ---------------
 
+local remap = vim.api.nvim_set_keymap
+local npairs = require('nvim-autopairs')
+npairs.setup({map_cr=false})
+
+-- skip it, if you use another global object
+_G.MUtils= {}
+
+-- old version
+-- MUtils.completion_confirm=function()
+  -- if vim.fn["coc#pum#visible"]() ~= 0 then
+    -- return vim.fn["coc#_select_confirm"]()
+  -- else
+    -- return npairs.autopairs_cr()
+  -- end
+-- end
+
+-- new version for custom pum
+MUtils.completion_confirm=function()
+    if vim.fn["coc#pum#visible"]() ~= 0  then
+        return vim.fn["coc#pum#confirm"]()
+    else
+        return npairs.autopairs_cr()
+    end
+end
+
+remap('i' , '<CR>','v:lua.MUtils.completion_confirm()', {expr = true , noremap = true})
+
 vim.cmd([[
 
 " Extensions.
@@ -13,6 +40,8 @@ let g:coc_global_extensions = [
     \ 'coc-rust-analyzer',
     \ 'coc-lua',
     \ 'coc-git',
+    \ 'coc-yaml',
+    \ 'coc-python'
 \ ]
 
 " Some servers have issues with backup files, see #649.

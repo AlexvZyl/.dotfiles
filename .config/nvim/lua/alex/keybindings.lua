@@ -1,5 +1,8 @@
+-- All of the general key bindings.
+
 -- Function to map keys.
 local map = vim.api.nvim_set_keymap
+-- Default config for the keymaps.
 local default_settings = {
     noremap = true,
     silent = true

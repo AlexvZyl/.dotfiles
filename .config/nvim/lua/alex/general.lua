@@ -93,3 +93,33 @@ vim.cmd([[
     au BufEnter * if &buftype == 'terminal' | :startinsert | endif " Make terminal default mode insert mode.
     tnoremap <silent> <Esc> <C-\><C-n>
 ]])
+
+-- Fish already has a theme, so prevent neovim from adding a theme on top of that.
+vim.cmd('let $COLORTERM="truecolor"')
+vim.cmd('let $TERM="alacritty"')
+
+-- Remove the padding in a terminal.
+vim.cmd('autocmd TermOpen * setlocal signcolumn=no')
+
+-- Font.  This sets the font for neovide.
+-- set guifont=JetBrainsMonoMedium\ Nerd\ Font:h10.75
+vim.cmd([[set guifont=JetBrainsMono\ Nerd\ Font:h10.5]])
+-- vim.cmd('set guifont=FiraCode\ Nerd\ Font:h11.75')
+-- vim.cmd('set guifont=FiraCode\ Nerd\ Font:h10.0')
+
+-- Explicitly enable efm langserver.
+vim.cmd([[
+    let g:lsp_settings = {
+    \  'efm-langserver': {
+    \    'disabled': 0,
+    \   },
+    \ }
+]])
+
+-- Rust plugin config.
+-- Set completeopt to have a better completion experience
+-- :help completeopt
+-- menuone: popup even when there's only one match
+-- noinsert: Do not insert text until a selection is made
+-- noselect: Do not select, force user to select one from the menu
+vim.cmd('set completeopt=menuone,noinsert,noselect')

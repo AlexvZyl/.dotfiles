@@ -1,37 +1,8 @@
-" Fish already has a theme, so prevent neovim from adding a theme on top of that.
-let $COLORTERM="truecolor"
-let $TERM="alacritty"
+---------------
+-- COC SETUP --
+---------------
 
-" Remove the padding in a terminal.
-autocmd TermOpen * setlocal signcolumn=no
-
-" Font.  This sets the font for neovide.
-" set guifont=JetBrainsMonoMedium\ Nerd\ Font:h10.75
-set guifont=JetBrainsMono\ Nerd\ Font:h10.5
-" set guifont=FiraCode\ Nerd\ Font:h11.75
-" set guifont=FiraCode\ Nerd\ Font:h10.0
-
-" Explicitly enable efm langserver.
-let g:lsp_settings = {
-\  'efm-langserver': {
-\    'disabled': 0,
-\   },
-\ }
-
-" -------------------------
-" RUST PLUGIN CONFIGURARION
-" -------------------------
-
-" Set completeopt to have a better completion experience
-" :help completeopt
-" menuone: popup even when there's only one match
-" noinsert: Do not insert text until a selection is made
-" noselect: Do not select, force user to select one from the menu
-set completeopt=menuone,noinsert,noselect
-
-"-----------"
-" COC SETUP "
-"-----------"
+vim.cmd([[
 
 " Extensions.
 let g:coc_global_extensions = [
@@ -243,3 +214,5 @@ endfunction
 " autocmd User CocNvimInit call s:InitCoc()
 " autocmd User CocDiagnosticChange call s:DiagnosticNotify()
 " autocmd User CocStatusChange call s:StatusNotify()
+
+]])

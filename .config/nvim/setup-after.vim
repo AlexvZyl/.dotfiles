@@ -1,40 +1,6 @@
-" ----------
-" APPEARANCE
-" ----------
-
-" List of available colors in nvim:
-"     Red		LightRed	    DarkRed
-"     Green	    LightGreen	    DarkGreen	    SeaGreen
-"     Blue	    LightBlue	    DarkBlue	    SlateBlue
-"     Cyan	    LightCyan	    DarkCyan
-"     Magenta	LightMagenta	DarkMagenta
-"     Yellow	LightYellow	    Brown		    DarkYellow
-"     Gray	    LightGray	    DarkGray
-"     Black	    White
-"     Orange	Purple		    Violet
-
 " Fish already has a theme, so prevent neovim from adding a theme on top of that.
 let $COLORTERM="truecolor"
 let $TERM="alacritty"
-
-" Neovide settings.
-" let g:neovide_transparency=0.95
-let g:neovide_transparency=1
-let g:neovide_fullscreen=v:false
-let g:neovide_profiler=v:false
-let g:neovide_cursor_animation_length = 0.007
-" let g:neovide_scroll_animation_length = 0.18
-let g:neovide_scroll_animation_length = 0.0
-let g:neovide_cursor_antialiasing = v:true
-
-" Fun particles.
-" Available options: railgun, torpedo, boom, pixiedust, ripple, wireframe.
-let g:neovide_cursor_vfx_mode = "pixiedust"
-" Particle settings.
-let g:neovide_cursor_vfx_opacity=175.0 " / 256.0
-let g:neovide_cursor_vfx_particle_lifetime=0.8
-let g:neovide_cursor_vfx_particle_density=5.0
-let g:neovide_cursor_vfx_particle_speed=10.0
 
 " Remove the padding in a terminal.
 autocmd TermOpen * setlocal signcolumn=no
@@ -51,96 +17,6 @@ let g:lsp_settings = {
 \    'disabled': 0,
 \   },
 \ }
-
-" ----------------
-" GENERAL SETTINGS
-" ----------------
-
-" Redraw status when coc status changes.
-autocmd User CocStatusChange redrawstatus
-
-" Do not show the current mode in cmdline.
-set noshowmode
-
-" Clipboard. 
-set clipboard+=unnamedplus 
-
-" Enable mouse input.
-set mouse=a
-
-" Syntax.
-set number
-set relativenumber
-set cursorline
-set cursorlineopt=both
-set hlsearch
-set ignorecase
-set smartcase
-
-" Disable the cursorline when a window is not focused.
-" Keep the number highlight.
-augroup CursorLine
-    au!
-    au VimEnter * setlocal cursorlineopt=both
-    au WinEnter * setlocal cursorlineopt=both
-    au BufWinEnter * setlocal cursorlineopt=both
-    au WinLeave * setlocal cursorlineopt=number
-augroup END
-
-" Coc setup.
-set pumheight=10 " Limit the height of the seggestion window.
-
-" Setup tabbing.
-set tabstop	=4
-set softtabstop=4
-set shiftwidth =4
-set textwidth	=0
-set expandtab
-set autoindent
-
-" Timeout (for which-key)
-set timeoutlen =1000
-
-" Show matching brackets.
-set showmatch
-
-" Disable text wrap around.
-set nowrap
-
-" Make the cmdline disappear when not in use.
-" Currently this is not wokring.
-" set cmdheight=0
-
-" Allow FAR to undo.
-let g:far#enable_undo=1
-
-" Disable VM exit message and statusline.
-let g:VM_set_statusline = 0
-let g:VM_silent_exit = 1
-
-" Setup startify.
-let g:startify_custom_header =
-          \ 'startify#center(startify#fortune#cowsay())'
-let g:startify_lists = [
-    \ { 'type': 'sessions',  'header': ['   Sessions']       },
-    \ { 'type': 'dir',       'header': ['   Local Recents']       },
-    \ { 'type': 'files',     'header': ['   Global Recents']         },
-\ ]
-let g:startify_files_number = 15
-" TODO!
-" let g:startify_custom_footer = [ '***' ]
-
-
-
-" Ensure we are in normal mode when leaving the terminal.
-augroup LeavingTerminal
-autocmd! 
-autocmd TermLeave <silent> <Esc>
-augroup end
-
-" Terminal mappings.
-au BufEnter * if &buftype == 'terminal' | :startinsert | endif " Make terminal default mode insert mode.
-tnoremap <silent> <Esc> <C-\><C-n>
 
 " -------------------------
 " RUST PLUGIN CONFIGURARION

@@ -1,4 +1,6 @@
--- All of the general key bindings.
+--------------------------
+-- General key bindings --
+--------------------------
 
 -- Function to map keys.
 local map = vim.api.nvim_set_keymap

@@ -1,5 +1,10 @@
+-----------------
+-- Main config --
+-----------------
+
+require 'alex.packer'
+require 'alex.theme'
 require 'alex.plugins'
-require 'alex.pre-init'
-require 'alex.setup-plugins'
-require 'alex.post-init'
+require 'alex.neovide'
+require 'alex.general'
 require 'alex.keybindings'

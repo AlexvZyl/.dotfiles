@@ -1,13 +1,23 @@
--- Setup nefore plugins are loaded.
-vim.g.ale_disable_lsp = 1
+------------------------------------
+-- Colorscheme and theme settings --
+------------------------------------
+
+-- List of available colors in nvim:
+--    Red		LightRed	    DarkRed
+--    Green	    LightGreen	    DarkGreen	    SeaGreen
+--    Blue	    LightBlue	    DarkBlue	    SlateBlue
+--    Cyan	    LightCyan	    DarkCyan
+--    Magenta	LightMagenta	DarkMagenta
+--    Yellow	LightYellow	    Brown		    DarkYellow
+--    Gray	    LightGray	    DarkGray
+--    Black	    White
+--    Orange	Purple		    Violet
+
 
 -- Has to be set before colorscheme is set.
 if vim.fn.has('termguicolors') then
     vim.cmd('set termguicolors')
 end
-
--- Enable syntax highlighting.
-vim.cmd('syntax on')
 
 -- Apply custom highlights on colorscheme change.
 -- Must be declared before executing ':colorscheme'.
@@ -21,7 +31,6 @@ vim.cmd([[
     augroup END
 ]])
 
--- Setup themes.
 -- let vim.g.gruvbox_material_foreground = 'original'
 -- vim.g.gruvbox_material_foreground = 'mix'
 vim.g.gruvbox_material_foreground = 'material'

@@ -120,7 +120,7 @@ require 'bufferline'.setup {
             local s = " "
             for e, n in pairs(diagnostics_dict) do
                 if e == 'error' then
-                    s = s .. ' ' .. n
+                    s = s .. '  ' .. n
                 elseif e == 'warning' then
                     s = s .. ' ' .. n
                 end
@@ -145,7 +145,7 @@ require 'bufferline'.setup {
 
 local leap = require 'leap'
 leap.setup {
-        
+
 }
 leap.set_default_keymaps(true)
 

@@ -10,7 +10,7 @@
     "python.pythonPath": "/usr/bin/python",
 
     // Ale.
-    // "diagnostic.displayByAle": true,
+    "diagnostic.displayByAle": false,
 
     // Efm.  This is not working atm.
     // "languageserver": {

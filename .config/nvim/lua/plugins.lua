@@ -1,4 +1,6 @@
-return require 'packer'.startup(function(use)
+-- Loads all of the plugins used.
+
+return require 'packer'.startup( function(use)
 
     -- Telecope.
     use 'nvim-telescope/telescope.nvim'
@@ -8,7 +10,7 @@ return require 'packer'.startup(function(use)
 
     -- Gui.
     use 'akinsho/toggleterm.nvim'
-    use 'rcarriga/nvim-notify'	
+    use 'rcarriga/nvim-notify'
     use 'nvim-lualine/lualine.nvim'
     use 'kyazdani42/nvim-web-devicons'
     use 'akinsho/bufferline.nvim'
@@ -17,7 +19,7 @@ return require 'packer'.startup(function(use)
     use 'Pocco81/true-zen.nvim' -- Zen mode!
     use 'folke/lsp-colors.nvim'
     -- This only supports native lsp...
-    use 'folke/trouble.nvim' 
+    use 'folke/trouble.nvim'
 
     -- Programming experience.
     use 'lukas-reineke/indent-blankline.nvim'
@@ -32,7 +34,7 @@ return require 'packer'.startup(function(use)
     use 'tpope/vim-repeat'
 
     -- Git.
-    use 'lewis6991/gitsigns.nvim' 
+    use 'lewis6991/gitsigns.nvim'
     use 'sindrets/diffview.nvim'
     use 'akinsho/git-conflict.nvim'
     use 'kdheepak/lazygit.nvim'
@@ -51,20 +53,20 @@ return require 'packer'.startup(function(use)
     use 'preservim/nerdcommenter' -- More commenting functions.
     use 'tpope/vim-commentary'  -- Allow commenting with <C-/>.
     use {
-        'neoclide/coc.nvim', 
-        branch = 'master', 
+        'neoclide/coc.nvim',
+        branch = 'master',
         run = 'yarn install --frozen-lockfile'
-    } 
+    }
 
-    -- Language specific useins.
+    -- Language specific.
     use 'prabirshrestha/vim-lsp'
     use 'JuliaEditorSupport/julia-vim'
     use {
-        'autozimu/LanguageClient-neovim', 
-        branch = 'next', 
+        'autozimu/LanguageClient-neovim',
+        branch = 'next',
         cmd = 'bash install.sh'
     }
-    use 'sumneko/lua-language-server' 
+    use 'sumneko/lua-language-server'
     -- use 'simrat39/rust-tools.nvim'
 
     -- Themes.
@@ -87,7 +89,7 @@ return require 'packer'.startup(function(use)
     -- use 'Alex-vZyl/toggleterm.nvim', {'tag' : 'v2.*'}
     -- Not yet ready.
     -- use 'petertriho/nvim-scrollbar'
-    -- Image viewing.  Not set up currently. 
+    -- Image viewing.  Not set up currently.
     -- use 'edluffy/hologram.nvim'
 
 end)

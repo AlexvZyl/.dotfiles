@@ -130,74 +130,7 @@ let g:startify_files_number = 15
 " TODO!
 " let g:startify_custom_footer = [ '***' ]
 
-" ----------
-" KEYMAPPING
-" ----------
 
-" Barbar.
-nnoremap <silent> <C-<> <Cmd>BufferLineMovePrev<CR>
-nnoremap <silent> <C->> <Cmd>BufferLineMoveNext<CR>
-nnoremap <silent> <C-,> <Cmd>BufferLineCyclePrev<CR>
-nnoremap <silent> <C-.> <Cmd>BufferLineCycleNext<CR>
-nnoremap <silent> <C-?> <Cmd>lua bdelete<CR>
-nnoremap <silent> db <Cmd>BufferLinePickClose<CR>
-nnoremap <silent> gb :BufferLinePick<CR>
-
-" File explorer.
-nnoremap <silent> <F3> <Cmd>Telescope find_files<CR>
-inoremap <silent> <F3> <Cmd>Telescope find_files<CR>
-vnoremap <silent> <F3> <Cmd>Telescope find_files<CR>
-tnoremap <silent> <F3> <Cmd>Telescope find_files<CR>
-
-" Toggle the file explorer.
-nnoremap <silent> <F2> <Cmd>NvimTreeToggle<CR>
-inoremap <silent> <F2> <Cmd>NvimTreeToggle<CR>
-vnoremap <silent> <F2> <Cmd>NvimTreeToggle<CR>
-tnoremap <silent> <F2> <Cmd>NvimTreeToggle<CR>
-
-" Grep for a string in the current directory.
-nnoremap <silent> <F4> <Cmd>Telescope live_grep<CR>
-inoremap <silent> <F4> <Cmd>Telescope live_grep<CR>
-vnoremap <silent> <F4> <Cmd>Telescope live_grep<CR>
-tnoremap <silent> <F4> <Cmd>Telescope live_grep<CR>
-
-" Search for old files.
-nnoremap <silent> <C-t> <Cmd>Telescope oldfiles<CR>
-inoremap <silent> <C-t> <Cmd>Telescope oldfiles<CR>
-vnoremap <silent> <C-t> <Cmd>Telescope oldfiles<CR>
-tnoremap <silent> <C-t> <Cmd>Telescope oldfiles<CR>
-
-" Cheatsheet.
-nnoremap <silent> <F12> <Cmd>Cheatsheet<CR>
-inoremap <silent> <F12> <Cmd>Cheatsheet<CR>
-vnoremap <silent> <F12> <Cmd>Cheatsheet<CR>
-tnoremap <silent> <F12> <Cmd>Cheatsheet<CR>
-
-" Lazygit.
-nnoremap <silent> <C-g> <Cmd>LazyGit<CR>
-tnoremap <silent> <C-g> <Cmd>LazyGit<CR>
-vnoremap <silent> <C-g> <Cmd>LazyGit<CR>
-inoremap <silent> <C-g> <Cmd>LazyGit<CR>
-
-" Change lazygit repo.
-nnoremap <silent> <C-r> <Cmd>lua require("telescope").extensions.lazygit.lazygit()<CR>
-tnoremap <silent> <C-r> <Cmd>lua require("telescope").extensions.lazygit.lazygit()<CR>
-vnoremap <silent> <C-r> <Cmd>lua require("telescope").extensions.lazygit.lazygit()<CR>
-inoremap <silent> <C-r> <Cmd>lua require("telescope").extensions.lazygit.lazygit()<CR>
-
-" Sessions.
-nnoremap <silent> <F5> <Cmd>SSave<CR> " <Cmd>lua vim.notify(" Saved current session.", "success", { title = " Session"} )<CR>
-
-" Moving windows.
-nnoremap <silent> <C-h> <Cmd>wincmd h<CR>
-nnoremap <silent> <C-j> <Cmd>wincmd j<CR>
-nnoremap <silent> <C-k> <Cmd>wincmd k<CR>
-nnoremap <silent> <C-l> <Cmd>wincmd l<CR>
-" Allow moving out of the terminal.
-tnoremap <silent> <C-h> <Cmd>wincmd h<CR>
-tnoremap <silent> <C-j> <Cmd>wincmd j<CR>
-tnoremap <silent> <C-k> <Cmd>wincmd k<CR>
-tnoremap <silent> <C-l> <Cmd>wincmd l<CR>
 
 " Ensure we are in normal mode when leaving the terminal.
 augroup LeavingTerminal
@@ -208,47 +141,6 @@ augroup end
 " Terminal mappings.
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif " Make terminal default mode insert mode.
 tnoremap <silent> <Esc> <C-\><C-n>
-
-" Commenting.
-nnoremap <silent> <C-/> <Cmd>Commentary<CR>
-inoremap <silent> <C-/> <Cmd>Commentary<CR>
-vnoremap <silent> <C-/> <Cmd>Commentary<CR>
-
-" Saving.
-nnoremap <silent> <C-s> <Cmd>w!<CR>
-vnoremap <silent> <C-s> <Cmd>w!<CR>
-inoremap <silent> <C-s> <Cmd>w!<CR>
-
-" Buffers.
-nnoremap <silent> <C-TAB> <Cmd>Telescope buffers<CR>
-inoremap <silent> <C-TAB> <Cmd>Telescope buffers<CR>
-tnoremap <silent> <C-TAB> <Cmd>Telescope buffers<CR>
-vnoremap <silent> <C-TAB> <Cmd>Telescope buffers<CR>
-
-" Finding.
-nnoremap <silent> <C-f> <Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>
-inoremap <silent> <C-f> <Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>
-" Disable the search highlight when hitting esc.
-nnoremap <silent> <Esc> <Cmd>noh<CR>
-inoremap <silent> <Esc> <Cmd>stopinsert<CR> <Cmd>noh<CR>
-vnoremap <silent> <Esc> <Cmd>noh<CR>
-
-" Redo and undo.
-nnoremap <silent> <C-Z> <Cmd>undo<CR>
-inoremap <silent> <C-Z> <Cmd>undo<CR>
-vnoremap <silent> <C-Z> <Cmd>undo<CR>
-nnoremap <silent> <C-Y> <Cmd>redo<CR>
-inoremap <silent> <C-Y> <Cmd>redo<CR>
-vnoremap <silent> <C-Y> <Cmd>redo<CR>
-
-" Zen mode.
-nnoremap <silent> <C-a> <Cmd>TZAtaraxis<CR>
-vnoremap <silent> <C-a> <Cmd>TZAtaraxis<CR>
-inoremap <silent> <C-a> <Cmd>TZAtaraxis<CR>
-
-" Multiline.
-" nnoremap <silent> <C-Down> <Down><Cmd>vm-add-cursors<CR>
-" nnoremap <silent> <C-Up> <Cmd>vm-add-cursors<CR>
 
 " -------------------------
 " RUST PLUGIN CONFIGURARION

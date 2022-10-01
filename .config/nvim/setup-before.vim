@@ -1,5 +1,3 @@
-lua require 'init'
-
 " Setup nefore plugins are loaded.
 let g:ale_disable_lsp = 1
 
@@ -50,57 +48,3 @@ augroup END
 
 " Apply the colorscheme.
 colorscheme gruvbox-material
-
-" ----------
-" APPEARANCE
-" ----------
-
-" List of available colors in nvim:
-"     Red		LightRed	    DarkRed
-"     Green	    LightGreen	    DarkGreen	    SeaGreen
-"     Blue	    LightBlue	    DarkBlue	    SlateBlue
-"     Cyan	    LightCyan	    DarkCyan
-"     Magenta	LightMagenta	DarkMagenta
-"     Yellow	LightYellow	    Brown		    DarkYellow
-"     Gray	    LightGray	    DarkGray
-"     Black	    White
-"     Orange	Purple		    Violet
-
-" Fish already has a theme, so prevent neovim from adding a theme on top of that.
-let $COLORTERM="truecolor"
-let $TERM="alacritty"
-
-" Neovide settings.
-" let g:neovide_transparency=0.95
-let g:neovide_transparency=1
-let g:neovide_fullscreen=v:false
-let g:neovide_profiler=v:false
-let g:neovide_cursor_animation_length = 0.007
-" let g:neovide_scroll_animation_length = 0.18
-let g:neovide_scroll_animation_length = 0.0
-let g:neovide_cursor_antialiasing = v:true
-
-" Fun particles.
-" Available options: railgun, torpedo, boom, pixiedust, ripple, wireframe.
-let g:neovide_cursor_vfx_mode = "pixiedust"
-" Particle settings.
-let g:neovide_cursor_vfx_opacity=175.0 " / 256.0
-let g:neovide_cursor_vfx_particle_lifetime=0.8
-let g:neovide_cursor_vfx_particle_density=5.0
-let g:neovide_cursor_vfx_particle_speed=10.0
-
-" Remove the padding in a terminal.
-autocmd TermOpen * setlocal signcolumn=no
-
-" Font.  This sets the font for neovide.
-" set guifont=JetBrainsMonoMedium\ Nerd\ Font:h10.75
-set guifont=JetBrainsMono\ Nerd\ Font:h10.5
-" set guifont=FiraCode\ Nerd\ Font:h11.75
-" set guifont=FiraCode\ Nerd\ Font:h10.0
-
-" Explicitly enable efm langserver.
-let g:lsp_settings = {
-\  'efm-langserver': {
-\    'disabled': 0,
-\   },
-\ }

@@ -1,10 +1,3 @@
-----------------------
--- Find and Replace --
-----------------------
-
--- Allow FAR to undo.
-vim.cmd('let g:far#enable_undo=1')
-
 ----------------------------------
 -- Load, init and setup plugins --
 ----------------------------------
@@ -12,6 +5,13 @@ vim.cmd('let g:far#enable_undo=1')
 -- Nvim-Tree.lua advises to do this at the start.
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
+
+----------------------
+-- Find and Replace --
+----------------------
+
+-- Allow FAR to undo.
+vim.cmd('let g:far#enable_undo=1')
 
 ------------------
 -- Git Conflict --
@@ -46,34 +46,6 @@ require 'trouble'.setup {
 --     end,
 --   },
 -- })
-
-----------------
--- LSP colors --
-----------------
-
-require("lsp-colors").setup({
-  Error = "#db4b4b",
-  Warning = "#e0af68",
-  Information = "#0db9d7",
-  Hint = "#10B981"
-})
-
-----------------
--- Catppuccin --
-----------------
-
--- latte, frappe, macchiato, mocha
-vim.g.catppuccin_flavour = 'mocha'
-require 'catppuccin' .setup {
-    integrations = {
-        gitsigns = true,
-        leap = true,
-        telescope = true,
-        which_key = true,
-        notify = true,
-        treesitter_context = true,
-    }
-}
 
 ----------------
 -- Auto pairs --

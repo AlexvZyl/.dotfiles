@@ -1,6 +1,6 @@
----------------------------
--- Configure tree sitter --
----------------------------
+-----------------
+-- Tree sitter --
+-----------------
 
 require 'nvim-treesitter.configs'.setup {
 

@@ -23,23 +23,6 @@ require 'trouble'.setup {
 }
 
 ----------------
--- Rust tools --
-----------------
-
--- local rt = require 'rust-tools'
--- 
--- rt.setup({
---   server = {
---     on_attach = function(_, bufnr)
---       -- Hover actions
---       vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
---       -- Code action groups
---       vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
---     end,
---   },
--- })
-
-----------------
 -- Auto pairs --
 ----------------
 
@@ -52,7 +35,7 @@ require 'nvim-autopairs'.setup {
 ----------------
 
 require 'bufferline'.setup {
-    options = {    
+    options = {
         indicator = {
             style = 'underline',
         },
@@ -61,19 +44,19 @@ require 'bufferline'.setup {
         modified_icon = '',
         max_name_length = 20,
         mode = "buffers",
-        diagnostics = "coc",   
+        diagnostics = "coc",
         diagnostics_indicator = function(count, level, diagnostics_dict, context)
-            local s = " "
+            local s = ""
             for e, n in pairs(diagnostics_dict) do
                 if e == 'error' then
-                    s = s .. '  ' .. n
+                    s = s .. '  '
                 elseif e == 'warning' then
-                    s = s .. ' ' .. n
+                    s = s .. ' '
                 end
             end
             return s
         end,
-        offsets = { 
+        offsets = {
             {
                 filetype = "NvimTree",
                 text = "File Explorer",
@@ -146,7 +129,7 @@ require 'incline'.setup {
         },
         options = {
             signcolumn = 'no',
-        }, 
+        },
     },
     hide = {
         focused_win = true
@@ -238,16 +221,16 @@ require 'indent_blankline'.setup {
     context_char = '│',
     -- char = '│',
     -- char = '',
-    -- ['|', '¦', '┆', '┊']   
+    -- ['|', '¦', '┆', '┊']
     char = '┆',
 }
 
 ---------------------
--- Formatter setup -- 
+-- Formatter setup --
 ---------------------
 
 -- Todo.
--- require 'formatter'.setup {}    
+-- require 'formatter'.setup {}
 
 ---------------------
 -- Setup which-key --
@@ -267,7 +250,7 @@ ts.setup({
         sort_mru = true,
         sorting_strategy = 'ascending',
         layout_config = {
-            prompt_position = 'top' 
+            prompt_position = 'top'
         }
     }
 })
@@ -275,7 +258,7 @@ ts.load_extension 'notify'
 ts.load_extension 'lazygit'
 
 ---------------------------------
--- Setup default notifications -- 
+-- Setup default notifications --
 ---------------------------------
 
 local notify = require 'notify'
@@ -306,7 +289,7 @@ require 'nvim-tree'.setup {
     sync_root_with_cwd = true,
     renderer = {
         indent_markers = {
-            enable = true   
+            enable = true
         }
     },
     diagnostics = {

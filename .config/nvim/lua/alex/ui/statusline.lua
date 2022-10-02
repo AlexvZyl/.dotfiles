@@ -25,10 +25,65 @@ local function get_os()
     -- return 'Debian  '
 end
 
+-- Get the current buffer's filetype.
+local function get_current_filetype()
+    return vim.api.nvim_buf_get_option(0, 'filetype')
+end
+
+-- Get the buffer's filename.
+local function get_current_filename()
+    local bufname = vim.api.nvim_buf_get_name(0)
+    return bufname ~= '' and vim.fn.fnamemodify(bufname, ':t') or '[No Name]'
+end
+
+-- Gets the current buffer's filename with the filetype icon supplied
+-- by devicons.
+local M = require('lualine.components.filetype'):extend()
+Icon_hl_cache = {}
+local lualine_require = require('lualine_require')
+local modules = lualine_require.lazy_require {
+  highlight = 'lualine.highlight',
+  utils = 'lualine.utils.utils',
+}
+
+-- Return the current buffer's filename with the filetype icon.
+function M:get_current_filename_with_icon()
+
+    -- Get setup.
+    local icon, icon_highlight_group
+    local ok, devicons = pcall(require, 'nvim-web-devicons')
+    local f_name, f_extension = vim.fn.expand('%:t'), vim.fn.expand('%:e')
+    f_extension = f_extension ~= '' and f_extension or vim.bo.filetype
+    icon, icon_highlight_group = devicons.get_icon(f_name, f_extension)
+
+    -- Fallback settings.
+    if icon == nil and icon_highlight_group == nil then
+      icon = ''
+      icon_highlight_group = 'DevIconDefault'
+      f_name = '[NO NAME]'
+    end
+
+    -- Set colors.
+    local highlight_color = modules.utils.extract_highlight_colors(icon_highlight_group, 'fg')
+    if highlight_color then
+        local default_highlight = self:get_default_hl()
+        local icon_highlight = Icon_hl_cache[highlight_color]
+        if not icon_highlight or not modules.highlight.highlight_exists(icon_highlight.name .. '_normal') then
+            icon_highlight = self:create_hl({ fg = highlight_color }, icon_highlight_group)
+            Icon_hl_cache[highlight_color] = icon_highlight
+        end
+        icon = self:format_hl(icon_highlight) .. icon .. default_highlight
+    end
+
+    -- Return the formatted string.
+    return icon .. ' ' .. f_name
+
+end
+
 -- Get the lsp of the current buffer, when using native lsp.
 local function get_native_lsp()
     local msg = 'None'
-    local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+    local buf_ft = get_current_filetype()
     local clients = vim.lsp.get_active_clients()
     if next(clients) == nil then
       return msg
@@ -45,7 +100,7 @@ end
 -- Get the lsp of the current buffer, when using coc.
 local function get_coc_lsp()
     local services = vim.fn.CocAction('services')
-    local current_lang = vim.api.nvim_buf_get_option(0, 'filetype')
+    local current_lang = get_current_filetype()
     for _, lsp in pairs(services) do
         for _, lang in pairs(lsp['languageIds']) do
             if lang == current_lang then
@@ -93,7 +148,7 @@ require 'lualine'.setup {
                 icon = { '' },
             },
         },
-        lualine_b = { 
+        lualine_b = {
             {
                 'branch',
                 icon = {
@@ -102,18 +157,14 @@ require 'lualine'.setup {
                 },
             },
             {
-                'filename' ,
+                M.get_current_filename_with_icon,
                 symbols = {
                     modified = '',
                     readonly = '',
                 },
-                icon = {
-                    '',
-                    color = { fg = get_color('Orange', 'fg') },
-                },
             },
         },
-        lualine_c = { 
+        lualine_c = {
             {
                 'diff', 
                 source = diff_source, 

@@ -108,7 +108,7 @@ local function get_coc_lsp()
             end
         end
     end
-    return 'None'
+    return ''
 end
 
 -- Get the status of the LSP.
@@ -166,57 +166,69 @@ require 'lualine'.setup {
         },
         lualine_c = {
             {
-                'diff', 
-                source = diff_source, 
-                symbols = { 
-                    added = ' ', 
-                    modified = ' ', 
+                'diff',
+                source = diff_source,
+                symbols = {
+                    added = ' ',
+                    modified = ' ',
                     removed = ' '
                 },
                 separator = '',
-            }, 
-            { 
-                'diagnostics', 
-                sources = { 'coc' }, 
+            },
+            {
+                'diagnostics',
+                sources = { 'coc' },
                 separator = '',
-                symbols = { 
-                    error = ' ', 
-                    warn = ' ', 
-                    info = ' ', 
+                symbols = {
+                    error = ' ',
+                    warn = ' ',
+                    info = ' ',
                     hint = ' ',
-                },  
+                },
                 diagnostics_color = {
-                    error = { fg=get_color('Red', 'fg')    }, 
+                    error = { fg=get_color('Red', 'fg')    },
                     warn =  { fg=get_color('Yellow', 'fg') },
                     info =  { fg=get_color('Blue', 'fg')   },
                     hint =  { fg=get_color('Green', 'fg')  },
-                }, 
+                },
                 colored = true,
             },
         },
-        lualine_x = {  
+        lualine_x = {
             {
-                'filetype',
+                'filesize',
                 icon = {
-                    align = 'left'         
+                    '',
+                    align = 'left'
                 }
             },
         },
         lualine_y = { 
             {
-                get_coc_lsp_compact,
+                get_coc_lsp,
                 icon = {
-                    '  LSP',
+                    ' ',
                     align = 'left',
-                    color = { 
-                        fg = get_color('Orange', 'fg'), 
-                        gui = 'bold' 
+                    color = {
+                        fg = get_color('Orange', 'fg'),
+                        gui = 'bold'
                     }
-                } 
+                }
             },
+            {
+                get_coc_lsp_status,
+                icon = {
+                    ' ',
+                    align = 'left',
+                    color = {
+                        fg = get_color('Orange', 'fg'),
+                        gui = 'bold'
+                    }
+                }
+            }
         },
-        lualine_z = { 
-            { 
+        lualine_z = {
+            {
                 'location',
                 icon = {
                     '',
@@ -232,9 +244,9 @@ require 'lualine'.setup {
                     color = { fg = get_color('Black', 'fg') },
                 }
             }
-        },    
+        },
     },
-    options = { 
+    options = {
         disabled_filetypes = { "startify" },
         globalstatus = true,
         section_separators = { left ='', right = '' },

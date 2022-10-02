@@ -39,9 +39,6 @@ vim.cmd([[
     augroup END
 ]])
 
--- Apply the colorscheme.
-vim.cmd('colorscheme gruvbox-material')
-
 -- Font.
 -- set guifont=JetBrainsMonoMedium\ Nerd\ Font:h10.75
 vim.cmd([[set guifont=JetBrainsMono\ Nerd\ Font:h10.5]])
@@ -87,6 +84,9 @@ vim.cmd([[
         autocmd ColorScheme gruvbox-material call s:gruvbox_material_custom()
     augroup END
 ]])
+
+-- Apply the colorscheme.
+vim.cmd('colorscheme gruvbox-material')
 
 ----------------
 -- LSP colors --

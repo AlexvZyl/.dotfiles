@@ -7,8 +7,9 @@ require 'alex.packer'
 require 'alex.theme'
 
 -- The order of these does not matter.
+require 'alex.statusline'
 require 'alex.options'
-require 'alex.plugins'
+require 'alex.setup'
 require 'alex.neovide'
 require 'alex.terminal'
 require 'alex.lang'

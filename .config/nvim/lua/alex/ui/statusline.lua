@@ -76,7 +76,7 @@ function M:get_current_filename_with_icon()
     end
 
     -- Return the formatted string.
-    return icon .. ' ' .. f_name
+    return icon .. ' ' .. f_name .. ' '
 
 end
 
@@ -108,7 +108,7 @@ local function get_coc_lsp()
             end
         end
     end
-    return ''
+    return 'None'
 end
 
 -- Get the status of the LSP.
@@ -120,7 +120,11 @@ local function get_coc_lsp_status()
     local services = vim.fn.CocAction('services')
     for _, lsp in pairs(services) do
         if lsp['id'] == current_lsp then
-            return lsp['state']
+            if lsp['state'] == 'running' then
+                return ''
+            else
+                return lsp['state']
+            end
         end
     end
     return ''
@@ -150,21 +154,22 @@ require 'lualine'.setup {
         },
         lualine_b = {
             {
-                'branch',
-                icon = {
-                    '',
-                    color = { fg = get_color('Orange', 'fg') },
-                },
-            },
-            {
                 M.get_current_filename_with_icon,
                 symbols = {
                     modified = '',
                     readonly = '',
                 },
-            },
+            }, 
         },
         lualine_c = {
+            {
+                'branch',
+                icon = {
+                    '',
+                    color = { fg = get_color('Orange', 'fg') },
+                },
+                separator = ' │ '
+            },
             {
                 'diff',
                 source = diff_source,
@@ -173,12 +178,13 @@ require 'lualine'.setup {
                     modified = ' ',
                     removed = ' '
                 },
-                separator = '',
             },
+        },
+        lualine_x = {
             {
                 'diagnostics',
                 sources = { 'coc' },
-                separator = '',
+                separator = '',
                 symbols = {
                     error = ' ',
                     warn = ' ',
@@ -194,20 +200,11 @@ require 'lualine'.setup {
                 colored = true,
             },
         },
-        lualine_x = {
-            {
-                'filesize',
-                icon = {
-                    '',
-                    align = 'left'
-                }
-            },
-        },
-        lualine_y = { 
+        lualine_y = {
             {
                 get_coc_lsp,
                 icon = {
-                    ' ',
+                    '  ',
                     align = 'left',
                     color = {
                         fg = get_color('Orange', 'fg'),
@@ -249,7 +246,7 @@ require 'lualine'.setup {
     options = {
         disabled_filetypes = { "startify" },
         globalstatus = true,
-        section_separators = { left ='', right = '' },
+        section_separators = { left =' ', right = ' ' },
         component_separators = { left = '', right = ''},
     },
     extensions = {

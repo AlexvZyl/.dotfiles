@@ -46,15 +46,15 @@ require 'bufferline'.setup {
         mode = "buffers",
         diagnostics = "coc",
         diagnostics_indicator = function(count, level, diagnostics_dict, context)
-            local s = ""
+            local s = ''
             for e, n in pairs(diagnostics_dict) do
                 if e == 'error' then
-                    s = s .. '  '
+                    s = s .. '  '
                 elseif e == 'warning' then
-                    s = s .. ' '
+                    s = s .. '  '
                 end
             end
-            return s
+            return s:sub(1, -2)
         end,
         offsets = {
             {
@@ -125,7 +125,7 @@ require 'incline'.setup {
         },
         placement = {
             horizontal = 'right',
-            vertical = 'bottom'
+            vertical = 'top'
         },
         options = {
             signcolumn = 'no',

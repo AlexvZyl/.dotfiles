@@ -21,13 +21,13 @@
     //   }
     // },
 
-    // Linting LSP.
+    // Linting (COC).
     "diagnostic.warningSign": "",
     "diagnostic.errorSign": "",
     "diagnostic.infoSign": "",
     "diagnostic.hintSign": "",
 
-    // Linting git.
+    // Git gutter (COC).
     "git.enableGutters": true,
     "git.removedSign.text": "│",    
     "git.changedSign.text": "│",

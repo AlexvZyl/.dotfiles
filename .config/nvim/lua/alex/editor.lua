@@ -13,14 +13,6 @@ vim.g.loaded_netrwPlugin = 1
 -- Allow FAR to undo.
 vim.cmd('let g:far#enable_undo=1')
 
-------------------
--- Git Conflict --
-------------------
-
-require 'git-conflict'.setup {
-
-}
-
 ---------------------------
 -- Trouble (diagnostics) --
 ---------------------------
@@ -197,25 +189,6 @@ vim.cmd([[
 -- } 
 
 --------------
--- Gitsigns --
---------------
-
--- Currently using this to get the git diag.
--- Using COC to display it.
--- Displaying git signs displays the results wrong...
-require 'gitsigns'.setup {
-    signs = {
-        add          = { text = '│' },
-        change       = { text = '│' },
-        delete       = { text = '│' },
-        topdelete    = { text = '│' },
-        changedelete = { text = '│' }
-    },
-    signcolumn = false,
-    numhl = false
-}
-
---------------
 -- Zen mode --
 --------------
 
@@ -340,5 +313,3 @@ require 'nvim-tree'.setup {
         enable = true
     },
 }
-
-

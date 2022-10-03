@@ -93,11 +93,8 @@ _G.packer_plugins = {
     url = "https://github.com/sudormrfbin/cheatsheet.nvim"
   },
   ["coc.nvim"] = {
-    commands = { "yarn install --frozen-lockfile" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/coc.nvim",
+    loaded = true,
+    path = "/home/alex/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
   ["diffview.nvim"] = {
@@ -179,6 +176,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/alex/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  neogit = {
+    loaded = true,
+    path = "/home/alex/.local/share/nvim/site/pack/packer/start/neogit",
+    url = "https://github.com/TimUntersberger/neogit"
   },
   ["neoscroll.nvim"] = {
     loaded = true,
@@ -321,7 +323,6 @@ time([[Defining packer_plugins]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[au CmdUndefined yarn install --frozen-lockfile ++once lua require"packer.load"({'coc.nvim'}, {}, _G.packer_plugins)]])
 pcall(vim.cmd, [[au CmdUndefined bash install.sh ++once lua require"packer.load"({'LanguageClient-neovim'}, {}, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 

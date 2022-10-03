@@ -254,6 +254,7 @@ ts.setup({
         }
     }
 })
+-- Load extensions.
 ts.load_extension 'notify'
 ts.load_extension 'lazygit'
 

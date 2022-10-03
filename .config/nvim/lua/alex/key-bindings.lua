@@ -23,7 +23,6 @@ map('n', 'gb',    '<Cmd>BufferLinePick<CR>',      default_settings)
 map('n', '<F3>', '<Cmd>Telescope find_files<CR>', default_settings)
 map('i', '<F3>', '<Cmd>Telescope find_files<CR>', default_settings)
 map('v', '<F3>', '<Cmd>Telescope find_files<CR>', default_settings)
-map('t', '<F3>', '<Cmd>Telescope find_files<CR>', default_settings)
 
 -- Toggle the file explorer.
 map('n', '<F2>', '<Cmd>NvimTreeToggle<CR>', default_settings)
@@ -35,13 +34,11 @@ map('t', '<F2>', '<Cmd>NvimTreeToggle<CR>', default_settings)
 map('n', '<F4>', '<Cmd>Telescope live_grep<CR>', default_settings)
 map('i', '<F4>', '<Cmd>Telescope live_grep<CR>', default_settings)
 map('v', '<F4>', '<Cmd>Telescope live_grep<CR>', default_settings)
-map('t', '<F4>', '<Cmd>Telescope live_grep<CR>', default_settings)
 
 -- Search for old files.
 map('n', '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
 map('i', '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
 map('v', '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
-map('t', '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
 
 -- Cheatsheet.
 map('n', '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)

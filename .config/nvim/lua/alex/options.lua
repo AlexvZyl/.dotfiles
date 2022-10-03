@@ -20,9 +20,6 @@ vim.cmd('set hlsearch')
 vim.cmd('set ignorecase')
 vim.cmd('set smartcase')
 
--- Coc setup.
-vim.opt.pumheight=10 -- Limit the height of the seggestion window.
-
 -- Setup tabbing.
 vim.cmd('set tabstop	=4')
 vim.cmd('set softtabstop=4')
@@ -79,5 +76,5 @@ vim.opt.fillchars = {
   vertleft  = ' ',
   vertright = ' ',
   verthoriz = ' ',
-  eob =' ',
+  eob = ' ',
 }

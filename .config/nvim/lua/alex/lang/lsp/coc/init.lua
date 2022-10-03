@@ -2,6 +2,9 @@
 -- COC SETUP --
 ---------------
 
+-- Limit the height of the seggestion window.
+vim.opt.pumheight=10
+
 -- Explicitly enable efm langserver.
 vim.cmd([[
     let g:lsp_settings = {
@@ -288,6 +291,6 @@ function coc_diag_notify(msg, level)
   coc_diag_record = vim.notify(msg, level, notify_opts)
 end
 
-function reset_coc_diag_record(window)
+local function reset_coc_diag_record(window)
   coc_diag_record = {}
 end

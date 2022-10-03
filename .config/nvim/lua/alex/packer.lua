@@ -9,10 +9,13 @@ vim.g.ale_disable_lsp = 1
 return require 'packer'.startup( function(use)
 
     -- Telecope.
-    use 'nvim-telescope/telescope.nvim'
-    -- Telescope deps.
-    use 'nvim-lua/popup.nvim'
-    use 'nvim-lua/plenary.nvim'
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = {
+            'nvim-lua/popup.nvim',
+            'nvim-lua/plenary.nvim'
+        }
+    }
 
     -- Gui.
     use 'akinsho/toggleterm.nvim'
@@ -35,15 +38,24 @@ return require 'packer'.startup( function(use)
     use 'windwp/nvim-autopairs'
 
     -- Motions.
-    use 'ggandor/leap.nvim'
-    -- Leap deps.
-    use 'tpope/vim-repeat'
+    use {
+        'ggandor/leap.nvim',
+        requires = {
+            'tpope/vim-repeat'
+        }
+    }
 
     -- Git.
     use 'lewis6991/gitsigns.nvim'
     use 'sindrets/diffview.nvim'
     use 'akinsho/git-conflict.nvim'
     use 'kdheepak/lazygit.nvim'
+    use {
+        'TimUntersberger/neogit',
+        requires = {
+            'nvim-lua/plenary'
+        }
+    }
 
     -- Neovim helpers.
     use 'folke/which-key.nvim'

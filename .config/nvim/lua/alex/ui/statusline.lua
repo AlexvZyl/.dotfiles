@@ -58,7 +58,7 @@ function M:get_current_filename_with_icon()
 
     -- Fallback settings.
     if icon == nil and icon_highlight_group == nil then
-      icon = ''
+      icon = ''
       icon_highlight_group = 'DevIconDefault'
       f_name = '[NO NAME]'
     end
@@ -141,6 +141,30 @@ local function get_coc_lsp_compact()
     return lsp_status
 end
 
+-- Display the difference in commits between local and head.
+local Job = require 'plenary.job'
+local function get_git_compare()
+
+    -- Get the path of the current directory.
+    local curr_dir = vim.api.nvim_buf_get_name(0):match("(.*"..'/'..")")
+
+    -- Run job to get git.
+    local result = Job:new({
+      command = 'git',
+      cwd = curr_dir,
+      args = { 'rev-list', '--left-right', '--count', 'HEAD...@{upstream}' }, 
+    }):sync()[1]
+
+    -- Process the result.
+    if type(result) ~= 'string' then return '' end
+    local ok, ahead, behind = pcall(string.match, result, "(%d+)%s*(%d+)")
+    if not ok then return '' end
+
+    -- Format for lualine.
+    return ' '.. behind .. '  ' .. ahead
+
+end
+
 -- Required to properly set the colors.
 local get_color = require 'lualine.utils.utils'.extract_highlight_colors
 
@@ -168,7 +192,15 @@ require 'lualine'.setup {
                     '',
                     color = { fg = get_color('Orange', 'fg') },
                 },
-                separator = ' │ '
+                separator = ' │ ',
+            },
+            {
+                get_git_compare,
+                separator = ' │ ',
+                icon = {
+                    ' ',
+                    color = { fg = get_color('Orange', 'fg') },
+                }
             },
             {
                 'diff',

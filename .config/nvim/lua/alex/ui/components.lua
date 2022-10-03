@@ -240,6 +240,9 @@ require 'which-key'.setup {
 
 }
 
+-- Timeout.
+vim.cmd('set timeoutlen =1000')
+
 ---------------------
 -- Setup telescope --
 ---------------------

@@ -130,17 +130,6 @@ local function get_coc_lsp_status()
     return ''
 end
 
--- Display the lsp status, otherwise display none.
--- Making 'none' lower case here so that it fits in with the
--- way coc displays status.
-local function get_coc_lsp_compact()
-    local lsp_status = get_coc_lsp_status()
-    if lsp_status == '' then
-        return 'none'
-    end
-    return lsp_status
-end
-
 -- Display the difference in commits between local and head.
 local Job = require 'plenary.job'
 local function get_git_compare()
@@ -152,7 +141,7 @@ local function get_git_compare()
     local result = Job:new({
       command = 'git',
       cwd = curr_dir,
-      args = { 'rev-list', '--left-right', '--count', 'HEAD...@{upstream}' }, 
+      args = { 'rev-list', '--left-right', '--count', 'HEAD...@{upstream}' },
     }):sync()[1]
 
     -- Process the result.
@@ -192,11 +181,11 @@ require 'lualine'.setup {
                     '',
                     color = { fg = get_color('Orange', 'fg') },
                 },
-                separator = ' │ ',
+                separator = ' ',
             },
             {
                 get_git_compare,
-                separator = ' │ ',
+                separator = ' ',
                 icon = {
                     ' ',
                     color = { fg = get_color('Orange', 'fg') },

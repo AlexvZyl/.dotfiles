@@ -28,22 +28,11 @@ vim.cmd('set textwidth	=0')
 vim.cmd('set expandtab')
 vim.cmd('set autoindent')
 
--- Timeout (for which-key)
-vim.cmd('set timeoutlen =1000')
-
 -- Show matching brackets.
 vim.cmd('set showmatch')
 
 -- Disable text wrap around.
 vim.cmd('set nowrap')
-
--- Rust plugin config.
--- Set completeopt to have a better completion experience
--- :help completeopt
--- menuone: popup even when there's only one match
--- noinsert: Do not insert text until a selection is made
--- noselect: Do not select, force user to select one from the menu
-vim.cmd('set completeopt=menuone,noinsert,noselect')
 
 -- Make the cmdline disappear when not in use.
 -- Currently this is not wokring.

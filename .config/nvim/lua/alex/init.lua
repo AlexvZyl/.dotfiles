@@ -8,7 +8,7 @@ require 'alex.theme'
 
 -- The order of these does not matter.
 require 'alex.ui'
-require 'alex.options'
+require 'alex.neovim'
 require 'alex.neovide'
 require 'alex.lang'
 

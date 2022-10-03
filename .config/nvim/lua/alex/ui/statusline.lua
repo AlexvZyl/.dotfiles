@@ -142,7 +142,7 @@ local function get_git_compare()
       command = 'git',
       cwd = curr_dir,
       args = { 'rev-list', '--left-right', '--count', 'HEAD...@{upstream}' },
-    }):sync()[1]
+    }):sync(100)[1]
 
     -- Process the result.
     if type(result) ~= 'string' then return '' end

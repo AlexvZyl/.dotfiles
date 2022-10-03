@@ -35,8 +35,7 @@ vim.cmd('set showmatch')
 vim.cmd('set nowrap')
 
 -- Make the cmdline disappear when not in use.
--- Currently this is not wokring.
--- vim.cmd('set cmdheight=0')
+vim.cmd('set cmdheight=0')
 
 -- Disable VM exit message and statusline.
 vim.g.VM_set_statusline = 0

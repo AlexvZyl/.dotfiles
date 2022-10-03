@@ -6,10 +6,10 @@
 require 'alex.packer'
 require 'alex.theme'
 
--- The order of these does not matter.
-require 'alex.ui'
+-- More setup.
 require 'alex.neovim'
 require 'alex.neovide'
+require 'alex.ui'
 require 'alex.lang'
 
 -- Run this last to ensure they do not get overridden.

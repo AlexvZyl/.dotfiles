@@ -53,7 +53,7 @@ return require 'packer'.startup( function(use)
     use {
         'TimUntersberger/neogit',
         requires = {
-            'nvim-lua/plenary'
+            'nvim-lua/plenary.nvim'
         }
     }
 
@@ -82,7 +82,7 @@ return require 'packer'.startup( function(use)
     use {
         'autozimu/LanguageClient-neovim',
         branch = 'next',
-        cmd = 'bash install.sh'
+        run = 'bash install.sh'
     }
     use 'sumneko/lua-language-server'
     -- use 'simrat39/rust-tools.nvim'

@@ -75,11 +75,8 @@ time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["LanguageClient-neovim"] = {
-    commands = { "bash install.sh" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/alex/.local/share/nvim/site/pack/packer/opt/LanguageClient-neovim",
+    loaded = true,
+    path = "/home/alex/.local/share/nvim/site/pack/packer/start/LanguageClient-neovim",
     url = "https://github.com/autozimu/LanguageClient-neovim"
   },
   ["bufferline.nvim"] = {
@@ -320,12 +317,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
-
--- Command lazy-loads
-time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[au CmdUndefined bash install.sh ++once lua require"packer.load"({'LanguageClient-neovim'}, {}, _G.packer_plugins)]])
-time([[Defining lazy-load commands]], false)
-
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

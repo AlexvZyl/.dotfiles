@@ -1,3 +1,5 @@
+-- NOTE: I no longer use COC.  Just keeping this here for reference.
+
 -- Coc is technically MUCH more than just a LSP.
 
 ---------------

@@ -10,9 +10,7 @@ require 'git-conflict'.setup {
 -- Gitsigns --
 --------------
 
--- Currently using this to get the git diag.
--- Using COC to display it.
--- Displaying git signs displays the results wrong...
+-- Display git changes.
 require 'gitsigns'.setup {
     signs = {
         add          = { text = '│' },
@@ -21,7 +19,7 @@ require 'gitsigns'.setup {
         topdelete    = { text = '│' },
         changedelete = { text = '│' }
     },
-    signcolumn = false,
+    signcolumn = true,
     numhl = false
 }
 

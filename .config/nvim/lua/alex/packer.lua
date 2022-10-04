@@ -27,7 +27,7 @@ return require 'packer'.startup( function(use)
     use 'b0o/incline.nvim'
     use 'Pocco81/true-zen.nvim'
     use 'folke/lsp-colors.nvim'
-    use 'folke/trouble.nvim' -- Only native LSP.
+    use 'folke/trouble.nvim'
 
     -- Programming experience.
     use 'lukas-reineke/indent-blankline.nvim'
@@ -35,6 +35,8 @@ return require 'packer'.startup( function(use)
     use 'karb94/neoscroll.nvim'
     use 'RRethy/vim-illuminate'
     use 'windwp/nvim-autopairs'
+    use 'preservim/nerdcommenter'
+    use 'tpope/vim-commentary'
 
     -- Motions.
     use {
@@ -69,13 +71,16 @@ return require 'packer'.startup( function(use)
     -- General langage.
     use 'nvim-treesitter/nvim-treesitter'  -- Syntax highlighting.
     use 'neovim/nvim-lspconfig'
-    use 'preservim/nerdcommenter' -- More commenting functions.
-    use 'tpope/vim-commentary'  -- Allow commenting with <C-/>.
-    -- use {
-        -- 'neoclide/coc.nvim',
-        -- branch = 'master',
-        -- run = 'yarn install --frozen-lockfile'
-    -- }
+    use {
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+    }
+    -- Completion engine.
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use 'hrsh7th/nvim-cmp'
 
     -- Language specific.
     use 'prabirshrestha/vim-lsp'

@@ -237,7 +237,7 @@ require 'lualine'.setup {
         lualine_x = {
             {
                 'diagnostics',
-                sources = { 'coc' },
+                sources = { 'nvim_diagnostic' },
                 separator = '',
                 symbols = {
                     error = ' ',

@@ -1,2 +1,2 @@
--- require 'alex.lang.lsp.coc'
 require 'alex.lang.lsp.native'
+require 'alex.lang.lsp.ui'

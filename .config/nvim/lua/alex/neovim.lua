@@ -11,6 +11,9 @@ vim.cmd('set clipboard+=unnamedplus')
 -- Enable mouse input.
 vim.cmd('set mouse=a')
 
+-- Keep the sign column open.
+vim.cmd('set signcolumn=yes')
+
 -- Syntax.
 vim.cmd('set number')
 vim.cmd('set relativenumber')

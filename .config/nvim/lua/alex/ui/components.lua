@@ -265,6 +265,7 @@ ts.setup({
 -- Load extensions.
 ts.load_extension 'notify'
 ts.load_extension 'lazygit'
+ts.load_extension 'git_worktree'
 
 ---------------------------------
 -- Setup default notifications --

@@ -42,3 +42,15 @@ vim.g.lazygit_use_neovim_remote = 1 -- fallback to 0 if neovim-remote is not ins
 require 'neogit'.setup {
     kind = 'floating'
 }
+
+------------------
+-- Git worktree --
+------------------
+
+require("git-worktree").setup({
+    change_directory_command = "cd",
+    update_on_change = true,
+    update_on_change_command = "e .",
+    clearjumps_on_change = true,
+    autopush = false,
+})

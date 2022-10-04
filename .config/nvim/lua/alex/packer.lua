@@ -56,6 +56,7 @@ return require 'packer'.startup( function(use)
             'nvim-lua/plenary.nvim'
         }
     }
+    use 'ThePrimeagen/git-worktree.nvim'
 
     -- Neovim helpers.
     use 'folke/which-key.nvim'

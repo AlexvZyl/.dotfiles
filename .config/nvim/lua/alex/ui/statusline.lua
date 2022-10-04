@@ -46,8 +46,8 @@ local modules = lualine_require.lazy_require {
   utils = 'lualine.utils.utils',
 }
 
--- Return the current buffer's filename with the filetype icon.
-function M:get_current_filename_with_icon()
+-- Return the current buffer's filetype icon with highlighting.
+function M:get_current_filetype_icon()
 
     -- Get setup.
     local icon, icon_highlight_group
@@ -60,7 +60,6 @@ function M:get_current_filename_with_icon()
     if icon == nil and icon_highlight_group == nil then
       icon = ''
       icon_highlight_group = 'DevIconDefault'
-      f_name = '[NO NAME]'
     end
 
     -- Set colors.
@@ -73,6 +72,24 @@ function M:get_current_filename_with_icon()
             Icon_hl_cache[highlight_color] = icon_highlight
         end
         icon = self:format_hl(icon_highlight) .. icon .. default_highlight
+    end
+
+    -- Return the formatted string.
+    return icon
+
+end
+
+-- Return the current buffer's filename with the filetype icon.
+function M:get_current_filename_with_icon()
+
+    -- Get icon and filename.
+    local icon = M.get_current_filetype_icon(self)
+    local f_name = get_current_filename()
+
+    -- Add readonly icon.
+    local readonly = vim.api.nvim_buf_get_option(0, 'readonly')
+    if readonly then
+        f_name = f_name .. ' '
     end
 
     -- Return the formatted string.
@@ -167,12 +184,8 @@ require 'lualine'.setup {
         },
         lualine_b = {
             {
-                M.get_current_filename_with_icon,
-                symbols = {
-                    modified = '',
-                    readonly = '',
-                },
-            }, 
+                M.get_current_filename_with_icon
+            },
         },
         lualine_c = {
             {

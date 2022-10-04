@@ -99,11 +99,10 @@ end
 
 -- Get the lsp of the current buffer, when using native lsp.
 local function get_native_lsp()
-    local msg = 'None'
     local buf_ft = get_current_filetype()
     local clients = vim.lsp.get_active_clients()
     if next(clients) == nil then
-      return msg
+      return 'None'
     end
     for _, client in ipairs(clients) do
       local filetypes = client.config.filetypes
@@ -111,8 +110,29 @@ local function get_native_lsp()
         return client.name
       end
     end
-    return msg
+    return 'None'
 end
+
+-- Get the status of the native LSP attached to the current buffer.
+-- This might not be the best way to get the status, but it works.
+local function get_native_lsp_status()
+    -- Get info.
+    local clients = vim.lsp.get_active_clients()
+    local current_lsp = get_native_lsp()
+    -- No language server running.
+    if current_lsp == 'None' then return '' end
+    -- Check if the last received message is still running.
+    for _, client in ipairs(clients) do
+        if client.name == current_lsp then
+            if next(client.messages.status) ~= nil then
+                return client.messages.status
+            end
+        end
+    end
+    -- Everything is okay.
+    return ' '
+end
+
 
 -- Get the lsp of the current buffer, when using coc.
 local function get_coc_lsp()
@@ -235,6 +255,7 @@ require 'lualine'.setup {
             },
         },
         lualine_y = {
+            --[[
             {
                 get_coc_lsp,
                 icon = {
@@ -248,6 +269,29 @@ require 'lualine'.setup {
             },
             {
                 get_coc_lsp_status,
+                icon = {
+                    ' ',
+                    align = 'left',
+                    color = {
+                        fg = get_color('Orange', 'fg'),
+                        gui = 'bold'
+                    }
+                }
+            }
+            --]]
+            {
+                get_native_lsp,
+                icon = {
+                    '  ',
+                    align = 'left',
+                    color = {
+                        fg = get_color('Orange', 'fg'),
+                        gui = 'bold'
+                    }
+                }
+            },
+            {
+                get_native_lsp_status,
                 icon = {
                     ' ',
                     align = 'left',

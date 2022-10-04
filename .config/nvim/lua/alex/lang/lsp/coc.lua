@@ -1,3 +1,5 @@
+-- Coc is technically MUCH more than just a LSP.
+
 ---------------
 -- COC SETUP --
 ---------------

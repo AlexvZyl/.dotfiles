@@ -25,10 +25,9 @@ return require 'packer'.startup( function(use)
     use 'akinsho/bufferline.nvim'
     use 'mhinz/vim-startify'
     use 'b0o/incline.nvim'
-    use 'Pocco81/true-zen.nvim' -- Zen mode!
+    use 'Pocco81/true-zen.nvim'
     use 'folke/lsp-colors.nvim'
-    -- This only supports native lsp...
-    use 'folke/trouble.nvim'
+    use 'folke/trouble.nvim' -- Only native LSP.
 
     -- Programming experience.
     use 'lukas-reineke/indent-blankline.nvim'
@@ -69,24 +68,19 @@ return require 'packer'.startup( function(use)
 
     -- General langage.
     use 'nvim-treesitter/nvim-treesitter'  -- Syntax highlighting.
+    use 'neovim/nvim-lspconfig'
     use 'preservim/nerdcommenter' -- More commenting functions.
     use 'tpope/vim-commentary'  -- Allow commenting with <C-/>.
-    use {
-        'neoclide/coc.nvim',
-        branch = 'master',
-        run = 'yarn install --frozen-lockfile'
-    }
+    -- use {
+        -- 'neoclide/coc.nvim',
+        -- branch = 'master',
+        -- run = 'yarn install --frozen-lockfile'
+    -- }
 
     -- Language specific.
     use 'prabirshrestha/vim-lsp'
     use 'JuliaEditorSupport/julia-vim'
-    use {
-        'autozimu/LanguageClient-neovim',
-        branch = 'next',
-        run = 'bash install.sh'
-    }
     use 'sumneko/lua-language-server'
-    -- use 'simrat39/rust-tools.nvim'
 
     -- Themes.
     use 'sainnhe/gruvbox-material' -- My fav.
@@ -100,15 +94,11 @@ return require 'packer'.startup( function(use)
     use 'dracula/vim'
     use 'joshdick/onedark.vim'
 
-    -- Alternative motion usein.
-    -- use 'phaazon/hop.nvim'
     -- Still need to setup.
     -- use 'mhartington/formatter.nvim'
     -- For when I make the PR.
     -- use 'Alex-vZyl/toggleterm.nvim', {'tag' : 'v2.*'}
     -- Not yet ready.
     -- use 'petertriho/nvim-scrollbar'
-    -- Image viewing.  Not set up currently.
-    -- use 'edluffy/hologram.nvim'
 
 end)

@@ -6,11 +6,14 @@ local keymap = vim.keymap.set
 local saga = require('lspsaga')
 
 -- Configs.
-saga.init_lsp_saga{
+saga.init_lsp_saga {
     code_action_lightbulb = {
         enable = false
-    }
+    },
+    border_style = 'single'
 }
+
+-- Change highlight groups.
 
 -- Below is the exmaple key mapping given on the GitHub page.
 

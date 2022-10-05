@@ -70,3 +70,6 @@ vim.opt.fillchars = {
   verthoriz = ' ',
   eob = ' ',
 }
+
+-- Set space as leader.
+vim.g.mapleader = ' '

@@ -1,3 +1,7 @@
+--------------
+-- Nvim Cmp --
+--------------
+
 vim.cmd('set completeopt=menu,menuone,noselect')
 
 -- Set up nvim-cmp.
@@ -14,8 +18,12 @@ cmp.setup({
     end,
   },
   window = {
-     completion = cmp.config.window.bordered(),
-     documentation = cmp.config.window.bordered(),
+    completion = cmp.config.window.bordered {
+      winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+    },
+    documentation = cmp.config.window.bordered {
+      winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+    },
   },
   mapping = cmp.mapping.preset.insert({
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
@@ -101,3 +109,13 @@ local cmp_window = require('cmp.utils.window')
 function cmp_window:has_scrollbar()
   return false
 end
+
+-- Limit the height of the seggestion window.
+vim.opt.pumheight=10
+
+-- Utility to get the current theme colors.
+local get_color = require 'lualine.utils.utils'.extract_highlight_colors
+local orange = get_color('Orange', 'fg')
+
+-- Change the menu border background color.
+vim.cmd('highlight! BorderBG guibg=NONE guifg=' .. orange)

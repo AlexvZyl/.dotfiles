@@ -1,14 +1,18 @@
+--------------
+-- LSP Saga --
+--------------
 
 local keymap = vim.keymap.set
 local saga = require('lspsaga')
 
+-- Configs.
 saga.init_lsp_saga{
     code_action_lightbulb = {
         enable = false
     }
 }
 
--- Below is the exmaple config given on the GitHub page.
+-- Below is the exmaple key mapping given on the GitHub page.
 
 -- Lsp finder find the symbol definition implement reference
 -- if there is no implement it will hide
@@ -60,4 +64,4 @@ keymap("n", "<A-d>", "<cmd>Lspsaga open_floaterm lazygit<CR>", { silent = true }
 -- close floaterm
 keymap("t", "<A-d>", [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], { silent = true })
 
--- End of example config.
+-- End of example keymap.

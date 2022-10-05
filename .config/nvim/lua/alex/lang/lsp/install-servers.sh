@@ -3,7 +3,7 @@
 # Lua (by sumneko)
 sudo pacman -S lua-language-server
 
-# Julia.
+# Julia uses the executable with added packages.
 sudo pacman -S julia-bin
 
 # Bash.

@@ -226,12 +226,17 @@ require 'lualine'.setup {
             },
             {
                 'diff',
+                colored = true,
                 source = diff_source,
                 symbols = {
                     added = ' ',
                     modified = ' ',
                     removed = ' '
                 },
+                -- icon = {
+                    -- ' ',
+                    -- color = { fg = get_color('Orange', 'fg') },
+                -- }
             },
         },
         lualine_x = {
@@ -255,30 +260,6 @@ require 'lualine'.setup {
             },
         },
         lualine_y = {
-            --[[
-            {
-                get_coc_lsp,
-                icon = {
-                    '  ',
-                    align = 'left',
-                    color = {
-                        fg = get_color('Orange', 'fg'),
-                        gui = 'bold'
-                    }
-                }
-            },
-            {
-                get_coc_lsp_status,
-                icon = {
-                    ' ',
-                    align = 'left',
-                    color = {
-                        fg = get_color('Orange', 'fg'),
-                        gui = 'bold'
-                    }
-                }
-            }
-            --]]
             {
                 get_native_lsp,
                 icon = {

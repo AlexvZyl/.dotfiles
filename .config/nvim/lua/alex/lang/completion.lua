@@ -2,10 +2,11 @@
 -- Nvim Cmp --
 --------------
 
+-- This has to be set.
 vim.cmd('set completeopt=menu,menuone,noselect')
 
--- Set up nvim-cmp.
-local cmp = require'cmp'
+-- Get cmp.
+local cmp = require 'cmp'
 
 -- Filter out the text.
 local function filter_text(entry, ctx)
@@ -13,7 +14,7 @@ local function filter_text(entry, ctx)
     return kind ~= 'Text'
 end
 
--- Icons.
+-- Icons in the cmp menu.
 local kind_icons = {
     Text = "",
     Method = "",
@@ -45,11 +46,12 @@ local kind_icons = {
 -- Config.
 cmp.setup({
     snippet = {
-        -- REQUIRED - you must specify a snippet engine
+        -- Snippet engine.
         expand = function(args)
             require('luasnip').lsp_expand(args.body)
         end,
     },
+    -- Set window style.
     window = {
         completion = cmp.config.window.bordered {
             winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
@@ -58,6 +60,7 @@ cmp.setup({
             winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
         },
     },
+    -- Key maps.
     mapping = cmp.mapping.preset.insert({
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
@@ -102,7 +105,7 @@ cmp.setup({
         -- Icons in menu.
         local prsnt, lspkind = pcall(require, "lspkind")
             if not prsnt then
-	            vim_item.kind = string.format('%s', kind_icons[vim_item.kind]) -- This concatonates the icons with the name of the item kind
+	            vim_item.kind = string.format('%s', kind_icons[vim_item.kind])
 	            return vim_item
 	        else
 	            return lspkind.cmp_format()
@@ -113,51 +116,53 @@ cmp.setup({
 
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
-  sources = cmp.config.sources({
-    { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-  }, {
-    { name = 'buffer' },
-  })
+    sources = cmp.config.sources({
+        { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+    }, {
+        { name = 'buffer' },
+    })
 })
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline({ '/', '?' }, {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = 'buffer' }
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+        { name = 'buffer' }
   }
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
-    { name = 'cmdline' }
-  })
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+        { name = 'path' }
+    }, {
+        { name = 'cmdline' }
+    })
 })
 
--- Set up lspconfig.
+-- Get capabilities.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+-- Setup sources.
 require('lspconfig')['sumneko_lua'].setup {
-  capabilities = capabilities
+    capabilities = capabilities
 }
 require('lspconfig')['julials'].setup {
-  capabilities = capabilities
+    capabilities = capabilities
 }
 require('lspconfig')['bashls'].setup {
-  capabilities = capabilities
+    capabilities = capabilities
 }
 require('lspconfig')['pyright'].setup {
-  capabilities = capabilities
+    capabilities = capabilities
 }
 
 -- Disable the scrollbar.
+-- This does not work.
 local cmp_window = require('cmp.utils.window')
 function cmp_window:has_scrollbar()
-  return false
+    return false
 end
 
 -- Limit the height of the seggestion window.

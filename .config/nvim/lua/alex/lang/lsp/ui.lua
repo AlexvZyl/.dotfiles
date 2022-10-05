@@ -24,16 +24,19 @@ saga.init_lsp_saga {
 keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 
 -- Code action
-keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
+keymap({"n","v"}, "ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
 
 -- Rename
-keymap("n", "gr", "<cmd>Lspsaga rename<CR>", { silent = true })
+keymap("n", "rr", "<cmd>Lspsaga rename<CR>", { silent = true })
 
 -- Peek Definition
 -- you can edit the definition file in this flaotwindow
 -- also support open/vsplit/etc operation check definition_action_keys
 -- support tagstack C-t jump back
 keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
+
+-- Show docs.
+keymap("n", "gD", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 
 -- Show line diagnostics
 keymap("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
@@ -57,7 +60,7 @@ end, { silent = true })
 keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })
 
 -- Hover Doc
-keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+keymap("n", "K", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
 
 -- Float terminal
 keymap("n", "<A-d>", "<cmd>Lspsaga open_floaterm<CR>", { silent = true })
@@ -68,3 +71,19 @@ keymap("n", "<A-d>", "<cmd>Lspsaga open_floaterm lazygit<CR>", { silent = true }
 keymap("t", "<A-d>", [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], { silent = true })
 
 -- End of example keymap.
+
+-- Set colors (in vim).
+-- highlight link LspSagaFinderSelection Search
+-- highlight link LspSagaFinderSelection guifg='#ff0000' guibg='#00ff00' gui='bold'
+
+-- Get the color palette.
+local palette = require 'alex.utils'.get_gruvbox_material_palette()
+local border_color = palette.orange[1]
+vim.cmd('highlight! DefinitionBorder guibg=NONE guifg=' .. border_color)
+vim.cmd('highlight! LspSagaLspFinderBorder guibg=NONE guifg=' .. border_color)
+vim.cmd('highlight! LspSagaRenameBorder guibg=NONE guifg=' .. border_color)
+vim.cmd('highlight! LspSagaDiagnosticBorder guibg=NONE guifg=' .. border_color)
+vim.cmd('highlight! LspSagaHoverBorder guibg=NONE guifg=' .. border_color)
+vim.cmd('highlight! LspSagaCodeActionBorder guibg=NONE guifg=' .. border_color)
+
+

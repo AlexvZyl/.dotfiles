@@ -66,3 +66,8 @@ vim.cmd([[
     sign define DiagnosticSignInfo  text= texthl= linehl= numhl=DiagnosticSignInfo
     sign define DiagnosticSignHint  text= texthl= linehl= numhl=DiagnosticSignHint
 ]])
+
+-- Disable diagnostics msg.
+vim.diagnostic.config({virtual_text = false})
+-- Disable diagnostics text.
+vim.diagnostic.config({signs = true})

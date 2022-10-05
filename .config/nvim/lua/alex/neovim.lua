@@ -57,6 +57,7 @@ vim.opt.fillchars = {
   verthoriz = '╋',
 }
 --]]
+
 vim.opt.fillchars = {
   -- horiz = '―',
   -- horizup = '―',

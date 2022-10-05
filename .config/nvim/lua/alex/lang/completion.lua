@@ -7,43 +7,47 @@ vim.cmd('set completeopt=menu,menuone,noselect')
 -- Set up nvim-cmp.
 local cmp = require'cmp'
 
+-- Filter out the text.
+local function filter_text(entry, ctx)
+    local kind = require('cmp.types').lsp.CompletionItemKind[entry:get_kind()]
+    return kind ~= 'Text'
+end
+
 -- Icons.
 local kind_icons = {
-  Text = "",
-  Method = "",
-  Function = "",
-  Constructor = "",
-  Field = "",
-  Variable = "",
-  Class = "ﴯ",
-  Interface = "",
-  Module = "",
-  Property = "ﰠ",
-  Unit = "",
-  Value = "",
-  Enum = "",
-  Keyword = "",
-  Snippet = "",
-  Color = "",
-  File = "",
-  Reference = "",
-  Folder = "",
-  EnumMember = "",
-  Constant = "",
-  Struct = "",
-  Event = "",
-  Operator = "",
-  TypeParameter = ""
+    Text = "",
+    Method = "",
+    Function = "",
+    Constructor = "",
+    Field = "",
+    Variable = "",
+    Class = "ﴯ",
+    Interface = "",
+    Module = "",
+    Property = "ﰠ",
+    Unit = "",
+    Value = "",
+    Enum = "",
+    Keyword = "",
+    Snippet = "",
+    Color = "",
+    File = "",
+    Reference = "",
+    Folder = "",
+    EnumMember = "",
+    Constant = "",
+    Struct = "",
+    Event = "",
+    Operator = "",
+    TypeParameter = ""
 }
 
+-- Config.
 cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-          vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-          -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-          -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-          -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+            require('luasnip').lsp_expand(args.body)
         end,
     },
     window = {
@@ -80,18 +84,24 @@ cmp.setup({
         end, { "i" } ),
     }),
     sources = cmp.config.sources {
-        { name = 'nvim_lsp' },
-        { name = 'buffer' },
-        { name = 'vsnip' }, -- For vsnip users.
-        -- { name = 'luasnip' }, -- For luasnip users.
-        -- { name = 'ultisnips' }, -- For ultisnips users.
-        -- { name = 'snippy' }, -- For snippy users.
+        {
+            name = 'nvim_lsp',
+            entry_filter = filter_text
+        },
+        {
+            name = 'buffer',
+            entry_filter = filter_text
+        },
+        {
+            name = 'luasnip',
+            entry_filter = filter_text
+        },
     },
     formatting = {
         format = function(entry, vim_item)
+        -- Icons in menu.
         local prsnt, lspkind = pcall(require, "lspkind")
             if not prsnt then
-	            -- Kind icons
 	            vim_item.kind = string.format('%s', kind_icons[vim_item.kind]) -- This concatonates the icons with the name of the item kind
 	            return vim_item
 	        else

@@ -9,7 +9,7 @@ vim.cmd('set completeopt=menu,menuone,noselect')
 local cmp = require 'cmp'
 
 -- Filter out the text.
-local function filter_text(entry, ctx)
+local function filter_text(entry, _)
     local kind = require('cmp.types').lsp.CompletionItemKind[entry:get_kind()]
     return kind ~= 'Text'
 end
@@ -101,7 +101,7 @@ cmp.setup({
         },
     },
     formatting = {
-        format = function(entry, vim_item)
+        format = function(_, vim_item)
         -- Icons in menu.
         local prsnt, lspkind = pcall(require, "lspkind")
             if not prsnt then

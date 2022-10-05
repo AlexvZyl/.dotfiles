@@ -5,16 +5,15 @@
 -- For key mappings for all modes.
 local all_modes = { 'n', 'i', 'v', 't' }
 local exclude_t = { 'n', 'i', 'v' }
-local n_i = { 'n', 'i' }
 local n = 'n'
 local t = 't'
 
 -- Function to map keys.
-local map_key = vim.api.nvim_set_keymap
+local map_key = vim.keymap.set
 -- Default config for the keymaps.
 local default_settings = {
     noremap = true,
-    silent = true
+    silent = true,
 }
 
 -- Bufferline.
@@ -69,13 +68,13 @@ map_key(exclude_t, '<C-/>', '<Cmd>Commentary<CR>', default_settings)
 map_key(exclude_t, '<C-s>', '<Cmd>w!<CR>', default_settings)
 
 -- Buffers.
-map_key(all_modes, '<C-TAB>', '<Cmd>Telescope buffers<CR>', default_settings)
+map_key(exclude_t, '<C-TAB>', '<Cmd>Telescope buffers<CR>', default_settings)
 
 -- Finding.
-map_key(n_i, '<C-f>', '<Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>', default_settings)
+map_key(exclude_t, '<C-f>', '<Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>', default_settings)
 
 -- Disable the search highlight when hitting esc.
-map_key(exclude_t, '<Esc>', '<Cmd>noh<CR>', default_settings)
+-- map_key(all_modes, '<Esc>', '<Cmd>noh<CR>', { noremap = false })
 
 -- Undo.
 map_key(exclude_t, '<C-Z>', '<Cmd>undo<CR>', default_settings)
@@ -84,4 +83,4 @@ map_key(exclude_t, '<C-Z>', '<Cmd>undo<CR>', default_settings)
 map_key(exclude_t, '<C-Y>', '<Cmd>redo<CR>', default_settings)
 
 -- Zen mode.
-map_key(exclude_t, '<C-a>', '<Cmd>TZAtaraxis<CR>', default_settings)
+map_key(all_modes, '<C-a>', '<Cmd>TZAtaraxis<CR>', default_settings)

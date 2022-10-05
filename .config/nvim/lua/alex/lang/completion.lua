@@ -113,9 +113,6 @@ end
 -- Limit the height of the seggestion window.
 vim.opt.pumheight=10
 
--- Utility to get the current theme colors.
-local get_color = require 'lualine.utils.utils'.extract_highlight_colors
-local orange = get_color('Orange', 'fg')
-
 -- Change the menu border background color.
-vim.cmd('highlight! BorderBG guibg=NONE guifg=' .. orange)
+local palette = require 'alex.utils'.get_gruvbox_material_palette()
+vim.cmd('highlight! BorderBG guibg=NONE guifg=' .. palette.grey0[1])

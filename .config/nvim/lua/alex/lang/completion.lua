@@ -170,4 +170,4 @@ vim.opt.pumheight=10
 
 -- Change the menu border background color.
 local palette = require 'alex.utils'.get_gruvbox_material_palette()
-vim.cmd('highlight! BorderBG guibg=NONE guifg=' .. palette.grey0[1])
+vim.cmd('highlight! BorderBG guibg=NONE guifg=' .. palette.grey1[1])

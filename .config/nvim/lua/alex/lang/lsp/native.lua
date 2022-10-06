@@ -1,35 +1,18 @@
--- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap=true, silent=true }
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+-- Run install-servers.sh to install all the servers used below.
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
 
-    -- Enable completion triggered by <c-x><c-o>
-    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+    -- On the Git repo they have a bunch of key bindings here.
+    -- I am using Lsp-Saga for LSP info and not the native functions.
 
-    -- Mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local bufopts = { noremap=true, silent=true, buffer=bufnr }
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts) vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts) vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts) vim.keymap.set('n', '<space>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, bufopts) vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts) vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts) vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts) vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts) vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts) 
+end
 
-end 
-
--- Run install-servers.sh to install all the servers used below.
-
+-- Flags.
 local lsp_flags = {
-    -- Default.
+    -- Prevent the LSP client from making too many calls.
     debounce_text_changes = 250,
-    -- Custom. 
 }
 
 -- Use lspconfig to setup.
@@ -59,7 +42,7 @@ lsp_config.pyright.setup {
     flags = lsp_flags
 }
 
--- Setup the nvim diagnostic signs.
+-- Diagnostics signs colors and character.
 vim.cmd([[
     sign define DiagnosticSignError text= texthl= linehl= numhl=DiagnosticSignError 
     sign define DiagnosticSignWarn  text= texthl= linehl= numhl=DiagnosticSignWarn
@@ -68,6 +51,7 @@ vim.cmd([[
 ]])
 
 -- Disable diagnostics msg.
+-- They add a lot of clutter and I use LSP saga for info. 
 vim.diagnostic.config({virtual_text = false})
 -- Disable diagnostics text.
 vim.diagnostic.config({signs = true})

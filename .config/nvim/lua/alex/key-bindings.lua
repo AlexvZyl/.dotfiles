@@ -1,3 +1,6 @@
+-- I want to keep all of the key bindings in one file so that it is easy to see
+-- what is being used and ensure nothing being overwritten by accident.
+
 --------------------------
 -- General key bindings --
 --------------------------
@@ -21,7 +24,7 @@ map_key(n, '<C-<>', '<Cmd>BufferLineMovePrev<CR>',  default_settings)
 map_key(n, '<C->>', '<Cmd>BufferLineMoveNext<CR>',  default_settings)
 map_key(n, '<C-,>', '<Cmd>BufferLineCyclePrev<CR>', default_settings)
 map_key(n, '<C-.>', '<Cmd>BufferLineCycleNext<CR>', default_settings)
-map_key(n, '<C-?>', '<Cmd>lua bdelete<CR>',         default_settings)
+map_key(n, '<C-q>', '<Cmd>bdelete<CR>',         default_settings)
 map_key(n, 'db',    '<Cmd>BufferLinePickClose<CR>', default_settings)
 map_key(n, 'gb',    '<Cmd>BufferLinePick<CR>',      default_settings)
 
@@ -84,3 +87,46 @@ map_key(exclude_t, '<C-Y>', '<Cmd>redo<CR>', default_settings)
 
 -- Zen mode.
 map_key(all_modes, '<C-a>', '<Cmd>TZAtaraxis<CR>', default_settings)
+
+--------------
+-- LSP Saga --
+--------------
+
+-- Lsp finder find the symbol definition implement reference
+-- if there is no implement it will hide
+-- when you use action in finder like open vsplit then you can
+-- use <C-t> to jump back
+map_key("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
+
+-- Code action
+map_key({"n","v"}, "ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
+
+-- Rename
+map_key("n", "rr", "<cmd>Lspsaga rename<CR>", { silent = true })
+
+-- Peek Definition
+-- you can edit the definition file in this flaotwindow
+-- also support open/vsplit/etc operation check definition_action_keys
+-- support tagstack C-t jump back
+map_key("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
+
+-- Show docs.
+map_key("n", "gD", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+
+-- Show line diagnostics
+map_key("n", "L", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
+
+-- Diagnsotic jump can use `<c-o>` to jump back
+map_key("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
+map_key("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
+
+-- Only jump to error
+map_key("n", "[E", function()
+  require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
+end, { silent = true })
+map_key("n", "]E", function()
+  require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
+end, { silent = true })
+
+-- Outline
+map_key("n","<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })

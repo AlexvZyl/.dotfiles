@@ -1,8 +1,5 @@
-# NeovimConfig
-The configuration files for my Neovim setup.
+# Neovim Config
 
-![image](https://user-images.githubusercontent.com/81622310/179122222-5815861b-6082-4fa6-b9be-4c14da944f65.png)
+The configuration files for my Neovim setup.  Has some custom configurations to make it just right.
 
-## Installation
-
-Run `:PlugInstall` after the dotfiles installation script.  The DotFiles installer installs the plugin manager.
+![image](https://user-images.githubusercontent.com/81622310/194374314-7d31b065-34ae-4f90-8783-3c305f0931b4.png)

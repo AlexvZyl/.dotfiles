@@ -19,12 +19,60 @@ local default_settings = {
     silent = true,
 }
 
+-- Utils.
+local length = require 'alex.utils'.length
+local get_valid_buffers = require("bufferline.utils").get_valid_buffers
+-- Closes the current buffer and moves to the previous one if more than one is open.
+function Close_current_buffer()
+
+
+    -- Do not close these buffer types.
+    local buf_type = vim.api.nvim_buf_get_option(0, 'buftype')
+    local do_not_close = {
+        'nvimtree',
+        'nofile',
+        'startify',
+        'terminal'
+    }
+    for _, name in ipairs(do_not_close) do
+       if buf_type == name then
+           return
+       end
+    end
+
+    -- Do not close if current buffer has unsaved changes.
+    local modified = vim.api.nvim_buf_get_option(0, 'modified')
+    if modified then
+        print("Buffer has unsaved changes.")
+        return
+    end
+
+    -- Get buffer data.
+    local buffers_length = length(get_valid_buffers())
+    local current_buffer = vim.api.nvim_win_get_buf(0)
+
+    -- More than one buffer open.
+    if buffers_length ~= 1 then
+        vim.cmd('BufferLineCyclePrev')
+        vim.cmd('bdelete ' .. current_buffer)
+        return
+    end
+
+    -- One buffer is open, close the window
+    vim.cmd('wincmd c')
+    -- If the buffer did not delete, delete it.
+    if(length(get_valid_buffers())) == 1 then
+        vim.cmd('bdelete ' .. current_buffer)
+    end
+
+end
+
 -- Bufferline.
 map_key(n, '<C-<>', '<Cmd>BufferLineMovePrev<CR>',  default_settings)
 map_key(n, '<C->>', '<Cmd>BufferLineMoveNext<CR>',  default_settings)
 map_key(n, '<C-,>', '<Cmd>BufferLineCyclePrev<CR>', default_settings)
 map_key(n, '<C-.>', '<Cmd>BufferLineCycleNext<CR>', default_settings)
-map_key(n, '<C-q>', '<Cmd>bdelete<CR>',         default_settings)
+map_key(n, '<C-q>', '<Cmd>lua Close_current_buffer()<CR>', default_settings)
 map_key(n, 'db',    '<Cmd>BufferLinePickClose<CR>', default_settings)
 map_key(n, 'gb',    '<Cmd>BufferLinePick<CR>',      default_settings)
 

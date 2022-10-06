@@ -72,4 +72,4 @@ vim.opt.fillchars = {
 }
 
 -- Set space as leader.
-vim.g.mapleader = ' '
+-- vim.g.mapleader = ' '

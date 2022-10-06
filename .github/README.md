@@ -1,6 +1,6 @@
 # .dotfiles
 
-The configuration files for my Linux desktop.  Supports Arch based distros using Gnome and/or i3.
+The configuration files for my Linux desktop.  Supports Arch based distros using Gnome and/or i3.  The Linux configs are pretty standard, but my [Neovim config](https://github.com/Alex-vZyl/.dotfiles/tree/main/.config/nvim) has a decent amount of work and is very close to a proper IDE.  Why didn't I use [LunarVim](https://github.com/LunarVim/LunarVim), [NvChad](https://github.com/NvChad/NvChad) or [SpaceVim](https://github.com/liuchengxu/space-vim)?  I like doing things myself. 
 
 ## Installation
 

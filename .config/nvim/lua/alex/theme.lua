@@ -54,10 +54,10 @@ vim.cmd([[set guifont=JetBrainsMono\ Nerd\ Font:h10.5]])
 vim.cmd([[
     augroup custom_highlights_gruvboxmaterial
       autocmd!
-      " floating popups
       autocmd ColorScheme gruvbox-material 
       \       hi NvimTreeNormal      guibg=#141617 |
-      \       hi NvimTreeEndOfBuffer guibg=#141617
+      \       hi NvimTreeEndOfBuffer guibg=#141617 |
+      \       hi TroubleNormal       guibg=#141617
     augroup END
 ]])
 
@@ -74,11 +74,8 @@ vim.g.gruvbox_material_statusline_style = 'default'
 -- Custom colors for gruvbox-material.
 vim.cmd([[
     function! s:gruvbox_material_custom() abort
-        " Init palette used.
         let l:palette = gruvbox_material#get_palette(g:gruvbox_material_background, g:gruvbox_material_foreground, {})
-        " Bufferline.
         call gruvbox_material#highlight('CursorLineNr', l:palette.orange, l:palette.none)
-        " Current line nr.
         call gruvbox_material#highlight('TabLineSel', l:palette.orange, l:palette.none)
     endfunction
     augroup GruvboxMaterialCustom
@@ -87,6 +84,7 @@ vim.cmd([[
     augroup END
 ]])
 
+-- Make all buffers that do not have 
 -- Apply the colorscheme.
 vim.cmd('colorscheme gruvbox-material')
 

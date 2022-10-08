@@ -16,31 +16,31 @@ end
 
 -- Icons in the cmp menu.
 local kind_icons = {
-    Text = "",
-    Method = "",
-    Function = "",
-    Constructor = "",
-    Field = "",
-    Variable = "",
-    Class = "ﴯ",
-    Interface = "",
-    Module = "",
-    Property = "ﰠ",
-    Unit = "",
-    Value = "",
-    Enum = "",
-    Keyword = "",
-    Snippet = "",
-    Color = "",
-    File = "",
-    Reference = "",
-    Folder = "",
-    EnumMember = "",
-    Constant = "",
-    Struct = "",
-    Event = "",
-    Operator = "",
-    TypeParameter = ""
+    Text = " ",
+    Method = " ",
+    Function = " ",
+    Constructor = " ",
+    Field = " ",
+    Variable = " ",
+    Class = "ﴯ ",
+    Interface = " ",
+    Module = " ",
+    Property = "ﰠ ",
+    Unit = " ",
+    Value = " ",
+    Enum = " ",
+    Keyword = " ",
+    Snippet = " ",
+    Color = " ",
+    File = " ",
+    Reference = " ",
+    Folder = " ",
+    EnumMember = " ",
+    Constant = " ",
+    Struct = " ",
+    Event = " ",
+    Operator = " ",
+    TypeParameter = " "
 }
 
 -- Config.
@@ -170,4 +170,4 @@ vim.opt.pumheight=10
 
 -- Change the menu border background color.
 local palette = require 'alex.utils'.get_gruvbox_material_palette()
-vim.cmd('highlight! BorderBG guibg=NONE guifg=' .. palette.grey1[1])
+vim.cmd('highlight! BorderBG guibg=NONE guifg=' .. palette.fg0[1])

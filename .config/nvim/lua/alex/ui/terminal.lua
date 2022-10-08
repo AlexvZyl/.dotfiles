@@ -19,12 +19,12 @@ vim.cmd([[
 -- Remove the padding in a terminal.
 vim.cmd('autocmd TermOpen * setlocal signcolumn=no')
 
-----------------------
--- Setup toggleterm --
-----------------------
+----------------
+-- Toggleterm --
+----------------
 
 require 'toggleterm'.setup {
-    on_open = function(term)
+    on_open = function(_)
         vim.cmd("startinsert")
     end,
     direction = "float",
@@ -34,30 +34,3 @@ require 'toggleterm'.setup {
         winblend = 0,
     }
 }
-
-----------------------------
--- BTop++ with toggleterm --
-----------------------------
-
-local Terminal  = require('toggleterm.terminal').Terminal
--- local btop = Terminal:new({ cmd = "btop --utf-force", hidden = true, direction = "float" })
-local btop = Terminal:new({ cmd = "btop", hidden = true, direction = "float" })
--- local btop = Terminal:new({ cmd = "btm", hidden = true, direction = "float" })
-function _btop_toggle()
-  btop:toggle()
-end
-vim.api.nvim_set_keymap("n", "<C-B>", "<Cmd>lua _btop_toggle()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("t", "<C-B>", "<Cmd>lua _btop_toggle()<CR>", {noremap = true, silent = true})
-
---------------------------
--- Fish with toggleterm --
---------------------------
-
-local Terminal  = require('toggleterm.terminal').Terminal
-local fish = Terminal:new({ cmd = "fish", hidden = true, direction = "horizontal" })
-function _fish_toggle()
-  fish:toggle()
-end
-vim.api.nvim_set_keymap("n", "<F1>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("t", "<F1>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("v", "<F1>", "<Cmd>lua _fish_toggle()<CR>", {noremap = true, silent = true})

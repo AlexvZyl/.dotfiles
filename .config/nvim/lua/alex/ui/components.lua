@@ -13,64 +13,12 @@ vim.g.loaded_netrwPlugin = 1
 -- Allow FAR to undo.
 vim.cmd('let g:far#enable_undo=1')
 
----------------------------
--- Trouble (diagnostics) --
----------------------------
-
-require 'trouble'.setup {
-    use_diagnostic_signs = true,
-    position = 'right'
-}
-
 ----------------
 -- Auto pairs --
 ----------------
 
 require 'nvim-autopairs'.setup {
     map_cr = false
-}
-
-----------------
--- Bufferline --
-----------------
-
-require 'bufferline'.setup {
-    options = {
-        indicator = {
-            style = 'underline',
-        },
-        tab_size = 12, -- Minimum size.
-        buffer_close_icon ='',
-        modified_icon = '',
-        max_name_length = 20,
-        mode = "buffers",
-        diagnostics = "coc",
-        diagnostics_indicator = function(count, level, diagnostics_dict, context)
-            local s = ''
-            for e, n in pairs(diagnostics_dict) do
-                if e == 'error' then
-                    s = s .. '  '
-                elseif e == 'warning' then
-                    s = s .. '  '
-                end
-            end
-            return s:sub(1, -2)
-        end,
-        offsets = {
-            {
-                filetype = "NvimTree",
-                text = "File Explorer",
-                highlight = "Directory",
-                text_align = "center"
-            }
-        },
-        separator_style = "padded_slant",
-        custom_filter = function(buf_number, buf_numbers)
-            if vim.bo[buf_number].filetype ~='nvimtree' then
-                return true
-            end
-        end
-    }
 }
 
 ----------
@@ -112,7 +60,7 @@ local function render_incline(render_props)
     return {
         {
             get_file_from_buffer(render_props.buf),
-            -- guibg = 'None',
+            -- guibg = palette.bg0[1],
             gui = 'italic',
             blend = 0,
         }

@@ -30,3 +30,19 @@ vim.cmd('highlight! LspSagaDiagnosticBorder guibg=NONE guifg=' .. border_color)
 vim.cmd('highlight! LspSagaHoverBorder guibg=NONE guifg=' .. border_color)
 vim.cmd('highlight! LspSagaCodeActionBorder guibg=NONE guifg=' .. border_color)
 vim.cmd('highlight! FinderSpinnerBorder guibg=NONE guifg=' .. border_color)
+
+---------------------------
+-- Trouble (diagnostics) --
+---------------------------
+
+require 'trouble'.setup {
+    use_diagnostic_signs = false,
+    position = 'right',
+    signs = {
+        error = " ",
+        warning = " ",
+        hint = " ",
+        information = " ",
+        other = " "
+    },
+}

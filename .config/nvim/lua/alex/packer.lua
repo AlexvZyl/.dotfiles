@@ -100,6 +100,7 @@ return require 'packer'.startup( function(use)
     use 'shaunsingh/nord.nvim'
     use 'dracula/vim'
     use 'joshdick/onedark.vim'
+    use 'sam4llis/nvim-tundra'
 
     -- Still need to setup.
     -- use 'mhartington/formatter.nvim'

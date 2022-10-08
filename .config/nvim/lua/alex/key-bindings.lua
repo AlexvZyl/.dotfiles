@@ -1,3 +1,4 @@
+---@diagnostic disable: lowercase-global
 -- I want to keep all of the key bindings in one file so that it is easy to see
 -- what is being used and ensure nothing being overwritten by accident.
 
@@ -8,6 +9,7 @@
 -- For key mappings for all modes.
 local all_modes = { 'n', 'i', 'v', 't' }
 local exclude_t = { 'n', 'i', 'v' }
+local exclude_i  = { 'n', 'v', 't' }
 local n_v = { 'n', 'v' }
 local n = 'n'
 local t = 't'
@@ -20,21 +22,12 @@ local default_settings = {
     silent = true,
 }
 
--- Bufferline.
-Close_current_buffer = require 'alex.ui.bufferline'.close_current_buffer_LV
-map_key(n, '<C-<>', '<Cmd>BufferLineMovePrev<CR>',  default_settings)
-map_key(n, '<C->>', '<Cmd>BufferLineMoveNext<CR>',  default_settings)
-map_key(n, '<C-,>', '<Cmd>BufferLineCyclePrev<CR>', default_settings)
-map_key(n, '<C-.>', '<Cmd>BufferLineCycleNext<CR>', default_settings)
-map_key(n, '<C-q>', '<Cmd>lua Close_current_buffer()<CR>', default_settings)
-map_key(n, 'db',    '<Cmd>BufferLinePickClose<CR>', default_settings)
-map_key(n, 'gb',    '<Cmd>BufferLinePick<CR>',      default_settings)
-
 -- Search for files in current directory.
 map_key(exclude_t, '<F3>', '<Cmd>Telescope find_files<CR>', default_settings)
 
 -- Toggle the file explorer.
 map_key(all_modes, '<F2>', '<Cmd>NvimTreeToggle<CR>', default_settings)
+map_key(exclude_i, '<Leader>f', '<Cmd>NvimTreeToggle<CR>', default_settings)
 
 -- Grep for a string in the current directory.
 map_key(exclude_t, '<F4>', '<Cmd>Telescope live_grep<CR>', default_settings)
@@ -90,6 +83,26 @@ map_key(exclude_t, '<C-Y>', '<Cmd>redo<CR>', default_settings)
 -- Zen mode.
 map_key(all_modes, '<C-a>', '<Cmd>TZAtaraxis<CR>', default_settings)
 
+----------------
+-- Bufferline --
+----------------
+
+-- Move.
+map_key(n, '<C-<>', '<Cmd>BufferLineMovePrev<CR>',  default_settings)
+map_key(n, '<C->>', '<Cmd>BufferLineMoveNext<CR>',  default_settings)
+
+-- Closing.
+Close_current_buffer = require 'alex.ui.utils'.close_current_buffer_LV
+map_key(n, '<C-q>', '<Cmd>lua Close_current_buffer()<CR>', default_settings)
+map_key(n, 'db',    '<Cmd>BufferLinePickClose<CR>', default_settings)
+-- Suggested by someone on the repo.
+-- map_key(n, '<C-q>', '<Cmd>:bp <BAR> bd #<CR><CR>', default_settings)
+
+-- Selecting.
+map_key(n, 'gb',    '<Cmd>BufferLinePick<CR>',      default_settings)
+map_key(n, '<C-,>', '<Cmd>BufferLineCyclePrev<CR>', default_settings)
+map_key(n, '<C-.>', '<Cmd>BufferLineCycleNext<CR>', default_settings)
+
 --------------
 -- LSP Saga --
 --------------
@@ -128,4 +141,37 @@ map_key(n, "]E", function()
 end, { silent = true })
 
 -- Outline
-map_key(exclude_t,"<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })
+map_key(exclude_i, "<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })
+
+--------------
+-- Terminal --
+--------------
+
+local terminal  = require('toggleterm.terminal').Terminal
+
+-- Btop++.
+
+-- local btop = Terminal:new({ cmd = "btop --utf-force", hidden = true, direction = "float" })
+local btop = terminal:new({ cmd = "btop", hidden = true, direction = "float" })
+-- local btop = Terminal:new({ cmd = "btm", hidden = true, direction = "float" })
+function _btop_toggle()
+  btop:toggle()
+end
+map_key("n", "<C-B>", "<Cmd>lua _btop_toggle()<CR>", {noremap = true, silent = true})
+map_key("t", "<C-B>", "<Cmd>lua _btop_toggle()<CR>", {noremap = true, silent = true})
+
+-- Fish.
+
+local fish = terminal:new({ cmd = "fish", hidden = true, direction = "float" })
+function _fish_toggle()
+  fish:toggle()
+end
+map_key(all_modes, "<F1>", "<Cmd>lua _fish_toggle()<CR>", default_settings)
+map_key(exclude_i, "<Leader>t", "<Cmd>lua _fish_toggle()<CR>", default_settings)
+
+-------------
+-- Trouble --
+-------------
+
+map_key(exclude_i, "<leader>d", "<Cmd>Trouble document_diagnostics<CR>", default_settings)
+map_key(exclude_i, "<leader>D", "<Cmd>Trouble workspace_diagnostics<CR>", default_settings)

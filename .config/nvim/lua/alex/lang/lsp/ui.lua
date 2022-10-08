@@ -45,4 +45,8 @@ require 'trouble'.setup {
         information = " ",
         other = " "
     },
+    auto_preview = false
 }
+
+-- Make trouble update to the current buffer.
+vim.cmd [[ autocmd BufEnter * TroubleRefresh ]]

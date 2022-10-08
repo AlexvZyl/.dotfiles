@@ -17,7 +17,9 @@ sudo chmod +x ~/.scripts/install.sh && ~/.scripts/install.sh
 
 # Screenshots
 
-I still have a lot of ricing that I want to do!
+Will add when I am satisfied with the setup / rice.
+
+<!---
 
 ## Gnome
 
@@ -44,3 +46,5 @@ I still have a lot of ricing that I want to do!
 
 ![image](https://user-images.githubusercontent.com/81622310/182230490-e73244f4-bfb7-4612-bc03-36eec132bd01.png)
 *Adds my [neovim](https://github.com/neovim/neovim) config.  Also installs [neovide](https://github.com/neovide/neovide), so use that!*
+
+--->

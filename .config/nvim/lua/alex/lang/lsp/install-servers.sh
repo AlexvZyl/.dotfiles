@@ -11,3 +11,6 @@ sudo pacman -S bash-language-server
 
 # Python.
 sudo pacman -S pyright
+
+# Rust.
+sudo pacman -S rust-analyzer

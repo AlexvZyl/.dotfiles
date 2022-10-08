@@ -252,5 +252,13 @@ require 'nvim-tree'.setup {
     },
     diagnostics = {
         enable = true
-    },
+    }
 }
+
+------------------
+-- Image Viewer --
+------------------
+
+-- require 'hologram'.setup {
+--    auto_display = true
+-- }

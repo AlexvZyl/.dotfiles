@@ -23,8 +23,7 @@ if vim.fn.has('termguicolors') then
     vim.cmd('set termguicolors')
 end
 
--- Fish already has a theme, so prevent neovim from adding a theme on top of that.
-vim.cmd('let $COLORTERM="truecolor"')
+-- Not too sure why this has to be here?
 vim.cmd('let $TERM="alacritty"')
 
 -- Disable the cursorline when a window is not focused.
@@ -86,7 +85,7 @@ vim.cmd([[
 
 -- Make all buffers that do not have 
 -- Apply the colorscheme.
-vim.cmd('colorscheme gruvbox-material')
+vim.cmd 'colorscheme gruvbox-material'
 
 ----------------
 -- LSP colors --
@@ -122,3 +121,13 @@ require 'catppuccin' .setup {
 -----------
 
 vim.g.everforest_background = 'hard'
+
+--------------
+-- Material --
+--------------
+
+vim.g.material_style = 'darker'
+require 'material'.setup {
+
+}
+-- vim.cmd 'colorscheme material'

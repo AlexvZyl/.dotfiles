@@ -29,6 +29,9 @@ return require 'packer'.startup( function(use)
     use 'folke/lsp-colors.nvim'
     use 'folke/trouble.nvim'
 
+    -- Images.
+    use 'edluffy/hologram.nvim'
+
     -- Programming experience.
     use 'lukas-reineke/indent-blankline.nvim'
     use 'mg979/vim-visual-multi'
@@ -100,6 +103,7 @@ return require 'packer'.startup( function(use)
     use 'shaunsingh/nord.nvim'
     use 'dracula/vim'
     use 'joshdick/onedark.vim'
+    use 'marko-cerovac/material.nvim'
     use 'sam4llis/nvim-tundra'
 
     -- Still need to setup.

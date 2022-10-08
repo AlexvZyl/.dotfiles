@@ -11,8 +11,8 @@ local all_modes = { 'n', 'i', 'v', 't' }
 local exclude_t = { 'n', 'i', 'v' }
 local exclude_i  = { 'n', 'v', 't' }
 local n_v = { 'n', 'v' }
+local n_t = { 'n', 't' }
 local n = 'n'
-local t = 't'
 
 -- Function to map keys.
 local map_key = vim.keymap.set
@@ -21,6 +21,10 @@ local default_settings = {
     noremap = true,
     silent = true,
 }
+
+-- Sometimes I do not lift the ctrl key when trying to close a window.
+-- Why does this not work?
+map_key(n, '<C-w><C-c>', '<Cmd>wincmd c<CR>', default_settings)
 
 -- Search for files in current directory.
 map_key(exclude_t, '<F3>', '<Cmd>Telescope find_files<CR>', default_settings)
@@ -48,16 +52,10 @@ map_key(all_modes, '<C-r>', '<Cmd>lua require("telescope").extensions.lazygit.la
 map_key(n, '<F5>', '<Cmd>SSave<CR> " Saved current session.", "success", { title = " Session"} )<CR>', default_settings)
 
 -- Moving windows.
-map_key(n, '<C-h>','<Cmd>wincmd h<CR>', default_settings)
-map_key(n, '<C-j>','<Cmd>wincmd j<CR>', default_settings)
-map_key(n, '<C-k>','<Cmd>wincmd k<CR>', default_settings)
-map_key(n, '<C-l>','<Cmd>wincmd l<CR>', default_settings)
-
--- Allow moving out of the terminal.
-map_key(t, '<C-h>', '<Cmd>wincmd h<CR>', default_settings)
-map_key(t, '<C-j>', '<Cmd>wincmd j<CR>', default_settings)
-map_key(t, '<C-k>', '<Cmd>wincmd k<CR>', default_settings)
-map_key(t, '<C-l>', '<Cmd>wincmd l<CR>', default_settings)
+map_key(n_t, '<C-h>','<Cmd>wincmd h<CR>', default_settings)
+map_key(n_t, '<C-j>','<Cmd>wincmd j<CR>', default_settings)
+map_key(n_t, '<C-k>','<Cmd>wincmd k<CR>', default_settings)
+map_key(n_t, '<C-l>','<Cmd>wincmd l<CR>', default_settings)
 
 -- Commenting.
 map_key(exclude_t, '<C-/>', '<Cmd>Commentary<CR>', default_settings)
@@ -94,6 +92,7 @@ map_key(n, '<C->>', '<Cmd>BufferLineMoveNext<CR>',  default_settings)
 -- Closing.
 Close_current_buffer = require 'alex.ui.utils'.close_current_buffer_LV
 map_key(n, '<C-q>', '<Cmd>lua Close_current_buffer()<CR>', default_settings)
+map_key(n, '<leader>q', '<Cmd>lua Close_current_buffer()<CR>', default_settings)
 map_key(n, 'db',    '<Cmd>BufferLinePickClose<CR>', default_settings)
 -- Suggested by someone on the repo.
 -- map_key(n, '<C-q>', '<Cmd>:bp <BAR> bd #<CR><CR>', default_settings)
@@ -114,7 +113,7 @@ map_key(n, "gr", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
 map_key(n_v, "ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
 
 -- Rename
-map_key(n_v, "rr", "<cmd>Lspsaga rename<CR>", { silent = true })
+map_key(n_v, "RR", "<cmd>Lspsaga rename<CR>", { silent = true })
 
 -- Peek Definition
 -- you can edit the definition file in this flaotwindow
@@ -157,8 +156,7 @@ local btop = terminal:new({ cmd = "btop", hidden = true, direction = "float" })
 function _btop_toggle()
   btop:toggle()
 end
-map_key("n", "<C-B>", "<Cmd>lua _btop_toggle()<CR>", {noremap = true, silent = true})
-map_key("t", "<C-B>", "<Cmd>lua _btop_toggle()<CR>", {noremap = true, silent = true})
+map_key(n_t, "<C-B>", "<Cmd>lua _btop_toggle()<CR>", {noremap = true, silent = true})
 
 -- Fish.
 
@@ -173,5 +171,5 @@ map_key(exclude_i, "<Leader>t", "<Cmd>lua _fish_toggle()<CR>", default_settings)
 -- Trouble --
 -------------
 
-map_key(exclude_i, "<leader>d", "<Cmd>Trouble document_diagnostics<CR>", default_settings)
-map_key(exclude_i, "<leader>D", "<Cmd>Trouble workspace_diagnostics<CR>", default_settings)
+map_key(exclude_i, "<leader>d", "<Cmd>TroubleToggle document_diagnostics<CR>", default_settings)
+map_key(exclude_i, "<leader>D", "<Cmd>TroubleToggle workspace_diagnostics<CR>", default_settings)

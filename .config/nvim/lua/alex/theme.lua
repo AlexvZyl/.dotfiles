@@ -60,7 +60,7 @@ vim.cmd([[
     augroup END
 ]])
 
--- let vim.g.gruvbox_material_foreground = 'original'
+-- vim.g.gruvbox_material_foreground = 'original'
 -- vim.g.gruvbox_material_foreground = 'mix'
 vim.g.gruvbox_material_foreground = 'material'
 vim.g.gruvbox_material_background = 'hard'

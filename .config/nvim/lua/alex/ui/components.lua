@@ -169,7 +169,7 @@ require 'indent_blankline'.setup {
     show_current_context_start = false,
     filetype_exclude = { 'NvimTree', 'startify' },
     use_treesitter = false,
-    use_treesitter_scope = true,
+    use_treesitter_scope = false,
     -- context_char = '┃',
     context_char = '│',
     -- char = '│',

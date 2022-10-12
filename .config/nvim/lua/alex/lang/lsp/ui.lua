@@ -36,8 +36,10 @@ vim.cmd('highlight! FinderSpinnerBorder guibg=NONE guifg=' .. border_color)
 ---------------------------
 
 require 'trouble'.setup {
+    padding = true,
+    height = 11,
     use_diagnostic_signs = false,
-    position = 'right',
+    position = 'bottom',
     signs = {
         error = " ",
         warning = " ",

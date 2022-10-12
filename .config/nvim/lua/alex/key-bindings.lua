@@ -31,7 +31,7 @@ map_key(exclude_t, '<F3>', '<Cmd>Telescope find_files<CR>', default_settings)
 
 -- Toggle the file explorer.
 map_key(all_modes, '<F2>', '<Cmd>NvimTreeToggle<CR>', default_settings)
-map_key(exclude_i, '<Leader>f', '<Cmd>NvimTreeToggle<CR>', default_settings)
+map_key(n, '<Leader>f', '<Cmd>NvimTreeToggle<CR>', default_settings)
 
 -- Grep for a string in the current directory.
 map_key(exclude_t, '<F4>', '<Cmd>Telescope live_grep<CR>', default_settings)
@@ -140,7 +140,7 @@ map_key(n, "]E", function()
 end, { silent = true })
 
 -- Outline
-map_key(exclude_i, "<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })
+map_key(n, "<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })
 
 --------------
 -- Terminal --
@@ -171,5 +171,5 @@ map_key(exclude_i, "<Leader>t", "<Cmd>lua _fish_toggle()<CR>", default_settings)
 -- Trouble --
 -------------
 
-map_key(exclude_i, "<leader>d", "<Cmd>TroubleToggle document_diagnostics<CR>", default_settings)
-map_key(exclude_i, "<leader>D", "<Cmd>TroubleToggle workspace_diagnostics<CR>", default_settings)
+map_key(n, "<leader>d", "<Cmd>TroubleToggle document_diagnostics<CR>", default_settings)
+map_key(n, "<leader>D", "<Cmd>TroubleToggle workspace_diagnostics<CR>", default_settings)

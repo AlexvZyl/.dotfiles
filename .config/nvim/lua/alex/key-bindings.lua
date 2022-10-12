@@ -61,7 +61,12 @@ map_key(n_t, '<C-l>','<Cmd>wincmd l<CR>', default_settings)
 map_key(exclude_t, '<C-/>', '<Cmd>Commentary<CR>', default_settings)
 
 -- Saving.
-map_key(exclude_t, '<C-s>', '<Cmd>w!<CR>', default_settings)
+function Save_file()
+    if vim.api.nvim_buf_get_option(0, 'buftype') ~= 'nofile' then
+        vim.cmd 'w!'
+    end
+end
+map_key(exclude_t, '<C-s>', '<Cmd>lua Save_file()<CR>', default_settings)
 
 -- Buffers.
 map_key(exclude_t, '<C-TAB>', '<Cmd>Telescope buffers<CR>', default_settings)

@@ -130,7 +130,7 @@ local function get_native_lsp_status()
         end
     end
     -- Everything is okay.
-    return ' '
+    return ''
 end
 
 

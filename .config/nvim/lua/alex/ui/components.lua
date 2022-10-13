@@ -112,7 +112,7 @@ vim.cmd([[
 ---------------
 
 -- require 'scrollbar'.setup {
---     show_in_active_only = true,
+    -- show_in_active_only = true,
 --     set_highlights = false,
 --     marks = {
 --         Search = { color = 'Orange' },

@@ -12,6 +12,7 @@ const Params = imports.misc.params;
 const Main = imports.ui.main;
 const AppDisplay = imports.ui.appDisplay;
 const Dash = imports.ui.dash;
+const Environment = imports.ui.environment;
 const IconGrid = imports.ui.iconGrid;
 const Overview = imports.ui.overview;
 const OverviewControls = imports.ui.overviewControls;
@@ -27,6 +28,7 @@ const WorkspaceThumbnail = imports.ui.workspaceThumbnail;
 
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
+const AppSpread = Me.imports.appSpread;
 const Utils = Me.imports.utils;
 const Intellihide = Me.imports.intellihide;
 const Theming = Me.imports.theming;
@@ -37,6 +39,7 @@ const FileManager1API = Me.imports.fileManager1API;
 const DesktopIconsIntegration = Me.imports.desktopIconsIntegration;
 
 const DOCK_DWELL_CHECK_INTERVAL = 100;
+const ICON_ANIMATOR_DURATION = 3000;
 
 var State = {
     HIDDEN:  0,
@@ -206,14 +209,13 @@ var DockedDash = GObject.registerClass({
 }, class DashToDock extends St.Bin {
     _init(params) {
         this._position = Utils.getPosition();
-        const positionStyleClass = ['top', 'right', 'bottom', 'left'];
 
         // This is the centering actor
         super._init({
             ...params,
             name: 'dashtodockContainer',
             reactive: false,
-            style_class: positionStyleClass[this._position],
+            style_class: Theming.PositionStyleClass[this._position],
         });
 
         if (this.monitorIndex === undefined) {
@@ -1614,6 +1616,7 @@ var DockManager = class DashToDock_DockManager {
         this._desktopIconsUsableArea = new DesktopIconsIntegration.DesktopIconsUsableAreaClass();
         this._oldDash = Main.overview.isDummy ? null : Main.overview.dash;
         this._discreteGpuAvailable = AppDisplay.discreteGpuAvailable;
+        this._appSpread = new AppSpread.AppSpread();
 
         if (this._discreteGpuAvailable === undefined) {
             const updateDiscreteGpuAvailable = () => {
@@ -1698,6 +1701,10 @@ var DockManager = class DashToDock_DockManager {
 
     get discreteGpuAvailable() {
         return AppDisplay.discreteGpuAvailable || this._discreteGpuAvailable;
+    }
+
+    get appSpread() {
+        return this._appSpread;
     }
 
     getDockByMonitor(monitorIndex) {
@@ -2191,9 +2198,9 @@ var DockManager = class DashToDock_DockManager {
         ], [
             ControlsManagerLayout.prototype,
             '_getAppDisplayBoxForState',
-            function (state, ...args) {
+            function (originalFunction, state, ...args) {
                 const { spacing } = this;
-                const box = workspaceBoxOriginFixer.call(this, state, ...args);
+                const box = workspaceBoxOriginFixer.call(this, originalFunction, state, ...args);
                 return maybeAdjustBoxToDock(state, box, spacing);
             }
         ]);
@@ -2408,6 +2415,7 @@ var DockManager = class DashToDock_DockManager {
             this._fm1Client.destroy();
             this._fm1Client = null;
         }
+        this._appSpread.destroy();
         this._trash?.destroy();
         this._trash = null;
         Locations.unWrapFileManagerApp();
@@ -2469,10 +2477,14 @@ var IconAnimator = class DashToDock_IconAnimator {
             dance: [],
         };
         this._timeline = new Clutter.Timeline({
-            duration: 3000,
+            duration: Environment.adjustAnimationTime(ICON_ANIMATOR_DURATION),
             repeat_count: -1,
             actor
         });
+
+        this._updateSettings();
+        this._settingsChangedId = St.Settings.get().connect('notify',
+            () => this._updateSettings());
 
         this._timeline.connect('new-frame', () => {
             const progress = this._timeline.get_progress();
@@ -2484,7 +2496,12 @@ var IconAnimator = class DashToDock_IconAnimator {
         });
     }
 
+    _updateSettings() {
+        this._timeline.set_duration(Environment.adjustAnimationTime(ICON_ANIMATOR_DURATION));
+    }
+
     destroy() {
+        St.Settings.get().disconnect(this._settingsChangedId);
         this._timeline.stop();
         this._timeline = null;
         for (const name in this._animations) {

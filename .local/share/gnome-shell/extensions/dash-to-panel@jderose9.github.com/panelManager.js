@@ -67,13 +67,15 @@ var PanelManager = class {
     enable(reset) {
         let dtpPrimaryIndex = Me.settings.get_int('primary-monitor');
 
+        this.allPanels = [];
         this.dtpPrimaryMonitor = Main.layoutManager.monitors[dtpPrimaryIndex] || Main.layoutManager.primaryMonitor;
         this.proximityManager = new Proximity.ProximityManager();
 
-        this.primaryPanel = this._createPanel(this.dtpPrimaryMonitor, Me.settings.get_boolean('stockgs-keep-top-panel'));
-        this.allPanels = [ this.primaryPanel ];
-        
-        this.overview.enable(this.primaryPanel);
+        if (this.dtpPrimaryMonitor) {
+            this.primaryPanel = this._createPanel(this.dtpPrimaryMonitor, Me.settings.get_boolean('stockgs-keep-top-panel'));
+            this.allPanels.push(this.primaryPanel);
+            this.overview.enable(this.primaryPanel);
+        }
 
         if (Me.settings.get_boolean('multi-monitors')) {
             Main.layoutManager.monitors.filter(m => m != this.dtpPrimaryMonitor).forEach(m => {
@@ -140,6 +142,9 @@ var PanelManager = class {
         this._oldUpdateWorkspacesViews = Main.overview._overview._controls._workspacesDisplay._updateWorkspacesViews;
         Main.overview._overview._controls._workspacesDisplay._updateWorkspacesViews = this._newUpdateWorkspacesViews.bind(Main.overview._overview._controls._workspacesDisplay);
 
+        this._oldSetPrimaryWorkspaceVisible = Main.overview._overview._controls._workspacesDisplay.setPrimaryWorkspaceVisible
+        Main.overview._overview._controls._workspacesDisplay.setPrimaryWorkspaceVisible = this._newSetPrimaryWorkspaceVisible.bind(Main.overview._overview._controls._workspacesDisplay);
+
         LookingGlass.LookingGlass.prototype._oldResize = LookingGlass.LookingGlass.prototype._resize;
         LookingGlass.LookingGlass.prototype._resize = _newLookingGlassResize;
 
@@ -188,7 +193,7 @@ var PanelManager = class {
                 'monitors-changed', 
                 () => {
                     if (Main.layoutManager.primaryMonitor) {
-                        this._saveMonitors(true);
+                        this._saveMonitors();
                         this._reset();
                     }
                 }
@@ -274,6 +279,7 @@ var PanelManager = class {
         Main.layoutManager._updatePanelBarrier();
 
         Main.overview._overview._controls._workspacesDisplay._updateWorkspacesViews = this._oldUpdateWorkspacesViews;
+        Main.overview._overview._controls._workspacesDisplay.setPrimaryWorkspaceVisible = this._oldSetPrimaryWorkspaceVisible;
 
         LookingGlass.LookingGlass.prototype._resize = LookingGlass.LookingGlass.prototype._oldResize;
         delete LookingGlass.LookingGlass.prototype._oldResize;
@@ -317,6 +323,18 @@ var PanelManager = class {
         }
     }
 
+    _newSetPrimaryWorkspaceVisible(visible) {
+        if (this._primaryVisible === visible)
+            return;
+
+        this._primaryVisible = visible;
+
+        const primaryIndex = Main.overview._overview._controls._workspacesDisplay._primaryIndex;
+        const primaryWorkspace = this._workspacesViews[primaryIndex];
+        if (primaryWorkspace)
+            primaryWorkspace.visible = visible;
+    }
+
     _newUpdateWorkspacesViews() {
         for (let i = 0; i < this._workspacesViews.length; i++)
             this._workspacesViews[i].destroy();
@@ -350,35 +368,31 @@ var PanelManager = class {
         }
     }
 
-    _saveMonitors(savePrimaryChange) {
+    _saveMonitors() {
         //Mutter meta_monitor_manager_get_primary_monitor (global.display.get_primary_monitor()) doesn't return the same
         //monitor as GDK gdk_screen_get_primary_monitor (imports.gi.Gdk.Screen.get_default().get_primary_monitor()).
         //Since the Mutter function is what's used in gnome-shell and we can't access it from the settings dialog, store 
         //the monitors information in a setting so we can use the same monitor indexes as the ones in gnome-shell
         let keyMonitors = 'available-monitors';
+        let keyPrimary = 'primary-monitor';
         let primaryIndex = Main.layoutManager.primaryIndex;
         let newMonitors = [primaryIndex];
+        let savedMonitors = Me.settings.get_value(keyMonitors).deep_unpack();
+        let dtpPrimaryIndex = Me.settings.get_int(keyPrimary);
+        let newDtpPrimaryIndex = primaryIndex;
 
         Main.layoutManager.monitors.filter(m => m.index != primaryIndex).forEach(m => newMonitors.push(m.index));
-        
-        if (savePrimaryChange) {
-            let keyPrimary = 'primary-monitor';
-            let savedMonitors = Me.settings.get_value(keyMonitors).deep_unpack();
-            let dtpPrimaryIndex = Me.settings.get_int(keyPrimary);
-            let newDtpPrimaryIndex = primaryIndex;
 
-            if (savedMonitors[0] != dtpPrimaryIndex) {
-                // dash to panel primary wasn't the gnome-shell primary (first index of available-monitors)
-                let savedIndex = savedMonitors.indexOf(dtpPrimaryIndex)
+        if (savedMonitors[0] != dtpPrimaryIndex) {
+            // dash to panel primary wasn't the gnome-shell primary (first index of available-monitors)
+            let savedIndex = savedMonitors.indexOf(dtpPrimaryIndex)
 
-                // default to primary if it was set to a monitor that is no longer available
-                newDtpPrimaryIndex = newMonitors[savedIndex];
-                newDtpPrimaryIndex = newDtpPrimaryIndex == null ? primaryIndex : newDtpPrimaryIndex;
-            }
-            
-            Me.settings.set_int(keyPrimary, newDtpPrimaryIndex);
+            // default to primary if it was set to a monitor that is no longer available
+            newDtpPrimaryIndex = newMonitors[savedIndex];
+            newDtpPrimaryIndex = newDtpPrimaryIndex == null ? primaryIndex : newDtpPrimaryIndex;
         }
-
+        
+        Me.settings.set_int(keyPrimary, newDtpPrimaryIndex);
         Me.settings.set_value(keyMonitors, new GLib.Variant('ai', newMonitors));
     }
 

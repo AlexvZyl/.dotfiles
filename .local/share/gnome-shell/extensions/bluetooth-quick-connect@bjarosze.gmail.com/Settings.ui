@@ -48,7 +48,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
                       <object class="GtkLabel">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
-                        <property name="label" translatable="yes">Checking idle inteval (seconds)</property>
+                        <property name="label" translatable="yes">Checking idle interval (seconds)</property>
                       </object>
                     </child>
                     <child>

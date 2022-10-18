@@ -6,6 +6,23 @@ We go to the next version after each release on [GNOME Shell Extensions website]
 
 ## [Unreleased]
 
+## [22.0.0 Millet] - 2022-09-10
+
+### Fixed
+
+- Dash app button visibility height.
+- Looking glass error after unlock.
+
+### Added
+
+- App menu label visibility.
+- GNOME Shell 43 support.
+- Quick settings menu visibility.
+
+### Removed
+
+- Aggregate menu for GNOME Shell 43 and higher.
+
 ## [21.0.0 Reynolds] - 2022-08-06
 
 ### Changed

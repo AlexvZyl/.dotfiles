@@ -249,6 +249,7 @@ var API = class
      *  no-panel-arrow
      *  no-panel-notification-icon
      *  no-app-menu-icon
+     *  no-app-menu-label
      *  no-show-apps-button
      *  activities-button-icon
      *  activities-button-icon-monochrome
@@ -289,6 +290,7 @@ var API = class
             'no-panel-arrow',
             'no-panel-notification-icon',
             'no-app-menu-icon',
+            'no-app-menu-label',
             'no-show-apps-button',
             'activities-button-icon',
             'activities-button-icon-monochrome',
@@ -1442,12 +1444,44 @@ var API = class
     }
 
     /**
+     * show quick settings menu
+     *
+     * @returns {void}
+     */
+    quickSettingsMenuShow()
+    {
+        if (this._shellVersion < 43) {
+            return;
+        }
+
+        this._main.panel.statusArea['quickSettings'].container.show();
+    }
+
+    /**
+     * hide quick settings menu
+     *
+     * @returns {void}
+     */
+    quickSettingsMenuHide()
+    {
+        if (this._shellVersion < 43) {
+            return;
+        }
+
+        this._main.panel.statusArea['quickSettings'].container.hide();
+    }
+
+    /**
      * show aggregate menu
      *
      * @returns {void}
      */
     aggregateMenuShow()
     {
+        if (this._shellVersion >= 43) {
+            return;
+        }
+
         this._main.panel.statusArea['aggregateMenu'].container.show();
     }
 
@@ -1458,6 +1492,10 @@ var API = class
      */
     aggregateMenuHide()
     {
+        if (this._shellVersion >= 43) {
+            return;
+        }
+
         this._main.panel.statusArea['aggregateMenu'].container.hide();
     }
 
@@ -1672,8 +1710,8 @@ var API = class
     _fixLookingGlassPosition()
     {
         let lookingGlassProto = this._lookingGlass.LookingGlass.prototype;
-        
-        if (!this._originals['lookingGlassResize']) {
+
+        if (this._originals['lookingGlassResize'] === undefined) {
             this._originals['lookingGlassResize'] = lookingGlassProto._resize;
         }
 
@@ -1689,18 +1727,18 @@ var API = class
             return;
         }
 
-        const Main = this._main;
-
         if (lookingGlassProto._oldResize === undefined) {
             lookingGlassProto._oldResize = this._originals['lookingGlassResize'];
-        }
 
-        lookingGlassProto._resize = function () {
-            let panelHeight = Main.layoutManager.panelBox.height;
-            this._oldResize();
-            this._targetY -= panelHeight;
-            this._hiddenY -= panelHeight;
-        };
+            const Main = this._main;
+
+            lookingGlassProto._resize = function () {
+                let panelHeight = Main.layoutManager.panelBox.height;
+                this._oldResize();
+                this._targetY -= panelHeight;
+                this._hiddenY -= panelHeight;
+            };
+        }
     }
 
     /**
@@ -1770,6 +1808,26 @@ var API = class
     {
         this.UIStyleClassAdd(this._getAPIClassname('no-app-menu-icon'));
     }
+
+    /**
+     * disable app menu label
+     *
+     * @returns {void}
+     */
+     appMenuLabelEnable()
+     {
+         this.UIStyleClassRemove(this._getAPIClassname('no-app-menu-label'));
+     }
+ 
+     /**
+      * disable app menu label
+      *
+      * @returns {void}
+      */
+     appMenuLabelDisable()
+     {
+         this.UIStyleClassAdd(this._getAPIClassname('no-app-menu-label'));
+     }
 
     /**
      * set the clock menu position
@@ -2390,11 +2448,13 @@ var API = class
     }
 
     /**
-     * always show the workspace switcher
+     * set the workspace switcher to always/never show
+     *
+     * @param {boolean} show true for always show, false for never show
      *
      * @returns {void}
      */
-    workspaceSwitcherShouldShowSetAlways()
+    workspaceSwitcherShouldShow(shouldShow = true)
     {
         if (this._shellVersion < 40) {
             return;
@@ -2407,10 +2467,10 @@ var API = class
         }
 
         ThumbnailsBoxProto._updateShouldShow = function () {
-            if (this._shouldShow === true) {
+            if (this._shouldShow === shouldShow) {
                 return;
             }
-            this._shouldShow = true;
+            this._shouldShow = shouldShow;
             this.notify('should-show');
         };
     }

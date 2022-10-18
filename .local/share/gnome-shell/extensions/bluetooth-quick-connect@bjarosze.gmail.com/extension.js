@@ -31,11 +31,24 @@ const BatteryProvider = Me.imports.power.UPowerBatteryProvider;
 
 
 class BluetoothQuickConnect {
-    constructor(bluetooth, settings) {
+    constructor(quickSettings, bluetooth, settings) {
         this._logger = new Utils.Logger(settings);
         this._logger.info('Initializing extension');
-        this._menu = bluetooth._item.menu;
-        this._proxy = bluetooth._proxy;
+        if (quickSettings) {
+            let btIndicator = quickSettings._bluetooth;
+            let oldItem = btIndicator.quickSettingsItems[0];
+            let newItem = new Me.imports.quickSettings.BluetoothToggleMenu(oldItem);
+
+            btIndicator.quickSettingsItems = [newItem];
+            quickSettings.menu.addItem(newItem);
+            quickSettings.menu._grid.set_child_below_sibling(newItem, oldItem);
+            quickSettings.menu._grid.remove_child(oldItem);
+            this._proxy = oldItem._client._proxy;
+            this._menu = newItem.itemsSection;
+        } else {
+            this._menu = bluetooth._item.menu;
+            this._proxy = bluetooth._proxy;
+        }
         this._controller = new Bluetooth.BluetoothController();
         this._settings = settings;
         this._battery_provider = new BatteryProvider(this._logger);
@@ -218,10 +231,20 @@ let bluetoothQuickConnect = null;
 function init() {}
 
 function enable() {
-    bluetoothQuickConnect = new BluetoothQuickConnect(
-        Main.panel.statusArea.aggregateMenu._bluetooth,
-        new Settings()
-    );
+    if (Main.panel.statusArea.quickSettings) {
+        bluetoothQuickConnect = new BluetoothQuickConnect(
+            Main.panel.statusArea.quickSettings,
+            null,
+            new Settings()
+        );
+    } else {
+        bluetoothQuickConnect = new BluetoothQuickConnect(
+            null,
+            Main.panel.statusArea.aggregateMenu._bluetooth,
+            new Settings()
+        );
+    }
+
     bluetoothQuickConnect.test();
     bluetoothQuickConnect.enable();
 }

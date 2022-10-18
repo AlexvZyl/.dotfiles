@@ -19,10 +19,7 @@ https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/
 ```
 git clone https://github.com/bjarosze/gnome-bluetooth-quick-connect
 cd gnome-bluetooth-quick-connect
-make
-rm -rf ~/.local/share/gnome-shell/extensions/bluetooth-quick-connect@bjarosze.gmail.com
-mkdir -p ~/.local/share/gnome-shell/extensions/bluetooth-quick-connect@bjarosze.gmail.com
-cp -r * ~/.local/share/gnome-shell/extensions/bluetooth-quick-connect@bjarosze.gmail.com
+make install
 ```
 
 ## Battery level

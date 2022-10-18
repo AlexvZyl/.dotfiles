@@ -281,9 +281,11 @@
 .just-perfection-api-gnome40.just-perfection-api-no-workspace .workspace-thumbnails,
 .just-perfection-api-gnome41.just-perfection-api-no-workspace .workspace-thumbnails,
 .just-perfection-api-gnome42.just-perfection-api-no-workspace .workspace-thumbnails,
+.just-perfection-api-gnome43.just-perfection-api-no-workspace .workspace-thumbnails,
 .just-perfection-api-gnome40.just-perfection-api-no-workspace .workspace-thumbnail-indicator,
 .just-perfection-api-gnome41.just-perfection-api-no-workspace .workspace-thumbnail-indicator,
-.just-perfection-api-gnome42.just-perfection-api-no-workspace .workspace-thumbnail-indicator
+.just-perfection-api-gnome42.just-perfection-api-no-workspace .workspace-thumbnail-indicator,
+.just-perfection-api-gnome43.just-perfection-api-no-workspace .workspace-thumbnail-indicator
 {
     /* we use scale=0 which is giving us the same width and height as 0 */
     /* spacing: 0; */
@@ -302,7 +304,8 @@
 
 .just-perfection-api-gnome40.just-perfection-api-no-panel .search-entry,
 .just-perfection-api-gnome41.just-perfection-api-no-panel .search-entry,
-.just-perfection-api-gnome42.just-perfection-api-no-panel .search-entry
+.just-perfection-api-gnome42.just-perfection-api-no-panel .search-entry,
+.just-perfection-api-gnome43.just-perfection-api-no-panel .search-entry
 {
     margin-top: 30px;
 }
@@ -445,9 +448,14 @@
 .just-perfection-api-no-show-apps-button .show-apps StIcon
 {
     width: 0;
-    height: 0;
     margin: 0;
     spacing: 0;
+}
+
+.just-perfection-gnome3.just-perfection-api-no-show-apps-button .show-apps,
+.just-perfection-gnome3.just-perfection-api-no-show-apps-button .show-apps StIcon
+{
+    height: 0;
 }
 
 .just-perfection-api-activities-button-icon,
@@ -790,7 +798,8 @@
 .just-perfection-api-osd-position-center .osd-window { margin: 4em 3.5em; }
 .just-perfection-api-osd-position-bottom .osd-window { margin: 4em 3em; }
 
-.just-perfection-api-no-dash-separator .dash-separator
+.just-perfection-api-no-dash-separator .dash-separator,
+.just-perfection-api-no-app-menu-label .panel-status-menu-box StLabel
 {
     width: 0;
     height: 0;
@@ -798,4 +807,3 @@
     padding: 0;
     margin: 0;
 }
-

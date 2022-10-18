@@ -62,6 +62,19 @@
         </child>
 
         <child>
+          <object class="AdwActionRow" id="app_menu_label_row">
+            <property name="title" translatable="yes">App Menu Label</property>
+            <property name="subtitle" translatable="yes">The text label in app menu button</property>
+            <property name="activatable-widget">app_menu_label_switch</property>
+            <child>
+              <object class="GtkSwitch" id="app_menu_label_switch">
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
           <object class="AdwActionRow" id="clock_menu_row">
             <property name="title" translatable="yes">Clock Menu</property>
             <property name="subtitle" translatable="yes">Also known as date menu shows date and time in panel</property>
@@ -107,6 +120,19 @@
             <property name="activatable-widget">aggregate_menu_switch</property>
             <child>
               <object class="GtkSwitch" id="aggregate_menu_switch">
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+          <object class="AdwActionRow" id="quick_settings_row">
+            <property name="title" translatable="yes">Quick Settings</property>
+            <property name="subtitle" translatable="yes">Quick settings menu in panel</property>
+            <property name="activatable-widget">quick_settings_switch</property>
+            <child>
+              <object class="GtkSwitch" id="quick_settings_switch">
                 <property name="valign">center</property>
               </object>
             </child>

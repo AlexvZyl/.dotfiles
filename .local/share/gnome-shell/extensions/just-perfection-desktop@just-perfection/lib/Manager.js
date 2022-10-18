@@ -102,6 +102,10 @@ var Manager = class
             this._applyAggregateMenu(false);
         });
 
+        this._settings.connect('changed::quick-settings', () => {
+            this._applyQuickSettings(false);
+        });
+
         this._settings.connect('changed::panel-corner-size', () => {
             this._applyPanelCornerSize(false);
         });
@@ -136,6 +140,10 @@ var Manager = class
 
         this._settings.connect('changed::app-menu-icon', () => {
             this._applyAppMenuIcon(false);
+        });
+
+        this._settings.connect('changed::app-menu-label', () => {
+            this._applyAppMenuLabel(false);
         });
 
         this._settings.connect('changed::clock-menu-position', () => {
@@ -302,6 +310,7 @@ var Manager = class
         this._applyKeyboardLayout(false);
         this._applyAccessibilityMenu(false);
         this._applyAggregateMenu(false);
+        this._applyQuickSettings(false);
         this._applyPanelCornerSize(false);
         this._applyWindowPickerIcon(false);
         this._applyTypeToSearch(false);
@@ -311,6 +320,7 @@ var Manager = class
         this._applyPanelArrow(false);
         this._applyPanelNotificationIcon(false);
         this._applyAppMenuIcon(false);
+        this._applyAppMenuLabel(false);
         this._applyClockMenuPosition(false);
         this._applyShowAppsButton(false);
         this._applyAnimation(false);
@@ -367,6 +377,7 @@ var Manager = class
         this._applyKeyboardLayout(true);
         this._applyAccessibilityMenu(true);
         this._applyAggregateMenu(true);
+        this._applyQuickSettings(true);
         this._applyPanelCornerSize(true);
         this._applyWindowPickerIcon(true);
         this._applyTypeToSearch(true);
@@ -376,6 +387,7 @@ var Manager = class
         this._applyPanelArrow(true);
         this._applyPanelNotificationIcon(true);
         this._applyAppMenuIcon(true);
+        this._applyAppMenuLabel(true);
         this._applyClockMenuPosition(true);
         this._applyShowAppsButton(true);
         this._applyAnimation(true);
@@ -704,6 +716,22 @@ var Manager = class
     }
 
     /**
+     * apply quick settings
+     *
+     * @param {boolean} forceOriginal force original shell setting
+     *
+     * @returns {void}
+     */
+    _applyQuickSettings(forceOriginal)
+    {
+        if (forceOriginal || this._settings.get_boolean('quick-settings')) {
+            this._api.quickSettingsMenuShow();
+        } else {
+            this._api.quickSettingsMenuHide();
+        }
+    }
+
+    /**
      * apply panel corner size settings
      *
      * @param {boolean} forceOriginal force original shell setting
@@ -832,6 +860,22 @@ var Manager = class
             this._api.appMenuIconEnable();
         } else {
             this._api.appMenuIconDisable();
+        }
+    }
+
+    /**
+     * apply app menu label settings
+     *
+     * @param {boolean} forceOriginal force original shell setting
+     *
+     * @returns {void}
+     */
+    _applyAppMenuLabel(forceOriginal)
+    {
+        if (forceOriginal || this._settings.get_boolean('app-menu-label')) {
+            this._api.appMenuLabelEnable();
+        } else {
+            this._api.appMenuLabelDisable();
         }
     }
 
@@ -1031,7 +1075,7 @@ var Manager = class
         if (forceOriginal || !shouldShow) {
             this._api.workspaceSwitcherShouldShowSetDefault();
         } else {
-            this._api.workspaceSwitcherShouldShowSetAlways();
+            this._api.workspaceSwitcherShouldShow(true);
         }
     }
 

@@ -24,10 +24,12 @@ return require 'packer'.startup( function(use)
     use 'kyazdani42/nvim-web-devicons'
     use 'akinsho/bufferline.nvim'
     use 'mhinz/vim-startify'
-    use 'b0o/incline.nvim'
     use 'Pocco81/true-zen.nvim'
     use 'folke/lsp-colors.nvim'
-    use 'folke/trouble.nvim'
+    use {
+        "folke/trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
+    }
 
     -- Images.
     use 'edluffy/hologram.nvim'
@@ -67,7 +69,7 @@ return require 'packer'.startup( function(use)
     use 'sudormrfbin/cheatsheet.nvim'
 
     -- Filesystem & Searching.
-    use 'kyazdani42/nvim-tree.lua'
+    use 'nvim-tree/nvim-tree.lua'
     use 'BurntSushi/ripgrep'
     use 'brooth/far.vim'
 
@@ -88,9 +90,7 @@ return require 'packer'.startup( function(use)
     use 'hrsh7th/nvim-cmp'
 
     -- Language specific.
-    use 'prabirshrestha/vim-lsp'
     use 'JuliaEditorSupport/julia-vim'
-    use 'sumneko/lua-language-server'
 
     -- Themes.
     use 'sainnhe/gruvbox-material' -- My fav.

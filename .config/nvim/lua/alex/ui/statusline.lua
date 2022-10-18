@@ -30,6 +30,11 @@ local function get_current_filetype()
     return vim.api.nvim_buf_get_option(0, 'filetype')
 end
 
+-- Get the current buffer's type.
+local function get_current_buftype()
+    return vim.api.nvim_buf_get_option(0, 'buftype')
+end
+
 -- Get the buffer's filename.
 local function get_current_filename()
     local bufname = vim.api.nvim_buf_get_name(0)
@@ -88,7 +93,8 @@ function M:get_current_filename_with_icon()
 
     -- Add readonly icon.
     local readonly = vim.api.nvim_buf_get_option(0, 'readonly')
-    if readonly then
+    local nofile = get_current_buftype() == 'nofile'
+    if readonly or nofile then
         f_name = f_name .. ' '
     end
 
@@ -185,6 +191,11 @@ local function get_git_compare()
     if type(result) ~= 'string' then return '' end
     local ok, ahead, behind = pcall(string.match, result, "(%d+)%s*(%d+)")
     if not ok then return '' end
+
+    -- No file, so no git.
+    if get_current_buftype() == 'nofile' then
+        return ''
+    end
 
     -- Format for lualine.
     return ' '.. behind .. '  ' .. ahead

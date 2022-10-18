@@ -73,3 +73,7 @@ vim.opt.fillchars = {
 
 -- Set space as leader.
 vim.g.mapleader = ' '
+
+-- Enable winbar.
+-- vim.cmd 'set winbar=%f'
+-- vim.cmd 'set laststatus=3'

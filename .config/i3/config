@@ -56,7 +56,7 @@ hide_edge_borders both
 for_window [class="^.*"] border pixel 2
 
 # Set inner/outer gaps
-gaps inner 8
+gaps inner 9
 gaps outer 0
 
 # show window title bars (not officially supported with i3gaps)

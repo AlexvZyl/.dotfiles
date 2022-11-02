@@ -25,7 +25,7 @@ require 'nvim-treesitter.configs'.setup {
         -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
         -- the name of the parser)
         -- list of language that will be disabled
-        -- disable = { "" },
+        disable = { "latex", "tex" },
 
         -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
         -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).

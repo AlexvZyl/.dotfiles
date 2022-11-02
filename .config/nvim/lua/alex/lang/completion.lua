@@ -99,6 +99,10 @@ cmp.setup({
             name = 'luasnip',
             entry_filter = filter_text
         },
+        -- For vimtex.
+        {
+            name = 'omni'
+        }
     },
     formatting = {
         format = function(_, vim_item)

@@ -48,6 +48,13 @@ lsp_config.rust_analyzer.setup {
     flags = lsp_flags
 }
 
+-- LaTeX.
+lsp_config.ltex.setup {
+    on_attach = on_attach,
+    flags = lsp_flags,
+    cmd = { "texlab" }
+}
+
 -- Diagnostics signs colors and character.
 vim.cmd([[
     sign define DiagnosticSignError text= texthl= linehl= numhl=DiagnosticSignError 

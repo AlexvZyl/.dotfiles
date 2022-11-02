@@ -14,3 +14,6 @@ sudo pacman -S pyright
 
 # Rust.
 sudo pacman -S rust-analyzer
+
+# LaTeX.
+sudo pacman -S texlab

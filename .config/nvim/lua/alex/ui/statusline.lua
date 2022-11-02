@@ -132,14 +132,13 @@ local function get_native_lsp_status()
     for _, client in ipairs(clients) do
         if client.name == current_lsp then
             if next(client.messages.status) ~= nil then
-                return client.messages.status
+                return '( ' .. client.messages.status .. ' )'
             end
         end
     end
     -- Everything is okay.
-    return ''
+    return ''
 end
-
 
 -- Get the lsp of the current buffer, when using coc.
 local function get_coc_lsp()
@@ -170,6 +169,15 @@ local function get_coc_lsp_status()
                 return lsp['state']
             end
         end
+    end
+    return ''
+end
+
+-- Get the status of the compiler, if applicable.
+local function get_compiler_status()
+    local filetype = get_current_filetype()
+    if filetype == 'tex' then
+        return ''
     end
     return ''
 end
@@ -273,6 +281,18 @@ require 'lualine'.setup {
         },
         lualine_y = {
             {
+               get_compiler_status,
+                icon = {
+                    ' ,',
+                    align = 'left',
+                    color = {
+                        fg = get_color('Orange', 'fg'),
+                        gui = 'bold'
+                    }
+                },
+                separator = ''
+            },
+            {
                 get_native_lsp,
                 icon = {
                     '  ',
@@ -283,17 +303,7 @@ require 'lualine'.setup {
                     }
                 }
             },
-            {
-                get_native_lsp_status,
-                icon = {
-                    ' ',
-                    align = 'left',
-                    color = {
-                        fg = get_color('Orange', 'fg'),
-                        gui = 'bold'
-                    }
-                }
-            }
+            get_native_lsp_status,
         },
         lualine_z = {
             {

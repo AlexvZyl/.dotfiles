@@ -90,7 +90,11 @@ return require 'packer'.startup( function(use)
     use 'hrsh7th/nvim-cmp'
 
     -- Language specific.
+    ------
+    -- Julia.
     use 'JuliaEditorSupport/julia-vim'
+    -- LaTeX.
+    use 'lervag/vimtex'
 
     -- Themes.
     use 'sainnhe/gruvbox-material' -- My fav.

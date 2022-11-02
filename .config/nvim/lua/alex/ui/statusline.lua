@@ -93,8 +93,9 @@ function M:get_current_filename_with_icon()
 
     -- Add readonly icon.
     local readonly = vim.api.nvim_buf_get_option(0, 'readonly')
+    local modifiable = vim.api.nvim_buf_get_option(0, 'modifiable')
     local nofile = get_current_buftype() == 'nofile'
-    if readonly or nofile then
+    if readonly or nofile or not modifiable then
         f_name = f_name .. ' '
     end
 

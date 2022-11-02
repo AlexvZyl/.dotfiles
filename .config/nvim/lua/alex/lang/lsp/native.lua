@@ -49,10 +49,9 @@ lsp_config.rust_analyzer.setup {
 }
 
 -- LaTeX.
-lsp_config.ltex.setup {
+lsp_config.texlab.setup {
     on_attach = on_attach,
     flags = lsp_flags,
-    cmd = { "texlab" }
 }
 
 -- Diagnostics signs colors and character.

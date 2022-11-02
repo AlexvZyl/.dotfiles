@@ -77,3 +77,13 @@ vim.g.mapleader = ' '
 -- Enable winbar.
 -- vim.cmd 'set winbar=%f'
 -- vim.cmd 'set laststatus=3'
+
+-- Enable spell checking.
+vim.cmd ([[
+autocmd FileType tex setlocal spell
+autocmd FileType tex setlocal spelllang=en
+" autocmd BufRead,BufNewFile *.tex setlocal spell
+]])
+
+-- Change spell checking hl.
+vim.cmd 'hi SpellBad gui=underline'

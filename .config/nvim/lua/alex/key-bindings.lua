@@ -43,7 +43,7 @@ map_key(exclude_t, '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
 map_key(all_modes, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
 
 -- Lazygit.
-map_key(all_modes, '<Leader>g', '<Cmd>LazyGit<CR>', default_settings)
+map_key(exclude_i, '<Leader>g', '<Cmd>LazyGit<CR>', default_settings)
 
 -- Change lazygit repo.
 map_key(all_modes, '<C-r>', '<Cmd>lua require("telescope").extensions.lazygit.lazygit()<CR>', default_settings)
@@ -62,7 +62,10 @@ map_key(exclude_t, '<C-/>', '<Cmd>Commentary<CR>', default_settings)
 
 -- Functions that only saves buffers that has files.
 function Save_file()
-    if vim.api.nvim_buf_get_option(0, 'buftype') ~= 'nofile' then
+    -- local readonly = vim.api.nvim_buf_get_option(0, 'readonly')
+    local modifiable = vim.api.nvim_buf_get_option(0, 'modifiable')
+    -- local nofile = vim.api.nvim_buf_get_option(0, 'buftype') == 'nofile'
+    if modifiable then
         vim.cmd 'w!'
     end
 end

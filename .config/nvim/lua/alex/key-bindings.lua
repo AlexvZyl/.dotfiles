@@ -43,7 +43,7 @@ map_key(exclude_t, '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
 map_key(all_modes, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
 
 -- Lazygit.
-map_key(all_modes, '<C-g>', '<Cmd>LazyGit<CR>', default_settings)
+map_key(all_modes, '<Leader>g', '<Cmd>LazyGit<CR>', default_settings)
 
 -- Change lazygit repo.
 map_key(all_modes, '<C-r>', '<Cmd>lua require("telescope").extensions.lazygit.lazygit()<CR>', default_settings)
@@ -161,7 +161,7 @@ local btop = terminal:new({ cmd = "btop", hidden = true, direction = "float" })
 function _btop_toggle()
   btop:toggle()
 end
-map_key(n_t, "<C-B>", "<Cmd>lua _btop_toggle()<CR>", {noremap = true, silent = true})
+map_key(n_t, "<Leader>b", "<Cmd>lua _btop_toggle()<CR>", {noremap = true, silent = true})
 
 -- Fish.
 

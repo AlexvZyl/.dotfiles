@@ -886,10 +886,9 @@ shell:
   #   - Debug
   #   - Trace
   #log_level: Warn
-
   # Print all received window events.
-  #print_events: false
-
+  # print_events: false
+  
 # Colors (Gruvbox dark)
 colors:
   # Default colors

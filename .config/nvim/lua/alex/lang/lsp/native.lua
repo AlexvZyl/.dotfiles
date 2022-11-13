@@ -18,6 +18,12 @@ local lsp_flags = {
 -- Use lspconfig to setup.
 local lsp_config = require 'lspconfig'
 
+-- C++.
+lsp_config.ccls.setup {
+    on_attach = on_attach,
+    flags = lsp_flags
+}
+
 -- Lua.
 lsp_config.sumneko_lua.setup {
     on_attach = on_attach,

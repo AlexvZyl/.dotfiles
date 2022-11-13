@@ -17,3 +17,6 @@ sudo pacman -S rust-analyzer
 
 # LaTeX.
 sudo pacman -S texlab
+
+# C++.
+sudo pacman -S ccls

@@ -43,7 +43,7 @@ map_key(exclude_t, '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
 map_key(all_modes, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
 
 -- Lazygit.
-map_key(exclude_i, '<Leader>g', '<Cmd>LazyGit<CR>', default_settings)
+map_key(n, '<Leader>g', '<Cmd>LazyGit<CR>', default_settings)
 
 -- Change lazygit repo.
 map_key(all_modes, '<C-r>', '<Cmd>lua require("telescope").extensions.lazygit.lazygit()<CR>', default_settings)
@@ -164,7 +164,7 @@ local btop = terminal:new({ cmd = "btop", hidden = true, direction = "float" })
 function _btop_toggle()
   btop:toggle()
 end
-map_key(n_t, "<Leader>b", "<Cmd>lua _btop_toggle()<CR>", {noremap = true, silent = true})
+map_key(n, "<Leader>b", "<Cmd>lua _btop_toggle()<CR>", {noremap = true, silent = true})
 
 -- Fish.
 
@@ -173,7 +173,13 @@ function _fish_toggle()
   fish:toggle()
 end
 map_key(all_modes, "<F1>", "<Cmd>lua _fish_toggle()<CR>", default_settings)
-map_key(exclude_i, "<Leader>t", "<Cmd>lua _fish_toggle()<CR>", default_settings)
+map_key(n, "<Leader>t", "<Cmd>lua _fish_toggle()<CR>", default_settings)
+
+------------
+-- Vimtex --
+------------
+
+map_key(n, "gl", "<Cmd>VimtexView<CR>", default_settings)
 
 -------------
 -- Trouble --

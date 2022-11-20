@@ -54,9 +54,7 @@ vim.cmd([[
     augroup custom_highlights_gruvboxmaterial
       autocmd!
       autocmd ColorScheme gruvbox-material 
-      \       hi NvimTreeNormal      guibg=#141617 |
-      \       hi NvimTreeEndOfBuffer guibg=#141617 |
-      \       hi TroubleNormal       guibg=#141617
+      \ hi TroubleNormal guibg=#141617
     augroup END
 ]])
 

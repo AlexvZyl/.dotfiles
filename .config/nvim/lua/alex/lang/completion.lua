@@ -55,6 +55,7 @@ cmp.setup({
     window = {
         completion = cmp.config.window.bordered {
             winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+            scrollbar = false
         },
         documentation = cmp.config.window.bordered {
             winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
@@ -115,7 +116,7 @@ cmp.setup({
 	            return lspkind.cmp_format()
 	        end
         end
-    }
+    },
 })
 
 -- Set configuration for specific filetype.

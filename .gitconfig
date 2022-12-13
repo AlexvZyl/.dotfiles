@@ -6,6 +6,11 @@
 	helper = !/usr/bin/gh auth git-credential
 [user]
 	email = alexandervanzyl@protonmail.com
-	name = Alex-vZyl
+	name = Alexander van Zyl
 [core]
     editor = neovide
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

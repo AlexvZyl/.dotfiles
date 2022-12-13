@@ -6,8 +6,8 @@ set fish_greeting ""
 set -g tide_left_prompt_items os context pwd git newline character 
 set -g tide_git_icon 
 set -g tide_status_icon_failure 
-# set -g tide_character_icon " "
 set -g tide_character_icon " "
+# set -g tide_character_icon " "
 # set -g tide_character_icon ﰳ
 # set -g tide_character_icon ﯀
 # set -g tide_character_icon  " ﬌ " 
@@ -31,3 +31,6 @@ alias lazygit-dotfiles='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # Use neovim as manpage pager.
 set -x MANPAGER 'nvim +Man!'
 set -x MANWIDTH 999
+
+# Replace ls with exa.
+alias ls='exa --grid --long --header --no-permissions --no-time --across'

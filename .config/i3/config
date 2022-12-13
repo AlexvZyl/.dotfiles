@@ -213,8 +213,10 @@ bindsym F11 exec ~/.config/i3/scripts/keyhint-2
 # bindsym $mod+F1 exec xed ~/.config/i3/keybindings
 
 # Backlight control
-bindsym XF86MonBrightnessUp exec  --no-startup-id brightnessctl set +5% && notify-send "Brightness - $(brightnessctl -get | cut -d '.' -f 1)%"
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%- && notify-send "Brightness - $(brightnessctl -get | cut -d '.' -f 1)%"
+# bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set +5% && notify-send "Brightness - $(echo 'scale=2; $(brightnessctl g)/$(brightnessctl m)*100' | bc)%"
+# bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%- && notify-send "Brightness - $(echo 'scale=2; $(brightnessctl g)/$(brightnessctl m)*100' | bc)%"
+bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set +5% 
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%- 
 
 # change focus
 bindsym $mod+h focus left

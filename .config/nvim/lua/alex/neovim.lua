@@ -87,3 +87,7 @@ autocmd FileType tex setlocal spelllang=en
 
 -- Change spell checking hl.
 vim.cmd 'hi SpellBad gui=underline'
+
+-- Set wrap for specific file types.
+vim.cmd 'autocmd FileType markdown setlocal wrap'
+vim.cmd 'autocmd FileType tex setlocal wrap'

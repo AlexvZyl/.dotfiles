@@ -23,14 +23,14 @@ return require 'packer'.startup( function(use)
     use 'nvim-lualine/lualine.nvim'
     use 'kyazdani42/nvim-web-devicons'
     use 'akinsho/bufferline.nvim'
-    use 'mhinz/vim-startify'
+    use 'mhinz/vim-startify' -- Consider using alpha-nvim.  Uses Lua, and is still updated.
     use 'Pocco81/true-zen.nvim'
     use 'folke/lsp-colors.nvim'
     use {
         "folke/trouble.nvim",
         requires = "kyazdani42/nvim-web-devicons",
     }
-    use {
+    use { -- This guy still gives some issues.
         "folke/noice.nvim",
         requires = {
             "MunifTanjim/nui.nvim",

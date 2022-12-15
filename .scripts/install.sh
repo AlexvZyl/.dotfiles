@@ -62,7 +62,8 @@ sudo systemctl disable display-manager && sudo systemctl enable sddm
 sudo touch /etc/sddm.conf
 sudo sh -c "echo '[Theme]' >> /etc/sddm.conf"
 sudo sh -c "echo 'Current=sugar-candy' >> /etc/sddm.conf"
-sudo cp ~/.wallpapers/wall_secondary.png /usr/share/sddm/themes/sugar-candy/
+sudo cp ~/.wallpapers/forest-mountain-cloudy-valley.png /usr/share/sddm/themes/sugar-candy/
+sudo mv /usr/share/sddm/themes/sugar-candy/forest-cloudy-valley.png /usr/share/sddm/themes/sugar-candy/wall_secondary.png
 
 # Gnome stuff.
 sudo pamac install gnome-browser-connector gnome-tweaks --no-confirm

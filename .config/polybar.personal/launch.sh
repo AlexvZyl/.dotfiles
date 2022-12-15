@@ -18,4 +18,5 @@
 # fi
 #;;
 
-polybar --quiet --reload mainbar-i3 -c ~/.config/polybar.personal/config.ini &
+polybar --quiet --reload top -c ~/.config/polybar.personal/config.ini &
+polybar --quiet --reload bottom -c ~/.config/polybar.personal/config.ini &

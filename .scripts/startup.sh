@@ -13,6 +13,3 @@ picom -b
 
 # Launch polybar.
 ~/.config/polybar.personal/launch.sh
-
-# Launch stalonetray.
-stalonetray --dockapp-mode simple &

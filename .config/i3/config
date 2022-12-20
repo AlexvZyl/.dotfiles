@@ -57,7 +57,7 @@ for_window [class="^.*"] border pixel 2
 
 # Set inner/outer gaps
 gaps inner 9
-gaps outer 0
+gaps outer 1
 
 # show window title bars (not officially supported with i3gaps)
 default_border none

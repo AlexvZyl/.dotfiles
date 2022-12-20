@@ -2,8 +2,8 @@
 -- Settings related to neovide --
 ---------------------------------
 
-vim.g.neovide_transparency=0.95
--- vim.g.neovide_transparency=1
+-- vim.g.neovide_transparency=0.95
+vim.g.neovide_transparency=1
 vim.g.neovide_fullscreen=false
 vim.g.neovide_profiler=false
 vim.g.neovide_cursor_animation_length = 0.007

@@ -118,10 +118,10 @@ font:
       # - (macOS) Menlo
       # - (Linux/BSD) monospace
       # - (Windows) Consolas
-    family: JetBrainsMonoMedium Nerd Font 
+    family: JetBrainsMono Nerd Font
 
     # The `style` can be specified to pick a specific face.
-    style: Normal
+    style: Medium
 
   # Bold font face
   bold:

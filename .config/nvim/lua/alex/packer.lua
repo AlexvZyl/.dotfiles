@@ -23,8 +23,8 @@ return require 'packer'.startup( function(use)
     use 'nvim-lualine/lualine.nvim'
     use 'kyazdani42/nvim-web-devicons'
     use 'akinsho/bufferline.nvim'
-    use 'mhinz/vim-startify' -- Consider using alpha-nvim.  Uses Lua, and is still updated.
     use 'Pocco81/true-zen.nvim'
+    use 'glepnir/dashboard-nvim'
     use 'folke/lsp-colors.nvim'
     use {
         "folke/trouble.nvim",

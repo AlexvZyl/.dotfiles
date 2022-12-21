@@ -44,23 +44,11 @@ require 'illuminate'.configure {
     }
 }
 
--------------
--- Sartify --
--------------
+---------------
+-- Dashboard --
+---------------
 
--- Setup startify.
-vim.cmd([[
-    let g:startify_custom_header =
-              \ 'startify#center(startify#fortune#cowsay())'
-    let g:startify_lists = [
-        \ { 'type': 'sessions',  'header': ['   Sessions']       },
-        \ { 'type': 'dir',       'header': ['   Local Recents']       },
-        \ { 'type': 'files',     'header': ['   Global Recents']         },
-    \ ]
-    let g:startify_files_number = 15
-    " TODO!
-    " let g:startify_custom_footer = [ '***' ]
-]])
+local db = require 'dashboard'
 
 ---------------
 -- Scrollbar --

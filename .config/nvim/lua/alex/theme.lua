@@ -39,10 +39,7 @@ vim.cmd([[
 ]])
 
 -- Font.
--- set guifont=JetBrainsMonoMedium\ Nerd\ Font:h10.75
-vim.cmd([[set guifont=JetBrainsMono\ Nerd\ Font:h10.5]])
--- vim.cmd('set guifont=FiraCode\ Nerd\ Font:h11.75')
--- vim.cmd('set guifont=FiraCode\ Nerd\ Font:h10.0')
+vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h10" }
 
 -------------------------
 -- Gruvbox (-Material) --
@@ -84,6 +81,7 @@ vim.cmd([[
 -- Make all buffers that do not have 
 -- Apply the colorscheme.
 vim.cmd 'colorscheme gruvbox-material'
+-- vim.cmd 'colorscheme kanagawa'
 
 ----------------
 -- LSP colors --
@@ -128,4 +126,3 @@ vim.g.material_style = 'darker'
 require 'material'.setup {
 
 }
--- vim.cmd 'colorscheme material'

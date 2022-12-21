@@ -34,7 +34,7 @@ sudo pamac install onlyoffice-bin xournalpp --no-confirm
 sudo pamac install cmatrix bonsai.sh-git pipes.sh lolcat shell-color-scripts --no-confirm
 
 # Fonts.  This is very large, maybe use smaller package.
-sudo pamac install nerd-fonts-complete --no-confirm
+sudo pamac install nerd-fonts-jetbrains-mono --no-confirm
 
 # Manuals.
 sudo pamac install man-db --no-confirm

@@ -119,9 +119,15 @@ return require 'packer'.startup( function(use)
     use 'shaunsingh/nord.nvim'
     use 'dracula/vim'
     use 'joshdick/onedark.vim'
-    use 'marko-cerovac/material.nvim'
     use 'sam4llis/nvim-tundra'
     use 'rebelot/kanagawa.nvim'
+    use 'cocopon/iceberg.vim'
+    use 'marko-cerovac/material.nvim'
+    use 'sainnhe/sonokai'
+    use {
+        'sonph/onehalf',
+        rtp = "vim"
+    }
 
     -- Still need to setup.
     -- use 'mhartington/formatter.nvim'

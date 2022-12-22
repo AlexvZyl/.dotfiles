@@ -1,0 +1,49 @@
+# default options
+display_on=0
+span_image=false
+lock_timeout=300
+fx_list=(dim blur dimblur pixel dimpixel color)
+dim_level=40
+blur_level=1
+pixel_scale=10,1000
+solid_color=333333
+wallpaper_cmd="feh --bg-fill"
+quiet=true
+# i3lockcolor_bin="i3lock-color" # Manually set command for i3lock-color
+
+# Formatting.
+locktext="Dala what you must."
+font="JetBrainsMono Nerd Font"
+time_format="%H:%M"
+
+# Green.
+bshlcolor=8bba7f
+
+# Blue.
+keyhlcolor=7ca599
+
+# Yellow.
+modifcolor=e9b132
+
+# Red.
+wrongcolor=f2594b
+insidewrongcolor=f2594b
+
+# White.
+verifcolor=e2cca9
+timecolor=e2cca9
+greetercolor=e2cca9
+layoutcolor=e2cca9
+ringvercolor=e2cca9
+ringcolor=e2cca9
+ringwrongcolor=e2cca9
+
+# Dark Gray.
+bgcolor=141617
+insidecolor=141617
+separatorcolor=141617
+insidevercolor=141617
+loginbox=141617
+
+# Black.
+loginshadow=00000000

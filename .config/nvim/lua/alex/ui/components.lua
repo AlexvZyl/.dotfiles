@@ -48,9 +48,38 @@ require 'illuminate'.configure {
 -- Dashboard --
 ---------------
 
-local db = require 'dashboard'
+local home = os.getenv('HOME')
+local db = require('dashboard')
 
-
+db.preview_file_height = 11
+db.preview_file_width = 70
+db.custom_center = {
+    {
+        icon = "  ",
+		desc = 'New file      ',
+		action = "enew",
+    },
+    {
+        icon = '  ',
+        desc = 'Recent files  ',
+        action =  'Telescope oldfiles',
+    },
+    {
+        icon = '  ',
+        desc = 'Find file     ',
+        action = 'Telescope find_files find_command=rg,--hidden,--files',
+    },
+    {
+        icon = '  ',
+        desc = 'Find word    ',
+        action = 'Telescope live_grep',
+    },
+    {
+		icon = "  ",
+		desc = "Update plugins",
+		action = "PackerSync",
+	},
+  }
 
 ---------------
 -- Scrollbar --

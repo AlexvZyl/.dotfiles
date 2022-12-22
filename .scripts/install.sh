@@ -135,6 +135,12 @@ sudo chmod +x ~/.scripts/setup_git.sh && sudo ~/.scripts/setup_git.sh
 sudo chmod +x ~/.config/nvim/lua/alex/lang/lsp/install-servers.sh
 ~/.config/nvim/lua/alex/lang/lsp/install-servers.sh
 
+# Install lock screen.
+sudo pamac install betterlockscreen-git --no-confirm
+# Setup lock screen.
+# Should this script run every time the screens change?
+betterlockscreen -u ~/.wallpapers/forest-mountain-cloudy-valley.png --blur 0.5
+
 # Setup fish (shell).
 sudo pamac install fish --no-confirm
 fish <<'END_FISH'

@@ -17,7 +17,7 @@ sudo chmod +x ~/.scripts/install.sh && ~/.scripts/install.sh
 
 # Screenshots
 
-Will add when I am satisfied with the setup / rice.
+![image](https://user-images.githubusercontent.com/81622310/208962548-d27db1f4-2ff7-473a-bc84-d6373d3cf1ba.png)
 
 <!---
 

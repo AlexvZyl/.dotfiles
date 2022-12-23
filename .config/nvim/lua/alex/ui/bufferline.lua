@@ -12,7 +12,7 @@ require 'bufferline'.setup {
         modified_icon = '',
         max_name_length = 20,
         mode = "buffers",
-        diagnostics = "coc",
+        diagnostics = "nvim_lsp",
         diagnostics_indicator = function(count, level, diagnostics_dict, context)
             local s = ''
             for e, n in pairs(diagnostics_dict) do
@@ -38,9 +38,9 @@ require 'bufferline'.setup {
                 text_align = "center"
             }
         },
-        separator_style = "slant",
+        separator_style = 'padded_slant',
         custom_filter = function(buf_number, buf_numbers)
-            if vim.bo[buf_number].filetype ~='nvimtree' then
+            if vim.bo[buf_number].filetype ~= 'nvimtree' then
                 return true
             end
         end

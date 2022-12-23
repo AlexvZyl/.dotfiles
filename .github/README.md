@@ -17,7 +17,7 @@ sudo chmod +x ~/.scripts/install.sh && ~/.scripts/install.sh
 
 # Screenshots
 
-![image](https://user-images.githubusercontent.com/81622310/208962548-d27db1f4-2ff7-473a-bc84-d6373d3cf1ba.png)
+![image](https://user-images.githubusercontent.com/81622310/209329252-946a9bce-b668-45ad-bcd1-7da50e282c33.png)
 
 <!---
 

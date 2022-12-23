@@ -48,7 +48,6 @@ require 'illuminate'.configure {
 -- Dashboard --
 ---------------
 
-local home = os.getenv('HOME')
 local db = require('dashboard')
 
 db.preview_file_height = 11
@@ -71,7 +70,7 @@ db.custom_center = {
     },
     {
         icon = '  ',
-        desc = 'Find word    ',
+        desc = 'Find word     ',
         action = 'Telescope live_grep',
     },
     {
@@ -219,6 +218,7 @@ require 'nvim-tree'.setup {
         ignore = false
     },
     sync_root_with_cwd = true,
+    respect_buf_cwd = true,
     renderer = {
         indent_markers = {
             enable = true

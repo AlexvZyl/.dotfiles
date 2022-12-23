@@ -46,7 +46,7 @@ sudo pamac install scrot zathura zathura-pdf-mupdf-git cpu-x fuse-common powerto
 sudo pamac install papirus-icon-theme --no-confirm
 
 # GUI stuff.
-sudo pamac install lxappearance-gtk3 gruvbox-material-gtk-theme-git --no-confirm
+sudo pamac install lxappearance-gtk3 gruvbox-material-gtk-theme-git gtk-theme-material-black --no-confirm
 
 # Bootloader.
 sudo pamac install refind --no-confirm

@@ -17,13 +17,11 @@ font="JetBrainsMono Nerd Font"
 time_format="%H:%M"
 
 # Green.
-bshlcolor=8bba7f
-
-# Blue.
-keyhlcolor=7ca599
+keyhlcolor=8bba7f
 
 # Yellow.
 modifcolor=e9b132
+bshlcolor=e9b132
 
 # Red.
 wrongcolor=f2594b

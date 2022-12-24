@@ -201,6 +201,10 @@ vim.notify = notify
 ---------------
 
 require 'nvim-tree'.setup {
+    auto_reload_on_write = true,
+    sync_root_with_cwd = true,
+    respect_buf_cwd = true,
+    reload_on_bufenter = true,
     view = {
         hide_root_folder = false,
         signcolumn = 'no',
@@ -213,12 +217,9 @@ require 'nvim-tree'.setup {
         },
         width = 40
     },
-    auto_reload_on_write = true,
     git = {
         ignore = false
-    },
-    sync_root_with_cwd = true,
-    respect_buf_cwd = true,
+    }, 
     renderer = {
         indent_markers = {
             enable = true

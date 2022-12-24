@@ -50,7 +50,7 @@ workspace_layout default
 # border_radius 15
 
 #border indicator on windows:
-new_window pixel 2
+# new_window pixel 2
 
 # thin borders
 hide_edge_borders both
@@ -458,24 +458,37 @@ for_window [class="urxvt"] border pixel 2
 # Define colors variables:
 # set $darkbluetrans	#08052be6
 # set $darkblue		#08052b
-set $darkbluetrans	#090909bf
-set $darkblue		#090909bf
-set $lightblue		#458588
-set $urgentred		#e53935
-set $white		    #ffffff
-set $black		    #000000
-set $purple		    #e345ff
-set $darkgrey		#383c4a
-set $grey		    #b0b5bd
-set $mediumgrey		#ebdbb288
-set $yellowbrown	#e1b700
+# set $darkbluetrans	#090909bf
+# set $darkblue		#090909bf
+# set $lightblue		#458588
+# set $urgentred		#e53935
+# set $white		    #ffffff
+# set $black		    #000000
+# set $purple		    #e345ff
+# set $darkgrey		#383c4a
+# set $grey		    #b0b5bd
+# set $mediumgrey		#ebdbb2FF
+# set $yellowbrown	#e1b700
+
+# Gruvbox material dark colors.
+set $gray           #1d2021
+set $black          #000000
+set $dark-gray      #141617
+set $light-gray     #232526
+set $white          #e2cca9
+set $yellow         #e9b132
+set $blue           #7ca599
+set $red            #f2594b
+set $green          #8bba7f
+set $green-trans    #298bba7f
+set $orange         #f28534
 
 # define colors for windows:
 #class		        	    border		bground		text		indicator	   child_border
-client.focused		    	$lightblue	$darkblue	$white		$mediumgrey	   $mediumgrey
-client.unfocused	    	$darkblue	$darkblue	$grey		$darkgrey	   $black
-client.focused_inactive		$darkblue	$darkblue	$grey		$black		   $black
-client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown   $black
+client.focused		    	$blue       $darkblue	$white		$dark-gray     $dark-gray
+client.unfocused	    	$blue       $blue       $gray		$dark-gray     $dark-gray
+client.focused_inactive		$blue       $blue       $gray		$dark-gray     $dark-gray
+client.urgent		    	$red        $red        $red        $red           $red
 
 ############################################
 # bar settings (input comes from i3blocks) #

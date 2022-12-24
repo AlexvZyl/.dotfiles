@@ -46,6 +46,9 @@ workspace_layout default
 # extra options for windows: #
 ##############################
 
+# Rounded corners.
+# border_radius 15
+
 #border indicator on windows:
 new_window pixel 2
 

@@ -46,9 +46,6 @@ workspace_layout default
 # extra options for windows: #
 ##############################
 
-# Rounded corners.
-# border_radius 15
-
 #border indicator on windows:
 # new_window pixel 2
 
@@ -485,9 +482,9 @@ set $orange         #f28534
 
 # define colors for windows:
 #class		        	    border		bground		text		indicator	   child_border
-client.focused		    	$blue       $darkblue	$white		$dark-gray     $dark-gray
-client.unfocused	    	$blue       $blue       $gray		$dark-gray     $dark-gray
-client.focused_inactive		$blue       $blue       $gray		$dark-gray     $dark-gray
+client.focused		    	$blue       $darkblue	$white		$dark-gray     $black
+client.unfocused	    	$blue       $blue       $gray		$dark-gray     $black
+client.focused_inactive		$blue       $blue       $gray		$dark-gray     $black
 client.urgent		    	$red        $red        $red        $red           $red
 
 ############################################

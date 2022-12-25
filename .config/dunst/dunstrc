@@ -60,7 +60,6 @@
     # Set the maximum width for the progress bar
     progress_bar_max_width = 300
 
-
     # Show how many messages are currently hidden (because of
     # notification_limit).
     indicate_hidden = yes
@@ -89,7 +88,8 @@
     frame_width = 2
 
     # Defines color of the frame around the notification window.
-    frame_color = "#458588"
+    # frame_color = "#458588"
+    # frame_color = "#458588"
 
     # Define a color for the separator.
     # possible values are:
@@ -230,7 +230,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 0
+    corner_radius = 15
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -289,12 +289,12 @@
     # where there are multiple screens with very different dpi values.
     per_monitor_dpi = false
 
-
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#1d2021"
     foreground = "#e2cca9"
+    frame_color = "#7ca599"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
     icon = /usr/share/icons/Arc-X-D/status/16/dialog-information.png
@@ -302,6 +302,7 @@
 [urgency_normal]
     background = "#1d2021"
     foreground = "#e2cca9"
+    frame_color = "#7ca599"
     timeout = 5
     # Icon for notifications with normal urgency, uncomment to enable
     icon = /usr/share/icons/Arc-X-D/status/16/dialog-question.png

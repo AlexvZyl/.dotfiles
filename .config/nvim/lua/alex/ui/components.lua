@@ -89,6 +89,10 @@ db.custom_header = {
     '╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝',
 }
 
+db.custom_footer = {
+    'ﯦ  Dala what you must.'
+}
+
 -- Default sizes.
 local header_height = 6
 local center_height = 9
@@ -97,7 +101,7 @@ local footer_height = 1
 -- Extra padding.
 local header_extra_padding = 1
 local center_extra_padding = 0
-local footer_extra_padding = 1
+local footer_extra_padding = 0
 
 -- Get window height in rows.
 local win_height = vim.fn.winheight('%')
@@ -107,6 +111,7 @@ local padding = (win_height - header_height - center_height - footer_height) / 4
 db.header_pad = padding - header_extra_padding
 db.center_pad = padding - center_extra_padding
 db.footer_pad = padding - footer_extra_padding
+
 
 ---------------
 -- Scrollbar --

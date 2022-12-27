@@ -1,11 +1,3 @@
-----------------------------------
--- Load, init and setup plugins --
-----------------------------------
-
--- Nvim-Tree.lua advises to do this at the start.
-vim.g.loaded = 1
-vim.g.loaded_netrwPlugin = 1
-
 ----------------------
 -- Find and Replace --
 ----------------------
@@ -160,39 +152,7 @@ local notify = require 'notify'
 notify.setup {}
 vim.notify = notify
 
----------------
--- Nvim tree --
----------------
 
-require 'nvim-tree'.setup {
-    auto_reload_on_write = true,
-    sync_root_with_cwd = true,
-    respect_buf_cwd = true,
-    reload_on_bufenter = true,
-    view = {
-        hide_root_folder = false,
-        signcolumn = 'no',
-        mappings = {
-            list = {
-                -- Allow moving out of the explorer.
-                { key = "<C-i>", action = "toggle_file_info" },
-                { key = "<C-k>", action = "" }
-            }
-        },
-        width = 40
-    },
-    git = {
-        ignore = false
-    }, 
-    renderer = {
-        indent_markers = {
-            enable = true
-        }
-    },
-    diagnostics = {
-        enable = true
-    }
-}
 
 ------------------
 -- Image Viewer --

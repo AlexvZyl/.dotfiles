@@ -13,9 +13,9 @@ require 'bufferline'.setup {
             local s = ''
             for e, n in pairs(diagnostics_dict) do
                 if e == 'error' then
-                    s = s .. '  '
+                    s = s .. ' '
                 elseif e == 'warning' then
-                    s = s .. '  '
+                    s = s .. ' '
                 end
             end
             return s:sub(1, -2)
@@ -34,7 +34,7 @@ require 'bufferline'.setup {
                 text_align = "center"
             }
         },
-        separator_style = 'padded_slant',
+        separator_style = 'slant',
         custom_filter = function(buf_number, buf_numbers)
             if vim.bo[buf_number].filetype ~= 'nvimtree' then
                 return true

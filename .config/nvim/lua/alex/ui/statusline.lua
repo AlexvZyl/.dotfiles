@@ -1,6 +1,4 @@
--------------------
--- Lualine setup --
--------------------
+-- Using Lualine as the statusline.
 
 -- Show git status.
 local function diff_source()

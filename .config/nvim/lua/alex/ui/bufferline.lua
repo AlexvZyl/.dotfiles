@@ -1,7 +1,3 @@
-------------
--- Config --
-------------
-
 require 'bufferline'.setup {
     options = {
         indicator = {

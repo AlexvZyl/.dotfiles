@@ -10,8 +10,8 @@ require 'nvim-tree'.setup {
     reload_on_bufenter = false,
     respect_buf_cwd = true,
     update_focused_file = {
-        -- enable = true,
-        enable = false,
+        enable = true,
+        -- enable = false,
         update_cwd = true,
         debounce_delay = 1000,
         ignore_list = {},

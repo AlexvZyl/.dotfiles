@@ -91,3 +91,30 @@ vim.cmd 'hi SpellBad gui=underline'
 -- Set wrap for specific file types.
 vim.cmd 'autocmd FileType markdown setlocal wrap'
 vim.cmd 'autocmd FileType tex setlocal wrap'
+
+-----------------------------
+-- Neovim inside Alacritty --
+-----------------------------
+
+function Sad(line_nr, from, to, fname)
+  vim.cmd(string.format("silent !sed -i '%ss/%s/%s/' %s", line_nr, from, to, fname))
+end
+
+function IncreasePadding()
+  Sad('07', 0, 20, '~/dotfiles/alacritty/alacritty.windows.yml')
+  Sad('08', 0, 20, '~/dotfiles/alacritty/alacritty.windows.yml')
+end
+
+function DecreasePadding()
+  Sad('07', 20, 0, '~/dotfiles/alacritty/alacritty.windows.yml')
+  Sad('08', 20, 0, '~/dotfiles/alacritty/alacritty.windows.yml')
+end
+
+-- Remove and add alacritty padding.
+-- vim.cmd[[
+  -- augroup ChangeAlacrittyPadding
+   -- au! 
+   -- au VimEnter * lua DecreasePadding()
+   -- au VimLeavePre * lua IncreasePadding()
+  -- augroup END 
+-- ]]

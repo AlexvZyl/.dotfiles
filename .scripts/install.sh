@@ -125,8 +125,8 @@ sudo sh -c "echo 'kernel.sysrq=1' >> /etc/sysctl.d/99-sysctl.conf"
 # Install s-tui and set to run as admin.
 sudo pamac install s-tui --no-confirm
 
-# TODO
-# "alex ALL = NOPASSWD: /usr/bin/s-tui"
+# Add bnaries to sudoers.
+sudo sh -c "echo 'alex ALL = NOPASSWD: /usr/bin/s-tui, /usr/bin/pacman' > /etc/sudoers"
 
 # Setup github.
 sudo chmod +x ~/.scripts/setup_git.sh && sudo ~/.scripts/setup_git.sh

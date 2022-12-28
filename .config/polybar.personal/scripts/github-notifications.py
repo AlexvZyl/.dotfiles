@@ -1,5 +1,4 @@
 # Imports.
-from os import devnull
 import subprocess
 import json
 

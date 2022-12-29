@@ -1,6 +1,6 @@
 # Data.
-NO_DIM="inactive-opacity = 1.0;"
-DIM="inactive-opacity = 0.9;"
+NO_DIM="inactive-opacity = 1.00;"
+DIM="inactive-opacity = 0.85;"
 FILENAME="/home/alex/.config/picom/picom.conf"
 
 # Check dim state.

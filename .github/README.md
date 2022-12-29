@@ -21,6 +21,8 @@ sudo chmod +x ~/.scripts/install.sh && ~/.scripts/install.sh
 
 ![image](https://user-images.githubusercontent.com/81622310/209937883-3d388a27-0ad1-4202-b37d-eead242d4311.png)
 
+![image](https://user-images.githubusercontent.com/81622310/209938372-1b6a067c-ca5f-4d10-8420-6c4d244a048d.png)
+
 <!---
 
 ## Gnome

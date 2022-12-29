@@ -217,7 +217,7 @@ require 'lualine'.setup {
         lualine_a = {
             {
                 'mode',
-                icon = { '' },
+                icon = { ' ' },
             },
         },
         lualine_b = {

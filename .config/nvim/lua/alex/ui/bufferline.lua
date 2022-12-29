@@ -35,6 +35,8 @@ require 'bufferline'.setup {
             }
         },
         separator_style = 'slant',
+        -- separator_style = {' ',' '},
+        -- separator_style = {'  ','  '},
         custom_filter = function(buf_number, buf_numbers)
             if vim.bo[buf_number].filetype ~= 'nvimtree' then
                 return true

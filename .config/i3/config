@@ -57,7 +57,7 @@ for_window [class="^.*"] border pixel 2
 
 # Set inner/outer gaps
 gaps inner 9
-gaps outer 1
+gaps outer 0
 
 # show window title bars (not officially supported with i3gaps)
 default_border none
@@ -148,7 +148,6 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 
 # resize window (you can also use the mouse for that):
 #mode "resize" {
-# These bindings trigger as soon as you enter the resize mode
 # Pressing left will shrink the window's width.
 # Pressing right will grow the window's width.
 # Pressing up will shrink the window's height.
@@ -561,7 +560,7 @@ client.urgent		    	$red        $red        $red        $red           $red
 ##bindsym $mod+d exec rofi -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi
 
-bindsym $mod+r exec rofi -show run
+# bindsym $mod+r exec rofi -show run
 
 bindsym $mod+d exec rofi -show drun
 
@@ -631,7 +630,7 @@ focus_follows_mouse no
 mouse_warping none 
 
 ##############
-# compositor #
+# Compositor #
 ##############
 
 # transparency
@@ -653,10 +652,17 @@ mouse_warping none
 # For modifications, it can be copied to ~/.config/picom/picom.conf or ~/.config/picom.conf
 #
 # using default config 
-exec_always --no-startup-id picom -b --experimental-backend
+# exec_always --no-startup-id picom -b --experimental-backend
 # exec_always --no-startup-id xborders --config $HOME/.config/xborder/config.json &
 # exec_always --no-startup-id picom -b
 
 #
 # for custom config:
 #exec_always --no-startup-id picom --config  ~/.config/picom.conf
+
+# Try and fix issue where polybar tray is on top of fullscreen window.
+for_window [class="Polybar"] floating enable
+for_window [class="polybar"] floating enable
+
+# Toggle the inactive opacity for picom.
+bindsym $mod+r exec ~/.config/picom/scripts/toggle-picom-inactive-opacity.sh

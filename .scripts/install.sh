@@ -85,6 +85,7 @@ sudo pamac install thunderbird whatsapp-nativefier discord signal-desktop --no-c
 
 # i3 stuff.
 sudo pamac install feh xborder-git cronie rofi rofi-greenclip picom --no-confirm
+chmod +x ~/.config/picom/scripts/toggle-picom-inactive-opacity.sh
 # Stuff for polybar.
 sudo pamac install polybar python-pywal pywal-git networkmanager-dmenu-git calc --no-confirm
 

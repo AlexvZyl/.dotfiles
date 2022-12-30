@@ -1,0 +1,113 @@
+@theme "~/.config/rofi/themes/gruvbox-dark-hard.rasi"
+
+configuration {
+    display-drun: " Applications:";
+    display-window: "  Windows:";
+    display-run: " Run:";
+    show-icons: true;
+    icon-theme: "Papirus";
+    font: "JetBrainsMono Nerd Font Medium 12";
+    drun-display-format:  "{icon} {name}";
+    run-display-format:  "{icon} {name}";
+    modi: "window,run,drun";
+    terminal: "alacritty";
+    monitor: -1;
+}
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    height: 50%;
+    width: 50%;
+    border: 3px;
+    border-color: @border-color;
+    background-color: @background;
+    border-radius: 0px;
+}
+
+mainbox {
+    background-color: @bg-col;
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: @bg-col;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: inherit;
+    padding: 6px;
+    text-color: @gruvbox-dark-yellow-light;
+    border-radius: 8px;
+    margin: 20px 0px 10px 20px;
+    font: "JetBrainsMono Nerd Font Bold 12";
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    margin: 20px 0px 0px 10px;
+    text-color: @gruvbox-dark-fg0;
+    background-color: @bg-col;
+}
+
+listview {
+    padding: 10 10 0;
+    margin: 10 10 0 10;
+    columns: 5;
+    background-color: @bg-col;
+    scrollbar: false;
+}
+
+element {
+    padding: 15 10 15;
+    background-color: @bg-col;
+    text-color: inherit;
+    orientation: vertical;
+    border-radius: 8px;
+    text-color: @gruvbox-dark-fg0;
+}
+
+element-icon {
+    size: 56px;
+    horizontal-align: 0.5;
+}
+
+element selected {
+    background-color:  @selected-col ;
+    text-color: inherit;
+    border-radius: 8px;
+}
+
+element-text {
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+    expand: true;
+    font: "JetBrainsMono Nerd Font Medium 10";
+  }
+
+mode-switcher {
+    spacing: 0;
+  }
+
+button {
+    padding: 10px;
+    background-color: @bg-col;
+    text-color: inherit;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+button selected {
+  background-color: @bg-col;
+  text-color: inherit;
+}

@@ -287,7 +287,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Redirect sound to headphones
-bindsym $mod+p exec /usr/local/bin/switch-audio-port
+# bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
 # bindsym $mod+w exec /usr/bin/firefox
@@ -562,8 +562,14 @@ client.urgent		    	$red        $red        $red        $red           $red
 
 # bindsym $mod+r exec rofi -show run
 
-# bindsym $mod+d exec rofi -show drun
+# Launcher.
 bindsym $mod+d exec ~/.config/rofi/launchers/type-2/launcher.sh
+
+# Power menu.
+bindsym $mod+p exec ~/.config/rofi/powermenu/type-2/powermenu.sh
+
+# Music.
+bindsym $mod+m exec ~/.config/rofi/applets/bin/mpd.sh
 
 #bindsym F9 exec rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi

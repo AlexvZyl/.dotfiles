@@ -158,7 +158,7 @@ error-message {
     padding:                     15px;
     border:                      2px solid;
     border-radius:               15px;
-    border-color:                @selected;
+    border-color:                @urgent;
     background-color:            @background;
     text-color:                  @foreground;
 }

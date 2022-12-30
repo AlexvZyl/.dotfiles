@@ -576,8 +576,7 @@ bindsym $mod+m exec ~/.config/rofi/applets/bin/mpd.sh
 
 ## rofi bindings for window menu ($mod+t /F10 optional disabled)
 
-bindsym $mod+Tab exec rofi -show window
-#		-config ~/.config/rofi/rofidmenu.rasi
+bindsym $mod+Tab exec rofi -show window -config ~/.config/rofi/launchers/type-2/style-2.rasi
 
 #bindsym F10 exec rofi -show window \
 #		-config ~/.config/rofi/rofidmenu.rasi

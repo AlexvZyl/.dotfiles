@@ -20,3 +20,9 @@ vim.g.neovide_cursor_vfx_opacity=175.0 -- / 256.0
 vim.g.neovide_cursor_vfx_particle_lifetime=0.8
 vim.g.neovide_cursor_vfx_particle_density=5.0
 vim.g.neovide_cursor_vfx_particle_speed=10.0
+
+-- Font.
+-- vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h10" }
+vim.opt.guifont = "JetBrainsMono Nerd Font:h10:#h-full"
+-- Outline options: full, normal, slight, none.
+-- This seems to remove anooying outlining around some glyphs, but does it make it harder to read?

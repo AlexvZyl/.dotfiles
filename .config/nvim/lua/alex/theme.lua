@@ -38,9 +38,6 @@ vim.cmd([[
     augroup END
 ]])
 
--- Font.
-vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h10" }
-
 -------------------------
 -- Gruvbox (-Material) --
 -------------------------

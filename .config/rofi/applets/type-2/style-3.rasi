@@ -32,7 +32,7 @@ window {
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
-    border-radius:               30px;
+    border-radius:               15px;
     border-color:                @selected;
     cursor:                      "default";
     background-color:            @background;
@@ -50,7 +50,7 @@ mainbox {
 
 /*****----- Inputbar -----*****/
 inputbar {
-    enabled:                     true;
+    enabled:                     false;
     spacing:                     10px;
     padding:                     0px;
     border:                      0px;
@@ -62,7 +62,7 @@ inputbar {
 }
 
 textbox-prompt-colon {
-    enabled:                     true;
+    enabled:                     false;
     expand:                      false;
     str:                         "";
     padding:                     10px 13px;

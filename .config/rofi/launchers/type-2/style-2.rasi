@@ -45,7 +45,7 @@ mainbox {
     spacing:                     10px;
     margin:                      0px;
     padding:                     20px;
-    border:                      0px solid;
+    border:                      2px solid;
     border-radius:               15px 15px 15px 15px;
     border-color:                @selected;
     background-color:            transparent;

@@ -4,8 +4,12 @@ DIM="inactive-opacity = 0.85;"
 FILENAME="/home/alex/.config/picom/picom.conf"
 STATE_FILE="/home/alex/.config/picom/read-mode-state"
 
+# Clear the file contents.
+> $STATE_FILE
+
 # Check dim state.
 if grep -Fxq "$DIM" $FILENAME
+
 
 # Currently dim.
 then

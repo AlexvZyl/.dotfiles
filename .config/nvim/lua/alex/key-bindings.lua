@@ -187,3 +187,16 @@ map_key(n, "gl", "<Cmd>VimtexView<CR>", default_settings)
 
 map_key(n, "<leader>d", "<Cmd>TroubleToggle document_diagnostics<CR>", default_settings)
 map_key(n, "<leader>D", "<Cmd>TroubleToggle workspace_diagnostics<CR>", default_settings)
+
+-----------------------
+-- Working directory --
+-----------------------
+
+-- Change the cwd to the directory of the current active buffer.
+function _cwd_current_buffer()
+    local abs_path = vim.api.nvim_buf_get_name(0)
+    local dir = abs_path:match("(.*[/\\])")
+    vim.cmd ("cd " .. dir)
+end
+
+map_key(n_v, "gc", "<Cmd>lua _cwd_current_buffer()<CR><Cmd>NvimTreeRefresh<CR>", default_settings)

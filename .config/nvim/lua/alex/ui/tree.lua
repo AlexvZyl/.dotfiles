@@ -6,16 +6,8 @@ vim.g.loaded_netrwPlugin = 1
 require 'nvim-tree'.setup {
     hijack_cursor = true,
     sync_root_with_cwd = true,
-    auto_reload_on_write = true,
+    auto_reload_on_write = false,
     reload_on_bufenter = false,
-    respect_buf_cwd = true,
-    update_focused_file = {
-        enable = true,
-        -- enable = false,
-        update_cwd = true,
-        debounce_delay = 1000,
-        ignore_list = {},
-    },
     view = {
         hide_root_folder = false,
         signcolumn = 'no',

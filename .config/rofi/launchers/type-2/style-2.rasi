@@ -33,7 +33,7 @@ window {
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
-    border-radius:               12px;
+    border-radius:               15px;
     border-color:                @selected;
     background-color:            @background;
     cursor:                      "default";
@@ -59,7 +59,7 @@ inputbar {
     margin:                      0px;
     padding:                     15px;
     border:                      0px solid;
-    border-radius:               12px;
+    border-radius:               15px;
     border-color:                @selected;
     background-color:            @background-alt;
     text-color:                  @foreground;
@@ -124,7 +124,7 @@ element {
     margin:                      0px;
     padding:                     5px;
     border:                      0px solid;
-    border-radius:               12px;
+    border-radius:               15px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
@@ -157,7 +157,7 @@ element-text {
 error-message {
     padding:                     15px;
     border:                      2px solid;
-    border-radius:               12px;
+    border-radius:               15px;
     border-color:                @selected;
     background-color:            @background;
     text-color:                  @foreground;

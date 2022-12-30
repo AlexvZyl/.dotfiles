@@ -562,7 +562,8 @@ client.urgent		    	$red        $red        $red        $red           $red
 
 # bindsym $mod+r exec rofi -show run
 
-bindsym $mod+d exec rofi -show drun
+# bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec ~/.config/rofi/launchers/type-2/launcher.sh
 
 #bindsym F9 exec rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi

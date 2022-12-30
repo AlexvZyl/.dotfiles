@@ -2,19 +2,6 @@
 -- Colorscheme and theme settings --
 ------------------------------------
 
--- List of available colors in nvim:
--------------------------------------------------------------
---    Red		LightRed	    DarkRed
---    Green	    LightGreen	    DarkGreen	    SeaGreen
---    Blue	    LightBlue	    DarkBlue	    SlateBlue
---    Cyan	    LightCyan	    DarkCyan
---    Magenta	LightMagenta	DarkMagenta
---    Yellow	LightYellow	    Brown		    DarkYellow
---    Gray	    LightGray	    DarkGray
---    Black	    White
---    Orange	Purple		    Violet
--------------------------------------------------------------
-
 -- Not too sure why this has to be here.
 vim.opt.background = 'dark'
 
@@ -68,6 +55,17 @@ vim.cmd([[
         let l:palette = gruvbox_material#get_palette(g:gruvbox_material_background, g:gruvbox_material_foreground, {})
         call gruvbox_material#highlight('CursorLineNr', l:palette.orange, l:palette.none)
         call gruvbox_material#highlight('TabLineSel', l:palette.orange, l:palette.none)
+        call gruvbox_material#highlight('TelescopeResultsNormal', l:palette.none, l:palette.bg_dim)
+        call gruvbox_material#highlight('TelescopeBorder', l:palette.grey2, l:palette.bg_dim)
+        call gruvbox_material#highlight('TelescopeTitle', l:palette.bg_dim, l:palette.orange)
+        call gruvbox_material#highlight('TelescopePromptBorder', l:palette.grey2, l:palette.bg1)
+        call gruvbox_material#highlight('TelescopePromptNormal', l:palette.none, l:palette.bg1)
+        call gruvbox_material#highlight('TelescopeSelection', l:palette.fg1, l:palette.bg1)
+        call gruvbox_material#highlight('TelescopeSelectionCaret', l:palette.orange, l:palette.bg_dim)
+        call gruvbox_material#highlight('TelescopeMultiSelection', l:palette.orange, l:palette.bg_dim)
+        call gruvbox_material#highlight('TelescopePreviewNormal', l:palette.none, l:palette.bg_dim)
+        call gruvbox_material#highlight('TelescopePreviewBorder', l:palette.none, l:palette.bg_dim)
+        call gruvbox_material#highlight('TelescopePreviewTitle', l:palette.bg_dim, l:palette.blue)
     endfunction
     augroup GruvboxMaterialCustom
         autocmd!
@@ -78,6 +76,8 @@ vim.cmd([[
 -- Make all buffers that do not have 
 -- Apply the colorscheme.
 vim.cmd 'colorscheme gruvbox-material'
+
+-- Set custom hl for telescope.
 
 --------------
 -- Material --

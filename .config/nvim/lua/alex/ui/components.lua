@@ -125,25 +125,6 @@ require 'which-key'.setup {
 -- Timeout.
 vim.cmd('set timeoutlen =1000')
 
----------------------
--- Setup telescope --
----------------------
-
-local ts = require 'telescope'
-ts.setup({
-    defaults = {
-        sort_mru = true,
-        sorting_strategy = 'ascending',
-        layout_config = {
-            prompt_position = 'top'
-        }
-    }
-})
--- Load extensions.
-ts.load_extension 'notify'
-ts.load_extension 'lazygit'
-ts.load_extension 'git_worktree'
-
 ---------------------------------
 -- Setup default notifications --
 ---------------------------------

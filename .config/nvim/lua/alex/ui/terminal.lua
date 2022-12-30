@@ -31,6 +31,6 @@ require 'toggleterm'.setup {
     size = 15,
     float_opts = {
         border = 'single',
-        winblend = 0,
+        -- winblend = -1,
     }
 }

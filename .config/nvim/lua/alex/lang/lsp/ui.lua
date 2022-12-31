@@ -9,7 +9,8 @@ saga.init_lsp_saga {
     code_action_lightbulb = {
         enable = false
     },
-    border_style = 'single',
+    border_style = 'rounded',
+    saga_winblend = 20,
     definition_action_keys = {
         edit = '<C-e>',
         vsplit = '<C-v>',

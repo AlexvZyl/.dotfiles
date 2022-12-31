@@ -93,6 +93,6 @@ vim.cmd 'autocmd FileType markdown setlocal wrap'
 vim.cmd 'autocmd FileType tex setlocal wrap'
 
 -- Set blends.
-vim.cmd "set winblend=25"
-vim.cmd "set pumblend=25"
+vim.cmd "set winblend=20"
+vim.cmd "set pumblend=20"
 

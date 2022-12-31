@@ -13,7 +13,9 @@ return require 'packer'.startup( function(use)
         'nvim-telescope/telescope.nvim',
         requires = {
             'nvim-lua/popup.nvim',
-            'nvim-lua/plenary.nvim'
+            'nvim-lua/plenary.nvim',
+            -- Still need to take a look at this guy.
+            "nvim-telescope/telescope-live-grep-args.nvim"
         }
     }
 
@@ -81,7 +83,10 @@ return require 'packer'.startup( function(use)
     use 'brooth/far.vim'
 
     -- General langage.
-    use 'nvim-treesitter/nvim-treesitter'  -- Syntax highlighting.
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        -- cmd = ":TSUpdate"
+    }
     use 'neovim/nvim-lspconfig'
     use {
         "glepnir/lspsaga.nvim",
@@ -102,10 +107,7 @@ return require 'packer'.startup( function(use)
     }
 
     -- Language specific.
-    ------
-    -- Julia.
     use 'JuliaEditorSupport/julia-vim'
-    -- LaTeX.
     use 'lervag/vimtex'
 
     -- Themes.

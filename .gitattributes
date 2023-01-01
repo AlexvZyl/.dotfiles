@@ -4,3 +4,4 @@
 .config/polybar/** linguist-vendored
 .config/fish/functions/** linguist-vendored
 .config/rofi/** linguist-vendored
+.themes/** linguist-vendored

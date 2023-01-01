@@ -12,4 +12,4 @@ try:
 
 # Could not connect.
 except(json.JSONDecodeError):
-    print(" ")
+    print("  ")

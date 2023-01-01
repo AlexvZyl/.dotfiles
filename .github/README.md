@@ -23,9 +23,7 @@ Some screenshots showing of the desktop and rice, as well as some custom feature
 
 ## Desktop
 
-Unsure to whom the wallpaper credits belongs to.
-
-<br/>
+Wallpaper can be found [here](https://github.com/linuxdotexe/nordic-wallpapers).  They "norded" some nice wallpapers.
 
 ![image](https://user-images.githubusercontent.com/81622310/210185859-64ebd7c0-1248-4a2a-bc00-75975a7ab07f.png)
 

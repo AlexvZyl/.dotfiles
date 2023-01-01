@@ -1,10 +1,12 @@
 # .dotfiles
 
-The configuration files for my Linux desktop.  Supports Arch based distros using Gnome and/or i3.  The Linux configs are pretty standard, but my [Neovim config](https://github.com/Alex-vZyl/.dotfiles/tree/main/.config/nvim) has a decent amount of work and is very close to a proper IDE.  Why didn't I use [LunarVim](https://github.com/LunarVim/LunarVim), [NvChad](https://github.com/NvChad/NvChad) or [SpaceVim](https://github.com/liuchengxu/space-vim)?  I like doing things myself. 
+The configuration files for my Linux desktop.  Supports Arch based distros using Gnome and/or i3.  Also, currently it assumes you have an Nvidia GPU and Intel CPU.
 
-## Installation
+# Installation
 
 To install everything, simply copy and paste this into the terminal.  Reboot after it is done.
+
+> _⚠️ &nbsp; I am not following proper development protocol, so this might not always be stable._
 
 ```bash
 sudo pacman -S git
@@ -15,40 +17,44 @@ config checkout -f
 sudo chmod +x ~/.scripts/install.sh && ~/.scripts/install.sh
 ```
 
-# Screenshots
+# Overview
 
-![image](https://user-images.githubusercontent.com/81622310/209937950-3da2bf2d-3a0b-461e-b0ad-82a1d363e6ed.png)
+Some screenshots showing of the desktop and rice, as well as some custom features I wrote.  Everything has to be *just right*.  I am spending 8+ hours a day on this working, so it might as well be a nice experience.
 
-![image](https://user-images.githubusercontent.com/81622310/209937883-3d388a27-0ad1-4202-b37d-eead242d4311.png)
+The entire colorscheme is based on [Gruvbox Material](https://github.com/sainnhe/gruvbox-material).  I have not been able to find a nicer colorscheme.
 
-![image](https://user-images.githubusercontent.com/81622310/209938372-1b6a067c-ca5f-4d10-8420-6c4d244a048d.png)
+## Desktop
 
-<!---
+Unsure to whom the wallpaper credits belongs to.
 
-## Gnome
+<br/>
 
-![image](https://user-images.githubusercontent.com/81622310/181455188-7a945390-8758-4bcf-8d50-ebf0683b19f6.png)
-*Desktop with gnome extensions.*
+![image](https://user-images.githubusercontent.com/81622310/210166420-bd058369-8ac0-41f6-8c28-e179a640c03b.png)
 
-![image](https://user-images.githubusercontent.com/81622310/181458526-bda18060-eaa5-4119-a90f-eb8f80d81431.png)
-*Default gnome overview with [nice icons](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) and blur effect.*
+## Polybar
 
-## i3
+*TODO*
 
-![image](https://user-images.githubusercontent.com/81622310/182259303-18c68a39-02b4-420a-8522-95f8dfdb1624.png)
-*[i3](https://github.com/i3/i3) split windows with [polybar](https://github.com/polybar/polybar).*
+## Read mode
 
-![image](https://user-images.githubusercontent.com/81622310/182259199-36a333a9-6775-4e9c-a353-ea1cf77a9f72.png)
-*Just the desktop.*
+`Super + r` disables the `inactive-opacity` (from `picom`) for when readability is important.  An indicator is displayed via polybar.
 
-## Terminal
+<br/>
 
-![image](https://user-images.githubusercontent.com/81622310/182230693-461cca7f-572d-4010-b5c6-72dbeaa3690c.png)
-*[Alacritty](https://github.com/alacritty/alacritty) with [fish](https://github.com/fish-shell/fish-shell) and [tide](https://github.com/IlanCosman/tide).*
+![image](https://user-images.githubusercontent.com/81622310/210166518-81c9b3a0-3725-47ad-85ac-13867603d344.png)
+
+![image](https://user-images.githubusercontent.com/81622310/210166538-2f667f2f-187e-4cd3-8151-532eaa9f413a.png)
 
 ## Neovim
 
-![image](https://user-images.githubusercontent.com/81622310/182230490-e73244f4-bfb7-4612-bc03-36eec132bd01.png)
-*Adds my [neovim](https://github.com/neovim/neovim) config.  Also installs [neovide](https://github.com/neovide/neovide), so use that!*
+The [Neovim config](https://github.com/Alex-vZyl/.dotfiles/tree/main/.config/nvim) has a decent amount of work and is very close to a proper IDE.  Why didn't I use [LunarVim](https://github.com/LunarVim/LunarVim), [NvChad](https://github.com/NvChad/NvChad) or [SpaceVim](https://github.com/liuchengxu/space-vim)?  I like doing things myself. 
 
---->
+<br/>
+
+![image](https://user-images.githubusercontent.com/81622310/209938372-1b6a067c-ca5f-4d10-8420-6c4d244a048d.png)
+
+![image](https://user-images.githubusercontent.com/81622310/210166463-0374ec98-fd0b-4e6c-8397-0c467c67a387.png)
+
+![image](https://user-images.githubusercontent.com/81622310/210166474-ed770e33-6b59-4646-8cbf-63be00779ea6.png)
+
+![image](https://user-images.githubusercontent.com/81622310/210166469-96022383-f06a-4af0-9358-119b6a4e3277.png)

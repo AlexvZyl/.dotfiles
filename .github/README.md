@@ -27,6 +27,8 @@ Unsure to whom the wallpaper credits belongs to.
 
 <br/>
 
+![image](https://user-images.githubusercontent.com/81622310/210185859-64ebd7c0-1248-4a2a-bc00-75975a7ab07f.png)
+
 ## Polybar
 
 *TODO*

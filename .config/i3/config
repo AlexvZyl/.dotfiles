@@ -372,7 +372,9 @@ exec --no-startup-id dex --autostart --environment i3
 # exec --no-startup-id sleep 2 && nitrogen --restore
 # exec --no-startup-id feh --bg-scale ~/.wallpapers/WallpaperDog-20492269.jpg
 # exec --no-startup-id feh --bg-scale ~/.wallpapers/gruvbox-dark-archlinux2-scalable.svg
-exec --no-startup-id feh --bg-scale ~/.wallpapers/forest-mountain-cloudy-valley.png
+# exec --no-startup-id feh --bg-scale ~/.wallpapers/forest-mountain-cloudy-valley.png
+# exec --no-startup-id feh --bg-scale ~/.wallpapers/nord_city.jpg
+exec --no-startup-id feh --bg-scale ~/.wallpapers/misty_mountains.jpg
 # exec --no-startup-id feh --bg-scale ~/.wallpapers/wall_secondary.png
 
 # set powersavings for display:

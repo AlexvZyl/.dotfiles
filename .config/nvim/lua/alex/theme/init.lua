@@ -23,6 +23,7 @@ vim.cmd([[
 
 -- Load modules.
 require 'alex.theme.nord'
+-- require 'alex.theme.gruvbox'
 
 -- Set the scheme.
 vim.cmd 'colorscheme nordfox'

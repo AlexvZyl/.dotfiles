@@ -3,7 +3,9 @@
 -------------
 
 -- Override hihglights.
-local np = require 'alex.theme.utils'.get_nord_palette()
+local np = require 'alex.theme.utils' .get_nord_palette()
+local nf = require 'nightfox.palette' .load 'nordfox'
+
 local palette = {
     -- Backgrounds.
     bg1 = np.gray0,
@@ -19,9 +21,30 @@ local palette = {
 }
 local spec = {
     syntax = {
-        comment = np.gray5
+        comment = np.gray5,
+        keyword = np.red,
+        func = np.cyan,
+        variable = np.white0,
+        field = np.blue1,
+        bracket = np.white0,
+        string = np.green,
+        conditional = np.red,
+        operator = np.orange,
+        number = np.white0,
     }
 }
+
+-- Set custom highlight groups.
+local function set_nord_hlgroups()
+    vim.api.nvim_set_hl(0, "NvimTreeFolderIcon", { fg = nf.yellow.dim })
+end
+
+-- Call when the colorscheme is being set.
+local nord_augroup = vim.api.nvim_create_augroup("CustomNordHighlights", { clear = true } )
+vim.api.nvim_create_autocmd("ColorScheme nordfox", {
+    callback = set_nord_hlgroups,
+    group = nord_augroup
+})
 
 -- Set the specific styles. Available styles:
 -- bold
@@ -41,12 +64,12 @@ local styles = {
    comments = "italic",
    keywords = "bold",
    types = "bold",
-   conditionals = "NONE",
-   constants = "NONE",
+   conditionals = "bold",
+   constants = "bold",
    functions = "bold",
    numbers = "NONE",
-   operators = "NONE",
-   strings = "NONE",
+   operators = "bold",
+   strings = "italic,bold",
    variables = "NONE",
 }
 
@@ -54,7 +77,7 @@ local styles = {
 require 'nightfox'.setup {
     options = { styles = styles },
     specs = { nordfox = spec },
-    palettes = { nordfox = palette }
+    palettes = { nordfox = palette },
 }
 
 -- Debugging.

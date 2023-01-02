@@ -17,11 +17,11 @@ config checkout -f
 sudo chmod +x ~/.scripts/install.sh && ~/.scripts/install.sh
 ```
 
-# Overview
+# Showcase
 
 Some screenshots showing of the desktop and rice, as well as some custom features I wrote.  Everything has to be *just right*.  I am spending 8+ hours a day on this working, so it might as well be a nice experience.
 
-## Desktop
+## Overview
 
 Wallpapers can be found [here](https://github.com/linuxdotexe/nordic-wallpapers).  They "norded" some nice wallpapers.
 

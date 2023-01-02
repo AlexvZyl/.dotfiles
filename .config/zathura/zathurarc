@@ -1,38 +1,43 @@
 # Base16 Gruvbox dark, hard
 # Author: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
 
-set default-bg                  "#1d2021"
-set default-fg                  "#3c3836"
+set notification-error-bg       "#232831"
+set notification-error-fg       "#BF616A"
+set notification-warning-bg     "#232831"
+set notification-warning-fg     "#D08770"
+set notification-bg             "#232831"
+set notification-fg             "#D8DEE9"
 
-set statusbar-fg                "#bdae93"
-set statusbar-bg                "#504945"
+set completion-bg               "#232831"
+set completion-fg               "#D8DEE9"
+set completion-group-bg         "#3B4252"
+set completion-group-fg         "#D8DEE9"
+set completion-highlight-bg     "#88C0D0"
+set completion-highlight-fg     "#3B4252"
 
-set inputbar-bg                 "#1d2021"
-set inputbar-fg                 "#fbf1c7"
+set index-bg                    "#232831"
+set index-fg                    "#8FBCBB"
+set index-active-bg             "#8FBCBB"
+set index-active-fg             "#232831"
 
-set notification-bg             "#1d2021"
-set notification-fg             "#fbf1c7"
+set inputbar-bg                 "#232831"
+set inputbar-fg                 "#E5E9F0"
 
-set notification-error-bg       "#1d2021"
-set notification-error-fg       "#fb4934"
+set statusbar-bg                "#2E3440"
+set statusbar-fg                "#E5E9F0"
 
-set notification-warning-bg     "#1d2021"
-set notification-warning-fg     "#fb4934"
+set highlight-color             "#D08770"
+set highlight-active-color      "#BF616A"
 
-set highlight-color             "#fabd2f"
-set highlight-active-color      "#83a598"
+set default-bg                  "#232831"
+set default-fg                  "#D8DEE9"
+set render-loading              "true"
+set render-loading-bg           "#232831"
+set render-loading-fg           "#434C5E"
 
-set completion-bg               "#3c3836"
-set completion-fg               "#83a598"
-
-set completion-highlight-fg     "#fbf1c7"
-set completion-highlight-bg     "#83a598"
-
-set recolor-lightcolor          "#1d2021"
-set recolor-darkcolor           "#ebdbb2"
-
-set recolor                     "false"
-set recolor-keephue             "false"
+set recolor-lightcolor          "#232831"
+set recolor-darkcolor           "#ECEFF4"
+set recolor                     "false" # Keep original colors.
 
 # Font.
 set font "JetBrainsMono Nerd Font 10"

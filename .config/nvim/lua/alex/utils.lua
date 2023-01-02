@@ -16,4 +16,42 @@ function M.length(table)
     return count
 end
 
+-- Get the Nord color palette with a few added colors.
+-- name0 = darkest version.
+function M.get_nord_palette()
+    return {
+
+        -- Added darker gray.
+        gray0 = "#232831",
+
+        -- Polar Night.
+        gray1 = "#2E3440",
+        gray2 = "#3B4252",
+        gray3 = "#434C5E",
+        gray4 = "#4C566A",
+
+        -- A light gray for comments.
+        gray5 = "#60728A",
+
+        -- Snow storm.
+        white0 = "#D8DEE9",
+        white1 = "#E5E9F0",
+        white2 = "#ECEFF4",
+
+        -- Frost.
+        blue0 = "#5E81AC",
+        blue1 = "#81A1C1",
+        blue2 = "#88C0D0",
+        cyan  = "#8FBCBB",
+
+        -- Aurora.
+        red     = "#BF616A",
+        orange  = "#D08770",
+        yellow  = "#EBCB8B",
+        green   = "#A3BE8C",
+        magenta = "#B48EAD"
+
+    }
+end
+
 return M

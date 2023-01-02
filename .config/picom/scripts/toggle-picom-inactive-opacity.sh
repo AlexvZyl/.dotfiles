@@ -14,11 +14,11 @@ if grep -Fxq "$DIM" $FILENAME
 # Currently dim.
 then
     sed -i "s/$DIM/$NO_DIM/g" $FILENAME
-    echo ' ' >> $STATE_FILE
+    echo 'On ' >> $STATE_FILE
 
 # Currently no dim.
 else
     sed -i "s/$NO_DIM/$DIM/g" $FILENAME
-    echo ' ' >> $STATE_FILE
+    echo 'Off' >> $STATE_FILE
 
 fi

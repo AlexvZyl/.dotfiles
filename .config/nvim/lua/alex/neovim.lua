@@ -1,6 +1,4 @@
---------------------
--- Neovim options --
---------------------
+-- Neovim specific options.
 
 -- Do not show the current mode in cmdline.
 vim.cmd('set noshowmode')
@@ -95,4 +93,3 @@ vim.cmd 'autocmd FileType tex setlocal wrap'
 -- Set blends.
 vim.cmd "set winblend=20"
 vim.cmd "set pumblend=20"
-

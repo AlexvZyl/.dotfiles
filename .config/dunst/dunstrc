@@ -292,7 +292,7 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#232831"
+    background = "#242933"
     foreground = "#E5E9F0"
     frame_color = "#8FBCBB"
     timeout = 5
@@ -300,7 +300,7 @@
     icon = /usr/share/icons/Arc-X-D/status/16/dialog-information.png
 
 [urgency_normal]
-    background = "#232831"
+    background = "#242933"
     foreground = "#E5E9F0"
     frame_color = "#8FBCBB"
     timeout = 5
@@ -308,7 +308,7 @@
     icon = /usr/share/icons/Arc-X-D/status/16/dialog-question.png
 
 [urgency_critical]
-    background = "#232831"
+    background = "#242933"
     foreground = "#E5E9F0"
     frame_color = "#BF616A"
     timeout = 60

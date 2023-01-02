@@ -38,11 +38,9 @@ ringcolor=E5E9F0
 ringwrongcolor=E5E9F0
 
 # Dark Gray.
-bgcolor=232831
-insidecolor=232831
-separatorcolor=232831
-insidevercolor=232831
-loginbox=232831
-
-# Black.
-loginshadow=1d212a
+bgcolor=242833
+insidecolor=242933
+separatorcolor=242933
+insidevercolor=242933
+loginbox=242933
+loginshadow=242933

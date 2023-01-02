@@ -1,5 +1,5 @@
 local ts = require 'telescope'
-local palette = require 'alex.utils'.get_gruvbox_material_palette()
+local palette = require 'alex.theme.utils'.get_gruvbox_material_palette()
 
 -- Setup.
 local border_chars_none = { " ", " ", " ", " ", " ", " ", " ", " " }

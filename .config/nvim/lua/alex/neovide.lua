@@ -1,6 +1,4 @@
----------------------------------
--- Settings related to neovide --
----------------------------------
+-- Settings related to neovide.
 
 -- vim.g.neovide_transparency=0.75
 vim.g.neovide_transparency=1

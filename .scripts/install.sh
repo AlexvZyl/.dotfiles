@@ -62,8 +62,8 @@ sudo systemctl disable display-manager && sudo systemctl enable sddm
 sudo touch /etc/sddm.conf
 sudo sh -c "echo '[Theme]' >> /etc/sddm.conf"
 sudo sh -c "echo 'Current=sugar-candy' >> /etc/sddm.conf"
-sudo cp ~/.wallpapers/misty_mountains.jpg /usr/share/sddm/themes/sugar-candy/
-sudo mv /usr/share/sddm/themes/sugar-candy/misty_mountains.jpg /usr/share/sddm/themes/sugar-candy/wall_secondary.png
+sudo cp ~/.wallpapers/mountain_jaws.jpg /usr/share/sddm/themes/sugar-candy/
+sudo mv /usr/share/sddm/themes/sugar-candy/mountain_jaws.jpg /usr/share/sddm/themes/sugar-candy/wall_secondary.png
 
 # Gnome stuff.
 sudo pamac install gnome-browser-connector gnome-tweaks --no-confirm
@@ -142,7 +142,9 @@ sudo pamac install betterlockscreen-git --no-confirm
 # Setup lock screen.
 # Should this script run every time the screens change?  Yeah.
 # betterlockscreen -u ~/.wallpapers/forest-mountain-cloudy-valley.png --blur 0.5
-betterlockscreen -u ~/.wallpapers/misty_mountains.jpg --blur 0.5
+# betterlockscreen -u ~/.wallpapers/misty_mountains.jpg --blur 0.5
+betterlockscreen -u ~/.wallpapers/mountain_jaws.jpg --blur 0.5
+betterlockscreen -u ~/.wallpapers/mountain_jaws.jpg
 
 # Setup fish (shell).
 sudo pamac install fish --no-confirm

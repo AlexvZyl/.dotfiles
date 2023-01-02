@@ -198,8 +198,8 @@ bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu
 # bindsym $mod+l exec i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
 
 # Lock the screen.
-# bindsym $mod+Escape exec ~/.config/i3/scripts/blur-lock
-bindsym $mod+Escape exec "betterlockscreen --lock blur"
+# bindsym $mod+Escape exec "betterlockscreen --lock blur"
+bindsym $mod+Escape exec "betterlockscreen --lock"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

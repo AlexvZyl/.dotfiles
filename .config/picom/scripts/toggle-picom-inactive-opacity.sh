@@ -14,7 +14,7 @@ if grep -Fxq "$DIM" $FILENAME
 # Currently dim.
 then
     sed -i "s/$DIM/$NO_DIM/g" $FILENAME
-    echo 'On ' >> $STATE_FILE
+    echo ' On' >> $STATE_FILE
 
 # Currently no dim.
 else

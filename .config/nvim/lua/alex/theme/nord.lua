@@ -5,8 +5,17 @@
 -- Override hihglights.
 local np = require 'alex.theme.utils'.get_nord_palette()
 local palette = {
+    -- Backgrounds.
     bg1 = np.gray0,
     bg0 = np.black,
+    -- Foregrounds.
+    fg0 = np.white0,
+    fg1 = np.white0,
+    fg2 = np.white0,
+    fg3 = np.gray2,
+    -- Selections.
+    sel0 = np.gray2,
+    sel1 = np.gray3,
 }
 local spec = {
     syntax = {
@@ -48,4 +57,5 @@ require 'nightfox'.setup {
     palettes = { nordfox = palette }
 }
 
+-- Debugging.
 vim.cmd 'colorscheme nordfox'

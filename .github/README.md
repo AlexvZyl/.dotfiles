@@ -23,9 +23,15 @@ Some screenshots showing of the desktop and rice, as well as some custom feature
 
 ## Desktop
 
-Wallpaper can be found [here](https://github.com/linuxdotexe/nordic-wallpapers).  They "norded" some nice wallpapers.
+Wallpapers can be found [here](https://github.com/linuxdotexe/nordic-wallpapers).  They "norded" some nice wallpapers.
 
 ![image](https://user-images.githubusercontent.com/81622310/210185859-64ebd7c0-1248-4a2a-bc00-75975a7ab07f.png)
+
+![image](https://user-images.githubusercontent.com/81622310/210213672-4ceccf4e-8cf6-4c33-8883-9e3e887f9e58.png)
+
+![image](https://user-images.githubusercontent.com/81622310/210213702-c6308ecd-8b7c-42d4-a517-1b16b3e7d2dc.png)
+
+![image](https://user-images.githubusercontent.com/81622310/210214086-2cd8cfb8-9fc1-43e8-b973-8763d9bed4fc.png)
 
 ## Polybar
 

@@ -85,8 +85,12 @@ end
 if pure_nord then
     setup.custom_highlights = function(_)
         return {
+            -- Language override.
+            ["Constant"] = { fg = nf.orange.bright },
             -- Tree.
             ["NvimTreeFolderIcon"] = { fg = nf.yellow.dim },
+            ["NvimTreeFolderName"] = { fg = np.blue1 },
+            ["NvimTreeRootFolder"] = { fg = nf.orange.bright },
             -- Cursorline.
             ["CursorLineNr"] = { fg = nf.yellow.bright,  style = { "bold" }},
             ["CursorLine"] = { bg = np.black, fg = "" },
@@ -97,14 +101,6 @@ if pure_nord then
             -- Indentblankline.
             ["IndentBlanklineContextChar"] = { fg = np.gray3 },
             ["IndentBlanklineChar"] = { fg = np.gray2 },
-            -- Bufferline.
-            ["BufferLineBackground"] = { bg = np.black, fg = np.gray4 },
-            ["BufferLineFill"] = { bg = np.black },
-            ["BufferLineSeparator"] = { bg = np.black, fg = np.black },
-            ["BufferLineSeparatorSelected"] = { bg = np.gray0 , fg = np.black },
-            ["BufferLineTabClose"] = { bg = np.black , fg = np.gray3 },
-            ["BufferLineSeparatorVisible"] = { bg = np.black, fg = np.gray0 },
-            ["BufferLineOffsetSeperator"] = { bg = np.black, fg = np.gray0 },
             -- Telescope.
             ["TelescopePromptNormal"] = { bg = np.gray1 },
             ["TelescopePromptBorder"] = { bg = np.gray1 },
@@ -114,6 +110,16 @@ if pure_nord then
             ["TelescopePreviewBorder"] = { bg = np.black },
             ["TelescopeTitle"] = { bg = nf.orange.bright, fg = np.black },
             ["TelescopeSelection"] = { bg = np.gray1 },
+            ["TelescopeSelectionCaret"] = { fg = nf.yellow.bright, bg = np.gray1, style = { "bold" } },
+            -- Trouble.
+            ["TroubleNormal"] = { bg = np.black },
+            -- Lualine.
+
+            -- Babar,
+           ["BufferCurrentSign"] = { fg = nf.yellow.bright, bg = np.gray0, style = { 'bold' } },
+           ["BufferCurrent"] = { fg = nf.white.dim, bg = np.gray0, style = { 'bold' } },
+           ["BufferVisibleSign"] = { fg = np.black, bg = np.black, style = { 'bold' } },
+           ["BufferVisible"] = { fg = nf.white.dim, bg = np.black },
         }
     end
 end

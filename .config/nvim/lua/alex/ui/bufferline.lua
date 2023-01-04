@@ -1,4 +1,23 @@
+-- The official colors from the website (with one added dark color.)
+local np = require 'alex.theme.utils'.get_nord_palette()
+-- The colors provided by nordfox.
+local nf = require 'alex.theme.utils'.get_nordfox_palette()
+
+-- Bufferline colors.
+local function bufferline_colors()
+    return {
+        background          = { bg = np.black },
+        separator           = { bg = np.black },
+        separator_selected  = { bg = np.black },
+        buffer_selected     = { bg = np.black },
+        tab_close           = { bg = np.black },
+        fill                = { bg = np.black }
+    }
+end
+
+
 require 'bufferline'.setup {
+    highlights = bufferline_colors,
     options = {
         indicator = {
             style = 'underline',
@@ -25,8 +44,8 @@ require 'bufferline'.setup {
             {
                 filetype = "NvimTree",
                 text = "File Explorer",
-                highlight = "Directory",
-                text_align = "center"
+                highlight = "Type",
+                text_align = "center",
             },
             {
                 filetype = "Trouble",

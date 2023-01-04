@@ -29,6 +29,10 @@ return require 'packer'.startup( function(use)
     use 'glepnir/dashboard-nvim'
     use 'folke/lsp-colors.nvim'
     use {
+        'romgrk/barbar.nvim',
+        requires = "nvim-tree/nvim-web-devicons",
+    }
+    use {
         "folke/trouble.nvim",
         requires = "kyazdani42/nvim-web-devicons",
     }

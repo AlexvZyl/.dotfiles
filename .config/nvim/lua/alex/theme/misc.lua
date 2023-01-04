@@ -89,23 +89,6 @@ require("lsp-colors").setup({
 })
 
 ----------------
--- Catppuccin --
-----------------
-
--- latte, frappe, macchiato, mocha
-vim.g.catppuccin_flavour = 'mocha'
-require 'catppuccin' .setup {
-    integrations = {
-        gitsigns = true,
-        leap = true,
-        telescope = true,
-        which_key = true,
-        notify = true,
-        treesitter_context = true,
-    }
-}
-
-----------------
 -- Everforest --
 ----------------
 

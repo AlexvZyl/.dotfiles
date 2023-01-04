@@ -45,3 +45,6 @@ vim.cmd([[
         autocmd ColorScheme gruvbox-material call s:gruvbox_material_custom()
     augroup END
 ]])
+
+-- Set the colorscheme.
+vim.cmd.colorscheme("gruvbox-material")

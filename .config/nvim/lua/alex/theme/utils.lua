@@ -48,4 +48,10 @@ function M.get_nord_palette()
     }
 end
 
+-- Get the color palette provided by nordfox.
+-- Has darker and lighter versions of the nord base colors.
+function M.get_nordfox_palette()
+    return require 'nightfox.palette' .load 'nordfox'
+end
+
 return M

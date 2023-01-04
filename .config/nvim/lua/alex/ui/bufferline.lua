@@ -5,6 +5,7 @@ require 'bufferline'.setup {
         },
         tab_size = 12, -- Minimum size.
         buffer_close_icon ='',
+        close_icon = '',
         modified_icon = '',
         max_name_length = 20,
         mode = "buffers",
@@ -36,7 +37,7 @@ require 'bufferline'.setup {
         },
         separator_style = 'slant',
         -- separator_style = {' ',' '},
-        -- separator_style = {'  ','  '},
+        -- separator_style = {' ',' '},
         custom_filter = function(buf_number, buf_numbers)
             if vim.bo[buf_number].filetype ~= 'nvimtree' then
                 return true

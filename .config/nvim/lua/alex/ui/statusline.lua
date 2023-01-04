@@ -13,17 +13,6 @@ local function diff_source()
     end
 end
 
--- Get the OS to display in Lualine.
--- Just gonna hard code Arch for now.
-local function get_os()
-    -- return '  '
-    return 'Archlinux  '
-    -- return '  '
-    -- return 'Windows  '
-    -- return '  '
-    -- return 'Debian  '
-end
-
 -- Get the current buffer's filetype.
 local function get_current_filetype()
     return vim.api.nvim_buf_get_option(0, 'filetype')

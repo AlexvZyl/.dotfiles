@@ -21,9 +21,5 @@ vim.cmd([[
     augroup END
 ]])
 
--- Load modules.
-require 'alex.theme.nord'
--- require 'alex.theme.gruvbox'
-
--- Set the scheme.
--- vim.cmd 'colorscheme nordfox'
+-- Load the scheme.
+require 'alex.theme.nordpuccin'

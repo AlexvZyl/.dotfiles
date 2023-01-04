@@ -112,7 +112,10 @@ return require 'packer'.startup( function(use)
 
     -- Themes.
     use 'sainnhe/gruvbox-material' -- My fav.
-    use 'catppuccin/nvim' -- This one is nice.
+    use {
+        'catppuccin/nvim',
+        as = 'catppuccin'
+    }
     use 'morhetz/gruvbox'
     use 'folke/tokyonight.nvim'
     use 'EdenEast/nightfox.nvim'

@@ -25,11 +25,11 @@ require 'bufferline' .setup {
      diagnostics = {
         {   -- Error.
             enabled = true,
-            icon = '  '
+            icon = ' '
         },
         {   -- Warning,
             enabled = false,
-            icon = '  '
+            icon = ' '
         },
         {   -- Info.
             enabled = false
@@ -40,8 +40,8 @@ require 'bufferline' .setup {
     },
     icon_separator_active = '▎',
     icon_separator_inactive = ' ',
-    icon_close_tab = '  ',
-    icon_close_tab_modified = ' ● ',
+    icon_close_tab = ' ',
+    icon_close_tab_modified = '● ',
     icon_pinned = '車',
     minimum_padding = 1,
     maximum_padding = 1,

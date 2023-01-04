@@ -120,6 +120,7 @@ if pure_nord then
            ["BufferCurrent"] = { fg = nf.white.dim, bg = np.gray0, style = { 'bold' } },
            ["BufferVisibleSign"] = { fg = np.black, bg = np.black, style = { 'bold' } },
            ["BufferVisible"] = { fg = nf.white.dim, bg = np.black },
+           ["BufferVisibleError"] = { fg = nf.red.bright, bg = np.black },
         }
     end
 end

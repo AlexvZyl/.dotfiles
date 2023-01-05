@@ -99,6 +99,8 @@ if pure_nord then
             ["@attribute"] = { fg = nf.red.base, style = { 'bold' } },
             ["@operator"] = { fg = nf.blue.bright },
             ["@boolean"] = { fg = nf.magenta.bright },
+            ["@variable.builtin"] = { fg = nf.magenta.bright, style = { 'italic' } },
+            ["@namespace"] = { fg = nf.yellow.dim, style = { 'italic' } },
             -- Tree.
             ["NvimTreeFolderIcon"] = { fg = nf.yellow.dim },
             ["NvimTreeFolderName"] = { fg = np.blue1 },

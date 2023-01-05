@@ -1,0 +1,18 @@
+name = "TestItemDetection"
+uuid = "76b0de8b-5c4b-48ef-a724-914b33ca988d"
+authors = ["David Anthoff <anthoff@berkeley.edu>"]
+version = "0.1.2-DEV"
+
+[deps]
+CSTParser = "00ebfdb7-1f24-5e51-bd34-a7502290713f"
+
+[extras]
+TestItemRunner = "f8b46487-2199-4994-9208-9a1283c18c0a"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[compat]
+julia = "1"
+CSTParser = "3"
+
+[targets]
+test = ["Test", "TestItemRunner"]

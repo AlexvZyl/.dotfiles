@@ -20,8 +20,8 @@ saga.init_lsp_saga {
 }
 
 -- Get the color palette.
-local palette = require 'alex.theme.utils'.get_gruvbox_material_palette()
-local border_color = palette.orange[1]
+local palette = require 'alex.theme.utils'.get_nordfox_palette()
+local border_color = palette.orange.bright
 
 -- Set the borders colors.
 vim.cmd('highlight! DefinitionBorder guibg=NONE guifg=' .. border_color)

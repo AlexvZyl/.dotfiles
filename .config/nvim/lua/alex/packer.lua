@@ -22,10 +22,7 @@ return require 'packer'.startup( function(use)
     -- Gui.
     use 'akinsho/toggleterm.nvim'
     use 'rcarriga/nvim-notify'
-    use {
-        'nvim-lualine/lualine.nvim',
-        after = 'catppuccin.nvim'
-    }
+    use 'nvim-lualine/lualine.nvim'
     use 'kyazdani42/nvim-web-devicons'
     use 'akinsho/bufferline.nvim'
     use 'Pocco81/true-zen.nvim'

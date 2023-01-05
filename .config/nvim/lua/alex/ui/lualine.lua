@@ -167,8 +167,10 @@ local function get_git_compare()
 end
 
 -- Required to properly set the colors.
-local get_color = require 'lualine.utils.utils'.extract_highlight_colors
-local custom_nord = require 'alex.theme.utils'.get_nord_lualine_theme()
+local custom_nord = require 'alex.theme.utils'.get_nord_lualine_theme()    
+-- Get the palettes.
+local np = require 'alex.theme.utils'.get_nord_palette()
+local nf = require 'alex.theme.utils'.get_nordfox_palette()
 
 require 'lualine'.setup {
     sections = {
@@ -188,7 +190,7 @@ require 'lualine'.setup {
                 'branch',
                 icon = {
                     '',
-                    color = { fg = get_color('Orange', 'fg') },
+                    color = { fg = nf.orange.bright, gui = 'bold' },
                 },
                 separator = ' ',
             },
@@ -197,7 +199,7 @@ require 'lualine'.setup {
                 separator = ' ',
                 icon = {
                     ' ',
-                    color = { fg = get_color('Orange', 'fg') },
+                    color = { fg = nf.orange.bright, gui = 'bold' },
                 }
             },
             {
@@ -227,10 +229,10 @@ require 'lualine'.setup {
                     hint = ' ',
                 },
                 diagnostics_color = {
-                    error = { fg=get_color('Red', 'fg')    },
-                    warn =  { fg=get_color('Yellow', 'fg') },
-                    info =  { fg=get_color('Blue', 'fg')   },
-                    hint =  { fg=get_color('Green', 'fg')  },
+                    error = { fg=nf.red.bright, gui='bold'   },
+                    warn =  { fg=nf.yellow.base, gui='bold' },
+                    info =  { fg=nf.blue.bright, gui='bold'   },
+                    hint =  { fg=nf.green.bright, gui='bold'  },
                 },
                 colored = true,
             },
@@ -242,7 +244,7 @@ require 'lualine'.setup {
                     ' ,',
                     align = 'left',
                     color = {
-                        fg = get_color('Orange', 'fg'),
+                        fg = nf.orange.bright,
                         gui = 'bold'
                     }
                 },
@@ -254,7 +256,7 @@ require 'lualine'.setup {
                     '  ',
                     align = 'left',
                     color = {
-                        fg = get_color('Orange', 'fg'),
+                        fg = nf.orange.bright,
                         gui = 'bold'
                     }
                 }
@@ -267,7 +269,7 @@ require 'lualine'.setup {
                 icon = {
                     '',
                     align = 'left',
-                    color = { fg = get_color('Black', 'fg') },
+                    color = { fg = np.black },
                 }
             },
             {
@@ -275,7 +277,7 @@ require 'lualine'.setup {
                 icon = {
                     '',
                     align = 'left',
-                    color = { fg = get_color('Black', 'fg') },
+                    color = { fg = np.black },
                 }
             }
         },

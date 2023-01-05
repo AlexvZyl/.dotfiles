@@ -64,17 +64,19 @@ function M.get_nord_lualine_theme()
     local np = M.get_nord_palette()
     local nf = M.get_nordfox_palette()
 
+    -- Set b and c.
+    nord.normal.b.bg = np.gray1
+    nord.normal.b.fg = nf.white.dim
+    nord.normal.c.bg = np.black
+    nord.normal.c.fg = nf.white.dim
     -- Set normal mode.
     nord.normal.a.bg = nf.orange.bright
     nord.normal.a.gui = 'bold'
-    nord.normal.b.bg = np.gray2
-    nord.normal.b.fg = np.white0
-    nord.normal.c.bg = np.black
     -- Insert mode.
-    nord.insert.a.bg = np.yellow
+    nord.insert.a.bg = nf.green.bright
     nord.insert.a.gui = 'bold'
     -- Visual.
-    nord.visual.a.bg = np.green
+    nord.visual.a.bg = nf.red.bright
     nord.visual.a.gui = 'bold'
 
     return nord

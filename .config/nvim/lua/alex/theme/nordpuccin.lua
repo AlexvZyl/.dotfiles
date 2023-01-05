@@ -86,12 +86,25 @@ if pure_nord then
     setup.custom_highlights = function(_)
         return {
             -- Language override.
-            ["Constant"] = { fg = nf.orange.bright },
+            ["@constant"] = { fg = nf.magenta.bright },
+            ["Number"] = { fg = nf.magenta.bright },
+            ["@keyword"] = { fg = nf.orange.base, style = { 'bold' } },
+            ["@keyword.return"] = { fg = nf.orange.base, style = { 'bold' } },
+            ["@keyword.function"] = { fg = nf.orange.base, style = { 'bold' } },
+            ["@keyword.export"] = { fg = nf.orange.base, style = { 'bold' } },
+            ["@keyword.operator"] = { fg = nf.orange.base, style = { 'bold' } },
+            ["@conditional"] = { fg = nf.orange.base, style = { 'bold' } },
+            ["@macro"] = { fg = nf.red.base, style = { 'bold' } },
+            ["@preproc"] = { fg = nf.red.base, style = { 'bold' } },
+            ["@attribute"] = { fg = nf.red.base, style = { 'bold' } },
+            ["@operator"] = { fg = nf.blue.bright },
+            ["@boolean"] = { fg = nf.magenta.bright },
             -- Tree.
             ["NvimTreeFolderIcon"] = { fg = nf.yellow.dim },
             ["NvimTreeFolderName"] = { fg = np.blue1 },
-            ["NvimTreeOpenedName"] = { fg = np.blue2 },
-            ["NvimTreeRootFolder"] = { fg = nf.orange.bright },
+            ["NvimTreeEmptyFolderName"] = { fg = np.blue1 },
+            ["NvimTreeOpenedName"] = { fg = np.blue1 },
+            ["NvimTreeRootFolder"] = { fg = nf.yellow.base },
             -- Cursorline.
             ["CursorLineNr"] = { fg = nf.orange.bright, style = { "bold" }},
             ["CursorLine"] = { bg = np.black, fg = "" },
@@ -99,7 +112,7 @@ if pure_nord then
             -- Dashboard.
             ["DashboardHeader"] = { fg = nf.yellow.base, style = { "bold" } },
             ["DashboardFooter"] = { fg = nf.cyan.bright, style = { "italic", "bold" } },
-            ["DashboardCenter"] = { fg = nf.green.base, style = { "italic", "bold" } },
+            ["DashboardCenter"] = { fg = nf.green.base },
             -- Indentblankline.
             ["IndentBlanklineContextChar"] = { fg = np.gray3 },
             ["IndentBlanklineChar"] = { fg = np.gray2 },
@@ -111,7 +124,7 @@ if pure_nord then
             ["TelescopePreviewNormal"] = { bg = np.black },
             ["TelescopePreviewBorder"] = { bg = np.black },
             ["TelescopeTitle"] = { bg = nf.orange.base, fg = np.black, style = { 'bold' } },
-            ["TelescopeSelection"] = { bg = np.gray1, fg = np.white1 },
+            ["TelescopeSelection"] = { bg = np.gray1, fg = np.white0 },
             ["TelescopeSelectionCaret"] = { fg = nf.yellow.bright, bg = np.gray1, style = { "bold" } },
             -- Trouble.
             ["TroubleNormal"] = { bg = np.black },

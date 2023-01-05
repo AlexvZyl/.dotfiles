@@ -1,6 +1,5 @@
 -- Using Lualine as the statusline.
 
-
 -- Show git status.
 local function diff_source()
     local gitsigns = vim.b.gitsigns_status_dict
@@ -128,38 +127,6 @@ local function get_native_lsp_status()
     return ''
 end
 
--- Get the lsp of the current buffer, when using coc.
-local function get_coc_lsp()
-    local services = vim.fn.CocAction('services')
-    local current_lang = get_current_filetype()
-    for _, lsp in pairs(services) do
-        for _, lang in pairs(lsp['languageIds']) do
-            if lang == current_lang then
-                return lsp['id']
-            end
-        end
-    end
-    return 'None'
-end
-
--- Get the status of the LSP.
-local function get_coc_lsp_status()
-    local current_lsp = get_coc_lsp()
-    if current_lsp == 'None' then
-        return ''
-    end
-    local services = vim.fn.CocAction('services')
-    for _, lsp in pairs(services) do
-        if lsp['id'] == current_lsp then
-            if lsp['state'] == 'running' then
-                return ''
-            else
-                return lsp['state']
-            end
-        end
-    end
-    return ''
-end
 
 -- Get the status of the compiler, if applicable.
 local function get_compiler_status()
@@ -201,6 +168,7 @@ end
 
 -- Required to properly set the colors.
 local get_color = require 'lualine.utils.utils'.extract_highlight_colors
+local custom_nord = require 'alex.theme.utils'.get_nord_lualine_theme()
 
 require 'lualine'.setup {
     sections = {
@@ -315,10 +283,9 @@ require 'lualine'.setup {
     options = {
         disabled_filetypes = { "dashboard" },
         globalstatus = true,
-        -- section_separators = { left =' ', right = ' ' },
         section_separators = { left = ' ', right = ' ' },
-        -- component_separators = { left = '', right = '' }
         component_separators = { left = '', right = ''},
+        theme = custom_nord,
     },
     extensions = {
         "toggleterm",

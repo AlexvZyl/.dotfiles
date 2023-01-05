@@ -1,6 +1,4 @@
------------------
--- Main config --
------------------
+-- Main setup.
 
 -- These have to be run first and in this order.
 require 'alex.packer'

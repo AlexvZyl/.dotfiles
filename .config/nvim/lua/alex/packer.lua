@@ -22,7 +22,10 @@ return require 'packer'.startup( function(use)
     -- Gui.
     use 'akinsho/toggleterm.nvim'
     use 'rcarriga/nvim-notify'
-    use 'nvim-lualine/lualine.nvim'
+    use {
+        'nvim-lualine/lualine.nvim',
+        after = 'catppuccin.nvim'
+    }
     use 'kyazdani42/nvim-web-devicons'
     use 'akinsho/bufferline.nvim'
     use 'Pocco81/true-zen.nvim'
@@ -116,10 +119,7 @@ return require 'packer'.startup( function(use)
 
     -- Themes.
     use 'sainnhe/gruvbox-material' -- My fav.
-    use {
-        'catppuccin/nvim',
-        as = 'catppuccin'
-    }
+    use 'catppuccin/nvim'
     use 'morhetz/gruvbox'
     use 'folke/tokyonight.nvim'
     use 'EdenEast/nightfox.nvim'

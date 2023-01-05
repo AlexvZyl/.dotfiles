@@ -54,4 +54,30 @@ function M.get_nordfox_palette()
     return require 'nightfox.palette' .load 'nordfox'
 end
 
+-- Custom nord theme for lualine.
+function M.get_nord_lualine_theme()
+
+    -- Get the lualine theme.
+    local nord = require 'lualine.themes.nord'
+
+    -- Get the palettes.
+    local np = M.get_nord_palette()
+    local nf = M.get_nordfox_palette()
+
+    -- Set normal mode.
+    nord.normal.a.bg = nf.orange.bright
+    nord.normal.a.gui = 'bold'
+    nord.normal.b.bg = np.gray2
+    nord.normal.b.fg = np.white0
+    nord.normal.c.bg = np.black
+    -- Insert mode.
+    nord.insert.a.bg = np.yellow
+    nord.insert.a.gui = 'bold'
+    -- Visual.
+    nord.visual.a.bg = np.green
+    nord.visual.a.gui = 'bold'
+
+    return nord
+end
+
 return M

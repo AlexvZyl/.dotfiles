@@ -22,6 +22,7 @@ end)
 -- Setup.
 require 'bufferline' .setup {
     auto_hide = false,
+    highlight_inactive_file_icons = true,
      diagnostics = {
         {   -- Error.
             enabled = true,

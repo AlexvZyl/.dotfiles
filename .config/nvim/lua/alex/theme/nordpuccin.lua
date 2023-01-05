@@ -89,11 +89,13 @@ if pure_nord then
             ["Constant"] = { fg = nf.orange.bright },
             -- Tree.
             ["NvimTreeFolderIcon"] = { fg = nf.yellow.dim },
-            ["NvimTreeFolderName"] = { fg = np.blue1 },
+            ["NvimTreeFolderName"] = { fg = nf.blue.base },
+            ["NvimTreeOpenedName"] = { fg = nf.blue.bright },
             ["NvimTreeRootFolder"] = { fg = nf.orange.bright },
             -- Cursorline.
-            ["CursorLineNr"] = { fg = nf.yellow.bright,  style = { "bold" }},
-            ["CursorLine"] = { bg = np.black, fg = "" },
+            ["CursorLineNr"] = { fg = nf.orange.bright, style = { "bold" }},
+            ["CursorLine"] = { bg = np.gray1, fg = "", style = { "bold" } },
+            ["Visual"] = { bg = np.gray1},
             -- Dashboard.
             ["DashboardHeader"] = { fg = nf.yellow.base, style = { "bold" } },
             ["DashboardFooter"] = { fg = nf.cyan.bright, style = { "italic", "bold" } },
@@ -109,18 +111,20 @@ if pure_nord then
             ["TelescopePreviewNormal"] = { bg = np.black },
             ["TelescopePreviewBorder"] = { bg = np.black },
             ["TelescopeTitle"] = { bg = nf.orange.bright, fg = np.black },
-            ["TelescopeSelection"] = { bg = np.gray1 },
+            ["TelescopeSelection"] = { bg = np.gray1, fg = np.white1 },
             ["TelescopeSelectionCaret"] = { fg = nf.yellow.bright, bg = np.gray1, style = { "bold" } },
             -- Trouble.
             ["TroubleNormal"] = { bg = np.black },
-            -- Lualine.
-
             -- Babar,
-           ["BufferCurrentSign"] = { fg = nf.yellow.bright, bg = np.gray0, style = { 'bold' } },
            ["BufferCurrent"] = { fg = nf.white.dim, bg = np.gray0, style = { 'bold' } },
-           ["BufferVisibleSign"] = { fg = np.black, bg = np.black, style = { 'bold' } },
+           ["BufferCurrentSign"] = { fg = nf.orange.bright, bg = np.gray0, style = { 'bold' } },
+           ["BufferCurrentMod"] = { fg = nf.white.dim, bg = np.gray0, style = { 'bold' } },
            ["BufferVisible"] = { fg = nf.white.dim, bg = np.black },
+           ["BufferVisibleSign"] = { fg = np.black, bg = np.black, style = { 'bold' } },
+           ["BufferVisibleMod"] = { fg = nf.white.dim, bg = np.black },
            ["BufferVisibleError"] = { fg = nf.red.bright, bg = np.black },
+           -- Lualine.
+
         }
     end
 end

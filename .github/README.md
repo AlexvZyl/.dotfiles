@@ -63,10 +63,10 @@ The [Neovim config](https://github.com/Alex-vZyl/.dotfiles/tree/main/.config/nvi
 *Overview:*
 ![image](https://user-images.githubusercontent.com/81622310/210983899-cc5d3016-8dcb-46e3-a6ce-5d3b60431524.png)
 
-*Dashboard:*
+*[Dashboard](https://github.com/nvim-telescope/telescope.nvim):*
 ![image](https://user-images.githubusercontent.com/81622310/210983209-abe76da1-a190-4d3d-be10-8f570595dd7f.png)
 
-*Telescope:*
+*[Telescope](https://github.com/nvim-telescope/telescope.nvim):*
 ![image](https://user-images.githubusercontent.com/81622310/210984138-f650324c-4a5a-4fb1-a5c1-e14b26ef40c9.png)
 
 

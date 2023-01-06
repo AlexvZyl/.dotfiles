@@ -70,7 +70,10 @@ Wallpapers can be found [here](https://github.com/linuxdotexe/nordic-wallpapers)
 
 # Key Bindings
 
-Keys combined with the `Super` key are reserved for OS and WM related actions.
+A few notes on the bindings:
+
+- Keys combined with the `Super` key are reserved for OS and WM related actions.  
+- Arrows and `hjkl` keys are interchangeable.
 
 ### **i3**:
 

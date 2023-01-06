@@ -62,6 +62,7 @@ Wallpapers can be found [here](https://github.com/linuxdotexe/nordic-wallpapers)
 ### References
 
 - [Arcolinux](https://github.com/arcolinux/arcolinux-polybar/blob/master/etc/skel/.config/polybar/config)
+- [Polybar-Themes](https://github.com/adi1090x/polybar-themes)
 
 ## Read mode
 

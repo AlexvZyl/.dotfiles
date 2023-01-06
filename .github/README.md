@@ -25,6 +25,9 @@ Some screenshots showing of the desktop and rice, as well as some custom feature
 
 Wallpapers can be found [here](https://github.com/linuxdotexe/nordic-wallpapers).  They "norded" some nice wallpapers.
 
+*For Reddit:*
+![image](https://user-images.githubusercontent.com/81622310/210989596-85191ac2-2047-4294-b170-c40ff8c42b09.png)
+
 *Just the desktop:*
 ![image](https://user-images.githubusercontent.com/81622310/210979757-46dccec5-1c7f-429d-a479-b39720c94f0e.png)
 

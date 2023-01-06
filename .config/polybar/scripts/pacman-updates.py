@@ -3,7 +3,7 @@ import subprocess
 from collections import Counter
 
 # Sync.
-command1 = ["sudo", "pacman", "-Sy"]
+command1 = ["sudo", "pacman", "-Syy"]
 subprocess.run(command1, stdout=subprocess.PIPE, stderr = subprocess.DEVNULL).stdout.decode('utf-8')
 
 # Get updates.

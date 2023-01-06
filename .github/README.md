@@ -2,6 +2,8 @@
 
 The configuration files for my Linux desktop.  Supports Arch based distros using Gnome and/or i3.  Also, currently it assumes you have an Nvidia GPU and Intel CPU.
 
+> _ℹ️ &nbsp; I mainly use i3, but I also install Gnome for when people do not want to mess around with a tiling WM.  All of the screenshots are for i3 and the gnome configs are very basic._
+
 # Installation
 
 To install everything, simply copy and paste this into the terminal.  Reboot after it is done.

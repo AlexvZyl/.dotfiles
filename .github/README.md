@@ -60,6 +60,15 @@ Wallpapers can be found [here](https://github.com/linuxdotexe/nordic-wallpapers)
 
 The [Neovim config](https://github.com/Alex-vZyl/.dotfiles/tree/main/.config/nvim) has a decent amount of work and is very close to a proper IDE.  Why didn't I use [LunarVim](https://github.com/LunarVim/LunarVim), [NvChad](https://github.com/NvChad/NvChad) or [SpaceVim](https://github.com/liuchengxu/space-vim)?  I like doing things myself. 
 
-<br/>
+*Overview:*
+![image](https://user-images.githubusercontent.com/81622310/210983899-cc5d3016-8dcb-46e3-a6ce-5d3b60431524.png)
+
+*Dashboard:*
+![image](https://user-images.githubusercontent.com/81622310/210983209-abe76da1-a190-4d3d-be10-8f570595dd7f.png)
+
+*Telescope:*
+![image](https://user-images.githubusercontent.com/81622310/210984138-f650324c-4a5a-4fb1-a5c1-e14b26ef40c9.png)
+
+
 
 

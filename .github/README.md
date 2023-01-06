@@ -81,6 +81,7 @@ Keys combined with the `Super` key are reserved for OS and WM related actions.
 | Super + t | Alacritty |
 | Super + n | Neovide |
 | Super + b | BTop++ |
+| Super + r | Toggle read mode |
 | Super + tab | Windows |
 | Super + Arrow | Cycle windows |
 | Super + Shift + Arrow | Move window |

@@ -1,4 +1,6 @@
-# .dotfiles
+<div align "center">
+<p>.dotfiles<p>
+</div>
 
 The configuration files for my Linux desktop.  Supports Arch based distros using Gnome and/or i3.  Also, currently it assumes you have an Nvidia GPU and Intel CPU.
 
@@ -8,17 +10,12 @@ I mainly use i3, but I also install Gnome for when people do not want to mess ar
 
 # Installation
 
-To install everything, simply copy and paste this into the terminal.  Reboot after it is done.
+To install everything, simply run `make install`. and then reboot afterwards.
 
 > _⚠️ &nbsp; I am not following proper development protocol, so this might not always be stable._
 
-```bash
-sudo pacman -S git
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-mkdir ~/.dotfiles
-config clone --bare https://github.com/AlexvZyl/.dotfiles ~/.dotfiles/
-config checkout -f
-sudo chmod +x ~/.scripts/install.sh && ~/.scripts/install.sh
+```yaml
+$ make install
 ```
 
 # Key Bindings

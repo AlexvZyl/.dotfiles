@@ -21,6 +21,14 @@ config checkout -f
 sudo chmod +x ~/.scripts/install.sh && ~/.scripts/install.sh
 ```
 
+# Key Bindings
+
+*TODO*
+
+# Theme
+
+*TODO*
+
 # Showcase
 
 Some screenshots showing of the desktop and rice, as well as some custom features I wrote.  Everything has to be *just right*.  I am spending 8+ hours a day on this working, so it might as well be a nice experience.

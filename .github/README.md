@@ -12,6 +12,8 @@ To install everything, simply copy and paste this into the terminal.  Reboot aft
 
 > _⚠️ &nbsp; I am not following proper development protocol, so this might not always be stable._
 
+> _⚠️ &nbsp; This forces a checkout, which can ruin existing configs.  Better to use on a clean install._
+
 ```bash
 sudo pacman -S git
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

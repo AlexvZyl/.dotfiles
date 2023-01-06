@@ -6,6 +6,8 @@ I mainly use i3, but I also install Gnome for when people do not want to mess ar
 
 > _ℹ️ &nbsp; Remember to choose i3 at the login screen._
 
+> _⚠️ &nbsp; These are my personal dotfiles, which means they will continuously change.  If you came here from a reddit post and it is no longer like in the post, that is why._
+
 # Installation
 
 To install everything, simply copy and paste this into the terminal.  Reboot after it is done.

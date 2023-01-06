@@ -213,7 +213,8 @@ require 'lualine'.setup {
                 },
                 diff_color = {
                     added = { fg = nf.green.base, gui = 'bold' },
-                    modified = { fg = nf.blue.base, gui = 'bold' },
+                    modified = { fg = nf.yellow.dim, gui = 'bold' },
+                    removed = { fg = nf.red.bright, gui = 'bold' },
                 }
                 -- icon = {
                     -- ' ',

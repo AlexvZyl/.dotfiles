@@ -113,7 +113,7 @@ if pure_nord then
             ["Visual"] = { bg = np.black},
             -- Dashboard.
             ["DashboardHeader"] = { fg = nf.yellow.base, style = { "bold" } },
-            ["DashboardFooter"] = { fg = nf.cyan.bright, style = { "italic", "bold" } },
+            ["DashboardFooter"] = { fg = nf.cyan.base, style = { "italic" } },
             ["DashboardCenter"] = { fg = nf.green.base },
             -- Indentblankline.
             ["IndentBlanklineContextChar"] = { fg = np.gray3 },

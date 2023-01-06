@@ -23,14 +23,6 @@ config checkout -f
 sudo chmod +x ~/.scripts/install.sh && ~/.scripts/install.sh
 ```
 
-# Key Bindings
-
-*TODO*
-
-# Theme
-
-*TODO*
-
 # Showcase
 
 Some screenshots showing of the desktop and rice, as well as some custom features I wrote.  Everything has to be *just right*.  I am spending 8+ hours a day on this working, so it might as well be a nice experience.
@@ -76,7 +68,29 @@ Wallpapers can be found [here](https://github.com/linuxdotexe/nordic-wallpapers)
 *Enabled:*
 ![image](https://user-images.githubusercontent.com/81622310/210981730-29315896-a066-482c-be29-d1460116311f.png)
 
-## Neovim
+# Key Bindings
+
+Keys combined with the `Super` key are reserved for OS and WM related actions.
+
+### **i3**:
+
+|  Binding  |  Action   |
+| :-------: | :-------: |
+| Super + d | App launcher |
+| Super + p | Powermenu |
+| Super + t | Alacritty |
+| Super + n | Neovide |
+| Super + b | BTop++ |
+| Super + tab | Windows |
+| Super + Arrow | Cycle windows |
+| Super + Shift + Arrow | Move window |
+| Super + Number | Go to workspace |
+
+# Theme
+
+*TODO*
+
+# Neovim
 
 The [Neovim config](https://github.com/Alex-vZyl/.dotfiles/tree/main/.config/nvim) has a decent amount of work and is very close to a proper IDE.  Why didn't I use [LunarVim](https://github.com/LunarVim/LunarVim), [NvChad](https://github.com/NvChad/NvChad) or [SpaceVim](https://github.com/liuchengxu/space-vim)?  I like doing things myself. 
 

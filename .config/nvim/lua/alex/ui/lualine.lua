@@ -43,7 +43,7 @@ function M:get_current_filetype_icon()
 
     -- Get setup.
     local icon, icon_highlight_group
-    local ok, devicons = pcall(require, 'nvim-web-devicons')
+    local _, devicons = pcall(require, 'nvim-web-devicons')
     local f_name, f_extension = vim.fn.expand('%:t'), vim.fn.expand('%:e')
     f_extension = f_extension ~= '' and f_extension or vim.bo.filetype
     icon, icon_highlight_group = devicons.get_icon(f_name, f_extension)
@@ -167,7 +167,7 @@ local function get_git_compare()
 end
 
 -- Required to properly set the colors.
-local custom_nord = require 'alex.theme.utils'.get_nord_lualine_theme()    
+local custom_nord = require 'alex.theme.utils'.get_nord_lualine_theme()
 -- Get the palettes.
 local np = require 'alex.theme.utils'.get_nord_palette()
 local nf = require 'alex.theme.utils'.get_nordfox_palette()
@@ -211,6 +211,10 @@ require 'lualine'.setup {
                     modified = ' ',
                     removed = ' '
                 },
+                diff_color = {
+                    added = { fg = nf.green.base, gui = 'bold' },
+                    modified = { fg = nf.blue.base, gui = 'bold' },
+                }
                 -- icon = {
                     -- ' ',
                     -- color = { fg = get_color('Orange', 'fg') },

@@ -24,7 +24,6 @@ return require 'packer'.startup( function(use)
     use 'rcarriga/nvim-notify'
     use 'nvim-lualine/lualine.nvim'
     use 'kyazdani42/nvim-web-devicons'
-    use 'akinsho/bufferline.nvim'
     use 'Pocco81/true-zen.nvim'
     use 'glepnir/dashboard-nvim'
     use 'folke/lsp-colors.nvim'
@@ -42,6 +41,10 @@ return require 'packer'.startup( function(use)
             "MunifTanjim/nui.nvim",
             "rcarriga/nvim-notify"
         }
+    }
+    use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
     }
 
     -- Images.

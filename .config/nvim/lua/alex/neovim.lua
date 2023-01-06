@@ -78,9 +78,9 @@ vim.g.mapleader = ' '
 
 -- Enable spell checking.
 vim.cmd ([[
-autocmd FileType tex setlocal spell
-autocmd FileType tex setlocal spelllang=en
-" autocmd BufRead,BufNewFile *.tex setlocal spell
+    autocmd FileType tex setlocal spell
+    autocmd FileType tex setlocal spelllang=en
+    " autocmd BufRead,BufNewFile *.tex setlocal spell
 ]])
 
 -- Change spell checking hl.

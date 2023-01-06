@@ -138,6 +138,12 @@ if pure_nord then
             ["BufferVisibleSign"] = { fg = np.black, bg = np.black, style = { 'bold' } },
             ["BufferVisibleMod"] = { fg = nf.white.dim, bg = np.black },
             ["BufferVisibleError"] = { fg = nf.red.bright, bg = np.black },
+            ["BufferInactiveMod"] = { fg = "#888888", bg = np.black },
+            -- Diagnostics.
+            ["DiagnosticSignError"] = { fg = nf.red.bright, style = { 'bold' } },
+            ["DiagnosticSignWarning"] = { fg = nf.yellow.base, style = { 'bold' } },
+            ["DiagnosticSignInfo"] = { fg = nf.blue.bright, style = { 'bold' } },
+            ["DiagnosticSignHint"] = { fg = nf.green.bright, style = { 'bold' } },
         }
     end
 end

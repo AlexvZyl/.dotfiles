@@ -6,11 +6,15 @@ I mainly use i3, but I also install Gnome for when people do not want to mess ar
 
 > _ℹ️ &nbsp; Remember to choose i3 at the login screen._
 
+> _⚠️ &nbsp; These are my personal dotfiles, which means they will continuously change.  If you came here from a reddit post and it is no longer like in the post, that is why._
+
 # Installation
 
 To install everything, simply copy and paste this into the terminal.  Reboot after it is done.
 
 > _⚠️ &nbsp; I am not following proper development protocol, so this might not always be stable._
+
+> _⚠️ &nbsp; This forces a checkout, which can ruin existing configs.  Better to use on a clean install._
 
 ```bash
 sudo pacman -S git
@@ -20,14 +24,6 @@ config clone --bare https://github.com/AlexvZyl/.dotfiles ~/.dotfiles/
 config checkout -f
 sudo chmod +x ~/.scripts/install.sh && ~/.scripts/install.sh
 ```
-
-# Key Bindings
-
-*TODO*
-
-# Theme
-
-*TODO*
 
 # Showcase
 
@@ -74,7 +70,33 @@ Wallpapers can be found [here](https://github.com/linuxdotexe/nordic-wallpapers)
 *Enabled:*
 ![image](https://user-images.githubusercontent.com/81622310/210981730-29315896-a066-482c-be29-d1460116311f.png)
 
-## Neovim
+# Key Bindings
+
+A few notes on the bindings:
+
+- Keys combined with the `Super` key are reserved for OS and WM related actions.  
+- Arrows and `hjkl` keys are interchangeable.
+
+### **i3**:
+
+|  Binding  |  Action   |
+| :-------: | :-------: |
+| Super + d | App launcher |
+| Super + p | Powermenu |
+| Super + t | Alacritty |
+| Super + n | Neovide |
+| Super + b | BTop++ |
+| Super + r | Toggle read mode |
+| Super + tab | Windows |
+| Super + Arrow | Cycle windows |
+| Super + Shift + Arrow | Move window |
+| Super + Number | Go to workspace |
+
+# Theme
+
+*TODO*
+
+# Neovim
 
 The [Neovim config](https://github.com/Alex-vZyl/.dotfiles/tree/main/.config/nvim) has a decent amount of work and is very close to a proper IDE.  Why didn't I use [LunarVim](https://github.com/LunarVim/LunarVim), [NvChad](https://github.com/NvChad/NvChad) or [SpaceVim](https://github.com/liuchengxu/space-vim)?  I like doing things myself. 
 

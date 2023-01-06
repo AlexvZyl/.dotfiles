@@ -59,6 +59,10 @@ Wallpapers can be found [here](https://github.com/linuxdotexe/nordic-wallpapers)
 
 *TODO*
 
+### References
+
+- [Arcolinux](https://github.com/arcolinux/arcolinux-polybar/blob/master/etc/skel/.config/polybar/config)
+
 ## Read mode
 
 `Super + r` disables the `inactive-opacity` (from `picom`) for when readability is important.  An indicator is displayed via polybar.

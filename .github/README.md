@@ -26,16 +26,16 @@ Some screenshots showing of the desktop and rice, as well as some custom feature
 Wallpapers can be found [here](https://github.com/linuxdotexe/nordic-wallpapers).  They "norded" some nice wallpapers.
 
 *Just the desktop:*
-![image](https://user-images.githubusercontent.com/81622310/210185859-64ebd7c0-1248-4a2a-bc00-75975a7ab07f.png)
+![image](https://user-images.githubusercontent.com/81622310/210979757-46dccec5-1c7f-429d-a479-b39720c94f0e.png)
 
 *Notifications via [dunst](https://github.com/dunst-project/dunst):*
-![image](https://user-images.githubusercontent.com/81622310/210214740-3056d03c-40d0-430b-b35d-3f1d8607334f.png)
+![image](https://user-images.githubusercontent.com/81622310/210980911-cb7825d5-1ac2-4db9-b34a-f92887701d1d.png)
 
 *Launcher via [rofi](https://github.com/adi1090x/rofi):*
-![image](https://user-images.githubusercontent.com/81622310/210214442-777ef32e-52e9-4810-8196-20da4e012b8d.png)
+![image](https://user-images.githubusercontent.com/81622310/210980157-4ce412bd-7af4-4a2e-8e83-26bac4537860.png)
 
 *Powermenu via [rofi](https://github.com/adi1090x/rofi):*
-![image](https://user-images.githubusercontent.com/81622310/210214497-bd4053ba-81d1-4a8e-b44e-033450f50025.png)
+![image](https://user-images.githubusercontent.com/81622310/210980303-11610bb7-99d5-4cab-ad75-8094b2e12286.png)
 
 *Lock screen via [betterlockscreen](https://github.com/betterlockscreen/betterlockscreen):*
 ![image](https://user-images.githubusercontent.com/81622310/210214086-2cd8cfb8-9fc1-43e8-b973-8763d9bed4fc.png)
@@ -47,6 +47,12 @@ Wallpapers can be found [here](https://github.com/linuxdotexe/nordic-wallpapers)
 ## Read mode
 
 `Super + r` disables the `inactive-opacity` (from `picom`) for when readability is important.  An indicator is displayed via polybar.
+
+*Disabled:*
+![image](https://user-images.githubusercontent.com/81622310/210981552-c7a8b796-86f3-4b73-a843-ab10af2161fb.png)
+
+*Enabled:*
+![image](https://user-images.githubusercontent.com/81622310/210981730-29315896-a066-482c-be29-d1460116311f.png)
 
 <br/>
 

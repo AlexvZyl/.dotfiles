@@ -90,8 +90,8 @@ install:
 	@betterlockscreen -u ~/.wallpapers/mountain_jaws.jpg
 	@printf "\e[0;34m>>\e[0m Setting up fish..\n"
 	@fish <<'END_FISH'
-	curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-	fisher install IlanCosman/tide@v5t
+	curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher;\
+	fisher install IlanCosman/tide@v5t;\
 	    echo "3\
           	  2\
           	  2\

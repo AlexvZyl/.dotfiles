@@ -190,4 +190,4 @@ vim.opt.pumheight=10
 local nf = require 'alex.theme.utils'.get_nordfox_palette()
 local np = require 'alex.theme.utils'.get_nord_palette()
 
-vim.cmd('highlight! BorderBG guibg=NONE guifg=' .. np.white0)
+vim.cmd('highlight! BorderBG guibg=NONE guifg=' .. np.white1)

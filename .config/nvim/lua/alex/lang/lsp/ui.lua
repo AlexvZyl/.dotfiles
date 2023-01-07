@@ -19,19 +19,6 @@ saga.init_lsp_saga {
     },
 }
 
--- Get the color palette.
-local palette = require 'alex.theme.utils'.get_nordfox_palette()
-local border_color = palette.orange.bright
-
--- Set the borders colors.
-vim.cmd('highlight! DefinitionBorder guibg=NONE guifg=' .. border_color)
-vim.cmd('highlight! LspSagaLspFinderBorder guibg=NONE guifg=' .. border_color)
-vim.cmd('highlight! LspSagaRenameBorder guibg=NONE guifg=' .. border_color)
-vim.cmd('highlight! LspSagaDiagnosticBorder guibg=NONE guifg=' .. border_color)
-vim.cmd('highlight! LspSagaHoverBorder guibg=NONE guifg=' .. border_color)
-vim.cmd('highlight! LspSagaCodeActionBorder guibg=NONE guifg=' .. border_color)
-vim.cmd('highlight! FinderSpinnerBorder guibg=NONE guifg=' .. border_color)
-
 ---------------------------
 -- Trouble (diagnostics) --
 ---------------------------

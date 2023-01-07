@@ -81,10 +81,14 @@ if pure_nord then
     setup.color_overrides[using].overlay2   = nf.white.dim  -- Commas, operators.
 end
 
+-- Colors applied to windows with borders.
+local border_color = np.white0
+
 -- Custom highlight groups.
 if pure_nord then
     setup.custom_highlights = function(_)
         return {
+
             -- Language override.
             ["@constant"] = { fg = nf.magenta.bright },
             ["Number"] = { fg = nf.magenta.bright },
@@ -101,23 +105,28 @@ if pure_nord then
             ["@boolean"] = { fg = nf.magenta.bright },
             ["@variable.builtin"] = { fg = nf.magenta.bright, style = { 'italic' } },
             ["@namespace"] = { fg = nf.yellow.dim, style = { 'italic' } },
+
             -- Tree.
             ["NvimTreeFolderIcon"] = { fg = nf.yellow.dim },
             ["NvimTreeFolderName"] = { fg = np.blue1 },
             ["NvimTreeEmptyFolderName"] = { fg = np.blue1 },
             ["NvimTreeOpenedName"] = { fg = np.blue1 },
             ["NvimTreeRootFolder"] = { fg = nf.yellow.base },
+
             -- Cursorline.
             ["CursorLineNr"] = { fg = nf.orange.bright, style = { "bold" }},
             ["CursorLine"] = { bg = np.black, fg = "" },
             ["Visual"] = { bg = np.black},
+
             -- Dashboard.
             ["DashboardHeader"] = { fg = nf.yellow.base, style = { "bold" } },
             ["DashboardFooter"] = { fg = nf.cyan.base, style = { "italic" } },
             ["DashboardCenter"] = { fg = nf.green.base },
+
             -- Indentblankline.
             ["IndentBlanklineContextChar"] = { fg = np.gray3 },
             ["IndentBlanklineChar"] = { fg = np.gray2 },
+
             -- Telescope.
             ["TelescopePromptNormal"] = { bg = np.gray1 },
             ["TelescopePromptBorder"] = { bg = np.gray1 },
@@ -128,9 +137,11 @@ if pure_nord then
             ["TelescopeTitle"] = { bg = nf.orange.base, fg = np.black, style = { 'bold' } },
             ["TelescopeSelection"] = { bg = np.gray1, fg = np.white0 },
             ["TelescopeSelectionCaret"] = { fg = nf.yellow.bright, bg = np.gray1, style = { "bold" } },
+
             -- Trouble.
             ["TroubleNormal"] = { bg = np.black },
-            -- Babar,
+
+            -- Babar.
             ["BufferCurrent"] = { fg = nf.white.dim, bg = np.gray0, style = { 'bold' } },
             ["BufferCurrentSign"] = { fg = nf.orange.bright, bg = np.gray0, style = { 'bold' } },
             ["BufferCurrentMod"] = { fg = nf.white.dim, bg = np.gray0, style = { 'bold' } },
@@ -139,11 +150,28 @@ if pure_nord then
             ["BufferVisibleMod"] = { fg = nf.white.dim, bg = np.black },
             ["BufferVisibleError"] = { fg = nf.red.bright, bg = np.black },
             ["BufferInactiveMod"] = { fg = "#888888", bg = np.black },
-            -- Diagnostics.
+
+            -- Diagnostic signs.
             ["DiagnosticSignError"] = { fg = nf.red.bright, style = { 'bold' } },
             ["DiagnosticSignWarning"] = { fg = nf.yellow.base, style = { 'bold' } },
             ["DiagnosticSignInfo"] = { fg = nf.blue.bright, style = { 'bold' } },
             ["DiagnosticSignHint"] = { fg = nf.green.bright, style = { 'bold' } },
+
+            -- Diagnostics.
+            ["LspDiagnosticsVirtualTextWarning"] = { fg = nf.black.base, style = { 'bold' } },
+
+            -- LSP Saga.
+            ["DefinitionBorder"] = { fg=border_color },
+            ["LspSagaLspFinderBorder"] = { fg=border_color },
+            ["LspSagaRenameBorder"] = { fg=border_color },
+            ["LspSagaDiagnosticBorder"] = { fg=border_color },
+            ["LspSagaHoverBorder"] = { fg=border_color },
+            ["LspSagaCodeActionBorder"] = { fg=border_color },
+            ["FinderSpinnerBorder"] = { fg=border_color },
+            ["LspSagaDiagnosticHeader"] = { fg=nf.cyan.bright },
+
+            -- Cmp.
+            ["BorderBG"] = { fg = border_color },
         }
     end
 end

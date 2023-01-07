@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Ensure packages are up to date.
+sudo pacman -Syyu
+
 # Lua (by sumneko)
 sudo pacman -S lua-language-server
 

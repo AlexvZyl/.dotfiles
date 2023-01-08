@@ -4,8 +4,6 @@ import colors
 import shutil
 
 def get_terminal_size():
-    size = shutil.get_terminal_size()
-    return size[0]-2, size[1]
 
 # Get the color palette.
 np = colors.get_nord_colors()

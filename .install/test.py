@@ -5,7 +5,7 @@ np = get_nord_colors()
 
 # Init renderer.
 renderer = Renderer()
-renderer.distribute_evenly = True
+renderer.distribute_evenly = True 
 
 # Header.
 header_text = Text("This is the header!")
@@ -31,8 +31,16 @@ text.text_fg = np["white2"]
 text.alignment = "center"
 text.stretch_horizontal = True
 renderer.submit(text)
-renderer.submit(text)
-renderer.submit(text)
+
+# Test a confirm widget.
+confirm = Confirm("Are you sure?")
+confirm.stretch_horizontal = True
+confirm.alignment = "center"
+# renderer.submit(confirm)
+
+# Test the list.
+list = List(["A", "B", "C", "D", "E", "F", "G", "H"]) 
+renderer.submit(list)
 
 # Render everything.
 renderer.render()

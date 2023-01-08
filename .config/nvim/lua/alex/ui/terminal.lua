@@ -30,7 +30,7 @@ require 'toggleterm'.setup {
     direction = "float",
     size = 15,
     float_opts = {
-        border = 'single',
+        border = 'rounded',
         -- winblend = -1,
     }
 }

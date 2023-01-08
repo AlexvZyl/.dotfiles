@@ -119,8 +119,7 @@ map_key(n, '<C->>', '<Cmd>BufferMoveNext<CR>',  default_settings)
 
 -- Closing.
 Close_current_buffer = require 'alex.ui.utils'.close_current_buffer_LV
--- map_key(n, '<C-q>', '<Cmd>lua Close_current_buffer()<CR>', default_settings)
--- map_key(n, '<leader>q', '<Cmd>lua Close_current_buffer()<CR>', default_settings)
+map_key(n, '<C-q>', '<Cmd>BufferDelete<CR>', default_settings)
 map_key(n, 'db',    '<Cmd>BufferPickDelete<CR>', default_settings)
 
 -- Selecting.

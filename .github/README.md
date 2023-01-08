@@ -36,9 +36,6 @@ Wallpapers can be found [here](https://github.com/linuxdotexe/nordic-wallpapers)
 *For Reddit:*
 ![image](https://user-images.githubusercontent.com/81622310/210989596-85191ac2-2047-4294-b170-c40ff8c42b09.png)
 
-*Just the desktop:*
-![image](https://user-images.githubusercontent.com/81622310/210979757-46dccec5-1c7f-429d-a479-b39720c94f0e.png)
-
 *Notifications via [dunst](https://github.com/dunst-project/dunst):*
 ![image](https://user-images.githubusercontent.com/81622310/210980911-cb7825d5-1ac2-4db9-b34a-f92887701d1d.png)
 
@@ -49,7 +46,7 @@ Wallpapers can be found [here](https://github.com/linuxdotexe/nordic-wallpapers)
 ![image](https://user-images.githubusercontent.com/81622310/210980303-11610bb7-99d5-4cab-ad75-8094b2e12286.png)
 
 *Lock screen via [betterlockscreen](https://github.com/betterlockscreen/betterlockscreen):*
-![image](https://user-images.githubusercontent.com/81622310/210214086-2cd8cfb8-9fc1-43e8-b973-8763d9bed4fc.png)
+![image](https://user-images.githubusercontent.com/81622310/211187368-5d8e1215-4482-4506-9cd9-6508d980f1f3.png)
 
 ## Polybar
 

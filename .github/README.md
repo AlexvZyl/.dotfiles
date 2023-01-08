@@ -25,6 +25,9 @@ config checkout -f
 sudo chmod +x ~/.scripts/install.sh && ~/.scripts/install.sh
 ```
 
+*Currently working on an install utility:*
+![image](https://user-images.githubusercontent.com/81622310/211202980-a309081d-6838-4f71-9ef5-8887b4bda46c.png)
+
 # Showcase
 
 Some screenshots showing of the desktop and rice, as well as some custom features I wrote.  Everything has to be *just right*.  I am spending 8+ hours a day on this working, so it might as well be a nice experience.

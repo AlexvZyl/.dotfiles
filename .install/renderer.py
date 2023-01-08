@@ -6,6 +6,7 @@ from abc import abstractmethod
 import subprocess
 import shutil
 from math import floor
+from copy import deepcopy
 
 #------------#
 # Components #
@@ -256,11 +257,11 @@ class Renderer:
 
     # Submit a component to be drawn on the next render.
     def submit(self, component: Component):
-        self.component_list.append(component)
+        self.component_list.append(deepcopy(component))
 
     # Submit a component to be rendered to the header section.
     def submit_header(self, component: Component):
-        self.header_list.append(component)
+        self.header_list.append(deepcopy(component))
 
     # Clear the renderer.
     def clear(self):

@@ -97,14 +97,16 @@ if pure_nord then
             ["@keyword.function"] = { fg = nf.orange.base, style = { 'bold' } },
             ["@keyword.export"] = { fg = nf.orange.base, style = { 'bold' } },
             ["@keyword.operator"] = { fg = nf.orange.base, style = { 'bold' } },
+            ["@repeat"] = { fg = nf.orange.base, style = { 'bold' } },
             ["@conditional"] = { fg = nf.orange.base, style = { 'bold' } },
             ["@macro"] = { fg = nf.red.base, style = { 'bold' } },
             ["@preproc"] = { fg = nf.red.base, style = { 'bold' } },
             ["@attribute"] = { fg = nf.red.base, style = { 'bold' } },
             ["@operator"] = { fg = nf.blue.bright },
             ["@boolean"] = { fg = nf.magenta.bright },
-            ["@variable.builtin"] = { fg = nf.magenta.bright, style = { 'italic' } },
+            ["@variable.builtin"] = { fg = nf.red.bright, style = { 'italic' } },
             ["@namespace"] = { fg = nf.yellow.dim, style = { 'italic' } },
+            ["@include"] = { fg = nf.red.bright, style = { 'bold' } },
 
             -- Tree.
             ["NvimTreeFolderIcon"] = { fg = nf.yellow.dim },
@@ -175,6 +177,14 @@ if pure_nord then
         }
     end
 end
+
+-- Tries to set missing LSP colors.
+require("lsp-colors").setup({
+  Error = nf.red.bright,
+  Warning = nf.yellow.base,
+  Information = nf.blue.bright,
+  Hint = nf.green.bright
+})
 
 -- Setup.
 require 'catppuccin' .setup(setup)

@@ -40,7 +40,10 @@ confirm.alignment = "center"
 
 # Test the list.
 list = List(["A", "B", "C", "D", "E", "F", "G", "H"]) 
-renderer.submit(list)
+# renderer.submit(list)
+
+spinner = Spinner(["sleep", "3"])
+renderer.submit(spinner)
 
 # Render everything.
 renderer.render()

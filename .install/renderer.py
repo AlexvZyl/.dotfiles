@@ -6,7 +6,6 @@ from abc import abstractmethod
 import subprocess
 import shutil
 from math import floor
-from types import LambdaType
 
 #------------#
 # Components #
@@ -40,7 +39,7 @@ class Component:
 class Text(Component):
 
     def __init__(self, string):
-        Component.__init__(self)
+        super().__init__()
         self.string = string
         self.update_dimensions()
 
@@ -55,7 +54,7 @@ class Text(Component):
 class Confirm(Component):
 
     def __init__(self, string):
-        Component.__init__(self)
+        super().__init__()
         self.string = string
         self.button_fg = "#FFFFFF"
         self.button_bg = "#000000"
@@ -74,7 +73,7 @@ class Confirm(Component):
 class List(Component):
 
     def __init__(self, items):
-        Component.__init__(self)
+        super().__init__()
         self.limit = 1
         self.cursor_fg = "#FFFFFF"
         self.cursor_bg = "#000000"
@@ -96,6 +95,23 @@ class List(Component):
             if widest_item < cur_len:
                 widest_item = cur_len
         return widest_item
+
+# A spinner widget with a message.
+class Spinner(Component):
+
+    def __init__(self, script, message="Executing..."):
+        super().__init__()
+        self.string = message
+        self.spinner_type = "dot"
+        self.script = script
+        self.spinner_fg = "#FFFFFF"
+
+    def update_dimensions(self):
+        self.size[0] = self.padding[0]*2 + self.margin[0]*2 + 1 + len(self.string)
+        self.size[1] = self.padding[1]*2 + self.margin[1]*2 + 1
+        if self.has_border:
+            self.size[0] += 2
+            self.size[1] += 2
 
 # Canvas to render to.
 class Canvas():
@@ -201,6 +217,29 @@ def render_gum_choose(comp: List, canvas: Canvas):
         command.append(item)
     return _execute(command)
 
+def render_gum_spinner(comp: Spinner, canvas: Canvas):
+    command = [ "gum", "spin" ]
+    command.append("--spinner")
+    command.append(comp.spinner_type)
+    command.append("--title")
+    command.append(comp.string)
+    command.append("--title.foreground")
+    command.append(comp.text_fg)
+    command.append("--spinner.foreground")
+    command.append(comp.spinner_fg)
+    command.append("--spinner.align")
+    command.append(comp.alignment)
+    command.append("--title.align")
+    command.append("left")
+    if comp.width != 0:
+        # command.append("--spinner.width")
+        # command.append(str(self.width))
+        command.append("--title.width")
+        command.append(str(comp.width))
+    for arg in comp.script:
+        command.append(arg)
+    return _execute(command)
+
 #----------#
 # Renderer #
 #----------#
@@ -266,6 +305,10 @@ class Renderer:
     def render_list(self, list: List):
         render_gum_choose(list, self.canvas)
 
+    # Render a spinner widget with a message.
+    def render_spinner(self, spinner: Spinner):
+        render_gum_spinner(spinner, self.canvas)
+
     # Render all of the components to the terminal.
     def render(self):
 
@@ -294,6 +337,9 @@ class Renderer:
             elif type(comp) == List:
                 if self.distribute_evenly: render_empty_line(padding)
                 self.render_list(comp)
+            elif type(comp) == Spinner:
+                if self.distribute_evenly: render_empty_line(padding)
+                self.render_spinner(comp)
 
 #-----#
 # EOF #

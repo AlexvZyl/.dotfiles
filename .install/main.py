@@ -1,6 +1,6 @@
 import terminal_app
-import gum
+from gum import *
 
 app = terminal_app.TerminalApp()
 app.clear()
-answer = app.query_arch()
+app.welcome_screen()

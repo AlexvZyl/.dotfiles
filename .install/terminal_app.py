@@ -32,23 +32,47 @@ class TerminalApp:
         self.credits.text_color = np["white0"]
         self.credits.alignment = "right"
 
+        # Calculate the title height.
+        self.title_height = 2 + self.header.padding_y * 2 + self.header.margin_y * 2
+        if self.header.has_border:
+            self.title_height += 2
+
     def clear(self):
         subprocess.run(["clear"])
-        self.header.exec()
-        self.credits.exec()
-        self.new_line(2)
+        self.header.render()
+        self.credits.render()
+        self.new_line(4)
 
     def query_arch(self):
         c = gum.GumConfirm("Are you on an Arch (btw) based platform?")
         c.width = self.term_size[0]
-        c.exec()
+        c.render()
         return True
+
+    def welcome_screen(self):
+        text = gum.GumStyle("Welcome to the install utility!\nI will help you install everything, or anything specific.")
+        text.alignment = "center"
+        text.width = self.term_size[0]
+        text.render()
+        warning = gum.GumStyle("I will backup existing configs, but there is a small chance they will be ruined.")
+        warning.text_color = np["yellow"]
+        warning.alignment = "center"
+        warning.italic = True
+        warning.width = self.term_size[0]
+        self.new_line(3)
+        warning.render()
+        proceed = gum.GumConfirm("Do you wish to proceed?")
+        proceed.alignment = "center"
+        proceed.width = self.term_size[0]
+        proceed.bold = True
+        self.new_line(2)
+        proceed.render()
 
     def exec(self, command, title = "Executing..."):
         spinner = gum.GumSpinner(command, title)
-        spinner.exec()
+        spinner.render()
 
     def new_line(self, count = 1):
         empty = gum.GumStyle("")
         for _ in range(count):
-            empty.exec()
+            empty.render()

@@ -1,3 +1,4 @@
 fish_variables
 fishd.tmp.*
 packer_compiled.lua
+__pycache__/

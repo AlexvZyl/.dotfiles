@@ -26,6 +26,10 @@ class Renderer:
         self.canvas.clear()
         self.component_list = []
 
+    # Clear the components in the header.
+    def clear_header(self):
+        self.header_list = []
+
     # Calculates the total height of all of the components.
     def _calculate_components_height(self):
         height = 0

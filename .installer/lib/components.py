@@ -1,4 +1,4 @@
-from abc import abstractmethod
+from abc import abstractmethod, update_abstractmethods
 import subprocess
 import shutil
 
@@ -12,9 +12,9 @@ class Component:
         self.has_border = False
         self.stretch_horizontal = False
         self.border_type = "thick"
-        self.border_fg = "#000000"
+        self.border_fg = "#FFFFFF"
         self.border_bg = ""
-        self.text_fg = "#000000"
+        self.text_fg = "#FFFFFF"
         self.text_bg = ""
         self.italic = False
         self.bold = False
@@ -77,6 +77,7 @@ class List(Component):
         self.title_fg = "#FFFFFF"
         self.title_bg = ""
         self.cursor = ">"
+        self.update_dimensions()
 
     def update_dimensions(self):
         self.size[0] = self.padding[0]*2 + self.margin[0]*2 + self.widest_component()
@@ -108,9 +109,10 @@ class Spinner(Component):
         self.spinner_type = "dot"
         self.script = script
         self.spinner_fg = "#FFFFFF"
+        self.update_dimensions()
 
     def update_dimensions(self):
-        self.size[0] = self.padding[0]*2 + self.margin[0]*2 + 1 + len(self.string)
+        self.size[0] = self.padding[0]*2 + self.margin[0]*2 + 2 + len(self.string)
         self.size[1] = self.padding[1]*2 + self.margin[1]*2 + 1
         if self.has_border:
             self.size[0] += 2

@@ -101,6 +101,7 @@ def render_gum_choose(comp: List, canvas: Canvas):
     # Alignment is tricky with this library...
     if comp.alignment == "center":
         widest_comp = comp.widest_component()
+        # TODO: This is only if strech_horizontal is true.
         padding = floor((canvas.width-widest_comp)/2)
         cursor = ""
         for _ in range(padding-2):
@@ -124,15 +125,17 @@ def render_gum_spinner(comp: Spinner, canvas: Canvas):
     command.append(comp.text_fg)
     command.append("--spinner.foreground")
     command.append(comp.spinner_fg)
-    command.append("--spinner.align")
-    command.append(comp.alignment)
-    command.append("--title.align")
-    command.append("left")
-    if comp.width != 0:
-        # command.append("--spinner.width")
-        # command.append(str(self.width))
-        command.append("--title.width")
-        command.append(str(comp.width))
+    # Alignment is slightly tricky.
+    # TODO: Consider comp.stretch_horizontal
+    if comp.alignment == "center":
+        padding = floor((canvas.width - comp.size[0]) / 2)
+        command.append("--spinner.align=right")
+        command.append("--spinner.width="+str(padding))
+        pass
+    elif comp.alignment == "left":
+        pass
+    else:
+        print("TODO: Gum spinner right align.")
     for arg in comp.script:
         command.append(arg)
     return _execute(command)

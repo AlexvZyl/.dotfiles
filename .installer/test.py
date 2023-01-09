@@ -33,7 +33,6 @@ text.text_fg = np["white2"]
 text.alignment = "center"
 text.stretch_horizontal = True
 renderer.submit(text)
-renderer.submit(text)
 
 # Test a confirm widget.
 confirm = Confirm("Are you sure?")
@@ -48,10 +47,10 @@ list.limit = 2
 list.alignment = "center"
 list.stretch_horizontal = True
 # list.title_padding = 1
-renderer.submit(list)
+# renderer.submit(list)
 
 spinner = Spinner(["sleep", "3"])
-# renderer.submit(spinner)
+renderer.submit(spinner)
 
 # Render everything.
 renderer.render()

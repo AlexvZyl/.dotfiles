@@ -43,10 +43,10 @@ confirm.alignment = "center"
 # Test the list.
 list = List(["Aasf", "B", "C", "D", "E", "F", "G", "H"]) 
 list.limit = 2
-# list.title = "This is the title:"
+list.title = "This is the title:"
 list.alignment = "center"
 list.stretch_horizontal = True
-# list.title_padding = 1
+list.title_padding = 1
 # renderer.submit(list)
 
 spinner = Spinner(["sleep", "3"])

@@ -67,7 +67,7 @@ def render_gum_confirm(comp: Confirm, canvas: Canvas):
 # Render a gum choose element.
 def render_gum_choose(comp: List, canvas: Canvas):
     # Render the title.
-    if comp.title != 0:
+    if len(comp.title) != 0:
         title = Text(comp.title)
         title.bold = comp.title_blold
         title.italic = comp.title_italic
@@ -86,6 +86,7 @@ def render_gum_choose(comp: List, canvas: Canvas):
     else:               
         command.append("--limit=" + str(comp.limit))
     command.append("--cursor.foreground=" + comp.cursor_fg)
+    command.append("--selected.foreground=" + comp.selected_fg)
     if comp.cursor_bold:
         command.append("--cursor.bold")
     for item in comp.items:
@@ -104,7 +105,11 @@ def render_gum_choose(comp: List, canvas: Canvas):
         pass
     elif comp.alignment== "right":
         print("TODO: Gum choose right alignment.")
-    return _execute(command, True).stdout.decode('utf-8')
+    choice = _execute(command, True).stdout.decode('utf-8')
+    choice = choice.split("\n")
+    if comp.limit == 1:
+        return choice[0]
+    return choice[0:len(choice)-1]
 
 # Render a gum spinner element.
 def render_gum_spinner(comp: Spinner, canvas: Canvas):

@@ -10,7 +10,7 @@ class Component:
         self.padding = [0,0]
         self.margin = [0,0]
         self.has_border = False
-        self.stretch_horizontal = False
+        self.stretch_horizontal = True
         self.border_type = "thick"
         self.border_fg = "#FFFFFF"
         self.border_bg = ""
@@ -50,9 +50,9 @@ class Confirm(Component):
         self.negative = "No"
         self.string = string
         self.button_fg = "#FFFFFF"
-        self.button_bg = ""
-        self.selected_button_fg = "#FFFFFF"
-        self.selected_button_bg = ""
+        self.button_bg = "#000000"
+        self.selected_button_fg = "#000000"
+        self.selected_button_bg = "#FFFFFF"
         self.update_dimensions()
 
     def update_dimensions(self):
@@ -78,6 +78,8 @@ class List(Component):
         self.title_italic = False
         self.title_fg = "#FFFFFF"
         self.title_bg = ""
+        self.selected_fg = "#FFFFFF"
+        self.selected_bg = ""
         self.cursor = ">"
         self.update_dimensions()
 

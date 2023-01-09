@@ -75,6 +75,20 @@ class Renderer:
     def render_spinner(self, spinner: Spinner):
         return render_gum_spinner(spinner, self.canvas)
 
+    def count_components(self):
+        count = 0
+        for comp in self.component_list:
+            count += 1
+            if type(comp) == Spinner:
+                return count
+        return count
+
+    def calculate_padding(self):
+        comps_height = self._calculate_components_height()
+        avail_padding = self.canvas.height - comps_height - self._calculate_header_height() 
+        padding =  floor( avail_padding / (self.count_components()+1) )
+        return padding
+
     # Render all of the components to the terminal.
     def render(self):
 
@@ -83,9 +97,7 @@ class Renderer:
         self.canvas.update()
 
         # Calculate the available padding.
-        comps_height = self._calculate_components_height()
-        avail_padding = self.canvas.height - comps_height - self._calculate_header_height() 
-        padding =  floor( avail_padding / (len(self.component_list)+1) )
+        padding = self.calculate_padding()
 
         # Render the header.
         for comp in self.header_list:
@@ -95,6 +107,7 @@ class Renderer:
                 print("Bruh why is there an interactive element in the header?")
 
         # Render the components.
+        first_spinner = True
         for (i, comp) in enumerate(self.component_list):
             if type(comp) == Text:
                 if self.distribute_evenly: render_empty_line(padding)
@@ -106,5 +119,6 @@ class Renderer:
                 if self.distribute_evenly: render_empty_line(padding)
                 return self.render_list(comp)
             elif type(comp) == Spinner:
-                if self.distribute_evenly: render_empty_line(padding)
+                if self.distribute_evenly and first_spinner: render_empty_line(padding)
+                first_spinner = False
                 self.render_spinner(comp)

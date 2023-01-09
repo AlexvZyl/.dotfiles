@@ -1,5 +1,5 @@
 import subprocess
-from components import *
+from .components import Canvas, Text, Confirm, Spinner, List
 
 def _execute(command):
     return subprocess.run(command)

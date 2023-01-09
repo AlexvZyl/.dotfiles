@@ -1,6 +1,8 @@
-from renderer.renderer import *
-from colors import get_nord_colors
+from lib.renderer import Renderer
+from lib.components import Text, List, Spinner, Confirm
+from lib.colors import get_nord_colors
 
+# Nord colorscheme.
 np = get_nord_colors()
 
 # Init renderer.
@@ -36,7 +38,6 @@ renderer.submit(text)
 confirm = Confirm("Are you sure?")
 confirm.stretch_horizontal = True
 confirm.alignment = "center"
-# renderer.submit(confirm)
 
 # Test the list.
 list = List(["A", "B", "C", "D", "E", "F", "G", "H"]) 

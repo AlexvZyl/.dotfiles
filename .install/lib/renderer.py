@@ -1,14 +1,7 @@
-#---------#
-# Imports #
-#---------#
-
-from driver import *
+from .driver import *
+from .components import *
 from math import floor
 from copy import deepcopy
-
-#----------#
-# Renderer #
-#----------#
 
 # Handles the rendering.
 class Renderer:
@@ -39,6 +32,9 @@ class Renderer:
         for comp in self.component_list:
             comp.update_dimensions()
             height += comp.size[1]
+            # Should be able to have more than one spinner per render.
+            # In gum they replace each other, so do not count all of their heights.
+            if type(comp) == Spinner: break
         return height
 
     # Calculate the height of the header components.
@@ -91,6 +87,8 @@ class Renderer:
         for comp in self.header_list:
             if type(comp) == Text:
                 self.render_text(comp)
+            else:
+                print("Bruh why is there an interactive element in the header?")
 
         # Render the components.
         for (i, comp) in enumerate(self.component_list):
@@ -106,7 +104,3 @@ class Renderer:
             elif type(comp) == Spinner:
                 if self.distribute_evenly: render_empty_line(padding)
                 self.render_spinner(comp)
-
-#-----#
-# EOF #
-#-----#

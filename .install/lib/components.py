@@ -13,9 +13,9 @@ class Component:
         self.stretch_horizontal = False
         self.border_type = "thick"
         self.border_fg = "#000000"
-        self.border_bg = "#000000"
+        self.border_bg = ""
         self.text_fg = "#000000"
-        self.text_bg = "#000000"
+        self.text_bg = ""
         self.italic = False
         self.bold = False
         self.alignment = "center"
@@ -48,9 +48,9 @@ class Confirm(Component):
         super().__init__()
         self.string = string
         self.button_fg = "#FFFFFF"
-        self.button_bg = "#000000"
+        self.button_bg = ""
         self.selected_button_fg = "#FFFFFF"
-        self.selected_button_bg = "#000000"
+        self.selected_button_bg = ""
         self.update_dimensions()
 
     def update_dimensions(self):
@@ -67,16 +67,25 @@ class List(Component):
         super().__init__()
         self.limit = 1
         self.cursor_fg = "#FFFFFF"
-        self.cursor_bg = "#000000"
+        self.cursor_bg = ""
         self.cursor_bold = True
         self.items = items
+        self.title = ""
+        self.title_padding = 0
+        self.title_blold = False
+        self.title_italic = False
+        self.title_fg = "#FFFFFF"
+        self.title_bg = ""
+        self.cursor = ">"
 
     def update_dimensions(self):
         self.size[0] = self.padding[0]*2 + self.margin[0]*2 + self.widest_component()
-        self.size[1] = self.padding[1]*2 + self.margin[1]*2 + len(self.items)
+        self.size[1] = self.padding[1]*2 + self.margin[1]*2 + len(self.items) + self.title_padding
         if self.has_border:
             self.size[0] += 2
             self.size[1] += 2
+        if len(self.title) != 0:
+            self.size[1] += 1
 
     # Calculate the widest component, inlcuding the list and message.
     def widest_component(self):

@@ -6,6 +6,8 @@ def _execute(command):
     return subprocess.run(command)
 
 def render_empty_line(count = 1):
+    # Do not render the lines!
+    if count == 0: return 0
     command = [ "gum", "style" ]
     for _ in range(count):
         command.append("")
@@ -70,6 +72,20 @@ def render_gum_confirm(comp: Confirm, canvas: Canvas):
 
 # Render a gum choose element.
 def render_gum_choose(comp: List, canvas: Canvas):
+    # Render the title.
+    if comp.title != 0:
+        title = Text(comp.title)
+        title.bold = comp.title_blold
+        title.italic = comp.title_italic
+        title.text_bg = comp.title_bg
+        title.text_fg = comp.title_fg
+        title.alignment = comp.alignment
+        title.width = comp.width
+        title.stretch_horizontal = comp.stretch_horizontal
+        render_gum_style(title, canvas)
+        pass
+    render_empty_line(comp.title_padding)
+    # Render the list.
     command = [ "gum", "choose" ]
     if comp.limit == 0: 
         command.append("--no-limit")
@@ -89,12 +105,12 @@ def render_gum_choose(comp: List, canvas: Canvas):
         cursor = ""
         for _ in range(padding-2):
             cursor += " "
-        cursor += "> "
+        cursor += comp.cursor + " "
         command.append("--cursor=" + cursor)
     elif comp.alignment == "left":
         pass
     elif comp.alignment== "right":
-        print("TODO: Choose right alignment.")
+        print("TODO: Gum choose right alignment.")
     return _execute(command)
 
 # Render a gum spinner element.

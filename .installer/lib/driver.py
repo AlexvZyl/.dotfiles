@@ -22,12 +22,12 @@ def render_gum_style(comp: Text, canvas: Canvas):
     if comp.has_border:
         command.append("--border=" + comp.border_type)
         command.append("--border-foreground=" + comp.border_fg) 
-    command.append("--padding=\"" 
+    command.append("--padding=" 
                    + str(comp.padding[1]) + ' ' 
-                   + str(comp.padding[0]) + "\"")
-    command.append("--margin=\"" 
+                   + str(comp.padding[0]))
+    command.append("--margin="
                    + str(comp.margin[1]) + ' ' 
-                   + str(comp.margin[0]) + "\"")
+                   + str(comp.margin[0]))
     command.append("--align=" + comp.alignment)
     if comp.stretch_horizontal:
         command.append("--width=" + str(canvas.width))

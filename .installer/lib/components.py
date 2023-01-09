@@ -46,6 +46,8 @@ class Confirm(Component):
 
     def __init__(self, string):
         super().__init__()
+        self.affirmative = "Yes"
+        self.negative = "No"
         self.string = string
         self.button_fg = "#FFFFFF"
         self.button_bg = ""

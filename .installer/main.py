@@ -6,4 +6,3 @@ app.clear()
 if result:
     result = app.query_os()
     app.clear()
-    print(result)

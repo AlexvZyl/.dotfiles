@@ -1,4 +1,4 @@
-from renderer import *
+from renderer.renderer import *
 from colors import get_nord_colors
 
 np = get_nord_colors()
@@ -30,9 +30,6 @@ text = Text("This is some text.")
 text.text_fg = np["white2"]
 text.alignment = "center"
 text.stretch_horizontal = True
-renderer.submit(text)
-renderer.submit(text)
-text.string = "Ha"
 renderer.submit(text)
 
 # Test a confirm widget.

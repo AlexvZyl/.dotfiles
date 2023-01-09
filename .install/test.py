@@ -32,6 +32,7 @@ text = Text("This is some text.")
 text.text_fg = np["white2"]
 text.alignment = "center"
 text.stretch_horizontal = True
+
 renderer.submit(text)
 
 # Test a confirm widget.
@@ -40,8 +41,9 @@ confirm.stretch_horizontal = True
 confirm.alignment = "center"
 
 # Test the list.
-list = List(["A", "B", "C", "D", "E", "F", "G", "H"]) 
-# renderer.submit(list)
+list = List(["Aasf", "B", "C", "D", "E", "F", "G", "H"]) 
+list.limit = 2
+renderer.submit(list)
 
 spinner = Spinner(["sleep", "3"])
 # renderer.submit(spinner)

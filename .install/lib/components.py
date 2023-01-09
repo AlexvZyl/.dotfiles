@@ -85,6 +85,9 @@ class List(Component):
             cur_len = len(item)
             if widest_item < cur_len:
                 widest_item = cur_len
+        # A button is added here.
+        if self.limit != 1:
+            widest_item += 1
         return widest_item
 
 # A spinner widget with a message.

@@ -1,4 +1,5 @@
 import subprocess
+from math import floor
 from .components import Canvas, Text, Confirm, Spinner, List
 
 def _execute(command):
@@ -81,8 +82,22 @@ def render_gum_choose(comp: List, canvas: Canvas):
         command.append("--cursor.bold")
     for item in comp.items:
         command.append(item)
+    # Alignment is tricky with this library...
+    if comp.alignment == "center":
+        widest_comp = comp.widest_component()
+        padding = floor((canvas.width-widest_comp)/2)
+        cursor = ""
+        for _ in range(padding-2):
+            cursor += " "
+        cursor += "> "
+        command.append("--cursor=" + cursor)
+    elif comp.alignment == "left":
+        pass
+    elif comp.alignment== "right":
+        print("TODO: Choose right alignment.")
     return _execute(command)
 
+# Render a gum spinner element.
 def render_gum_spinner(comp: Spinner, canvas: Canvas):
     command = [ "gum", "spin" ]
     command.append("--spinner")
@@ -105,5 +120,3 @@ def render_gum_spinner(comp: Spinner, canvas: Canvas):
     for arg in comp.script:
         command.append(arg)
     return _execute(command)
-
-

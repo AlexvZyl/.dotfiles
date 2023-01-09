@@ -61,19 +61,19 @@ class Renderer:
 
     # Render the text to the canvas.
     def render_text(self, text: Text):
-        render_gum_style(text, self.canvas)
+        return render_gum_style(text, self.canvas)
 
     # Render the confirm widget to the canvas.
     def render_confirm(self, confirm: Confirm):
-        render_gum_confirm(confirm, self.canvas)
+        return render_gum_confirm(confirm, self.canvas)
 
     # Render a list widget to the canvas.
     def render_list(self, list: List):
-        render_gum_choose(list, self.canvas)
+        return render_gum_choose(list, self.canvas)
 
     # Render a spinner widget with a message.
     def render_spinner(self, spinner: Spinner):
-        render_gum_spinner(spinner, self.canvas)
+        return render_gum_spinner(spinner, self.canvas)
 
     # Render all of the components to the terminal.
     def render(self):
@@ -101,10 +101,10 @@ class Renderer:
                 self.render_text(comp)
             elif type(comp) == Confirm:
                 if self.distribute_evenly: render_empty_line(padding-1)
-                self.render_confirm(comp)
+                return self.render_confirm(comp)
             elif type(comp) == List:
                 if self.distribute_evenly: render_empty_line(padding)
-                self.render_list(comp)
+                return self.render_list(comp)
             elif type(comp) == Spinner:
                 if self.distribute_evenly: render_empty_line(padding)
                 self.render_spinner(comp)

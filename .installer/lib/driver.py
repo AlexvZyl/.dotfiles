@@ -2,8 +2,11 @@ import subprocess
 from math import floor
 from .components import Canvas, Text, Confirm, Spinner, List
 
-def _execute(command):
-    return subprocess.run(command)
+def _execute(command, catch_output = False):
+    if catch_output:
+        return subprocess.run(command, stdout=subprocess.PIPE)
+    else:
+        return subprocess.run(command)
 
 def render_empty_line(count = 1):
     # Do not render the lines!
@@ -68,7 +71,11 @@ def render_gum_confirm(comp: Confirm, canvas: Canvas):
     command.append(comp.button_bg)
     command.append("--unselected.foreground")
     command.append(comp.button_fg)
-    return _execute(command)
+    result = _execute(command)
+    if result.returncode==0:
+        return True
+    else: 
+        return False
 
 # Render a gum choose element.
 def render_gum_choose(comp: List, canvas: Canvas):
@@ -112,7 +119,7 @@ def render_gum_choose(comp: List, canvas: Canvas):
         pass
     elif comp.alignment== "right":
         print("TODO: Gum choose right alignment.")
-    return _execute(command)
+    return _execute(command, True).stdout.decode('utf-8')
 
 # Render a gum spinner element.
 def render_gum_spinner(comp: Spinner, canvas: Canvas):

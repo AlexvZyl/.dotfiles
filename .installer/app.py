@@ -17,7 +17,7 @@ class App:
         header.stretch_horizontal = True
         header.padding = [0,1]
         self.renderer.submit_header(header)
-        credits = Text("@AlexvZyl (alexandervanzyl@protonmail.com)")
+        credits = Text("@AlexvZyl")
         credits.alignment = "right"
         credits.stretch_horizontal = True
         credits.italic = True
@@ -25,7 +25,10 @@ class App:
         self.renderer.submit_header(credits)
 
     def render(self):
-        self.renderer.render()
+        return self.renderer.render()
+
+    def clear(self):
+        self.renderer.clear()
 
     def render_welcome_screen(self):
         # Welcome msg.
@@ -52,4 +55,16 @@ class App:
         self.renderer.submit(welcome)
         self.renderer.submit(warning)
         self.renderer.submit(confirm)
-        self.render()
+        return self.render()
+
+    def query_os(self):
+        list = List(["Arch (btw)", "Debian", "Fedora", "FreeBSD"])
+        list.text_fg = np["white2"]
+        list.cursor_fg = np["yellow"]
+        list.title = "Please select your OS:"
+        list.stretch_horizontal = True
+        list.title_padding = 2
+        list.title_blold = True
+        list.cursor_bold = True
+        self.renderer.submit(list)
+        return self.render()

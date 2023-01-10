@@ -18,6 +18,8 @@ class App:
         self.renderer.clear()
         print("Cheers.")
 
+    # Setup the application header.
+    # This has to be called only once, since clearing the screen does not clear the header.
     def setup_header(self):
         header = Text("Nordic Installation Utility")
         header.has_border = True
@@ -31,12 +33,15 @@ class App:
         credits.text_fg = np["white0"]
         self.renderer.submit_header(credits)
 
+    # Render the contents of the canvas.
     def render(self):
         return self.renderer.render()
 
+    # Clear the cavnas and leave the header.
     def clear(self):
         self.renderer.clear()
 
+    # Screen that shows then the app starts.
     def render_welcome_screen(self):
         # Welcome msg.
         welcome = Text("Welcome to the Nordic installation utility!\nI will help you install everything, or some specific components.")
@@ -57,12 +62,14 @@ class App:
         self.renderer.submit(warning)
         self.renderer.submit(confirm)
         result = self.render()
+        # Parse result.
         if result:
             self.clear()
             self.query_os()
         else:
             self.quit()
 
+    # Query from the user the OS he is using.
     def query_os(self):
         list = List(self.os_list)
         list.text_fg = np["white2"]
@@ -86,6 +93,7 @@ class App:
             self.renderer.submit(error)
             self.render_welcome_screen()
 
+    # Ask the user if they want to isntall everything, or just some components.
     def query_use_case(self):
         msg = Text("This utility can install everything that Nordic has to offer, or you can choose from a selection of components.")
         question = Text("What would you like to do?")
@@ -102,6 +110,7 @@ class App:
         else:
             self.query_install_components()
 
+    # Make sure if the user wants to install everything if they selected it.
     def ensure_install_everything(self):
         warning = Text("You are about to install everything.")
         warning.italic = True
@@ -121,6 +130,7 @@ class App:
         else:
             self.query_use_case()
 
+    # Ask the user which components they want to install.
     def query_install_components(self):
         list = List(self.component_list)
         list.limit = 0
@@ -135,6 +145,7 @@ class App:
         result = self.render()
         self.check_components(result)
 
+    # Show the user what components they are going to install and if it is correct.
     def check_components(self, components):
         msg = Text("You are about to install:")
         msg.text_fg = np["white2"]
@@ -158,6 +169,7 @@ class App:
         else:
             self.query_install_components()
 
+    # Install the selected components.
     def install_components(self, components):
         msg = Text("Installing components.")
         msg.bold = True

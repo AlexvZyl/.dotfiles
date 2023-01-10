@@ -75,6 +75,8 @@ class Renderer:
     def render_spinner(self, spinner: Spinner):
         return render_gum_spinner(spinner, self.canvas)
 
+    # Count the components that will be rendered at a time.
+    # This is NOT the total amount of components in the list.
     def count_components(self):
         count = 0
         for comp in self.component_list:
@@ -83,6 +85,7 @@ class Renderer:
                 return count
         return count
 
+    # Calculate the padding required to center all of the components.
     def calculate_padding(self):
         comps_height = self._calculate_components_height()
         avail_padding = self.canvas.height - comps_height - self._calculate_header_height() 

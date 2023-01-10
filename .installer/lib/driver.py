@@ -2,12 +2,15 @@ import subprocess
 from math import floor
 from .components import Canvas, Text, Confirm, Spinner, List
 
+# Execute the command as a subprocess, so that gum can render in the terminal.
 def _execute(command, catch_output = False):
     if catch_output:
         return subprocess.run(command, stdout=subprocess.PIPE)
     else:
         return subprocess.run(command)
 
+# Empty lines, what else?
+# Uses gum to render them so that formatting stays consistent.
 def render_empty_line(count = 1):
     # Do not render the lines!
     if count == 0: return 0

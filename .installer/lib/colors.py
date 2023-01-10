@@ -1,3 +1,4 @@
+# My 'custom' nord palette.
 def get_nord_colors():
     return {
         "black":   "#191C24",

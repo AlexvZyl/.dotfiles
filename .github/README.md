@@ -26,7 +26,7 @@ sudo chmod +x ~/.scripts/install.sh && ~/.scripts/install.sh
 ```
 
 *Currently working on an install utility:*
-![image](https://user-images.githubusercontent.com/81622310/211202980-a309081d-6838-4f71-9ef5-8887b4bda46c.png)
+![TUI_Preview](https://user-images.githubusercontent.com/81622310/211422167-be097846-014b-47d0-be45-dac8872ae327.gif)
 
 # Showcase
 

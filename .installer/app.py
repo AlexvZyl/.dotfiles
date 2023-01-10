@@ -60,6 +60,8 @@ class App:
         if result:
             self.clear()
             self.query_os()
+        else:
+            self.quit()
 
     def query_os(self):
         list = List(self.os_list)

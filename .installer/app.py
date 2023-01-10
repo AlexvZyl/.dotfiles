@@ -167,5 +167,6 @@ class App:
         spinner.text_fg = np["white2"]
         for comp in components:
             spinner.string = comp + "..."
+            spinner.update_dimensions()
             self.renderer.submit(spinner)
         self.render()

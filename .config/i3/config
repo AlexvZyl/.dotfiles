@@ -27,6 +27,38 @@ font pango: JetBrainsMono Nerd Font 10
 # set the mod key to the winkey:
 set $mod Mod4
 
+######################################
+# color settings for bar and windows #
+######################################
+
+# Nord colors.
+set $black      #191C24
+set $gray0      #242933
+set $gray1      #2E3440
+set $gray2      #3B4252
+set $gray3      #434C5E
+set $gray4      #4C566A
+set $gray5      #60728A
+set $white0     #D8DEE9
+set $white1     #E5E9F0
+set $white2     #ECEFF4
+set $blue0      #5E81AC
+set $blue1      #81A1C1
+set $blue2      #88C0D0
+set $cyan       #8FBCBB
+set $red        #BF616A
+set $orange     #D08770
+set $yellow     #EBCB8B
+set $green      #A3BE8C
+set $magenta    #B48EAD
+
+# define colors for windows:
+#class		        	    border		bground		text		indicator	   child_border
+client.focused		    	$blue       $gray0      $white		$black          $black
+client.unfocused	    	$blue       $blue       $gray		$black          $black
+client.focused_inactive		$blue       $blue       $gray		$black          $black
+client.urgent		    	$red        $red        $red        $black          $red
+
 #####################
 # workspace layout: #
 #####################
@@ -256,10 +288,7 @@ bindsym $mod+Shift+g layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+space floating toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -314,29 +343,6 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# use workspaces on different displays:
-# where you have to replace VGA-0/HDMI-0 with the names for your displays
-# you can get from xrandr command
-#workspace $ws1 output VGA-0
-#workspace $ws2 output VGA-0
-#workspace $ws3 output HDMI-0
-#workspace $ws4 output HDMI-0
-#workspace $ws5 output HDMI-0
-
-# bind program to workspace and focus to them on startup:
-assign [class="Xfce4-terminal"] $ws1
-assign [class="(?i)firefox"] $ws2
-assign [class="Thunar"] $ws3
-assign [class="Thunderbird"] $ws4
-assign [class="TelegramDesktop"] $ws5
-
-# automatic set focus new window if it opens on another workspace then the current:
-for_window [class=Xfce4-terminal] focus
-for_window [class=(?i)firefox] focus
-for_window [class=Thunar] focus
-for_window [class=Thunderbird] focus
-for_window [class=TelegramDesktop] focus
-
 #############################################
 # autostart applications/services on login: #
 #############################################
@@ -369,14 +375,7 @@ exec --no-startup-id dex --autostart --environment i3
 # exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
-# exec --no-startup-id sleep 2 && nitrogen --restore
-# exec --no-startup-id feh --bg-scale ~/.wallpapers/WallpaperDog-20492269.jpg
-# exec --no-startup-id feh --bg-scale ~/.wallpapers/gruvbox-dark-archlinux2-scalable.svg
-# exec --no-startup-id feh --bg-scale ~/.wallpapers/forest-mountain-cloudy-valley.png
-# exec --no-startup-id feh --bg-scale ~/.wallpapers/nord_city.jpg
-# exec --no-startup-id feh --bg-scale ~/.wallpapers/misty_mountains.jpg
-exec --no-startup-id feh --bg-scale ~/.wallpapers/ign_astronaut.png
-# exec --no-startup-id feh --bg-scale ~/.wallpapers/wall_secondary.png
+exec --no-startup-id feh --bg-scale ~/.wallpapers/Rocket_Nord.png
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
@@ -437,122 +436,14 @@ for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="qt5ct" instance="qt5ct"] floating enable
 for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
 for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
-for_window [class="Pamac-manager"] floating enable
 for_window [window_role="About"] floating enable
+for_window [class="Alacritty"] floating enable
 
-# set border of floating window
-for_window [class="urxvt"] border pixel 2
-
-# set size of floating window
-#for_window [window_role="(?i)GtkFileChooserDialog"] resize set 640 480 #to set size of file choose dialog
-#for_window [class=".*"] resize set 640 480 #to change size of all floating windows 
+# Set size of floating window.
+# for_window [class=".*"] resize set 960 540
 
 # set position of floating window
-#for_window [class=".*"] move position center
-
-######################################
-# color settings for bar and windows #
-######################################
-
-# Define colors variables:
-# set $darkbluetrans	#08052be6
-# set $darkblue		#08052b
-# set $darkbluetrans	#090909bf
-# set $darkblue		#090909bf
-# set $lightblue		#458588
-# set $urgentred		#e53935
-# set $white		    #ffffff
-# set $black		    #000000
-# set $purple		    #e345ff
-# set $darkgrey		#383c4a
-# set $grey		    #b0b5bd
-# set $mediumgrey		#ebdbb2FF
-# set $yellowbrown	#e1b700
-
-# Gruvbox material dark colors.
-set $gray           #1d2021
-set $black          #000000
-set $dark-gray      #141617
-set $light-gray     #232526
-set $white          #e2cca9
-set $yellow         #e9b132
-set $blue           #7ca599
-set $red            #f2594b
-set $green          #8bba7f
-set $green-trans    #298bba7f
-set $orange         #f28534
-
-# define colors for windows:
-#class		        	    border		bground		text		indicator	   child_border
-client.focused		    	$blue       $darkblue	$white		$dark-gray     $black
-client.unfocused	    	$blue       $blue       $gray		$dark-gray     $black
-client.focused_inactive		$blue       $blue       $gray		$dark-gray     $black
-client.urgent		    	$red        $red        $red        $red           $red
-
-############################################
-# bar settings (input comes from i3blocks) #
-############################################
-
-# Start i3bar to display a workspace bar
-# (plus the system information i3status finds out, if available)
-# bar {
-		# font pango: JetBrainsMono Nerd Font 10
-		# status_command i3blocks -c ~/.config/i3/i3blocks.conf
-	    	# position top
-	    	# i3bar_command i3bar --transparency
-# it could be that you have no primary display set: set one (xrandr --output <output> --primary)
-# reference: https://i3wm.org/docs/userguide.html#_tray_output
-		    # tray_output primary
-		    # tray_padding 3
-
-# When strip_workspace_numbers is set to yes,
-# any workspace that has a name of the form
-# “[n][:][NAME]” will display only the name.
-# strip_workspace_numbers yes
-##strip_workspace_name no
-
-		    # colors {
-		    # separator          $purple
-		    # background         $darkgrey
-		    # statusline         $white
-#                          		border 		        bg		txt		indicator
-		# focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
-		# active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
-		# inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
-		# urgent_workspace	$urgentred	    	$urgentred	$white		$purple
-	# }
-# }
-
-# you can add different bars for multidisplay setups on each display:
-# set output HDMI-0 to the display you want the bar, --transparency can be set.
-# Transparency needs rgba color codes to be used where the last two letters are the transparency factor see here:
-# https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
-# #08052be6 --> e6=90%
-
-# bar {
-#	font pango: Noto Sans Regular 10
-#	status_command i3blocks -c ~/.config/i3/i3blocks-2.conf
-#	i3bar_command i3bar --transparency
-#	output HDMI-0
-#	position bottom
-#
-# When strip_workspace_numbers is set to yes,
-# any workspace that has a name of the form
-# “[n][:][NAME]” will display only the name.
-#strip_workspace_numbers yes
-##strip_workspace_name no
-#
-#	colors {
-#		separator          $purple
-#		background         $darkbluetrans
-#        	statusline         $white
-#					border		bg		txt		indicator
-#		focused_workspace	$lighterblue	$lighterblue	$darkblue	$purple
-#		active_workspace	$lightdblue	$lightdblue	$darkblue	$purple
-#		inactive_workspace	$darkblue	$darkblue	$lightdblue	$purple
-#		urgent_workspace	$urgentred	$urgentred	$white		$purple
-#	}
-#}
+for_window [class=".*"] move position center
 
 #####################################
 # Application menu handled by rofi: #
@@ -570,9 +461,6 @@ bindsym $mod+d exec ~/.config/rofi/launchers/type-2/launcher.sh
 
 # Power menu.
 bindsym $mod+p exec ~/.config/rofi/powermenu/type-2/powermenu.sh
-
-# Music.
-bindsym $mod+m exec ~/.config/rofi/applets/bin/mpd.sh
 
 #bindsym F9 exec rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi
@@ -596,40 +484,11 @@ bindsym $mod+Tab exec rofi -show window -config ~/.config/rofi/launchers/type-2/
 
 exec ~/.scripts/startup.sh
 
-####################
-# Custom keybinds: #
-####################
+##############
+# Screenshot #
+##############
 
 bindsym $mod+Shift+s exec flameshot gui
-
-################
-# Colorscheme: #
-################
-
-# set primary gruvbox colorscheme colors
-# set $bg #282828
-# set $red #cc241d
-# set $green #98971a
-# set $yellow #d79921
-# set $blue #458588
-# set $purple #b16286
-# set $aqua #689d68
-# set $gray #a89984
-# set $darkgray #1d2021
-
-# green gruvbox
-# class                 border|backgr|text|indicator|child_border
-#client.focused          $green $green $darkgray $purple $darkgray
-#client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
-#client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
-#client.urgent           $red $red $white $red $red
-
-# blue gruvbox
-# class                 border|backgr|text|indicator|child_border
-# client.focused          $blue $blue $darkgray $purple $darkgray
-# client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
-# client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
-# client.urgent           $red $red $white $red $red
 
 ###################
 # Focus settings: #
@@ -641,37 +500,6 @@ mouse_warping none
 ##############
 # Compositor #
 ##############
-
-# transparency
-# uncomment one of them to be used (picom package is installed per default)
-# options could need changes, related to used GPU and drivers.
-# to find the right setting consult the archwiki or ask at the forum.
-#
-# xcompmgr: https://wiki.archlinux.org/title/Xcompmgr
-# manpage: https://man.archlinux.org/man/xcompmgr.1.en
-#exec --no-startup-id xcompmgr -C -n &
-# or an more specialized config like this:
-#exec --no-startup-id xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
-#
-# or:
-#
-# picom: https://wiki.archlinux.org/title/Picom
-# manpage: https://man.archlinux.org/man/picom.1.en
-# The default configuration is available in /etc/xdg/picom.conf 
-# For modifications, it can be copied to ~/.config/picom/picom.conf or ~/.config/picom.conf
-#
-# using default config 
-# exec_always --no-startup-id picom -b --experimental-backend
-# exec_always --no-startup-id xborders --config $HOME/.config/xborder/config.json &
-# exec_always --no-startup-id picom -b
-
-#
-# for custom config:
-#exec_always --no-startup-id picom --config  ~/.config/picom.conf
-
-# Try and fix issue where polybar tray is on top of fullscreen window.
-for_window [class="Polybar"] floating enable
-for_window [class="polybar"] floating enable
 
 # Toggle the inactive opacity for picom.
 bindsym $mod+r exec ~/.config/picom/scripts/toggle-picom-inactive-opacity.sh && polybar-msg action "#read-mode.exec"

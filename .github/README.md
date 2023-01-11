@@ -34,7 +34,7 @@ Some screenshots showing of the desktop and rice, as well as some custom feature
 
 ## Overview
 
-Wallpapers can be found [here](https://github.com/linuxdotexe/nordic-wallpapers).  They "norded" some nice wallpapers.
+Wallpapers can be found at [this ImageGoNord repo](https://github.com/linuxdotexe/nordic-wallpapers) and [locally](https://github.com/AlexvZyl/.dotfiles/tree/main/.wallpapers).  They "norded" some nice wallpapers.
 
 *For Reddit:*
 

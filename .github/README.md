@@ -37,8 +37,12 @@ Some screenshots showing of the desktop and rice, as well as some custom feature
 Wallpapers can be found [here](https://github.com/linuxdotexe/nordic-wallpapers).  They "norded" some nice wallpapers.
 
 *For Reddit:*
+
 ![image](https://user-images.githubusercontent.com/81622310/210989596-85191ac2-2047-4294-b170-c40ff8c42b09.png)
+
 ![image](https://user-images.githubusercontent.com/81622310/211797435-787fd312-e2fa-4480-b8e9-884a69d445ca.png)
+
+![image](https://user-images.githubusercontent.com/81622310/211798157-7aed7f58-6898-4427-a848-404a0f7dbee0.png)
 
 *Notifications via [dunst](https://github.com/dunst-project/dunst):*
 ![image](https://user-images.githubusercontent.com/81622310/210980911-cb7825d5-1ac2-4db9-b34a-f92887701d1d.png)

@@ -51,7 +51,7 @@ Wallpapers can be found at [this ImageGoNord repo](https://github.com/linuxdotex
 ![image](https://user-images.githubusercontent.com/81622310/211895894-663f3480-d2d9-4546-8f1b-04217cb2dd75.png)
 
 *Powermenu via [rofi](https://github.com/adi1090x/rofi):*
-![image](https://user-images.githubusercontent.com/81622310/210980303-11610bb7-99d5-4cab-ad75-8094b2e12286.png)
+![image](https://user-images.githubusercontent.com/81622310/211911407-050741e9-d7d7-412c-ac12-044f002e8b6f.png)
 
 *Lock screen via [betterlockscreen](https://github.com/betterlockscreen/betterlockscreen):*
 ![image](https://user-images.githubusercontent.com/81622310/211187368-5d8e1215-4482-4506-9cd9-6508d980f1f3.png)

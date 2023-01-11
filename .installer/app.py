@@ -1,14 +1,25 @@
-from lib.colors import *
+from colors import *
 from lib.renderer import *
 np = get_nord_colors()
 
+# Specifications of the system running the utility.
+class System:
+
+    def __init__(self):
+        self.os = ""
+        self.gpu = ""
+        self.cpu = ""
+        self.wifi = ""
+
+# The installation utility.
 class App:
 
     def __init__(self):
+        self.system = System()
         self.renderer = Renderer()
         self.setup_header()
-        self.os_list = ["Arch (btw)", "Debian", "Gentoo", "Slackware", "Windows (lol wut)"]
-        self.component_list = [ "Core packages", "Dev packages", "Fish", "Polybar", "Wallpaper", "Rofi", "i3", "Neovim", "SDDM", "Refind" ]
+        self.os_list = ["Arch (btw)", "Debian", "Gentoo", "Slackware", "Fedora", "Windows (lol wut)"]
+        self.component_list = [ "Core packages", "Dev packages", "Fish", "Polybar", "Wallpaper", "Rofi", "i3", "Neovim", "SDDM", "Refind", "dusnt", "VSCode" ]
 
     def run(self):
         self.render_welcome_screen()

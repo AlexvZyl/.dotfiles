@@ -1,6 +1,6 @@
 import subprocess
 from math import floor
-from .components import Canvas, Text, Confirm, Spinner, List
+from ..components import Canvas, Text, Confirm, Spinner, List
 
 # Execute the command as a subprocess, so that gum can render in the terminal.
 def _execute(command, catch_output = False):

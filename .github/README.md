@@ -34,7 +34,7 @@ Some screenshots showing of the desktop and rice, as well as some custom feature
 
 ## Overview
 
-Wallpapers can be found [here](https://github.com/linuxdotexe/nordic-wallpapers).  They "norded" some nice wallpapers.
+Wallpapers can be found at [this ImageGoNord repo](https://github.com/linuxdotexe/nordic-wallpapers) and [locally](https://github.com/AlexvZyl/.dotfiles/tree/main/.wallpapers).  They "norded" some nice wallpapers.
 
 *For Reddit:*
 
@@ -48,10 +48,10 @@ Wallpapers can be found [here](https://github.com/linuxdotexe/nordic-wallpapers)
 ![image](https://user-images.githubusercontent.com/81622310/210980911-cb7825d5-1ac2-4db9-b34a-f92887701d1d.png)
 
 *Launcher via [rofi](https://github.com/adi1090x/rofi):*
-![image](https://user-images.githubusercontent.com/81622310/210980157-4ce412bd-7af4-4a2e-8e83-26bac4537860.png)
+![image](https://user-images.githubusercontent.com/81622310/211895894-663f3480-d2d9-4546-8f1b-04217cb2dd75.png)
 
 *Powermenu via [rofi](https://github.com/adi1090x/rofi):*
-![image](https://user-images.githubusercontent.com/81622310/210980303-11610bb7-99d5-4cab-ad75-8094b2e12286.png)
+![image](https://user-images.githubusercontent.com/81622310/211911407-050741e9-d7d7-412c-ac12-044f002e8b6f.png)
 
 *Lock screen via [betterlockscreen](https://github.com/betterlockscreen/betterlockscreen):*
 ![image](https://user-images.githubusercontent.com/81622310/211187368-5d8e1215-4482-4506-9cd9-6508d980f1f3.png)

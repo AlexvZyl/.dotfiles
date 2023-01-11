@@ -2,5 +2,4 @@
 .local/share/gnome-shell/extensions/** linguist-vendored
 .config/i3/scripts/** linguist-vendored
 .config/fish/functions/** linguist-vendored
-.config/rofi/** linguist-vendored
 .themes/** linguist-vendored

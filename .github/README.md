@@ -48,7 +48,7 @@ Wallpapers can be found [here](https://github.com/linuxdotexe/nordic-wallpapers)
 ![image](https://user-images.githubusercontent.com/81622310/210980911-cb7825d5-1ac2-4db9-b34a-f92887701d1d.png)
 
 *Launcher via [rofi](https://github.com/adi1090x/rofi):*
-![image](https://user-images.githubusercontent.com/81622310/210980157-4ce412bd-7af4-4a2e-8e83-26bac4537860.png)
+![image](https://user-images.githubusercontent.com/81622310/211895894-663f3480-d2d9-4546-8f1b-04217cb2dd75.png)
 
 *Powermenu via [rofi](https://github.com/adi1090x/rofi):*
 ![image](https://user-images.githubusercontent.com/81622310/210980303-11610bb7-99d5-4cab-ad75-8094b2e12286.png)

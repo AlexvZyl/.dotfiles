@@ -68,6 +68,7 @@ class List(Component):
     def __init__(self, items):
         super().__init__()
         self.limit = 1
+        self.height = 0
         self.cursor_fg = "#FFFFFF"
         self.cursor_bg = ""
         self.cursor_bold = True

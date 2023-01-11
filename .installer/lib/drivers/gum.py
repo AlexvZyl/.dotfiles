@@ -88,6 +88,10 @@ def render_gum_choose(comp: List, canvas: Canvas):
         command.append("--no-limit")
     else:               
         command.append("--limit=" + str(comp.limit))
+    if comp.height == 0:
+        command.append("--height=" + str(len(comp.items)))
+    else:
+        command.append("--height=" + str(comp.height))
     command.append("--cursor.foreground=" + comp.cursor_fg)
     command.append("--selected.foreground=" + comp.selected_fg)
     if comp.cursor_bold:

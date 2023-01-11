@@ -1,6 +1,6 @@
 # Data.
 NO_DIM="inactive-opacity = 1.00;"
-DIM="inactive-opacity = 0.70;"
+DIM="inactive-opacity = 0.75;"
 FILENAME="/home/alex/.config/picom/picom.conf"
 STATE_FILE="/home/alex/.config/picom/read-mode-state"
 

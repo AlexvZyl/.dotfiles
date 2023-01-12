@@ -82,31 +82,44 @@ if pure_nord then
 end
 
 -- Colors applied to windows with borders.
-local border_color = np.white0
+local border_color = np.cyan
 
 -- Custom highlight groups.
 if pure_nord then
     setup.custom_highlights = function(_)
         return {
 
-            -- Language override.
+            -- Syntax HL Section
+            -----------------------
+            -- Magentas.
             ["@constant"] = { fg = nf.magenta.bright },
             ["Number"] = { fg = nf.magenta.bright },
-            ["@keyword"] = { fg = nf.orange.base, style = { 'bold' } },
-            ["@keyword.return"] = { fg = nf.orange.base, style = { 'bold' } },
-            ["@keyword.function"] = { fg = nf.orange.base, style = { 'bold' } },
-            ["@keyword.export"] = { fg = nf.orange.base, style = { 'bold' } },
-            ["@keyword.operator"] = { fg = nf.orange.base, style = { 'bold' } },
-            ["@repeat"] = { fg = nf.orange.base, style = { 'bold' } },
-            ["@conditional"] = { fg = nf.orange.base, style = { 'bold' } },
-            ["@macro"] = { fg = nf.red.base, style = { 'bold' } },
+            ["@boolean"] = { fg = nf.magenta.bright },
+            -- Oranges (Keywords).
+            ["@keyword"] = { fg = nf.orange.bright, style = { 'bold' } },
+            ["@keyword.return"] = { fg = nf.orange.bright, style = { 'bold' } },
+            ["@keyword.function"] = { fg = nf.orange.bright, style = { 'bold' } },
+            ["@keyword.export"] = { fg = nf.orange.bright, style = { 'bold' } },
+            ["@keyword.operator"] = { fg = nf.orange.bright, style = { 'bold' } },
+            ["@repeat"] = { fg = nf.orange.bright, style = { 'bold' } },
+            ["@conditional"] = { fg = nf.orange.bright, style = { 'bold' } },
+            -- Cyan.
+            ["@field"] = { fg = np.cyan },
+            -- Reds.
+            ["@variable.builtin"] = { fg = nf.red.bright, style = { 'italic' } },
             ["@preproc"] = { fg = nf.red.base, style = { 'bold' } },
             ["@attribute"] = { fg = nf.red.base, style = { 'bold' } },
-            ["@operator"] = { fg = nf.blue.bright },
-            ["@boolean"] = { fg = nf.magenta.bright },
-            ["@variable.builtin"] = { fg = nf.red.bright, style = { 'italic' } },
-            ["@namespace"] = { fg = nf.yellow.dim, style = { 'italic' } },
             ["@include"] = { fg = nf.red.bright, style = { 'bold' } },
+            ["@macro"] = { fg = nf.red.base, style = { 'bold' } },
+            ["@function.macro"] = { fg = nf.red.base, style = { 'bold' } },
+            -- Blues.
+            ["@operator"] = { fg = nf.blue.bright },
+            ["@function"] = { fg = np.blue2 },
+            ["@function.call"] = { fg = np.blue2 },
+            ["@function.builtin"] = { fg = np.blue2 },
+            -- Yellows.
+            ["@namespace"] = { fg = nf.yellow.dim, style = { 'italic' } },
+            -----------------------
 
             -- Tree.
             ["NvimTreeFolderIcon"] = { fg = nf.yellow.dim },

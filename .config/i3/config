@@ -375,7 +375,7 @@ exec --no-startup-id dex --autostart --environment i3
 # exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
-exec --no-startup-id feh --bg-scale ~/.wallpapers/Rocket_Nord.png
+exec --no-startup-id feh --bg-scale ~/.wallpapers/Lake_House_Nord.png
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
@@ -449,30 +449,14 @@ for_window [class=".*"] move position center
 # Application menu handled by rofi: #
 #####################################
 
-## rofi bindings fancy application menu ($mod+d /F9 optional disabled)
-
-##bindsym $mod+d exec rofi -show drun \
-#		-config ~/.config/rofi/rofidmenu.rasi
-
-# bindsym $mod+r exec rofi -show run
-
 # Launcher.
-bindsym $mod+d exec ~/.config/rofi/launchers/type-2/launcher.sh
+bindsym $mod+d exec ~/.config/rofi/launcher/run.sh
 
 # Power menu.
-bindsym $mod+p exec ~/.config/rofi/powermenu/type-2/powermenu.sh
+bindsym $mod+p exec ~/.config/rofi/powermenu/run.sh
 
-#bindsym F9 exec rofi -modi drun -show drun \
-#		-config ~/.config/rofi/rofidmenu.rasi
-
-## rofi bindings for window menu ($mod+t /F10 optional disabled)
-
-bindsym $mod+Tab exec rofi -show window -config ~/.config/rofi/launchers/type-2/style-2.rasi
-
-#bindsym F10 exec rofi -show window \
-#		-config ~/.config/rofi/rofidmenu.rasi
-
-## rofi bindings to manage clipboard (install rofi-greenclip from the AUR)
+# Show windows.
+bindsym $mod+Tab exec ~/.config/rofi/switcher/run.sh
 
 #exec --no-startup-id greenclip daemon>/dev/null
 #bindsym $mod+v exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard \

@@ -98,7 +98,7 @@ element {
     enabled:                     true;
     spacing:                     0px;
     margin:                      0px;
-    padding:                     32px 0px;
+    padding:                     35px 0px;
     border:                      0px;
     border-radius:               15px;
     border-color:                @selected;
@@ -107,7 +107,7 @@ element {
     cursor:                      pointer;
 }
 element-text {
-    font:                        "JetBrainsMono Nerd Font 32";
+    font:                        "JetBrainsMono Nerd Font 28";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;

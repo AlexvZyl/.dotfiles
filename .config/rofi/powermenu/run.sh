@@ -1,18 +1,10 @@
 #!/usr/bin/env bash
 
-## Author : Aditya Shakya (adi1090x)
-## Github : @adi1090x
-#
-## Rofi   : Power Menu
-#
-## Available Styles
-#
-## style-1   style-2   style-3   style-4   style-5
-## style-6   style-7   style-8   style-9   style-10
+## Script originally written by @adi1090x (Aditya Shakya) on GitHub.
 
 # Current Theme
-dir="$HOME/.config/rofi/powermenu/type-2"
-theme='style-2'
+dir="$HOME/.config/rofi/powermenu/"
+theme='style'
 
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
@@ -44,7 +36,6 @@ confirm_cmd() {
 		-theme-str 'textbox {horizontal-align: 0.5;}' \
 		-dmenu \
 		-p 'Confirmation' \
-		-mesg 'Are you sure?' \
 		-theme ${dir}/${theme}.rasi
 }
 

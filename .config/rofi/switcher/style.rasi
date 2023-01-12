@@ -1,0 +1,169 @@
+// Configuration.
+configuration {
+	modi:                       "window";
+    show-icons:                 true;
+    display-window:             "  Windows";
+    font:                       "JetBrainsMono Nerd Font 10";
+    icon-theme:                 "Papirus";
+}
+
+// Globals.
+@import "~/.config/rofi/themes/nord.rasi"
+
+// Main window.
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       700px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               15px;
+    border-color:                @border;
+    background-color:            @background;
+    cursor:                      "default";
+}
+
+// Main box.
+mainbox {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     20px;
+    border:                      2px solid;
+    border-radius:               15px;
+    border-color:                @border;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+// Bar where search field is.
+inputbar {
+    enabled:                     true;
+    spacing:                     20px;
+    margin:                      0px;
+    padding:                     0px 0px 20px 0px;
+    border:                      0px solid;
+    border-radius:               15px;
+    border-color:                @selected;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+    children:                    [ "prompt", "entry" ];
+}
+
+// Icon area.
+prompt {
+    enabled:                     true;
+    background-color:            @blue2;
+    text-color:                  @background;
+    border:                      0px;
+    border-color:                @blue2;
+    border-radius:               15px;
+    padding:                     10px 20px;
+}
+
+// Search field.
+entry {
+    enabled:                     true;
+    background-color:            inherit;
+    text-color:                  inherit;
+    padding:                     10px 0px 0px 0px;
+    cursor:                      text;
+    placeholder:                 "Search...";
+    placeholder-color:           @gray4;
+}
+
+// Area where all of the results are displayed.
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       8;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    spacing:                     5px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      "default";
+}
+
+// Items in the list.
+element {
+    enabled:                     true;
+    spacing:                     15px;
+    margin:                      0px;
+    padding:                     5px;
+    border:                      0px;
+    border-radius:               15px;
+    border-color:                @selected;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+    orientation:                 horizontal;
+}
+element normal.normal {
+    background-color:            @background;
+    text-color:                  @foreground;
+}
+// Selected, but no cursor.
+element normal.active {
+    background-color:            @gray0;
+    text-color:                  @foreground;
+}
+element alternate.normal {
+    background-color:            @background;
+    text-color:                  @foreground;
+}
+// Not selected, has cursor.
+element selected.normal {
+    background-color:            @selected;
+    text-color:                  @background;
+}
+// Selected, with cursor.
+element selected.active {
+    background-color:            @selected;
+    text-color:                  @background;
+}
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        32px;
+    cursor:                      inherit;
+}
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+// The error message.
+error-message {
+    padding:                     20px;
+    border:                      2px solid;
+    border-radius:               15px;
+    border-color:                @urgent;
+    background-color:            @background;
+    text-color:                  @foreground;
+}
+textbox {
+    background-color:            @background;
+    text-color:                  @foreground;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    highlight:                   none;
+}

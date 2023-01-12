@@ -70,10 +70,10 @@ Wallpapers can be found at [this ImageGoNord repo](https://github.com/linuxdotex
 `Super + r` disables the `inactive-opacity` (from `picom`) for when readability is important.  An indicator is displayed via polybar.
 
 *Disabled:*
-![image](https://user-images.githubusercontent.com/81622310/210981552-c7a8b796-86f3-4b73-a843-ab10af2161fb.png)
+![image](https://user-images.githubusercontent.com/81622310/212110520-c782704b-9780-47af-b3c3-46b231ee8805.png)
 
 *Enabled:*
-![image](https://user-images.githubusercontent.com/81622310/210981730-29315896-a066-482c-be29-d1460116311f.png)
+![image](https://user-images.githubusercontent.com/81622310/212110576-71a817aa-7785-4384-a817-30b3ee94e417.png)
 
 # Key Bindings
 

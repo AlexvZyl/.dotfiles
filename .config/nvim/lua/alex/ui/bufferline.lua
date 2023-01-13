@@ -1,3 +1,5 @@
+-- Not being used.  Keeping here for now.
+
 -- The official colors from the website (with one added dark color.)
 local np = require 'alex.theme.utils'.get_nord_palette()
 -- The colors provided by nordfox.

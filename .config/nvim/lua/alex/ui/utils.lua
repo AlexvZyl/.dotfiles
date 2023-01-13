@@ -1,3 +1,5 @@
+-- Was used with bufferline.  Keeping here for reference.
+
 local M = {}
 
 -- Common kill function for bdelete and bwipeout.

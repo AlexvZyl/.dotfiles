@@ -375,7 +375,7 @@ exec --no-startup-id dex --autostart --environment i3
 # exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
-exec --no-startup-id feh --bg-scale ~/.wallpapers/Lake_House_Nord.png
+exec --no-startup-id feh --bg-scale ~/.wallpapers/IGN_Astronaut_Nord.png
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600

@@ -106,7 +106,7 @@ if pure_nord then
             -- Cyan.
             ["@field"] = { fg = np.cyan },
             -- Reds.
-            ["@variable.builtin"] = { fg = nf.red.bright, style = { 'italic' } },
+            ["@variable.builtin"] = { fg = nf.red.base, style = { 'italic' } },
             ["@preproc"] = { fg = nf.red.base, style = { 'bold' } },
             ["@attribute"] = { fg = nf.red.base, style = { 'bold' } },
             ["@include"] = { fg = nf.red.bright, style = { 'bold' } },
@@ -129,9 +129,9 @@ if pure_nord then
             ["NvimTreeRootFolder"] = { fg = nf.yellow.base },
 
             -- Cursorline.
-            ["CursorLineNr"] = { fg = nf.orange.bright, style = { "bold" }},
+            ["CursorLineNr"] = { fg = np.gray5, style = { "bold" }},
             ["CursorLine"] = { bg = np.black, fg = "" },
-            ["Visual"] = { bg = np.black},
+            ["Visual"] = { bg = np.black },
 
             -- Dashboard.
             ["DashboardHeader"] = { fg = nf.yellow.base, style = { "bold" } },

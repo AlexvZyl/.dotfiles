@@ -70,10 +70,8 @@ sudo pamac install lxappearance-gtk3 gruvbox-material-gtk-theme-git gtk-theme-ma
 sudo pamac install sddm sddm-sugar-dark sddm-sugar-candy-git archlinux-tweak-tool-git --no-confirm
 sudo systemctl disable display-manager && sudo systemctl enable sddm
 sudo touch /etc/sddm.conf
-sudo sh -c "echo '[Theme]' >> /etc/sddm.conf"
-sudo sh -c "echo 'Current=sugar-candy' >> /etc/sddm.conf"
-sudo cp ~/.wallpapers/ign_desert.png /usr/share/sddm/themes/sugar-candy/
-sudo mv /usr/share/sddm/themes/sugar-candy/ign_desert.png /usr/share/sddm/themes/sugar-candy/wall_secondary.png
+sudo cp ~/.wallpapers/National_Park_Nord.png /usr/share/sddm/themes/sugar-candy/
+sudo mv /usr/share/sddm/themes/sugar-candy/National_Park_Nord.png /usr/share/sddm/themes/sugar-candy/wall_secondary.png
 
 # Media.
 sudo pamac install playerctl --no-confirm
@@ -82,5 +80,5 @@ sudo pamac install playerctl --no-confirm
 sudo pamac install betterlockscreen-git --no-confirm
 # Setup lock screen.
 # Should this script run every time the screens change?  Yeah.
-betterlockscreen -u ~/.wallpapers/ign_desert.png
-betterlockscreen -u ~/.wallpapers/ign_desert.png --blur 0.5
+betterlockscreen -u ~/.wallpapers/National_Park_Nord.png
+betterlockscreen -u ~/.wallpapers/National_Park_Nord.png --blur 0.5

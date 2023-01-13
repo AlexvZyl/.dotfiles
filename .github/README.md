@@ -26,6 +26,7 @@ sudo chmod +x ~/.scripts/install.sh && ~/.scripts/install.sh
 ```
 
 *Currently working on an install utility:*
+
 ![TUI_Preview](https://user-images.githubusercontent.com/81622310/211422167-be097846-014b-47d0-be45-dac8872ae327.gif)
 
 # Showcase
@@ -38,7 +39,7 @@ Wallpapers can be found at [this ImageGoNord repo](https://github.com/linuxdotex
 
 *For Reddit:*
 
-![image](https://user-images.githubusercontent.com/81622310/210989596-85191ac2-2047-4294-b170-c40ff8c42b09.png)
+![image](https://user-images.githubusercontent.com/81622310/212202026-5fea05b3-c4e3-435f-8c7f-a27387d5d21e.png)
 
 ![image](https://user-images.githubusercontent.com/81622310/211797435-787fd312-e2fa-4480-b8e9-884a69d445ca.png)
 

@@ -2,6 +2,7 @@
 configuration {
     show-icons:                 false;
     font:                       "JetBrainsMono Nerd Font 10";
+    monitor: -1;
 }
 
 // Globals.

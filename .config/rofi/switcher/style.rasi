@@ -5,6 +5,7 @@ configuration {
     display-window:             "  Windows";
     font:                       "JetBrainsMono Nerd Font 10";
     icon-theme:                 "Papirus";
+    monitor: -1;
 }
 
 // Globals.

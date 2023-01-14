@@ -107,11 +107,11 @@ if pure_nord then
             ["@field"] = { fg = np.cyan },
             -- Reds.
             ["@variable.builtin"] = { fg = nf.red.base, style = { 'italic' } },
-            ["@preproc"] = { fg = nf.red.base, style = { 'bold' } },
-            ["@attribute"] = { fg = nf.red.base, style = { 'bold' } },
+            ["@preproc"] = { fg = nf.red.bright, style = { 'bold' } },
+            ["@attribute"] = { fg = nf.red.bright, style = { 'bold' } },
             ["@include"] = { fg = nf.red.bright, style = { 'bold' } },
-            ["@macro"] = { fg = nf.red.base, style = { 'bold' } },
-            ["@function.macro"] = { fg = nf.red.base, style = { 'bold' } },
+            ["@macro"] = { fg = nf.red.bright, style = { 'bold' } },
+            ["@function.macro"] = { fg = nf.red.bright, style = { 'bold' } },
             -- Blues.
             ["@operator"] = { fg = nf.blue.bright },
             ["@function"] = { fg = np.blue2 },

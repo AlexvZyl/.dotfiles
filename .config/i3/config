@@ -231,7 +231,7 @@ bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu
 
 # Lock the screen.
 # bindsym $mod+Escape exec "betterlockscreen --lock blur"
-bindsym $mod+Escape exec "betterlockscreen --lock"
+bindsym $mod+Escape exec "betterlockscreen --lock --display 1"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

@@ -80,5 +80,5 @@ sudo pamac install playerctl --no-confirm
 sudo pamac install betterlockscreen-git --no-confirm
 # Setup lock screen.
 # Should this script run every time the screens change?  Yeah.
-betterlockscreen -u ~/.wallpapers/National_Park_Nord.png
-betterlockscreen -u ~/.wallpapers/National_Park_Nord.png --blur 0.5
+betterlockscreen -u ~/.wallpapers/National_Park_Nord.png --display 1
+betterlockscreen -u ~/.wallpapers/National_Park_Nord.png --blur 0.5 --display 1

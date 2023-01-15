@@ -33,6 +33,10 @@ sudo chmod +x ~/.scripts/install.sh && ~/.scripts/install.sh
 
 Some screenshots showing of the desktop and rice, as well as some custom features I wrote.  Everything has to be *just right*.  I am spending 8+ hours a day on this working, so it might as well be a nice experience.
 
+## Theme
+
+The entire theme is based on a modified version of the [Nord](https://www.nordtheme.com/) color palette.  The base colors are used, as well as two darker colors and bright and dim versions of the base colors.  Also, the colors in the `Aurora` palette are used more prominently than typically used in nord themes.  This gives everyhing a warmer feel.
+
 ## Overview
 
 Wallpapers can be found at [this ImageGoNord repo](https://github.com/linuxdotexe/nordic-wallpapers) and [locally](https://github.com/AlexvZyl/.dotfiles/tree/main/.wallpapers).  They "norded" some nice wallpapers.

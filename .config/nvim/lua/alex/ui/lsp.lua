@@ -2,21 +2,30 @@
 -- LSP Saga --
 --------------
 
-local saga = require 'lspsaga'
+local ui = {
+    theme = 'round',
+    border = 'rounded',
+    winblend = 20,
+}
 
--- Configs.
-saga.init_lsp_saga {
-    code_action_lightbulb = {
+require 'lspsaga' .setup {
+    lightbulb = {
         enable = false
     },
-    border_style = 'rounded',
-    saga_winblend = 20,
-    definition_action_keys = {
+    ui = ui,
+    definition = {
         edit = '<C-e>',
         vsplit = '<C-v>',
         split = '<C-h>',
         quit = 'q',
     },
+    -- This feature is a bit much imo.
+    symbol_in_winbar = {
+        enable = false,
+        folder_level = 1,
+        show_file = true,
+        separator = '  '
+    }
 }
 
 ---------------------------

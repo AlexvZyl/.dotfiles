@@ -1,4 +1,3 @@
--- Not too sure why this has to be here.
 vim.opt.background = 'dark'
 
 -- Enable colors in the terminal.

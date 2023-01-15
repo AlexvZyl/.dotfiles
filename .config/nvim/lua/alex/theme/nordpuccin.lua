@@ -82,7 +82,7 @@ if pure_nord then
 end
 
 -- Colors applied to windows with borders.
-local border_color = np.cyan
+local border_color = np.black
 
 -- Custom highlight groups.
 if pure_nord then
@@ -178,28 +178,20 @@ if pure_nord then
             ["LspDiagnosticsVirtualTextWarning"] = { fg = nf.black.base, style = { 'bold' } },
 
             -- LSP Saga.
-            ["DefinitionBorder"] = { fg=border_color },
-            ["LspSagaLspFinderBorder"] = { fg=border_color },
-            ["LspSagaRenameBorder"] = { fg=border_color },
-            ["LspSagaDiagnosticBorder"] = { fg=border_color },
-            ["LspSagaHoverBorder"] = { fg=border_color },
-            ["LspSagaCodeActionBorder"] = { fg=border_color },
-            ["FinderSpinnerBorder"] = { fg=border_color },
-            ["LspSagaDiagnosticHeader"] = { fg=nf.cyan.bright },
+            ["SagaBorder"] = { fg = np.black },
+            ["DefinitionBorder"] = { fg = np.black },
+            ["DefinitionNormal"] = { fg = np.gray0 },
 
             -- Cmp.
-            ["BorderBG"] = { fg = border_color },
+            ["BorderBG"] = { fg = np.black },
+            ["PmenuSel"] = { bg = np.yellow, fg = np.black, style = { 'bold' } },
+
+            -- Floating window.
+            ["FloatBorder"] = { bg = np.black, fg = np.cyan, style = { 'bold' } },
+
         }
     end
 end
-
--- Tries to set missing LSP colors.
-require("lsp-colors").setup({
-  Error = nf.red.bright,
-  Warning = nf.yellow.base,
-  Information = nf.blue.bright,
-  Hint = nf.green.bright
-})
 
 -- Other settings.
 setup.term_colors = true
@@ -209,3 +201,11 @@ require 'catppuccin' .setup(setup)
 
 -- Set the catpuccin theme that was overridden.
 vim.cmd.colorscheme("catppuccin-" .. using)
+
+-- Tries to set missing LSP colors.
+require("lsp-colors").setup({
+  Error = nf.red.bright,
+  Warning = nf.yellow.base,
+  Information = nf.blue.bright,
+  Hint = nf.green.bright
+})

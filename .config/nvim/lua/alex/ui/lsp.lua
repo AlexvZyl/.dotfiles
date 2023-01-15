@@ -5,7 +5,7 @@
 local ui = {
     theme = 'round',
     border = 'rounded',
-    winblend = 20,
+    winblend = 15,
 }
 
 require 'lspsaga' .setup {

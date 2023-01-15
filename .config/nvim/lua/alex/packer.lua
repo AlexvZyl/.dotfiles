@@ -5,9 +5,6 @@
 -- Setup before plugins are loaded.
 vim.g.ale_disable_lsp = 1
 
--- Configure packer to open in a floating window.
-
-
 -- Load different plugins.
 return require 'packer'.startup( { function(use)
 
@@ -102,6 +99,9 @@ return require 'packer'.startup( { function(use)
         "glepnir/lspsaga.nvim",
         branch = "main",
     }
+
+    -- Fun.
+    use 'eandrju/cellular-automaton.nvim'
 
     -- Completion engine.
     use 'L3MON4D3/LuaSnip'

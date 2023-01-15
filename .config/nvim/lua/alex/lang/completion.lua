@@ -185,9 +185,3 @@ end
 
 -- Limit the height of the seggestion window.
 vim.opt.pumheight=10
-
--- Change the menu border background color.
-local nf = require 'alex.theme.utils'.get_nordfox_palette()
-local np = require 'alex.theme.utils'.get_nord_palette()
-
-vim.cmd('highlight! BorderBG guibg=NONE guifg=' .. np.white1)

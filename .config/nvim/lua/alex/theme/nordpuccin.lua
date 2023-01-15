@@ -58,7 +58,7 @@ if pure_nord then
     -- Remappings.
     setup.color_overrides[using].text       = nf.white.dim
     setup.color_overrides[using].teal       = np.cyan
-    setup.color_overrides[using].yellow     = nf.yellow.base
+    setup.color_overrides[using].yellow     = np.yellow
     setup.color_overrides[using].red        = nf.red.bright
     setup.color_overrides[using].blue       = np.blue2
     setup.color_overrides[using].green      = nf.green.base
@@ -96,29 +96,28 @@ if pure_nord then
             ["Number"] = { fg = nf.magenta.bright },
             ["@boolean"] = { fg = nf.magenta.bright },
             -- Oranges (Keywords).
-            ["@keyword"] = { fg = nf.orange.bright, style = { 'bold' } },
-            ["@keyword.return"] = { fg = nf.orange.bright, style = { 'bold' } },
-            ["@keyword.function"] = { fg = nf.orange.bright, style = { 'bold' } },
-            ["@keyword.export"] = { fg = nf.orange.bright, style = { 'bold' } },
-            ["@keyword.operator"] = { fg = nf.orange.bright, style = { 'bold' } },
-            ["@repeat"] = { fg = nf.orange.bright, style = { 'bold' } },
-            ["@conditional"] = { fg = nf.orange.bright, style = { 'bold' } },
-            -- Cyan.
-            ["@field"] = { fg = np.cyan },
+            ["@keyword"] = { fg = np.orange, style = { 'bold' } },
+            ["@keyword.return"] = { fg = np.orange, style = { 'bold' } },
+            ["@keyword.function"] = { fg = np.orange, style = { 'bold' } },
+            ["@keyword.export"] = { fg = np.orange, style = { 'bold' } },
+            ["@keyword.operator"] = { fg = np.orange, style = { 'bold' } },
+            ["@repeat"] = { fg = np.orange, style = { 'bold' } },
+            ["@conditional"] = { fg = np.orange, style = { 'bold' } },
+            ["@operator"] = { fg = nf.orange.bright, style = { 'bold' }},
             -- Reds.
-            ["@variable.builtin"] = { fg = nf.red.base, style = { 'italic' } },
+            ["@variable.builtin"] = { fg = nf.red.bright , style = { 'italic' } },
             ["@preproc"] = { fg = nf.red.bright, style = { 'bold' } },
             ["@attribute"] = { fg = nf.red.bright, style = { 'bold' } },
             ["@include"] = { fg = nf.red.bright, style = { 'bold' } },
             ["@macro"] = { fg = nf.red.bright, style = { 'bold' } },
             ["@function.macro"] = { fg = nf.red.bright, style = { 'bold' } },
             -- Blues.
-            ["@operator"] = { fg = nf.blue.bright },
             ["@function"] = { fg = np.blue2 },
             ["@function.call"] = { fg = np.blue2 },
             ["@function.builtin"] = { fg = np.blue2 },
             -- Yellows.
-            ["@namespace"] = { fg = nf.yellow.dim, style = { 'italic' } },
+            ["@namespace"] = { fg = nf.yellow.dim, style = {} },
+            ["@type"] = { fg = np.yellow, style = { } },
             -----------------------
 
             -- Tree.

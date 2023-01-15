@@ -25,17 +25,17 @@ config checkout -f
 sudo chmod +x ~/.scripts/install.sh && ~/.scripts/install.sh
 ```
 
-*Currently working on an install utility:*
+*Currently working on an install utility.  Experimenting with a custom TUI renderer and different backends.*
 
 ![TUI_Preview](https://user-images.githubusercontent.com/81622310/211422167-be097846-014b-47d0-be45-dac8872ae327.gif)
+
+# Theme
+
+The entire theme is based on a modified version of the [Nord](https://www.nordtheme.com/) color palette.  The base colors are used, as well as two darker colors and bright and dim versions of the base colors.  Also, the colors in the `Aurora` palette are used more prominently than typically used in nord themes.  This gives everyhing a warmer feel.
 
 # Showcase
 
 Some screenshots showing of the desktop and rice, as well as some custom features I wrote.  Everything has to be *just right*.  I am spending 8+ hours a day on this working, so it might as well be a nice experience.
-
-## Theme
-
-The entire theme is based on a modified version of the [Nord](https://www.nordtheme.com/) color palette.  The base colors are used, as well as two darker colors and bright and dim versions of the base colors.  Also, the colors in the `Aurora` palette are used more prominently than typically used in nord themes.  This gives everyhing a warmer feel.
 
 ## Overview
 

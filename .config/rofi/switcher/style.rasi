@@ -127,6 +127,10 @@ element alternate.normal {
     background-color:            @background;
     text-color:                  @foreground;
 }
+element alternate.active {
+    background-color:            @background;
+    text-color:                  @foreground;
+}
 // Not selected, has cursor.
 element selected.normal {
     background-color:            @selected;

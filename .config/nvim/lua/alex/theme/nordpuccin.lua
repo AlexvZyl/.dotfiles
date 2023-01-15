@@ -201,6 +201,9 @@ require("lsp-colors").setup({
   Hint = nf.green.bright
 })
 
+-- Other settings.
+setup.term_colors = true
+
 -- Setup.
 require 'catppuccin' .setup(setup)
 

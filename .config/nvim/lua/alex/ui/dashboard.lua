@@ -28,6 +28,11 @@ db.custom_center = {
 		desc = "Update plugins",
 		action = "PackerSync",
 	},
+    {
+        icon = "  ",
+        desc = "Quit          ",
+        action = "q!"
+    }
 }
 
 db.custom_header = {
@@ -45,7 +50,7 @@ db.custom_footer = {
 
 -- Default sizes.
 local header_height = 6
-local center_height = 9
+local center_height = 10
 local footer_height = 1
 
 -- Extra padding.

@@ -115,6 +115,9 @@ if pure_nord then
             ["@function"] = { fg = np.blue2 },
             ["@function.call"] = { fg = np.blue2 },
             ["@function.builtin"] = { fg = np.blue2 },
+            -- Cyan.
+            ["@field"] = { fg = np.cyan},
+            ["@field.lua"] = { fg = np.cyan},
             -- Yellows.
             ["@namespace"] = { fg = nf.yellow.dim, style = {} },
             ["@type"] = { fg = np.yellow, style = { } },

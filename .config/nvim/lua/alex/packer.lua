@@ -5,8 +5,11 @@
 -- Setup before plugins are loaded.
 vim.g.ale_disable_lsp = 1
 
+-- Configure packer to open in a floating window.
+
+
 -- Load different plugins.
-return require 'packer'.startup( function(use)
+return require 'packer'.startup( { function(use)
 
     -- Telecope.
     use {
@@ -145,4 +148,15 @@ return require 'packer'.startup( function(use)
     -- Not yet ready.
     -- use 'petertriho/nvim-scrollbar'
 
-end)
+end,
+
+config = {
+    display = {
+        open_fn = function ()
+            return require 'packer.util'.float { border = 'rounded' }
+        end
+    }
+}
+
+})
+

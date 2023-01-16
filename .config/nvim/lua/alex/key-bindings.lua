@@ -168,7 +168,7 @@ map_key(n, "]E", function()
 end, { silent = true })
 
 -- Outline
-map_key(n, "<leader>o", "<cmd>LSoutlineToggle<CR>",{ silent = true })
+map_key(n, "<leader>o", "<cmd>Lspsaga outline<CR>",{ silent = true })
 
 --------------
 -- Terminal --

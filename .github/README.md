@@ -10,11 +10,11 @@ I mainly use i3, but I also install Gnome for when people do not want to mess ar
 
 # Installation
 
+<!--
+
 To install everything, simply copy and paste this into the terminal.  Reboot after it is done.
 
 > _⚠️ &nbsp; I am not following proper development protocol, so this might not always be stable._
-
-> _⚠️ &nbsp; This forces a checkout, which can ruin existing configs.  Better to use on a clean install._
 
 ```bash
 sudo pacman -S git
@@ -25,9 +25,15 @@ config checkout -f
 sudo chmod +x ~/.scripts/install.sh && ~/.scripts/install.sh
 ```
 
-*Currently working on an install utility:*
+-->
+
+Currently working on an install utility.  Experimenting with a custom TUI renderer and different backends.  Until that is done, you are welcome to use the configs for inspiration!
 
 ![TUI_Preview](https://user-images.githubusercontent.com/81622310/211422167-be097846-014b-47d0-be45-dac8872ae327.gif)
+
+# Theme
+
+The entire theme is based on a modified version of the [Nord](https://www.nordtheme.com/) color palette.  The base colors are used, as well as two darker colors and bright and dim versions of the base colors.  Also, the colors in the `Aurora` palette are used more prominently than typically used in nord themes.  This gives everyhing a warmer feel.
 
 # Showcase
 
@@ -97,10 +103,6 @@ A few notes on the bindings:
 | Super + Arrow | Cycle windows |
 | Super + Shift + Arrow | Move window |
 | Super + Number | Go to workspace |
-
-# Theme
-
-*TODO*
 
 # Neovim
 

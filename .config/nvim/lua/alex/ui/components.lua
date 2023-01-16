@@ -80,13 +80,13 @@ require 'true-zen'.setup {
 -- Setup neoscroll --
 ---------------------
 
-require 'neoscroll'.setup {
-    erasing_function = 'quadratic'
-}
-local t = { }
-t['<C-u>'] = {'scroll', {'-vim.wo.scroll * 2', 'true', '400', nil}}
-t['<C-d>'] = {'scroll', { 'vim.wo.scroll * 2', 'true', '400', nil}}
-require 'neoscroll.config'.set_mappings(t)
+-- require 'neoscroll'.setup {
+    -- erasing_function = 'quadratic'
+-- }
+-- local t = { }
+-- t['<C-u>'] = {'scroll', {'-vim.wo.scroll * 2', 'true', '400', nil}}
+-- t['<C-d>'] = {'scroll', { 'vim.wo.scroll * 2', 'true', '400', nil}}
+-- require 'neoscroll.config'.set_mappings(t)
 
 -----------------
 -- Indentation --

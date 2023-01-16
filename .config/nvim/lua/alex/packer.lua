@@ -53,7 +53,6 @@ return require 'packer'.startup( { function(use)
     -- Programming experience.
     use 'lukas-reineke/indent-blankline.nvim'
     use 'mg979/vim-visual-multi'
-    use 'karb94/neoscroll.nvim'
     use 'RRethy/vim-illuminate'
     use 'windwp/nvim-autopairs'
     use 'preservim/nerdcommenter'

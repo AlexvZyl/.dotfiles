@@ -81,9 +81,6 @@ if pure_nord then
     setup.color_overrides[using].overlay2   = nf.white.dim  -- Commas, operators.
 end
 
--- Colors applied to windows with borders.
-local border_color = np.black
-
 -- Custom highlight groups.
 if pure_nord then
     setup.custom_highlights = function(_)
@@ -168,22 +165,26 @@ if pure_nord then
             ["BufferVisibleError"] = { fg = nf.red.bright, bg = np.black },
             ["BufferInactiveMod"] = { fg = "#888888", bg = np.black },
 
-            -- Diagnostic signs.
+            -- Diagnostic colors.
             ["DiagnosticSignError"] = { fg = nf.red.bright, style = { 'bold' } },
             ["DiagnosticSignWarning"] = { fg = nf.yellow.base, style = { 'bold' } },
             ["DiagnosticSignInfo"] = { fg = nf.blue.bright, style = { 'bold' } },
             ["DiagnosticSignHint"] = { fg = nf.green.bright, style = { 'bold' } },
+            ["DiagnosticError"] = { fg = nf.red.bright, style = { 'bold' } },
+            ["DiagnosticWarning"] = { fg = nf.yellow.base, style = { 'bold' } },
+            ["DiagnosticInfo"] = { fg = nf.blue.bright, style = { 'bold' } },
+            ["DiagnosticHint"] = { fg = nf.green.bright, style = { 'bold' } },
 
             -- Diagnostics.
             ["LspDiagnosticsVirtualTextWarning"] = { fg = nf.black.base, style = { 'bold' } },
 
             -- LSP Saga.
-            ["SagaBorder"] = { fg = np.black },
-            ["DefinitionBorder"] = { fg = np.black },
+            ["SagaBorder"] = { fg = np.white0 },
+            ["DefinitionBorder"] = { fg = np.white0 },
             ["DefinitionNormal"] = { fg = np.gray0 },
 
             -- Cmp.
-            ["BorderBG"] = { fg = np.black },
+            ["BorderBG"] = { fg = np.white0 },
             ["PmenuSel"] = { bg = np.yellow, fg = np.black, style = { 'bold' } },
 
             -- Floating window.
@@ -201,11 +202,3 @@ require 'catppuccin' .setup(setup)
 
 -- Set the catpuccin theme that was overridden.
 vim.cmd.colorscheme("catppuccin-" .. using)
-
--- Tries to set missing LSP colors.
-require("lsp-colors").setup({
-  Error = nf.red.bright,
-  Warning = nf.yellow.base,
-  Information = nf.blue.bright,
-  Hint = nf.green.bright
-})

@@ -25,6 +25,10 @@ class Backend:
         pass
 
     @abstractmethod
+    def render_body(self, components, canvas: Canvas, distribute_evenly, padding):
+        pass
+
+    @abstractmethod
     def render_footer(self, components, canvas: Canvas):
         pass
 

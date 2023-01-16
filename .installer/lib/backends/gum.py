@@ -142,3 +142,32 @@ class GumBackend(Backend):
         for arg in comp.script:
             command.append(arg)
         return self._execute(command)
+
+    def render_header(self, components, canvas: Canvas):
+        for comp in components:
+            if type(comp) == Text:
+                self.render_text(comp, canvas)
+            else:
+                print("Bruh why is there an interactive element in the header?")
+
+    def render_body(self, components, canvas: Canvas, distribute_evenly, padding):
+        # Render the components.
+        first_spinner = True
+        for (_, comp) in enumerate(components):
+            if type(comp) == Text:
+                if distribute_evenly: self.render_empty_line(padding)
+                self.render_text(comp, canvas)
+            elif type(comp) == Confirm:
+                if distribute_evenly: self.render_empty_line(padding-1)
+                return self.render_confirm(comp, canvas)
+            elif type(comp) == List:
+                if distribute_evenly: self.render_empty_line(padding)
+                return self.render_list(comp, canvas)
+            elif type(comp) == Spinner:
+                if distribute_evenly and first_spinner: self.render_empty_line(padding)
+                first_spinner = False
+                self.render_script(comp, canvas)
+
+    # The gum renderer does not support a footer.
+    def render_footer(self, components, canvas: Canvas):
+        pass

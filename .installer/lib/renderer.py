@@ -11,6 +11,7 @@ class Renderer:
         self.canvas.update()
         self.component_list = []
         self.header_list = []
+        self.footer_list = []
         self.distribute_evenly = True
         self.backend = GumBackend()
 
@@ -21,6 +22,10 @@ class Renderer:
     # Submit a component to be rendered to the header section.
     def submit_header(self, component: Component):
         self.header_list.append(deepcopy(component))
+
+    # Submit a component to be rendered to the footer section.
+    def submit_footer(self, component: Component):
+        self.footer_list.append(deepcopy(component))
 
     # Clear the renderer.
     def clear(self):
@@ -103,26 +108,8 @@ class Renderer:
         # Calculate the available padding.
         padding = self.calculate_padding()
 
-        # Render the header.
-        for comp in self.header_list:
-            if type(comp) == Text:
-                self.render_text(comp)
-            else:
-                print("Bruh why is there an interactive element in the header?")
-
-        # Render the components.
-        first_spinner = True
-        for (_, comp) in enumerate(self.component_list):
-            if type(comp) == Text:
-                if self.distribute_evenly: self.vertical_padding(padding)
-                self.render_text(comp)
-            elif type(comp) == Confirm:
-                if self.distribute_evenly: self.vertical_padding(padding-1)
-                return self.render_confirm(comp)
-            elif type(comp) == List:
-                if self.distribute_evenly: self.vertical_padding(padding)
-                return self.render_list(comp)
-            elif type(comp) == Spinner:
-                if self.distribute_evenly and first_spinner: self.vertical_padding(padding)
-                first_spinner = False
-                self.render_script(comp)
+        # Render the sections.
+        self.backend.render_header(self.header_list, self.canvas)
+        result = self.backend.render_body(self.component_list, self.canvas, self.distribute_evenly, padding)
+        self.backend.render_footer(self.footer_list, self.canvas)
+        return result

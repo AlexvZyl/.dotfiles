@@ -130,6 +130,7 @@ class Canvas():
         self.width = 0
         self.height = 0
         self.padding = [0,0]
+        self.cursor_pos = [0,0]
 
     # Update the canvas based on the current terminal dimentions.
     def update(self):

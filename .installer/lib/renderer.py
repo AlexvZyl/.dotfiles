@@ -12,6 +12,7 @@ class Renderer:
         self.component_list = []
         self.header_list = []
         self.distribute_evenly = True
+        self.backend = GumBackend()
 
     # Submit a component to be drawn on the next render.
     def submit(self, component: Component):
@@ -51,7 +52,7 @@ class Renderer:
 
     # Render vertical padding, or new lines.
     def vertical_padding(self, count):
-        render_empty_line(count)
+        self.backend.render_empty_line(count)
 
     # Redraw to the canvas.
     def rerender(self):
@@ -61,19 +62,19 @@ class Renderer:
 
     # Render the text to the canvas.
     def render_text(self, text: Text):
-        return render_gum_style(text, self.canvas)
+        return self.backend.render_text(text, self.canvas)
 
     # Render the confirm widget to the canvas.
     def render_confirm(self, confirm: Confirm):
-        return render_gum_confirm(confirm, self.canvas)
+        return self.backend.render_confirm(confirm, self.canvas)
 
     # Render a list widget to the canvas.
     def render_list(self, list: List):
-        return render_gum_choose(list, self.canvas)
+        return self.backend.render_list(list, self.canvas)
 
     # Render a spinner widget with a message.
-    def render_spinner(self, spinner: Spinner):
-        return render_gum_spinner(spinner, self.canvas)
+    def render_script(self, spinner: Spinner):
+        return self.backend.render_script(spinner, self.canvas)
 
     # Count the components that will be rendered at a time.
     # This is NOT the total amount of components in the list.
@@ -111,17 +112,17 @@ class Renderer:
 
         # Render the components.
         first_spinner = True
-        for (i, comp) in enumerate(self.component_list):
+        for (_, comp) in enumerate(self.component_list):
             if type(comp) == Text:
-                if self.distribute_evenly: render_empty_line(padding)
+                if self.distribute_evenly: self.vertical_padding(padding)
                 self.render_text(comp)
             elif type(comp) == Confirm:
-                if self.distribute_evenly: render_empty_line(padding-1)
+                if self.distribute_evenly: self.vertical_padding(padding-1)
                 return self.render_confirm(comp)
             elif type(comp) == List:
-                if self.distribute_evenly: render_empty_line(padding)
+                if self.distribute_evenly: self.vertical_padding(padding)
                 return self.render_list(comp)
             elif type(comp) == Spinner:
-                if self.distribute_evenly and first_spinner: render_empty_line(padding)
+                if self.distribute_evenly and first_spinner: self.vertical_padding(padding)
                 first_spinner = False
-                self.render_spinner(comp)
+                self.render_script(comp)

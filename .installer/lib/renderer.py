@@ -36,6 +36,10 @@ class Renderer:
     def clear_header(self):
         self.header_list = []
 
+    # Clear the components in the footer.
+    def clear_footer(self):
+        self.footer_list = []
+
     # Calculates the total height of all of the components.
     def _calculate_components_height(self):
         height = 0
@@ -51,6 +55,14 @@ class Renderer:
     def _calculate_header_height(self):
         height = 0
         for comp in self.header_list:
+            comp.update_dimensions()
+            height += comp.size[1]
+        return height
+
+    # Calculate the height of the header components.
+    def _calculate_footer_height(self):
+        height = 0
+        for comp in self.footer_list:
             comp.update_dimensions()
             height += comp.size[1]
         return height
@@ -94,7 +106,7 @@ class Renderer:
     # Calculate the padding required to center all of the components.
     def calculate_padding(self):
         comps_height = self._calculate_components_height()
-        avail_padding = self.canvas.height - comps_height - self._calculate_header_height() 
+        avail_padding = self.canvas.height - comps_height - self._calculate_header_height()  - self._calculate_footer_height()
         padding =  floor( avail_padding / (self.count_components()+1) )
         return padding
 

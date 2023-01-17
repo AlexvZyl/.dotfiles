@@ -3,11 +3,11 @@ import subprocess
 from collections import Counter
 
 # Sync.
-command1 = ["sudo", "pacman", "-Syy"]
+command1 = ["sudo", "yay", "-Syy"]
 subprocess.run(command1, stdout=subprocess.PIPE, stderr = subprocess.DEVNULL).stdout.decode('utf-8')
 
 # Get updates.
-command2 = ["pacman", "-Qu"]
+command2 = ["yay", "-Qu"]
 updates = subprocess.run(command2, stdout=subprocess.PIPE, stderr = subprocess.DEVNULL).stdout.decode('utf-8')
 
 # Count packages.

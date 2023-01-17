@@ -6,6 +6,7 @@ local ui = {
     theme = 'round',
     border = 'rounded',
     winblend = 15,
+    title = false
 }
 
 require 'lspsaga' .setup {
@@ -25,6 +26,9 @@ require 'lspsaga' .setup {
         folder_level = 1,
         show_file = true,
         separator = '  '
+    },
+    diagnostic = {
+        show_code_action = false
     }
 }
 

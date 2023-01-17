@@ -15,7 +15,9 @@ require 'nvim-tree'.setup {
             list = {
                 -- Allow moving out of the explorer.
                 { key = "<C-i>", action = "toggle_file_info" },
-                { key = "<C-k>", action = "" }
+                { key = "<C-k>", action = "" },
+                { key = "[", action = "dir_up" },
+                { key = "]", action = "cd" }
             }
         },
         width = 40

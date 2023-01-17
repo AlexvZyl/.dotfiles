@@ -85,7 +85,7 @@ workspace_layout default
 hide_edge_borders both
 
 # Hide ALL window titles.
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 0
 
 # Set inner/outer gaps
 gaps inner 9

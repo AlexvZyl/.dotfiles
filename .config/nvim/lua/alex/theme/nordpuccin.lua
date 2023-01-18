@@ -41,6 +41,10 @@ setup.integrations = {
     which_key           = true,
     notify              = true,
     treesitter_context  = true,
+    dap                 = {
+        enabled = true,
+        enable_ui = true
+    }
 }
 
 -- Override colors.
@@ -109,13 +113,13 @@ if pure_nord then
             ["@type.qualifier"] = { fg = np.orange, style = { 'bold' }},
             ["@storageclass"] = { fg = np.orange, style = { 'bold' }},
             -- Reds.
-            ["@variable.builtin"] = { fg = nf.red.bright , style = { 'italic' } },
-            ["@preproc"] = { fg = nf.red.bright, style = { 'bold' } },
-            ["@attribute"] = { fg = nf.red.bright, style = { 'bold' } },
-            ["@include"] = { fg = nf.red.bright, style = { 'bold' } },
-            ["@macro"] = { fg = nf.red.bright, style = { 'bold' } },
-            ["@function.macro"] = { fg = nf.red.bright, style = { 'bold' } },
-            ["@define"] = { fg = nf.red.bright, style = { 'bold' } },
+            ["@variable.builtin"] = { fg = np.red, style = { 'italic' } },
+            ["@preproc"] = { fg = np.red, style = { 'bold' } },
+            ["@attribute"] = { fg = np.red, style = { 'bold' } },
+            ["@include"] = { fg = np.red, style = { 'bold' } },
+            ["@macro"] = { fg = np.red, style = { 'bold' } },
+            ["@function.macro"] = { fg = np.red, style = { 'bold' } },
+            ["@define"] = { fg = np.red, style = { 'bold' } },
             -- Blues.
             ["@function"] = { fg = np.blue2 },
             ["@method"] = { fg = np.blue2 },
@@ -208,6 +212,18 @@ if pure_nord then
 
             -- Matched bracket.
             ["MatchParen"] = { fg = nf.yellow.bright, style = { 'bold' } },
+
+            -- Dap.
+            ["DapUIStop"] = { fg = nf.red.bright, style = { 'bold' } },
+            ["DapUIRestart"] = { fg = nf.green.bright, style = { 'bold' } },
+            ["DapUIPlayPause"] = { fg = nf.green.bright, style = { 'bold' } },
+            ["DapUIStepInto"] = { fg = np.blue2, style = { 'bold' } },
+            ["DapUIStepOver"] = { fg = np.blue2, style = { 'bold' } },
+            ["DapUIStepOut"] = { fg = np.blue2, style = { 'bold' } },
+            ["DapUIStepBack"] = { fg = np.blue2, style = { 'bold' } },
+            ["DapUIValue"] = { fg = nf.magenta.bright },
+            ["DapUIWatchesValue"] = { fg = nf.green.bright },
+            ["DapUIType"] = { fg = np.yellow },
         }
     end
 end

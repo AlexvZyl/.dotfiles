@@ -202,3 +202,18 @@ function _cwd_current_buffer()
 end
 
 map_key(n_v, "gc", "<Cmd>lua _cwd_current_buffer()<CR><Cmd>NvimTreeRefresh<CR>", default_settings)
+
+-----------------------
+-- Debugger Protocol --
+-----------------------
+
+map_key(all_modes, "<A-d>", "<Cmd>DapContinue<CR>", default_settings)
+map_key(all_modes, "<A-b>", "<Cmd>DapToggleBreakpoint<CR>", default_settings)
+
+-- Stepping.
+map_key(all_modes, "<A-o>", "<Cmd>DapStepOver<CR>", default_settings)
+map_key(all_modes, "<A-i>", "<Cmd>DapStepInto<CR>", default_settings)
+map_key(all_modes, "<A-u>", "<Cmd>DapStepOut<CR>", default_settings)
+map_key(all_modes, "<A-c>", "<Cmd>DapContinue<CR>", default_settings)
+map_key(all_modes, "<A-r>", "<Cmd>DapRestartFrame<CR>", default_settings)
+map_key(all_modes, "<A-W>", "<Cmd>lua require 'dapui'.toggle()<CR>", default_settings)

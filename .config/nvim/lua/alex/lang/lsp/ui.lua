@@ -53,3 +53,13 @@ require 'trouble'.setup {
 
 -- Make trouble update to the current buffer.
 vim.cmd [[ autocmd BufEnter * TroubleRefresh ]]
+
+------------
+-- Fidget -- 
+------------
+
+require"fidget" .setup {
+    window = {
+        relative = "editor"
+    }
+}

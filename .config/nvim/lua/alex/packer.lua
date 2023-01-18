@@ -8,25 +8,40 @@ vim.g.ale_disable_lsp = 1
 -- Load different plugins.
 return require 'packer'.startup( { function(use)
 
+    -- Package manager.
+    use 'wbthomason/packer.nvim'
+
     -- Telecope.
     use {
         'nvim-telescope/telescope.nvim',
         requires = {
             'nvim-lua/popup.nvim',
             'nvim-lua/plenary.nvim',
-            -- Still need to take a look at this guy.
-            "nvim-telescope/telescope-live-grep-args.nvim"
         }
     }
 
-    -- Gui.
+    -- Debugger things.
+    use 'mfussenegger/nvim-dap'
+    use {
+        "rcarriga/nvim-dap-ui",
+        requires = {
+            "mfussenegger/nvim-dap"
+        }
+    }
+
+    -- UI.
+    use 'nvim-tree/nvim-web-devicons'
+    use 'j-hui/fidget.nvim'
     use 'akinsho/toggleterm.nvim'
     use 'rcarriga/nvim-notify'
-    use 'nvim-lualine/lualine.nvim'
-    use 'kyazdani42/nvim-web-devicons'
-    use 'Pocco81/true-zen.nvim'
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = {
+          'kyazdani42/nvim-web-devicons',
+          opt = true
+      }
+    }
     use 'glepnir/dashboard-nvim'
-    use 'folke/lsp-colors.nvim'
     use {
         'romgrk/barbar.nvim',
         requires = "nvim-tree/nvim-web-devicons",
@@ -35,7 +50,7 @@ return require 'packer'.startup( { function(use)
         "folke/trouble.nvim",
         requires = "kyazdani42/nvim-web-devicons",
     }
-    use { -- This guy still gives some issues.
+    use {
         "folke/noice.nvim",
         requires = {
             "MunifTanjim/nui.nvim",
@@ -47,9 +62,6 @@ return require 'packer'.startup( { function(use)
         requires = "nvim-lua/plenary.nvim",
     }
 
-    -- Images.
-    use 'edluffy/hologram.nvim'
-
     -- Programming experience.
     use 'lukas-reineke/indent-blankline.nvim'
     use 'mg979/vim-visual-multi'
@@ -57,6 +69,7 @@ return require 'packer'.startup( { function(use)
     use 'windwp/nvim-autopairs'
     use 'preservim/nerdcommenter'
     use 'tpope/vim-commentary'
+    use 'brooth/far.vim'
 
     -- Motions.
     use {
@@ -83,15 +96,18 @@ return require 'packer'.startup( { function(use)
     use 'folke/which-key.nvim'
     use 'sudormrfbin/cheatsheet.nvim'
 
-    -- Filesystem & Searching.
-    use 'nvim-tree/nvim-tree.lua'
-    use 'BurntSushi/ripgrep'
-    use 'brooth/far.vim'
+    -- Filesystem.
+    use {
+      'nvim-tree/nvim-tree.lua',
+      requires = {
+        'nvim-tree/nvim-web-devicons'
+      },
+    }
 
     -- General langage.
     use {
         'nvim-treesitter/nvim-treesitter',
-        -- cmd = ":TSUpdate"
+        run = ':TSUpdate'
     }
     use 'neovim/nvim-lspconfig'
     use {
@@ -99,58 +115,57 @@ return require 'packer'.startup( { function(use)
         branch = "main",
     }
 
-    -- Fun.
-    use 'eandrju/cellular-automaton.nvim'
-
-    -- Completion engine.
-    use 'L3MON4D3/LuaSnip'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use {
-        'hrsh7th/nvim-cmp',
-        requires = {
-            'hrsh7th/cmp-omni'
-        }
-    }
-
     -- Language specific.
     use 'JuliaEditorSupport/julia-vim'
     use 'lervag/vimtex'
 
-    -- Themes.
-    use 'sainnhe/gruvbox-material' -- My fav.
-    use 'catppuccin/nvim'
-    use 'morhetz/gruvbox'
-    use 'folke/tokyonight.nvim'
-    use 'EdenEast/nightfox.nvim'
-    use 'sainnhe/everforest'
-    use 'sainnhe/edge'
-    use 'shaunsingh/nord.nvim'
-    use 'dracula/vim'
-    use 'joshdick/onedark.vim'
-    use 'sam4llis/nvim-tundra'
-    use 'rebelot/kanagawa.nvim'
-    use 'cocopon/iceberg.vim'
-    use 'marko-cerovac/material.nvim'
-    use 'sainnhe/sonokai'
+    -- Completion and snippet engine.
     use {
-        'sonph/onehalf',
-        rtp = "vim"
+        'L3MON4D3/LuaSnip',
+        requires = {
+            'saadparwaiz1/cmp_luasnip'
+        }
+    }
+    use {
+        'hrsh7th/nvim-cmp',
+        requires = {
+            'hrsh7th/cmp-omni',
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-cmdline'
+        }
     }
 
-    -- Still need to setup.
-    -- use 'mhartington/formatter.nvim'
-    -- For when I make the PR.
-    -- use 'Alex-vZyl/toggleterm.nvim', {'tag' : 'v2.*'}
-    -- Not yet ready.
-    -- use 'petertriho/nvim-scrollbar'
+    -- Fun.
+    use 'eandrju/cellular-automaton.nvim'
+
+    -- Themes actually using.
+    use 'catppuccin/nvim'
+    use 'EdenEast/nightfox.nvim'
+    use 'sainnhe/gruvbox-material'
+
+    -- List of nice themes:
+    ----------------------------------------
+    -- use 'morhetz/gruvbox'
+    -- use 'folke/tokyonight.nvim'
+    -- use 'sainnhe/everforest'
+    -- use 'sainnhe/edge'
+    -- use 'shaunsingh/nord.nvim'
+    -- use 'dracula/vim'
+    -- use 'joshdick/onedark.vim'
+    -- use 'sam4llis/nvim-tundra'
+    -- use 'rebelot/kanagawa.nvim'
+    -- use 'cocopon/iceberg.vim'
+    -- use 'marko-cerovac/material.nvim'
+    -- use 'sainnhe/sonokai'
+    ----------------------------------------
 
 end,
 
 config = {
     display = {
+        -- Display packer window as floating.
         open_fn = function ()
             return require 'packer.util'.float { border = 'rounded' }
         end
@@ -158,4 +173,3 @@ config = {
 }
 
 })
-

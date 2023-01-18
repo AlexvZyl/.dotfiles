@@ -31,4 +31,3 @@ ts.setup({
 ts.load_extension 'notify'
 ts.load_extension 'lazygit'
 ts.load_extension 'git_worktree'
-ts.load_extension 'live_grep_args'

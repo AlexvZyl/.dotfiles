@@ -53,29 +53,6 @@ require 'illuminate'.configure {
 --     }
 -- } 
 
---------------
--- Zen mode --
---------------
-
-require 'true-zen'.setup {
-    modes = {
-        ataraxis = {
-            shade = 'dark',
-            left = {
-                hidden_number = false,
-                hidden_relativenumber = false,
-                hidden_signcolumn = "no",
-                shown_number = true,
-                shown_relativenumber = true,
-                shown_signcolumn = "yes"
-            }
-        }
-    },
-   integrations = {
-        lualine = true
-    },
-}
-
 -----------------
 -- Indentation --
 -----------------
@@ -90,13 +67,6 @@ require 'indent_blankline'.setup {
     context_char = '│',
     char = '┆',
 }
-
----------------------
--- Formatter setup --
----------------------
-
--- Todo.
--- require 'formatter'.setup {}
 
 ---------------------
 -- Setup which-key --
@@ -116,14 +86,6 @@ vim.cmd('set timeoutlen =1000')
 local notify = require 'notify'
 notify.setup {}
 vim.notify = notify
-
-------------------
--- Image Viewer --
-------------------
-
--- require 'hologram'.setup {
---    auto_display = true
--- }
 
 -----------
 -- Noice --

@@ -93,7 +93,7 @@ end
 
 -- Get the lsp of the current buffer, when using native lsp.
 local function get_native_lsp()
-    local buf_ft = get_current_filetype()
+        local buf_ft = get_current_filetype()
     local clients = vim.lsp.get_active_clients()
     if next(clients) == nil then
       return 'None'
@@ -106,27 +106,6 @@ local function get_native_lsp()
     end
     return 'None'
 end
-
--- Get the status of the native LSP attached to the current buffer.
--- This might not be the best way to get the status, but it works.
-local function get_native_lsp_status()
-    -- Get info.
-    local clients = vim.lsp.get_active_clients()
-    local current_lsp = get_native_lsp()
-    -- No language server running.
-    if current_lsp == 'None' then return '' end
-    -- Check if the last received message is still running.
-    for _, client in ipairs(clients) do
-        if client.name == current_lsp then
-            if next(client.messages.status) ~= nil then
-                return '( ' .. client.messages.status .. ' )'
-            end
-        end
-    end
-    -- Everything is okay.
-    return ''
-end
-
 
 -- Get the status of the compiler, if applicable.
 local function get_compiler_status()
@@ -265,8 +244,7 @@ require 'lualine'.setup {
                         gui = 'bold'
                     }
                 }
-            },
-            get_native_lsp_status,
+            }, 
         },
         lualine_z = {
             {

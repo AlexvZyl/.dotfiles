@@ -17,7 +17,8 @@ require 'gitsigns'.setup {
         change       = { text = '│' },
         delete       = { text = '│' },
         topdelete    = { text = '│' },
-        changedelete = { text = '│' }
+        changedelete = { text = '│' },
+        untracked    = { text = '│' }
     },
     signcolumn = true,
     numhl = false
@@ -37,9 +38,9 @@ vim.g.lazygit_use_neovim_remote = 1 -- fallback to 0 if neovim-remote is not ins
 -- Neogit --
 ------------
 
-require 'neogit'.setup {
-    kind = 'floating'
-}
+-- require 'neogit'.setup {
+    -- kind = 'floating'
+-- }
 
 ------------------
 -- Git worktree --

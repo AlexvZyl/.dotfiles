@@ -91,7 +91,10 @@ if pure_nord then
             -- Magentas.
             ["@constant"] = { fg = nf.magenta.bright },
             ["Number"] = { fg = nf.magenta.bright },
+            ["@number"] = { fg = nf.magenta.bright },
+            ["@float"] = { fg = nf.magenta.bright },
             ["@boolean"] = { fg = nf.magenta.bright },
+            ["@constant.macro"] = { fg = nf.magenta.bright },
             -- Oranges (Keywords).
             ["@keyword"] = { fg = np.orange, style = { 'bold' } },
             ["@keyword.return"] = { fg = np.orange, style = { 'bold' } },
@@ -101,6 +104,10 @@ if pure_nord then
             ["@repeat"] = { fg = np.orange, style = { 'bold' } },
             ["@conditional"] = { fg = np.orange, style = { 'bold' } },
             ["@operator"] = { fg = nf.orange.bright, style = { 'bold' }},
+            ["@type.definition"] = { fg = np.orange, style = { 'bold' }},
+            ["@class"] = { fg = np.orange, style = { 'bold' }},
+            ["@type.qualifier"] = { fg = np.orange, style = { 'bold' }},
+            ["@storageclass"] = { fg = np.orange, style = { 'bold' }},
             -- Reds.
             ["@variable.builtin"] = { fg = nf.red.bright , style = { 'italic' } },
             ["@preproc"] = { fg = nf.red.bright, style = { 'bold' } },
@@ -108,16 +115,19 @@ if pure_nord then
             ["@include"] = { fg = nf.red.bright, style = { 'bold' } },
             ["@macro"] = { fg = nf.red.bright, style = { 'bold' } },
             ["@function.macro"] = { fg = nf.red.bright, style = { 'bold' } },
+            ["@define"] = { fg = nf.red.bright, style = { 'bold' } },
             -- Blues.
             ["@function"] = { fg = np.blue2 },
+            ["@method"] = { fg = np.blue2 },
+            ["@method.call"] = { fg = np.blue2 },
             ["@function.call"] = { fg = np.blue2 },
             ["@function.builtin"] = { fg = np.blue2 },
             -- Cyan.
-            ["@field"] = { fg = np.cyan},
-            ["@field.lua"] = { fg = np.cyan},
+            ["@field"] = { fg = np.cyan },
             -- Yellows.
-            ["@namespace"] = { fg = nf.yellow.dim, style = {} },
+            ["@namespace"] = { fg = nf.yellow.dim, style = { "italic" } },
             ["@type"] = { fg = np.yellow, style = { } },
+            ["@type.builtin"] = { fg = np.yellow },
             -----------------------
 
             -- Tree.

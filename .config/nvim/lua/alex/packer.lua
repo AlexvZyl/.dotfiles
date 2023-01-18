@@ -102,6 +102,9 @@ return require 'packer'.startup( { function(use)
     -- General language.
     use {
         'nvim-treesitter/nvim-treesitter',
+        requires = {
+            'nvim-treesitter/nvim-treesitter-textobjects'
+        },
         run = ':TSUpdate'
     }
     use 'neovim/nvim-lspconfig'

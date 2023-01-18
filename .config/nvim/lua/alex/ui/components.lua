@@ -36,23 +36,6 @@ require 'illuminate'.configure {
     }
 }
 
----------------
--- Scrollbar --
----------------
-
--- require 'scrollbar'.setup {
-    -- show_in_active_only = true,
---     set_highlights = false,
---     marks = {
---         Search = { color = 'Orange' },
---         Error = { color = 'Red' },
---         Warn = { color = 'Yellow' },
---         Info = { color = 'Blue' },
---         Hint = { color = 'Green' },
---         Misc = { color = 'Purple' }
---     }
--- } 
-
 -----------------
 -- Indentation --
 -----------------

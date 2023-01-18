@@ -43,19 +43,6 @@ vim.g.VM_set_statusline = 0
 vim.g.VM_silent_exit = 1
 
 -- Neovim fill characters.
-
---[[ Defaults:
-vim.opt.fillchars = {
-  horiz = '━',
-  horizup = '┻',
-  horizdown = '┳',
-  vert = '┃',
-  vertleft  = '┫',
-  vertright = '┣',
-  verthoriz = '╋',
-}
---]]
-
 vim.opt.fillchars = {
   -- horiz = '―',
   -- horizup = '―',
@@ -72,15 +59,10 @@ vim.opt.fillchars = {
 -- Set space as leader.
 vim.g.mapleader = ' '
 
--- Enable winbar.
--- vim.cmd 'set winbar=%f'
--- vim.cmd 'set laststatus=3'
-
--- Enable spell checking.
+-- Enable spell checking for latex.
 vim.cmd ([[
     autocmd FileType tex setlocal spell
     autocmd FileType tex setlocal spelllang=en
-    " autocmd BufRead,BufNewFile *.tex setlocal spell
 ]])
 
 -- Change spell checking hl.

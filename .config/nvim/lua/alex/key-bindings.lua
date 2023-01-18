@@ -88,27 +88,6 @@ map_key(exclude_t, '<C-Y>', '<Cmd>redo<CR>', default_settings)
 -- Zen mode.
 map_key(all_modes, '<C-a>', '<Cmd>TZAtaraxis<CR>', default_settings)
 
-----------------
--- Bufferline --
-----------------
-
--- Move.
--- map_key(n, '<C-<>', '<Cmd>BufferLineMovePrev<CR>',  default_settings)
--- map_key(n, '<C->>', '<Cmd>BufferLineMoveNext<CR>',  default_settings)
-
--- Closing.
--- Close_current_buffer = require 'alex.ui.utils'.close_current_buffer_LV
--- map_key(n, '<C-q>', '<Cmd>lua Close_current_buffer()<CR>', default_settings)
--- map_key(n, '<leader>q', '<Cmd>lua Close_current_buffer()<CR>', default_settings)
--- map_key(n, 'db',    '<Cmd>BufferLinePickClose<CR>', default_settings)
--- Suggested by someone on the repo.
--- map_key(n, '<C-q>', '<Cmd>:bp <BAR> bd #<CR><CR>', default_settings)
-
--- Selecting.
--- map_key(n, 'gb',    '<Cmd>BufferLinePick<CR>',      default_settings)
--- map_key(n, '<C-,>', '<Cmd>BufferLineCyclePrev<CR>', default_settings)
--- map_key(n, '<C-.>', '<Cmd>BufferLineCycleNext<CR>', default_settings)
-
 ------------
 -- Barbar --
 ------------

@@ -20,7 +20,7 @@ return require 'packer'.startup( { function(use)
         }
     }
 
-    -- Debugger things.
+    -- Debugger.
     use 'mfussenegger/nvim-dap'
     use {
         "rcarriga/nvim-dap-ui",
@@ -29,8 +29,8 @@ return require 'packer'.startup( { function(use)
         }
     }
 
-    -- UI.
-    use 'nvim-tree/nvim-web-devicons'
+    -- General UI.
+    use 'nvim-tree/nvim-web-devicons' -- A bunch of plugins uses this.
     use 'j-hui/fidget.nvim'
     use 'akinsho/toggleterm.nvim'
     use 'rcarriga/nvim-notify'
@@ -57,12 +57,14 @@ return require 'packer'.startup( { function(use)
             "rcarriga/nvim-notify"
         }
     }
+    -- TODO
     use {
         "folke/todo-comments.nvim",
         requires = "nvim-lua/plenary.nvim",
     }
 
     -- Programming experience.
+    -- TODO
     use 'lukas-reineke/indent-blankline.nvim'
     use 'mg979/vim-visual-multi'
     use 'RRethy/vim-illuminate'
@@ -70,8 +72,6 @@ return require 'packer'.startup( { function(use)
     use 'preservim/nerdcommenter'
     use 'tpope/vim-commentary'
     use 'brooth/far.vim'
-
-    -- Motions.
     use {
         'ggandor/leap.nvim',
         requires = {
@@ -80,16 +80,11 @@ return require 'packer'.startup( { function(use)
     }
 
     -- Git.
+    -- TODO
     use 'lewis6991/gitsigns.nvim'
     use 'sindrets/diffview.nvim'
     use 'akinsho/git-conflict.nvim'
     use 'kdheepak/lazygit.nvim'
-    use {
-        'TimUntersberger/neogit',
-        requires = {
-            'nvim-lua/plenary.nvim'
-        }
-    }
     use 'ThePrimeagen/git-worktree.nvim'
 
     -- Neovim helpers.
@@ -104,7 +99,7 @@ return require 'packer'.startup( { function(use)
       },
     }
 
-    -- General langage.
+    -- General language.
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
@@ -114,12 +109,6 @@ return require 'packer'.startup( { function(use)
         "glepnir/lspsaga.nvim",
         branch = "main",
     }
-
-    -- Language specific.
-    use 'JuliaEditorSupport/julia-vim'
-    use 'lervag/vimtex'
-
-    -- Completion and snippet engine.
     use {
         'L3MON4D3/LuaSnip',
         requires = {
@@ -136,6 +125,10 @@ return require 'packer'.startup( { function(use)
             'hrsh7th/cmp-cmdline'
         }
     }
+
+    -- Language specific.
+    use 'JuliaEditorSupport/julia-vim'
+    use 'lervag/vimtex'
 
     -- Fun.
     use 'eandrju/cellular-automaton.nvim'

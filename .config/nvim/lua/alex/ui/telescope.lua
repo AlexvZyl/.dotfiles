@@ -1,12 +1,7 @@
 local ts = require 'telescope'
-local palette = require 'alex.theme.utils'.get_gruvbox_material_palette()
 
 -- Setup.
 local border_chars_none = { " ", " ", " ", " ", " ", " ", " ", " " }
-local border_chars_single_round = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }
-local border_chars_single_thick = { "━", "┃", "━", "┃", "┏", "┓", "┛", "┗" }
-local border_chars_experimental = { " ", "⎹", " ", " ", " ", " ", " ", " " }
-
 ts.setup({
     defaults = {
         sort_mru = true,

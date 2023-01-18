@@ -193,6 +193,11 @@ if pure_nord then
             -- Gitsigns.
             ["GitSignsChange"] = { fg = np.blue1 },
 
+            -- Leap.
+            ["LeapLabelPrimary"] = { fg = np.black, bg = nf.yellow.dim, style = { 'bold' } },
+
+            -- Matched bracket.
+            ["MatchParen"] = { fg = nf.yellow.bright, style = { 'bold' } },
         }
     end
 end

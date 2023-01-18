@@ -1,25 +1,29 @@
 #!/bin/bash
 
 # Ensure packages are up to date.
-sudo pacman -Syyu
+yay -Syyu
 
 # Lua (by sumneko)
-sudo pacman -S lua-language-server
+yay -S lua-language-server
 
 # Julia uses the executable with added packages.
-sudo pacman -S julia-bin
+yay -S julia-bin
 
 # Bash.
-sudo pacman -S bash-language-server
+yay -S bash-language-server
 
 # Python.
-sudo pacman -S pyright
+yay -S pyright
 
 # Rust.
-sudo pacman -S rust-analyzer
+yay -S rust-analyzer
 
 # LaTeX.
-sudo pacman -S texlab
+yay -S texlab
 
 # C++.
-sudo pacman -S ccls
+yay -S ccls
+
+# CMake.
+yay -S cmake-language-server
+pip install cmake-language-server

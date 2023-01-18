@@ -21,7 +21,16 @@ local lsp_config = require 'lspconfig'
 -- C++.
 lsp_config.ccls.setup {
     on_attach = on_attach,
-    flags = lsp_flags
+    flags = lsp_flags,
+    init_options = {
+    compilationDatabaseDirectory = "build";
+    index = {
+      threads = 0;
+    };
+    clang = {
+      excludeArgs = { "-frounding-math"} ;
+    };
+  }
 }
 
 -- Lua.
@@ -56,6 +65,12 @@ lsp_config.rust_analyzer.setup {
 
 -- LaTeX.
 lsp_config.texlab.setup {
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
+-- CMake.
+lsp_config.cmake.setup {
     on_attach = on_attach,
     flags = lsp_flags,
 }

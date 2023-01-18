@@ -190,6 +190,9 @@ if pure_nord then
             -- Floating window.
             ["FloatBorder"] = { bg = np.black, fg = np.cyan, style = { 'bold' } },
 
+            -- Gitsigns.
+            ["GitSignsChange"] = { fg = np.blue1 },
+
         }
     end
 end

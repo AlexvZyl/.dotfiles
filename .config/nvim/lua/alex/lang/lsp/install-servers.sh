@@ -27,3 +27,6 @@ yay -S ccls
 # CMake.
 yay -S cmake-language-server
 pip install cmake-language-server
+
+# Json.
+yay -S vscode-json-languagese

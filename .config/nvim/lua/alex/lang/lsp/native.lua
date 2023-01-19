@@ -75,6 +75,12 @@ lsp_config.cmake.setup {
     flags = lsp_flags,
 }
 
+-- JSON.
+lsp_config.jsonls.setup {
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
 -- Diagnostics signs colors and character.
 vim.cmd([[
     sign define DiagnosticSignError text= texthl= linehl= numhl=DiagnosticSignError 

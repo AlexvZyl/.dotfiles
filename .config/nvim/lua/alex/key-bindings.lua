@@ -127,6 +127,7 @@ map_key(n_v, "RR", "<cmd>Lspsaga rename<CR>", { silent = true })
 -- also support open/vsplit/etc operation check definition_action_keys
 -- support tagstack C-t jump back
 map_key(n, "gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
+map_key(n, "gf", "<cmd>Lspsaga goto_definition<CR>", { silent = true })
 
 -- Show docs.
 map_key(n, "gD", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
@@ -212,6 +213,7 @@ map_key(all_modes, "<A-b>", "<Cmd>DapToggleBreakpoint<CR>", default_settings)
 
 -- Stepping.
 map_key(all_modes, "<A-o>", "<Cmd>DapStepOver<CR>", default_settings)
+map_key(all_modes, "<A-T>", "<Cmd>DapTerminate<CR>", default_settings)
 map_key(all_modes, "<A-i>", "<Cmd>DapStepInto<CR>", default_settings)
 map_key(all_modes, "<A-u>", "<Cmd>DapStepOut<CR>", default_settings)
 map_key(all_modes, "<A-c>", "<Cmd>DapContinue<CR>", default_settings)

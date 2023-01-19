@@ -10,13 +10,17 @@ dap.adapters.cppdbg = {
   command = '/home/alex/.config/nvim/lua/alex/lang/debugger/tools/vscode-cpptools/extension/debugAdapters/bin/OpenDebugAD7',
 }
 
+local cache = require 'alex.lang.debugger.utils'
 dap.configurations.cpp = {
   {
-    name = "Launch file",
+    name = "Executable",
     type = "cppdbg",
     request = "launch",
     program = function()
-      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+        local path = cache.check_exe_cache(vim.fn.getcwd())
+        local input = vim.fn.input('Debug: ', path, 'file')
+        cache.update_exe_cache(vim.fn.getcwd(), input)
+        return input
     end,
     cwd = '${workspaceFolder}',
     stopAtEntry = true,

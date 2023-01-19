@@ -11,6 +11,9 @@ return require 'packer'.startup( { function(use)
     -- Package manager.
     use 'wbthomason/packer.nvim'
 
+    -- Lua packages.
+    use_rocks 'lua-cjson'
+
     -- Telecope.
     use {
         'nvim-telescope/telescope.nvim',

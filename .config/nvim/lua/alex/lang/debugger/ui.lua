@@ -39,16 +39,16 @@ require 'dapui' .setup {
     {
         elements = {
             {
-                id = "stacks",
-                size = 0.25
+                id = "repl",
+                size = 0.20,
             },
             {
                 id = "watches",
-                size = 0.50
+                size = 0.65
             },
             {
                 id = "console",
-                size = 0.25
+                size = 0.15
             }
         },
         size = 0.25,
@@ -56,8 +56,10 @@ require 'dapui' .setup {
     },
     -- Horizontal bar.
     {
-        elements = {},
-        size = 0,
+        elements = {
+            "stacks"
+        },
+        size = 0.2,
         position = "bottom"
     },
   },

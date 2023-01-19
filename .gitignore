@@ -5,3 +5,4 @@ __pycache__/
 github/
 GitHub/
 vscode-cpptools/
+.cache.json

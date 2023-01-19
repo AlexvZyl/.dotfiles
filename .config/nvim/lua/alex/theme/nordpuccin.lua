@@ -224,6 +224,8 @@ if pure_nord then
             ["DapUIValue"] = { fg = nf.magenta.bright },
             ["DapUIWatchesValue"] = { fg = nf.green.bright },
             ["DapUIType"] = { fg = np.yellow },
+            ["DapUIFloatBorder"] = { fg = np.orange, bg = np.black },
+            ["DapUIFloatNormal"] = { bg = np.gray0 },
         }
     end
 end

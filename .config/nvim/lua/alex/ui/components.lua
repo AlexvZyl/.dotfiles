@@ -67,7 +67,10 @@ vim.cmd('set timeoutlen =1000')
 ---------------------------------
 
 local notify = require 'notify'
-notify.setup {}
+notify.setup {
+    fps = 60,
+    level = "ERROR"
+}
 vim.notify = notify
 
 -----------

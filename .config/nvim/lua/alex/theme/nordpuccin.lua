@@ -113,21 +113,25 @@ if pure_nord then
             ["@type.qualifier"] = { fg = np.orange, style = { 'bold' }},
             ["@storageclass"] = { fg = np.orange, style = { 'bold' }},
             -- Reds.
-            ["@variable.builtin"] = { fg = np.red, style = { 'italic' } },
             ["@preproc"] = { fg = np.red, style = { 'bold' } },
             ["@attribute"] = { fg = np.red, style = { 'bold' } },
             ["@include"] = { fg = np.red, style = { 'bold' } },
             ["@macro"] = { fg = np.red, style = { 'bold' } },
             ["@function.macro"] = { fg = np.red, style = { 'bold' } },
             ["@define"] = { fg = np.red, style = { 'bold' } },
+            ["@exception"] = { fg = np.red, style = { 'bold' } },
+            ["@punctuation.special"] = { fg = np.red, style = { 'bold' } },
             -- Blues.
             ["@function"] = { fg = np.blue2 },
             ["@method"] = { fg = np.blue2 },
             ["@method.call"] = { fg = np.blue2 },
             ["@function.call"] = { fg = np.blue2 },
             ["@function.builtin"] = { fg = np.blue2 },
+            ["@variable.builtin"] = { fg = np.blue0, style = { 'italic'} },
             -- Cyan.
             ["@field"] = { fg = np.cyan },
+            ["@property"] = { fg = np.cyan },
+            ["@property.cpp"] = { fg = np.cyan },
             -- Yellows.
             ["@namespace"] = { fg = nf.yellow.dim, style = { "italic" } },
             ["@type"] = { fg = np.yellow, style = { } },
@@ -226,6 +230,7 @@ if pure_nord then
             ["DapUIType"] = { fg = np.yellow },
             ["DapUIFloatBorder"] = { fg = np.orange, bg = np.black },
             ["DapUIFloatNormal"] = { bg = np.gray0 },
+            ["DapUILineNumber"] = { fg = nf.green.bright },
         }
     end
 end

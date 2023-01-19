@@ -106,7 +106,8 @@ return require 'packer'.startup( { function(use)
     use {
         'nvim-treesitter/nvim-treesitter',
         requires = {
-            'nvim-treesitter/nvim-treesitter-textobjects'
+            'nvim-treesitter/nvim-treesitter-textobjects',
+            'nvim-treesitter/playground'
         },
         run = ':TSUpdate'
     }

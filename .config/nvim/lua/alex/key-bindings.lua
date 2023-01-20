@@ -56,6 +56,12 @@ map_key(n_t, '<C-j>','<Cmd>wincmd j<CR>', default_settings)
 map_key(n_t, '<C-k>','<Cmd>wincmd k<CR>', default_settings)
 map_key(n_t, '<C-l>','<Cmd>wincmd l<CR>', default_settings)
 
+-- Resizing windows.
+map_key(n_t, '<C-=>','<Cmd>vertical resize +5<CR>', default_settings)
+map_key(n_t, '<C-->','<Cmd>vertical resize -5<CR>', default_settings)
+map_key(n_t, '<C-+>','<Cmd>horizontal resize +5<CR>', default_settings)
+map_key(n_t, '<C-_>','<Cmd>horizontal resize -5<CR>', default_settings)
+
 -- Commenting.
 map_key(exclude_t, '<C-/>', '<Cmd>Commentary<CR>', default_settings)
 

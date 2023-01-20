@@ -5,7 +5,8 @@ vim.g.neovide_transparency=1
 vim.g.neovide_fullscreen=false
 vim.g.neovide_profiler=false
 vim.g.neovide_cursor_animation_length = 0.018
-vim.g.neovide_scroll_animation_length = 0.8
+-- vim.g.neovide_scroll_animation_length = 0.8
+vim.g.neovide_scroll_animation_length = 0.0
 vim.g.neovide_cursor_antialiasing = true
 
 -- Fun particles.

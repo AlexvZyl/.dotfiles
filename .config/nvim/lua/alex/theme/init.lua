@@ -21,4 +21,4 @@ vim.cmd([[
 ]])
 
 -- Load the scheme.
-require 'alex.theme.nordpuccin'
+vim.cmd [[colorscheme nordic]]

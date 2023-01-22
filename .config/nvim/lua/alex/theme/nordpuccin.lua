@@ -108,7 +108,6 @@ if pure_nord then
             ["@repeat"] = { fg = np.orange, style = { 'bold' } },
             ["@conditional"] = { fg = np.orange, style = { 'bold' } },
             ["@operator"] = { fg = nf.orange.bright, style = { 'bold' }},
-            ["@type.definition"] = { fg = np.orange, style = { 'bold' }},
             ["@class"] = { fg = np.orange, style = { 'bold' }},
             ["@type.qualifier"] = { fg = np.orange, style = { 'bold' }},
             ["@storageclass"] = { fg = np.orange, style = { 'bold' }},
@@ -136,6 +135,7 @@ if pure_nord then
             ["@namespace"] = { fg = nf.yellow.dim, style = { "italic" } },
             ["@type"] = { fg = np.yellow, style = { } },
             ["@type.builtin"] = { fg = np.yellow },
+            ["@type.definition"] = { fg = np.yellow },
             -----------------------
 
             -- Tree.

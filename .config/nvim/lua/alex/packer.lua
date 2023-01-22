@@ -140,14 +140,15 @@ return require 'packer'.startup( { function(use)
     -- Fun.
     use 'eandrju/cellular-automaton.nvim'
 
-    -- Themes actually using.
-    use 'catppuccin/nvim'
-    use 'EdenEast/nightfox.nvim'
-    use 'sainnhe/gruvbox-material'
+    -- Theme using.
+    use 'AlexvZyl/nordic.nvim'
 
     -- List of nice themes:
     ----------------------------------------
     -- use 'morhetz/gruvbox'
+    -- use 'sainnhe/gruvbox-material'
+    -- use 'EdenEast/nightfox.nvim'
+    -- use 'catppuccin/nvim'
     -- use 'folke/tokyonight.nvim'
     -- use 'sainnhe/everforest'
     -- use 'sainnhe/edge'

@@ -141,10 +141,13 @@ return require 'packer'.startup( { function(use)
     use 'eandrju/cellular-automaton.nvim'
 
     -- Theme using.
-    use 'AlexvZyl/nordic.nvim'
+    use {
+        'AlexvZyl/nordic.nvim',
+        branch = 'dev'
+    }
 
     -- List of nice themes:
-    ----------------------------------------
+    --------------------------------------
     -- use 'morhetz/gruvbox'
     -- use 'sainnhe/gruvbox-material'
     -- use 'EdenEast/nightfox.nvim'

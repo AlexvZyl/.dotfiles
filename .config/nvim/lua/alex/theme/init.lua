@@ -20,5 +20,4 @@ vim.cmd([[
     augroup END
 ]])
 
--- Load the scheme.
-vim.cmd [[colorscheme nordic]]
+require 'alex.theme.nordic'

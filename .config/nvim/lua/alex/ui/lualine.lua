@@ -146,10 +146,7 @@ local function get_git_compare()
 end
 
 -- Required to properly set the colors.
-local custom_nord = require 'alex.theme.utils'.get_nord_lualine_theme()
--- Get the palettes.
-local np = require 'alex.theme.utils'.get_nord_palette()
-local nf = require 'alex.theme.utils'.get_nordfox_palette()
+local c = require 'nordic.colors'
 
 require 'lualine'.setup {
     sections = {
@@ -169,7 +166,7 @@ require 'lualine'.setup {
                 'branch',
                 icon = {
                     '',
-                    color = { fg = nf.orange.bright, gui = 'bold' },
+                    color = { fg = c.orange.bright, gui = 'bold' },
                 },
                 separator = ' ',
             },
@@ -178,7 +175,7 @@ require 'lualine'.setup {
                 separator = ' ',
                 icon = {
                     ' ',
-                    color = { fg = nf.orange.bright, gui = 'bold' },
+                    color = { fg = c.orange.bright, gui = 'bold' },
                 }
             },
             {
@@ -191,9 +188,9 @@ require 'lualine'.setup {
                     removed = ' '
                 },
                 diff_color = {
-                    added = { fg = nf.green.base, gui = 'bold' },
-                    modified = { fg = np.blue1, gui = 'bold' },
-                    removed = { fg = nf.red.bright, gui = 'bold' },
+                    added = { fg = c.git.add, gui = 'bold' },
+                    modified = { fg = c.git.change, gui = 'bold' },
+                    removed = { fg = c.git.delete, gui = 'bold' },
                 }
                 -- icon = {
                     -- ' ',
@@ -213,10 +210,10 @@ require 'lualine'.setup {
                     hint = ' ',
                 },
                 diagnostics_color = {
-                    error = { fg=nf.red.bright, gui='bold'   },
-                    warn =  { fg=nf.yellow.base, gui='bold' },
-                    info =  { fg=nf.blue.bright, gui='bold'   },
-                    hint =  { fg=nf.green.bright, gui='bold'  },
+                    error = { fg=c.error, gui='bold'   },
+                    warn =  { fg=c.warn, gui='bold' },
+                    info =  { fg=c.info, gui='bold'   },
+                    hint =  { fg=c.hint, gui='bold'  },
                 },
                 colored = true,
             },
@@ -228,7 +225,7 @@ require 'lualine'.setup {
                     ' ,',
                     align = 'left',
                     color = {
-                        fg = nf.orange.bright,
+                        fg = c.orange.bright,
                         gui = 'bold'
                     }
                 },
@@ -240,7 +237,7 @@ require 'lualine'.setup {
                     '  ',
                     align = 'left',
                     color = {
-                        fg = nf.orange.bright,
+                        fg = c.orange.bright,
                         gui = 'bold'
                     }
                 }
@@ -252,7 +249,7 @@ require 'lualine'.setup {
                 icon = {
                     '',
                     align = 'left',
-                    color = { fg = np.black },
+                    color = { fg = c.black },
                 }
             },
             {
@@ -260,7 +257,7 @@ require 'lualine'.setup {
                 icon = {
                     '',
                     align = 'left',
-                    color = { fg = np.black },
+                    color = { fg = c.black },
                 }
             }
         },

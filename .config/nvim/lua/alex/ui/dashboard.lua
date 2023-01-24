@@ -66,5 +66,3 @@ local padding = (win_height - header_height - center_height - footer_height) / 4
 db.header_pad = padding - header_extra_padding
 db.center_pad = padding - center_extra_padding
 db.footer_pad = padding - footer_extra_padding
-
-

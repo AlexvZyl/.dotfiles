@@ -18,4 +18,4 @@ require 'nordic' .setup {
 }
 
 -- Load the scheme.
-vim.cmd.colorscheme 'nordic'
+-- vim.cmd.colorscheme 'nordic'

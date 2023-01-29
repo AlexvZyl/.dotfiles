@@ -44,16 +44,17 @@ vim.g.VM_silent_exit = 1
 
 -- Neovim fill characters.
 vim.opt.fillchars = {
-  -- horiz = '―',
-  -- horizup = '―',
-  horiz = '⎯',
-  horizup = '⎯',
-  horizdown = ' ',
-  vert = ' ',
-  vertleft  = ' ',
-  vertright = ' ',
-  verthoriz = ' ',
-  eob = ' ',
+    -- horiz = '―',
+    -- horizup = '―',
+    horiz = '⎯',
+    horizup = '⎯',
+    horizdown = ' ',
+    vert = ' ',
+    vertleft  = ' ',
+    vertright = ' ',
+    verthoriz = ' ',
+    eob = ' ',
+    diff = '╱'
 }
 
 -- Set space as leader.

@@ -45,3 +45,11 @@ require("git-worktree").setup({
     clearjumps_on_change = true,
     autopush = false,
 })
+
+--------------
+-- Diffview --
+--------------
+
+require 'diffview' .setup {
+    enhanced_diff_hl = true
+}

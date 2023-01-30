@@ -216,9 +216,6 @@ bindsym $mod+n exec neovide --multigrid
 # Start resource viewers.
 bindsym $mod+b exec alacritty --command=btop
 
-# Start lazygit with dotfiles.
-bindsym $mod+g exec alacritty --command=lazygit-dotfiles
-
 # kill focused window
 bindsym $mod+q kill
 
@@ -240,7 +237,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # keybinding in fancy rofi (automated):
-bindsym F11 exec ~/.config/i3/scripts/keyhint-2
+# bindsym F11 exec ~/.config/i3/scripts/keyhint-2
 # alternative
 # keybinding list in editor:
 # bindsym $mod+F1 exec xed ~/.config/i3/keybindings

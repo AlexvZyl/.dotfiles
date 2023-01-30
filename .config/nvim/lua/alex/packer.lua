@@ -38,12 +38,24 @@ return require 'packer'.startup( { function(use)
     }
 
     -- Debugger.
-    use 'mfussenegger/nvim-dap'
+    use {
+        'mfussenegger/nvim-dap',
+        -- opt = true,
+        config = function ()
+            require 'alex.lang.debugger.dap'.setup_dap()
+        end,
+        -- cmd = { 'DapContinue' }
+    }
     use {
         "rcarriga/nvim-dap-ui",
+        -- opt = true,
+        config = function()
+            require 'alex.lang.debugger.ui'.setup_dap_ui()
+        end,
         requires = {
             "mfussenegger/nvim-dap"
-        }
+        },
+        -- cmd = { 'DapContinue' }
     }
 
     -- General UI.
@@ -171,12 +183,12 @@ return require 'packer'.startup( { function(use)
     -- use 'sainnhe/everforest'
     -- use 'sainnhe/edge'
     use 'shaunsingh/nord.nvim'
-    -- use 'dracula/vim'
-    -- use 'joshdick/onedark.vim'
+    use 'dracula/vim'
+    use 'joshdick/onedark.vim'
     -- use 'sam4llis/nvim-tundra'
     use 'rebelot/kanagawa.nvim'
     -- use 'cocopon/iceberg.vim'
-    -- use 'marko-cerovac/material.nvim'
+    use 'marko-cerovac/material.nvim'
     -- use 'sainnhe/sonokai'
     ----------------------------------------
 

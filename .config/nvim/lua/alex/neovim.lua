@@ -67,7 +67,7 @@ vim.cmd ([[
 ]])
 
 -- Change spell checking hl.
-vim.cmd 'hi SpellBad gui=underline'
+vim.cmd 'hi SpellBad gui=undercurl'
 
 -- Set wrap for specific file types.
 vim.cmd 'autocmd FileType markdown setlocal wrap'

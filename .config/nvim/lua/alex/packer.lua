@@ -58,7 +58,8 @@ return require 'packer'.startup( { function(use)
           opt = true
       }
     }
-    use 'glepnir/dashboard-nvim'
+    -- use 'glepnir/dashboard-nvim'
+    use 'AlexvZyl/dashboard-nvim'
     use {
         'romgrk/barbar.nvim',
         requires = "nvim-tree/nvim-web-devicons",
@@ -157,23 +158,23 @@ return require 'packer'.startup( { function(use)
     -- Theme using.
     use {
        'AlexvZyl/nordic.nvim',
-       branch = 'dev'
+       branch = 'main'
     }
 
     -- List of nice themes:
     --------------------------------------
     -- use 'morhetz/gruvbox'
-    -- use 'sainnhe/gruvbox-material'
-    -- use 'EdenEast/nightfox.nvim'
-    -- use 'catppuccin/nvim'
-    -- use 'folke/tokyonight.nvim'
+    use 'sainnhe/gruvbox-material'
+    use 'EdenEast/nightfox.nvim'
+    use 'catppuccin/nvim'
+    use 'folke/tokyonight.nvim'
     -- use 'sainnhe/everforest'
     -- use 'sainnhe/edge'
-    -- use 'shaunsingh/nord.nvim'
+    use 'shaunsingh/nord.nvim'
     -- use 'dracula/vim'
     -- use 'joshdick/onedark.vim'
     -- use 'sam4llis/nvim-tundra'
-    -- use 'rebelot/kanagawa.nvim'
+    use 'rebelot/kanagawa.nvim'
     -- use 'cocopon/iceberg.vim'
     -- use 'marko-cerovac/material.nvim'
     -- use 'sainnhe/sonokai'

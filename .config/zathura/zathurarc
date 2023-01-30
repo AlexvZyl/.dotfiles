@@ -23,8 +23,8 @@ set index-active-fg             "#232831"
 set inputbar-bg                 "#232831"
 set inputbar-fg                 "#E5E9F0"
 
-set statusbar-bg                "#2E3440"
-set statusbar-fg                "#E5E9F0"
+set statusbar-bg                "#191C24"
+set statusbar-fg                "#BBC3D4"
 
 set highlight-color             "#D08770"
 set highlight-active-color      "#BF616A"

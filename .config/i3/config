@@ -208,7 +208,7 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 
 # start a terminal
 # bindsym $mod+t exec alacritty
-bindsym $mod+t exec kitty
+bindsym $mod+t exec kitty --config ~/.config/kitty/padding.conf
 
 # Start editor.
 # bindsym $mod+n exec neovide --multigrid
@@ -216,7 +216,7 @@ bindsym $mod+t exec kitty
 bindsym $mod+n exec kitty --execute nvim
 
 # Start resource viewers.
-bindsym $mod+b exec alacritty --command=btop
+bindsym $mod+b exec kitty --config ~/.config/kitty/padding.conf --execute btop 
 
 # kill focused window
 bindsym $mod+q kill

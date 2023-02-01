@@ -57,7 +57,7 @@ config.header = {
 }
 
 config.footer = {
-    'ﯦ  Dala what you must.'
+    '󰛨  Dala what you must.'
 }
 
 config.packages = {}
@@ -72,11 +72,14 @@ local footer_height = 1
 local win_height = vim.api.nvim_win_get_height(0)
 local padding = (win_height - header_height - center_height - footer_height) / 4
 
+config.week_header = {}
+config.week_header.enable = true
+
 -- Now pad the elements.
-config.header = pad_front(config.header, padding)
-config.header = pad_end(config.header, 1)
-config.footer = pad_front(config.footer, padding)
-config.packages.bottom_padding = padding
+config.packages.bottom_padding = 3
+config.packages.top_padding = 1
+config.header_bottom_padding = 3
+config.footer_top_padding = 3
 
 -- Setup.
 require 'dashboard' .setup {

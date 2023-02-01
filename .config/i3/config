@@ -213,7 +213,7 @@ bindsym $mod+t exec kitty --config ~/.config/kitty/padding.conf
 # Start editor.
 # bindsym $mod+n exec neovide --multigrid
 # bindsym $mod+n exec alacritty --command=nvim
-bindsym $mod+n exec kitty --execute nvim
+bindsym $mod+n exec kitty --class neovim --execute nvim
 
 # Start resource viewers.
 bindsym $mod+b exec kitty --config ~/.config/kitty/padding.conf --execute btop 
@@ -430,10 +430,10 @@ for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
 for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
 for_window [window_role="About"] floating enable
 for_window [class="Alacritty"] floating enable
-# for_window [class="kitty"] floating enable
+for_window [class="kitty"] floating enable
 
 # Set size of floating window.
-# for_window [class=".*"] resize set 700 700
+for_window [class=".*"] resize set 960 600
 
 # set position of floating window
 for_window [class=".*"] move position center

@@ -444,8 +444,8 @@ draw_bold_text_with_bright_colors: false
 #   - (Windows) powershell
 shell:
  program: /bin/fish 
- args:
-   - --init-command=pfetch
+ # args:
+   # - --init-command=pfetch
 
 # Startup directory
 #

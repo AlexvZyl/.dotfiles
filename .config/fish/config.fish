@@ -34,3 +34,8 @@ alias ls='exa --grid --long --header --no-permissions --no-time --across'
 
 # Unlock pacman.
 alias unlock='sudo rm /var/lib/pacman/db.lck'
+
+# Trash.
+alias trash="trash --trash-dir ~/.trash"
+
+pfetch

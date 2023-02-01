@@ -4,9 +4,9 @@ require 'nordic' .setup {
 		style = 'flat',
 	},
 	-- Enable bold keywords and operators.
-	bold_keywords = true,
+	bold_keywords = false,
 	-- Enable italicized comments.
-	italic_comments = false,
+	italic_comments = true,
 	-- Enable general editor background transparency.
 	transparent_bg = false,
 	-- Override styling of any highlight group.

@@ -7,5 +7,5 @@ for i in /sys/class/hwmon/hwmon*/temp*_input; do
     fi
 done
 
-polybar --quiet --reload top -c ~/.config/polybar/config.ini &
-polybar --quiet --reload bottom -c ~/.config/polybar/config.ini &
+polybar --reload --quiet top -c ~/.config/polybar/config.ini &
+polybar --reload --quiet bottom -c ~/.config/polybar/config.ini &

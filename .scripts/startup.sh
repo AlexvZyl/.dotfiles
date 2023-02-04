@@ -14,4 +14,5 @@ picom -b
 ~/.screenlayout/default_triple_monitor.sh 
 
 # Set wallpaper AFTER compositor.
-feh --bg-fill ~/.wallpapers/IGN_Astronaut_Nord.png
+# feh --bg-fill ~/.wallpapers/IGN_Astronaut_Nord.png
+feh --bg-fill ~/.wallpapers/Cloud_2_Nord.png

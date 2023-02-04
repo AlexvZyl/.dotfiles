@@ -88,8 +88,7 @@ hide_edge_borders both
 for_window [class="^.*"] border pixel 0
 
 # Set inner/outer gaps
-gaps inner 11
-gaps outer 0
+gaps inner 20
 
 # show window title bars (not officially supported with i3gaps)
 default_border none
@@ -217,6 +216,9 @@ bindsym $mod+n exec kitty --class neovim --execute nvim
 
 # Start resource viewers.
 bindsym $mod+b exec kitty --config ~/.config/kitty/padding.conf --execute btop 
+
+# Dotfiles.
+bindsym $mod+g exec kitty --config ~/.config/kitty/padding.conf --execute lazygit-dotfiles
 
 # kill focused window
 bindsym $mod+q kill

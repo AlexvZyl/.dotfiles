@@ -47,6 +47,8 @@ config.shortcut = {
     }
 }
 
+config.week_header = {}
+-- config.week_header.enable = true
 config.header = {
     '███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗',
     '████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║',
@@ -72,13 +74,11 @@ local footer_height = 1
 local win_height = vim.api.nvim_win_get_height(0)
 local padding = (win_height - header_height - center_height - footer_height) / 4
 
-config.week_header = {}
-config.week_header.enable = true
 
 -- Now pad the elements.
 config.packages.bottom_padding = 3
 config.packages.top_padding = 1
-config.header_bottom_padding = 3
+config.header_bottom_padding = 1
 config.footer_top_padding = 3
 
 -- Setup.

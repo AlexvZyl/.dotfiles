@@ -5,31 +5,40 @@
 local ui = {
     theme = 'round',
     border = 'rounded',
-    winblend = 15,
-    title = false
+    winblend = 5,
+    title = false,
+    diagnostic = '  ',
+    kind = {}
+}
+
+local lightbulb = {
+    enable = false
+}
+
+local definition = {
+    edit = '<C-e>',
+    vsplit = '<C-v>',
+    split = '<C-h>',
+    quit = 'q',
+}
+
+local winbar = {
+    enable = false,
+    folder_level = 1,
+    show_file = true,
+    separator = '  '
+}
+
+local diagnostic = {
+    show_code_action = false
 }
 
 require 'lspsaga' .setup {
-    lightbulb = {
-        enable = false
-    },
+    lightbulb = lightbulb,
     ui = ui,
-    definition = {
-        edit = '<C-e>',
-        vsplit = '<C-v>',
-        split = '<C-h>',
-        quit = 'q',
-    },
-    -- This feature is a bit much imo.
-    symbol_in_winbar = {
-        enable = false,
-        folder_level = 1,
-        show_file = true,
-        separator = '  '
-    },
-    diagnostic = {
-        show_code_action = false
-    }
+    definition = definition,
+    symbol_in_winbar = winbar,
+    diagnostic = diagnostic
 }
 
 ---------------------------

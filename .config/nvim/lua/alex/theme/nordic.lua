@@ -16,6 +16,9 @@ require 'nordic' .setup {
         bold = false,
         -- Avialable styles: 'dark', 'light'.
         theme = 'light'
+    },
+    noice = {
+        style = 'classic'
     }
 }
 

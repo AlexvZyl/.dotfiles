@@ -241,7 +241,7 @@ require 'lualine'.setup {
                         gui = 'bold'
                     }
                 }
-            }, 
+            },
         },
         lualine_z = {
             {

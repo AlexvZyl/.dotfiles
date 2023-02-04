@@ -2,6 +2,40 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+local renderer = {
+    root_folder_label = ":~:s?$?/..?",
+    indent_width = 2,
+    indent_markers = {
+        enable = true,
+        inline_arrows = true
+    },
+    icons = {
+        git_placement = 'after',
+        modified_placement = 'after',
+        padding = ' ',
+        glyphs = {
+            folder = {
+                arrow_closed = '',
+                arrow_open = '',
+                default = ' ',
+                open = ' ',
+                empty = ' ',
+                empty_open = ' ',
+                symlink = '󰉒 ',
+                symlink_open = '󰉒 ',
+
+            },
+            git= {
+                deleted = '',
+                unstaged = '',
+                untracked = '',
+                staged = '',
+                unmerged = '',
+            }
+        }
+    }
+}
+
 -- Setup.
 require 'nvim-tree'.setup {
     hijack_cursor = true,
@@ -25,11 +59,7 @@ require 'nvim-tree'.setup {
     git = {
         ignore = false
     },
-    renderer = {
-        indent_markers = {
-            enable = true
-        }
-    },
+    renderer = renderer,
     diagnostics = {
         enable = true
     }

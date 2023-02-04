@@ -47,7 +47,7 @@ return require 'packer'.startup( { function(use)
         -- cmd = { 'DapContinue' }
     }
     use {
-        "rcarriga/nvim-dap-ui",
+        "AlexvZyl/nvim-dap-ui",
         -- opt = true,
         config = function()
             require 'alex.lang.debugger.ui'.setup_dap_ui()
@@ -130,6 +130,7 @@ return require 'packer'.startup( { function(use)
     }
 
     -- General language.
+    use 'fladson/vim-kitty'
     use {
         'nvim-treesitter/nvim-treesitter',
         requires = {
@@ -170,7 +171,7 @@ return require 'packer'.startup( { function(use)
     -- Theme using.
     use {
        'AlexvZyl/nordic.nvim',
-       branch = 'main'
+       branch = 'dev'
     }
 
     -- List of nice themes:

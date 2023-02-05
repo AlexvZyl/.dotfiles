@@ -176,21 +176,22 @@ return require 'packer'.startup( { function(use)
 
     -- List of nice themes:
     --------------------------------------
-    -- use 'morhetz/gruvbox'
+    use 'morhetz/gruvbox'
     use 'sainnhe/gruvbox-material'
     use 'EdenEast/nightfox.nvim'
     use 'catppuccin/nvim'
     use 'folke/tokyonight.nvim'
-    -- use 'sainnhe/everforest'
-    -- use 'sainnhe/edge'
+    use 'sainnhe/everforest'
+    use 'sainnhe/edge'
     use 'shaunsingh/nord.nvim'
     use 'dracula/vim'
     use 'joshdick/onedark.vim'
-    -- use 'sam4llis/nvim-tundra'
+    use 'sam4llis/nvim-tundra'
     use 'rebelot/kanagawa.nvim'
-    -- use 'cocopon/iceberg.vim'
+    use 'cocopon/iceberg.vim'
     use 'marko-cerovac/material.nvim'
-    -- use 'sainnhe/sonokai'
+    use 'sainnhe/sonokai'
+    use 'Mofiqul/vscode.nvim'
     ----------------------------------------
 
     -- Automatically set up your configuration after cloning packer.nvim

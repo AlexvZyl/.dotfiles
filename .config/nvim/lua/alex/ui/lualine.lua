@@ -188,13 +188,13 @@ require 'lualine'.setup {
                     removed = ' '
                 },
                 diff_color = {
-                    added = { fg = c.git.add, gui = 'bold' },
-                    modified = { fg = c.git.change, gui = 'bold' },
-                    removed = { fg = c.git.delete, gui = 'bold' },
+                    added = { fg = c.gray4, gui = 'bold' },
+                    modified = { fg = c.gray4, gui = 'bold' },
+                    removed = { fg = c.gray4, gui = 'bold' },
                 }
                 -- icon = {
                     -- ' ',
-                    -- color = { fg = get_color('Orange', 'fg') },
+                    -- color = { fg = c.orange.base },
                 -- }
             },
         },

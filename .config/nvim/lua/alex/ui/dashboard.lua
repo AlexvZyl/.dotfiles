@@ -1,16 +1,4 @@
-local function pad_front(section, count)
-    for _=1,count do
-        table.insert(section, 1, '')
-    end
-    return section
-end
-
-local function pad_end(section, count)
-    for _=1,count do
-        table.insert(section, '')
-    end
-    return section
-end
+local hyper = true
 
 local config = {}
 
@@ -48,15 +36,15 @@ config.shortcut = {
 }
 
 config.week_header = {}
--- config.week_header.enable = true
-config.header = {
-    '███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗',
-    '████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║',
-    '██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║',
-    '██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║',
-    '██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║',
-    '╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝',
-}
+config.week_header.enable = true
+-- config.header = {
+    -- '███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗',
+    -- '████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║',
+    -- '██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║',
+    -- '██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║',
+    -- '██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║',
+    -- '╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝',
+-- }
 
 config.footer = {
     '󰛨  Dala what you must.'
@@ -74,15 +62,63 @@ local footer_height = 1
 local win_height = vim.api.nvim_win_get_height(0)
 local padding = (win_height - header_height - center_height - footer_height) / 4
 
-
 -- Now pad the elements.
 config.packages.bottom_padding = 3
 config.packages.top_padding = 1
 config.header_bottom_padding = 1
 config.footer_top_padding = 3
 
--- Setup.
-require 'dashboard' .setup {
-    theme = 'hyper',
-    config = config
+if hyper then
+    require 'dashboard' .setup {
+        theme = 'hyper',
+        config = config
+    }
+    return
+end
+
+local custom_center = {
+    {
+        icon = "  ",
+		desc = 'New file      ',
+		action = "enew",
+    },
+    {
+        icon = '  ',
+        desc = 'Recent files  ',
+        action =  'Telescope oldfiles',
+    },
+    {
+        icon = '  ',
+        desc = 'Find file/path',
+        action = 'Telescope find_files find_command=rg,--hidden,--files',
+    },
+    {
+        icon = '  ',
+        desc = 'Find word     ',
+        action = 'Telescope live_grep',
+    },
+    {
+		icon = "  ",
+		desc = "Update plugins",
+		action = "PackerSync",
+	},
+    {
+        icon = "  ",
+        desc = "Quit          ",
+        action = "q!"
+    }
 }
+
+require 'dashboard' .setup({
+  theme = 'doom',
+  config = {
+    week_header = {
+        enable = true
+    },
+    header_bottom_padding = 3,
+    footer_top_padding = 3,
+    header = config.header,
+    center = custom_center,
+    footer = config.footer
+  }
+})

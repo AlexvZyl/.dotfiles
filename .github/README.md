@@ -6,9 +6,11 @@ The configuration files for my Linux desktop.  Supports Arch based distros using
 
 I mainly use i3, but I also install Gnome for when people do not want to mess around with a tiling WM.  All of the screenshots are for i3 and the gnome configs are very basic.  
 
-> _ℹ️ &nbsp; Remember to choose i3 at the login screen._
+> ℹ️ &nbsp; I have a custom [Neovim colorschcme](https://github.com/AlexvZyl/nordic.nvim).
 
-> _⚠️ &nbsp; These are my personal dotfiles, which means they will continuously change.  If you came here from a reddit post and it is no longer like in the post, that is why._
+> ℹ️ &nbsp; Remember to choose i3 at the login screen.
+
+> ⚠️ &nbsp; These are my personal dotfiles, which means they will continuously change.  If you came here from a reddit post and it is no longer like in the post, that is why.
 
 # Installation
 

@@ -2,8 +2,24 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+local function root_label(path)
+    local win_width = vim.fn.winwidth(0)
+    path = path:gsub('/home/alex', ' ')
+    local path_len = path:len()
+    if path_len > (win_width-2) then
+        local max_str = path:sub(path_len-win_width+4)
+        local pos = max_str:find('/')
+        if pos then
+            return '󰉒 ' .. max_str:sub(pos)
+        else
+            return '󰉒 ' .. max_str
+        end
+    end
+    return path
+end
+
 local renderer = {
-    root_folder_label = ":~:s?$?/..?",
+    root_folder_label = root_label,
     indent_width = 2,
     indent_markers = {
         enable = true,

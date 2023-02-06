@@ -30,8 +30,9 @@ map_key(exclude_t, '<F3>', '<Cmd>Telescope find_files<CR>', default_settings)
 
 -- Toggle the file explorer.
 function toggle_nvim_tree()
-    require("nvim-tree.api").tree.toggle({focus = false})
-    vim.cmd [[setlocal statuscolumn=\ ]]
+    require("nvim-tree.api").tree.toggle({})
+    local is_open = require("nvim-tree.view").is_visible()
+    if is_open then vim.wo.statuscolumn = ' ' end
 end
 map_key(all_modes, '<F2>', '<Cmd>lua toggle_nvim_tree()<CR>', default_settings)
 map_key(n, '<Leader>f', '<Cmd>lua toggle_nvim_tree()<CR>', default_settings)

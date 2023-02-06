@@ -10,15 +10,17 @@ require 'git-conflict'.setup {
 -- Gitsigns --
 --------------
 
+-- local git_char = '▏'
+local git_char = '│'
 -- Display git changes.
 require 'gitsigns'.setup {
     signs = {
-        add          = { text = '│' },
-        change       = { text = '│' },
-        delete       = { text = '│' },
-        topdelete    = { text = '│' },
-        changedelete = { text = '│' },
-        untracked    = { text = '│' }
+        add          = { text = git_char },
+        change       = { text = git_char },
+        delete       = { text = git_char },
+        topdelete    = { text = git_char },
+        changedelete = { text = git_char },
+        untracked    = { text = git_char }
     },
     signcolumn = true,
     numhl = false

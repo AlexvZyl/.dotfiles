@@ -171,11 +171,12 @@ return require 'packer'.startup( { function(use)
     -- Theme using.
     use {
        'AlexvZyl/nordic.nvim',
-       branch = 'dev'
+       branch = 'main'
     }
 
     -- List of nice themes:
     --------------------------------------
+    use 'bluz71/vim-nightfly-colors'
     use 'morhetz/gruvbox'
     use 'sainnhe/gruvbox-material'
     use 'EdenEast/nightfox.nvim'

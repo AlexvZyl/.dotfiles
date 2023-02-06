@@ -25,7 +25,7 @@ local renderer = {
                 symlink_open = '󰉒 ',
 
             },
-            git= {
+            git = {
                 deleted = '',
                 unstaged = '',
                 untracked = '',
@@ -36,26 +36,36 @@ local renderer = {
     }
 }
 
+local view = {
+    cursorline = false,
+    hide_root_folder = false,
+    signcolumn = 'no',
+    mappings = {
+        list = {
+            -- Allow moving out of the explorer.
+            { key = "<C-i>", action = "toggle_file_info" },
+            { key = "<C-k>", action = "" },
+            { key = "[", action = "dir_up" },
+            { key = "]", action = "cd" }
+        }
+    },
+    width = {
+        max = -1,
+        min = 35,
+        padding = 1
+    },
+}
+
+local on_start = {
+
+}
+
 -- Setup.
 require 'nvim-tree'.setup {
     hijack_cursor = true,
     sync_root_with_cwd = true,
-    auto_reload_on_write = false,
-    reload_on_bufenter = false,
-    view = {
-        hide_root_folder = false,
-        signcolumn = 'no',
-        mappings = {
-            list = {
-                -- Allow moving out of the explorer.
-                { key = "<C-i>", action = "toggle_file_info" },
-                { key = "<C-k>", action = "" },
-                { key = "[", action = "dir_up" },
-                { key = "]", action = "cd" }
-            }
-        },
-        width = 40
-    },
+    view = view,
+    on_start = on_start,
     git = {
         ignore = false
     },

@@ -29,8 +29,12 @@ map_key(n, '<C-w><C-c>', '<Cmd>wincmd c<CR>', default_settings)
 map_key(exclude_t, '<F3>', '<Cmd>Telescope find_files<CR>', default_settings)
 
 -- Toggle the file explorer.
-map_key(all_modes, '<F2>', '<Cmd>NvimTreeToggle<CR>', default_settings)
-map_key(n, '<Leader>f', '<Cmd>NvimTreeToggle<CR>', default_settings)
+function toggle_nvim_tree()
+    require("nvim-tree.api").tree.toggle({focus = false})
+    vim.cmd [[setlocal statuscolumn=\ ]]
+end
+map_key(all_modes, '<F2>', '<Cmd>lua toggle_nvim_tree()<CR>', default_settings)
+map_key(n, '<Leader>f', '<Cmd>lua toggle_nvim_tree()<CR>', default_settings)
 
 -- Grep for a string in the current directory.
 map_key(exclude_t, '<F4>', '<Cmd>Telescope live_grep<CR>', default_settings)

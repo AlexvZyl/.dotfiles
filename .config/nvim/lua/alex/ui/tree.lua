@@ -50,7 +50,7 @@ local view = {
         }
     },
     width = {
-        max = -1,
+        max = 40,
         min = 35,
         padding = 1
     },

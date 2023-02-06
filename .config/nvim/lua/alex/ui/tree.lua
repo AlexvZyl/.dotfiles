@@ -5,7 +5,8 @@ vim.g.loaded_netrwPlugin = 1
 local function root_label(path)
     path = path:gsub('/home/alex', ' ') .. '/'
     local path_len = path:len()
-    local win_nr = require('nvim-tree.view').View.winopts.number
+    local win_nr = require('nvim-tree.view').get_winnr()
+    print(win_nr)
     local win_width = vim.fn.winwidth(win_nr)
     if path_len > (win_width-2) then
         local max_str = path:sub(path_len-win_width+5)
@@ -24,7 +25,10 @@ local renderer = {
     indent_width = 2,
     indent_markers = {
         enable = true,
-        inline_arrows = true
+        inline_arrows = true,
+        icons = {
+            corner = '╰'
+        }
     },
     icons = {
         git_placement = 'after',
@@ -68,7 +72,7 @@ local view = {
     },
     width = {
         max = 40,
-        min = 35,
+        min = 40,
         padding = 1
     },
 }

@@ -45,7 +45,7 @@ require 'bufferline' .setup {
     icon_close_tab_modified = '● ',
     icon_pinned = '車',
     minimum_padding = 1,
-    maximum_padding = 1,
+    maximum_padding = 5,
     exclude_ft = {
         "dap-repl"
     },

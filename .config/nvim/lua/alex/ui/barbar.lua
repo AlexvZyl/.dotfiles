@@ -21,6 +21,7 @@ end)
 
 -- Setup.
 require 'bufferline' .setup {
+    animation = true,
     auto_hide = false,
     highlight_inactive_file_icons = true,
      diagnostics = {
@@ -46,6 +47,7 @@ require 'bufferline' .setup {
     icon_pinned = '車',
     minimum_padding = 1,
     maximum_padding = 5,
+    maximum_length = 15,
     exclude_ft = {
         "dap-repl"
     },

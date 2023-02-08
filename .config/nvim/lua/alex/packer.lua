@@ -47,7 +47,7 @@ return require 'packer'.startup( { function(use)
         -- cmd = { 'DapContinue' }
     }
     use {
-        "AlexvZyl/nvim-dap-ui",
+        "rcarriga/nvim-dap-ui",
         -- opt = true,
         config = function()
             require 'alex.lang.debugger.ui'.setup_dap_ui()
@@ -175,7 +175,6 @@ return require 'packer'.startup( { function(use)
     }
 
     -- List of nice themes:
-    --------------------------------------
     use 'bluz71/vim-nightfly-colors'
     use 'morhetz/gruvbox'
     use 'sainnhe/gruvbox-material'
@@ -193,10 +192,9 @@ return require 'packer'.startup( { function(use)
     use 'marko-cerovac/material.nvim'
     use 'sainnhe/sonokai'
     use 'Mofiqul/vscode.nvim'
-    ----------------------------------------
+    use 'NvChad/base46'
 
-    -- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
+    -- Bootstrap.
 	if packer_bootstrap then
 		require('packer').sync()
 	end

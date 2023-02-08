@@ -86,7 +86,6 @@ require 'nvim-tree'.setup {
     hijack_cursor = true,
     sync_root_with_cwd = true,
     view = view,
-    on_start = on_start,
     git = {
         ignore = false
     },

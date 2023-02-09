@@ -1,5 +1,3 @@
--- As suggested by Vimtex docs.
-
 require('cmp').setup.buffer {
     formatting = {
       format = function(entry, vim_item)

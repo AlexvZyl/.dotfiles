@@ -1,0 +1,1 @@
+vim.wo.statuscolumn = " "

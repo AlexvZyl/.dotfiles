@@ -185,14 +185,13 @@ return require 'packer'.startup( { function(use)
     use 'sainnhe/edge'
     use 'shaunsingh/nord.nvim'
     use 'dracula/vim'
-    use 'joshdick/onedark.vim'
     use 'sam4llis/nvim-tundra'
     use 'rebelot/kanagawa.nvim'
     use 'cocopon/iceberg.vim'
     use 'marko-cerovac/material.nvim'
     use 'sainnhe/sonokai'
     use 'Mofiqul/vscode.nvim'
-    use 'NvChad/base46'
+    use 'navarasu/onedark.nvim'
 
     -- Bootstrap.
 	if packer_bootstrap then

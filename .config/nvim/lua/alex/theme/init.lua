@@ -1,5 +1,7 @@
 vim.opt.background = 'dark'
 
+require 'alex.theme.onedark'
+
 -- Enable colors in the terminal.
 if vim.fn.has('termguicolors') then
     vim.cmd('set termguicolors')

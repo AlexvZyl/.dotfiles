@@ -11,7 +11,16 @@ require 'git-conflict'.setup {
 --------------
 
 -- local git_char = '▏'
-local git_char = '│'
+-- local git_char = '│'
+-- local git_char = '󰧟'
+-- local git_char = '–'
+-- local git_char = ''
+-- local git_char = '┊'
+-- local git_char = '┆'
+-- local git_char = '░'
+-- local git_char = '╎'
+local git_char = '╎'
+
 -- Display git changes.
 require 'gitsigns'.setup {
     signs = {

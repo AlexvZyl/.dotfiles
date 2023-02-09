@@ -1,4 +1,5 @@
 require 'nordic' .setup {
+    statuscolumn_hl = false,
 	telescope = {
 		-- Available styles: `classic`, `flat`.
 		style = 'flat',

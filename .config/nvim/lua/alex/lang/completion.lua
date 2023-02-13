@@ -160,19 +160,19 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lsp_config = require 'lspconfig'
 
 -- Setup sources.
-lsp_config['sumneko_lua'].setup {
+lsp_config.lua_ls.setup {
     capabilities = capabilities
 }
-lsp_config['julials'].setup {
+lsp_config.julials.setup {
     capabilities = capabilities
 }
-lsp_config['bashls'].setup {
+lsp_config.bashls.setup {
     capabilities = capabilities
 }
-lsp_config['pyright'].setup {
+lsp_config.pyright.setup {
     capabilities = capabilities
 }
-lsp_config['rust_analyzer'].setup {
+lsp_config.rust_analyzer.setup {
     capabilities = capabilities
 }
 

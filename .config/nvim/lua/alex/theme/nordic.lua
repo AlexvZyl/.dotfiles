@@ -1,5 +1,5 @@
 require 'nordic' .setup {
-    statuscolumn_hl = false,
+    -- theme = 'onedark',
 	telescope = {
 		-- Available styles: `classic`, `flat`.
 		style = 'flat',
@@ -20,7 +20,7 @@ require 'nordic' .setup {
     },
     noice = {
         style = 'classic'
-    }
+    },
 }
 
 -- Load the scheme.

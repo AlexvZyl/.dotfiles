@@ -43,15 +43,16 @@ vim.g.VM_set_statusline = 0
 vim.g.VM_silent_exit = 1
 
 -- Neovim fill characters.
+-- ─
+-- │
 vim.opt.fillchars = {
-    -- horiz = '⎯',
-    horiz = '─',
+    -- horiz = '─',
     horizup = '─',
     horizdown = '─',
     vert = ' ',
-    vertleft  = ' ',
-    vertright = ' ',
-    verthoriz = ' ',
+    vertleft  = '─',
+    vertright = '─',
+    verthoriz = '─',
     eob = ' ',
     diff = '╱'
 }
@@ -77,6 +78,11 @@ vim.cmd "set winblend=5"
 vim.cmd "set pumblend=5"
 
 -- Statuscolumn.
-vim.opt.numberwidth = 3
+-- vim.opt.numberwidth = 3
 -- vim.opt.statuscolumn = "%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum < 10 ? v:lnum . '  ' : v:lnum) : ''}%=%s"
-vim.opt.statuscolumn = "%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum < 10 ? v:lnum . '  ' : v:lnum) : ''}%=│%s"
+-- vim.opt.numberwidth = 4
+-- vim.opt.statuscolumn = "%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum) : ''}%=│%s"
+-- vim.opt.numberwidth = 3
+-- vim.opt.statuscolumn = "%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum) : ''}%=%s"
+vim.opt.numberwidth = 4
+vim.opt.statuscolumn = "%= %{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum) : ''}%=%s"

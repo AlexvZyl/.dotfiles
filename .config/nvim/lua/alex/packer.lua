@@ -59,6 +59,8 @@ return require 'packer'.startup( { function(use)
     }
 
     -- General UI.
+    --
+    use 'NvChad/nvim-colorizer.lua'
     use 'nvim-tree/nvim-web-devicons' -- A bunch of plugins uses this.
     use 'j-hui/fidget.nvim'
     use 'akinsho/toggleterm.nvim'

@@ -74,6 +74,8 @@ end
 -- Return the current buffer's filename with the filetype icon.
 function M:get_current_filename_with_icon()
 
+    local suffix = ' '
+
     -- Get icon and filename.
     local icon = M.get_current_filetype_icon(self)
     local f_name = get_current_filename()
@@ -83,11 +85,11 @@ function M:get_current_filename_with_icon()
     local modifiable = vim.api.nvim_buf_get_option(0, 'modifiable')
     local nofile = get_current_buftype() == 'nofile'
     if readonly or nofile or not modifiable then
-        f_name = f_name .. ' '
+        suffix = ' '
     end
 
     -- Return the formatted string.
-    return icon .. ' ' .. f_name .. ' '
+    return icon .. ' ' .. f_name .. suffix
 
 end
 

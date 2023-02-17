@@ -6,7 +6,7 @@ The configuration files for my Linux desktop.  Supports Arch based distros using
 
 I mainly use i3, but I also install Gnome for when people do not want to mess around with a tiling WM.  All of the screenshots are for i3 and the gnome configs are very basic.  
 
-> ℹ️ &nbsp; I have a custom [Neovim colorschcme](https://github.com/AlexvZyl/nordic.nvim).
+> ℹ️ &nbsp; I have a custom [Neovim colorscheme](https://github.com/AlexvZyl/nordic.nvim).
 
 > ℹ️ &nbsp; Remember to choose i3 at the login screen.
 
@@ -33,7 +33,15 @@ sudo chmod +x ~/.scripts/install.sh && ~/.scripts/install.sh
 
 Currently working on an install utility.  Experimenting with a custom TUI renderer and different backends.  Until that is done, you are welcome to use the configs for inspiration!
 
+<details>
+
+<summary>Demo</summary>
+
+</br>
+
 ![TUI_Preview](https://user-images.githubusercontent.com/81622310/211422167-be097846-014b-47d0-be45-dac8872ae327.gif)
+
+</details>
 
 # Theme
 
@@ -41,11 +49,15 @@ The entire theme is based on a modified version of the [Nord](https://www.nordth
 
 # Showcase
 
-Some screenshots showing of the desktop and rice, as well as some custom features I wrote.  Everything has to be *just right*.  I am spending 8+ hours a day on this working, so it might as well be a nice experience.
+Some screenshots showing off the desktop and rice, as well as some custom features I wrote.  Everything has to be *just right*.  I am spending 8+ hours a day on this working, so it might as well be a nice experience.
 
-## Overview
+<details>
 
-Wallpapers can be found at [this ImageGoNord repo](https://github.com/linuxdotexe/nordic-wallpapers) and [locally](https://github.com/AlexvZyl/.dotfiles/tree/main/.wallpapers).  They "norded" some nice wallpapers.
+<summary>Overview</summary>
+
+</br>
+
+Wallpapers can be found at [this ImageGoNord repo](https://github.com/linuxdotexe/nordic-wallpapers) (they "norded" some nice wallpapers) and [locally](https://github.com/AlexvZyl/.dotfiles/tree/main/.wallpapers).
 
 *For Reddit:*
 
@@ -67,7 +79,13 @@ Wallpapers can be found at [this ImageGoNord repo](https://github.com/linuxdotex
 *Lock screen via [betterlockscreen](https://github.com/betterlockscreen/betterlockscreen):*
 ![image](https://user-images.githubusercontent.com/81622310/211187368-5d8e1215-4482-4506-9cd9-6508d980f1f3.png)
 
-## Polybar
+</details>
+
+<details>
+
+<summary>Polybar</summary>
+
+</br>
 
 *TODO*
 
@@ -76,7 +94,13 @@ Wallpapers can be found at [this ImageGoNord repo](https://github.com/linuxdotex
 - [Arcolinux](https://github.com/arcolinux/arcolinux-polybar/blob/master/etc/skel/.config/polybar/config)
 - [Polybar-Themes](https://github.com/adi1090x/polybar-themes)
 
-## Read mode
+</details>
+
+<details>
+
+<summary>Read mode</summary>
+
+</br>
 
 `Super + r` disables the `inactive-opacity` (from `picom`) for when readability is important.  An indicator is displayed via polybar.
 
@@ -86,6 +110,8 @@ Wallpapers can be found at [this ImageGoNord repo](https://github.com/linuxdotex
 *Enabled:*
 ![image](https://user-images.githubusercontent.com/81622310/212110576-71a817aa-7785-4384-a817-30b3ee94e417.png)
 
+</details>
+
 # Key Bindings
 
 A few notes on the bindings:
@@ -93,13 +119,17 @@ A few notes on the bindings:
 - Keys combined with the `Super` key are reserved for OS and WM related actions.  
 - Arrows and `hjkl` keys are interchangeable.
 
-### **i3**:
+<details>
+
+<summary>Bindings table</summary>
+
+</br>
 
 |  Binding  |  Action   |
 | :-------: | :-------: |
 | Super + d | App launcher |
 | Super + p | Powermenu |
-| Super + t | Alacritty |
+| Super + t | Terminal |
 | Super + n | Neovide |
 | Super + b | BTop++ |
 | Super + r | Toggle read mode |
@@ -108,19 +138,10 @@ A few notes on the bindings:
 | Super + Shift + Arrow | Move window |
 | Super + Number | Go to workspace |
 
+</details>
+
 # Neovim
 
-The [Neovim config](https://github.com/Alex-vZyl/.dotfiles/tree/main/.config/nvim) has a decent amount of work and is very close to a proper IDE.  Why didn't I use [LunarVim](https://github.com/LunarVim/LunarVim), [NvChad](https://github.com/NvChad/NvChad) or [SpaceVim](https://github.com/liuchengxu/space-vim)?  I like doing things myself. 
+The [Neovim config](https://github.com/Alex-vZyl/.dotfiles/tree/main/.config/nvim) has a decent amount of work and is very close to a proper IDE.  Why didn't I use [LunarVim](https://github.com/LunarVim/LunarVim), [NvChad](https://github.com/NvChad/NvChad) or [SpaceVim](https://github.com/liuchengxu/space-vim)?  I like doing things myself.
 
-*Overview:*
-![image](https://user-images.githubusercontent.com/81622310/210983899-cc5d3016-8dcb-46e3-a6ce-5d3b60431524.png)
-
-*[Dashboard](https://github.com/nvim-telescope/telescope.nvim):*
-![image](https://user-images.githubusercontent.com/81622310/210983209-abe76da1-a190-4d3d-be10-8f570595dd7f.png)
-
-*[Telescope](https://github.com/nvim-telescope/telescope.nvim):*
-![image](https://user-images.githubusercontent.com/81622310/210984138-f650324c-4a5a-4fb1-a5c1-e14b26ef40c9.png)
-
-
-
-
+![image](https://user-images.githubusercontent.com/81622310/219610304-549dcfe6-bc5c-4681-90b3-9992b8d7001a.png)

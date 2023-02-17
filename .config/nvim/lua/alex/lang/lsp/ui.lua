@@ -51,11 +51,16 @@ require 'trouble'.setup {
     use_diagnostic_signs = false,
     position = 'bottom',
     signs = {
-        error = " ",
-        warning = " ",
-        hint = " ",
-        information = " ",
-        other = " "
+        -- error = " ",
+        -- warning = " ",
+        -- hint = " ",
+        -- information = " ",
+        -- other = " "
+        error = ' ',
+        warning = ' ',
+        info = ' ',
+        hint = '󱤅 ',
+        other = '󰠠 ',
     },
     auto_preview = false
 }
@@ -67,8 +72,30 @@ vim.cmd [[ autocmd BufEnter * TroubleRefresh ]]
 -- Fidget -- 
 ------------
 
-require"fidget" .setup {
-    window = {
-        relative = "editor"
-    }
-}
+-- require"fidget" .setup {
+--     text = {
+--         done= ' ',
+--     },
+--     window = {
+--         relative = "editor",
+--         blend = 100,
+--     },
+--     fmt = {
+--     leftpad = true,           -- right-justify text in fidget box
+--     stack_upwards = true,     -- list of tasks grows upwards
+--     max_width = 0,            -- maximum width of the fidget box
+--     fidget =                  -- function to format fidget title
+--       function(fidget_name, spinner)
+--         return string.format("%s %s", spinner, fidget_name)
+--       end,
+--     task =                    -- function to format each task line
+--       function(task_name, message, percentage)
+--         return string.format(
+--           "%s%s [%s]",
+--           message,
+--           percentage and string.format(" (%s%%)", percentage) or "",
+--           task_name
+--         )
+--       end,
+--   },
+-- }

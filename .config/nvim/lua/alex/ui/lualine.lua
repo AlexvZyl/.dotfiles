@@ -109,15 +109,6 @@ local function get_native_lsp()
     return 'None'
 end
 
--- Get the status of the compiler, if applicable.
-local function get_compiler_status()
-    local filetype = get_current_filetype()
-    if filetype == 'tex' then
-        return ''
-    end
-    return ''
-end
-
 -- Display the difference in commits between local and head.
 local Job = require 'plenary.job'
 local function get_git_compare()
@@ -185,9 +176,12 @@ require 'lualine'.setup {
                 colored = true,
                 source = diff_source,
                 symbols = {
-                    added = ' ',
-                    modified = ' ',
-                    removed = ' '
+                    -- added = ' ',
+                    -- modified = ' ',
+                    -- removed = ' ',
+                    added = ' ',
+                    modified = ' ',
+                    removed = ' '
                 },
                 diff_color = {
                     added = { fg = c.gray4, gui = 'bold' },
@@ -206,33 +200,26 @@ require 'lualine'.setup {
                 sources = { 'nvim_diagnostic' },
                 separator = '',
                 symbols = {
-                    error = ' ',
-                    warn = ' ',
-                    info = ' ',
-                    hint = ' ',
+                    -- error = ' ',
+                    -- warn = ' ',
+                    -- info = ' ',
+                    -- hint = ' ',
+                    error = ' ',
+                    warn = ' ',
+                    info = ' ',
+                    hint = '󱤅 ',
+                    other = '󰠠 ',
                 },
                 diagnostics_color = {
-                    error = { fg=c.error, gui='bold'   },
-                    warn =  { fg=c.warn, gui='bold' },
-                    info =  { fg=c.info, gui='bold'   },
+                    error = { fg=c.error, gui='bold' },
+                    warn =  { fg=c.warn, gui='bold'  },
+                    info =  { fg=c.info, gui='bold'  },
                     hint =  { fg=c.hint, gui='bold'  },
                 },
                 colored = true,
             },
         },
         lualine_y = {
-            {
-               get_compiler_status,
-                icon = {
-                    ' ,',
-                    align = 'left',
-                    color = {
-                        fg = c.orange.bright,
-                        gui = 'bold'
-                    }
-                },
-                separator = ''
-            },
             {
                 get_native_lsp,
                 icon = {

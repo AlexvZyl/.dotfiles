@@ -83,10 +83,10 @@ lsp_config.jsonls.setup {
 
 -- Diagnostics signs colors and character.
 vim.cmd([[
-    sign define DiagnosticSignError text= texthl= linehl= numhl=DiagnosticSignError 
-    sign define DiagnosticSignWarn  text= texthl= linehl= numhl=DiagnosticSignWarn
-    sign define DiagnosticSignInfo  text= texthl= linehl= numhl=DiagnosticSignInfo
-    sign define DiagnosticSignHint  text= texthl= linehl= numhl=DiagnosticSignHint
+    sign define DiagnosticSignError text= texthl= linehl= numhl=DiagnosticSignError 
+    sign define DiagnosticSignWarn  text= texthl= linehl= numhl=DiagnosticSignWarn
+    sign define DiagnosticSignInfo  text= texthl= linehl= numhl=DiagnosticSignInfo
+    sign define DiagnosticSignHint  text=󱤅 texthl= linehl= numhl=DiagnosticSignHint
 ]])
 
 -- Disable diagnostics msg.

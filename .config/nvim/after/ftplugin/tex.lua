@@ -14,3 +14,9 @@ require('cmp').setup.buffer {
       { name = 'buffer' },
     },
   }
+
+vim.cmd ([[
+    setlocal spell
+    setlocal spelllang=en
+    setlocal wrap
+]])

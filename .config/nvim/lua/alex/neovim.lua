@@ -60,29 +60,10 @@ vim.opt.fillchars = {
 -- Set space as leader.
 vim.g.mapleader = ' '
 
--- Enable spell checking for latex.
-vim.cmd ([[
-    autocmd FileType tex setlocal spell
-    autocmd FileType tex setlocal spelllang=en
-]])
-
 -- Change spell checking hl.
 vim.cmd 'hi SpellBad gui=undercurl'
 
--- Set wrap for specific file types.
-vim.cmd 'autocmd FileType markdown setlocal wrap'
-vim.cmd 'autocmd FileType tex setlocal wrap'
-
--- Set blends.
+-- Windows and popups.
 vim.cmd "set winblend=5"
 vim.cmd "set pumblend=5"
-
--- Statuscolumn.
--- vim.opt.numberwidth = 3
--- vim.opt.statuscolumn = "%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum < 10 ? v:lnum . '  ' : v:lnum) : ''}%=%s"
--- vim.opt.numberwidth = 4
--- vim.opt.statuscolumn = "%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum) : ''}%=│%s"
--- vim.opt.numberwidth = 3
--- vim.opt.statuscolumn = "%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum) : ''}%=%s"
-vim.opt.numberwidth = 4
-vim.opt.statuscolumn = "%= %{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum) : ''}%=%s"
+vim.opt.pumheight=10

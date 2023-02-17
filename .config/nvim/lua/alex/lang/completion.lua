@@ -2,12 +2,10 @@
 -- Nvim Cmp --
 --------------
 
--- This has to be set.
-vim.cmd('set completeopt=menu,menuone,noselect')
-
--- Get cmp.
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
+
+vim.cmd('set completeopt=menu,menuone,noselect')
 
 -- Filter out the text.
 local function filter_text(entry, _)
@@ -175,13 +173,3 @@ lsp_config.pyright.setup {
 lsp_config.rust_analyzer.setup {
     capabilities = capabilities
 }
-
--- Disable the scrollbar.
--- This does not work.
-local cmp_window = require('cmp.utils.window')
-function cmp_window:has_scrollbar()
-    return false
-end
-
--- Limit the height of the seggestion window.
-vim.opt.pumheight=10

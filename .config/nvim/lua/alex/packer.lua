@@ -173,7 +173,7 @@ return require 'packer'.startup( { function(use)
     -- Theme using.
     use {
        'AlexvZyl/nordic.nvim',
-       branch = 'main'
+       branch = 'dev'
     }
 
     -- List of nice themes:

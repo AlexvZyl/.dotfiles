@@ -247,7 +247,8 @@ require 'lualine'.setup {
                     '',
                     align = 'left',
                     color = { fg = c.black },
-                }
+                },
+                separator = { right = '█', left = { '' } }
             }
         },
     },

@@ -16,7 +16,8 @@ require 'nordic' .setup {
     cursorline = {
         bold = false,
         -- Avialable styles: 'dark', 'light'.
-        theme = 'light'
+        theme = 'light',
+        hide_unfocused = true
     },
     noice = {
         style = 'classic'

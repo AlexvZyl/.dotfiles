@@ -89,8 +89,9 @@ vim.cmd([[
     sign define DiagnosticSignHint  text=󱤅 texthl= linehl= numhl=DiagnosticSignHint
 ]])
 
--- Disable diagnostics msg.
--- They add a lot of clutter and I use LSP saga for info. 
-vim.diagnostic.config({virtual_text = false})
--- Disable diagnostics text.
-vim.diagnostic.config({signs = true})
+local config = {
+    virtual_text = false,
+    signs = true,
+    update_on_insert = true
+}
+vim.diagnostic.config(config)

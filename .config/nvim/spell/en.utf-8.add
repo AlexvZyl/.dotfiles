@@ -16,8 +16,6 @@ FFT
 STFT
 FTs
 DSP
-#ulticorrelator
-multicorrelator/!
 multicorrelator
 FPGAs
 HLD
@@ -80,7 +78,6 @@ SAR
 bistatic
 intersattelite
 bandlimited
-LPF/!
 LPF
 gaussian
 GMM
@@ -112,3 +109,10 @@ RDFs
 SVMs
 overfit
 CNNs
+subsampling
+ReLU
+LeNet's
+VGGNet's
+AlexNet
+VGGNet
+LeNet

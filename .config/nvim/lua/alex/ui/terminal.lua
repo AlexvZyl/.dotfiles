@@ -23,14 +23,22 @@ vim.cmd('autocmd TermOpen * setlocal signcolumn=no')
 -- Toggleterm --
 ----------------
 
-require 'toggleterm'.setup {
+function _Term_width()
+    return vim.o.columns
+end
+
+function _Term_height()
+    return vim.o.lines
+end
+
+require 'toggleterm' .setup {
     on_open = function(_)
         vim.cmd("startinsert")
     end,
-    direction = "float",
-    size = 15,
+    direction = 'float',
     float_opts = {
-        border = 'rounded',
-        -- winblend = -1,
+        border = 'curved',
+        width = _Term_width,
+        height = _Term_height
     }
 }

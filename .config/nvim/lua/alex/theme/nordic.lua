@@ -14,10 +14,7 @@ require 'nordic' .setup {
     -- (see next section for an example)
 	override = {},
     cursorline = {
-        bold = false,
-        -- Avialable styles: 'dark', 'light'.
-        theme = 'light',
-        hide_unfocused = true
+        theme = 'dark',
     },
     noice = {
         style = 'classic'

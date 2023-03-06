@@ -194,6 +194,7 @@ return require 'packer'.startup( { function(use)
     use 'sainnhe/sonokai'
     use 'Mofiqul/vscode.nvim'
     use 'navarasu/onedark.nvim'
+    use 'frenzyexists/aquarium-vim'
 
     -- Misc.
     use({

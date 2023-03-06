@@ -67,7 +67,8 @@ local view = {
             { key = "<C-i>", action = "toggle_file_info" },
             { key = "<C-k>", action = "" },
             { key = "[", action = "dir_up" },
-            { key = "]", action = "cd" }
+            { key = "]", action = "cd" },
+            { key = "<Tab>", action = "edit" }
         }
     },
     width = {
@@ -75,10 +76,6 @@ local view = {
         min = 40,
         padding = 1
     },
-}
-
-local on_start = {
-
 }
 
 -- Setup.

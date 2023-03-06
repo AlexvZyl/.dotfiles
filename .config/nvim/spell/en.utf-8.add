@@ -116,3 +116,7 @@ VGGNet's
 AlexNet
 VGGNet
 LeNet
+LeNet5
+grayscale
+SMA
+Msps

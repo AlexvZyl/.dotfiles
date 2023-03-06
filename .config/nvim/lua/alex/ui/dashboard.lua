@@ -3,10 +3,10 @@ local hyper = true
 local config = {}
 
 config.mru = {}
-config.mru.limit = 10
+config.mru.limit = 5
 
 config.project = {}
-config.project.limit = 5
+config.project.limit = 10
 
 config.shortcut = {
     {

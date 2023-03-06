@@ -54,8 +54,8 @@ set $magenta    #B48EAD
 
 # define colors for windows:
 #class		        	    border		bground		text		indicator	   child_border
-client.focused		    	$blue       $gray0      $white		$black          $black
-client.unfocused	    	$blue       $blue       $gray		$black          $black
+client.focused		    	$blue       $gray0      $white		$black          $cyan
+client.unfocused	    	$blue       $blue       $gray		$black          $gray0
 client.focused_inactive		$blue       $blue       $gray		$black          $black
 client.urgent		    	$red        $red        $red        $black          $red
 
@@ -218,7 +218,10 @@ bindsym $mod+n exec kitty --class neovim --execute nvim
 bindsym $mod+b exec kitty --config ~/.config/kitty/padding.conf --execute btop 
 
 # Dotfiles.
-bindsym $mod+g exec kitty --config ~/.config/kitty/padding.conf --execute lazygit-dotfiles
+# bindsym $mod+g exec kitty --config ~/.config/kitty/padding.conf --execute lazygit-dotfiles
+
+# GPU.
+bindsym $mod+g exec kitty --config ~/.config/kitty/padding.conf --execute nvtop
 
 # kill focused window
 bindsym $mod+q kill

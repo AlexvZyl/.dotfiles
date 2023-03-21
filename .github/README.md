@@ -142,6 +142,6 @@ A few notes on the bindings:
 
 # Neovim
 
-The [Neovim config](https://github.com/Alex-vZyl/.dotfiles/tree/main/.config/nvim) has a decent amount of work and is very close to a proper IDE.  Why didn't I use [LunarVim](https://github.com/LunarVim/LunarVim), [NvChad](https://github.com/NvChad/NvChad) or [SpaceVim](https://github.com/liuchengxu/space-vim)?  I like doing things myself.
+The config can be found [here](https://github.com/Alex-vZyl/.dotfiles/tree/main/.config/nvim).
 
 ![image](https://user-images.githubusercontent.com/81622310/219610304-549dcfe6-bc5c-4681-90b3-9992b8d7001a.png)

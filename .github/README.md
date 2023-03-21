@@ -6,8 +6,6 @@ The configuration files for my Linux desktop.  Supports Arch based distros using
 
 I mainly use i3, but I also install Gnome for when people do not want to mess around with a tiling WM.  All of the screenshots are for i3 and the gnome configs are very basic.  
 
-> ℹ️ &nbsp; I have a custom [Neovim colorscheme](https://github.com/AlexvZyl/nordic.nvim).
-
 > ℹ️ &nbsp; Remember to choose i3 at the login screen.
 
 > ⚠️ &nbsp; These are my personal dotfiles, which means they will continuously change.
@@ -45,7 +43,7 @@ Currently working on an install utility.  Experimenting with a custom TUI render
 
 # Theme
 
-The entire theme is based on a modified version of the [Nord](https://www.nordtheme.com/) color palette.  The base colors are used, as well as two darker colors and bright and dim versions of the base colors.  Also, the colors in the `Aurora` palette are used more prominently than typically used in nord themes.  This gives everyhing a warmer feel.
+The theme is based on my Neovim plugin, [nordic.nvim](https://github.com/AlexvZyl/nordic.nvim).  It is a warmer and darker version of the [Nord](https://www.nordtheme.com/) color palette.
 
 # Showcase
 

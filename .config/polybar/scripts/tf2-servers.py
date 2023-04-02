@@ -5,8 +5,10 @@ servers = [
     ["129.151.163.124", 27015]
 ]
 
+min_players = 1
 current_players = 0
 max_players = 0
+prefix = ""
 
 try:
     for server in servers:
@@ -16,10 +18,12 @@ try:
             current_players = player_count
             max_players = info.max_players
     
-    if max_players != 0:
-        print(f"{current_players}/{max_players}")
+    if current_players < 10:
+        prefix = "0"
+    if max_players != 0 and current_players >= min_players:
+        print(f"{prefix}{current_players}")
     else:
-        print("")
+        print(" 󰅛 ")
 
 # Could not connect.
 except:

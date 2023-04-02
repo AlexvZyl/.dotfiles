@@ -8,7 +8,11 @@ command = [ "gh", "api", "-H", "Accept: application/vnd.github+json", "/notifica
 try:
     result = subprocess.run(command, stdout=subprocess.PIPE, stderr = subprocess.DEVNULL).stdout.decode('utf-8')
     json_object = json.loads(result)
-    print(len(json_object))
+    count = len(json_object)
+    if count < 10:
+        print(f"0{count}")
+    else:
+        print(count)
 
 # Could not connect.
 except(json.JSONDecodeError):

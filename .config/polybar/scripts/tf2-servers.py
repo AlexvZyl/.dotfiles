@@ -23,8 +23,9 @@ try:
     if max_players != 0 and current_players >= min_players:
         print(f"{prefix}{current_players}")
     else:
-        print(" 󰅛 ")
+        # print(" 󰅛 ")
+        print(" 00")
 
 # Could not connect.
 except:
-    print(" ")
+    print("  ")

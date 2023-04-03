@@ -54,7 +54,8 @@ require("git-worktree").setup({
 --------------
 -- Diffview --
 --------------
-
+--[[
 require 'diffview' .setup {
     enhanced_diff_hl = true
 }
+--]]

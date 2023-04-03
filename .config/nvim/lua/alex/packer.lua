@@ -72,8 +72,8 @@ return require 'packer'.startup( { function(use)
           opt = true
       }
     }
-    -- use 'glepnir/dashboard-nvim'
-    use 'AlexvZyl/dashboard-nvim'
+    use 'glepnir/dashboard-nvim'
+    -- use 'AlexvZyl/dashboard-nvim'
     use {
         'romgrk/barbar.nvim',
         requires = "nvim-tree/nvim-web-devicons",
@@ -111,10 +111,21 @@ return require 'packer'.startup( { function(use)
         }
     }
 
+    -- AI.  Will it take my job?...
+    use 'github/copilot.vim'
+    use {
+        "jackMort/ChatGPT.nvim",
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim"
+        }
+    }
+
     -- Git.
     -- TODO
     use 'lewis6991/gitsigns.nvim'
-    use 'sindrets/diffview.nvim'
+    -- use 'sindrets/diffview.nvim'
     use 'akinsho/git-conflict.nvim'
     use 'kdheepak/lazygit.nvim'
     use 'ThePrimeagen/git-worktree.nvim'
@@ -196,16 +207,7 @@ return require 'packer'.startup( { function(use)
     use 'navarasu/onedark.nvim'
     use 'frenzyexists/aquarium-vim'
 
-    -- Misc.
-    use({
-        "giusgad/pets.nvim",
-        requires = {
-            "edluffy/hologram.nvim",
-            "MunifTanjim/nui.nvim",
-        }
-    })
-
-    -- Bootstrap.
+   -- Bootstrap.
 	if packer_bootstrap then
 		require('packer').sync()
 	end

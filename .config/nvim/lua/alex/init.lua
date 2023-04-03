@@ -1,5 +1,8 @@
 -- Main setup.
 
+-- Env.
+vim.cmd 'luafile ~/.private/nvim_env.lua'
+
 -- These have to be run first and in this order.
 -- require 'alex.lazy'
 require 'alex.packer'

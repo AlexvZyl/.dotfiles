@@ -47,6 +47,7 @@ config.week_header.enable = true
 -- }
 
 config.footer = {
+    '',
     '󰛨  Dala what you must.'
 }
 

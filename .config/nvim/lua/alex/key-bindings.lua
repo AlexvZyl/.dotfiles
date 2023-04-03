@@ -231,3 +231,9 @@ map_key(all_modes, "<A-c>", "<Cmd>DapContinue<CR>", default_settings)
 map_key(all_modes, "<A-r>", "<Cmd>DapRestartFrame<CR>", default_settings)
 map_key(all_modes, "<A-l>", "<Cmd>lua require 'dapui'.float_element('scopes')<CR>", default_settings)
 map_key(all_modes, "<A-W>", "<Cmd>lua require 'dapui'.toggle()<CR>", default_settings)
+
+--------
+-- AI --
+--------
+
+map_key(n, "<Leader>c", "<Cmd>ChatGPT<CR>", default_settings)

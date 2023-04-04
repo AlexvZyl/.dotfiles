@@ -1,16 +1,16 @@
-require 'ChatGPT.nvim' .setup {
+require 'chatgpt' .setup {
     welcome_message = 'I am coming for your job...',
     loading_text = "Loading...",
-    question_sign = " ", -- you can use emoji if you want e.g. 🙂
-    answer_sign = "ﮧ", -- 🤖
+    question_sign = " ",
+    answer_sign = "ﮧ",
     max_line_length = 120,
     yank_register = "+",
     chat_layout = {
         relative = "editor",
         position = "50%",
         size = {
-            height = "80%",
-            width = "80%",
+            height = "100%",
+            width = "100%",
         },
       },
     settings_window = {
@@ -67,7 +67,6 @@ require 'ChatGPT.nvim' .setup {
         toggle_settings = "<C-o>",
         new_session = "<C-n>",
         cycle_windows = "<Tab>",
-        -- in the Sessions pane
         select_session = "<Space>",
         rename_session = "r",
         delete_session = "d",

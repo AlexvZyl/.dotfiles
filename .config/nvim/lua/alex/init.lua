@@ -1,6 +1,6 @@
 -- Main setup.
 
--- Env.
+-- Environment.
 vim.cmd 'luafile ~/.private/nvim_env.lua'
 
 -- These have to be run first and in this order.

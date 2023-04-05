@@ -1,4 +1,5 @@
 require 'nordic' .setup {
+    bright_border = false,
 	telescope = {
 		style = 'flat',
 	},

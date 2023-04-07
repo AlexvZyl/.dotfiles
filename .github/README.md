@@ -16,12 +16,7 @@ To install everything, simply copy and paste this into the terminal.  Reboot aft
 
 <!--
 ```bash
-sudo pacman -S git
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-mkdir ~/.dotfiles
-config clone --bare https://github.com/AlexvZyl/.dotfiles ~/.dotfiles/
-config checkout -f
-sudo chmod +x ~/.scripts/install.sh && ~/.scripts/install.sh
+curl https://github.com/AlexvZyl/.dotfiles/tree/main/.scripts/install/setup.sh | bash
 ```
 -->
 

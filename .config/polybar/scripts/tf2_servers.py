@@ -11,5 +11,5 @@ try:
     print((f"{max_players:02}" if (max_players >= min_players) else "󰅛 "))
 
 # Could not connect.
-except TimeoutError:
+except (TimeoutError, OSError):
     print(" ")

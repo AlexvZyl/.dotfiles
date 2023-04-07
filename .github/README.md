@@ -14,11 +14,9 @@ I mainly use i3, but I also install Gnome for when people do not want to mess ar
 
 To install everything, simply copy and paste this into the terminal.  Reboot after it is done.
 
-<!--
 ```bash
 curl https://github.com/AlexvZyl/.dotfiles/tree/main/.scripts/install/setup.sh | bash
 ```
--->
 
 # Theme
 

@@ -2,14 +2,13 @@
 
 # Ensure packages and mirrorlist are up to date.
 sudo pacman -Syyu
-~/.scripts/install/update_pacman_mirrorlist.sh
 
 # Install yay.
 git clone https://aur.archlinux.org/yay.git ~/GitHub/yay/
 cd ~/GitHub/yay/ && makepkg -si && cd ~
 
-# Install packages.
-sudo pacman -S --needed - < ~/.scripts/install/packages.txt
+# Setup packages.
+~/.scripts/packages/setup.sh
 
 # i3 stuff.
 chmod +x ~/.config/picom/scripts/toggle-picom-inactive-opacity.sh

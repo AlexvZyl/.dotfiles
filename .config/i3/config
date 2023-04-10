@@ -217,11 +217,11 @@ bindsym $mod+n exec kitty --class neovim --execute nvim
 # Start resource viewers.
 bindsym $mod+b exec kitty --config ~/.config/kitty/padding.conf --execute btop 
 
-# Dotfiles.
-# bindsym $mod+g exec kitty --config ~/.config/kitty/padding.conf --execute lazygit-dotfiles
-
 # GPU.
 bindsym $mod+g exec kitty --config ~/.config/kitty/padding.conf --execute nvtop
+
+# Wifi.
+bindsym $mod+w exec kitty --config ~/.config/kitty/padding.conf --execute ~/.config/i3/scripts/iwctl.sh
 
 # kill focused window
 bindsym $mod+q kill
@@ -323,7 +323,6 @@ bindsym XF86AudioPrev exec playerctl previous
 # bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
-# bindsym $mod+w exec /usr/bin/firefox
 bindsym $mod+Shift+F exec /usr/bin/thunar
 bindsym Print exec scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 

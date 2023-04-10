@@ -464,7 +464,7 @@ bindsym $mod+Tab exec ~/.config/rofi/switcher/run.sh
 # Startup scripts: #
 ####################
 
-exec ~/.scripts/startup.sh
+exec ~/.scripts/startup/startup.sh
 
 ##############
 # Screenshot #

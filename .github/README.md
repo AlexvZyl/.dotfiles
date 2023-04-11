@@ -14,6 +14,8 @@ I mainly use i3, but I also install Gnome for when people do not want to mess ar
 
 To install everything, simply copy and paste this into the terminal.
 
+> ℹ️ &nbsp; This script assumes that you have a working Arch installation.
+
 > ⚠️ &nbsp; I still need to properly test this.
 
 ```bash

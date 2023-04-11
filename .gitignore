@@ -8,3 +8,5 @@ vscode-cpptools/
 .cache.json
 btop.log
 lazy-lock.json
+.newsboat/cache.db
+.newsboat/history.cmdline

@@ -1,0 +1,12 @@
+unbind-key h
+unbind-key j
+unbind-key k
+unbind-key l
+
+bind-key h quit
+bind-key j down
+bind-key k up
+bind-key l open
+
+bind-key ^U halfpageup
+bind-key ^D halfpagedown

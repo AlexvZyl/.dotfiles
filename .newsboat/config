@@ -21,10 +21,10 @@ bind-key ^D halfpagedown
 
 # Colors.
 
-color info white black bold
+color info black cyan bold
 color listnormal white default
-color listfocus black yellow 
-color listfocus_unread green yellow
+color listfocus white black 
+color listfocus_unread green black 
 color listnormal_unread green default 
 
 # UI.

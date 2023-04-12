@@ -1,3 +1,9 @@
+# Settings.
+
+auto-reload yes
+
+# Key bindings.
+
 unbind-key h
 unbind-key j
 unbind-key k
@@ -10,3 +16,20 @@ bind-key l open
 
 bind-key ^U halfpageup
 bind-key ^D halfpagedown
+
+# Colors.
+
+color info white black bold
+color listnormal white default
+color listfocus black yellow 
+color listfocus_unread green yellow
+color listnormal_unread green default 
+
+# UI.
+
+datetime-format "%Y-%m-%d"
+feedlist-title-format "     Feeds  ( 󰋻 %u )"
+feedlist-format "  %8u  %t"
+itemview-title-format "  󱓷   %T"
+articlelist-title-format "     %T  ( 󰋻 %u )"
+articlelist-format "%4i %f %D    %?T?|%-17T|  ?%t"

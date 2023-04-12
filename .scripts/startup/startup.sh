@@ -18,3 +18,6 @@ picom -b
 
 # Set wallpaper AFTER compositor.
 feh --bg-fill ~/.wallpapers/Cloud_2_Nord.png
+
+# Environment variables.
+export $EDITOR="nvim"

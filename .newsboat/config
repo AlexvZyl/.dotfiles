@@ -1,6 +1,8 @@
 # Settings.
 
 auto-reload yes
+notify-program "dunst"
+browser "firefox"
 
 # Key bindings.
 

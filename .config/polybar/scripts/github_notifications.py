@@ -9,10 +9,7 @@ try:
     result = subprocess.run(command, stdout=subprocess.PIPE, stderr = subprocess.DEVNULL).stdout.decode('utf-8')
     json_object = json.loads(result)
     count = len(json_object)
-    if count < 10:
-        print(f"0{count}")
-    else:
-        print(count)
+    print(f"{count:01}")
 
 # Could not connect.
 except(json.JSONDecodeError):

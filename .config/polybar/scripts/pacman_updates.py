@@ -12,10 +12,4 @@ updates = subprocess.run(command2, stdout=subprocess.PIPE, stderr = subprocess.D
 
 # Count packages.
 count = Counter(updates)['\n']
-if count < 10:
-    print(f"00{count}")
-elif count < 100:
-    print(f"0{count}")
-else:
-    print(f"{count}")
-
+print(count)

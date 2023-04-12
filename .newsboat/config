@@ -6,6 +6,8 @@ browser "firefox"
 
 # Key bindings.
 
+show-keymap-hint no
+
 unbind-key h
 unbind-key j
 unbind-key k

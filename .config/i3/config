@@ -199,8 +199,6 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 #        bindsym Escape mode "default"
 #}
 
-#bindsym $mod+r mode "resize"
-
 ######################################
 # keybindings for different actions: #
 ######################################
@@ -214,11 +212,12 @@ bindsym $mod+t exec kitty --config ~/.config/kitty/padding.conf
 # bindsym $mod+n exec alacritty --command=nvim
 bindsym $mod+n exec kitty --class neovim --execute nvim
 
-# Start resource viewers.
+# Resource viewers.
 bindsym $mod+b exec kitty --config ~/.config/kitty/padding.conf --execute btop 
-
-# GPU.
 bindsym $mod+g exec kitty --config ~/.config/kitty/padding.conf --execute nvtop
+
+# RSS Feed.
+bindsym $mod+r exec kitty --config ~/.config/kitty/padding.conf --execute newsboat
 
 # Wifi.
 bindsym $mod+w exec kitty --config ~/.config/kitty/padding.conf --execute ~/.config/i3/scripts/iwctl.sh
@@ -483,4 +482,4 @@ mouse_warping none
 ##############
 
 # Toggle the inactive opacity for picom.
-bindsym $mod+r exec ~/.config/picom/scripts/toggle-picom-inactive-opacity.sh && polybar-msg action "#read-mode.exec"
+bindsym $mod+$shift+r exec ~/.config/picom/scripts/toggle-picom-inactive-opacity.sh && polybar-msg action "#read-mode.exec"

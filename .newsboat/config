@@ -29,9 +29,9 @@ color listnormal_unread green default
 
 # UI.
 
-datetime-format "%Y-%m-%d"
-feedlist-title-format "     Feeds  ( 󰋻 %u )"
-feedlist-format "  %8u  %t"
-itemview-title-format "  󱓷   %T"
-articlelist-title-format "     %T  ( 󰋻 %u )"
+datetime-format "%d-%m-%Y"
+feedlist-title-format "       Feeds   ( 󰋻 %u )"
+feedlist-format "   %10u    %t"
+itemview-title-format "   󱓷    %T"
+articlelist-title-format "       %T   ( 󰋻 %u )"
 articlelist-format "%4i %f %D    %?T?|%-17T|  ?%t"

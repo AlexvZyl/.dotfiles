@@ -37,3 +37,5 @@ feedlist-format "   %10u    %t"
 itemview-title-format "   󱓷    %T"
 articlelist-title-format "       %T   ( 󰋻 %u )"
 articlelist-format "%4i %f %D    %?T?|%-17T|  ?%t"
+selecttag-title-format "       Tags"	
+# Tags.

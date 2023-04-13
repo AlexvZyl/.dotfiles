@@ -151,7 +151,8 @@
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = left
+    # alignment = left
+    alignment = center
 
     # Vertical alignment of message text and icon.
     # Possible values are "top", "center" and "bottom".
@@ -285,26 +286,6 @@
     # where there are multiple screens with very different dpi values.
     per_monitor_dpi = false
 
-[urgency_low]
-    # IMPORTANT: colors have to be defined in quotation marks.
-    # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#191C24"
-    foreground = "#E5E9F0"
-    frame_color = "#4C566A"
-    timeout = 5
-
-[urgency_normal]
-    background = "#191C24"
-    foreground = "#E5E9F0"
-    frame_color = "#8FBCBB"
-    timeout = 15
-
-[urgency_critical]
-    background = "#191C24"
-    foreground = "#E5E9F0"
-    frame_color = "#BF616A"
-    timeout = 60
-
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
 #
@@ -430,7 +411,31 @@
     set_stack_tag = "volume"
 
 [flameshot-urgency]
-    appname = Flameshot
-    urgency=low
-#
-# vim: ft=cfg
+    appname = flameshot
+    urgency = low 
+
+[whatsapp-alignment]
+    appname = whatsapp
+    align = left
+
+[signal-alignment]
+    appname = signal 
+    align = left
+
+[urgency_low]
+    background = "#191C24"
+    foreground = "#E5E9F0"
+    frame_color = "#4C566A"
+    timeout = 5
+
+[urgency_normal]
+    background = "#191C24"
+    foreground = "#E5E9F0"
+    frame_color = "#8FBCBB"
+    timeout = 15
+
+[urgency_critical]
+    background = "#191C24"
+    foreground = "#E5E9F0"
+    frame_color = "#BF616A"
+    timeout = 60

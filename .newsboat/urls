@@ -1,9 +1,13 @@
 # Linux.
 https://linux.com/feed/ Linux
-https://archlinux.org/feeds/news/ Linux
+https://archlinux.org/feeds/news/ Linux "Arch Linux"
 
 # Finance.
-https://www.reddit.com/user/calexza/m/reddit_finance/top/.rss Finance
+https://www.reddit.com/user/calexza/m/reddit_finance/top/.rss Finance Reddit
+
+# GitHub.
+https://github.com/neovide/neovide/releases.atom GitHub Neovim
+https://github.com/neovim/neovim/releases.atom GitHub Neovim
 
 # Keyboards.
 https://www.ctrlshiftesc.co.za/blogs/announcements.atom Keyboards
@@ -11,7 +15,16 @@ https://www.ctrlshiftesc.co.za/blogs/product-updates.atom Keyboards
 
 # Gaming.
 https://www.teamfortress.com/rss.xml Gaming
-https://store.steampowered.com/feeds/news/app/275850/?cc=ZA&l=english&snr=1_2108_9__2107 Gaming
+https://store.steampowered.com/feeds/news/app/440/?cc=ZA&l=english&snr=1_2108_9__2107 Gaming Steam
+https://store.steampowered.com/feeds/news/app/275850/?cc=ZA&l=english&snr=1_2108_9__2107 Gaming Steam
 
 # Guitar.
-https://www.strymon.net/blogs/rss
+https://www.strymon.net/blogs/rss Guitar Strymon
+
+# Youtube.
+https://www.youtube.com/feeds/videos.xml?channel_id=UC_Oa7Ph3v94om5OyxY1nPKg Guitar YouTube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCCJ56k8nBeqWLoxNa6DToAQ Guitar YouTube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCL_f53ZEJxp8TtlOkHwMV9Q YouTube Masculinity
+
+# Example of grouping tags into a single feed.
+# "query:Linux:tags # \"Linux\""

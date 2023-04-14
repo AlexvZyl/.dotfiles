@@ -1,8 +1,9 @@
 # Linux.
 https://archlinux.org/feeds/news/ Linux "Arch Linux"
 
-# Finance.
-https://www.reddit.com/user/calexza/m/reddit_finance/top/.rss Finance Reddit
+# Reddit.
+https://www.reddit.com/user/calexza/m/reddit_finance/top/.rss?t=week Finance Reddit
+https://www.reddit.com/r/unixporn/.rss?t=week Reddit Linux
 
 # GitHub.
 https://github.com/neovide/neovide/releases.atom GitHub Neovim
@@ -14,8 +15,7 @@ https://www.ctrlshiftesc.co.za/blogs/product-updates.atom Keyboards
 
 # Gaming.
 https://www.teamfortress.com/rss.xml Gaming
-https://store.steampowered.com/feeds/news/app/440/?cc=ZA&l=english&snr=1_2108_9__2107 Gaming Steam
-https://store.steampowered.com/feeds/news/app/275850/?cc=ZA&l=english&snr=1_2108_9__2107 Gaming Steam
+https://www.nomanssky.com/news/rss
 
 # Guitar.
 https://www.strymon.net/blogs/rss Guitar Strymon

@@ -22,9 +22,9 @@
     ### Geometry ###
 
     # dynamic width from 0 to 300
-    # width = (0, 300)
+    width = (200, 300)
     # constant width of 300
-    width = 300
+    # width = 300
 
     # The maximum height of a single notification, excluding the frame.
     height = 300
@@ -103,7 +103,7 @@
     # Set to 0 to disable.
     # A client can set the 'transient' hint to bypass this. See the rules
     # section for how to disable this if necessary
-    idle_threshold = 0
+    idle_threshold = 3600
 
     ### Text ###
 
@@ -151,7 +151,6 @@
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    # alignment = left
     alignment = center
 
     # Vertical alignment of message text and icon.
@@ -203,7 +202,7 @@
     sticky_history = false
 
     # Maximum amount of notifications kept in history
-    history_length = 0
+    history_length = 100
 
     ### Misc/Advanced ###
 
@@ -211,7 +210,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = /usr/bin/xdg-open
+    browser = /usr/bin/brave
 
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true
@@ -414,13 +413,29 @@
     appname = flameshot
     urgency = low 
 
-[whatsapp-alignment]
+[whatsapp-alignment-1]
+    appname = whatsapp-nativefier
+    alignment = left
+
+[whatsapp-alignment-2]
+    appname = WhatsApp-nativefier
+    alignment = left
+
+[whatsapp-alignment-3]
     appname = whatsapp
-    align = left
+    alignment = left
+
+[whatsapp-alignment-4]
+    appname = WhatsApp
+    alignment = left
+
+[discord-alignment-5]
+    appname = discord
+    alignment = left
 
 [signal-alignment]
     appname = signal 
-    align = left
+    alignment = left
 
 [urgency_low]
     background = "#191C24"

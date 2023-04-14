@@ -1,3 +1,4 @@
 #!/bin/bash
 
+newsboat -x reload
 newsboat -x print-unread | grep -o '[0-9]*'

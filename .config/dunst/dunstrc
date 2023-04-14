@@ -93,7 +93,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = auto
+    separator_color = "#242933"
 
     # Sort messages by urgency.
     sort = yes

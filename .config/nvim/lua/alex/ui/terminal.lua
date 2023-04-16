@@ -1,3 +1,5 @@
+local p = require("nordic.colors")
+
 --------------------------------
 -- Terminal emulator settings --
 --------------------------------
@@ -40,5 +42,10 @@ require 'toggleterm' .setup {
         border = 'curved',
         width = _Term_width,
         height = _Term_height
+    },
+    highlights = {
+        FloatBorder = {
+            guifg = p.bg
+        }
     }
 }

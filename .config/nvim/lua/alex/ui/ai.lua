@@ -1,5 +1,6 @@
 require 'chatgpt' .setup {
-    welcome_message = 'I am coming for your job...',
+    --[[
+    --welcome_message = 'I am coming for your job...',
     loading_text = "Loading...",
     question_sign = " ",
     answer_sign = "ﮧ",
@@ -71,4 +72,5 @@ require 'chatgpt' .setup {
         rename_session = "r",
         delete_session = "d",
     },
+--]]
 }

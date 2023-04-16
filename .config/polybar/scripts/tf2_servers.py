@@ -7,25 +7,30 @@ success = False
 timeout = 2
 
 # Get the number of players on the server.
-def get_players(server):
+def get_server(server):
     try:
         server = a2s.info((server[0], server[1]), timeout = timeout)
         global success
         success = True
-        return server.player_count, server.max_players
+        return server
     except (TimeoutError, OSError):
-        return 0, 0
+        return False
 
 # Get most populated server and print info.
 max = 0
 max_cap = 0
+name = ""
 for server in servers:
-    players, cap = get_players(server)
-    if players > max:
-        max = players
-        max_cap = cap
+    s = get_server(server)
+    if s and s.player_count > min_players:
+        max = s.player_count
+        max_cap = s.max_players
+        name = s.server_name
 
 if success:
-    print((f"{max:02}/{max_cap:02}" if (max >= min_players) else "󰅛 "))
+    if max == 0 or max < min_players:
+        print("󰒎  Offline")
+    else:
+        print(f"󰒍  {name}: {max:02}/{max_cap:02}")
 else:
-    print(" ")
+    print("  Error")

@@ -3,9 +3,6 @@
 # Setup environment.
 ~/.private/env.sh
 
-# Launch polybar.
-~/.config/polybar/launch.sh
-
 # Get rid of that screen tearing.
 # Unsure if this will make startup slower?...
 nvidia-force-comp-pipeline
@@ -18,6 +15,9 @@ picom -b
 
 # Set wallpaper AFTER compositor.
 feh --bg-fill ~/.wallpapers/Cloud_2_Nord.png
+
+# Launch polybar.
+~/.config/polybar/launch.sh
 
 # Environment variables.
 export $EDITOR="nvim"

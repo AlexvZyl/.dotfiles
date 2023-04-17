@@ -1,5 +1,4 @@
-# Base16 Gruvbox dark, hard
-# Author: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+# Nordic colors.
 
 set notification-error-bg       "#232831"
 set notification-error-fg       "#BF616A"
@@ -37,7 +36,9 @@ set render-loading-fg           "#434C5E"
 
 set recolor-lightcolor          "#232831"
 set recolor-darkcolor           "#ECEFF4"
-set recolor                     "false" # Keep original colors.
+
+# Dark mode/invert.
+set recolor                     "true" 
 
 # Font.
 set font "JetBrainsMono Nerd Font 10"
@@ -46,5 +47,4 @@ set font "JetBrainsMono Nerd Font 10"
 set adjust-open "best-fit"
 
 # Pages per row.
-# This does not seem to work.
 set pages-per-row 1

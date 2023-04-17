@@ -249,8 +249,8 @@ bindsym $mod+Shift+r restart
 # bindsym $mod+F1 exec xed ~/.config/i3/keybindings
 
 # Backlight control
-bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set +10% 
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%- 
+bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set +10% && notify-send --urgency=low -r 9999 "󰃠  Brightness: $((($(brightnessctl g)*100)/$(brightnessctl m)))%"
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%- && notify-send --urgency=low -r 9999 "󰃠  Brightness: $((($(brightnessctl g)*100)/$(brightnessctl m)))%"
 
 # change focus
 bindsym $mod+h focus left

@@ -34,6 +34,7 @@
 
     # Offset from the origin
     offset = 10x35
+    # (H_Right_Gap/2) x (25+V_Bottom_Gap/2)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0

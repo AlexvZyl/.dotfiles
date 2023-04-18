@@ -13,12 +13,14 @@ command = [ "curl", "--location", "--request", "GET",
 
 try:
     result = subprocess.run(command, stdout=subprocess.PIPE, stderr = subprocess.DEVNULL).stdout.decode('utf-8')
-    print(result)
-    current = json.loads(result)["events"][0]
-    start = datetime.datetime.fromisoformat(current["start"])
-    end = datetime.datetime.fromisoformat(current["end"])
-    duration = end - start
-    print(start.strftime("%H:%M") + " [" + str(int(duration.total_seconds()/3600)) + "]")
+    if 'error' in result:
+        print(" ")
+    else:
+        current = json.loads(result)["events"][0]
+        start = datetime.datetime.fromisoformat(current["start"])
+        end = datetime.datetime.fromisoformat(current["end"])
+        duration = end - start
+        print(start.strftime("%H:%M") + " [" + str(int(duration.total_seconds()/3600)) + "]")
 
 # Could not connect.
 except(json.JSONDecodeError):

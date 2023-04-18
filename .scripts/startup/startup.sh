@@ -1,8 +1,5 @@
 #!/bin/bash 
 
-# Setup environment.
-~/.private/env.sh
-
 # Get rid of that screen tearing.
 # Unsure if this will make startup slower?...
 nvidia-force-comp-pipeline

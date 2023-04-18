@@ -96,3 +96,4 @@ export MANWIDTH=999
 # alias pacdiff=eos-pacdiff
 ################################################################################
 
+source ~/.private/env.sh

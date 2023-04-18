@@ -3,16 +3,17 @@ import subprocess
 import json
 import datetime
 import os
-import re
 
 key = os.environ.get("ESKOM_SE_PUSH_KEY")
+region = "westerncape-2-universityofstellenbosch"
 
 command = [ "curl", "--location", "--request", "GET",  
-            "https://developer.sepush.co.za/business/2.0/area?id=eskde-10-fourwaysext10cityofjohannesburggauteng",
+            "https://developer.sepush.co.za/business/2.0/area?id="+region,
             "--header", f"token: {key}" ]
 
 try:
     result = subprocess.run(command, stdout=subprocess.PIPE, stderr = subprocess.DEVNULL).stdout.decode('utf-8')
+    print(result)
     current = json.loads(result)["events"][0]
     start = datetime.datetime.fromisoformat(current["start"])
     end = datetime.datetime.fromisoformat(current["end"])

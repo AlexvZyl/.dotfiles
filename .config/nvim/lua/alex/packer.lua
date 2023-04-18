@@ -175,7 +175,7 @@ return require 'packer'.startup( { function(use)
     }
 
     -- Language specific.
-    use 'JuliaEditorSupport/julia-vim'
+    -- use 'JuliaEditorSupport/julia-vim'
     use 'lervag/vimtex'
 
     -- Fun.

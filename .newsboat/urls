@@ -1,13 +1,14 @@
-# Linux.
-https://archlinux.org/feeds/news/ Linux "Arch Linux"
+# NB News.
+https://archlinux.org/feeds/news/ Linux "Arch Linux" FOSS
 
 # Reddit.
 https://www.reddit.com/user/calexza/m/reddit_finance/top/.rss?t=month Finance Reddit
-https://www.reddit.com/r/unixporn/top/.rss?t=month Reddit Linux
+https://www.reddit.com/r/unixporn/top/.rss?t=month Reddit Linux FOSS
+https://www.reddit.com/r/MechanicalKeyboards/top/.rss?t=month Reddit Keyboards
 
 # GitHub.
-https://github.com/neovide/neovide/releases.atom GitHub Neovim
-https://github.com/neovim/neovim/releases.atom GitHub Neovim
+https://github.com/neovide/neovide/releases.atom GitHub Neovim FOSS
+https://github.com/neovim/neovim/releases.atom GitHub Neovim FOSS
 
 # Keyboards.
 https://www.ctrlshiftesc.co.za/blogs/announcements.atom Keyboards
@@ -15,7 +16,7 @@ https://www.ctrlshiftesc.co.za/blogs/product-updates.atom Keyboards
 
 # Gaming.
 https://www.teamfortress.com/rss.xml Gaming
-https://www.nomanssky.com/news/rss
+https://www.nomanssky.com/news/rss Gaming
 
 # Guitar.
 https://www.strymon.net/blogs/rss Guitar Strymon
@@ -26,8 +27,8 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCCJ56k8nBeqWLoxNa6DToAQ Gui
 https://www.youtube.com/feeds/videos.xml?channel_id=UCL_f53ZEJxp8TtlOkHwMV9Q YouTube Knowledge # Jordan Peterson.
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2D2CMWXMOVWx7giW1n3LIg YouTube Knowledge # Andrew Huberman.
 https://www.youtube.com/feeds/videos.xml?channel_id=UCsBjURrPoezykLs9EqgamOA YouTube Programming # Fireship.
-https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA YouTube Linux FOSS # Brodie Robertson.
-https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA YouTube Linux Security FOSS # Mental Outlaw.
+https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA YouTube FOSS # Brodie Robertson.
+https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA YouTube Security FOSS # Mental Outlaw.
 
 # Example of grouping tags into a single feed.
 # "query:Linux:tags # \"Linux\""

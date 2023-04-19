@@ -1,6 +1,6 @@
 require 'chatgpt' .setup {
     chat = {
-        welcome_message = '󱚝 I am coming for your job...',
+        welcome_message = ' 󱚝  I am coming for your career...',
         loading_text = "󱚟 ",
         question_sign = "󰵅 ",
         -- question_sign = " ",

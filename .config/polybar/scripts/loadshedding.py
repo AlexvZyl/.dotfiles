@@ -3,11 +3,22 @@ import datetime
 import pytz
 
 with open("/home/alex/.config/polybar/scripts/loadshedding.json", "r") as file:
+    # Setup.
     response = json.loads(json.load(file))
-    next = response["events"][0]
-    start = datetime.datetime.fromisoformat(next["start"]).replace(tzinfo=pytz.timezone("Africa/Johannesburg"))
-    end = datetime.datetime.fromisoformat(next["end"]).replace(tzinfo=pytz.timezone("Africa/Johannesburg"))
     now = datetime.datetime.now(pytz.timezone("Africa/Johannesburg"))
+
+    # Look for next shedding.
+    index = 0
+    next = response["events"][index]
+    start = datetime.datetime.fromisoformat(next["start"])
+    while start < now:
+        index+=1
+        next = response["events"][index]
+        start = datetime.datetime.fromisoformat(next["start"])
+    end = datetime.datetime.fromisoformat(next["end"])
+    end = end - datetime.timedelta(minutes=30)
+
+    # Display information, dpenedant on if currently loadshedding.
     if (now >= start) and (now <= end):
         time_left = end - now
         hours, remainder = divmod(int(time_left.total_seconds()), 3600)

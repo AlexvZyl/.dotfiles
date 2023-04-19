@@ -1,27 +1,18 @@
-# Imports.
-import subprocess
 import json
 import datetime
-import os
+import pytz
 
-key = os.environ.get("ESKOM_SE_PUSH_KEY")
-region = "westerncape-2-universityofstellenbosch"
-
-command = [ "curl", "--location", "--request", "GET",  
-            "https://developer.sepush.co.za/business/2.0/area?id="+region,
-            "--header", f"token: {key}" ]
-
-try:
-    result = subprocess.run(command, stdout=subprocess.PIPE, stderr = subprocess.DEVNULL).stdout.decode('utf-8')
-    if 'error' in result:
-        print(" ")
+with open("/home/alex/.config/polybar/scripts/loadshedding.json", "r") as file:
+    response = json.loads(json.load(file))
+    next = response["events"][0]
+    start = datetime.datetime.fromisoformat(next["start"]).replace(tzinfo=pytz.timezone("Africa/Johannesburg"))
+    end = datetime.datetime.fromisoformat(next["end"]).replace(tzinfo=pytz.timezone("Africa/Johannesburg"))
+    now = datetime.datetime.now(pytz.timezone("Africa/Johannesburg"))
+    if (now >= start) and (now <= end):
+        time_left = end - now
+        hours, remainder = divmod(int(time_left.total_seconds()), 3600)
+        minutes, _ = divmod(remainder, 60)
+        print(f"{hours:02d}:{minutes:02d}")
     else:
-        current = json.loads(result)["events"][0]
-        start = datetime.datetime.fromisoformat(current["start"])
-        end = datetime.datetime.fromisoformat(current["end"])
         duration = end - start
         print(start.strftime("%H:%M") + " [" + str(int(duration.total_seconds()/3600)) + "]")
-
-# Could not connect.
-except(json.JSONDecodeError):
-    print(" ")

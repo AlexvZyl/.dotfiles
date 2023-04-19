@@ -1,2 +1,2 @@
-crontab ~/.config/cron/notify_geyser
+crontab ~/.config/cron/crontab
 sudo systemctl enable cronie

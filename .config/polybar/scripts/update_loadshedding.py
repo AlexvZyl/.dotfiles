@@ -12,11 +12,13 @@ command = [ "curl", "--location", "--request", "GET",
 
 try:
     response = subprocess.run(command, stdout=subprocess.PIPE, stderr = subprocess.DEVNULL).stdout.decode('utf-8')
-    if 'error' in response: pass
+    if 'error' in response: 
+        print("Error.")
+        print(response)
     else:
         with open("loadshedding.json", 'w') as file:
             json.dump(response, file)
 
 # Could not connect.
 except(json.JSONDecodeError):
-    pass
+    print("Error.")

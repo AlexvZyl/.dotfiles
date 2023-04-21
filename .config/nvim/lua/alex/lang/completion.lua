@@ -1,3 +1,5 @@
+local u = require 'alex.utils'
+
 --------------
 -- Nvim Cmp --
 --------------
@@ -59,11 +61,14 @@ cmp.setup({
     -- Set window style.
     window = {
         completion = cmp.config.window.bordered {
-            winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
-            scrollbar = false
+            winhighlight = "Normal:Pmenu,FloatBorder:PmenuBorder,CursorLine:PmenuSel,Search:None",
+            scrollbar = false,
+            border = u.border_chars_inner_thin
         },
         documentation = cmp.config.window.bordered {
-            winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+            winhighlight = "Normal:Pmenu,FloatBorder:PmenuDocBorder,CursorLine:PmenuSel,Search:None",
+            scrollbar = false,
+            border = u.border_chars_outer_thin
         },
     },
     -- Key maps.

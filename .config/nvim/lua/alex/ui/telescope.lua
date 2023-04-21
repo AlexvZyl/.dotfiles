@@ -1,7 +1,7 @@
 local ts = require 'telescope'
+local u = require 'alex.utils'
 
 -- Setup.
-local border_chars_none = { " ", " ", " ", " ", " ", " ", " ", " " }
 ts.setup({
     defaults = {
         sort_mru = true,
@@ -10,9 +10,9 @@ ts.setup({
             prompt_position = 'top'
         },
         borderchars = {
-            prompt = border_chars_none,
-            results = border_chars_none,
-            preview = border_chars_none
+            prompt = u.border_chars_none,
+            results = u.border_chars_none,
+            preview = u.border_chars_none
         },
         border = true,
         prompt_prefix = '   ',

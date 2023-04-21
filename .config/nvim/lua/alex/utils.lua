@@ -9,4 +9,11 @@ function M.length(table)
     return count
 end
 
+-- Border characters.
+M.border_chars_none = { " ", " ", " ", " ", " ", " ", " ", " " }
+M.border_chars_outer_thick = { "▛", "▀", "▜", "▐", "▟", "▄", "▙", "▌" }
+M.border_chars_outer_thin = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" }
+M.border_chars_inner_thin = { " ", "▁", " ", "▏", " ", "▔", " ", "▕" }
+M.border_chars_inner_thick = { " ", "▄", " ", "▌", " ", "▀", " ", "▐" }
+
 return M

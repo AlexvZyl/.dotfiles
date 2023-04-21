@@ -112,7 +112,7 @@ return require 'packer'.startup( { function(use)
     }
 
     -- AI.  Will it take my job?...
-    use 'github/copilot.vim'
+    -- use 'github/copilot.vim'
     use {
         "jackMort/ChatGPT.nvim",
         requires = {

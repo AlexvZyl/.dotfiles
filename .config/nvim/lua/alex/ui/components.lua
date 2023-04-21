@@ -1,3 +1,5 @@
+local u = require 'alex.utils'
+
 ----------------------
 -- Find and Replace --
 ----------------------
@@ -80,6 +82,20 @@ vim.notify = notify
 require "noice".setup {
     cmdline = {
         format = {
+            cmdline = { title = "" },
+            lua = { title = "" },
+            help = { title = "" }
+        },
+    },
+    views = {
+        cmdline_popup = {
+            border = {
+                style = u.border_chars_outer_thin,
+                padding = { 0, 1 },
+            },
+            win_options = {
+                winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+            },
         }
     },
     lsp = {

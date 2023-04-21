@@ -28,13 +28,43 @@ local override = {
         bold = true
     },
     PmenuBorder = {
-        bg = p.bg,
+        bg = p.bg_dark,
         fg = p.grey1
     },
     PmenuDocBorder = {
         bg = p.bg_dark,
         fg = p.grey1
     },
+    TelescopePromptBorder = {
+        bg = p.grey1,
+        fg = p.grey1
+    },
+    TelescopePreviewBorder = {
+        bg = p.bg_dark,
+        fg = p.grey1
+    },
+    TelescopeResultsBorder = {
+        bg = p.bg_dark,
+        fg = p.grey1
+    },
+    TelescopeSelection = {
+        bg = p.grey0
+    },
+    TelescopeSelectionCaret = {
+        bg = p.grey0
+    },
+    NormalFloat = {
+        bg = p.bg_dark
+    },
+    FloatBorder = {
+        bg = p.bg_dark,
+    },
+    NoiceCmdlineIcon = {
+        bg = p.bg_dark
+    },
+    NoiceCmdlinePopupBorder = {
+        fg = p.cyan.base
+    }
 }
 require 'nordic' .setup {
     override = override

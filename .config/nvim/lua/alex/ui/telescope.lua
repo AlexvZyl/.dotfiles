@@ -10,9 +10,9 @@ ts.setup({
             prompt_position = 'top'
         },
         borderchars = {
-            prompt = u.border_chars_none,
-            results = u.border_chars_none,
-            preview = u.border_chars_none
+            prompt = u.border_chars_outer_thin_telescope,
+            results = u.border_chars_outer_thin_telescope,
+            preview = u.border_chars_outer_thin_telescope
         },
         border = true,
         prompt_prefix = '   ',

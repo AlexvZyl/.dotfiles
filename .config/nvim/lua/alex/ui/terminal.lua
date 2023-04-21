@@ -1,4 +1,5 @@
-local p = require("nordic.colors")
+local p = require 'nordic.colors'
+local u = require 'alex.utils'
 
 --------------------------------
 -- Terminal emulator settings --
@@ -39,13 +40,14 @@ require 'toggleterm' .setup {
     end,
     direction = 'float',
     float_opts = {
-        border = 'curved',
+        -- border = 'curved',
+        border = u.border_chars_outer_thin,
         width = _Term_width,
         height = _Term_height
     },
     highlights = {
         FloatBorder = {
-            guifg = p.bg
+            guifg = p.bg_dark
         }
     }
 }

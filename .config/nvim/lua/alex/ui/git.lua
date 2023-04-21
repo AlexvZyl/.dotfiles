@@ -11,6 +11,8 @@ require 'git-conflict'.setup {
 --------------
 
 local git_char = '│'
+-- local git_char = '▕'
+-- local git_char = '▏'
 -- local git_char = '|'
 -- local git_char = '┆'
 -- local git_char = '╎'

@@ -11,19 +11,20 @@ with open("/home/alex/.config/polybar/scripts/loadshedding.json", "r") as file:
     index = 0
     next = response["events"][index]
     start = datetime.datetime.fromisoformat(next["start"])
-    while start < now:
+    end = datetime.datetime.fromisoformat(next["end"]) - datetime.timedelta(minutes=30)
+    while (start < now) and (now > end):
         index+=1
         next = response["events"][index]
         start = datetime.datetime.fromisoformat(next["start"])
-    end = datetime.datetime.fromisoformat(next["end"])
-    end = end - datetime.timedelta(minutes=30)
+        end = datetime.datetime.fromisoformat(next["end"]) - datetime.timedelta(minutes=29)
 
-    # Display information, dpenedant on if currently loadshedding.
+    # Loadshedding currently busy.
     if (now >= start) and (now <= end):
         time_left = end - now
         hours, remainder = divmod(int(time_left.total_seconds()), 3600)
         minutes, _ = divmod(remainder, 60)
-        print(f"{hours:02d}:{minutes:02d}")
+        print("%{F#BF616A}%{F-} " + f"{hours:02d}:{minutes:02d}")
+    # Display next loadshedding.
     else:
         duration = end - start
-        print(start.strftime("%H:%M") + " [" + str(int(duration.total_seconds()/3600)) + "]")
+        print("%{F#EBCB8B}%{F-} " + start.strftime("%H:%M") + " [" + str(int(duration.total_seconds()/3600)) + "]")

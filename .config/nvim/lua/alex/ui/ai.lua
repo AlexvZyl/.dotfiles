@@ -1,3 +1,5 @@
+local u = require 'alex.utils'
+
 require 'chatgpt' .setup {
     chat = {
         welcome_message = ' 󱚝  I am coming for your career...',
@@ -19,7 +21,39 @@ require 'chatgpt' .setup {
             delete_session = "<C-d>",
         },
     },
+    popup_layout = {
+        size = {
+            height = "80%",
+            width = "80%",
+        },
+    },
+    popup_window = {
+        filetype = "chatgpt",
+        border = {
+            highlight = "PopupBorder",
+            style = u.border_chars_outer_thin,
+            text = { top = "" },
+        },
+        win_options = { winhighlight = "Normal:PopupNormal,FloatBorder:PopupBorder" }
+    },
     popup_input = {
-        prompt = "    "
-    }
+        prompt = "  ",
+        border = {
+            highlight = "PopupBorder",
+            style = u.border_chars_outer_thin,
+            text = { top_align = "center", top = "" }
+        },
+        win_options = { winhighlight = "Normal:PopupNormal,FloatBorder:PopupBorder" },
+        submit = "<C-Enter>",
+    },
+    settings_window = {
+        border = {
+            style = "rounded",
+            text = { top = " Settings " }
+        },
+        win_options = { winhighlight = "Normal:PopupNormal,FloatBorder:PopupBorder" }
+    },
 }
+
+
+

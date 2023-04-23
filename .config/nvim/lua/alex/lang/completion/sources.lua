@@ -2,28 +2,22 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lsp_config = require 'lspconfig'
 local cmp = require 'cmp'
-local cu = require 'alex.lang.completion.utils'
+
+-- Filter out the text.
+local filter_text = function (entry, _)
+    local kind = require('cmp.types').lsp.CompletionItemKind[entry:get_kind()]
+    return kind ~= 'Text'
+end
 
 -- Sources.
-cmp.setup({
+cmp.setup {
     sources = cmp.config.sources {
-        {
-            name = 'nvim_lsp',
-            entry_filter = cu.filter_text
-        },
-        {
-            name = 'buffer',
-            entry_filter = cu.filter_text
-        },
-        {
-            name = 'luasnip',
-            entry_filter = cu.filter_text
-        },
-        {
-            name = 'latex_symbols'
-        },
+        { name = 'nvim_lsp', entry_filter = filter_text },
+        { name = 'buffer', entry_filter = filter_text },
+        { name = 'luasnip', entry_filter = filter_text },
+        { name = 'latex_symbols' },
     }
-})
+}
 
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
@@ -52,6 +46,13 @@ cmp.setup.cmdline(':', {
     })
 })
 
+cmp.setup.buffer {
+    sources = {
+        { name = 'nvim_lsp' },
+        { name = 'latex_symbols' },
+    }
+}
+
 -- Setup completion sources with LSPs.
 lsp_config.lua_ls.setup {
     capabilities = capabilities
@@ -67,4 +68,7 @@ lsp_config.pyright.setup {
 }
 lsp_config.rust_analyzer.setup {
     capabilities = capabilities
+}
+lsp_config.texlab.setup {
+    capabilities = capabilities,
 }

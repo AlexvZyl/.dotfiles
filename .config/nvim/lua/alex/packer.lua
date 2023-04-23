@@ -1,3 +1,5 @@
+local u = require 'alex.utils'
+
 --------------------
 -- Plugins config --
 --------------------
@@ -18,6 +20,11 @@ local packer_bootstrap = ensure_packer()
 
 -- Setup before plugins are loaded.
 vim.g.ale_disable_lsp = 1
+
+-- Cuszotmize.
+require 'packer' .init {
+    display = { prompt_border = u.border_chars_outer_thin }
+}
 
 -- Load different plugins.
 return require 'packer'.startup( { function(use)
@@ -125,9 +132,8 @@ return require 'packer'.startup( { function(use)
     -- Git.
     -- TODO
     use 'lewis6991/gitsigns.nvim'
-    -- use 'sindrets/diffview.nvim'
+    use 'sindrets/diffview.nvim'
     use 'akinsho/git-conflict.nvim'
-    use 'kdheepak/lazygit.nvim'
     use 'ThePrimeagen/git-worktree.nvim'
 
     -- Neovim helpers.
@@ -218,7 +224,7 @@ config = {
     display = {
         -- Display packer window as floating.
         open_fn = function ()
-            return require 'packer.util'.float { border = 'rounded' }
+            return require 'packer.util'.float { border = u.border_chars_outer_thin }
         end
     }
 }

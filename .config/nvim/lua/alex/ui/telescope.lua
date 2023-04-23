@@ -15,7 +15,10 @@ ts.setup({
             preview = u.border_chars_outer_thin_telescope
         },
         border = true,
+        multi_icon = '',
+        entry_prefix = '   ',
         prompt_prefix = '   ',
+        selection_caret = '  ',
         hl_result_eol = true,
         results_title = "",
         winblend = 0,
@@ -25,5 +28,4 @@ ts.setup({
 
 -- Extensions.
 ts.load_extension 'notify'
-ts.load_extension 'lazygit'
 ts.load_extension 'git_worktree'

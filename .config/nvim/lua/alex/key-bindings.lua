@@ -29,13 +29,13 @@ map_key(n, '<C-w><C-c>', '<Cmd>wincmd c<CR>', default_settings)
 map_key(exclude_t, '<F3>', '<Cmd>Telescope find_files<CR>', default_settings)
 
 -- Toggle the file explorer.
-function toggle_nvim_tree()
+function Toggle_nvim_tree()
     require("nvim-tree.api").tree.toggle({})
     local is_open = require("nvim-tree.view").is_visible()
     if is_open then vim.wo.statuscolumn = ' ' end
 end
-map_key(all_modes, '<F2>', '<Cmd>lua toggle_nvim_tree()<CR>', default_settings)
-map_key(n, '<Leader>f', '<Cmd>lua toggle_nvim_tree()<CR>', default_settings)
+map_key(all_modes, '<F2>', '<Cmd>lua Toggle_nvim_tree()<CR>', default_settings)
+map_key(n, '<Leader>f', '<Cmd>lua Toggle_nvim_tree()<CR>', default_settings)
 
 -- Grep for a string in the current directory.
 map_key(exclude_t, '<F4>', '<Cmd>Telescope live_grep<CR>', default_settings)
@@ -45,15 +45,6 @@ map_key(exclude_t, '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
 
 -- Cheatsheet.
 map_key(all_modes, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
-
--- Lazygit.
-map_key(n, '<Leader>g', '<Cmd>LazyGit<CR>', default_settings)
-
--- Change lazygit repo.
-map_key(all_modes, '<C-r>', '<Cmd>lua require("telescope").extensions.lazygit.lazygit()<CR>', default_settings)
-
--- Sessions.
-map_key(n, '<F5>', '<Cmd>SSave<CR> " Saved current session.", "success", { title = " Session"} )<CR>', default_settings)
 
 -- Moving windows.
 map_key(n_t, '<C-h>','<Cmd>wincmd h<CR>', default_settings)
@@ -172,19 +163,26 @@ local terminal  = require('toggleterm.terminal').Terminal
 -- local btop = Terminal:new({ cmd = "btop --utf-force", hidden = true, direction = "float" })
 local btop = terminal:new({ cmd = "btop", hidden = true, direction = "float" })
 -- local btop = Terminal:new({ cmd = "btm", hidden = true, direction = "float" })
-function _btop_toggle()
+function Btop_toggle()
   btop:toggle()
 end
-map_key(n, "<Leader>b", "<Cmd>lua _btop_toggle()<CR>", {noremap = true, silent = true})
+map_key(n, "<Leader>b", "<Cmd>lua Btop_toggle()<CR>", { noremap = true, silent = true })
 
 -- Fish.
 
 local fish = terminal:new({ cmd = "fish", hidden = true, direction = "float" })
-function _fish_toggle()
+function Fish_toggle()
   fish:toggle()
 end
-map_key(all_modes, "<F1>", "<Cmd>lua _fish_toggle()<CR>", default_settings)
-map_key(n, "<Leader>t", "<Cmd>lua _fish_toggle()<CR>", default_settings)
+map_key(all_modes, "<F1>", "<Cmd>lua Fish_toggle()<CR>", default_settings)
+map_key(n, "<Leader>t", "<Cmd>lua Fish_toggle()<CR>", default_settings)
+
+-- Lazygit.
+local lazygit = terminal:new({ cmd = "lazygit", hidden = true, direction = "float" })
+function Lazygit_toggle()
+    lazygit:toggle()
+end
+map_key(n, '<Leader>g', '<Cmd>lua Lazygit_toggle()<CR>', default_settings)
 
 ------------
 -- Vimtex --
@@ -204,7 +202,7 @@ map_key(n, "<leader>D", "<Cmd>TroubleToggle workspace_diagnostics<CR>", default_
 -----------------------
 
 -- Change the cwd to the directory of the current active buffer.
-function _cwd_current_buffer()
+function Cwd_current_buffer()
     local abs_path = vim.api.nvim_buf_get_name(0)
     local dir = abs_path:match("(.*[/\\])")
     if dir == nil then
@@ -213,7 +211,7 @@ function _cwd_current_buffer()
     vim.cmd ("cd " .. dir)
 end
 
-map_key(n_v, "gc", "<Cmd>lua _cwd_current_buffer()<CR><Cmd>NvimTreeRefresh<CR>", default_settings)
+map_key(n_v, "gc", "<Cmd>lua Cwd_current_buffer()<CR><Cmd>NvimTreeRefresh<CR>", default_settings)
 
 -----------------------
 -- Debugger Protocol --

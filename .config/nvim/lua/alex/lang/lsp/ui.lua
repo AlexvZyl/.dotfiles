@@ -1,14 +1,15 @@
+local u = require 'alex.utils'
+
 --------------
 -- LSP Saga --
 --------------
 
 local ui = {
     theme = 'round',
-    border = 'rounded',
+    border = u.border_chars_outer_thin,
     winblend = 5,
     title = false,
     diagnostic = '  ',
-    kind = {}
 }
 
 local lightbulb = {

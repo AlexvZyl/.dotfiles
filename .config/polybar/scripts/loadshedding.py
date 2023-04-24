@@ -17,7 +17,7 @@ try:
             index+=1
             next = response["events"][index]
             start = datetime.datetime.fromisoformat(next["start"])
-            end = datetime.datetime.fromisoformat(next["end"]) - datetime.timedelta(minutes=29)
+            end = datetime.datetime.fromisoformat(next["end"]) - datetime.timedelta(minutes=30)
     
         # Loadshedding currently busy.
         if (now >= start) and (now <= end):

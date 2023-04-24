@@ -1,6 +1,6 @@
 # .dotfiles
 
-![image](https://user-images.githubusercontent.com/81622310/216946847-34a7169d-92ef-4f7f-8fed-f5deaa88bfc3.png)
+![image](https://user-images.githubusercontent.com/81622310/233982163-9eb196df-a31d-41a3-9dfb-19c7c5d732f8.png)
 
 The configuration files for my Linux desktop.  Supports Arch based distros using Gnome and/or i3.  Also, currently it assumes you have an Nvidia GPU and Intel CPU.
 

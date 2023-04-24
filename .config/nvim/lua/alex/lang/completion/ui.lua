@@ -20,7 +20,7 @@ local function format(_, item)
     end
 
     -- Replace kind with icons.
-    item.kind = (u.kind_icons[item.kind] or u.kind_icons.Unknown) .. '│'
+    item.kind = ' ' .. (u.kind_icons[item.kind] or u.kind_icons.Unknown) .. '│'
 
     -- Remove gibberish.
     item.menu = nil

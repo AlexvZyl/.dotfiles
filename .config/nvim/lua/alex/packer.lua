@@ -212,6 +212,7 @@ return require 'packer'.startup( { function(use)
     use 'Mofiqul/vscode.nvim'
     use 'navarasu/onedark.nvim'
     use 'frenzyexists/aquarium-vim'
+    use 'projekt0n/github-nvim-theme'
 
    -- Bootstrap.
 	if packer_bootstrap then

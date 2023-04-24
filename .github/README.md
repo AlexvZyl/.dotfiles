@@ -126,4 +126,4 @@ This [config](https://github.com/AlexvZyl/.dotfiles/tree/main/.config/nvim) has 
 
 > ℹ️ &nbsp; I try to keep all of the key bindings in [this file](https://github.com/AlexvZyl/.dotfiles/blob/main/.config/nvim/lua/alex/key-bindings.lua).
 
-![image](https://user-images.githubusercontent.com/81622310/219610304-549dcfe6-bc5c-4681-90b3-9992b8d7001a.png)
+![image](https://user-images.githubusercontent.com/81622310/233982609-f9c15e39-da60-43d8-8c5c-4761db95ad9d.png)

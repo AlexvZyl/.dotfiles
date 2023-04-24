@@ -31,6 +31,8 @@ The theme is based on my Neovim plugin, [nordic.nvim](https://github.com/AlexvZy
 
 Some screenshots showing off the desktop and rice, as well as some custom features I wrote.  Everything has to be *just right*.  I am spending 8+ hours a day on this working, so it might as well be a nice experience.
 
+> ⚠️ &nbsp; Some of these are outdated, I will update them at a later stage.
+
 <details>
 
 <summary>Overview</summary>
@@ -61,37 +63,6 @@ Wallpapers can be found at [this ImageGoNord repo](https://github.com/linuxdotex
 
 </details>
 
-<details>
-
-<summary>Polybar</summary>
-
-</br>
-
-*TODO*
-
-### References
-
-- [Arcolinux](https://github.com/arcolinux/arcolinux-polybar/blob/master/etc/skel/.config/polybar/config)
-- [Polybar-Themes](https://github.com/adi1090x/polybar-themes)
-
-</details>
-
-<details>
-
-<summary>Read mode</summary>
-
-</br>
-
-`Super + r` disables the `inactive-opacity` (from `picom`) for when readability is important.  An indicator is displayed via polybar.
-
-*Disabled:*
-![image](https://user-images.githubusercontent.com/81622310/212110520-c782704b-9780-47af-b3c3-46b231ee8805.png)
-
-*Enabled:*
-![image](https://user-images.githubusercontent.com/81622310/212110576-71a817aa-7785-4384-a817-30b3ee94e417.png)
-
-</details>
-
 # Key Bindings
 
 A few notes on the bindings:
@@ -110,13 +81,16 @@ A few notes on the bindings:
 | Super + d | App launcher |
 | Super + p | Powermenu |
 | Super + t | Terminal |
-| Super + n | Neovide |
+| Super + n | Neovim |
 | Super + b | BTop++ |
-| Super + r | Toggle read mode |
+| Super + g | NVtop |
+| Super + R | Toggle read mode |
 | Super + tab | Windows |
 | Super + Arrow | Cycle windows |
 | Super + Shift + Arrow | Move window |
 | Super + Number | Go to workspace |
+| Super + r | Newsboat |
+| Super + w | iwctl |
 
 </details>
 

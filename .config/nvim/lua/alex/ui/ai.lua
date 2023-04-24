@@ -2,11 +2,10 @@ local u = require 'alex.utils'
 
 require 'chatgpt' .setup {
     chat = {
-        welcome_message = ' 󱚝  I am coming for your career...',
-        loading_text = "󱚟 ",
+        welcome_message = '  󱚝   I am coming for your career...',
+        loading_text = " 󱚟 ",
         question_sign = "󰵅 ",
-        -- question_sign = " ",
-        answer_sign = " 󰚩 ",
+        answer_sign = "󰚩 ",
         keymaps = {
             close = { "<C-q>" },
             yank_last = "<C-y>",
@@ -32,7 +31,7 @@ require 'chatgpt' .setup {
         border = {
             highlight = "PopupBorder",
             style = u.border_chars_outer_thin,
-            text = { top = "" },
+            text = { top = u.top_right_corner_thin .. " ChatGPT "  .. u.top_left_corner_thin },
         },
         win_options = { winhighlight = "Normal:PopupNormal,FloatBorder:PopupBorder" }
     },
@@ -48,12 +47,9 @@ require 'chatgpt' .setup {
     },
     settings_window = {
         border = {
-            style = "rounded",
-            text = { top = " Settings " }
+            style = u.border_chars_outer_thin,
+            text = { top = u.top_right_corner_thin .. " Settings "  .. u.top_left_corner_thin },
         },
         win_options = { winhighlight = "Normal:PopupNormal,FloatBorder:PopupBorder" }
     },
 }
-
-
-

@@ -64,6 +64,6 @@ vim.g.mapleader = ' '
 vim.cmd 'hi SpellBad gui=undercurl'
 
 -- Windows and popups.
-vim.cmd "set winblend=3"
+vim.cmd "set winblend=0"
 vim.cmd "set pumblend=0"
 vim.opt.pumheight=10

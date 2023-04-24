@@ -1,6 +1,6 @@
 # .dotfiles
 
-![image](https://user-images.githubusercontent.com/81622310/216946847-34a7169d-92ef-4f7f-8fed-f5deaa88bfc3.png)
+![image](https://user-images.githubusercontent.com/81622310/233985068-9a630612-5d32-4cc0-a2e1-978d5a94856a.png)
 
 The configuration files for my Linux desktop.  Supports Arch based distros using Gnome and/or i3.  Also, currently it assumes you have an Nvidia GPU and Intel CPU.
 
@@ -30,6 +30,8 @@ The theme is based on my Neovim plugin, [nordic.nvim](https://github.com/AlexvZy
 # Showcase
 
 Some screenshots showing off the desktop and rice, as well as some custom features I wrote.  Everything has to be *just right*.  I am spending 8+ hours a day on this working, so it might as well be a nice experience.
+
+> ⚠️ &nbsp; Some of these are outdated, I will update them at a later stage.
 
 <details>
 
@@ -61,37 +63,6 @@ Wallpapers can be found at [this ImageGoNord repo](https://github.com/linuxdotex
 
 </details>
 
-<details>
-
-<summary>Polybar</summary>
-
-</br>
-
-*TODO*
-
-### References
-
-- [Arcolinux](https://github.com/arcolinux/arcolinux-polybar/blob/master/etc/skel/.config/polybar/config)
-- [Polybar-Themes](https://github.com/adi1090x/polybar-themes)
-
-</details>
-
-<details>
-
-<summary>Read mode</summary>
-
-</br>
-
-`Super + r` disables the `inactive-opacity` (from `picom`) for when readability is important.  An indicator is displayed via polybar.
-
-*Disabled:*
-![image](https://user-images.githubusercontent.com/81622310/212110520-c782704b-9780-47af-b3c3-46b231ee8805.png)
-
-*Enabled:*
-![image](https://user-images.githubusercontent.com/81622310/212110576-71a817aa-7785-4384-a817-30b3ee94e417.png)
-
-</details>
-
 # Key Bindings
 
 A few notes on the bindings:
@@ -110,13 +81,16 @@ A few notes on the bindings:
 | Super + d | App launcher |
 | Super + p | Powermenu |
 | Super + t | Terminal |
-| Super + n | Neovide |
+| Super + n | Neovim |
 | Super + b | BTop++ |
-| Super + r | Toggle read mode |
+| Super + g | NVtop |
+| Super + R | Toggle read mode |
 | Super + tab | Windows |
 | Super + Arrow | Cycle windows |
 | Super + Shift + Arrow | Move window |
 | Super + Number | Go to workspace |
+| Super + r | Newsboat |
+| Super + w | iwctl |
 
 </details>
 
@@ -126,4 +100,4 @@ This [config](https://github.com/AlexvZyl/.dotfiles/tree/main/.config/nvim) has 
 
 > ℹ️ &nbsp; I try to keep all of the key bindings in [this file](https://github.com/AlexvZyl/.dotfiles/blob/main/.config/nvim/lua/alex/key-bindings.lua).
 
-![image](https://user-images.githubusercontent.com/81622310/219610304-549dcfe6-bc5c-4681-90b3-9992b8d7001a.png)
+![image](https://user-images.githubusercontent.com/81622310/233982609-f9c15e39-da60-43d8-8c5c-4761db95ad9d.png)

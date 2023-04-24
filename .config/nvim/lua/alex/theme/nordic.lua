@@ -30,8 +30,7 @@ local override = {
         link = 'PopupNormal'
     },
     PmenuSel = {
-        bg = p.yellow.base,
-        fg = p.black,
+        bg = p.grey0,
         bold = true
     },
     PmenuBorder = {
@@ -40,24 +39,6 @@ local override = {
     PmenuDocBorder = {
         bg = p.bg_dark,
         fg = p.grey1
-    },
-    TelescopePromptBorder = {
-        bg = p.grey1,
-        fg = p.grey1
-    },
-    TelescopePreviewBorder = {
-        bg = p.bg_dark,
-        fg = p.grey1
-    },
-    TelescopeResultsBorder = {
-        bg = p.bg_dark,
-        fg = p.grey1
-    },
-    TelescopeSelection = {
-        bg = p.grey0
-    },
-    TelescopeSelectionCaret = {
-        bg = p.grey0
     },
     NormalFloat = {
         bg = p.bg_dark
@@ -78,45 +59,8 @@ local override = {
     SagaNormal = {
         bg = p.bg_dark
     },
-
-    CmpItemAbbrDeprecated = { fg = p.grey4},
-    CmpItemAbbrMatch = { fg = p.yellow.bright, bold = true },
-    CmpItemAbbrMatchFuzzy = { fg = p.yellow.bright, bold = true },
-
-    CmpItemKindField = { link = '@field' },
-    CmpItemKindProperty = { link = '@proprty' },
-    CmpItemKindEvent = { link = 'Type' },
-
-    CmpItemKindText = { fg = p.grey4 },
-    CmpItemKindEnum = { link = 'Type' },
-    CmpItemKindKeyword = { link = 'Keyword' },
-
-    CmpItemKindConstant = { link  = 'Constant' },
-    CmpItemKindConstructor = { link = 'Function'},
-    CmpItemKindReference = { link = 'Variable' },
-
-    CmpItemKindFunction = { link = 'Function' },
-    CmpItemKindStruct = { link = 'Type' },
-    CmpItemKindClass = { link = 'Type' },
-    CmpItemKindModule = { link = 'Macro' },
-    CmpItemKindOperator = { link = 'Operator' },
-
-    CmpItemKindVariable = { link = '@variable' },
-    CmpItemKindFile = { fg = p.blue1 },
-
-    CmpItemKindUnit = { link = 'Constant' },
-    CmpItemKindSnippet = { },
-    CmpItemKindFolder = { fg = p.yellow.dark },
-
-    CmpItemKindMethod = { link = 'Function' },
-    CmpItemKindValue = { link = 'Constant' },
-    CmpItemKindEnumMember = { link = 'Type' },
-
-    CmpItemKindInterface = { link = 'Type' },
-    CmpItemKindColor = { link = 'Constant' },
-    CmpItemKindTypeParameter = { link = 'Type' },
-
 }
+
 require 'nordic' .setup {
     override = override
 }

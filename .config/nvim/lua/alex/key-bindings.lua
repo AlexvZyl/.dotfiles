@@ -135,7 +135,7 @@ map_key(n, "gf", "<cmd>Lspsaga goto_definition<CR>", { silent = true })
 map_key(n, "gD", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 
 -- Show line diagnostics
-map_key(n, "L", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true })
+map_key(n, "L", "<cmd>Lspsaga show_line_diagnostics ++unfocus<CR>", { silent = true })
 
 -- Diagnsotic jump can use `<c-o>` to jump back
 map_key(n, "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })

@@ -52,13 +52,7 @@ require 'trouble'.setup {
     height = 11,
     use_diagnostic_signs = false,
     position = 'bottom',
-    signs = {
-        error = ' ',
-        warning = ' ',
-        info = ' ',
-        hint = '󱤅 ',
-        other = '󰠠 ',
-    },
+    signs = u.diagnostic_signs,
     auto_preview = false
 }
 

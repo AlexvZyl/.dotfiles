@@ -1,53 +1,26 @@
 local cmp = require 'cmp'
 local u = require 'alex.utils'
 
--- Icons in the cmp menu.
-local kind_icons = {
-    Text = "  │",
-    Method = "  │",
-    Function = " 󰊕 │",
-    Constructor = "  │",
-    Field = "  │",
-    Variable = "  │",
-    Class = " 󰠱 │" ,
-    Interface = "  │",
-    Module = " 󰏓 │",
-    Property = "  │" ,
-    Unit = "  │",
-    Value = "  │",
-    Enum = "  │",
-    EnumMember = "  │",
-    Keyword = " 󰌋 │",
-    Snippet = " 󰲋 │",
-    Color = "  │",
-    File = "  │",
-    Reference = "  │",
-    Folder = "  │",
-    Constant = " 󰏿 │",
-    Struct = " 󰠱 │",
-    Event = "  │",
-    Operator = "  │",
-    TypeParameter = " 󰘦 │",
-    Unknown = "  │"
-}
+-- Format the completion menu.
+-- Yes, I am that pedantic.
+local function format(_, item)
 
-local get_ws = function (max, len)
-  return (" "):rep(max - len)
-end
-
-local MAX_LABEL_WIDTH = 50
-local format = function(_, item)
+    -- Utils.
+    local MAX_LABEL_WIDTH = 50
+    local function whitespace(max, len)
+        return (" "):rep(max - len)
+    end
 
     -- Limit content width.
     local content = item.abbr
     if #content > MAX_LABEL_WIDTH then
         item.abbr = vim.fn.strcharpart(content, 0, MAX_LABEL_WIDTH) .. '…'
     else
-        item.abbr = content .. get_ws(MAX_LABEL_WIDTH, #content)
+        item.abbr = content .. whitespace(MAX_LABEL_WIDTH, #content)
     end
 
     -- Replace kind with icons.
-    item.kind = kind_icons[item.kind] or kind_icons.Unknown
+    item.kind = (u.kind_icons[item.kind] or u.kind_icons.Unknown) .. '│'
 
     -- Remove gibberish.
     item.menu = nil
@@ -56,6 +29,7 @@ local format = function(_, item)
 
 end
 
+-- Setup.
 cmp.setup {
 
     -- Format UI.
@@ -77,7 +51,7 @@ cmp.setup {
             winhighlight = "Normal:Pmenu,FloatBorder:PmenuDocBorder,CursorLine:PmenuSel,Search:None",
             scrollbar = true,
             border = u.border_chars_outer_thin,
-            side_padding = 1
+            side_padding = 1 -- Not working?
         },
     }
 

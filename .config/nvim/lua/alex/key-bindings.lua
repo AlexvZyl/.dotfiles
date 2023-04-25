@@ -211,7 +211,7 @@ function Cwd_current_buffer()
     vim.cmd ("cd " .. dir)
 end
 
-map_key(n_v, "gc", "<Cmd>lua Cwd_current_buffer()<CR><Cmd>NvimTreeRefresh<CR>", default_settings)
+map_key(n_v, "gc", "<Cmd>lua Cwd_current_buffer()<CR><Cmd>NvimTreeRefresh<CR><Cmd>NvimTreeFindFile<CR>", default_settings)
 
 -----------------------
 -- Debugger Protocol --

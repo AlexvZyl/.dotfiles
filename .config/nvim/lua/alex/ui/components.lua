@@ -82,9 +82,9 @@ vim.notify = notify
 require "noice".setup {
     cmdline = {
         format = {
-            cmdline = { title = "" },
-            lua = { title = "" },
-            help = { title = "" }
+            cmdline = { title = '', icon = '  ' },
+            lua = { title = '', icon = ' 󰢱 ' },
+            help = { title = '', icon = ' 󰋖 ' }
         },
     },
     views = {

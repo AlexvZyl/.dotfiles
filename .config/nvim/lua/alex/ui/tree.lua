@@ -57,6 +57,10 @@ local renderer = {
     }
 }
 
+local system_open = {
+    cmd = 'zathura',
+}
+
 local view = {
     cursorline = false,
     hide_root_folder = false,
@@ -68,14 +72,15 @@ local view = {
             { key = "<C-k>", action = "" },
             { key = "[", action = "dir_up" },
             { key = "]", action = "cd" },
-            { key = "<Tab>", action = "edit" }
+            { key = "<Tab>", action = "edit" },
+            { key = "o", action = "system_open" }
         }
     },
     width = {
         max = 40,
         min = 40,
         padding = 1
-    },
+    }
 }
 
 -- Setup.
@@ -83,6 +88,7 @@ require 'nvim-tree'.setup {
     hijack_cursor = true,
     sync_root_with_cwd = true,
     view = view,
+    system_open = system_open,
     git = {
         ignore = false
     },

@@ -30,5 +30,5 @@ try:
             duration = end - start
             print("%{F#EBCB8B}%{F-} " + start.strftime("%H:%M") + " [" + str(int(duration.total_seconds()/3600)) + "]")
 
-except(IndexError):
+except:
     print("%{F#EBCB8B}%{F-}  ")

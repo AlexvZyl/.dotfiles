@@ -13,12 +13,11 @@ command = [ "curl", "--location", "--request", "GET",
 try:
     response = subprocess.run(command, stdout=subprocess.PIPE, stderr = subprocess.DEVNULL).stdout.decode('utf-8')
     if 'error' in response: 
-        print("Error.")
-        print(response)
+        print("Error: " + response)
     else:
-        with open("loadshedding.json", 'w') as file:
+        with open("/home/alex/.config/polybar/scripts/loadshedding.json", 'w') as file:
             json.dump(response, file)
 
 # Could not connect.
-except(json.JSONDecodeError):
-    print("Error.")
+except(json.JSONDecodeError) as e:
+    print("Error: " + str(e))

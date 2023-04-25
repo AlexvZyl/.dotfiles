@@ -12,3 +12,4 @@ lazy-lock.json
 .newsboat/cache.db.lock
 .newsboat/history.cmdline
 .config/polybar/scripts/loadshedding.json
+.config/lazygit/state.yml

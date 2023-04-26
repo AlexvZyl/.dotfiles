@@ -1,3 +1,8 @@
+-- Do not setup ChatGPT if the key does not exist.
+if not vim.env.OPENAI_API_KEY then
+    return
+end
+
 local u = require 'alex.utils'
 
 require 'chatgpt' .setup {

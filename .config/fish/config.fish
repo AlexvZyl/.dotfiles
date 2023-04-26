@@ -24,7 +24,7 @@ set -gx PF_COL3 "1"
 # Use lazygit with the config.
 alias lazygit-dotfiles='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias lg='lazygit'
-alias lgt='lazygit-dotfiles'
+alias lgd='lazygit-dotfiles'
 
 # Use neovim as manpage pager.
 set -x MANPAGER 'nvim +Man!'

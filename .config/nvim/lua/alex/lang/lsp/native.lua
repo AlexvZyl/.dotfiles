@@ -66,19 +66,25 @@ lsp_config.rust_analyzer.setup {
 -- LaTeX.
 lsp_config.texlab.setup {
     on_attach = on_attach,
-    flags = lsp_flags,
+    flags = lsp_flags
 }
 
 -- CMake.
 lsp_config.cmake.setup {
     on_attach = on_attach,
-    flags = lsp_flags,
+    flags = lsp_flags
 }
 
 -- JSON.
 lsp_config.jsonls.setup {
     on_attach = on_attach,
-    flags = lsp_flags,
+    flags = lsp_flags
+}
+
+-- YAML.
+lsp_config.yamlls.setup {
+    on_attach = on_attach,
+    flags = lsp_flags
 }
 
 -- Diagnostics signs colors and character.

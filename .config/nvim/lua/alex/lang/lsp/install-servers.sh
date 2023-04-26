@@ -30,3 +30,6 @@ pip install cmake-language-server
 
 # Json.
 yay -S vscode-json-languagese
+
+# Yaml.
+yay -S yaml-language-server

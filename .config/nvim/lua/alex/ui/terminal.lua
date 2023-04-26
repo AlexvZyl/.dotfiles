@@ -31,7 +31,7 @@ function _Term_width()
 end
 
 function _Term_height()
-    return vim.o.lines
+    return vim.o.lines - 3
 end
 
 require 'toggleterm' .setup {

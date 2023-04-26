@@ -234,4 +234,6 @@ map_key(all_modes, "<A-W>", "<Cmd>lua require 'dapui'.toggle()<CR>", default_set
 -- AI --
 --------
 
-map_key(n, "<Leader>c", "<Cmd>ChatGPT<CR>", default_settings)
+if vim.env.OPENAI_API_KEY then
+    map_key(n, "<Leader>c", "<Cmd>ChatGPT<CR>", default_settings)
+end

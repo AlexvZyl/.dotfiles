@@ -1,7 +1,10 @@
--- Main setup.
+local u = require 'alex.utils'
 
 -- Environment.
-vim.cmd 'luafile ~/.private/nvim_env.lua'
+local env_file = os.getenv('HOME') .. '/.private/nvim_env.lua'
+if u.file_exists(env_file) then
+    vim.cmd('luafile ' .. env_file)
+end
 
 -- These have to be run first and in this order.
 -- require 'alex.lazy'

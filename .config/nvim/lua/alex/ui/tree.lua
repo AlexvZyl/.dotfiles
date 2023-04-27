@@ -58,7 +58,7 @@ local renderer = {
 }
 
 local system_open = {
-    cmd = 'zathura',
+    cmd = 'zathura'
 }
 
 local view = {

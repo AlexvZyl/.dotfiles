@@ -53,10 +53,10 @@ map_key(n_t, '<C-k>','<Cmd>wincmd k<CR>', default_settings)
 map_key(n_t, '<C-l>','<Cmd>wincmd l<CR>', default_settings)
 
 -- Resizing windows.
-map_key(n_t, '<C-=>','<Cmd>vertical resize +5<CR>', default_settings)
-map_key(n_t, '<C-->','<Cmd>vertical resize -5<CR>', default_settings)
-map_key(n_t, '<C-+>','<Cmd>horizontal resize +5<CR>', default_settings)
-map_key(n_t, '<C-_>','<Cmd>horizontal resize -5<CR>', default_settings)
+map_key(n_t, "<C-Up>", ":resize -2<CR>", default_settings)
+map_key(n_t, "<C-Down>", ":resize +2<CR>", default_settings)
+map_key(n_t, "<C-Left>", ":vertical resize -2<CR>", default_settings)
+map_key(n_t, "<C-Right>", ":vertical resize +2<CR>", default_settings)
 
 -- Commenting.
 map_key(exclude_t, '<C-/>', '<Cmd>Commentary<CR>', default_settings)
@@ -77,9 +77,6 @@ map_key(exclude_t, '<C-Tab>', '<Cmd>Telescope buffers<CR>', default_settings)
 
 -- Finding.
 map_key(exclude_t, '<C-f>', '<Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>', default_settings)
-
--- Disable the search highlight when hitting esc.
--- map_key(all_modes, '<Esc>', '<Cmd>noh<CR>', { noremap = false })
 
 -- Undo.
 map_key(exclude_t, '<C-Z>', '<Cmd>undo<CR>', default_settings)

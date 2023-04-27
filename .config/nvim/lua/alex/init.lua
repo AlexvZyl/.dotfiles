@@ -11,7 +11,7 @@ end
 require 'alex.packer'
 require 'alex.theme'
 
--- More setup.
+-- Core.
 require 'alex.neovim'
 require 'alex.neovide'
 require 'alex.ui'

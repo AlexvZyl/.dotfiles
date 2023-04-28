@@ -15,3 +15,4 @@ jobs:
         uses: ludeeus/action-shellcheck@master
         with:
           scandir: .scripts/
+          severity: error

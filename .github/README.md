@@ -100,4 +100,18 @@ This [config](https://github.com/AlexvZyl/.dotfiles/tree/main/.config/nvim) has 
 
 > ℹ️ &nbsp; I try to keep all of the key bindings in [this file](https://github.com/AlexvZyl/.dotfiles/blob/main/.config/nvim/lua/alex/key-bindings.lua).
 
+### Installation
+
+If you wish to only use the Neovim configs, you can install them with:
+
+```bash
+curl https://github.com/AlexvZyl/.dotfiles/tree/main/.scripts/install/neovim.sh | bash
+
+```
+And to update:
+```bash
+alias nvim-git="git --work-tree=\"$HOME/\" --git-dir=\"$HOME/.config/nvim/.git/\""
+nvim-git fetch && nvim-git pull
+```
+
 ![image](https://user-images.githubusercontent.com/81622310/233982609-f9c15e39-da60-43d8-8c5c-4761db95ad9d.png)

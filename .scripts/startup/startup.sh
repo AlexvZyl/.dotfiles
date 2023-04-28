@@ -18,7 +18,4 @@ feh --bg-fill ~/.wallpapers/Cloud_2_Nord.png
 ~/.config/polybar/launch.sh
 
 # Update loadshedding schedule.
-python ~/.config/polybar/scripts/update_loadshedding.py
-
-# Environment variables.
-export $EDITOR="nvim"
+~/.config/cron/update_loadshedding.sh &

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WORK_TREE="$HOME/GitHub"
+WORK_TREE="$HOME"
 NVIM_DIR="$WORK_TREE/.config/nvim"
 NVIM_BACKUP="$NVIM_DIR.backup"
 GIT_DIR="$NVIM_DIR/.git"

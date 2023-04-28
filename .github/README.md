@@ -100,7 +100,7 @@ This [config](https://github.com/AlexvZyl/.dotfiles/tree/main/.config/nvim) has 
 
 > ℹ️ &nbsp; I try to keep all of the key bindings in [this file](https://github.com/AlexvZyl/.dotfiles/blob/main/.config/nvim/lua/alex/key-bindings.lua).
 
-### Installation
+## Installation
 
 If you wish to only use the Neovim configs, you can install them with:
 

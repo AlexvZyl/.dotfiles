@@ -5,7 +5,9 @@ sudo pacman -Syyu
 
 # Install yay.
 git clone https://aur.archlinux.org/yay.git ~/GitHub/yay/
-cd ~/GitHub/yay/ && makepkg -si && cd ~
+cd ~/GitHub/yay/ || exit
+makepkg -si
+cd ~ || exit
 
 # Setup packages.
 ~/.scripts/packages/setup.sh

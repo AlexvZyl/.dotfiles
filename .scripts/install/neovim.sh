@@ -16,7 +16,8 @@ if [ -d $NVIM_DIR ]; then
     mv "$NVIM_DIR" "$NVIM_BACKUP"
 fi
 
-mkdir -p "$GIT_DIR" && cd "$GIT_DIR"
+mkdir -p "$GIT_DIR"
+cd "$GIT_DIR" || exit
 git init --bare
 git remote add -f origin https://github.com/AlexvZyl/.dotfiles
 

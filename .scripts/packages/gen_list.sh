@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo pacman -Qe > ~/.scripts/packages/packages.txt
+pacman -Qe > ~/.scripts/packages/packages.txt | sudo tee file

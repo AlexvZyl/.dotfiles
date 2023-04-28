@@ -24,7 +24,7 @@ try:
             time_left = end - now
             hours, remainder = divmod(int(time_left.total_seconds()), 3600)
             minutes, _ = divmod(remainder, 60)
-            print("%{F#BF616A}%{F-} " + f"{hours:02d}:{minutes:02d}")
+            print("%{F#BF616A} %{F#EBCB8B}󱎫 %{F-}" + f"{hours:02d}:{minutes:02d}" + " %{F#BF616A}")
         # Display next loadshedding.
         else:
             duration = end - start

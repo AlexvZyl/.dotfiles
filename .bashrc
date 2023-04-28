@@ -83,11 +83,13 @@ _open_files_for_editing() {
 
 # alias ef='_open_files_for_editing'     # 'ef' opens given file(s) for editing
 
-# Alias for config.
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+# Alias for using git with the dotfiles.
+alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
-# Use lazygit with config.
-alias lazygit-dotfiles='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+# Lazygit.
+alias lg="lazygit"
+alias lazygit-dotfiles="lg --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias lgd="lazygit-dotfiles"
 
 # Use neovim as manpage pager.
 export MANPAGER='nvim +Man!'
@@ -96,4 +98,6 @@ export MANWIDTH=999
 # alias pacdiff=eos-pacdiff
 ################################################################################
 
-source ~/.private/env.sh
+if [ -e ~/.private/env.sh ]; then
+    source ~/.private/env.sh
+fi

@@ -1,0 +1,28 @@
+{"level":"info","msg":"language: en","time":"2023-04-26T13:05:21+02:00"}
+{"command":"git --version","level":"debug","msg":"RunCommand","time":"2023-04-26T13:05:21+02:00"}
+{"command":"git rev-parse --git-dir","level":"debug","msg":"RunCommand","time":"2023-04-26T13:05:21+02:00"}
+{"command":"git rev-parse --is-bare-repository","level":"debug","msg":"RunCommand","time":"2023-04-26T13:05:21+02:00"}
+{"level":"info","msg":"starting main loop","time":"2023-04-26T13:05:21+02:00"}
+{"level":"info","msg":"Binary is not built with the buildBinary flag so we won't check for an update","time":"2023-04-26T13:05:21+02:00"}
+{"command":"git rev-parse --is-bare-repository","level":"debug","msg":"RunCommand","time":"2023-04-26T13:05:21+02:00"}
+{"command":"git fetch","level":"debug","msg":"RunCommand","time":"2023-04-26T13:05:21+02:00"}
+{"level":"info","msg":"refreshing all scopes in async mode","time":"2023-04-26T13:05:21+02:00"}
+{"command":"git branch -r","level":"debug","msg":"RunCommand","time":"2023-04-26T13:05:21+02:00"}
+{"command":"git tag --list --sort=-creatordate","level":"debug","msg":"RunCommand","time":"2023-04-26T13:05:21+02:00"}
+{"command":"git merge-base \"HEAD\" \"HEAD\"@{u}","level":"debug","msg":"RunCommand","time":"2023-04-26T13:05:21+02:00"}
+{"command":"git stash list -z --pretty='%gs'","level":"debug","msg":"RunCommand","time":"2023-04-26T13:05:21+02:00"}
+{"command":"git for-each-ref --sort=-committerdate --format=\"%(HEAD)%00%(refname:short)%00%(upstream:short)%00%(upstream:track)\" refs/heads","level":"debug","msg":"RunCommand","time":"2023-04-26T13:05:21+02:00"}
+{"level":"debug","msg":"Error getting git config value for key: status.showUntrackedFiles. Error: the key is not found for [git config --get --null status.showUntrackedFiles]","time":"2023-04-26T13:05:21+02:00"}
+{"command":"git status --untracked-files=all --porcelain -z","level":"debug","msg":"RunCommand","time":"2023-04-26T13:05:21+02:00"}
+{"command":"git symbolic-ref --short HEAD","level":"debug","msg":"RunCommand","time":"2023-04-26T13:05:21+02:00"}
+{"command":"git for-each-ref --sort=-committerdate --format=\"%(HEAD)%00%(refname:short)%00%(upstream:short)%00%(upstream:track)\" refs/heads","level":"debug","msg":"RunCommand","time":"2023-04-26T13:05:21+02:00"}
+{"command":"git merge-base \"HEAD\" \"master\"","level":"debug","msg":"RunCommand","time":"2023-04-26T13:05:21+02:00"}
+{"command":"git merge-base \"HEAD\" \"master\"","level":"error","msg":"fatal: Not a valid object name master\n","time":"2023-04-26T13:05:21+02:00"}
+{"level":"info","msg":"refreshing the following scopes in async mode: branches,commits,remotes,tags","time":"2023-04-26T13:05:22+02:00"}
+{"command":"git tag --list --sort=-creatordate","level":"debug","msg":"RunCommand","time":"2023-04-26T13:05:22+02:00"}
+{"command":"git branch -r","level":"debug","msg":"RunCommand","time":"2023-04-26T13:05:22+02:00"}
+{"command":"git merge-base \"HEAD\" \"HEAD\"@{u}","level":"debug","msg":"RunCommand","time":"2023-04-26T13:05:22+02:00"}
+{"command":"git for-each-ref --sort=-committerdate --format=\"%(HEAD)%00%(refname:short)%00%(upstream:short)%00%(upstream:track)\" refs/heads","level":"debug","msg":"RunCommand","time":"2023-04-26T13:05:22+02:00"}
+{"command":"git symbolic-ref --short HEAD","level":"debug","msg":"RunCommand","time":"2023-04-26T13:05:22+02:00"}
+{"command":"git merge-base \"HEAD\" \"master\"","level":"debug","msg":"RunCommand","time":"2023-04-26T13:05:22+02:00"}
+{"command":"git merge-base \"HEAD\" \"master\"","level":"error","msg":"fatal: Not a valid object name master\n","time":"2023-04-26T13:05:22+02:00"}

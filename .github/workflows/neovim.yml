@@ -1,4 +1,4 @@
-name: Format Neovim Config
+name: Neovim format
 
 on:
   push:

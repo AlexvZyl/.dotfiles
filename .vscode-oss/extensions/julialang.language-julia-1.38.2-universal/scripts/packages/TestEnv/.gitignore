@@ -1,8 +1,0 @@
-*.DS_Store
-*.jl.cov
-*.jl.*.cov
-*.jl.mem
-Manifest.toml
-docs/build
-docs/site
-.vscode/settings.json

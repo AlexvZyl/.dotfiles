@@ -1,8 +1,0 @@
-*.pyc
-*.un~
-/build/
-/deps/deps.jl
-/deps/build.log
-/deps/JUPYTER
-/deps/julia-*
-*.jl.*.cov

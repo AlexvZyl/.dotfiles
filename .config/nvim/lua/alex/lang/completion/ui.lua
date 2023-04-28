@@ -4,11 +4,10 @@ local u = require 'alex.utils'
 -- Format the completion menu.
 -- Yes, I am that pedantic.
 local function format(_, item)
-
     -- Utils.
     local MAX_LABEL_WIDTH = 50
     local function whitespace(max, len)
-        return (" "):rep(max - len)
+        return (' '):rep(max - len)
     end
 
     -- Limit content width.
@@ -26,7 +25,6 @@ local function format(_, item)
     item.menu = nil
 
     return item
-
 end
 
 -- Setup.
@@ -35,24 +33,23 @@ cmp.setup {
     -- Format UI.
     formatting = {
         fields = { 'kind', 'abbr' },
-        format = format
+        format = format,
     },
 
     -- Popup window.
     window = {
         completion = cmp.config.window.bordered {
-            winhighlight = "Normal:Pmenu,FloatBorder:PmenuBorder,CursorLine:PmenuSel,Search:None",
+            winhighlight = 'Normal:Pmenu,FloatBorder:PmenuBorder,CursorLine:PmenuSel,Search:None',
             scrollbar = true,
             border = u.border_chars_outer_thin,
             col_offset = -1,
-            side_padding = 0
+            side_padding = 0,
         },
         documentation = cmp.config.window.bordered {
-            winhighlight = "Normal:Pmenu,FloatBorder:PmenuDocBorder,CursorLine:PmenuSel,Search:None",
+            winhighlight = 'Normal:Pmenu,FloatBorder:PmenuDocBorder,CursorLine:PmenuSel,Search:None',
             scrollbar = true,
             border = u.border_chars_outer_thin,
-            side_padding = 1 -- Not working?
+            side_padding = 1, -- Not working?
         },
-    }
-
+    },
 }

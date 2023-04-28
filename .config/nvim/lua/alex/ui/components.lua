@@ -5,14 +5,14 @@ local u = require 'alex.utils'
 ----------------------
 
 -- Allow FAR to undo.
-vim.cmd('let g:far#enable_undo=1')
+vim.cmd 'let g:far#enable_undo=1'
 
 ----------------
 -- Auto pairs --
 ----------------
 
-require 'nvim-autopairs'.setup {
-    map_cr = false
+require('nvim-autopairs').setup {
+    map_cr = false,
 }
 
 ----------
@@ -20,29 +20,27 @@ require 'nvim-autopairs'.setup {
 ----------
 
 local leap = require 'leap'
-leap.setup {
-
-}
+leap.setup {}
 leap.set_default_keymaps(true)
 
 ----------------
 -- Illuminate --
 ----------------
 
-require 'illuminate'.configure {
+require('illuminate').configure {
     under_cursor = false,
     delay = 500,
     filetypes_denylist = {
         'startify',
-        'NvimTree'
-    }
+        'NvimTree',
+    },
 }
 
 -----------------
 -- Indentation --
 -----------------
 
-require 'indent_blankline'.setup {
+require('indent_blankline').setup {
     show_end_of_line = true,
     show_current_context = true,
     show_current_context_start = false,
@@ -57,12 +55,10 @@ require 'indent_blankline'.setup {
 -- Setup which-key --
 ---------------------
 
-require 'which-key'.setup {
-
-}
+require('which-key').setup {}
 
 -- Timeout.
-vim.cmd('set timeoutlen =1000')
+vim.cmd 'set timeoutlen =1000'
 
 ---------------------------------
 -- Setup default notifications --
@@ -71,7 +67,7 @@ vim.cmd('set timeoutlen =1000')
 local notify = require 'notify'
 notify.setup {
     fps = 60,
-    level = "ERROR"
+    level = 'ERROR',
 }
 vim.notify = notify
 
@@ -79,12 +75,12 @@ vim.notify = notify
 -- Noice --
 -----------
 
-require "noice".setup {
+require('noice').setup {
     cmdline = {
         format = {
             cmdline = { title = '', icon = '  ' },
             lua = { title = '', icon = ' 󰢱 ' },
-            help = { title = '', icon = ' 󰋖 ' }
+            help = { title = '', icon = ' 󰋖 ' },
         },
     },
     views = {
@@ -94,16 +90,16 @@ require "noice".setup {
                 padding = { 0, 1 },
             },
             win_options = {
-                winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+                winhighlight = 'NormalFloat:NormalFloat,FloatBorder:FloatBorder',
             },
-        }
+        },
     },
     lsp = {
         -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
         override = {
-          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-          ["vim.lsp.util.stylize_markdown"] = true,
-          ["cmp.entry.get_documentation"] = true,
+            ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
+            ['vim.lsp.util.stylize_markdown'] = true,
+            ['cmp.entry.get_documentation'] = true,
         },
     },
     -- you can enable a preset for easier configuration
@@ -120,7 +116,7 @@ require "noice".setup {
 -- Colorizer --
 ---------------
 
-require 'colorizer' .setup {
+require('colorizer').setup {
     user_default_options = {
         mode = 'virtualtext',
         RRGGBB = true,
@@ -128,5 +124,5 @@ require 'colorizer' .setup {
         names = false,
         RGB = false,
         virtualtext = ' ',
-    }
+    },
 }

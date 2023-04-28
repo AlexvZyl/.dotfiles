@@ -1,7 +1,5 @@
 -- Statusclumn was added in 0.9.
-if vim.version.major == 0 and vim.version.minor < 9 then
-    return
-end
+if vim.version.major == 0 and vim.version.minor < 9 then return end
 
 -- No separator.
 vim.opt.numberwidth = 4

@@ -13,42 +13,42 @@ config.shortcut = {
         desc = '  New file ',
         action = 'enew',
         group = '@string',
-        key = 'n'
+        key = 'n',
     },
     {
         desc = '   Update ',
         action = 'PackerSync',
         group = '@string',
-        key = 'u'
+        key = 'u',
     },
     {
         desc = '   File/path ',
         action = 'Telescope find_files find_command=rg,--hidden,--files',
         group = '@string',
-        key = 'f'
+        key = 'f',
     },
     {
         desc = '   Quit ',
         action = 'q!',
         group = '@macro',
-        key = 'q'
-    }
+        key = 'q',
+    },
 }
 
 config.week_header = {}
 config.week_header.enable = true
 -- config.header = {
-    -- '███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗',
-    -- '████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║',
-    -- '██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║',
-    -- '██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║',
-    -- '██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║',
-    -- '╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝',
+-- '███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗',
+-- '████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║',
+-- '██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║',
+-- '██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║',
+-- '██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║',
+-- '╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝',
 -- }
 
 config.footer = {
     '',
-    '󰛨  Dala what you must.'
+    '󰛨  Dala what you must.',
 }
 
 config.packages = {}
@@ -70,23 +70,23 @@ config.header_bottom_padding = 1
 config.footer_top_padding = 3
 
 if hyper then
-    require 'dashboard' .setup {
+    require('dashboard').setup {
         theme = 'hyper',
-        config = config
+        config = config,
     }
     return
 end
 
 local custom_center = {
     {
-        icon = "  ",
-		desc = 'New file      ',
-		action = "enew",
+        icon = '  ',
+        desc = 'New file      ',
+        action = 'enew',
     },
     {
         icon = '  ',
         desc = 'Recent files  ',
-        action =  'Telescope oldfiles',
+        action = 'Telescope oldfiles',
     },
     {
         icon = '  ',
@@ -99,27 +99,27 @@ local custom_center = {
         action = 'Telescope live_grep',
     },
     {
-		icon = "  ",
-		desc = "Update plugins",
-		action = "PackerSync",
-	},
+        icon = '  ',
+        desc = 'Update plugins',
+        action = 'PackerSync',
+    },
     {
-        icon = "  ",
-        desc = "Quit          ",
-        action = "q!"
-    }
+        icon = '  ',
+        desc = 'Quit          ',
+        action = 'q!',
+    },
 }
 
-require 'dashboard' .setup({
-  theme = 'doom',
-  config = {
-    week_header = {
-        enable = true
+require('dashboard').setup {
+    theme = 'doom',
+    config = {
+        week_header = {
+            enable = true,
+        },
+        header_bottom_padding = 3,
+        footer_top_padding = 3,
+        header = config.header,
+        center = custom_center,
+        footer = config.footer,
     },
-    header_bottom_padding = 3,
-    footer_top_padding = 3,
-    header = config.header,
-    center = custom_center,
-    footer = config.footer
-  }
-})
+}

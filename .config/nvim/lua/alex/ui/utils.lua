@@ -7,17 +7,16 @@ local M = {}
 ---@param force? boolean defaults to false.
 ---@param ignore_list? table of buffer types to ignore.
 function M.close_current_buffer_LV(force, ignore_list)
-
     -- Command used to kill the buffer.
-    local kill_command = "bd"
+    local kill_command = 'bd'
 
     -- Default list of items to ignore.
     if not ignore_list then
         ignore_list = {
-           'nvimtree',
-           'nofile',
-           'startify',
-           'terminal'
+            'nvimtree',
+            'nofile',
+            'startify',
+            'terminal',
         }
     end
 
@@ -42,15 +41,15 @@ function M.close_current_buffer_LV(force, ignore_list)
     if not force then
         local warning
         if bo[bufnr].modified then
-            warning = fmt([[(%s) has unsaved changes.]], fnamemodify(bufname, ":t"))
-        elseif buf_type == "terminal" then
+            warning = fmt([[(%s) has unsaved changes.]], fnamemodify(bufname, ':t'))
+        elseif buf_type == 'terminal' then
             warning = fmt([[Terminal %s will be killed.]], bufname)
         end
         if warning then
             vim.ui.input({
-            prompt = string.format([[%s. Close it anyway? [y]es or [n]o (default: no): ]], warning),
+                prompt = string.format([[%s. Close it anyway? [y]es or [n]o (default: no): ]], warning),
             }, function(choice)
-                if choice:match "ye?s?" then force = true end
+                if choice:match 'ye?s?' then force = true end
             end)
             if not force then return end
         end
@@ -65,9 +64,7 @@ function M.close_current_buffer_LV(force, ignore_list)
     if #windows == 0 then return end
 
     -- Create force command.
-    if force then
-        kill_command = kill_command .. "!"
-    end
+    if force then kill_command = kill_command .. '!' end
 
     -- Get list of active buffers
     local buffers = vim.tbl_filter(function(buf)
@@ -89,13 +86,10 @@ function M.close_current_buffer_LV(force, ignore_list)
 
     -- Check if buffer still exists, to ensure the target buffer wasn't killed
     -- due to options like bufhidden=wipe.
-    if api.nvim_buf_is_valid(bufnr) and bo[bufnr].buflisted then
-        vim.cmd(fmt("%s %d", kill_command, bufnr))
-    end
+    if api.nvim_buf_is_valid(bufnr) and bo[bufnr].buflisted then vim.cmd(fmt('%s %d', kill_command, bufnr)) end
 
     -- If there was only one buffer (which had to be the current one), vim will
     -- create a new buffer (and keep a window open) on :bd.
-
 end
 
-return  M
+return M

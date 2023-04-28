@@ -3,7 +3,7 @@
 ----------------
 
 -- local rt = require 'rust-tools'
--- 
+--
 -- rt.setup({
 --   server = {
 --     on_attach = function(_, bufnr)
@@ -21,4 +21,4 @@
 -- menuone: popup even when there's only one match
 -- noinsert: Do not insert text until a selection is made
 -- noselect: Do not select, force user to select one from the menu
-vim.cmd('set completeopt=menuone,noinsert,noselect')
+vim.cmd 'set completeopt=menuone,noinsert,noselect'

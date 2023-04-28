@@ -1,19 +1,19 @@
 -- Initial setup.
-require 'nordic' .setup {
+require('nordic').setup {
     bright_border = true,
-	telescope = {
-		style = 'flat',
-	},
-	bold_keywords = false,
-	italic_comments = true,
-	transparent_bg = false,
+    telescope = {
+        style = 'flat',
+    },
+    bold_keywords = false,
+    italic_comments = true,
+    transparent_bg = false,
     cursorline = {
         theme = 'dark',
-        bold = false
+        bold = false,
     },
     noice = {
-        style = 'classic'
-    }
+        style = 'classic',
+    },
 }
 
 -- Overrides.
@@ -24,49 +24,49 @@ local override = {
     },
     PopupBorder = {
         bg = p.bg_dark,
-        fg = p.grey1
+        fg = p.grey1,
     },
     Pmenu = {
-        link = 'PopupNormal'
+        link = 'PopupNormal',
     },
     PmenuSel = {
         bg = p.grey0,
-        bold = true
+        bold = true,
     },
     PmenuBorder = {
-        link = 'PopupBorder'
+        link = 'PopupBorder',
     },
     PmenuDocBorder = {
         bg = p.bg_dark,
-        fg = p.grey1
+        fg = p.grey1,
     },
     NormalFloat = {
-        bg = p.bg_dark
+        bg = p.bg_dark,
     },
     FloatBorder = {
         bg = p.bg_dark,
     },
     NoiceCmdlineIcon = {
-        bg = p.bg_dark
+        bg = p.bg_dark,
     },
     NoiceCmdlinePopupBorder = {
-        fg = p.cyan.base
+        fg = p.cyan.base,
     },
     SagaBorder = {
         bg = p.bg_dark,
-        fg = p.grey1
+        fg = p.grey1,
     },
     SagaNormal = {
-        bg = p.bg_dark
+        bg = p.bg_dark,
     },
 }
 
-require 'nordic' .setup {
-    override = override
+require('nordic').setup {
+    override = override,
 }
 
 -- Load the scheme.
 vim.cmd.colorscheme 'nordic'
 
-vim.cmd([[highlight DiagnosticShowBorder guibg=]] .. p.bg_dark .. " guifg=" .. p.grey1)
+vim.cmd([[highlight DiagnosticShowBorder guibg=]] .. p.bg_dark .. ' guifg=' .. p.grey1)
 vim.cmd([[highlight SagaNormal guibg=]] .. p.bg_dark)

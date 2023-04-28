@@ -13,7 +13,7 @@ local ui = {
 }
 
 local lightbulb = {
-    enable = false
+    enable = false,
 }
 
 local definition = {
@@ -27,33 +27,33 @@ local winbar = {
     enable = false,
     folder_level = 1,
     show_file = true,
-    separator = '  '
+    separator = '  ',
 }
 
 local diagnostic = {
     show_code_action = false,
-    on_insert = false
+    on_insert = false,
 }
 
-require 'lspsaga' .setup {
+require('lspsaga').setup {
     lightbulb = lightbulb,
     ui = ui,
     definition = definition,
     symbol_in_winbar = winbar,
-    diagnostic = diagnostic
+    diagnostic = diagnostic,
 }
 
 ---------------------------
 -- Trouble (diagnostics) --
 ---------------------------
 
-require 'trouble'.setup {
+require('trouble').setup {
     padding = true,
     height = 11,
     use_diagnostic_signs = false,
     position = 'bottom',
     signs = u.diagnostic_signs,
-    auto_preview = false
+    auto_preview = false,
 }
 
 -- Make trouble update to the current buffer.

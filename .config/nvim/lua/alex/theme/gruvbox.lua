@@ -4,13 +4,13 @@
 
 -- Apply custom highlights on colorscheme change.
 -- Must be declared before executing ':colorscheme'.
-vim.cmd([[
+vim.cmd [[
     augroup custom_highlights_gruvboxmaterial
       autocmd!
       autocmd ColorScheme gruvbox-material 
       \ hi TroubleNormal guibg=#141617
     augroup END
-]])
+]]
 
 -- vim.g.gruvbox_material_foreground = 'original'
 -- vim.g.gruvbox_material_foreground = 'mix'
@@ -23,7 +23,7 @@ vim.g.gruvbox_material_disable_terminal_colors = 0
 vim.g.gruvbox_material_statusline_style = 'default'
 
 -- Custom colors for gruvbox-material.
-vim.cmd([[
+vim.cmd [[
     function! s:gruvbox_material_custom() abort
         let l:palette = gruvbox_material#get_palette(g:gruvbox_material_background, g:gruvbox_material_foreground, {})
         call gruvbox_material#highlight('CursorLineNr', l:palette.orange, l:palette.none)
@@ -44,7 +44,7 @@ vim.cmd([[
         autocmd!
         autocmd ColorScheme gruvbox-material call s:gruvbox_material_custom()
     augroup END
-]])
+]]
 
 -- Set the colorscheme.
-vim.cmd.colorscheme("gruvbox-material")
+vim.cmd.colorscheme 'gruvbox-material'

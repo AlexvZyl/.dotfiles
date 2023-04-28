@@ -4,6 +4,8 @@
 
 [![Scripts](https://github.com/AlexvZyl/.dotfiles/workflows/Scripts/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=Scripts) 
 [![neovim](https://github.com/AlexvZyl/.dotfiles/workflows/Neovim%20format/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=Neovim%20format)
+![Size](https://img.shields.io/github/repo-size/AlexvZyl/.dotfiles?style=flat)
+![Activity](https://img.shields.io/github/commit-activity/m/AlexvZyl/.dotfiles)
 
 The configuration files for my Linux desktop.  Supports Arch based distros using Gnome and/or i3.  Also, currently it assumes you have an Nvidia GPU and Intel CPU.
 

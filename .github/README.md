@@ -2,7 +2,7 @@
 
 ![image](https://user-images.githubusercontent.com/81622310/233985068-9a630612-5d32-4cc0-a2e1-978d5a94856a.png)
 
-[![Scripts](https://github.com/AlexvZyl/.dotfiles/workflows/ShellCheck/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=ShellCheck) 
+[![Scripts](https://github.com/AlexvZyl/.dotfiles/workflows/Scripts/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=Scripts) 
 
 The configuration files for my Linux desktop.  Supports Arch based distros using Gnome and/or i3.  Also, currently it assumes you have an Nvidia GPU and Intel CPU.
 

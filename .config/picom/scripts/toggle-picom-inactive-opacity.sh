@@ -10,15 +10,12 @@ STATE_FILE="/home/alex/.config/picom/read-mode-state"
 # Check dim state.
 if grep -Fxq "$DIM" $FILENAME
 
-
 # Currently dim.
 then
     sed -i "s/$DIM/$NO_DIM/g" $FILENAME
     echo ' On' >> $STATE_FILE
-
 # Currently no dim.
 else
     sed -i "s/$NO_DIM/$DIM/g" $FILENAME
     echo 'Off' >> $STATE_FILE
-
 fi

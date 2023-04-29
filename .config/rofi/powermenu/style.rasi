@@ -21,7 +21,7 @@ window {
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
-    border-radius:               15px;
+    border-radius:               10px;
     border-color:                @selected;
     cursor:                      "default";
     background-color:            @background;
@@ -34,7 +34,7 @@ mainbox {
     margin:                      0px;
     padding:                     30px;
     border:                      2px solid;
-    border-radius:               15px;
+    border-radius:               10px;
     border-color:                @border;
     background-color:            transparent;
     children:                    [ "listview" ];
@@ -46,7 +46,7 @@ message {
     margin:                      0px;
     padding:                     12px;
     border:                      0px solid;
-    border-radius:               15px;
+    border-radius:               10px;
     border-color:                @selected;
     background-color:            @background-alt;
     text-color:                  @foreground;
@@ -64,7 +64,7 @@ textbox {
 error-message {
     padding:                     12px;
     border:                      0px solid;
-    border-radius:               15px;
+    border-radius:               10px;
     border-color:                @selected;
     background-color:            @background;
     text-color:                  @foreground;
@@ -87,7 +87,7 @@ listview {
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
-    border-radius:               15px;
+    border-radius:               10px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
@@ -101,7 +101,7 @@ element {
     margin:                      0px;
     padding:                     35px 0px;
     border:                      0px;
-    border-radius:               15px;
+    border-radius:               10px;
     border-color:                @selected;
     background-color:            @background-alt;
     text-color:                  @foreground;

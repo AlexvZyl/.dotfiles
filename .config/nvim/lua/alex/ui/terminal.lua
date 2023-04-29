@@ -22,6 +22,12 @@ vim.cmd [[
 -- Remove the padding in a terminal.
 vim.cmd 'autocmd TermOpen * setlocal signcolumn=no'
 
+-- Terminal setup.
+if vim.fn.has 'termguicolors' then vim.cmd 'set termguicolors' end
+vim.env.COLORTERM = 'xterm-256color'
+vim.env.TERM = 'xterm-256color'
+vim.env.TERMINAL = 'xterm-256color'
+
 ----------------
 -- Toggleterm --
 ----------------

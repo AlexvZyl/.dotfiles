@@ -157,18 +157,24 @@ local terminal = require('toggleterm.terminal').Terminal
 
 -- Btop++.
 local btop = terminal:new { cmd = 'btop', hidden = true, direction = 'float' }
-function Btop_toggle() btop:toggle() end
+function Btop_toggle()
+    btop:toggle()
+end
 map_key(n, '<Leader>b', '<Cmd>lua Btop_toggle()<CR>', default_settings)
 
 -- Fish.
 local tmux = terminal:new { cmd = 'tmux', hidden = true, direction = 'float' }
-function Tmux_toggle() tmux:toggle() end
+function Tmux_toggle()
+    tmux:toggle()
+end
 map_key(all, '<F1>', '<Cmd>lua Tmux_toggle()<CR>', default_settings)
 map_key(n, '<Leader>t', '<Cmd>lua Fish_toggle()<CR>', default_settings)
 
 -- Lazygit.
 local lazygit = terminal:new { cmd = 'lazygit', hidden = true, direction = 'float' }
-function Lazygit_toggle() lazygit:toggle() end
+function Lazygit_toggle()
+    lazygit:toggle()
+end
 map_key(n, '<Leader>g', '<Cmd>lua Lazygit_toggle()<CR>', default_settings)
 
 ------------

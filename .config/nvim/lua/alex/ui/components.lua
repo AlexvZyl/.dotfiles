@@ -81,7 +81,7 @@ require('noice').setup {
             cmdline = { title = '', icon = '  ' },
             lua = { title = '', icon = ' 󰢱 ' },
             help = { title = '', icon = ' 󰋖 ' },
-            input = { title = ''  },
+            input = { title = '' },
         },
     },
     views = {

@@ -240,7 +240,7 @@ bindsym $mod+Escape exec "betterlockscreen --lock --display 1"
 bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to update i3)
-bindsym $mod+Shift+r restart
+# bindsym $mod+Alt+r restart
 
 # keybinding in fancy rofi (automated):
 # bindsym F11 exec ~/.config/i3/scripts/keyhint-2
@@ -482,4 +482,4 @@ mouse_warping none
 ##############
 
 # Toggle the inactive opacity for picom.
-bindsym $mod+$shift+r exec ~/.config/picom/scripts/toggle-picom-inactive-opacity.sh && polybar-msg action "#read-mode.exec"
+bindsym $mod+Shift+r exec ~/.config/picom/scripts/toggle-picom-inactive-opacity.sh && polybar-msg action "#read-mode.exec"

@@ -204,8 +204,7 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 ######################################
 
 # start a terminal
-# bindsym $mod+t exec alacritty
-bindsym $mod+t exec kitty --config ~/.config/kitty/padding.conf
+bindsym $mod+t exec kitty --config ~/.config/kitty/padding.conf --execute tmux
 
 # Start editor.
 # bindsym $mod+n exec neovide --multigrid

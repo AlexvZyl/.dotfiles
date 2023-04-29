@@ -153,7 +153,7 @@ map_key(n, '<leader>o', '<cmd>Lspsaga outline<CR>', { silent = true })
 --------------
 
 -- Remain in terminal mode.
-map_key(t, '<Esc>', '<Nop>', default_settings)
+-- map_key(t, '<Esc>', '<Nop>', default_settings)
 
 local terminal = require('toggleterm.terminal').Terminal
 

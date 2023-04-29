@@ -28,7 +28,7 @@ To install everything, simply copy and paste this into the terminal.
 > ⚠️ &nbsp; I still need to properly test this.
 
 ```bash
-curl https://github.com/AlexvZyl/.dotfiles/tree/main/.scripts/install/setup.sh | bash
+curl https://github.com/AlexvZyl/.dotfiles/tree/main/.scripts/install/bootstrap.sh | bash
 reboot
 ```
 

@@ -13,11 +13,13 @@ try:
         next = response["events"][index]
         start = datetime.datetime.fromisoformat(next["start"])
         end = datetime.datetime.fromisoformat(next["end"]) - datetime.timedelta(minutes=30)
-        while (start < now) and (now > end):
+        duration = end - start
+        while ((start < now) and (now > end)) or (duration <= datetime.timedelta(minutes=30)):
             index+=1
             next = response["events"][index]
             start = datetime.datetime.fromisoformat(next["start"])
             end = datetime.datetime.fromisoformat(next["end"]) - datetime.timedelta(minutes=30)
+            duration = end - start
     
         # Loadshedding currently busy.
         if (now >= start) and (now <= end):

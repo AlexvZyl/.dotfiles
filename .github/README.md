@@ -4,7 +4,8 @@
 
 <div align="center">
 
-[![Scripts](https://github.com/AlexvZyl/.dotfiles/workflows/ShellCheck/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=ShellCheck) 
+[![ShellCheck](https://github.com/AlexvZyl/.dotfiles/workflows/ShellCheck/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=ShellCheck) 
+[![StyLua](https://github.com/AlexvZyl/.dotfiles/workflows/StyLua/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=StyLua) 
 ![Size](https://img.shields.io/github/repo-size/AlexvZyl/.dotfiles?style=flat)
 ![Activity](https://img.shields.io/github/commit-activity/m/AlexvZyl/.dotfiles)
 

@@ -1,4 +1,4 @@
-name: Neovim format
+name: StyLua
 
 on:
   push:

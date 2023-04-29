@@ -165,8 +165,11 @@ end
 map_key(n, '<Leader>b', '<Cmd>lua Btop_toggle()<CR>', default_settings)
 
 -- Tmux & fish.
-local tmux = terminal:new { cmd = 'tmux', hidden = true, direction = 'float', float_opts = { border = u.border_chars_tmux } }
-function Tmux_toggle() tmux:toggle() end
+local tmux =
+    terminal:new { cmd = 'tmux', hidden = true, direction = 'float', float_opts = { border = u.border_chars_tmux } }
+function Tmux_toggle()
+    tmux:toggle()
+end
 map_key(all, '<F1>', '<Cmd>lua Tmux_toggle()<CR>', default_settings)
 map_key(n, '<Leader>t', '<Cmd>lua Fish_toggle()<CR>', default_settings)
 

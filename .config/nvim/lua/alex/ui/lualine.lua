@@ -133,7 +133,8 @@ require('lualine').setup {
         lualine_a = {
             {
                 'mode',
-                icon = { ' ' },
+                icon = { '' },
+                separator = { right = ' ', left = '' },
             },
         },
         lualine_b = {
@@ -235,7 +236,8 @@ require('lualine').setup {
                     align = 'left',
                     color = { fg = c.black },
                 },
-                separator = { right = '█', left = { '' } },
+                -- separator = { right = '█', left = { '' } },
+                separator = { right = '', left = { '' } },
             },
         },
     },

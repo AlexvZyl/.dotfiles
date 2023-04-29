@@ -4,7 +4,7 @@
 
 <div align="center">
 
-[![Scripts](https://github.com/AlexvZyl/.dotfiles/workflows/Scripts/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=Scripts) 
+[![Scripts](https://github.com/AlexvZyl/.dotfiles/workflows/ShellCheck/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=ShellCheck) 
 ![Size](https://img.shields.io/github/repo-size/AlexvZyl/.dotfiles?style=flat)
 ![Activity](https://img.shields.io/github/commit-activity/m/AlexvZyl/.dotfiles)
 

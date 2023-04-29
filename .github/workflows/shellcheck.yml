@@ -1,4 +1,4 @@
-name: Scripts 
+name: ShellCheck
 
 on: 
   push:

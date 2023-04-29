@@ -10,6 +10,7 @@ local all = { 'n', 'i', 'v', 't' }
 local ex_t = { 'n', 'i', 'v' }
 local n_v = { 'n', 'v' }
 local n = 'n'
+local t = 't'
 
 -- Function to map keys.
 local map_key = vim.keymap.set
@@ -149,32 +150,25 @@ map_key(n, '<leader>o', '<cmd>Lspsaga outline<CR>', { silent = true })
 -- Terminal --
 --------------
 
+-- Remain in terminal mode.
+map_key(t, '<Esc>', '<Nop>', default_settings)
+
 local terminal = require('toggleterm.terminal').Terminal
 
 -- Btop++.
-
--- local btop = Terminal:new({ cmd = "btop --utf-force", hidden = true, direction = "float" })
 local btop = terminal:new { cmd = 'btop', hidden = true, direction = 'float' }
--- local btop = Terminal:new({ cmd = "btm", hidden = true, direction = "float" })
-function Btop_toggle()
-    btop:toggle()
-end
-map_key(n, '<Leader>b', '<Cmd>lua Btop_toggle()<CR>', { noremap = true, silent = true })
+function Btop_toggle() btop:toggle() end
+map_key(n, '<Leader>b', '<Cmd>lua Btop_toggle()<CR>', default_settings)
 
 -- Fish.
-
 local tmux = terminal:new { cmd = 'tmux', hidden = true, direction = 'float' }
-function Tmux_toggle()
-    tmux:toggle()
-end
+function Tmux_toggle() tmux:toggle() end
 map_key(all, '<F1>', '<Cmd>lua Tmux_toggle()<CR>', default_settings)
 map_key(n, '<Leader>t', '<Cmd>lua Fish_toggle()<CR>', default_settings)
 
 -- Lazygit.
 local lazygit = terminal:new { cmd = 'lazygit', hidden = true, direction = 'float' }
-function Lazygit_toggle()
-    lazygit:toggle()
-end
+function Lazygit_toggle() lazygit:toggle() end
 map_key(n, '<Leader>g', '<Cmd>lua Lazygit_toggle()<CR>', default_settings)
 
 ------------

@@ -5,7 +5,7 @@ from tf2_za_server_list import servers
 # Constants.
 MIN_PLAYERS = 0
 SUCCESS = False
-TIMEOUT = 3
+TIMEOUT = 1
 RETRIES = 5
 
 # Get the number of players on the server.

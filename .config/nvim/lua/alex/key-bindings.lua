@@ -5,12 +5,10 @@
 -- General key bindings --
 --------------------------
 
--- For key mappings for all modes.
-local all_modes = { 'n', 'i', 'v', 't' }
-local exclude_t = { 'n', 'i', 'v' }
-local exclude_i = { 'n', 'v', 't' }
+-- Modes.
+local all = { 'n', 'i', 'v', 't' }
+local ex_t = { 'n', 'i', 'v' }
 local n_v = { 'n', 'v' }
-local n_t = { 'n', 't' }
 local n = 'n'
 
 -- Function to map keys.
@@ -26,7 +24,7 @@ local default_settings = {
 map_key(n, '<C-w><C-c>', '<Cmd>wincmd c<CR>', default_settings)
 
 -- Search for files in current directory.
-map_key(exclude_t, '<F3>', '<Cmd>Telescope find_files<CR>', default_settings)
+map_key(ex_t, '<F3>', '<Cmd>Telescope find_files<CR>', default_settings)
 
 -- Toggle the file explorer.
 function Toggle_nvim_tree()
@@ -34,32 +32,32 @@ function Toggle_nvim_tree()
     local is_open = require('nvim-tree.view').is_visible()
     if is_open then vim.wo.statuscolumn = ' ' end
 end
-map_key(all_modes, '<F2>', '<Cmd>lua Toggle_nvim_tree()<CR>', default_settings)
+map_key(ex_t, '<F2>', '<Cmd>lua Toggle_nvim_tree()<CR>', default_settings)
 map_key(n, '<Leader>f', '<Cmd>lua Toggle_nvim_tree()<CR>', default_settings)
 
 -- Grep for a string in the current directory.
-map_key(exclude_t, '<F4>', '<Cmd>Telescope live_grep<CR>', default_settings)
+map_key(ex_t, '<F4>', '<Cmd>Telescope live_grep<CR>', default_settings)
 
 -- Search for old files.
-map_key(exclude_t, '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
+map_key(ex_t, '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
 
 -- Cheatsheet.
-map_key(all_modes, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
+map_key(ex_t, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
 
 -- Moving windows.
-map_key(n_t, '<C-h>', '<Cmd>wincmd h<CR>', default_settings)
-map_key(n_t, '<C-j>', '<Cmd>wincmd j<CR>', default_settings)
-map_key(n_t, '<C-k>', '<Cmd>wincmd k<CR>', default_settings)
-map_key(n_t, '<C-l>', '<Cmd>wincmd l<CR>', default_settings)
+map_key(n, '<C-h>', '<Cmd>wincmd h<CR>', default_settings)
+map_key(n, '<C-j>', '<Cmd>wincmd j<CR>', default_settings)
+map_key(n, '<C-k>', '<Cmd>wincmd k<CR>', default_settings)
+map_key(n, '<C-l>', '<Cmd>wincmd l<CR>', default_settings)
 
 -- Resizing windows.
-map_key(n_t, '<C-Up>', ':resize -2<CR>', default_settings)
-map_key(n_t, '<C-Down>', ':resize +2<CR>', default_settings)
-map_key(n_t, '<C-Left>', ':vertical resize -2<CR>', default_settings)
-map_key(n_t, '<C-Right>', ':vertical resize +2<CR>', default_settings)
+map_key(n, '<C-Up>', ':resize -2<CR>', default_settings)
+map_key(n, '<C-Down>', ':resize +2<CR>', default_settings)
+map_key(n, '<C-Left>', ':vertical resize -2<CR>', default_settings)
+map_key(n, '<C-Right>', ':vertical resize +2<CR>', default_settings)
 
 -- Commenting.
-map_key(exclude_t, '<C-/>', '<Cmd>Commentary<CR>', default_settings)
+map_key(ex_t, '<C-/>', '<Cmd>Commentary<CR>', default_settings)
 
 -- Functions that only saves buffers that has files.
 function Save_file()
@@ -68,22 +66,22 @@ function Save_file()
     -- local nofile = vim.api.nvim_buf_get_option(0, 'buftype') == 'nofile'
     if modifiable then vim.cmd 'w!' end
 end
-map_key(exclude_t, '<C-s>', '<Cmd>lua Save_file()<CR>', default_settings)
+map_key(ex_t, '<C-s>', '<Cmd>lua Save_file()<CR>', default_settings)
 
 -- Buffers.
-map_key(exclude_t, '<C-Tab>', '<Cmd>Telescope buffers<CR>', default_settings)
+map_key(ex_t, '<C-Tab>', '<Cmd>Telescope buffers<CR>', default_settings)
 
 -- Finding.
-map_key(exclude_t, '<C-f>', '<Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>', default_settings)
+map_key(ex_t, '<C-f>', '<Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>', default_settings)
 
 -- Undo.
-map_key(exclude_t, '<C-Z>', '<Cmd>undo<CR>', default_settings)
+map_key(ex_t, '<C-Z>', '<Cmd>undo<CR>', default_settings)
 
 -- Redo.
-map_key(exclude_t, '<C-Y>', '<Cmd>redo<CR>', default_settings)
+map_key(ex_t, '<C-Y>', '<Cmd>redo<CR>', default_settings)
 
 -- Zen mode.
-map_key(all_modes, '<C-a>', '<Cmd>TZAtaraxis<CR>', default_settings)
+map_key(all, '<C-a>', '<Cmd>TZAtaraxis<CR>', default_settings)
 
 ------------
 -- Barbar --
@@ -165,11 +163,11 @@ map_key(n, '<Leader>b', '<Cmd>lua Btop_toggle()<CR>', { noremap = true, silent =
 
 -- Fish.
 
-local fish = terminal:new { cmd = 'fish', hidden = true, direction = 'float' }
-function Fish_toggle()
-    fish:toggle()
+local tmux = terminal:new { cmd = 'tmux', hidden = true, direction = 'float' }
+function Tmux_toggle()
+    tmux:toggle()
 end
-map_key(all_modes, '<F1>', '<Cmd>lua Fish_toggle()<CR>', default_settings)
+map_key(all, '<F1>', '<Cmd>lua Tmux_toggle()<CR>', default_settings)
 map_key(n, '<Leader>t', '<Cmd>lua Fish_toggle()<CR>', default_settings)
 
 -- Lazygit.
@@ -215,18 +213,18 @@ map_key(
 -- Debugger Protocol --
 -----------------------
 
-map_key(all_modes, '<A-d>', '<Cmd>DapContinue<CR>', default_settings)
-map_key(all_modes, '<A-b>', '<Cmd>DapToggleBreakpoint<CR>', default_settings)
+map_key(ex_t, '<A-d>', '<Cmd>DapContinue<CR>', default_settings)
+map_key(ex_t, '<A-b>', '<Cmd>DapToggleBreakpoint<CR>', default_settings)
 
 -- Stepping.
-map_key(all_modes, '<A-o>', '<Cmd>DapStepOver<CR>', default_settings)
-map_key(all_modes, '<A-T>', '<Cmd>DapTerminate<CR>', default_settings)
-map_key(all_modes, '<A-i>', '<Cmd>DapStepInto<CR>', default_settings)
-map_key(all_modes, '<A-u>', '<Cmd>DapStepOut<CR>', default_settings)
-map_key(all_modes, '<A-c>', '<Cmd>DapContinue<CR>', default_settings)
-map_key(all_modes, '<A-r>', '<Cmd>DapRestartFrame<CR>', default_settings)
-map_key(all_modes, '<A-l>', "<Cmd>lua require 'dapui'.float_element('scopes')<CR>", default_settings)
-map_key(all_modes, '<A-W>', "<Cmd>lua require 'dapui'.toggle()<CR>", default_settings)
+map_key(ex_t, '<A-o>', '<Cmd>DapStepOver<CR>', default_settings)
+map_key(ex_t, '<A-T>', '<Cmd>DapTerminate<CR>', default_settings)
+map_key(ex_t, '<A-i>', '<Cmd>DapStepInto<CR>', default_settings)
+map_key(ex_t, '<A-u>', '<Cmd>DapStepOut<CR>', default_settings)
+map_key(ex_t, '<A-c>', '<Cmd>DapContinue<CR>', default_settings)
+map_key(ex_t, '<A-r>', '<Cmd>DapRestartFrame<CR>', default_settings)
+map_key(ex_t, '<A-l>', "<Cmd>lua require 'dapui'.float_element('scopes')<CR>", default_settings)
+map_key(ex_t, '<A-W>', "<Cmd>lua require 'dapui'.toggle()<CR>", default_settings)
 
 --------
 -- AI --

@@ -37,10 +37,13 @@ alias ls='clear -x && exa --grid --long --header --no-permissions --no-time --ac
 alias unlock='sudo rm /var/lib/pacman/db.lck'
 
 # Trash.
-alias trash="trash --trash-dir ~/.trash"
+alias rm="trash --trash-dir ~/.trash"
 
 # Julia.
 alias julia="clear && julialauncher"
+
+# Docs.
+alias pdf="nohup zathura"
 
 # Start the sessions like a boss.
 pfetch

@@ -1,6 +1,8 @@
 -- I want to keep all of the key bindings in one file so that it is easy to see
 -- what is being used and ensure nothing being overwritten by accident.
 
+local u = require 'alex.utils'
+
 --------------------------
 -- General key bindings --
 --------------------------
@@ -160,8 +162,8 @@ local btop = terminal:new { cmd = 'btop', hidden = true, direction = 'float' }
 function Btop_toggle() btop:toggle() end
 map_key(n, '<Leader>b', '<Cmd>lua Btop_toggle()<CR>', default_settings)
 
--- Fish.
-local tmux = terminal:new { cmd = 'tmux', hidden = true, direction = 'float' }
+-- Tmux & fish.
+local tmux = terminal:new { cmd = 'tmux', hidden = true, direction = 'float', float_opts = { border = u.border_chars_tmux } }
 function Tmux_toggle() tmux:toggle() end
 map_key(all, '<F1>', '<Cmd>lua Tmux_toggle()<CR>', default_settings)
 map_key(n, '<Leader>t', '<Cmd>lua Fish_toggle()<CR>', default_settings)

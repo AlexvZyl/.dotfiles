@@ -21,6 +21,8 @@ end
 M.border_chars_none = { '', '', '', '', '', '', '', '' }
 M.border_chars_empty = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' }
 
+M.border_chars_tmux = { ' ', ' ', ' ', ' ', ' ', '', ' ', ' ' }
+
 M.border_chars_inner_thick = { ' ', '▄', ' ', '▌', ' ', '▀', ' ', '▐' }
 M.border_chars_outer_thick = { '▛', '▀', '▜', '▐', '▟', '▄', '▙', '▌' }
 

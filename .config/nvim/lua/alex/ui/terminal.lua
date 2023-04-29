@@ -40,7 +40,6 @@ require('toggleterm').setup {
     end,
     direction = 'float',
     float_opts = {
-        -- border = 'curved',
         border = u.border_chars_outer_thin,
         width = _Term_width,
         height = _Term_height,

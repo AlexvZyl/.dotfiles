@@ -7,7 +7,7 @@ local u = require 'alex.utils'
 local ui = {
     theme = 'round',
     border = u.border_chars_outer_thin,
-    winblend = 5,
+    winblend = 0,
     title = false,
     diagnostic = '  ',
 }

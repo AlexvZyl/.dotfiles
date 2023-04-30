@@ -46,7 +46,7 @@ require('toggleterm').setup {
     end,
     direction = 'float',
     float_opts = {
-        border = u.border_chars_outer_thin,
+        border = u.border_chars_empty,
         width = _Term_width,
         height = _Term_height,
     },

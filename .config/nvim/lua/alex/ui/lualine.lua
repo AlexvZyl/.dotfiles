@@ -172,9 +172,9 @@ require('lualine').setup {
                     removed = ' ',
                 },
                 diff_color = {
-                    added = { fg = c.gray4, gui = 'bold' },
-                    modified = { fg = c.gray4, gui = 'bold' },
-                    removed = { fg = c.gray4, gui = 'bold' },
+                    added = { fg = c.gray2, gui = 'bold' },
+                    modified = { fg = c.gray2, gui = 'bold' },
+                    removed = { fg = c.gray2, gui = 'bold' },
                 },
                 -- icon = {
                 -- ' ',
@@ -237,7 +237,7 @@ require('lualine').setup {
                     color = { fg = c.black },
                 },
                 -- separator = { right = '█', left = { '' } },
-                separator = { right = '', left = { '' } },
+                separator = { right = '', left = '' },
             },
         },
     },

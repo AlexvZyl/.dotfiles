@@ -3,3 +3,4 @@
 .config/i3/scripts/** linguist-vendored
 .config/fish/functions/** linguist-vendored
 .themes/** linguist-vendored
+.mozilla/** linguist-vendored

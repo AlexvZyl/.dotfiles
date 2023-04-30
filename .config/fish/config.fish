@@ -45,5 +45,7 @@ alias julia="clear && julialauncher"
 # Docs.
 alias pdf="nohup zathura"
 
+alias rst="reset && pfetch"
+
 # Start the sessions like a boss.
 pfetch

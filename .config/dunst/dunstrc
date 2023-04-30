@@ -76,10 +76,10 @@
     separator_height = 2
 
     # Padding between text and separator.
-    padding = 10
+    padding = 13
 
     # Horizontal padding.
-    horizontal_padding = 10
+    horizontal_padding = 13
 
     # Padding between text and icon.
     text_icon_padding = 0
@@ -414,23 +414,11 @@
     appname = flameshot
     urgency = low 
 
-[whatsapp-alignment-1]
-    appname = whatsapp-nativefier
+[whatsapp-alignment]
+    appname = whatsapp-nativefier-d40211
     alignment = left
 
-[whatsapp-alignment-2]
-    appname = WhatsApp-nativefier
-    alignment = left
-
-[whatsapp-alignment-3]
-    appname = whatsapp
-    alignment = left
-
-[whatsapp-alignment-4]
-    appname = WhatsApp
-    alignment = left
-
-[discord-alignment-5]
+[discord-alignment]
     appname = discord
     alignment = left
 

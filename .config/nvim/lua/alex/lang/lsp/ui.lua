@@ -1,5 +1,13 @@
 local u = require 'alex.utils'
 
+-- Diagnostics signs colors and character.
+vim.cmd [[
+    sign define DiagnosticSignError text= texthl= linehl= numhl=DiagnosticSignError 
+    sign define DiagnosticSignWarn  text= texthl= linehl= numhl=DiagnosticSignWarn
+    sign define DiagnosticSignInfo  text= texthl= linehl= numhl=DiagnosticSignInfo
+    sign define DiagnosticSignHint  text=󱤅 texthl= linehl= numhl=DiagnosticSignHint
+]]
+
 --------------
 -- LSP Saga --
 --------------

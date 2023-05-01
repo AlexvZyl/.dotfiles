@@ -48,17 +48,13 @@ return require('packer').startup {
         use {
             'mfussenegger/nvim-dap',
             -- opt = true,
-            config = function()
-                require('alex.lang.debugger.dap').setup_dap()
-            end,
+            config = function() require('alex.lang.debugger.dap').setup_dap() end,
             -- cmd = { 'DapContinue' }
         }
         use {
             'rcarriga/nvim-dap-ui',
             -- opt = true,
-            config = function()
-                require('alex.lang.debugger.ui').setup_dap_ui()
-            end,
+            config = function() require('alex.lang.debugger.ui').setup_dap_ui() end,
             requires = {
                 'mfussenegger/nvim-dap',
             },
@@ -221,9 +217,7 @@ return require('packer').startup {
     config = {
         display = {
             -- Display packer window as floating.
-            open_fn = function()
-                return require('packer.util').float { border = u.border_chars_outer_thin }
-            end,
+            open_fn = function() return require('packer.util').float { border = u.border_chars_outer_thin } end,
         },
     },
 }

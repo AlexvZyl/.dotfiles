@@ -6,9 +6,7 @@ local u = require 'alex.utils'
 local function format(_, item)
     -- Utils.
     local MAX_LABEL_WIDTH = 50
-    local function whitespace(max, len)
-        return (' '):rep(max - len)
-    end
+    local function whitespace(max, len) return (' '):rep(max - len) end
 
     -- Limit content width.
     local content = item.abbr

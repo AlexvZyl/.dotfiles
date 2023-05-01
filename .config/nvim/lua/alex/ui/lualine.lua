@@ -13,14 +13,10 @@ local function diff_source()
 end
 
 -- Get the current buffer's filetype.
-local function get_current_filetype()
-    return vim.api.nvim_buf_get_option(0, 'filetype')
-end
+local function get_current_filetype() return vim.api.nvim_buf_get_option(0, 'filetype') end
 
 -- Get the current buffer's type.
-local function get_current_buftype()
-    return vim.api.nvim_buf_get_option(0, 'buftype')
-end
+local function get_current_buftype() return vim.api.nvim_buf_get_option(0, 'buftype') end
 
 -- Get the buffer's filename.
 local function get_current_filename()

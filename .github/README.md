@@ -11,19 +11,23 @@
 
 </div>
 
+<div align="center">
+
+⚠️ &nbsp; **These are my personal dotfiles, which means they will continuously change.** &nbsp; ⚠️ 
+
+</div>
+
 The configuration files for my Linux desktop.  Supports Arch based distros using Gnome and/or i3.  Also, currently it assumes you have an Nvidia GPU and Intel CPU.
 
 I mainly use i3, but I also install Gnome for when people do not want to mess around with a tiling WM.  All of the screenshots are for i3 and the gnome configs are very basic.  
-
-> ℹ️ &nbsp; Remember to choose i3 at the login screen.
-
-> ⚠️ &nbsp; These are my personal dotfiles, which means they will continuously change.
 
 # Installation
 
 To install everything, simply copy and paste this into the terminal.
 
 > ℹ️ &nbsp; This script assumes that you have a working Arch installation.
+
+> ℹ️ &nbsp; Remember to choose i3 at the login screen.
 
 > ⚠️ &nbsp; I still need to properly test this.
 
@@ -36,19 +40,19 @@ reboot
 
 The theme is based on my Neovim plugin, [nordic.nvim](https://github.com/AlexvZyl/nordic.nvim).  It is a warmer and darker version of the [Nord](https://www.nordtheme.com/) color palette.
 
+Wallpapers can be found at [this ImageGoNord repo](https://github.com/linuxdotexe/nordic-wallpapers) (they "norded" some nice wallpapers) and [locally](https://github.com/AlexvZyl/.dotfiles/tree/main/.wallpapers).
+
 # Showcase
 
 Some screenshots showing off the desktop and rice, as well as some custom features I wrote.  Everything has to be *just right*.  I am spending 8+ hours a day on this working, so it might as well be a nice experience.
 
-> ⚠️ &nbsp; Some of these are outdated, I will update them at a later stage.
+> ⚠️ &nbsp; All of these are outdated, I will update them at a later stage.
 
 <details>
 
-<summary>Overview</summary>
+<summary>Images</summary>
 
 </br>
-
-Wallpapers can be found at [this ImageGoNord repo](https://github.com/linuxdotexe/nordic-wallpapers) (they "norded" some nice wallpapers) and [locally](https://github.com/AlexvZyl/.dotfiles/tree/main/.wallpapers).
 
 *For Reddit:*
 

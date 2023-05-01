@@ -21,7 +21,7 @@ if vim.fn.has 'termguicolors' then vim.cmd 'set termguicolors' end
 vim.env.COLORTERM = 'xterm-256color'
 vim.env.TERM = 'xterm-256color'
 vim.env.TERMINAL = 'xterm-256color'
-vim.env.NVIM_TUI_ENABLE_TRUE_COLOR=1
+vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
 
 -- Used to toggle fullscreen terminal.
 require('toggleterm').setup {

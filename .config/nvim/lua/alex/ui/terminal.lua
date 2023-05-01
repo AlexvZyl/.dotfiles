@@ -25,11 +25,17 @@ vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
 
 -- Used to toggle fullscreen terminal.
 require('toggleterm').setup {
-    on_open = function(_) vim.cmd 'startinsert' end,
+    on_open = function(_)
+        vim.cmd 'startinsert'
+    end,
     direction = 'float',
     float_opts = {
         border = u.border_chars_empty,
-        width = function() return vim.o.columns end,
-        height = function() return vim.o.lines end,
-    }
+        width = function()
+            return vim.o.columns
+        end,
+        height = function()
+            return vim.o.lines
+        end,
+    },
 }

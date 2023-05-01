@@ -4,4 +4,4 @@ indent_type = "Spaces"
 indent_width = 4
 quote_style = "AutoPreferSingle"
 call_parentheses = "None"
-collapse_simple_statement = "ConditionalOnly"
+collapse_simple_statement = "Always"

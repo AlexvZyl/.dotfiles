@@ -204,12 +204,12 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 ######################################
 
 # start a terminal
-bindsym $mod+t exec kitty --config ~/.config/kitty/padding.conf --execute tmux
+bindsym $mod+t exec kitty --config ~/.config/kitty/padding.conf --execute tmux -L kitty -f ~/.config/tmux/tmux.conf
 
 # Start editor.
 # bindsym $mod+n exec neovide --multigrid
 # bindsym $mod+n exec alacritty --command=nvim
-bindsym $mod+n exec kitty --class neovim --execute nvim
+bindsym $mod+n exec kitty --class neovim --execute tmux -L neovim -f ~/.config/tmux/neovim.conf new-session "nvim"
 
 # Resource viewers.
 bindsym $mod+b exec kitty --config ~/.config/kitty/padding.conf --execute btop 

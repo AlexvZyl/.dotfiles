@@ -161,9 +161,9 @@ map_key(n, '<leader>o', '<cmd>Lspsaga outline<CR>', { silent = true })
 -- map_key(t, '<Esc>', '<Nop>', default_settings)
 
 -- Open new tmux windows.
-map_key(n, '<Leader>t',':!tmux new-window<CR>', default_settings)
-map_key(n, '<Leader>b',':!tmux new-window btop<CR>', default_settings)
-map_key(n, '<Leader>g',':!tmux new-window lazygit<CR>', default_settings)
+map_key(n, '<Leader>t', ':!tmux new-window<CR>', default_settings)
+map_key(n, '<Leader>b', ':!tmux new-window btop<CR>', default_settings)
+map_key(n, '<Leader>g', ':!tmux new-window lazygit<CR>', default_settings)
 
 --[[
 local terminal = require('toggleterm.terminal').Terminal

@@ -1,8 +1,7 @@
 // Configuration.
 configuration {
-	modi:                       "drun";
+	modi:                       "dmenu";
     show-icons:                 true;
-    display-drun:               "  Apps";
     font:                       "JetBrainsMono Nerd Font 10";
     icon-theme:                 "Papirus-Dark";
     monitor: -1;
@@ -82,7 +81,7 @@ entry {
 // Area where all of the results are displayed.
 listview {
     enabled:                     true;
-    columns:                     2;
+    columns:                     1;
     lines:                       8;
     cycle:                       true;
     dynamic:                     true;
@@ -105,7 +104,7 @@ element {
     enabled:                     true;
     spacing:                     15px;
     margin:                      0px;
-    padding:                     5px;
+    padding:                     12px 20px;
     border:                      0px;
     border-radius:               10px;
     border-color:                @selected;
@@ -118,15 +117,31 @@ element normal.normal {
     background-color:            @background;
     text-color:                  @foreground;
 }
+// Selected, but no cursor.
+element normal.active {
+    background-color:            @gray0;
+    text-color:                  @foreground;
+}
 element alternate.normal {
     background-color:            @background;
     text-color:                  @foreground;
 }
+element alternate.active {
+    background-color:            @background;
+    text-color:                  @foreground;
+}
+// Not selected, has cursor.
 element selected.normal {
     background-color:            @selected;
     text-color:                  @background;
 }
+// Selected, with cursor.
+element selected.active {
+    background-color:            @selected;
+    text-color:                  @background;
+}
 element-icon {
+    enabled:                     false;
     background-color:            transparent;
     text-color:                  inherit;
     size:                        32px;

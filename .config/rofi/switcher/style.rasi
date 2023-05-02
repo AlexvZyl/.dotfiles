@@ -4,7 +4,7 @@ configuration {
     show-icons:                 true;
     display-window:             "  Windows";
     font:                       "JetBrainsMono Nerd Font 10";
-    icon-theme:                 "Papirus";
+    icon-theme:                 "Papirus-Dark";
     monitor: -1;
 }
 

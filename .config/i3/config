@@ -285,7 +285,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 bindsym $mod+Shift+g layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -449,6 +449,9 @@ bindsym $mod+d exec ~/.config/rofi/launcher/run.sh
 
 # Power menu.
 bindsym $mod+p exec ~/.config/rofi/powermenu/run.sh
+
+# Tmux sessions.
+bindsym $mod+s exec ~/.config/rofi/tmux/run.sh
 
 # Show windows.
 bindsym $mod+Tab exec ~/.config/rofi/switcher/run.sh

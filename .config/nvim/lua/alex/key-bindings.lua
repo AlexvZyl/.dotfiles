@@ -168,10 +168,10 @@ function New_tmux_shell_current_dir()
 end
 
 -- Open new tmux windows.
-map_key(n, '<Leader>t','<Cmd>lua New_tmux_shell_current_dir()<CR>', default_settings)
-map_key(n, '<F1>','<Cmd>lua New_tmux_shell_current_dir()<CR>', default_settings)
-map_key(n, '<Leader>b',':!tmux new-window -n "btop" btop<CR>', default_settings)
-map_key(n, '<Leader>g',':!tmux new-window -n "lazygit" lazygit<CR>', default_settings)
+map_key(n, '<Leader>t', '<Cmd>lua New_tmux_shell_current_dir()<CR>', default_settings)
+map_key(n, '<F1>', '<Cmd>lua New_tmux_shell_current_dir()<CR>', default_settings)
+map_key(n, '<Leader>b', ':!tmux new-window -n "btop" btop<CR>', default_settings)
+map_key(n, '<Leader>g', ':!tmux new-window -n "lazygit" lazygit<CR>', default_settings)
 
 --[[
 local terminal = require('toggleterm.terminal').Terminal

@@ -76,10 +76,10 @@
     separator_height = 2
 
     # Padding between text and separator.
-    padding = 12
+    padding = 11
 
     # Horizontal padding.
-    horizontal_padding = 12
+    horizontal_padding = 11
 
     # Padding between text and icon.
     text_icon_padding = 0

@@ -98,6 +98,12 @@ return require('packer').startup {
             requires = 'nvim-lua/plenary.nvim',
         }
 
+        -- Tmux.
+        use {
+            "aserowy/tmux.nvim",
+            config = function() return require("tmux").setup() end
+        }
+
         -- Programming experience.
         -- TODO
         use 'lukas-reineke/indent-blankline.nvim'

@@ -22,7 +22,7 @@ selected_file=$(
     rofi \
         -config "$HOME/.config/rofi/tmux/style.rasi" \
         -dmenu \
-        -p "  Tmux"
+        -p "󱓞  Tmux"
 )
 
 # Check if the user selected a file

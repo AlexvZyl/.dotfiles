@@ -2,7 +2,7 @@
 configuration {
 	modi:                       "drun";
     show-icons:                 true;
-    display-drun:               "󱓞  Launch";
+    display-drun:               "󱓞  Apps";
     font:                       "JetBrainsMono Nerd Font 10";
     icon-theme:                 "Papirus-Dark";
     monitor: -1;

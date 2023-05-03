@@ -32,7 +32,7 @@ To install everything, simply copy and paste this into the terminal.
 > ⚠️ &nbsp; I still need to properly test this.
 
 ```bash
-curl https://github.com/AlexvZyl/.dotfiles/tree/main/.scripts/install/bootstrap.sh | bash
+curl -s https://raw.githubusercontent.com/AlexvZyl/.dotfiles/main/.scripts/install/bootstrap.sh | bash
 reboot
 ```
 
@@ -118,7 +118,7 @@ This [config](https://github.com/AlexvZyl/.dotfiles/tree/main/.config/nvim) has 
 If you wish to only use the Neovim configs, you can install them with:
 
 ```bash
-curl https://github.com/AlexvZyl/.dotfiles/tree/main/.scripts/install/neovim.sh | bash
+curl -s https://raw.githubusercontent.com/AlexvZyl/.dotfiles/main/.scripts/install/neovim.sh | bash
 
 ```
 And to update:

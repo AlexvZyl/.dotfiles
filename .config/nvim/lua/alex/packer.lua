@@ -100,8 +100,8 @@ return require('packer').startup {
 
         -- Tmux.
         use {
-            "aserowy/tmux.nvim",
-            config = function() return require("tmux").setup() end
+            'aserowy/tmux.nvim',
+            config = function() return require('tmux').setup() end,
         }
 
         -- Programming experience.

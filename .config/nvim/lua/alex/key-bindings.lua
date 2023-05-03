@@ -86,6 +86,12 @@ map_key(ex_t, '<C-Y>', '<Cmd>redo<CR>', default_settings)
 -- Zen mode.
 map_key(all, '<C-a>', '<Cmd>TZAtaraxis<CR>', default_settings)
 
+----------
+-- Tmux --
+----------
+
+map_key(n, 'p', ':!tmux send-keys ', default_settings)
+
 ------------
 -- Barbar --
 ------------

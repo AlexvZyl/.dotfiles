@@ -4,3 +4,6 @@
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule ".modules/user.js"]
+	path = .modules/user.js
+	url = https://github.com/arkenfox/user.js/

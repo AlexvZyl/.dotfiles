@@ -90,9 +90,8 @@ for_window [class="^.*"] border pixel 0
 # Set inner/outer gaps
 # gaps inner 20
 
-gaps inner 13
-gaps bottom 1
-gaps horizontal 3
+gaps inner 11
+gaps horizontal 1
 smart_gaps off
 
 # show window title bars (not officially supported with i3gaps)

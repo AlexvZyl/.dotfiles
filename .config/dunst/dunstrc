@@ -33,7 +33,7 @@
     origin = bottom-right
 
     # Offset from the origin
-    offset = 8x32
+    offset = 6x30
     # offset = 10x35 # i3 gaps = 20x20
     # (H_Right_Gap/2) x (25+V_Bottom_Gap/2)
 

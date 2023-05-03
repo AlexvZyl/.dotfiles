@@ -35,6 +35,7 @@ local renderer = {
         modified_placement = 'after',
         padding = ' ',
         glyphs = {
+            default = ' ',
             folder = {
                 arrow_closed = '',
                 arrow_open = '',

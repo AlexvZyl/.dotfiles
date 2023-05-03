@@ -2,7 +2,7 @@
 
 # Define the directory to search for files
 dir="$HOME/.config/tmux/sessions"
-prefix="   "
+prefix="  "
 
 # Get a list of files in the directory and store it in an array
 files=("$dir"/*)
@@ -12,6 +12,7 @@ files=("$dir"/*)
 filenames=()
 for file in "${files[@]}"; do
   filename=$(basename "$file")
+  filename="${filename%.sh}"
   filenames+=("$prefix${filename}")
 done
 
@@ -21,12 +22,11 @@ selected_file=$(
     rofi \
         -config "$HOME/.config/rofi/tmux/style.rasi" \
         -dmenu \
-        -p "  Tmux Sessions"
+        -p "  Tmux"
 )
 
 # Check if the user selected a file
 if [[ -n $selected_file ]]; then
     script="${selected_file#$prefix}"
-    name="${script%.sh}"
-    kitty --class tmux-$name --execute $HOME/.config/tmux/sessions/$script
+    kitty --class tmux-$name --execute $HOME/.config/tmux/sessions/$script.sh
 fi

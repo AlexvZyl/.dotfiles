@@ -30,11 +30,6 @@ ShowInstallerIsoInfo() {
     fi
 }
 
-
-alias ls='ls --color=auto'
-alias ll='ls -lav --ignore=..'   # show long listing of all except ".."
-alias l='ls -lav --ignore=.?*'   # show long listing but no hidden dotfiles except "."
-
 [[ "$(whoami)" = "root" ]] && return
 
 [[ -z "$FUNCNEST" ]] && export FUNCNEST=100          # limits recursive functions, see 'man bash'
@@ -83,21 +78,11 @@ _open_files_for_editing() {
 
 # alias ef='_open_files_for_editing'     # 'ef' opens given file(s) for editing
 
-# Alias for using git with the dotfiles.
-alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-
-# Lazygit.
-alias lg="lazygit"
-alias lazygit-dotfiles="lg --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias lgd="lazygit-dotfiles"
-
-# Use neovim as manpage pager.
-export MANPAGER='nvim +Man!'
-export MANWIDTH=999
-
 # alias pacdiff=eos-pacdiff
+
 ################################################################################
 
+source .profile
 if [ -e ~/.private/env.sh ]; then
     source ~/.private/env.sh
 fi

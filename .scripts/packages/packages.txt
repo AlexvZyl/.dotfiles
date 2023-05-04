@@ -130,6 +130,7 @@ pyright
 python-pyfuse3
 python-pywal
 python2-fuse
+ranger
 refind
 reflector
 rofi-greenclip
@@ -170,7 +171,6 @@ tmux
 totem
 ttf-jetbrains-mono-nerd
 typescript
-ueberzug
 v4l2loopback-utils
 ventoy-bin
 vi
@@ -187,5 +187,4 @@ xorg-xinit
 xournalpp
 yaml-language-server
 yay
-zellij
 zram-generator

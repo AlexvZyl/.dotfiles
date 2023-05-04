@@ -1,11 +1,11 @@
-# Terminal.
+# Environment.
 export TERMINAL="xterm-kitty"
 export TERM="xterm-kitty"
 export COLORTERM="xterm-kitty"
-
-# Manpager.
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 # Aliasses.
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

@@ -74,6 +74,7 @@ map_key(ex_t, '<C-s>', '<Cmd>lua Save_file()<CR>', default_settings)
 -- Buffers.
 -- C-Tab does not work...
 map_key(ex_t, '<C-Tab>', '<Cmd>Telescope buffers<CR>', default_settings)
+map_key(n, '<leader><leader>', '<Cmd>Telescope buffers<CR>', default_settings)
 
 -- Finding.
 map_key(ex_t, '<C-f>', '<Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>', default_settings)

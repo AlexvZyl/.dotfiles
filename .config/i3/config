@@ -214,6 +214,7 @@ bindsym $mod+t exec kitty --config ~/.config/kitty/padding.conf --execute tmux -
 # bindsym $mod+n exec neovide --multigrid
 # bindsym $mod+n exec alacritty --command=nvim
 bindsym $mod+n exec kitty --class neovim --execute tmux -L neovim -f ~/.config/tmux/neovim.conf new-session -n "neovim" "nvim"
+bindsym $mod+shift+f exec kitty --config ~/.config/kitty/padding.conf --execute tmux -L lf new-session -n "lf" "lf"
 
 # Resource viewers.
 bindsym $mod+b exec kitty --config ~/.config/kitty/padding.conf --execute btop 
@@ -323,10 +324,6 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Redirect sound to headphones
 # bindsym $mod+p exec /usr/local/bin/switch-audio-port
-
-## App shortcuts
-bindsym $mod+Shift+F exec /usr/bin/thunar
-bindsym Print exec scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles

@@ -34,7 +34,6 @@ betterlockscreen -u ~/.wallpapers/National_Park_Nord.png --blur 0.5 --display 1
 ~/.scripts/install/git.sh
 ~/.scripts/install/hardware.sh
 ~/.scripts/install/links.sh
-~/.scripts/install/refind.sh
 ~/.scripts/install/cron.sh
 ~/.tmux/plugins/tpm/bin/install_plugins
 ~/.config/nvim/lua/alex/lang/lsp/install-servers.sh

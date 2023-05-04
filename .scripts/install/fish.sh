@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Install the fish shell.
-sudo pamac install fish --no-confirm
-
-# Install and setup tide.
 fish <<'END_FISH'
     curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
     fisher install IlanCosman/tide@v5t

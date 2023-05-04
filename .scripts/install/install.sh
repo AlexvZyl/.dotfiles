@@ -1,15 +1,6 @@
 #!/bin/bash
 
-# Ensure packages and mirrorlist are up to date.
-sudo pacman -Syyu
-
-# Install yay.
-git clone https://aur.archlinux.org/yay.git ~/GitHub/yay/
-cd ~/GitHub/yay/ || exit
-makepkg -si
-cd ~ || exit
-
-# Setup packages.
+# First install all packages and yay.
 ~/.scripts/packages/setup.sh
 
 # i3 stuff.
@@ -18,21 +9,12 @@ chmod +x ~/.config/picom/scripts/toggle-picom-inactive-opacity.sh
 # Polybar.
 chmod +x ~/.config/polybar.personal/scripts/check-read-mode-status.sh
 
-# Prevent the crackling sound.
-sudo sed -i 's/load-module module-udev-detect/load-module module-udev-detect tsched=0/g' /etc/pulse/default.pa
-
 # Enable SysRq keys.
 sudo touch /etc/sysctl.d/99-sysctl.conf
 sudo sh -c "echo 'kernel.sysrq=1' >> /etc/sysctl.d/99-sysctl.conf"
 
 # Add bnaries to sudoers.
 sudo sh -c "echo 'alex ALL = NOPASSWD: /usr/bin/s-tui, /usr/bin/pacman' > /etc/sudoers"
-
-# Setup github.
-sudo chmod +x ~/.scripts/install/git.sh && sudo ~/.scripts/install/git.sh
-
-# Install language servers.
-sudo chmod +x ~/.config/nvim/lua/alex/lang/lsp/install-servers.sh && ~/.config/nvim/lua/alex/lang/lsp/install-servers.sh
 
 # SDDM Login Manager
 sudo pamac install sddm sddm-sugar-dark sddm-sugar-candy-git archlinux-tweak-tool-git --no-confirm
@@ -54,6 +36,5 @@ betterlockscreen -u ~/.wallpapers/National_Park_Nord.png --blur 0.5 --display 1
 ~/.scripts/install/links.sh
 ~/.scripts/install/refind.sh
 ~/.scripts/install/cron.sh
-
-# Tmux.
 ~/.tmux/plugins/tpm/bin/install_plugins
+~/.config/nvim/lua/alex/lang/lsp/install-servers.sh

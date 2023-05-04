@@ -30,3 +30,6 @@ sudo sh -c "echo '[optimus]' > /etc/optimus-manager/optimus-manager.conf"
 sudo sh -c "echo 'startup_mode=nvidia' > /etc/optimus-manager/optimus-manager.conf" 
 nvidia-force-composition-pipeline
 systemctl enable optimus-manager && systemctl start optimus-manager &
+
+# Prevent the crackling sound.
+sudo sed -i 's/load-module module-udev-detect/load-module module-udev-detect tsched=0/g' /etc/pulse/default.pa

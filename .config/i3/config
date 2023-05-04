@@ -214,7 +214,7 @@ bindsym $mod+t exec kitty --config ~/.config/kitty/padding.conf --execute tmux -
 # bindsym $mod+n exec neovide --multigrid
 # bindsym $mod+n exec alacritty --command=nvim
 bindsym $mod+n exec kitty --class neovim --execute tmux -L neovim -f ~/.config/tmux/neovim.conf new-session -n "neovim" "nvim"
-bindsym $mod+shift+f exec kitty --config ~/.config/kitty/padding.conf --execute tmux -L lf new-session -n "lf" "lf"
+bindsym $mod+shift+f exec kitty --config ~/.config/kitty/padding.conf --execute tmux -L ranger new-session -n "ranger" "ranger"
 
 # Resource viewers.
 bindsym $mod+b exec kitty --config ~/.config/kitty/padding.conf --execute btop 

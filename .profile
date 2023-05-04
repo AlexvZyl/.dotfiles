@@ -1,7 +1,7 @@
 # Terminal.
-export TERMINAL="xterm-256color"
-export TERM="xterm-256color"
-export COLORTERM="xterm-256color"
+export TERMINAL="xterm-kitty"
+export TERM="xterm-kitty"
+export COLORTERM="xterm-kitty"
 
 # Manpager.
 export MANPAGER='nvim +Man!'

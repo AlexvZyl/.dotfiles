@@ -13,3 +13,4 @@ lazy-lock.json
 .newsboat/history.cmdline
 .config/polybar/scripts/loadshedding.json
 .config/lazygit/state.yml
+.newsboat/queue

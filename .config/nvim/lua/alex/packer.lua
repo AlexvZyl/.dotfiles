@@ -66,7 +66,6 @@ return require('packer').startup {
         use 'NvChad/nvim-colorizer.lua'
         use 'nvim-tree/nvim-web-devicons' -- A bunch of plugins uses this.
         use 'j-hui/fidget.nvim'
-        use 'akinsho/toggleterm.nvim'
         use 'rcarriga/nvim-notify'
         use {
             'nvim-lualine/lualine.nvim',

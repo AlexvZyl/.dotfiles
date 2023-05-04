@@ -72,25 +72,17 @@ end
 map_key(ex_t, '<C-s>', '<Cmd>lua Save_file()<CR>', default_settings)
 
 -- Buffers.
+-- C-Tab does not work...
 map_key(ex_t, '<C-Tab>', '<Cmd>Telescope buffers<CR>', default_settings)
 
 -- Finding.
 map_key(ex_t, '<C-f>', '<Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>', default_settings)
 
 -- Undo.
-map_key(ex_t, '<C-Z>', '<Cmd>undo<CR>', default_settings)
+map_key(ex_t, '<C-z>', '<Cmd>undo<CR>', default_settings)
 
 -- Redo.
-map_key(ex_t, '<C-Y>', '<Cmd>redo<CR>', default_settings)
-
--- Zen mode.
-map_key(all, '<C-a>', '<Cmd>TZAtaraxis<CR>', default_settings)
-
-----------
--- Tmux --
-----------
-
-map_key(n, 'p', ':!tmux send-keys ', default_settings)
+map_key(ex_t, '<C-y>', '<Cmd>redo<CR>', default_settings)
 
 ------------
 -- Barbar --
@@ -179,27 +171,6 @@ map_key(n, '<Leader>s', '<Cmd>lua New_tmux_shell_current_dir()<CR>', default_set
 map_key(n, '<F1>', '<Cmd>lua New_tmux_shell_current_dir()<CR>', default_settings)
 map_key(n, '<Leader>b', ':!tmux new-window -n "btop" btop<CR>', default_settings)
 map_key(n, '<Leader>g', ':!tmux new-window -n "lazygit" lazygit<CR>', default_settings)
-
---[[
-local terminal = require('toggleterm.terminal').Terminal
-
--- Btop++.
-local btop = terminal:new { cmd = 'btop', hidden = true, direction = 'float' }
-function Btop_toggle() btop:toggle() end
-map_key(n, '<Leader>b', '<Cmd>lua Btop_toggle()<CR>', default_settings)
-
--- Tmux & fish.
-local tmux =
-    terminal:new { cmd = 'tmux', hidden = true, direction = 'float', float_opts = { border = u.border_chars_tmux } }
-function Tmux_toggle() tmux:toggle() end
-map_key(all, '<F1>', '<Cmd>lua Tmux_toggle()<CR>', default_settings)
-map_key(n, '<Leader>t', '<Cmd>lua Fish_toggle()<CR>', default_settings)
-
--- Lazygit.
-local lazygit = terminal:new { cmd = 'lazygit', hidden = true, direction = 'float' }
-function Lazygit_toggle() lazygit:toggle() end
-map_key(n, '<Leader>g', '<Cmd>lua Lazygit_toggle()<CR>', default_settings)
---]]
 
 ------------
 -- Vimtex --

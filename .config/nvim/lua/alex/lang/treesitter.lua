@@ -7,9 +7,9 @@ require('nvim-treesitter.configs').setup {
     -- A list of parser names, or "all"
     ensure_installed = {
         'c',
+        'cpp',
         'lua',
         'rust',
-        'cpp',
         'julia',
         'python',
         'yaml',
@@ -19,6 +19,8 @@ require('nvim-treesitter.configs').setup {
         'bash',
         'markdown',
         'yaml',
+        'kdl',
+        'latex'
     },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -72,6 +74,7 @@ require('nvim-treesitter.configs').setup {
             },
         },
     },
+
     playground = {
         enable = true,
         disable = {},

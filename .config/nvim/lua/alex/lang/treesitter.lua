@@ -20,7 +20,7 @@ require('nvim-treesitter.configs').setup {
         'markdown',
         'yaml',
         'kdl',
-        'latex'
+        'latex',
     },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)

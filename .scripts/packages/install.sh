@@ -1,3 +1,2 @@
 #!/bin/bash
-
-sudo pacman -S --needed - < ~/.scripts/packages/packages.txt
+yay -Syyu $(cat packages.txt)

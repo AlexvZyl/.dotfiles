@@ -7,7 +7,8 @@ sudo touch $FILE
 sudo sh -c "echo 'options hid_apple fnmode=2' >> $FILE"
 
 # Bluetooth.
-systemctl enable bluetooth.service && systemctl restart bluetooth.service
+systemctl enable bluetooth.service
+systemctl restart bluetooth.service
 sudo sed -i 's/#AutoEnable=false/AutoEnable=true/g' /etc/bluetooth/main.conf # Enable on startup.
 
 # Sound stuff.
@@ -23,9 +24,8 @@ sudo tlp start
 # Setup optimus manager.
 # NB: For Nvidia cards only!
 sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm/custom.conf
-sudo sed -i 's/DisplayCommand/#DisplayCommand/g' /etc/sddm.conf
-sudo sed -i 's/DisplayStopCommand/#DisplayStopCommand/g' /etc/sddm.conf
 sudo touch /etc/optimus-manager/optimus-manager.conf 
 sudo sh -c "echo '[optimus]' > /etc/optimus-manager/optimus-manager.conf" 
 sudo sh -c "echo 'startup_mode=nvidia' > /etc/optimus-manager/optimus-manager.conf" 
-systemctl enable optimus-manager && systemctl start optimus-manager &
+systemctl enable optimus-manager
+systemctl start optimus-manager &

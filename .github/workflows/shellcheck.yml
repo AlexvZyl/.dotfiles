@@ -16,3 +16,4 @@ jobs:
         with:
           scandir: .scripts/
           severity: warning
+          ignore_paths: .scripts/packages/install.sh

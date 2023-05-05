@@ -37,7 +37,6 @@ drawio-desktop-bin
 dunst
 efm-langserver
 electron
-emacs-nox
 eog
 etcher-bin
 exa

@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # SDDM Login Manager
-sudo pamac install sddm sddm-sugar-dark sddm-sugar-candy-git archlinux-tweak-tool-git --no-confirm
 sudo systemctl disable display-manager && sudo systemctl enable sddm
 sudo touch /etc/sddm.conf
 sudo cp ~/.wallpapers/National_Park_Nord.png /usr/share/sddm/themes/sugar-candy/

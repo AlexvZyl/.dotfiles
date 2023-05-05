@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Clone.
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+pacman -S git
+alias config="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 mkdir ~/.dotfiles
 config clone --bare https://github.com/AlexvZyl/.dotfiles ~/.dotfiles/
 config checkout -f

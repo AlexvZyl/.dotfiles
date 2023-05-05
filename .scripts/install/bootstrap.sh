@@ -6,6 +6,9 @@ mkdir ~/.dotfiles
 git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME clone --bare https://github.com/AlexvZyl/.dotfiles ~/.dotfiles/
 git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout -f
 
+# Needed for install.
+~/.scripts/install/links.sh
+
 # Install yay and packages.
 ~/.scripts/packages/bootstrap.sh
 

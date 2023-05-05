@@ -1,12 +1,6 @@
 -- I want to keep all of the key bindings in one file so that it is easy to see
 -- what is being used and ensure nothing being overwritten by accident.
 
-local u = require 'alex.utils'
-
---------------------------
--- General key bindings --
---------------------------
-
 -- Modes.
 local all = { 'n', 'i', 'v', 't' }
 local ex_t = { 'n', 'i', 'v' }
@@ -14,9 +8,8 @@ local n_v = { 'n', 'v' }
 local n = 'n'
 local t = 't'
 
--- Function to map keys.
+-- API.
 local map_key = vim.keymap.set
--- Default config for the keymaps.
 local default_settings = {
     noremap = true,
     silent = true,
@@ -85,57 +78,26 @@ map_key(ex_t, '<C-z>', '<Cmd>undo<CR>', default_settings)
 -- Redo.
 map_key(ex_t, '<C-y>', '<Cmd>redo<CR>', default_settings)
 
-------------
--- Barbar --
-------------
-
--- Move.
+-- Barbar
 map_key(n, '<C-<>', '<Cmd>BufferMovePrevious<CR>', default_settings)
 map_key(n, '<C->>', '<Cmd>BufferMoveNext<CR>', default_settings)
-
--- Closing.
 map_key(n, '<C-q>', '<Cmd>BufferDelete<CR>', default_settings)
 map_key(n, 'db', '<Cmd>BufferPickDelete<CR>', default_settings)
-
--- Selecting.
 map_key(n, 'gb', '<Cmd>BufferPick<CR>', default_settings)
 map_key(n, '<C-,>', '<Cmd>BufferPrevious<CR>', default_settings)
 map_key(n, '<C-.>', '<Cmd>BufferNext<CR>', default_settings)
-
--- Pin buffer.
 map_key(n, '<C-p>', '<Cmd>BufferPin<CR>', default_settings)
 
---------------
--- LSP Saga --
---------------
-
--- Go to reference (also shows definition).
+-- LSP Saga
 map_key(n, 'gr', '<cmd>Lspsaga lsp_finder<CR>', { silent = true })
-
--- Code action
 map_key(n_v, 'ca', '<cmd>Lspsaga code_action<CR>', { silent = true })
-
--- Rename
 map_key(n_v, 'RR', '<cmd>Lspsaga rename<CR>', { silent = true })
-
--- Peek Definition
--- you can edit the definition file in this flaotwindow
--- also support open/vsplit/etc operation check definition_action_keys
--- support tagstack C-t jump back
 map_key(n, 'gd', '<cmd>Lspsaga peek_definition<CR>', { silent = true })
 map_key(n, 'gf', '<cmd>Lspsaga goto_definition<CR>', { silent = true })
-
--- Show docs.
 map_key(n, 'gD', '<cmd>Lspsaga hover_doc<CR>', { silent = true })
-
--- Show line diagnostics
 map_key(n, 'L', '<cmd>Lspsaga show_line_diagnostics ++unfocus<CR>', { silent = true })
-
--- Diagnsotic jump can use `<c-o>` to jump back
 map_key(n, '[e', '<cmd>Lspsaga diagnostic_jump_prev<CR>', { silent = true })
 map_key(n, ']e', '<cmd>Lspsaga diagnostic_jump_next<CR>', { silent = true })
-
--- Only jump to error
 map_key(
     n,
     '[E',
@@ -152,52 +114,20 @@ map_key(
 -- Outline
 map_key(n, '<leader>o', '<cmd>Lspsaga outline<CR>', { silent = true })
 
---------------
--- Terminal --
---------------
-
--- Remain in terminal mode.
--- map_key(t, '<Esc>', '<Nop>', default_settings)
-
-function New_tmux_shell_current_dir()
-    local abs_path = vim.api.nvim_buf_get_name(0)
-    local dir = abs_path:match '(.*[/\\])'
-    if dir == nil then return end
-    vim.fn.system('tmux new-window -c ' .. dir)
-end
-
--- Open new tmux windows.
--- map_key(n, '<Leader>t', '<Cmd>lua New_tmux_shell_current_dir()<CR>', default_settings)
--- map_key(n, '<Leader>s', '<Cmd>lua New_tmux_shell_current_dir()<CR>', default_settings)
--- map_key(n, '<F1>', '<Cmd>lua New_tmux_shell_current_dir()<CR>', default_settings)
--- map_key(n, '<Leader>b', ':!tmux new-window -n "btop" btop<CR>', default_settings)
--- map_key(n, '<Leader>g', ':!tmux new-window -n "lazygit" lazygit<CR>', default_settings)
-
-------------
--- Vimtex --
-------------
-
+-- Vimtex
 map_key(n, 'gl', '<Cmd>VimtexView<CR>', default_settings)
 
--------------
--- Trouble --
--------------
-
+-- Trouble
 map_key(n, '<leader>d', '<Cmd>TroubleToggle document_diagnostics<CR>', default_settings)
 map_key(n, '<leader>D', '<Cmd>TroubleToggle workspace_diagnostics<CR>', default_settings)
 
------------------------
--- Working directory --
------------------------
-
--- Change the cwd to the directory of the current active buffer.
+-- Working directory
 function Cwd_current_buffer()
     local abs_path = vim.api.nvim_buf_get_name(0)
     local dir = abs_path:match '(.*[/\\])'
     if dir == nil then return end
     vim.cmd('cd ' .. dir)
 end
-
 map_key(
     n_v,
     'gc',
@@ -205,14 +135,9 @@ map_key(
     default_settings
 )
 
------------------------
--- Debugger Protocol --
------------------------
-
+-- Debugger Protocol
 map_key(ex_t, '<A-d>', '<Cmd>DapContinue<CR>', default_settings)
 map_key(ex_t, '<A-b>', '<Cmd>DapToggleBreakpoint<CR>', default_settings)
-
--- Stepping.
 map_key(ex_t, '<A-o>', '<Cmd>DapStepOver<CR>', default_settings)
 map_key(ex_t, '<A-T>', '<Cmd>DapTerminate<CR>', default_settings)
 map_key(ex_t, '<A-i>', '<Cmd>DapStepInto<CR>', default_settings)
@@ -222,8 +147,5 @@ map_key(ex_t, '<A-r>', '<Cmd>DapRestartFrame<CR>', default_settings)
 map_key(ex_t, '<A-l>', "<Cmd>lua require 'dapui'.float_element('scopes')<CR>", default_settings)
 map_key(ex_t, '<A-W>', "<Cmd>lua require 'dapui'.toggle()<CR>", default_settings)
 
---------
--- AI --
---------
-
+-- AI
 if vim.env.OPENAI_API_KEY then map_key(n, '<Leader>c', '<Cmd>ChatGPT<CR>', default_settings) end

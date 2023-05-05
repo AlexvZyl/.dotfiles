@@ -117,7 +117,7 @@ gvfs-smb
 gzip
 handbrake
 htop
-i3-git
+i3-wm
 i3status
 intel-ucode
 iwd
@@ -160,7 +160,7 @@ mpv
 nautilus
 neofetch
 neovide
-neovim-git
+neovim
 newsboat
 nordic-darker-theme
 nordic-theme
@@ -169,7 +169,6 @@ nvidia-dkms
 nvidia-force-comp-pipeline
 nvidia-settings
 nvidia-utils
-nvim-packer-git
 nvtop
 onlyoffice-bin
 opencl-nvidia

@@ -1,2 +1,2 @@
 #!/bin/bash
-pacman -Qqet > ~/.scripts/packages/packages.txt
+yay -Qqe > ~/.scripts/packages/packages.txt

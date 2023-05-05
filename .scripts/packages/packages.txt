@@ -13,6 +13,7 @@ blueman
 bonsai.sh-git
 bottom
 brave-bin
+bridge-utils
 brightnessctl
 btop
 calc
@@ -36,7 +37,6 @@ dotnet-runtime-6.0-bin
 drawio-desktop-bin
 dunst
 efm-langserver
-electron
 eog
 etcher-bin
 exa
@@ -48,7 +48,7 @@ ftba
 fv
 gdm
 gedit
-github-cli-git
+github-cli
 gnome-backgrounds
 gnome-browser-connector
 gnome-calculator
@@ -129,6 +129,7 @@ pyright
 python-pyfuse3
 python-pywal
 python2-fuse
+qemu-full
 ranger
 refind
 reflector
@@ -174,7 +175,8 @@ v4l2loopback-utils
 ventoy-bin
 vi
 vim-startuptime
-virtualbox
+virt-manager
+virt-viewer
 vlc
 vscode-json-languageserver
 wget

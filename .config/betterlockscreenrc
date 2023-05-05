@@ -13,7 +13,7 @@ quiet=true
 
 # Formatting.
 # locktext="Dala what you must."
-locktext=" Locked"
+locktext=" Locked"
 font="JetBrainsMono Nerd Font"
 time_format="%H:%M"
 

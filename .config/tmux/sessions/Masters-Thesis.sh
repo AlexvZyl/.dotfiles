@@ -10,8 +10,8 @@ if ! tmux has-session -t $session >/dev/null 2>&1; then
     tmux new-session -d -s $session -c $path -n nvim "nvim $file"
     tmux source-file ~/.config/tmux/neovim.conf
     
-    tmux new-window -c $path -n "fish"
-    tmux new-window -c $path -n "lazygit" "lazygit"
+    tmux new-window -c $path -n "shell"
+    tmux new-window -c $path -n "git" "lazygit"
     tmux select-window -t 1
 fi
 

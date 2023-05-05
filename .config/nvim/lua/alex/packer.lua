@@ -65,7 +65,6 @@ return require('packer').startup {
         --
         use 'NvChad/nvim-colorizer.lua'
         use 'nvim-tree/nvim-web-devicons' -- A bunch of plugins uses this.
-        use 'j-hui/fidget.nvim'
         use 'rcarriga/nvim-notify'
         use {
             'nvim-lualine/lualine.nvim',
@@ -104,7 +103,6 @@ return require('packer').startup {
         }
 
         -- Programming experience.
-        -- TODO
         use 'lukas-reineke/indent-blankline.nvim'
         use 'mg979/vim-visual-multi'
         use 'RRethy/vim-illuminate'
@@ -185,35 +183,11 @@ return require('packer').startup {
         -- use 'JuliaEditorSupport/julia-vim'
         use 'lervag/vimtex'
 
-        -- Fun.
-        use 'eandrju/cellular-automaton.nvim'
-
         -- Theme using.
         use {
             'AlexvZyl/nordic.nvim',
             branch = 'main',
         }
-
-        -- List of nice themes:
-        use 'bluz71/vim-nightfly-colors'
-        use 'morhetz/gruvbox'
-        use 'sainnhe/gruvbox-material'
-        use 'EdenEast/nightfox.nvim'
-        use 'catppuccin/nvim'
-        use 'folke/tokyonight.nvim'
-        use 'sainnhe/everforest'
-        use 'sainnhe/edge'
-        use 'shaunsingh/nord.nvim'
-        use 'dracula/vim'
-        use 'sam4llis/nvim-tundra'
-        use 'rebelot/kanagawa.nvim'
-        use 'cocopon/iceberg.vim'
-        use 'marko-cerovac/material.nvim'
-        use 'sainnhe/sonokai'
-        use 'Mofiqul/vscode.nvim'
-        use 'navarasu/onedark.nvim'
-        use 'frenzyexists/aquarium-vim'
-        use 'projekt0n/github-nvim-theme'
 
         -- Bootstrap.
         if packer_bootstrap then require('packer').sync() end
@@ -226,3 +200,24 @@ return require('packer').startup {
         },
     },
 }
+
+-- List of nice themes:
+-- use 'bluz71/vim-nightfly-colors'
+-- use 'morhetz/gruvbox'
+-- use 'sainnhe/gruvbox-material'
+-- use 'EdenEast/nightfox.nvim'
+-- use 'catppuccin/nvim'
+-- use 'folke/tokyonight.nvim'
+-- use 'sainnhe/everforest'
+-- use 'sainnhe/edge'
+-- use 'shaunsingh/nord.nvim'
+-- use 'dracula/vim'
+-- use 'sam4llis/nvim-tundra'
+-- use 'rebelot/kanagawa.nvim'
+-- use 'cocopon/iceberg.vim'
+-- use 'marko-cerovac/material.nvim'
+-- use 'sainnhe/sonokai'
+-- use 'Mofiqul/vscode.nvim'
+-- use 'navarasu/onedark.nvim'
+-- use 'frenzyexists/aquarium-vim'
+-- use 'projekt0n/github-nvim-theme'

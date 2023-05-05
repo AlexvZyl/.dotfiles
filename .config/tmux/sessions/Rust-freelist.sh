@@ -4,9 +4,8 @@ session="Rust-freelist"
 path="$HOME/GitHub/freelist/src"
 file="$path/lib.rs"
 
-tmux start-server
-
 if ! tmux has-session -t $session >/dev/null 2>&1; then
+    tmux start-server
     tmux new-session -d -s $session -c $path -n nvim "nvim $file"
     tmux source-file ~/.config/tmux/neovim.conf
     

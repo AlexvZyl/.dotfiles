@@ -7,7 +7,7 @@ git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME clone --bare https://github.com
 git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout -f
 
 # Install yay and packages.
-~/.scripts/packages/setup.sh
+~/.scripts/packages/bootstrap.sh
 
 # Setup git.
 gh auth login

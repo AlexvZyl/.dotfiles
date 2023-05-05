@@ -32,8 +32,8 @@ To install everything, simply copy and paste this into the terminal.
 > ⚠️ &nbsp; I still need to properly test this.
 
 ```bash
-curl -s https://raw.githubusercontent.com/AlexvZyl/.dotfiles/main/.scripts/install/bootstrap.sh > bootstrap.sh
-chmod +x bootstrap.sh && ./bootstrap.sh && rm bootstrap.sh
+curl -s https://raw.githubusercontent.com/AlexvZyl/.dotfiles/main/.scripts/install/bootstrap.sh > ~/bootstrap.sh
+chmod +x ~/bootstrap.sh && ~/bootstrap.sh && rm ~/bootstrap.sh
 reboot
 ```
 

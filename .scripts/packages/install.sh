@@ -1,2 +1,2 @@
 #!/bin/bash
-yay -Syyu "$(cat packages.txt)"
+yay -S "$(cat ~/.scripts/packages/packages.txt)"

@@ -2,7 +2,7 @@
 
 # Define the directory to search for files
 dir="$HOME/.config/tmux/sessions"
-prefix="  "
+prefix="󱫋  "
 
 # Get a list of files in the directory and store it in an array
 files=("$dir"/*)

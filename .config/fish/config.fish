@@ -18,5 +18,5 @@ set -gx PF_COL1 "4"
 set -gx PF_COL2 "9"
 set -gx PF_COL3 "1"
 
-# Environmnet.
+# Environment
 source ~/.profile

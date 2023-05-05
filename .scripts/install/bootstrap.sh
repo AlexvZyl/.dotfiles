@@ -2,9 +2,10 @@
 
 # Clone.
 sudo pacman -S git
+
 mkdir ~/.dotfiles
 git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME clone --bare https://github.com/AlexvZyl/.dotfiles ~/.dotfiles/
-git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME config checkout -f
+git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout -f
 
 # Install yay and packages.
 ~/.scripts/packages/setup.sh

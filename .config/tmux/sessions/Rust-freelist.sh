@@ -1,7 +1,7 @@
 #!/bin/bash
 
 session="Rust-freelist"
-path="$HOME/GitHub/freelist/src"
+path="$HOME/Repositories/freelist/src"
 file="$path/lib.rs"
 
 if ! tmux has-session -t $session >/dev/null 2>&1; then

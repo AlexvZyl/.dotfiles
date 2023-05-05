@@ -1,7 +1,7 @@
 #!/bin/bash
 
 session="Masters-Thesis"
-path="$HOME/GitHub/Masters-Thesis"
+path="$HOME/Repositories/Masters-Thesis"
 file="$path/USthesis_Masters.tex"
 
 tmux start-server

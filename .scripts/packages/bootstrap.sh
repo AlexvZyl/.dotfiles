@@ -11,5 +11,6 @@ cd ~ || exit
 yay -Syyu
 
 # Install packages.
+yay -S reflector
 ~/.scripts/packages/update_mirrorlist.sh
 ~/.scripts/packages/install.sh

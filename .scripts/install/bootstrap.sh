@@ -1,7 +1,13 @@
 #!/bin/bash
 
+# FIRST!  Install yay and packages.
+~/.scripts/packages/setup.sh
+
+# Setup git.
+gh auth login
+config config --local status.showUntrackedFiles no
+
 # Clone.
-sudo pacman -S git
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 mkdir ~/.dotfiles
 config clone --bare https://github.com/AlexvZyl/.dotfiles ~/.dotfiles/

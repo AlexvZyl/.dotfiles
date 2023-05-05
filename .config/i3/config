@@ -210,6 +210,8 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 # start a terminal
 bindsym $mod+t exec kitty --config ~/.config/kitty/padding.conf --execute tmux -L kitty -f ~/.config/tmux/tmux.conf
 
+bindsym $mod+c exec kitty --config ~/.config/kitty/padding.conf --execute fish -c lazygit-dotfiles
+
 # Start editor.
 # bindsym $mod+n exec neovide --multigrid
 # bindsym $mod+n exec alacritty --command=nvim

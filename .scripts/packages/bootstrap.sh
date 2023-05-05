@@ -1,9 +1,7 @@
 #!/bin/bash
 
 # Install yay.
-rm -rdf ~/Repositories/yay/
-git clone https://aur.archlinux.org/yay.git ~/Repositories/yay/
-cd ~/Repositories/yay/ || exit
+cd ~/.modules/yay/ || exit
 makepkg -si
 cd ~ || exit
 
@@ -11,6 +9,6 @@ cd ~ || exit
 yay -Syyu
 
 # Install packages.
-yay -S reflector
+yay -S reflector rsync
 ~/.scripts/packages/update_mirrorlist.sh
 ~/.scripts/packages/install.sh

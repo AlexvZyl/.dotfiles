@@ -8,10 +8,9 @@ local on_attach = function(client, bufnr)
     -- I am using Lsp-Saga for LSP info and not the native functions.
 end
 
--- Flags.
 local lsp_flags = {
     -- Prevent the LSP client from making too many calls.
-    debounce_text_changes = 250,
+    debounce_text_changes = 250, -- ms
 }
 
 -- Use lspconfig to setup.
@@ -85,18 +84,3 @@ lsp_config.yamlls.setup {
     on_attach = on_attach,
     flags = lsp_flags,
 }
-
--- Diagnostics signs colors and character.
-vim.cmd [[
-    sign define DiagnosticSignError text= texthl= linehl= numhl=DiagnosticSignError 
-    sign define DiagnosticSignWarn  text= texthl= linehl= numhl=DiagnosticSignWarn
-    sign define DiagnosticSignInfo  text= texthl= linehl= numhl=DiagnosticSignInfo
-    sign define DiagnosticSignHint  text=󱤅 texthl= linehl= numhl=DiagnosticSignHint
-]]
-
-local config = {
-    virtual_text = false,
-    signs = true,
-    update_on_insert = true,
-}
-vim.diagnostic.config(config)

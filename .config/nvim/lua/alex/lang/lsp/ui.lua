@@ -8,6 +8,13 @@ vim.cmd [[
     sign define DiagnosticSignHint  text=󱤅 texthl= linehl= numhl=DiagnosticSignHint
 ]]
 
+local config = {
+    virtual_text = false,
+    signs = true,
+    update_on_insert = true,
+}
+vim.diagnostic.config(config)
+
 --------------
 -- LSP Saga --
 --------------

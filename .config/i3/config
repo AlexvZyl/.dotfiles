@@ -181,78 +181,30 @@ bindcode $mod+Shift+80 	 move container to workspace  $ws8
 bindcode $mod+Shift+81 	 move container to workspace  $ws9
 bindcode $mod+Shift+90 	 move container to workspace  $ws10
 
-# resize window (you can also use the mouse for that):
-#mode "resize" {
-# Pressing left will shrink the window's width.
-# Pressing right will grow the window's width.
-# Pressing up will shrink the window's height.
-# Pressing down will grow the window's height.
-#        bindsym j resize shrink width 10 px or 10 ppt
-#        bindsym k resize grow height 10 px or 10 ppt
-#        bindsym l resize shrink height 10 px or 10 ppt
-#        bindsym ntilde resize grow width 10 px or 10 ppt
-
-# same bindings, but for the arrow keys
-#	bindsym Left resize shrink width 10 px or 10 ppt
-#        bindsym Down resize grow height 10 px or 10 ppt
-#        bindsym Up resize shrink height 10 px or 10 ppt
-#        bindsym Right resize grow width 10 px or 10 ppt
-
-# back to normal: Enter or Escape
-#	bindsym Return mode "default"
-#        bindsym Escape mode "default"
-#}
-
 ######################################
 # keybindings for different actions: #
 ######################################
 
-# start a terminal
-bindsym $mod+t exec kitty --config ~/.config/kitty/padding.conf --execute tmux -L kitty -f ~/.config/tmux/tmux.conf
-
-bindsym $mod+c exec kitty --class dotfiles-git --config ~/.config/kitty/padding.conf --execute fish -c lazygit-dotfiles
-
-# Start editor.
-# bindsym $mod+n exec neovide --multigrid
-# bindsym $mod+n exec alacritty --command=nvim
-bindsym $mod+n exec kitty --class neovim --execute tmux -L neovim -f ~/.config/tmux/neovim.conf new-session -n "editor" "nvim"
-bindsym $mod+shift+f exec kitty --config ~/.config/kitty/padding.conf --execute tmux -L ranger new-session -n "files" "ranger"
-
-# Resource viewers.
+# Terminal.
+bindsym $mod+t exec kitty --config ~/.config/kitty/padding.conf --execute tmux -f ~/.config/tmux/terminal.conf
+# Dotfiles git.
+bindsym $mod+c exec kitty --class dotfiles-git --config ~/.config/kitty/padding.conf --execute tmux -f ~/.config/tmux/terminal.conf new-session -n ".dotfiles" "lazygit-dotfiles"
+# Editor.
+bindsym $mod+n exec kitty --class neovim --execute ~/.config/tmux/utils/start_editor.sh
+# Files.
+bindsym $mod+shift+f exec kitty --config ~/.config/kitty/padding.conf --execute tmux -f ~/.config/tmux/terminal.conf new-session -n "files" "ranger"
+# CPU.
 bindsym $mod+b exec kitty --config ~/.config/kitty/padding.conf --execute btop 
+# GPU.
 bindsym $mod+g exec kitty --config ~/.config/kitty/padding.conf --execute nvtop
-
 # RSS Feed.
 bindsym $mod+r exec kitty --config ~/.config/kitty/padding.conf --execute newsboat
-
 # Wifi.
 bindsym $mod+w exec kitty --config ~/.config/kitty/padding.conf --execute ~/.config/i3/scripts/iwctl.sh
-
-# kill focused window
+# Kill focused window.
 bindsym $mod+q kill
-
-# exit-menu
-bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu
-
-# Lock the system
-# lock with a picture:
-# bindsym $mod+l exec i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
-
 # Lock the screen.
-# bindsym $mod+Escape exec "betterlockscreen --lock blur"
 bindsym $mod+Escape exec "betterlockscreen --lock --display 1"
-
-# reload the configuration file
-bindsym $mod+Shift+c reload
-
-# restart i3 inplace (preserves your layout/session, can be used to update i3)
-# bindsym $mod+Alt+r restart
-
-# keybinding in fancy rofi (automated):
-# bindsym F11 exec ~/.config/i3/scripts/keyhint-2
-# alternative
-# keybinding list in editor:
-# bindsym $mod+F1 exec xed ~/.config/i3/keybindings
 
 # Backlight control
 bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set +10% && notify-send --urgency=low -r 9999 "󰃠  Brightness: $((($(brightnessctl g)*100)/$(brightnessctl m)))%"

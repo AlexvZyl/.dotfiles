@@ -1,14 +1,13 @@
 #!/bin/bash
 
+source ~/.config/tmux/utils/env.sh
 session="Rust-freelist"
-path="$HOME/Repositories/freelist/src"
-file="$path/lib.rs"
 
 if ! tmux has-session -t $session >/dev/null 2>&1; then
-    tmux start-server
+    path="$HOME/Repositories/freelist/src"
+    file="$path/lib.rs"
+
     tmux new-session -d -s $session -c $path -n nvim "nvim $file"
-    tmux source-file ~/.config/tmux/neovim.conf
-    
     tmux new-window -c $path -n "shell"
     tmux new-window -c $path -n "git" "lazygit"
     tmux select-window -t 1

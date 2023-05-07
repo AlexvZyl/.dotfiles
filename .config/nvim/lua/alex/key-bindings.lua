@@ -16,11 +16,10 @@ local default_settings = {
 }
 
 -- Files & searching.
-map_key(ex_t, '<F3>', '<Cmd>Telescope find_files<CR>', default_settings)
-map_key(ex_t, '<F2>', [[<Cmd>lua require('nvim-tree.api').tree.toggle {}<CR>]], default_settings)
 map_key(ex_t, '<Leader>f', [[<Cmd>lua require('nvim-tree.api').tree.toggle {}<CR>]], default_settings)
 map_key(ex_t, '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
-map_key(ex_t, '<F4>', '<Cmd>Telescope live_grep<CR>', default_settings)
+map_key(ex_t, '<F1>', '<Cmd>Telescope find_files<CR>', default_settings)
+map_key(ex_t, '<F2>', '<Cmd>Telescope live_grep<CR>', default_settings)
 map_key(ex_t, '<C-f>', '<Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>', default_settings)
 
 -- Cheatsheet.
@@ -37,8 +36,10 @@ map_key(n, '<C-Down>', ':resize +2<CR>', default_settings)
 map_key(n, '<C-Left>', ':vertical resize -2<CR>', default_settings)
 map_key(n, '<C-Right>', ':vertical resize +2<CR>', default_settings)
 
--- Commenting.
+-- Editing.
 map_key(ex_t, '<C-/>', '<Cmd>Commentary<CR>', default_settings)
+map_key(ex_t, '<C-z>', '<Cmd>undo<CR>', default_settings)
+map_key(ex_t, '<C-y>', '<Cmd>redo<CR>', default_settings)
 
 -- Functions that only saves buffers that has files.
 function Save_file()
@@ -54,11 +55,6 @@ map_key(ex_t, '<C-s>', '<Cmd>lua Save_file()<CR>', default_settings)
 map_key(ex_t, '<C-Tab>', '<Cmd>Telescope buffers<CR>', default_settings)
 map_key(n, '<leader><leader>', '<Cmd>Telescope buffers<CR>', default_settings)
 
--- Undo.
-map_key(ex_t, '<C-z>', '<Cmd>undo<CR>', default_settings)
-
--- Redo.
-map_key(ex_t, '<C-y>', '<Cmd>redo<CR>', default_settings)
 
 -- Barbar
 -- map_key(n, '<C-<>', '<Cmd>BufferMovePrevious<CR>', default_settings)

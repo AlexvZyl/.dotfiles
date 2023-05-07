@@ -95,7 +95,7 @@ map_key(n_v, 'RR', '<cmd>Lspsaga rename<CR>', { silent = true })
 map_key(n, 'gd', '<cmd>Lspsaga peek_definition<CR>', { silent = true })
 map_key(n, 'gf', '<cmd>Lspsaga goto_definition<CR>', { silent = true })
 map_key(n, 'gD', '<cmd>Lspsaga hover_doc<CR>', { silent = true })
-map_key(n, 'E', '<cmd>Lspsaga show_line_diagnostics ++unfocus<CR>', { silent = true })
+map_key(n, 'e', '<cmd>Lspsaga show_line_diagnostics ++unfocus<CR>', { silent = true })
 map_key(n, '[e', '<cmd>Lspsaga diagnostic_jump_prev<CR>', { silent = true })
 map_key(n, ']e', '<cmd>Lspsaga diagnostic_jump_next<CR>', { silent = true })
 map_key(

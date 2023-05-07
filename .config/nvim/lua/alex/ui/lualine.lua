@@ -124,6 +124,21 @@ end
 -- Required to properly set the colors.
 local c = require 'nordic.colors'
 
+local function get_short_cwd()
+  return vim.fn.fnamemodify(vim.fn.getcwd(), ':~')
+end
+local tree = {
+    sections = {
+        lualine_a = {
+            {
+                get_short_cwd,
+                separator = { right = ' ', left = '' },
+            }
+      }
+    },
+    filetypes = { 'NvimTree' }
+}
+
 require('lualine').setup {
     sections = {
         lualine_a = {
@@ -246,6 +261,6 @@ require('lualine').setup {
     },
     extensions = {
         'toggleterm',
-        'nvim-tree',
+        ['nvim-tree'] = tree,
     },
 }

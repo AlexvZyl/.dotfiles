@@ -15,38 +15,23 @@ local default_settings = {
     silent = true,
 }
 
--- Sometimes I do not lift the ctrl key when trying to close a window.
--- Why does this not work?
-map_key(n, '<C-w><C-c>', '<Cmd>wincmd c<CR>', default_settings)
-
--- Search for files in current directory.
+-- Files & searching.
 map_key(ex_t, '<F3>', '<Cmd>Telescope find_files<CR>', default_settings)
-
--- Toggle the file explorer.
-function Toggle_nvim_tree()
-    require('nvim-tree.api').tree.toggle {}
-    local is_open = require('nvim-tree.view').is_visible()
-    if is_open then vim.wo.statuscolumn = ' ' end
-end
-map_key(ex_t, '<F2>', '<Cmd>lua Toggle_nvim_tree()<CR>', default_settings)
-map_key(n, '<Leader>f', '<Cmd>lua Toggle_nvim_tree()<CR>', default_settings)
-
--- Grep for a string in the current directory.
-map_key(ex_t, '<F4>', '<Cmd>Telescope live_grep<CR>', default_settings)
-
--- Search for old files.
+map_key(ex_t, '<F2>', [[<Cmd>lua require('nvim-tree.api').tree.toggle {}<CR>]], default_settings)
+map_key(ex_t, '<Leader>f', [[<Cmd>lua require('nvim-tree.api').tree.toggle {}<CR>]], default_settings)
 map_key(ex_t, '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
+map_key(ex_t, '<F4>', '<Cmd>Telescope live_grep<CR>', default_settings)
+map_key(ex_t, '<C-f>', '<Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>', default_settings)
 
 -- Cheatsheet.
 map_key(ex_t, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
 
--- Moving windows.
+-- Windows.
+map_key(n, '<C-w><C-c>', '<Cmd>wincmd c<CR>', default_settings)
 map_key(n, '<C-h>', '<Cmd>wincmd h<CR>', default_settings)
 map_key(n, '<C-j>', '<Cmd>wincmd j<CR>', default_settings)
 map_key(n, '<C-k>', '<Cmd>wincmd k<CR>', default_settings)
 map_key(n, '<C-l>', '<Cmd>wincmd l<CR>', default_settings)
-
--- Resizing windows.
 map_key(n, '<C-Up>', ':resize -2<CR>', default_settings)
 map_key(n, '<C-Down>', ':resize +2<CR>', default_settings)
 map_key(n, '<C-Left>', ':vertical resize -2<CR>', default_settings)
@@ -68,9 +53,6 @@ map_key(ex_t, '<C-s>', '<Cmd>lua Save_file()<CR>', default_settings)
 -- C-Tab does not work...
 map_key(ex_t, '<C-Tab>', '<Cmd>Telescope buffers<CR>', default_settings)
 map_key(n, '<leader><leader>', '<Cmd>Telescope buffers<CR>', default_settings)
-
--- Finding.
-map_key(ex_t, '<C-f>', '<Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>', default_settings)
 
 -- Undo.
 map_key(ex_t, '<C-z>', '<Cmd>undo<CR>', default_settings)

@@ -75,6 +75,7 @@ vim.notify = notify
 -- Noice --
 -----------
 
+if not vim.g.neovide then
 require('noice').setup {
     cmdline = {
         format = {
@@ -112,6 +113,7 @@ require('noice').setup {
         lsp_doc_border = false, -- add a border to hover docs and signature help
     },
 }
+end
 
 ---------------
 -- Colorizer --

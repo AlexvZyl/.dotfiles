@@ -1,2 +1,2 @@
 #!/bin/bash
-yay -Qqe > ~/.scripts/packages/packages.txt
+yay -Qqe > ~/.scripts/packages/SYSTEM.txt

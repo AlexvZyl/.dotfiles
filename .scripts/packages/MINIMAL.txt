@@ -1,0 +1,14 @@
+i3-wm
+
+git
+neovim
+tmux
+
+tlp
+optimus-manager
+nvidia
+
+discord
+brave-bin
+
+ufw

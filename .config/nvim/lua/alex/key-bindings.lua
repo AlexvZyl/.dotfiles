@@ -79,13 +79,13 @@ map_key(ex_t, '<C-z>', '<Cmd>undo<CR>', default_settings)
 map_key(ex_t, '<C-y>', '<Cmd>redo<CR>', default_settings)
 
 -- Barbar
-map_key(n, '<C-<>', '<Cmd>BufferMovePrevious<CR>', default_settings)
-map_key(n, '<C->>', '<Cmd>BufferMoveNext<CR>', default_settings)
+-- map_key(n, '<C-<>', '<Cmd>BufferMovePrevious<CR>', default_settings)
+-- map_key(n, '<C->>', '<Cmd>BufferMoveNext<CR>', default_settings)
 map_key(n, '<C-q>', '<Cmd>BufferDelete<CR>', default_settings)
 map_key(n, 'db', '<Cmd>BufferPickDelete<CR>', default_settings)
 map_key(n, 'gb', '<Cmd>BufferPick<CR>', default_settings)
-map_key(n, '<C-,>', '<Cmd>BufferPrevious<CR>', default_settings)
-map_key(n, '<C-.>', '<Cmd>BufferNext<CR>', default_settings)
+map_key(n, 'H', '<Cmd>BufferPrevious<CR>', default_settings)
+map_key(n, 'L', '<Cmd>BufferNext<CR>', default_settings)
 map_key(n, '<C-p>', '<Cmd>BufferPin<CR>', default_settings)
 
 -- LSP Saga
@@ -95,7 +95,7 @@ map_key(n_v, 'RR', '<cmd>Lspsaga rename<CR>', { silent = true })
 map_key(n, 'gd', '<cmd>Lspsaga peek_definition<CR>', { silent = true })
 map_key(n, 'gf', '<cmd>Lspsaga goto_definition<CR>', { silent = true })
 map_key(n, 'gD', '<cmd>Lspsaga hover_doc<CR>', { silent = true })
-map_key(n, 'L', '<cmd>Lspsaga show_line_diagnostics ++unfocus<CR>', { silent = true })
+map_key(n, 'E', '<cmd>Lspsaga show_line_diagnostics ++unfocus<CR>', { silent = true })
 map_key(n, '[e', '<cmd>Lspsaga diagnostic_jump_prev<CR>', { silent = true })
 map_key(n, ']e', '<cmd>Lspsaga diagnostic_jump_next<CR>', { silent = true })
 map_key(

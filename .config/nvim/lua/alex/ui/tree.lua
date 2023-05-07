@@ -89,11 +89,25 @@ require('nvim-tree').setup {
     sync_root_with_cwd = true,
     view = view,
     system_open = system_open,
+    renderer = renderer,
     git = {
         ignore = false,
     },
-    renderer = renderer,
     diagnostics = {
         enable = true,
     },
 }
+
+-- Set window local options.
+local api = require("nvim-tree.api")
+local Event = api.events.Event
+api.events.subscribe(Event.TreeOpen, function(_)
+        vim.cmd([[setlocal statuscolumn=\ ]])
+    end
+)
+
+-- Refresh on enter.
+vim.api.nvim_create_autocmd( { "WinEnter" }, {
+    pattern = "*",
+    command = "NvimTreeRefresh"
+})

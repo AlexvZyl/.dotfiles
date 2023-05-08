@@ -55,7 +55,6 @@ map_key(ex_t, '<C-s>', '<Cmd>lua Save_file()<CR>', default_settings)
 map_key(ex_t, '<C-Tab>', '<Cmd>Telescope buffers<CR>', default_settings)
 map_key(n, '<leader><leader>', '<Cmd>Telescope buffers<CR>', default_settings)
 
-
 -- Barbar
 -- map_key(n, '<C-<>', '<Cmd>BufferMovePrevious<CR>', default_settings)
 -- map_key(n, '<C->>', '<Cmd>BufferMoveNext<CR>', default_settings)

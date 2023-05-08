@@ -10,11 +10,14 @@ nvidia-dkms
 nvidia-force-comp-pipeline
 nvidia-settings
 nvidia-utils
-ufw
 arandr
 brightnessctl
 cronie
 dunst
+
+tracerotue
+ufw
+fail2ban
 
 i3-wm
 polybar-git

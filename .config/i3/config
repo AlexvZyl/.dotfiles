@@ -388,6 +388,7 @@ for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enabl
 for_window [window_role="About"] floating enable
 for_window [class="Alacritty"] floating enable
 for_window [class="kitty"] floating enable
+for_window [class="Gufw.py"] floating enable
 
 # Set size of floating window.
 for_window [class=".*"] resize set 960 600

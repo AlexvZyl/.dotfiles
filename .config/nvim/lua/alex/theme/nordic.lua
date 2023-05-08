@@ -21,7 +21,7 @@ local p = require 'nordic.colors'
 local override = {
     CursorLine = {
         bg = p.bg,
-        bold = false
+        bold = false,
     },
     PopupNormal = {
         bg = p.bg_dark,

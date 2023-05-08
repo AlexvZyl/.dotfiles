@@ -18,6 +18,7 @@ dunst
 tracerotue
 ufw
 fail2ban
+clamav
 
 i3-wm
 polybar-git

@@ -5,5 +5,6 @@
 ~/.scripts/install/display.sh
 ~/.scripts/install/hardware.sh
 ~/.scripts/install/misc.sh
+~/.scripts/install/security.sh
 ~/.tmux/plugins/tpm/bin/install_plugins
 ~/.config/nvim/lua/alex/lang/lsp/install-servers.sh

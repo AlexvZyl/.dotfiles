@@ -16,7 +16,7 @@ local default_settings = {
 }
 
 -- Files & searching.
-map_key(ex_t, '<Leader>f', [[<Cmd>lua require('nvim-tree.api').tree.toggle {}<CR>]], default_settings)
+map_key(n_v, '<Leader>f', [[<Cmd>lua require('nvim-tree.api').tree.toggle {}<CR>]], default_settings)
 map_key(ex_t, '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
 map_key(ex_t, '<F1>', '<Cmd>Telescope find_files<CR>', default_settings)
 map_key(ex_t, '<F2>', '<Cmd>Telescope live_grep<CR>', default_settings)

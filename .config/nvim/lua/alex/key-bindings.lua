@@ -104,7 +104,6 @@ function Cwd_current_buffer()
     if dir == nil then return end
     vim.cmd('cd ' .. dir)
     vim.cmd([[!tmux send-keys -t . "cd ]] .. dir .. [[" Enter]])
-
 end
 local Cd_command = '<Cmd>lua Cwd_current_buffer()<CR><Cmd>NvimTreeRefresh<CR><Cmd>NvimTreeFindFile<CR>'
 map_key(n_v, 'gc', Cd_command, default_settings)

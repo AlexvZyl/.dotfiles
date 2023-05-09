@@ -2,11 +2,9 @@
 -- what is being used and ensure nothing being overwritten by accident.
 
 -- Modes.
-local all = { 'n', 'i', 'v', 't' }
 local ex_t = { 'n', 'i', 'v' }
 local n_v = { 'n', 'v' }
 local n = 'n'
-local t = 't'
 
 -- API.
 local map_key = vim.keymap.set
@@ -26,15 +24,15 @@ map_key(ex_t, '<C-f>', '<Cmd>Telescope current_buffer_fuzzy_find previewer=false
 map_key(ex_t, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
 
 -- Windows.
-map_key(n, '<C-w><C-c>', '<Cmd>wincmd c<CR>', default_settings)
-map_key(n, '<C-h>', '<Cmd>wincmd h<CR>', default_settings)
-map_key(n, '<C-j>', '<Cmd>wincmd j<CR>', default_settings)
-map_key(n, '<C-k>', '<Cmd>wincmd k<CR>', default_settings)
-map_key(n, '<C-l>', '<Cmd>wincmd l<CR>', default_settings)
-map_key(n, '<C-Up>', ':resize -2<CR>', default_settings)
-map_key(n, '<C-Down>', ':resize +2<CR>', default_settings)
-map_key(n, '<C-Left>', ':vertical resize -2<CR>', default_settings)
-map_key(n, '<C-Right>', ':vertical resize +2<CR>', default_settings)
+map_key(ex_t, '<C-w><C-c>', '<Cmd>wincmd c<CR>', default_settings)
+map_key(ex_t, '<C-h>', '<Cmd>wincmd h<CR>', default_settings)
+map_key(ex_t, '<C-j>', '<Cmd>wincmd j<CR>', default_settings)
+map_key(ex_t, '<C-k>', '<Cmd>wincmd k<CR>', default_settings)
+map_key(ex_t, '<C-l>', '<Cmd>wincmd l<CR>', default_settings)
+map_key(ex_t, '<C-Up>', ':resize -2<CR>', default_settings)
+map_key(ex_t, '<C-Down>', ':resize +2<CR>', default_settings)
+map_key(ex_t, '<C-Left>', ':vertical resize -2<CR>', default_settings)
+map_key(ex_t, '<C-Right>', ':vertical resize +2<CR>', default_settings)
 
 -- Editing.
 map_key(ex_t, '<C-/>', '<Cmd>Commentary<CR>', default_settings)

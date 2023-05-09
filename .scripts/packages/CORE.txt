@@ -19,6 +19,7 @@ tracerotue
 ufw
 fail2ban
 clamav
+rustscan
 
 i3-wm
 polybar-git
@@ -42,10 +43,11 @@ zathura
 ranger
 
 signal
+discord
+whatsapp-nativefier
 
 feh
 pinta
-discord
 brave-bin
 xournalpp
 cava

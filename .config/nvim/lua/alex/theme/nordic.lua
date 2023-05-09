@@ -19,34 +19,14 @@ require('nordic').setup {
 -- Overrides.
 local p = require 'nordic.colors'
 local override = {
-    CursorLine = {
-        bg = p.bg,
-        bold = false,
-    },
-    PopupNormal = {
-        bg = p.bg_dark,
-    },
-    PopupBorder = {
-        bg = p.bg_dark,
-        fg = p.grey1,
-    },
-    Pmenu = {
-        link = 'PopupNormal',
-    },
-    PmenuSel = {
-        bg = p.grey0,
-        bold = true,
-    },
-    PmenuBorder = {
-        link = 'PopupBorder',
-    },
-    PmenuDocBorder = {
-        bg = p.bg_dark,
-        fg = p.grey1,
-    },
-    NormalFloat = {
-        bg = p.bg_dark,
-    },
+    CursorLine = { bg = p.bg },
+    PopupNormal = { bg = p.bg_dark },
+    PopupBorder = { bg = p.bg_dark, fg = p.grey1 },
+    Pmenu = { link = 'PopupNormal' },
+    PmenuSel = { bg = p.grey0, bold = true },
+    PmenuBorder = { link = 'PopupBorder' },
+    PmenuDocBorder = { bg = p.bg_dark, fg = p.grey1 },
+    NormalFloat = { bg = p.bg_dark },
     FloatBorder = {
         bg = p.bg_dark,
     },

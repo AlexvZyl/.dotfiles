@@ -77,7 +77,7 @@ function M:get_current_filename_with_icon()
     local readonly = vim.api.nvim_buf_get_option(0, 'readonly')
     local modifiable = vim.api.nvim_buf_get_option(0, 'modifiable')
     local nofile = get_current_buftype() == 'nofile'
-    if readonly or nofile or not modifiable then suffix = ' ' end
+    if readonly or nofile or not modifiable then suffix = '  ' end
 
     -- Return the formatted string.
     return icon .. ' ' .. f_name .. suffix

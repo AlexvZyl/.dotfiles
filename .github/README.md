@@ -37,6 +37,18 @@ chmod +x ~/bootstrap.sh && ~/bootstrap.sh && rm ~/bootstrap.sh
 reboot
 ```
 
+# Privacy and Security
+
+Although I like posting on r/unixporn, these dotfiles also try to be private and secure.  This is a journey, not a destination, and I am open to any input.  Current measures that have been implemented:
+- Keeping system up to date (`yay -Syyu`)
+- Malware scanning and database updating (clamav)
+- Firewall (ufw)
+- Ban IPs (fail2ban)
+- Using Signal, when possible
+- Hosting API keys in a private repo
+- Hardened firefox (user.js)
+- I could install the hardened kernel, but that might be slightly pedantic...
+
 # Theme
 
 The theme is based on my Neovim plugin, [nordic.nvim](https://github.com/AlexvZyl/nordic.nvim).  It is a warmer and darker version of the [Nord](https://www.nordtheme.com/) color palette.

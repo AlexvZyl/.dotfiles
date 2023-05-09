@@ -39,15 +39,25 @@ reboot
 
 # Privacy and Security
 
-Although I like posting on r/unixporn, these dotfiles also try to be private and secure.  This is a journey, not a destination, and I am open to any input.  Current measures that have been implemented:
+Although I like posting on r/unixporn, these dotfiles also try to be private and secure.  This is a journey, not a destination, and I am open to any input.
+
+<details>
+
+<summary>Measures</summary>
+
+</br>
+
 - Keeping system up to date (`yay -Syyu`)
-- Malware scanning and database updating (clamav)
-- Firewall (ufw)
-- Ban IPs (fail2ban)
-- Using Signal, when possible
+- Malware scanning and database updating ([clamav](https://github.com/Cisco-Talos/clamav))
+- Firewall ([ufw](https://wiki.archlinux.org/title/Uncomplicated_Firewall))
+- Ban IPs ([fail2ban](https://github.com/fail2ban/fail2ban))
+- Using [Signal](https://github.com/signalapp) (when possible)
 - Hosting API keys in a private repo
-- Hardened firefox (user.js)
-- I could install the hardened kernel, but that might be slightly pedantic...
+- Hardened firefox ([user.js](https://github.com/arkenfox/user.js/))
+- I could install the hardened Linux kernel, but that might be slightly pedantic...
+- Port scanning ([rustscan](https://github.com/RustScan/RustScan))
+
+</details>
 
 # Theme
 
@@ -105,6 +115,7 @@ A few notes on the bindings:
 |  Binding  |  Action   |
 | :-------: | :-------: |
 | Super + d | App launcher |
+| Super + s | Tmux sessions |
 | Super + p | Powermenu |
 | Super + t | Terminal |
 | Super + n | Neovim |

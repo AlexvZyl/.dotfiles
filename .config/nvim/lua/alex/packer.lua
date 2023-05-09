@@ -117,17 +117,6 @@ return require('packer').startup {
             },
         }
 
-        -- AI.  Will it take my job?...
-        -- use 'github/copilot.vim'
-        use {
-            'jackMort/ChatGPT.nvim',
-            requires = {
-                'MunifTanjim/nui.nvim',
-                'nvim-lua/plenary.nvim',
-                'nvim-telescope/telescope.nvim',
-            },
-        }
-
         -- Git.
         -- TODO
         use 'lewis6991/gitsigns.nvim'

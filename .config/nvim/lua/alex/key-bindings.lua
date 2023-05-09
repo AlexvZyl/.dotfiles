@@ -103,15 +103,14 @@ function Cwd_current_buffer()
     local dir = abs_path:match '(.*[/\\])'
     if dir == nil then return end
     vim.cmd('cd ' .. dir)
+    vim.cmd([[!tmux send-keys -t . "cd ]] .. dir .. [[" Enter]])
+
 end
-map_key(
-    n_v,
-    'gc',
-    '<Cmd>lua Cwd_current_buffer()<CR><Cmd>NvimTreeRefresh<CR><Cmd>NvimTreeFindFile<CR>',
-    default_settings
-)
+local Cd_command = '<Cmd>lua Cwd_current_buffer()<CR><Cmd>NvimTreeRefresh<CR><Cmd>NvimTreeFindFile<CR>'
+map_key(n_v, 'gc', Cd_command, default_settings)
 
 -- Debugger Protocol
+-- TODO: Change chese keys!
 map_key(ex_t, '<A-d>', '<Cmd>DapContinue<CR>', default_settings)
 map_key(ex_t, '<A-b>', '<Cmd>DapToggleBreakpoint<CR>', default_settings)
 map_key(ex_t, '<A-o>', '<Cmd>DapStepOver<CR>', default_settings)
@@ -122,6 +121,3 @@ map_key(ex_t, '<A-c>', '<Cmd>DapContinue<CR>', default_settings)
 map_key(ex_t, '<A-r>', '<Cmd>DapRestartFrame<CR>', default_settings)
 map_key(ex_t, '<A-l>', "<Cmd>lua require 'dapui'.float_element('scopes')<CR>", default_settings)
 map_key(ex_t, '<A-W>', "<Cmd>lua require 'dapui'.toggle()<CR>", default_settings)
-
--- AI
-if vim.env.OPENAI_API_KEY then map_key(n, '<Leader>c', '<Cmd>ChatGPT<CR>', default_settings) end

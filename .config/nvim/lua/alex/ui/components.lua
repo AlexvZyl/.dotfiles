@@ -1,32 +1,19 @@
 local u = require 'alex.utils'
 
-----------------------
--- Find and Replace --
-----------------------
-
 -- Allow FAR to undo.
 vim.cmd 'let g:far#enable_undo=1'
 
-----------------
--- Auto pairs --
-----------------
-
+-- Auto pairs
 require('nvim-autopairs').setup {
     map_cr = false,
 }
 
-----------
--- Leap --
-----------
-
+-- Leap
 local leap = require 'leap'
 leap.setup {}
 leap.set_default_keymaps(true)
 
-----------------
--- Illuminate --
-----------------
-
+-- Illuminate
 require('illuminate').configure {
     under_cursor = false,
     delay = 500,
@@ -36,10 +23,7 @@ require('illuminate').configure {
     },
 }
 
------------------
--- Indentation --
------------------
-
+-- Indentation
 require('indent_blankline').setup {
     show_end_of_line = true,
     show_current_context = true,
@@ -51,19 +35,11 @@ require('indent_blankline').setup {
     char = '┆',
 }
 
----------------------
--- Setup which-key --
----------------------
-
+-- which-key
 require('which-key').setup {}
-
--- Timeout.
 vim.cmd 'set timeoutlen =1000'
 
----------------------------------
--- Setup default notifications --
----------------------------------
-
+-- Notifiactions
 local notify = require 'notify'
 notify.setup {
     fps = 60,
@@ -71,18 +47,16 @@ notify.setup {
 }
 vim.notify = notify
 
------------
--- Noice --
------------
-
+-- Noice
 if not vim.g.neovide then
     require('noice').setup {
         cmdline = {
             format = {
-                cmdline = { title = '', icon = '  ' },
+                cmdline = { title = '', icon = '  ' },
                 lua = { title = '', icon = ' 󰢱 ' },
                 help = { title = '', icon = ' 󰋖 ' },
-                input = { title = '' },
+                input = { title = '', icon = '  ' },
+                filter = { title = '', icon = '  ' },
             },
         },
         views = {
@@ -115,10 +89,7 @@ if not vim.g.neovide then
     }
 end
 
----------------
--- Colorizer --
----------------
-
+-- Colorizer
 require('colorizer').setup {
     user_default_options = {
         mode = 'virtualtext',

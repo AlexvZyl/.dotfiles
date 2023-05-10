@@ -18,3 +18,4 @@ alias rm="trash --trash-dir ~/.trash"  # This one has saved me a lot of heartach
 alias julia="clear && julialauncher"
 alias pdf="nohup zathura"
 alias rst="reset && pfetch"
+alias cat="bat"

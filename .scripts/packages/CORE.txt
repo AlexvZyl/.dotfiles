@@ -28,6 +28,7 @@ sddm
 sddm-sugar-dark
 betterlockscreen-git
 ttf-jetbrains-mono-nerd
+xdotool
 
 kitty
 git
@@ -37,6 +38,8 @@ neovide
 tmux
 fish
 exa
+bat
+zoxide
 btop
 nvtop
 zathura

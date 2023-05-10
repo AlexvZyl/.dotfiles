@@ -374,12 +374,10 @@ exec --no-startup-id blueberry-tray
 # floating rules #
 ##################
 
-# set floating (nontiling) for apps needing it
+# Set floating for specific windows.
 for_window [class="Yad" instance="yad"] floating enable
 for_window [class="Galculator" instance="galculator"] floating enable
 for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
-
-# set floating (nontiling) for special apps
 for_window [class="Xsane" instance="xsane"] floating enable
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="qt5ct" instance="qt5ct"] floating enable
@@ -390,6 +388,8 @@ for_window [class="Alacritty"] floating enable
 for_window [class="kitty"] floating enable
 for_window [class="Gufw.py"] floating enable
 
+# Browser fullscreen some windows.
+for_window [class="Brave-browser"] exec --no-startup-id ~/.config/i3/browser.sh
 # Set size of floating window.
 for_window [class=".*"] resize set 960 600
 

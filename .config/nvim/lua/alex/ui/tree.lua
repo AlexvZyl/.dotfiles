@@ -20,46 +20,44 @@ local function root_label(path)
     return path
 end
 
+local icons = {
+    git_placement = 'after',
+    modified_placement = 'after',
+    padding = ' ',
+    glyphs = {
+        default = '󰈔',
+        folder = {
+            arrow_closed = '',
+            arrow_open = '',
+            default = ' ',
+            open = ' ',
+            empty = ' ',
+            empty_open = ' ',
+            symlink = '󰉒 ',
+            symlink_open = '󰉒 ',
+        },
+        git = {
+            deleted = '',
+            unstaged = '',
+            untracked = '',
+            staged = '',
+            unmerged = '',
+        },
+    },
+}
+
 local renderer = {
     root_folder_label = root_label,
     indent_width = 2,
     indent_markers = {
         enable = true,
         inline_arrows = true,
-        icons = {
-            corner = '╰',
-        },
+        icons = { corner = '╰' }
     },
-    icons = {
-        git_placement = 'after',
-        modified_placement = 'after',
-        padding = ' ',
-        glyphs = {
-            default = '󰈔',
-            folder = {
-                arrow_closed = '',
-                arrow_open = '',
-                default = ' ',
-                open = ' ',
-                empty = ' ',
-                empty_open = ' ',
-                symlink = '󰉒 ',
-                symlink_open = '󰉒 ',
-            },
-            git = {
-                deleted = '',
-                unstaged = '',
-                untracked = '',
-                staged = '',
-                unmerged = '',
-            },
-        },
-    },
+    icons = icons
 }
 
-local system_open = {
-    cmd = 'zathura',
-}
+local system_open = { cmd = 'zathura' }
 
 local view = {
     cursorline = false,
@@ -76,11 +74,7 @@ local view = {
             { key = 'o', action = 'system_open' },
         },
     },
-    width = {
-        max = 40,
-        min = 40,
-        padding = 1,
-    },
+    width = { max = 41, min = 40, padding = 1 },
 }
 
 -- Setup.

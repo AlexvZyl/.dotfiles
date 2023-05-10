@@ -20,6 +20,7 @@ require('nordic').setup {
 local p = require 'nordic.colors'
 local override = {
     CursorLine = { bg = p.bg },
+    CursorLineNr = { bold = false },
     PopupNormal = { bg = p.bg_dark },
     PopupBorder = { bg = p.bg_dark, fg = p.grey1 },
     Pmenu = { link = 'PopupNormal' },
@@ -27,30 +28,23 @@ local override = {
     PmenuBorder = { link = 'PopupBorder' },
     PmenuDocBorder = { bg = p.bg_dark, fg = p.grey1 },
     NormalFloat = { bg = p.bg_dark },
-    FloatBorder = {
-        bg = p.bg_dark,
-    },
-    NoiceCmdlineIcon = {
-        bg = p.bg_dark,
-    },
-    NoiceCmdlinePopupBorder = {
-        fg = p.cyan.base,
-    },
-    SagaBorder = {
-        bg = p.bg_dark,
-        fg = p.grey1,
-    },
-    SagaNormal = {
-        bg = p.bg_dark,
-    },
+    FloatBorder = { bg = p.bg_dark },
+    NoiceCmdlineIcon = { bg = p.bg_dark },
+    NoiceCmdlinePopupBorder = { fg = p.cyan.base },
+    SagaBorder = { bg = p.bg_dark, fg = p.grey1 },
+    SagaNormal = { bg = p.bg_dark },
+    NoiceLspProgressTitle = { fg = p.yellow.base, bg = p.bg, bold = true },
+    NoiceLspProgressClient = { fg = p.gray4, bg = p.bg },
+    NoiceLspProgressSpinner = { fg = p.cyan.bright, bg = p.bg },
+    NoiceFormatProgressDone = { bg = p.green.bright, fg = p.black },
+    NoiceFormatProgressTodo = { bg = p.gray5, fg = p.black },
 }
-
-require('nordic').setup {
-    override = override,
-}
+require('nordic').setup { override = override }
 
 -- Load the scheme.
 vim.cmd.colorscheme 'nordic'
 
+-- After, not sure what is happening here...
 vim.cmd([[highlight DiagnosticShowBorder guibg=]] .. p.bg_dark .. ' guifg=' .. p.grey1)
 vim.cmd([[highlight SagaNormal guibg=]] .. p.bg_dark)
+

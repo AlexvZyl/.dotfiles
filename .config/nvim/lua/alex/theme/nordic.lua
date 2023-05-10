@@ -47,4 +47,3 @@ vim.cmd.colorscheme 'nordic'
 -- After, not sure what is happening here...
 vim.cmd([[highlight DiagnosticShowBorder guibg=]] .. p.bg_dark .. ' guifg=' .. p.grey1)
 vim.cmd([[highlight SagaNormal guibg=]] .. p.bg_dark)
-

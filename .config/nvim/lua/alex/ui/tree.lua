@@ -52,9 +52,9 @@ local renderer = {
     indent_markers = {
         enable = true,
         inline_arrows = true,
-        icons = { corner = '╰' }
+        icons = { corner = '╰' },
     },
-    icons = icons
+    icons = icons,
 }
 
 local system_open = { cmd = 'zathura' }

@@ -92,7 +92,7 @@ map_key(
 
 -- Misc.
 map_key(n, 'gl', '<Cmd>VimtexView<CR>', default_settings)
-map_key(n_v, '<Esc>', '<Cmd>noh<CR>', { silent=true, noremap=false })
+map_key(n_v, '<Esc>', '<Cmd>noh<CR>', { silent = true, noremap = false })
 
 -- Working directory
 function Cwd_current_buffer()

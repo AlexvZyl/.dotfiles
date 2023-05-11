@@ -9,7 +9,7 @@ nvim_tree_events.subscribe('Resize', function() bufferline_api.set_offset(get_tr
 nvim_tree_events.subscribe('TreeClose', function() bufferline_api.set_offset(0) end)
 
 -- Icons.
-local right_line = { left='', right=u.right_thick }
+local right_line = { left = '', right = u.right_thick }
 local def_buf = { separator = right_line }
 local icons = {
     button = '',

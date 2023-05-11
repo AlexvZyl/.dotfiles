@@ -67,3 +67,6 @@ vim.cmd 'hi SpellBad gui=undercurl'
 vim.cmd 'set winblend=0'
 vim.cmd 'set pumblend=0'
 vim.opt.pumheight = 10
+
+-- Some windows I want to be in insert mode, for example, telescope.
+-- vim.api.nvim_create_autocmd({ 'WinEnter' }, { callback = function() vim.api.nvim_input('<Esc>') end })

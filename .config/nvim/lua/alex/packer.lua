@@ -197,6 +197,8 @@ return require('packer').startup {
         -- use 'navarasu/onedark.nvim'
         -- use 'frenzyexists/aquarium-vim'
         -- use 'projekt0n/github-nvim-theme'
+        --
+        use 'Shatur/neovim-ayu'
 
         -- Bootstrap.
         if packer_bootstrap then require('packer').sync() end

@@ -64,7 +64,9 @@ map_key(n, 'H', '<Cmd>BufferPrevious<CR>', default_settings)
 map_key(n, 'L', '<Cmd>BufferNext<CR>', default_settings)
 map_key(n, '<C-p>', '<Cmd>BufferPin<CR>', default_settings)
 
--- LSP Saga
+-- LSP.
+map_key(n, '<leader>d', '<Cmd>TroubleToggle document_diagnostics<CR>', default_settings)
+map_key(n, '<leader>D', '<Cmd>TroubleToggle workspace_diagnostics<CR>', default_settings)
 map_key(n, 'gr', '<cmd>Lspsaga lsp_finder<CR>', { silent = true })
 map_key(n_v, 'ca', '<cmd>Lspsaga code_action<CR>', { silent = true })
 map_key(n_v, 'RR', '<cmd>Lspsaga rename<CR>', { silent = true })
@@ -74,6 +76,7 @@ map_key(n, 'gD', '<cmd>Lspsaga hover_doc<CR>', { silent = true })
 map_key(n, 'e', '<cmd>Lspsaga show_line_diagnostics ++unfocus<CR>', { silent = true })
 map_key(n, '[e', '<cmd>Lspsaga diagnostic_jump_prev<CR>', { silent = true })
 map_key(n, ']e', '<cmd>Lspsaga diagnostic_jump_next<CR>', { silent = true })
+map_key(n, '<leader>o', '<cmd>Lspsaga outline<CR>', { silent = true })
 map_key(
     n,
     '[E',
@@ -87,15 +90,9 @@ map_key(
     { silent = true }
 )
 
--- Outline
-map_key(n, '<leader>o', '<cmd>Lspsaga outline<CR>', { silent = true })
-
--- Vimtex
+-- Misc.
 map_key(n, 'gl', '<Cmd>VimtexView<CR>', default_settings)
-
--- Trouble
-map_key(n, '<leader>d', '<Cmd>TroubleToggle document_diagnostics<CR>', default_settings)
-map_key(n, '<leader>D', '<Cmd>TroubleToggle workspace_diagnostics<CR>', default_settings)
+map_key(n_v, '<Esc>', '<Cmd>noh<CR>', { silent=true, noremap=false })
 
 -- Working directory
 function Cwd_current_buffer()
@@ -103,7 +100,6 @@ function Cwd_current_buffer()
     local dir = abs_path:match '(.*[/\\])'
     if dir == nil then return end
     vim.cmd('cd ' .. dir)
-    vim.cmd([[!tmux send-keys -t . "cd ]] .. dir .. [[" Enter]])
 end
 local Cd_command = '<Cmd>lua Cwd_current_buffer()<CR><Cmd>NvimTreeRefresh<CR><Cmd>NvimTreeFindFile<CR>'
 map_key(n_v, 'gc', Cd_command, default_settings)

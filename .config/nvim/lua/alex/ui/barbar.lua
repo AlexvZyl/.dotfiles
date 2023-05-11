@@ -9,8 +9,10 @@ nvim_tree_events.subscribe('Resize', function() bufferline_api.set_offset(get_tr
 nvim_tree_events.subscribe('TreeClose', function() bufferline_api.set_offset(0) end)
 
 -- Icons.
+local line_sep = { left=u.left_thick, right=u.right_thick }
 local def_sep = { left=' ', right=' ' }
-local def_buf = { separator = def_sep }
+local no_sep = { left='', right='' }
+local def_buf = { separator = line_sep }
 local icons = {
     separator = { left = '', right = '' },
     button = '',
@@ -18,6 +20,7 @@ local icons = {
     visible = def_buf,
     alternate = def_buf,
     current = { separator={ left=u.left_thick, right=' '} },
+    -- current = { def_buf },
     diagnostics = {
         enabled = true,
         { enabled = true, icon = ' ' }, -- Error.
@@ -35,7 +38,7 @@ require('bufferline').setup {
     tabpages = false,
     icons = icons,
     animation = true,
-    auto_hide = true,
+    auto_hide = false,
     highlight_inactive_file_icons = false,
     minimum_padding = 1,
     maximum_length = 20,

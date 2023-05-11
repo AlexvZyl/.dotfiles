@@ -12,13 +12,22 @@ local function diff_source()
     end
 end
 
-local function tabnine()
+local function tabnine_active()
     local status = require('tabnine.status').status()
     status = status:match("%S+%s+%S+%s+(%S+)")
     if status == 'starter' then
-        return 'started'
+        return '󱜙 '
     end
-    return status
+    return ''
+end
+
+local function tabnine_status()
+    local status = require('tabnine.status').status()
+    status = status:match("%S+%s+%S+%s+(%S+)")
+    if status ~= 'starter' then
+        return '󱚟 '
+    end
+    return ''
 end
 
 -- Get the current buffer's filetype.
@@ -238,13 +247,13 @@ require('lualine').setup {
                 },
             },
             {
-                tabnine,
-                icon = {
-                    '󰚩 ',
-                    color = { fg = c.orange.bright }
-                }
+                tabnine_active,
+                color = { fg = c.green.bright }
             },
-
+            {
+                tabnine_status,
+                color = { fg = c.yellow.bright }
+            },
         },
         lualine_z = {
             {
@@ -262,7 +271,6 @@ require('lualine').setup {
                     align = 'left',
                     color = { fg = c.black },
                 },
-                -- separator = { right = '█', left = { '' } },
                 separator = { right = '', left = '' },
             },
         },

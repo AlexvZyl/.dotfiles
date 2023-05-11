@@ -24,7 +24,7 @@ local override = {
     PopupNormal = { bg = p.bg_dark },
     PopupBorder = { bg = p.bg_dark, fg = p.grey1 },
     Pmenu = { link = 'PopupNormal' },
-    PmenuSel = { bg = p.grey0, bold = true },
+    PmenuSel = { bg = p.grey0 },
     PmenuBorder = { link = 'PopupBorder' },
     PmenuDocBorder = { bg = p.bg_dark, fg = p.grey1 },
     NormalFloat = { bg = p.bg_dark },
@@ -39,6 +39,7 @@ local override = {
     NoiceFormatProgressDone = { bg = p.green.bright, fg = p.black },
     NoiceFormatProgressTodo = { bg = p.gray5, fg = p.black },
     CmpItemKindTabNine = { fg = p.red.base },
+    TelescopePreviewLine = { bg = p.gray0 },
 }
 require('nordic').setup { override = override }
 

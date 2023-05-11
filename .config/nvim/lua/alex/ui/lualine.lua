@@ -24,8 +24,17 @@ end
 local function tabnine_status()
     local status = require('tabnine.status').status()
     status = status:match("%S+%s+%S+%s+(%S+)")
-    if status ~= 'starter' then
+    if status ~= 'starter' and status ~= 'disabled' then
         return '󱚟 '
+    end
+    return ''
+end
+
+local function tabnine_disabled()
+    local status = require('tabnine.status').status()
+    status = status:match("%S+%s+%S+%s+(%S+)")
+    if status == 'disabled'  then
+        return '󱚡 '
     end
     return ''
 end
@@ -226,10 +235,10 @@ require('lualine').setup {
                     other = '󰠠 ',
                 },
                 diagnostics_color = {
-                    error = { fg = c.error, gui = 'bold' },
-                    warn = { fg = c.warn, gui = 'bold' },
-                    info = { fg = c.info, gui = 'bold' },
-                    hint = { fg = c.hint, gui = 'bold' },
+                    error = { fg = c.error },
+                    warn = { fg = c.warn },
+                    info = { fg = c.info },
+                    hint = { fg = c.hint },
                 },
                 colored = true,
             },
@@ -246,14 +255,9 @@ require('lualine').setup {
                     },
                 },
             },
-            {
-                tabnine_active,
-                color = { fg = c.green.bright }
-            },
-            {
-                tabnine_status,
-                color = { fg = c.yellow.bright }
-            },
+            { tabnine_active, color = { fg = c.green.bright } },
+            { tabnine_status, color = { fg = c.yellow.bright } },
+            { tabnine_disabled, color = { fg = c.red.bright } },
         },
         lualine_z = {
             {

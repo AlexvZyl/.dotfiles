@@ -14,19 +14,15 @@ end
 
 local function tabnine_active()
     local status = require('tabnine.status').status()
-    status = status:match("%S+%s+%S+%s+(%S+)")
-    if status == 'starter' then
-        return '󱜙 '
-    end
+    status = status:match '%S+%s+%S+%s+(%S+)'
+    if status == 'starter' then return '󱜙 ' end
     return ''
 end
 
 local function tabnine_status()
     local status = require('tabnine.status').status()
-    status = status:match("%S+%s+%S+%s+(%S+)")
-    if status ~= 'starter' then
-        return '󱚟 '
-    end
+    status = status:match '%S+%s+%S+%s+(%S+)'
+    if status ~= 'starter' then return '󱚟 ' end
     return ''
 end
 
@@ -248,11 +244,11 @@ require('lualine').setup {
             },
             {
                 tabnine_active,
-                color = { fg = c.green.bright }
+                color = { fg = c.green.bright },
             },
             {
                 tabnine_status,
-                color = { fg = c.yellow.bright }
+                color = { fg = c.yellow.bright },
             },
         },
         lualine_z = {

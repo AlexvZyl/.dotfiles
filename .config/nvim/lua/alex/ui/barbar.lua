@@ -20,7 +20,7 @@ local icons = {
 }
 
 local sidebar = {
-    NvimTree = true
+    NvimTree = true,
 }
 
 require('bufferline').setup {

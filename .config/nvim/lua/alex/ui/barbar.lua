@@ -9,7 +9,7 @@ nvim_tree_events.subscribe('Resize', function() bufferline_api.set_offset(get_tr
 nvim_tree_events.subscribe('TreeClose', function() bufferline_api.set_offset(0) end)
 
 -- Icons.
-local def_sep = { left=' ', right=' ' }
+local def_sep = { left = ' ', right = ' ' }
 local def_buf = { separator = def_sep }
 local icons = {
     separator = { left = '', right = '' },
@@ -17,7 +17,7 @@ local icons = {
     inactive = def_buf,
     visible = def_buf,
     alternate = def_buf,
-    current = { separator={ left=u.left_thick, right=' '} },
+    current = { separator = { left = u.left_thick, right = ' ' } },
     diagnostics = {
         enabled = true,
         { enabled = true, icon = ' ' }, -- Error.

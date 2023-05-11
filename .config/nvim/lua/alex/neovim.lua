@@ -6,6 +6,8 @@ vim.cmd 'set noshowmode'
 -- Clipboard.
 vim.cmd 'set clipboard+=unnamedplus'
 
+vim.cmd 'set noswapfile'
+
 -- Enable mouse input.
 vim.cmd 'set mouse=a'
 

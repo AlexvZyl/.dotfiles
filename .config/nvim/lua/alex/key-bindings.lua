@@ -15,10 +15,10 @@ local default_settings = {
 
 -- Files & searching.
 map_key(n_v, '<Leader>f', [[<Cmd>lua require('nvim-tree.api').tree.toggle {}<CR>]], default_settings)
-map_key(ex_t, '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
-map_key(ex_t, '<F1>', '<Cmd>Telescope find_files<CR>', default_settings)
-map_key(ex_t, '<F2>', '<Cmd>Telescope live_grep<CR>', default_settings)
-map_key(ex_t, '<C-f>', '<Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>', default_settings)
+map_key(n_v, '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
+map_key(n_v, 'ff', '<Cmd>Telescope find_files<CR>', default_settings)
+map_key(n_v, 'fs', '<Cmd>Telescope live_grep<CR>', default_settings)
+map_key(n_v, '<C-f>', '<Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>', default_settings)
 
 -- Cheatsheet.
 map_key(ex_t, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
@@ -71,7 +71,7 @@ map_key(n, 'gr', '<cmd>Lspsaga lsp_finder<CR>', { silent = true })
 map_key(n_v, 'ca', '<cmd>Lspsaga code_action<CR>', { silent = true })
 map_key(n_v, 'RR', '<cmd>Lspsaga rename<CR>', { silent = true })
 map_key(n, 'gd', '<cmd>Lspsaga peek_definition<CR>', { silent = true })
-map_key(n, 'gf', '<cmd>Lspsaga goto_definition<CR>', { silent = true })
+map_key(n, 'gf', '<cmd>Lspsaga goto_definition<CR>zz', { silent = true })
 map_key(n, 'gD', '<cmd>Lspsaga hover_doc<CR>', { silent = true })
 map_key(n, 'e', '<cmd>Lspsaga show_line_diagnostics ++unfocus<CR>', { silent = true })
 map_key(n, '[e', '<cmd>Lspsaga diagnostic_jump_prev<CR>', { silent = true })

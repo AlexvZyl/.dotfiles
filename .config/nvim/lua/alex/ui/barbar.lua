@@ -1,22 +1,12 @@
 local u = require 'alex.utils'
 
--- Offset for tree.
-local nvim_tree_events = require 'nvim-tree.events'
-local bufferline_api = require 'bufferline.api'
-local function get_tree_size() return require('nvim-tree.view').View.width end
-nvim_tree_events.subscribe('TreeOpen', function() bufferline_api.set_offset(get_tree_size()) end)
-nvim_tree_events.subscribe('Resize', function() bufferline_api.set_offset(get_tree_size()) end)
-nvim_tree_events.subscribe('TreeClose', function() bufferline_api.set_offset(0) end)
-
--- Icons.
-local right_line = { left = '', right = u.right_thick }
-local def_buf = { separator = right_line }
+local default = { separator = { left = '', right = u.right_thick } }
 local icons = {
     button = '',
-    inactive = def_buf,
-    visible = def_buf,
-    alternate = def_buf,
-    current = def_buf,
+    inactive = default,
+    visible = default,
+    alternate = default,
+    current = default,
     diagnostics = {
         enabled = true,
         { enabled = true, icon = ' ' }, -- Error.
@@ -29,8 +19,12 @@ local icons = {
     pinned = { button = '󰐃', filename = true },
 }
 
--- Setup
+local sidebar = {
+    NvimTree = true
+}
+
 require('bufferline').setup {
+    sidebar_filetypes = sidebar,
     tabpages = false,
     icons = icons,
     animation = true,

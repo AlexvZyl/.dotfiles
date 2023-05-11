@@ -12,6 +12,15 @@ local function diff_source()
     end
 end
 
+local function tabnine()
+    local status = require('tabnine.status').status()
+    status = status:match("%S+%s+%S+%s+(%S+)")
+    if status == 'starter' then
+        return 'started'
+    end
+    return status
+end
+
 -- Get the current buffer's filetype.
 local function get_current_filetype() return vim.api.nvim_buf_get_option(0, 'filetype') end
 
@@ -228,6 +237,14 @@ require('lualine').setup {
                     },
                 },
             },
+            {
+                tabnine,
+                icon = {
+                    '󰚩 ',
+                    color = { fg = c.orange.bright }
+                }
+            },
+
         },
         lualine_z = {
             {

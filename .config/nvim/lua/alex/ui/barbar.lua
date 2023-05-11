@@ -31,6 +31,7 @@ require('bufferline').setup {
     auto_hide = false,
     highlight_inactive_file_icons = false,
     minimum_padding = 1,
+    minimum_length = 9,
     maximum_length = 20,
     exclude_ft = { 'dap-repl' },
 }

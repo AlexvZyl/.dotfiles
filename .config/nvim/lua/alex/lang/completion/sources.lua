@@ -12,12 +12,28 @@ end
 -- Sources.
 cmp.setup {
     sources = cmp.config.sources {
+        { name = 'cmp_tabnine' },
         { name = 'nvim_lsp', entry_filter = filter_text },
-        { name = 'buffer', entry_filter = filter_text },
         { name = 'luasnip', entry_filter = filter_text },
+        { name = 'buffer', entry_filter = filter_text },
         { name = 'latex_symbols' },
     },
 }
+
+local tabnine = require('cmp_tabnine.config')
+tabnine:setup({
+	max_lines = 50,
+	max_num_results = 2,
+	sort = true,
+	run_on_every_keystroke = true,
+	snippet_placeholder = '..',
+	ignored_file_types = {
+		-- default is not to ignore
+		-- uncomment to ignore in lua:
+		-- lua = true
+	},
+	show_prediction_strength = false
+})
 
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
@@ -72,3 +88,16 @@ lsp_config.rust_analyzer.setup {
 lsp_config.texlab.setup {
     capabilities = capabilities,
 }
+
+-- Tabnine baby.
+--[[
+require('tabnine').setup {
+    disable_auto_comment=true,
+    accept_keymap="<Tab>",
+    dismiss_keymap = "<C-]>",
+    debounce_ms = 800,
+    suggestion_color = {gui = "#808080", cterm = 244},
+    exclude_filetypes = {"TelescopePrompt"},
+    log_file_path = nil, -- absolute path to Tabnine log file
+}
+--]]

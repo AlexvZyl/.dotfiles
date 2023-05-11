@@ -72,6 +72,7 @@ M.kind_icons = {
     Event = ' ',
     Operator = ' ',
     TypeParameter = '󰘦 ',
+    TabNine = '󰚩 ',
     Unknown = '  ',
 }
 

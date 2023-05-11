@@ -5,7 +5,7 @@ local u = require 'alex.utils'
 -- Yes, I am that pedantic.
 local function format(_, item)
     -- Utils.
-    local MAX_LABEL_WIDTH = 50
+    local MAX_LABEL_WIDTH = 60
     local function whitespace(max, len) return (' '):rep(max - len) end
 
     -- Limit content width.

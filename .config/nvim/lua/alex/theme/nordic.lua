@@ -38,6 +38,7 @@ local override = {
     NoiceLspProgressSpinner = { fg = p.cyan.bright, bg = p.bg },
     NoiceFormatProgressDone = { bg = p.green.bright, fg = p.black },
     NoiceFormatProgressTodo = { bg = p.gray5, fg = p.black },
+    CmpItemKindTabNine = { fg = p.red.base },
 }
 require('nordic').setup { override = override }
 

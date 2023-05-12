@@ -15,7 +15,7 @@ end
 local function tabnine_active()
     local status = require('tabnine.status').status()
     status = status:match '%S+%s+%S+%s+(%S+)'
-    if status == 'starter' then return '󱜙 ' end
+    if status == 'starter' then return '󱜙' end
     return ''
 end
 
@@ -131,8 +131,7 @@ local function get_git_compare()
         command = 'git',
         cwd = curr_dir,
         args = { 'rev-list', '--left-right', '--count', 'HEAD...@{upstream}' },
-    })
-        :sync(100)[1]
+    }):sync(100)[1]
 
     -- Process the result.
     if type(result) ~= 'string' then return '' end
@@ -197,23 +196,10 @@ require('lualine').setup {
                 'diff',
                 colored = true,
                 source = diff_source,
-                symbols = {
-                    -- added = ' ',
-                    -- modified = ' ',
-                    -- removed = ' ',
-                    added = ' ',
-                    modified = ' ',
-                    removed = ' ',
-                },
+                symbols = { added = ' ', modified = ' ', removed = ' ', },
                 diff_color = {
-                    added = { fg = c.gray2, gui = 'bold' },
-                    modified = { fg = c.gray2, gui = 'bold' },
-                    removed = { fg = c.gray2, gui = 'bold' },
+                    added = { fg = c.gray2 }, modified = { fg = c.gray2 }, removed = { fg = c.gray2 },
                 },
-                -- icon = {
-                -- ' ',
-                -- color = { fg = c.orange.base },
-                -- }
             },
         },
         lualine_x = {
@@ -221,22 +207,9 @@ require('lualine').setup {
                 'diagnostics',
                 sources = { 'nvim_diagnostic' },
                 separator = '',
-                symbols = {
-                    -- error = ' ',
-                    -- warn = ' ',
-                    -- info = ' ',
-                    -- hint = ' ',
-                    error = ' ',
-                    warn = ' ',
-                    info = ' ',
-                    hint = '󱤅 ',
-                    other = '󰠠 ',
-                },
+                symbols = { error = ' ', warn = ' ', info = ' ', hint = '󱤅 ', other = '󰠠 ' },
                 diagnostics_color = {
-                    error = { fg = c.error },
-                    warn = { fg = c.warn },
-                    info = { fg = c.info },
-                    hint = { fg = c.hint },
+                    error = { fg = c.error }, warn = { fg = c.warn }, info = { fg = c.info }, hint = { fg = c.hint },
                 },
                 colored = true,
             },
@@ -253,7 +226,7 @@ require('lualine').setup {
                     },
                 },
             },
-            { tabnine_active, color = { fg = c.green.bright } },
+            -- { tabnine_active, color = { fg = c.gray4 } },
             { tabnine_status, color = { fg = c.yellow.bright } },
             { tabnine_disabled, color = { fg = c.red.bright } },
         },

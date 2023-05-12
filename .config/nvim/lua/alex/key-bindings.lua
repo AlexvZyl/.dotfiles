@@ -8,20 +8,24 @@ local n = 'n'
 
 -- API.
 local map_key = vim.keymap.set
-local default_settings = {
-    noremap = true,
-    silent = true,
-}
+local default_settings = { noremap = true, silent = true }
 
 -- Files & searching.
+function Cwd_current_buffer()
+    local abs_path = vim.api.nvim_buf_get_name(0)
+    local dir = abs_path:match '(.*[/\\])'
+    if dir == nil then return end
+    vim.cmd('cd ' .. dir)
+end
+local cd = '<Cmd>lua Cwd_current_buffer()<CR><Cmd>NvimTreeRefresh<CR><Cmd>NvimTreeFindFile<CR>'
+map_key(n_v, 'gc', cd, default_settings)
 map_key(n_v, '<Leader>f', [[<Cmd>lua require('nvim-tree.api').tree.toggle {}<CR>]], default_settings)
 map_key(n_v, '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
 map_key(n_v, 'ff', '<Cmd>Telescope find_files<CR>', default_settings)
+map_key(n_v, 'fF', '<Cmd>Telescope find_files cwd=~<CR>', default_settings)
 map_key(n_v, 'fs', '<Cmd>Telescope live_grep<CR>', default_settings)
+map_key(n_v, 'fS', '<Cmd>Telescope live_grep cwd=~<CR>', default_settings)
 map_key(n_v, '<C-f>', '<Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>', default_settings)
-
--- Cheatsheet.
-map_key(ex_t, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
 
 -- Windows.
 map_key(ex_t, '<C-w><C-c>', '<Cmd>wincmd c<CR>', default_settings)
@@ -39,12 +43,12 @@ map_key(ex_t, '<C-/>', '<Cmd>Commentary<CR>', default_settings)
 map_key(ex_t, '<C-z>', '<Cmd>undo<CR>', default_settings)
 map_key(ex_t, '<C-y>', '<Cmd>redo<CR>', default_settings)
 
--- Functions that only saves buffers that has files.
+-- Prevent trying to save invalid files.
 function Save_file()
-    -- local readonly = vim.api.nvim_buf_get_option(0, 'readonly')
-    local modifiable = vim.api.nvim_buf_get_option(0, 'modifiable')
-    -- local nofile = vim.api.nvim_buf_get_option(0, 'buftype') == 'nofile'
-    if modifiable then vim.cmd 'w!' end
+    if vim.api.nvim_buf_get_option(0, 'readonly') then return end
+    local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
+    if  buftype == 'nofile' or buftype == 'prompt' then return end
+    if vim.api.nvim_buf_get_option(0, 'modifiable') then vim.cmd 'w!' end
 end
 map_key(ex_t, '<C-s>', '<Cmd>lua Save_file()<CR>', default_settings)
 
@@ -93,16 +97,7 @@ map_key(
 -- Misc.
 map_key(n, 'gl', '<Cmd>VimtexView<CR>', default_settings)
 map_key(n_v, '<Esc>', '<Cmd>noh<CR>', { silent = true, noremap = false })
-
--- Working directory
-function Cwd_current_buffer()
-    local abs_path = vim.api.nvim_buf_get_name(0)
-    local dir = abs_path:match '(.*[/\\])'
-    if dir == nil then return end
-    vim.cmd('cd ' .. dir)
-end
-local Cd_command = '<Cmd>lua Cwd_current_buffer()<CR><Cmd>NvimTreeRefresh<CR><Cmd>NvimTreeFindFile<CR>'
-map_key(n_v, 'gc', Cd_command, default_settings)
+map_key(ex_t, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
 
 -- Debugger Protocol
 -- TODO: Change chese keys!

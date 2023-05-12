@@ -14,10 +14,8 @@ end
 
 local function tabnine_active()
     local status = require('tabnine.status').status()
-    status = status:match("%S+%s+%S+%s+(%S+)")
-    if status == 'starter' then
-        return '󱜙 '
-    end
+    status = status:match '%S+%s+%S+%s+(%S+)'
+    if status == 'starter' then return '󱜙 ' end
     return ''
 end
 

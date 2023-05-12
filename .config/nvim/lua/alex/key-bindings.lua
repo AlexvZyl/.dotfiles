@@ -47,7 +47,7 @@ map_key(ex_t, '<C-y>', '<Cmd>redo<CR>', default_settings)
 function Save_file()
     if vim.api.nvim_buf_get_option(0, 'readonly') then return end
     local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
-    if  buftype == 'nofile' or buftype == 'prompt' then return end
+    if buftype == 'nofile' or buftype == 'prompt' then return end
     if vim.api.nvim_buf_get_option(0, 'modifiable') then vim.cmd 'w!' end
 end
 map_key(ex_t, '<C-s>', '<Cmd>lua Save_file()<CR>', default_settings)

@@ -127,7 +127,8 @@ local function get_git_compare()
         command = 'git',
         cwd = curr_dir,
         args = { 'rev-list', '--left-right', '--count', 'HEAD...@{upstream}' },
-    }):sync(100)[1]
+    })
+        :sync(100)[1]
 
     -- Process the result.
     if type(result) ~= 'string' then return '' end
@@ -192,9 +193,11 @@ require('lualine').setup {
                 'diff',
                 colored = true,
                 source = diff_source,
-                symbols = { added = ' ', modified = ' ', removed = ' ', },
+                symbols = { added = ' ', modified = ' ', removed = ' ' },
                 diff_color = {
-                    added = { fg = c.gray2 }, modified = { fg = c.gray2 }, removed = { fg = c.gray2 },
+                    added = { fg = c.gray2 },
+                    modified = { fg = c.gray2 },
+                    removed = { fg = c.gray2 },
                 },
             },
         },
@@ -205,7 +208,10 @@ require('lualine').setup {
                 separator = '',
                 symbols = { error = ' ', warn = ' ', info = ' ', hint = '󱤅 ', other = '󰠠 ' },
                 diagnostics_color = {
-                    error = { fg = c.error }, warn = { fg = c.warn }, info = { fg = c.info }, hint = { fg = c.hint },
+                    error = { fg = c.error },
+                    warn = { fg = c.warn },
+                    info = { fg = c.info },
+                    hint = { fg = c.hint },
                 },
                 colored = true,
             },

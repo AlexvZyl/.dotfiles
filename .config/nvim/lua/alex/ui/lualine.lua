@@ -21,19 +21,15 @@ end
 
 local function tabnine_status()
     local status = require('tabnine.status').status()
-    status = status:match("%S+%s+%S+%s+(%S+)")
-    if status ~= 'starter' and status ~= 'disabled' then
-        return '󱚟 '
-    end
+    status = status:match '%S+%s+%S+%s+(%S+)'
+    if status ~= 'starter' and status ~= 'disabled' then return '󱚟 ' end
     return ''
 end
 
 local function tabnine_disabled()
     local status = require('tabnine.status').status()
-    status = status:match("%S+%s+%S+%s+(%S+)")
-    if status == 'disabled'  then
-        return '󱚡 '
-    end
+    status = status:match '%S+%s+%S+%s+(%S+)'
+    if status == 'disabled' then return '󱚡 ' end
     return ''
 end
 

@@ -12,7 +12,7 @@ end
 -- Sources.
 cmp.setup {
     sources = cmp.config.sources {
-        { name = 'cmp_tabnine' },
+        -- { name = 'cmp_tabnine' },
         { name = 'nvim_lsp', entry_filter = filter_text },
         { name = 'luasnip', entry_filter = filter_text },
         { name = 'buffer', entry_filter = filter_text },

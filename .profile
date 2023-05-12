@@ -6,6 +6,7 @@ export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 export EDITOR="nvim"
 export VISUAL="nvim"
+export JULIA_NUM_THREADS=8
 
 # Aliasses.
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

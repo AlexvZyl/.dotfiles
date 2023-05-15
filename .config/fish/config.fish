@@ -2,17 +2,19 @@
 set fish_greeting "" 
 
 # Tide.
-set -g tide_left_prompt_items os context pwd git newline character 
+set -g tide_left_prompt_items context pwd git newline character 
 set -g tide_right_prompt_items jobs cmd_duration status time
-set -g tide_right_prompt_items jobs status
+set -g tide_right_prompt_items jobs status os
 set -g tide_git_icon ''
 set -g tide_jobs_icon ' '
+set -g tide_os_icon ' '
 set -g tide_status_icon_failure ''
 set -g tide_character_icon ""
 set -g tide_pwd_icon "  "
 set -g tide_pwd_icon_home "  "
 set -g tide_time_format " %H:%M:%S"
 set -g tide_time_bg_color D8DEE9
+set -g tide_os_bg_color D8DEE9
 
 # Pfetch.
 set -gx PF_INFO "ascii title kernel os wm pkgs memory uptime"

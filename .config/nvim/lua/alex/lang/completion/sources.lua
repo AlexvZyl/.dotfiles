@@ -1,5 +1,3 @@
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local lsp_config = require 'lspconfig'
 local cmp = require 'cmp'
 
 -- Luasnip.
@@ -11,18 +9,14 @@ local filter_text = function(entry, _)
     return kind ~= 'Text'
 end
 
--- Sources.
-cmp.setup {
-    sources = cmp.config.sources {
-        { name = 'luasnip' },
-        { name = 'nvim_lsp', entry_filter = filter_text },
-        { name = 'luasnip', entry_filter = filter_text },
-        { name = 'buffer', entry_filter = filter_text },
-        { name = 'latex_symbols' },
-    },
-    snippet = {
-        expand = function(args) require('luasnip').lsp_expand(args.body) end,
-    },
+local sources = cmp.config.sources {
+    { name = 'luasnip' },
+    { name = 'nvim_lsp', entry_filter = filter_text },
+    { name = 'buffer', entry_filter = filter_text },
+}
+
+local snippet = {
+    expand = function(args) require('luasnip').lsp_expand(args.body) end,
 }
 
 -- Seach and help sources.
@@ -42,10 +36,7 @@ cmp.setup.cmdline(':', {
     },
 })
 
--- Setup completion sources with LSPs.
-lsp_config.lua_ls.setup { capabilities = capabilities }
-lsp_config.julials.setup { capabilities = capabilities }
-lsp_config.bashls.setup { capabilities = capabilities }
-lsp_config.pyright.setup { capabilities = capabilities }
-lsp_config.rust_analyzer.setup { capabilities = capabilities }
-lsp_config.texlab.setup { capabilities = capabilities }
+cmp.setup {
+    sources = sources,
+    snippet = snippet,
+}

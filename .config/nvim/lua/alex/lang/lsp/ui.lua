@@ -1,6 +1,7 @@
 local u = require 'alex.utils'
 
--- Diagnostics signs colors and character.
+-- Native.
+
 vim.cmd [[
     sign define DiagnosticSignError text= texthl= linehl= numhl=DiagnosticSignError 
     sign define DiagnosticSignWarn  text= texthl= linehl= numhl=DiagnosticSignWarn
@@ -13,11 +14,10 @@ local config = {
     signs = true,
     update_on_insert = true,
 }
+
 vim.diagnostic.config(config)
 
---------------
--- LSP Saga --
---------------
+-- LSP Saga.
 
 local ui = {
     theme = 'round',
@@ -58,9 +58,7 @@ require('lspsaga').setup {
     diagnostic = diagnostic,
 }
 
----------------------------
--- Trouble (diagnostics) --
----------------------------
+-- Trouble.
 
 require('trouble').setup {
     padding = true,
@@ -71,5 +69,4 @@ require('trouble').setup {
     auto_preview = false,
 }
 
--- Make trouble update to the current buffer.
 vim.cmd [[ autocmd BufEnter * TroubleRefresh ]]

@@ -25,29 +25,28 @@ local function format(_, item)
     return item
 end
 
--- Setup.
+local formatting = {
+    fields = { 'kind', 'abbr' },
+    format = format,
+}
+
+local window =  {
+    completion = cmp.config.window.bordered {
+        winhighlight = 'Normal:Pmenu,FloatBorder:PmenuBorder,CursorLine:PmenuSel,Search:None',
+        scrollbar = true,
+        border = u.border_chars_outer_thin,
+        col_offset = -1,
+        side_padding = 0,
+    },
+    documentation = cmp.config.window.bordered {
+        winhighlight = 'Normal:Pmenu,FloatBorder:PmenuDocBorder,CursorLine:PmenuSel,Search:None',
+        scrollbar = true,
+        border = u.border_chars_outer_thin,
+        side_padding = 1, -- Not working?
+    },
+}
+
 cmp.setup {
-
-    -- Format UI.
-    formatting = {
-        fields = { 'kind', 'abbr' },
-        format = format,
-    },
-
-    -- Popup window.
-    window = {
-        completion = cmp.config.window.bordered {
-            winhighlight = 'Normal:Pmenu,FloatBorder:PmenuBorder,CursorLine:PmenuSel,Search:None',
-            scrollbar = true,
-            border = u.border_chars_outer_thin,
-            col_offset = -1,
-            side_padding = 0,
-        },
-        documentation = cmp.config.window.bordered {
-            winhighlight = 'Normal:Pmenu,FloatBorder:PmenuDocBorder,CursorLine:PmenuSel,Search:None',
-            scrollbar = true,
-            border = u.border_chars_outer_thin,
-            side_padding = 1, -- Not working?
-        },
-    },
+    formatting = formatting,
+    window = window
 }

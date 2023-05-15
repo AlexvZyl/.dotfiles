@@ -31,9 +31,6 @@ vim.cmd 'set textwidth	=0'
 vim.cmd 'set expandtab'
 vim.cmd 'set autoindent'
 
--- Show matching brackets.
-vim.cmd 'set showmatch'
-
 -- Disable text wrap around.
 vim.cmd 'set nowrap'
 

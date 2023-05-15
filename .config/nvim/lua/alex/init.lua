@@ -10,8 +10,7 @@ require 'alex.packer'
 require 'alex.theme'
 
 -- Core.
-require 'alex.neovim'
-require 'alex.neovide'
+require 'alex.options'
 require 'alex.ui'
 require 'alex.lang'
 

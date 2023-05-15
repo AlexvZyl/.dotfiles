@@ -154,6 +154,7 @@ return require('packer').startup {
         }
         use {
             'L3MON4D3/LuaSnip',
+	        run = "make install_jsregexp",
             requires = {
                 'saadparwaiz1/cmp_luasnip',
             },

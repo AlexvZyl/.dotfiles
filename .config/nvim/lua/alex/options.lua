@@ -31,6 +31,9 @@ vim.cmd 'set textwidth	=0'
 vim.cmd 'set expandtab'
 vim.cmd 'set autoindent'
 
+-- Completion.
+vim.cmd 'set completeopt=menu,menuone,noselect'
+
 -- Disable text wrap around.
 vim.cmd 'set nowrap'
 

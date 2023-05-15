@@ -1,9 +1,7 @@
 -- Run install-servers.sh to install all the servers used below.
 
 -- If specific logic is needed when an LSP attaches to a buffer.
-local on_attach = function(client, bufnr)
-
-end
+local on_attach = function(client, bufnr) end
 
 local lsp_flags = {
     -- Prevent the LSP client from making too many calls.
@@ -19,7 +17,7 @@ lsp_config.ccls.setup {
     init_options = {
         compilationDatabaseDirectory = 'build',
         index = { threads = 0 },
-        clang = { excludeArgs = { '-frounding-math' } }
+        clang = { excludeArgs = { '-frounding-math' } },
     },
 }
 lsp_config.sumneko_lua.setup { on_attach = on_attach, flags = lsp_flags }

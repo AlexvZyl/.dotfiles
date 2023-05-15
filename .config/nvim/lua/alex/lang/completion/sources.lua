@@ -10,11 +10,11 @@ local filter_text = function(entry, _)
 end
 
 -- General editing.
-local sources = cmp.config.sources({
+local sources = cmp.config.sources {
     { name = 'luasnip' },
     { name = 'nvim_lsp', entry_filter = filter_text },
     { name = 'buffer', entry_filter = filter_text },
-})
+}
 local snippet = {
     expand = function(args) require('luasnip').lsp_expand(args.body) end,
 }
@@ -27,8 +27,8 @@ cmp.setup {
 local search = {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
-        { name = 'buffer' }
-    }
+        { name = 'buffer' },
+    },
 }
 cmp.setup.cmdline({ '/', '?' }, search)
 
@@ -38,6 +38,6 @@ local commands = {
     sources = cmp.config.sources {
         { name = 'path' },
         { name = 'cmdline' },
-    }
+    },
 }
 cmp.setup.cmdline(':', commands)

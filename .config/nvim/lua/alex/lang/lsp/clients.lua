@@ -14,9 +14,9 @@ lsp_config.ccls.setup {
     init_options = {
         compilationDatabaseDirectory = 'build',
         index = { threads = 0 },
-        clang = { excludeArgs = { '-frounding-math' } }
+        clang = { excludeArgs = { '-frounding-math' } },
     },
-    capabilities = capabilities
+    capabilities = capabilities,
 }
 lsp_config.lua_ls.setup { flags = lsp_flags, capabilities = capabilities }
 lsp_config.julials.setup { flags = lsp_flags, capabilities = capabilities }

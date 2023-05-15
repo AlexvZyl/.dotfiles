@@ -30,7 +30,7 @@ local formatting = {
     format = format,
 }
 
-local window =  {
+local window = {
     completion = cmp.config.window.bordered {
         winhighlight = 'Normal:Pmenu,FloatBorder:PmenuBorder,CursorLine:PmenuSel,Search:None',
         scrollbar = true,
@@ -48,5 +48,5 @@ local window =  {
 
 cmp.setup {
     formatting = formatting,
-    window = window
+    window = window,
 }

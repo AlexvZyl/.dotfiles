@@ -29,6 +29,7 @@ sddm-sugar-dark
 betterlockscreen-git
 ttf-jetbrains-mono-nerd
 xdotool
+xborder-git
 
 kitty
 git

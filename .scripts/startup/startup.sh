@@ -2,10 +2,11 @@
 
 # Get rid of that screen tearing.
 # Unsure if this will make startup slower?...
-nvidia-force-comp-pipeline
+nvidia-force-comp-pipeline &
 
 # Start compositor.
-picom -b
+picom -b &
+xborders -c ~/.config/picom/xborder.json &
 
 # Setup the arandr monitor layout AFTER compositor and BEFORE wallpaper.
 ~/.screenlayout/default_triple_monitor.sh

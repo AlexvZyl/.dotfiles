@@ -137,6 +137,7 @@ return require('packer').startup {
         }
 
         -- General language.
+        use 'mfussenegger/nvim-lint'
         use 'fladson/vim-kitty'
         use {
             'nvim-treesitter/nvim-treesitter',

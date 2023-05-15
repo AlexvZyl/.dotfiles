@@ -148,7 +148,8 @@ curl -s https://raw.githubusercontent.com/AlexvZyl/.dotfiles/main/.scripts/insta
 And to update:
 ```bash
 alias nvim-git="git --work-tree=\"$HOME/\" --git-dir=\"$HOME/.config/nvim/.git/\""
-nvim-git fetch && nvim-git pull
+nvim-git fetch
+nvim-git pull
 ```
 
 ![image](https://user-images.githubusercontent.com/81622310/233982609-f9c15e39-da60-43d8-8c5c-4761db95ad9d.png)

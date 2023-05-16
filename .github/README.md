@@ -160,6 +160,6 @@ nvim-git pull
 
 <div align="center">
   
-*These dotfiles were featured in a [TechHut Video](https://youtu.be/7NLtw26qJtU?t=790).*
+*These dotfiles were featured in a [TechHut Video](https://youtu.be/7NLtw26qJtU?t=789).*
   
 </div>

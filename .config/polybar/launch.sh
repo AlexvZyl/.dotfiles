@@ -7,5 +7,6 @@ for i in /sys/class/hwmon/hwmon*/temp*_input; do
     fi
 done
 
+# Launch both bars.
 polybar --reload --quiet top -c ~/.config/polybar/config.ini &
 polybar --reload --quiet bottom -c ~/.config/polybar/config.ini &

@@ -1,27 +1,23 @@
 #!/bin/bash 
 
-# Get rid of that screen tearing.
-# Unsure if this will make startup slower?...
-nvidia-force-comp-pipeline &
+# Core components with dependancies.
+(
+    nvidia-force-comp-pipeline
+    ~/.screenlayout/default_triple_monitor.sh
+    feh --bg-fill ~/.wallpapers/Cloud_2_Nord.png &
+    (
+        picom -b 
+        xborders -c ~/.config/picom/xborder.json
+    ) &
+    ~/.config/polybar/launch.sh
+) &
 
-# Start compositor.
-picom -b
-xborders -c ~/.config/picom/xborder.json &
-
-# Setup the arandr monitor layout AFTER compositor and BEFORE wallpaper.
-~/.screenlayout/default_triple_monitor.sh
-
-# Set wallpaper AFTER compositor.
-feh --bg-fill ~/.wallpapers/Cloud_2_Nord.png &
-
-# Launch polybar.
-~/.config/polybar/launch.sh &
-
-# Update loadshedding schedule.
+# Services.
 ~/.config/cron/update_loadshedding.sh &
-
-# Bluetooth.
 blueberry-tray &
-
-# Notifications.
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
+
+# Remap caps lock to escape.
+setxkbmap -option caps:none
+xcape -e 'Caps_Lock=Escape'
+xcape -e 'Caps=Escape'

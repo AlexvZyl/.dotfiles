@@ -137,6 +137,8 @@ This [config](https://github.com/AlexvZyl/.dotfiles/tree/main/.config/nvim) has 
 
 > ℹ️ &nbsp; I try to keep all of the key bindings in [one file](https://github.com/AlexvZyl/.dotfiles/blob/main/.config/nvim/lua/alex/key-bindings.lua).  So if you want to use the configs, this is the only file you have to familiarise yourself with.
 
+> ℹ️ &nbsp; You can add more LSPs at to the end of [this file](https://github.com/AlexvZyl/.dotfiles/blob/main/.config/nvim/lua/alex/lang/lsp/clients.lua)
+
 ## Installation
 
 If you wish to only use the Neovim configs, you can install them with:

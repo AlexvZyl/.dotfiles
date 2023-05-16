@@ -37,9 +37,6 @@ client.urgent		    	$red        $red        $red        $black          $red
 # extra options for windows: #
 ##############################
 
-#border indicator on windows:
-#new_window pixel 2
-
 # thin borders
 hide_edge_borders both
 
@@ -241,19 +238,6 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-#############################################
-# autostart applications/services on login: #
-#############################################
-
-# Desktop notifications
-exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
-
-###############
-# system tray #
-###############
-
-exec --no-startup-id blueberry-tray
-
 ##################
 # floating rules #
 ##################
@@ -303,8 +287,3 @@ bindsym $mod+Shift+r exec ~/.config/picom/scripts/toggle-picom-inactive-opacity.
 ####################
 
 exec ~/.scripts/startup/startup.sh
-
-###################
-# Focus settings: #
-###################
-

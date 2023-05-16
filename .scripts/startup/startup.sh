@@ -5,18 +5,23 @@
 nvidia-force-comp-pipeline &
 
 # Start compositor.
-picom -b &
+picom -b
 xborders -c ~/.config/picom/xborder.json &
 
 # Setup the arandr monitor layout AFTER compositor and BEFORE wallpaper.
 ~/.screenlayout/default_triple_monitor.sh
-# ~/.screenlayout/default_double_monitor.sh
 
 # Set wallpaper AFTER compositor.
-feh --bg-fill ~/.wallpapers/Cloud_2_Nord.png
+feh --bg-fill ~/.wallpapers/Cloud_2_Nord.png &
 
 # Launch polybar.
-~/.config/polybar/launch.sh
+~/.config/polybar/launch.sh &
 
 # Update loadshedding schedule.
 ~/.config/cron/update_loadshedding.sh &
+
+# Bluetooth.
+blueberry-tray &
+
+# Notifications.
+dbus-launch dunst --config ~/.config/dunst/dunstrc &

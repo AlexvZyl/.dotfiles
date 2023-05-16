@@ -14,6 +14,7 @@ arandr
 brightnessctl
 cronie
 dunst
+blueberry
 
 tracerotue
 ufw
@@ -45,6 +46,7 @@ btop
 nvtop
 zathura
 ranger
+frogmouth
 
 signal
 discord

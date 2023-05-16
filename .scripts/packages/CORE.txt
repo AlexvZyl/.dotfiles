@@ -23,7 +23,6 @@ clamav
 rustscan
 
 i3-wm
-xcape
 polybar-git
 picom
 sddm

@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-# Core components with dependancies.
+# Core components (order is important!)
 (
     nvidia-force-comp-pipeline
     ~/.screenlayout/default_triple_monitor.sh
@@ -12,12 +12,9 @@
     ~/.config/polybar/launch.sh
 ) &
 
-# Services.
+# Services
 ~/.config/cron/update_loadshedding.sh &
-blueberry-tray &
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
 
-# Remap caps lock to escape.
-setxkbmap -option caps:none
-xcape -e 'Caps_Lock=Escape'
-xcape -e 'Caps=Escape'
+# Remap capslock to escape
+setxkbmap -option caps:escape

@@ -5,6 +5,7 @@
 local ex_t = { 'n', 'i', 'v' }
 local n_v = { 'n', 'v' }
 local n = 'n'
+local i = 'i'
 
 -- API.
 local map_key = vim.keymap.set
@@ -42,6 +43,7 @@ map_key(ex_t, '<C-Right>', ':vertical resize +2<CR>', default_settings)
 map_key(ex_t, '<C-/>', '<Cmd>Commentary<CR>', default_settings)
 map_key(ex_t, '<C-z>', '<Cmd>undo<CR>', default_settings)
 map_key(ex_t, '<C-y>', '<Cmd>redo<CR>', default_settings)
+map_key(i, '<Esc>', '<Esc>`^', default_settings)
 
 -- Prevent trying to save invalid files.
 function Save_file()

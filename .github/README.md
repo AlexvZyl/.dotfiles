@@ -155,3 +155,11 @@ nvim-git pull
 ```
 
 ![image](https://user-images.githubusercontent.com/81622310/233982609-f9c15e39-da60-43d8-8c5c-4761db95ad9d.png)
+
+---
+
+<div align="center">
+  
+*These dotfiles were featured in a [TechHut Video](https://youtu.be/7NLtw26qJtU?t=790).*
+  
+</div>

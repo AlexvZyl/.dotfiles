@@ -12,8 +12,8 @@ command = [ "curl", "--location", "--request", "GET",
 
 try:
     response = subprocess.run(command, stdout=subprocess.PIPE, stderr = subprocess.DEVNULL).stdout.decode('utf-8')
-    if 'error' in response: 
-        print("Error: " + response)
+    if 'error' in response: print("Error: " + response)
+    elif 'timeout' in response: pass
     else:
         with open("/home/alex/.config/polybar/scripts/loadshedding.json", 'w') as file:
             json.dump(response, file)

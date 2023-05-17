@@ -107,7 +107,7 @@ return require('packer').startup {
         use {
             'zbirenbaum/copilot-cmp',
             after = { 'copilot.lua' },
-            config = function() require('copilot_cmp').setup() end
+            config = function() require('copilot_cmp').setup() end,
         }
         use 'lukas-reineke/indent-blankline.nvim'
         use 'mg979/vim-visual-multi'

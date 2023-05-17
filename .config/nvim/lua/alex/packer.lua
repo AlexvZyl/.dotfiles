@@ -104,6 +104,11 @@ return require('packer').startup {
 
         -- Programming experience.
         use 'zbirenbaum/copilot.lua'
+        use {
+            'zbirenbaum/copilot-cmp',
+            after = { 'copilot.lua' },
+            config = function() require('copilot_cmp').setup() end
+        }
         use 'lukas-reineke/indent-blankline.nvim'
         use 'mg979/vim-visual-multi'
         use 'RRethy/vim-illuminate'
@@ -157,7 +162,6 @@ return require('packer').startup {
                 'hrsh7th/cmp-buffer',
                 'hrsh7th/cmp-path',
                 'hrsh7th/cmp-cmdline',
-                'zbirenbaum/copilot-cmp',
                 'saadparwaiz1/cmp_luasnip',
             },
         }

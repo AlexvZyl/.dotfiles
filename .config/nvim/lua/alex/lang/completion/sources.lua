@@ -2,7 +2,6 @@ local cmp = require 'cmp'
 
 -- Extensions.
 require('luasnip.loaders.from_vscode').lazy_load()
-require('copilot_cmp').setup()
 
 -- Default sources.
 local sources = cmp.config.sources {

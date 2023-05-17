@@ -13,3 +13,11 @@ sudo fail2ban-client start
 # clamav 
 sudo systemctl enable clamav-freshclam.service
 sudo systemctl start clamav-freshclam.service
+
+# Tor.
+sudo systemctl enable tor.service
+sudo systemctl start tor.service
+
+# Proxy.
+sudo systemctl enable privoxy.service
+sudo systemctl start privoxy.service

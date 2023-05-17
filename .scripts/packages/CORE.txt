@@ -21,6 +21,9 @@ ufw
 fail2ban
 clamav
 rustscan
+tor
+privoxy
+proxychains-ng
 
 i3-wm
 polybar-git

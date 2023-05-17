@@ -134,7 +134,8 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 ######################################
 
 # Terminal.
-bindsym $mod+t exec kitty --config ~/.config/kitty/padding.conf --execute tmux -f ~/.config/tmux/terminal.conf
+bindsym $mod+t exec kitty --config ~/.config/kitty/padding.conf --execute ~/.config/tmux/utils/start_terminal.sh
+bindsym $mod+shift+t exec proxychains4 -q kitty --config ~/.config/kitty/padding.conf --execute ~/.config/tmux/utils/start_tor_terminal.sh
 # Dotfiles git.
 bindsym $mod+c exec kitty --class dotfiles-git --config ~/.config/kitty/padding.conf --execute tmux -f ~/.config/tmux/terminal.conf new-session -n ".dotfiles" "lazygit-dotfiles"
 # Editor.

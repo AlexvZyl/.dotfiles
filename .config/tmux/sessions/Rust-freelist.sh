@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ~/.config/tmux/utils/env.sh
+source ~/.config/tmux/utils/workspace_env.sh
 session="Rust-freelist"
 
 if ! tmux has-session -t $session >/dev/null 2>&1; then

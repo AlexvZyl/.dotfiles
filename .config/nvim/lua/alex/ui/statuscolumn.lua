@@ -1,4 +1,4 @@
--- Statusclumn was added in 0.9.
+-- Statuscolumn was added in 0.9.
 if vim.version.major == 0 and vim.version.minor < 9 then return end
 
 -- No separator.

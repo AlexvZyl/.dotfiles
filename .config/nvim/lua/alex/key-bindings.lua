@@ -60,14 +60,14 @@ map_key(ex_t, '<C-Tab>', '<Cmd>Telescope buffers<CR>', default_settings)
 map_key(n, '<leader><leader>', '<Cmd>Telescope buffers<CR>', default_settings)
 
 -- Barbar
--- map_key(n, '<C-<>', '<Cmd>BufferMovePrevious<CR>', default_settings)
--- map_key(n, '<C->>', '<Cmd>BufferMoveNext<CR>', default_settings)
 map_key(n, '<C-q>', '<Cmd>BufferDelete<CR>', default_settings)
 map_key(n, 'Q', '<Cmd>BufferDelete<CR>', default_settings)
 map_key(n, 'db', '<Cmd>BufferPickDelete<CR>', default_settings)
 map_key(n, 'gb', '<Cmd>BufferPick<CR>', default_settings)
 map_key(n, 'H', '<Cmd>BufferPrevious<CR>', default_settings)
 map_key(n, 'L', '<Cmd>BufferNext<CR>', default_settings)
+-- map_key(n, '<C-H>', '<Cmd>BufferMovePrevious<CR>', default_settings)
+-- map_key(n, '<C-L>', '<Cmd>BufferMoveNext<CR>', default_settings)
 map_key(n, '<C-p>', '<Cmd>BufferPin<CR>', default_settings)
 
 -- LSP.

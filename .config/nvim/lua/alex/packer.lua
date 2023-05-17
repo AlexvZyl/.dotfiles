@@ -113,7 +113,7 @@ return require('packer').startup {
         use 'brooth/far.vim'
         use {
             'ggandor/leap.nvim',
-            requires = 'tpope/vim-repeat'
+            requires = 'tpope/vim-repeat',
         }
 
         -- Git.

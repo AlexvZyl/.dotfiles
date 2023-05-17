@@ -27,7 +27,7 @@ local function get_current_filename()
 end
 
 local function copilot()
-    local status = require 'copilot.api'.status.data.status
+    local status = require('copilot.api').status.data.status
     if string.find(status, 'Online') or string.find(status, 'Enabled') or string.find(status, 'Normal') then
         return ' '
     elseif status == 'InProgress' then
@@ -225,9 +225,9 @@ require('lualine').setup {
                 copilot,
                 icon = {
                     u.kind_icons.Copilot,
-                    color = { fg = c.magenta.bright }
-                }
-            }
+                    color = { fg = c.magenta.bright },
+                },
+            },
         },
         lualine_z = {
             {

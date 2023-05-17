@@ -41,7 +41,7 @@ local override = {
     CmpItemKindTabNine = { fg = p.red.base },
     CmpItemKindCopilot = { fg = p.red.base },
     TelescopePreviewLine = { bg = p.gray0 },
-    CopilotSuggestion = { fg = p.gray2 }
+    CopilotSuggestion = { fg = p.gray2 },
 }
 require('nordic').setup { override = override }
 

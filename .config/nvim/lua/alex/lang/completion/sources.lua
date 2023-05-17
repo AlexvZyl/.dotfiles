@@ -42,7 +42,7 @@ local latex = {
     sources = {
         { name = 'omni' },
         { name = 'latex_symbols' },
-        { name = 'buffer' }
-    }
+        { name = 'buffer' },
+    },
 }
-cmp.setup.filetype({'tex'}, latex)
+cmp.setup.filetype({ 'tex' }, latex)

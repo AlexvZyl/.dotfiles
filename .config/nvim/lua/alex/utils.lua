@@ -69,7 +69,8 @@ M.kind_icons = {
     Operator = ' ',
     TypeParameter = '󰘦 ',
     TabNine = '󰚩 ',
-    Unknown = '  ',
+    Copilot = ' ',
+    Unknown = ' ',
 }
 
 return M

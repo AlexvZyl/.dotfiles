@@ -103,6 +103,7 @@ return require('packer').startup {
         }
 
         -- Programming experience.
+        use 'zbirenbaum/copilot.lua'
         use 'lukas-reineke/indent-blankline.nvim'
         use 'mg979/vim-visual-multi'
         use 'RRethy/vim-illuminate'
@@ -112,9 +113,7 @@ return require('packer').startup {
         use 'brooth/far.vim'
         use {
             'ggandor/leap.nvim',
-            requires = {
-                'tpope/vim-repeat',
-            },
+            requires = 'tpope/vim-repeat'
         }
 
         -- Git.
@@ -148,17 +147,8 @@ return require('packer').startup {
             run = ':TSUpdate',
         }
         use 'neovim/nvim-lspconfig'
-        use {
-            'glepnir/lspsaga.nvim',
-            branch = 'main',
-        }
-        use {
-            'L3MON4D3/LuaSnip',
-            run = 'make install_jsregexp',
-            requires = {
-                'saadparwaiz1/cmp_luasnip',
-            },
-        }
+        use { 'glepnir/lspsaga.nvim', branch = 'main' }
+        use { 'L3MON4D3/LuaSnip', run = 'make install_jsregexp' }
         use {
             'hrsh7th/nvim-cmp',
             requires = {
@@ -167,18 +157,16 @@ return require('packer').startup {
                 'hrsh7th/cmp-buffer',
                 'hrsh7th/cmp-path',
                 'hrsh7th/cmp-cmdline',
+                'zbirenbaum/copilot-cmp',
+                'saadparwaiz1/cmp_luasnip',
             },
         }
 
         -- Language specific.
-        -- use 'JuliaEditorSupport/julia-vim'
         use 'lervag/vimtex'
 
         -- Theme using.
-        use {
-            'AlexvZyl/nordic.nvim',
-            branch = 'main',
-        }
+        use { 'AlexvZyl/nordic.nvim', branch = 'dev' }
         -- List of nice themes:
         -- use 'bluz71/vim-nightfly-colors'
         use 'morhetz/gruvbox'

@@ -1,19 +1,14 @@
 local cmp = require 'cmp'
 
--- Load snippets via luasnip.
+-- Extensions.
 require('luasnip.loaders.from_vscode').lazy_load()
+require('copilot_cmp').setup()
 
--- Filter out the text.
-local filter_text = function(entry, _)
-    local kind = require('cmp.types').lsp.CompletionItemKind[entry:get_kind()]
-    return kind ~= 'Text'
-end
-
--- General editing.
+-- Default sources.
 local sources = cmp.config.sources {
+    { name = 'copilot' },
     { name = 'luasnip' },
-    { name = 'nvim_lsp', entry_filter = filter_text },
-    { name = 'buffer', entry_filter = filter_text },
+    { name = 'nvim_lsp' },
 }
 local snippet = {
     expand = function(args) require('luasnip').lsp_expand(args.body) end,
@@ -41,3 +36,13 @@ local commands = {
     },
 }
 cmp.setup.cmdline(':', commands)
+
+-- Latex.
+local latex = {
+    sources = {
+        { name = 'omni' },
+        { name = 'latex_symbols' },
+        { name = 'buffer' }
+    }
+}
+cmp.setup.filetype({'tex'}, latex)

@@ -1,5 +1,7 @@
 -- Using Lualine as the statusline.
 
+local u = require 'alex.utils'
+
 -- Show git status.
 local function diff_source()
     local gitsigns = vim.b.gitsigns_status_dict
@@ -22,6 +24,18 @@ local function get_current_buftype() return vim.api.nvim_buf_get_option(0, 'buft
 local function get_current_filename()
     local bufname = vim.api.nvim_buf_get_name(0)
     return bufname ~= '' and vim.fn.fnamemodify(bufname, ':t') or '[No Name]'
+end
+
+local function copilot()
+    local status = require 'copilot.api'.status.data.status
+    if string.find(status, 'Online') or string.find(status, 'Enabled') or string.find(status, 'Normal') then
+        return ' '
+    elseif status == 'InProgress' then
+        return ' '
+    elseif status == 'Warning' then
+        return ' '
+    end
+    return status
 end
 
 -- Gets the current buffer's filename with the filetype icon supplied
@@ -207,6 +221,13 @@ require('lualine').setup {
                     },
                 },
             },
+            {
+                copilot,
+                icon = {
+                    u.kind_icons.Copilot,
+                    color = { fg = c.magenta.bright }
+                }
+            }
         },
         lualine_z = {
             {

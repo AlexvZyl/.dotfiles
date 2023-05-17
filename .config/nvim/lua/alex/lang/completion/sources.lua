@@ -5,7 +5,7 @@ require('luasnip.loaders.from_vscode').lazy_load()
 
 -- Default sources.
 local sources = cmp.config.sources {
-    { name = 'copilot' },
+    -- { name = 'copilot' },
     { name = 'luasnip' },
     { name = 'nvim_lsp' },
 }

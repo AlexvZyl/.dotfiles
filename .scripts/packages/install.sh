@@ -1,2 +1,3 @@
 #!/bin/bash
-yay -S $(cat ~/.scripts/packages/SYSTEM.txt)
+
+yay -S $(cat ~/.scripts/packages/CORE.txt)

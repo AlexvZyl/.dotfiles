@@ -19,6 +19,7 @@ sudo sed -i 's/load-module module-udev-detect/load-module module-udev-detect tsc
 systemctl enable tlp.service
 systemctl mask systemd-rfkill.service
 systemctl mask systemd-rfkill.socket
+systemctl start tlp.service
 sudo tlp start
 
 # Setup optimus manager.

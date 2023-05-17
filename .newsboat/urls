@@ -2,8 +2,7 @@
 https://archlinux.org/feeds/news/ Linux "Arch Linux" FOSS
 
 # GitHub.
-https://github.com/neovide/neovide/releases.atom GitHub Neovim FOSS
-https://github.com/neovim/neovim/releases.atom GitHub Neovim FOSS
+https://github.com/neovim/neovim/releases.atom GitHub Neovim FOSS Programming
 
 # Keyboards.
 https://www.ctrlshiftesc.co.za/blogs/product-updates.atom Keyboards
@@ -16,10 +15,10 @@ https://www.nomanssky.com/news/rss Gaming
 https://www.strymon.net/blogs/rss Guitar Strymon
 
 # Youtube.
-https://www.youtube.com/feeds/videos.xml?channel_id=UC_Oa7Ph3v94om5OyxY1nPKg Guitar YouTube # Paul Davids.
-https://www.youtube.com/feeds/videos.xml?channel_id=UCCJ56k8nBeqWLoxNa6DToAQ Guitar YouTube # Rhett Shull.
-https://www.youtube.com/feeds/videos.xml?channel_id=UCL_f53ZEJxp8TtlOkHwMV9Q YouTube Knowledge # Jordan Peterson.
-https://www.youtube.com/feeds/videos.xml?channel_id=UC2D2CMWXMOVWx7giW1n3LIg YouTube Knowledge # Andrew Huberman.
+https://www.youtube.com/feeds/videos.xml?channel_id=UC_Oa7Ph3v94om5OyxY1nPKg YouTube Guitar # Paul Davids.
+https://www.youtube.com/feeds/videos.xml?channel_id=UCCJ56k8nBeqWLoxNa6DToAQ YouTube Guitar # Rhett Shull.
+https://www.youtube.com/feeds/videos.xml?channel_id=UCL_f53ZEJxp8TtlOkHwMV9Q YouTube Wisdom # Jordan Peterson.
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2D2CMWXMOVWx7giW1n3LIg YouTube Wisdom Health # Andrew Huberman.
 https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA YouTube Security FOSS # Mental Outlaw.
 
 # Example of grouping tags into a single feed.

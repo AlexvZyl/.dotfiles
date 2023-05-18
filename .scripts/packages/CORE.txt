@@ -24,6 +24,7 @@ rustscan
 tor
 privoxy
 proxychains-ng
+lynx
 
 i3-wm
 polybar-git

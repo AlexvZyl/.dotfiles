@@ -5,9 +5,7 @@ local u = require 'alex.utils'
 -- Show git status.
 local function diff_source()
     local gitsigns = vim.b.gitsigns_status_dict
-    if gitsigns then
-        return { added = gitsigns.added, modified = gitsigns.changed, removed = gitsigns.removed }
-    end
+    if gitsigns then return { added = gitsigns.added, modified = gitsigns.changed, removed = gitsigns.removed } end
 end
 
 -- Get the current buffer's filetype.
@@ -94,7 +92,7 @@ end
 local function parent_folder()
     local current_buffer = vim.api.nvim_get_current_buf()
     local current_file = vim.api.nvim_buf_get_name(current_buffer)
-    return vim.fn.fnamemodify(current_file, ":h:t")
+    return vim.fn.fnamemodify(current_file, ':h:t')
 end
 
 local function get_native_lsp()
@@ -164,8 +162,8 @@ require('lualine').setup {
                 parent_folder,
                 icon = {
                     '',
-                    color = { fg = c.yellow.dim }
-                }
+                    color = { fg = c.yellow.dim },
+                },
             },
             {
                 M.get_current_filename_with_icon,

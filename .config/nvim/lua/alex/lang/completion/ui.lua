@@ -1,10 +1,8 @@
 local cmp = require 'cmp'
 local u = require 'alex.utils'
 
--- Format the completion menu.
--- Yes, I am that pedantic.
+-- Format the completion menu. Yes, I am that pedantic.
 local function format(_, item)
-    -- Utils.
     local MAX_LABEL_WIDTH = 60
     local function whitespace(max, len) return (' '):rep(max - len) end
 
@@ -21,7 +19,6 @@ local function format(_, item)
 
     -- Remove gibberish.
     item.menu = nil
-
     return item
 end
 

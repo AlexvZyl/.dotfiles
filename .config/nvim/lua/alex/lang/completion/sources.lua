@@ -17,15 +17,6 @@ cmp.setup {
     snippet = snippet,
 }
 
--- Search.
-local search = {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = {
-        { name = 'buffer' },
-    },
-}
-cmp.setup.cmdline({ '/', '?' }, search)
-
 -- Commands.
 local commands = {
     mapping = cmp.mapping.preset.cmdline(),
@@ -35,13 +26,3 @@ local commands = {
     },
 }
 cmp.setup.cmdline(':', commands)
-
--- Latex.
-local latex = {
-    sources = {
-        { name = 'omni' },
-        { name = 'latex_symbols' },
-        { name = 'buffer' },
-    },
-}
-cmp.setup.filetype({ 'tex' }, latex)

@@ -6,11 +6,7 @@ local u = require 'alex.utils'
 local function diff_source()
     local gitsigns = vim.b.gitsigns_status_dict
     if gitsigns then
-        return {
-            added = gitsigns.added,
-            modified = gitsigns.changed,
-            removed = gitsigns.removed,
-        }
+        return { added = gitsigns.added, modified = gitsigns.changed, removed = gitsigns.removed }
     end
 end
 
@@ -48,7 +44,6 @@ local modules = lualine_require.lazy_require {
     utils = 'lualine.utils.utils',
 }
 
--- Return the current buffer's filetype icon with highlighting.
 function M:get_current_filetype_icon()
     -- Get setup.
     local icon, icon_highlight_group
@@ -79,7 +74,6 @@ function M:get_current_filetype_icon()
     return icon
 end
 
--- Return the current buffer's filename with the filetype icon.
 function M:get_current_filename_with_icon()
     local suffix = ' '
 
@@ -97,7 +91,12 @@ function M:get_current_filename_with_icon()
     return icon .. ' ' .. f_name .. suffix
 end
 
--- Get the lsp of the current buffer, when using native lsp.
+local function parent_folder()
+    local current_buffer = vim.api.nvim_get_current_buf()
+    local current_file = vim.api.nvim_buf_get_name(current_buffer)
+    return vim.fn.fnamemodify(current_file, ":h:t")
+end
+
 local function get_native_lsp()
     local buf_ft = get_current_filetype()
     local clients = vim.lsp.get_active_clients()
@@ -161,6 +160,13 @@ require('lualine').setup {
             },
         },
         lualine_b = {
+            {
+                parent_folder,
+                icon = {
+                    '',
+                    color = { fg = c.yellow.dim }
+                }
+            },
             {
                 M.get_current_filename_with_icon,
             },

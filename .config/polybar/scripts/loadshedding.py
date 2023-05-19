@@ -4,7 +4,7 @@ import pytz
 
 try:
     with open("/home/alex/.config/polybar/scripts/loadshedding.json", "r") as file:
-        # Setup.
+        # Load data.
         response = json.loads(json.load(file))
         now = datetime.datetime.now(pytz.timezone("Africa/Johannesburg"))
     
@@ -33,4 +33,4 @@ try:
             print("%{F#EBCB8B}%{F-} " + start.strftime("%H:%M") + " %{F#EBCB8B}󱎫 %{F-}" + str(int(duration.total_seconds()/3600)) + "h")
 
 except:
-    print("%{F#EBCB8B}%{F-}  ")
+    print("%{F#EBCB8B}%{F-} 󰧠 ")

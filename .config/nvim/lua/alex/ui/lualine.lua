@@ -17,7 +17,7 @@ local function get_current_buftype() return vim.api.nvim_buf_get_option(0, 'buft
 -- Get the buffer's filename.
 local function get_current_filename()
     local bufname = vim.api.nvim_buf_get_name(0)
-    return bufname ~= '' and vim.fn.fnamemodify(bufname, ':t') or '[No Name]'
+    return bufname ~= '' and vim.fn.fnamemodify(bufname, ':t') or ' [No Name]'
 end
 
 local function copilot_normal()
@@ -172,7 +172,7 @@ local tree = {
             {
                 get_short_cwd,
                 padding = 0,
-                icon = { '  ', color = { fg = c.gray4 } },
+                icon = { '   ', color = { fg = c.gray4 } },
                 color = { fg = c.gray3 },
             },
         },
@@ -205,7 +205,7 @@ require('lualine').setup {
             {
                 parent_folder,
                 color = { fg = c.gray3 },
-                icon = { '  ', color = { fg = c.gray4 } },
+                icon = { '   ', color = { fg = c.gray4 } },
                 separator = '',
                 padding = 0,
             },

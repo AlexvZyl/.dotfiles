@@ -1,24 +1,26 @@
 -- I want to keep all of the key bindings in one file so that it is easy to see
 -- what is being used and ensure nothing being overwritten by accident.
 
--- Modes.
 local ex_t = { 'n', 'i', 'v' }
 local n_v = { 'n', 'v' }
 local n = 'n'
 local i = 'i'
 
--- API.
 local map_key = vim.keymap.set
 local default_settings = { noremap = true, silent = true }
 
+-- Tree.
 map_key(n_v, 'gc', function() require('alex.keymaps.utils').cwd_current_buffer() end, default_settings)
 map_key(n_v, '<Leader>f', function() require('alex.keymaps.utils').toggle_tree() end, default_settings)
+
+-- Telescope.
 map_key(n_v, '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
 map_key(n_v, 'ff', '<Cmd>Telescope find_files<CR>', default_settings)
 map_key(n_v, 'fF', '<Cmd>Telescope find_files cwd=~<CR>', default_settings)
 map_key(n_v, 'fs', '<Cmd>Telescope live_grep<CR>', default_settings)
 map_key(n_v, 'fS', '<Cmd>Telescope live_grep cwd=~<CR>', default_settings)
 map_key(n_v, '<C-f>', '<Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>', default_settings)
+map_key(ex_t, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
 
 -- Windows.
 map_key(ex_t, '<C-w><C-c>', '<Cmd>wincmd c<CR>', default_settings)
@@ -38,11 +40,9 @@ map_key(ex_t, '<C-y>', '<Cmd>redo<CR>', default_settings)
 map_key(i, '<Esc>', '<Esc>`^', default_settings)
 map_key(n, '/', '<Nop>', default_settings)
 map_key(n, '?', '<Nop>', default_settings)
-map_key(ex_t, '<C-s>', '<Cmd>lua Save_file()<CR>', default_settings)
+map_key(ex_t, '<C-s>', function() require('alex.keymaps.utils').save_file() end, default_settings)
 
 -- Buffers.
--- C-Tab does not work...
-map_key(ex_t, '<C-Tab>', '<Cmd>Telescope buffers<CR>', default_settings)
 map_key(n, '<leader><leader>', '<Cmd>Telescope buffers<CR>', default_settings)
 
 -- Barbar
@@ -73,10 +73,9 @@ map_key(n, ']E', function() require('alex.keymaps.utils').prev_error() end, defa
 -- Misc.
 map_key(n, 'gl', '<Cmd>VimtexView<CR>', default_settings)
 map_key(n_v, '<Esc>', '<Cmd>noh<CR>', { silent = true, noremap = false })
-map_key(ex_t, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
 
--- Debugger Protocol
-map_key(n, 'S', function() require('dapui').float_element 'scopes' end, default_settings)
+-- Debugger. 
+map_key(n, 'S', function() require 'dapui'.float_element('scopes') end, default_settings)
 map_key(n, '<C-b>', '<Cmd>DapToggleBreakpoint<CR>', default_settings)
 map_key(n, '<F1>', function() require('dapui').toggle() end, default_settings)
 map_key(n, '<F2>', '<Cmd>DapContinue<CR>', default_settings)
@@ -95,7 +94,7 @@ cmp.setup {
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm { select = true }, -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ['<CR>'] = cmp.mapping.confirm { select = false }, -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()

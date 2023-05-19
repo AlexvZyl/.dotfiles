@@ -74,8 +74,8 @@ map_key(n, ']E', function() require('alex.keymaps.utils').prev_error() end, defa
 map_key(n, 'gl', '<Cmd>VimtexView<CR>', default_settings)
 map_key(n_v, '<Esc>', '<Cmd>noh<CR>', { silent = true, noremap = false })
 
--- Debugger. 
-map_key(n, 'S', function() require 'dapui'.float_element('scopes') end, default_settings)
+-- Debugger.
+map_key(n, 'S', function() require('dapui').float_element 'scopes' end, default_settings)
 map_key(n, '<C-b>', '<Cmd>DapToggleBreakpoint<CR>', default_settings)
 map_key(n, '<F1>', function() require('dapui').toggle() end, default_settings)
 map_key(n, '<F2>', '<Cmd>DapContinue<CR>', default_settings)

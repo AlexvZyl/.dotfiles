@@ -44,6 +44,7 @@ local override = {
     CopilotSuggestion = { fg = p.gray2 },
     NvimTreeWinSeparator = { fg = p.gray1, bg = p.bg },
     WinSeparator = { fg = p.gray1 },
+    WhichKeyBorder = { fg = p.gray1, bg = p.bg_dark }
 }
 require('nordic').setup { override = override }
 

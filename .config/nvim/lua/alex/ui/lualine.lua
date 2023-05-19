@@ -1,6 +1,6 @@
 -- Using Lualine as the statusline.
 
-local u = require 'alex.utils'
+-- local u = require 'alex.utils'
 
 -- Show git status.
 local function diff_source()
@@ -20,16 +20,36 @@ local function get_current_filename()
     return bufname ~= '' and vim.fn.fnamemodify(bufname, ':t') or '[No Name]'
 end
 
-local function copilot()
+local function copilot_normal()
     local status = require('copilot.api').status.data.status
-    if string.find(status, 'Online') or string.find(status, 'Enabled') or string.find(status, 'Normal') then
-        return ' '
-    elseif status == 'InProgress' then
-        return ' '
-    elseif status == 'Warning' then
-        return ' '
+    if string.find(status, 'Online') or string.find(status, 'Enabled') or string.find(status, 'Normal') or string.find(status, 'InProgress') then
+        return '  '
     end
-    return status
+    return ''
+end
+
+local function copilot_warn()
+    local status = require('copilot.api').status.data.status
+    if string.find(status, 'Warning') then
+        return '  '
+    end
+    return ''
+end
+
+local function copilot_error()
+    local status = require('copilot.api').status.data.status
+    if string.find(status, 'Error') then
+        return '  '
+    end
+    return ''
+end
+
+local function copilot_disabled()
+    local status = require('copilot.api').status.data.status
+    if string.find(status, 'Offline') or string.find(status, 'Disabled') then
+        return '  '
+    end
+    return ''
 end
 
 -- Gets the current buffer's filename with the filetype icon supplied
@@ -59,7 +79,7 @@ function M:get_current_filetype_icon()
     -- Set colors.
     local highlight_color = modules.utils.extract_highlight_colors(icon_highlight_group, 'fg')
     if highlight_color then
-        local default_highlight = self:get_default_hl()
+        -- local default_highlight = self:get_default_hl()
         local icon_highlight = Icon_hl_cache[highlight_color]
         if not icon_highlight or not modules.highlight.highlight_exists(icon_highlight.name .. '_normal') then
             icon_highlight = self:create_hl({ fg = highlight_color }, icon_highlight_group)
@@ -227,7 +247,7 @@ require('lualine').setup {
             {
                 'diagnostics',
                 sources = { 'nvim_diagnostic' },
-                separator = '  ',
+                separator = ' ',
                 symbols = { error = ' ', warn = ' ', info = ' ', hint = '󱤅 ', other = '󰠠 ' },
                 diagnostics_color = {
                     error = { fg = c.error },
@@ -239,17 +259,15 @@ require('lualine').setup {
             },
             {
                 get_native_lsp,
-                padding = 0,
+                padding = 1,
                 color = { fg = c.gray3 },
                 icon = { ' ', color = { fg = c.gray4 } },
                 separator = '  ',
             },
-            {
-                copilot,
-                color = { fg = c.gray3 },
-                icon = { u.kind_icons.Copilot, color = { fg = c.gray4 } },
-                padding = 1,
-            },
+            { copilot_normal, color = { fg = c.green.base }, padding = 0 },
+            { copilot_warn, color = { fg = c.yellow.base }, padding = 0 },
+            { copilot_error, color = { fg = c.red.base }, padding = 0 },
+            { copilot_disabled, color = { fg = c.gray2 }, padding = 0 },
         },
         lualine_y = {},
         lualine_z = {

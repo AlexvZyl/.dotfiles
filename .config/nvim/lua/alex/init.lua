@@ -15,4 +15,4 @@ require 'alex.ui'
 require 'alex.lang'
 
 -- Run this last to ensure they do not get overridden.
-require 'alex.key-bindings'
+require 'alex.keymaps'

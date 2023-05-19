@@ -11,16 +11,8 @@ local i = 'i'
 local map_key = vim.keymap.set
 local default_settings = { noremap = true, silent = true }
 
--- Files & searching.
-function Cwd_current_buffer()
-    local abs_path = vim.api.nvim_buf_get_name(0)
-    local dir = abs_path:match '(.*[/\\])'
-    if dir == nil then return end
-    vim.cmd('cd ' .. dir)
-end
-local cd = '<Cmd>lua Cwd_current_buffer()<CR><Cmd>NvimTreeRefresh<CR><Cmd>NvimTreeFindFile<CR>'
-map_key(n_v, 'gc', cd, default_settings)
-map_key(n_v, '<Leader>f', [[<Cmd>lua require('nvim-tree.api').tree.toggle {}<CR>]], default_settings)
+map_key(n_v, 'gc', function() require('alex.keymaps.utils').cwd_current_buffer() end, default_settings)
+map_key(n_v, '<Leader>f', function() require('alex.keymaps.utils').toggle_tree() end, default_settings)
 map_key(n_v, '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
 map_key(n_v, 'ff', '<Cmd>Telescope find_files<CR>', default_settings)
 map_key(n_v, 'fF', '<Cmd>Telescope find_files cwd=~<CR>', default_settings)
@@ -46,14 +38,6 @@ map_key(ex_t, '<C-y>', '<Cmd>redo<CR>', default_settings)
 map_key(i, '<Esc>', '<Esc>`^', default_settings)
 map_key(n, '/', '<Nop>', default_settings)
 map_key(n, '?', '<Nop>', default_settings)
-
--- Prevent trying to save invalid files.
-function Save_file()
-    if vim.api.nvim_buf_get_option(0, 'readonly') then return end
-    local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
-    if buftype == 'nofile' or buftype == 'prompt' then return end
-    if vim.api.nvim_buf_get_option(0, 'modifiable') then vim.cmd 'w!' end
-end
 map_key(ex_t, '<C-s>', '<Cmd>lua Save_file()<CR>', default_settings)
 
 -- Buffers.
@@ -68,35 +52,23 @@ map_key(n, 'db', '<Cmd>BufferPickDelete<CR>', default_settings)
 map_key(n, 'gb', '<Cmd>BufferPick<CR>', default_settings)
 map_key(n, 'H', '<Cmd>BufferPrevious<CR>', default_settings)
 map_key(n, 'L', '<Cmd>BufferNext<CR>', default_settings)
--- map_key(n, '<C-H>', '<Cmd>BufferMovePrevious<CR>', default_settings)
--- map_key(n, '<C-L>', '<Cmd>BufferMoveNext<CR>', default_settings)
 map_key(n, '<C-p>', '<Cmd>BufferPin<CR>', default_settings)
 
 -- LSP.
 map_key(n, '<leader>d', '<Cmd>TroubleToggle document_diagnostics<CR>', default_settings)
 map_key(n, '<leader>D', '<Cmd>TroubleToggle workspace_diagnostics<CR>', default_settings)
-map_key(n, 'gr', '<cmd>Lspsaga lsp_finder<CR>', { silent = true })
-map_key(n_v, 'ca', '<cmd>Lspsaga code_action<CR>', { silent = true })
-map_key(n_v, 'RR', '<cmd>Lspsaga rename<CR>', { silent = true })
-map_key(n, 'gd', '<cmd>Lspsaga peek_definition<CR>', { silent = true })
-map_key(n, 'gf', '<cmd>Lspsaga goto_definition<CR>zz', { silent = true })
-map_key(n, 'gD', '<cmd>Lspsaga hover_doc<CR>', { silent = true })
-map_key(n, 'e', '<cmd>Lspsaga show_line_diagnostics ++unfocus<CR>', { silent = true })
-map_key(n, '[e', '<cmd>Lspsaga diagnostic_jump_prev<CR>', { silent = true })
-map_key(n, ']e', '<cmd>Lspsaga diagnostic_jump_next<CR>', { silent = true })
-map_key(n, '<leader>o', '<cmd>Lspsaga outline<CR>', { silent = true })
-map_key(
-    n,
-    '[E',
-    function() require('lspsaga.diagnostic').goto_prev { severity = vim.diagnostic.severity.ERROR } end,
-    { silent = true }
-)
-map_key(
-    n,
-    ']E',
-    function() require('lspsaga.diagnostic').goto_next { severity = vim.diagnostic.severity.ERROR } end,
-    { silent = true }
-)
+map_key(n, 'gr', '<cmd>Lspsaga lsp_finder<CR>', default_settings)
+map_key(n_v, 'ca', '<cmd>Lspsaga code_action<CR>', default_settings)
+map_key(n_v, 'RR', '<cmd>Lspsaga rename<CR>', default_settings)
+map_key(n, 'gd', '<cmd>Lspsaga peek_definition<CR>', default_settings)
+map_key(n, 'gf', '<cmd>Lspsaga goto_definition<CR>zz', default_settings)
+map_key(n, 'gD', '<cmd>Lspsaga hover_doc<CR>', default_settings)
+map_key(n, 'e', '<cmd>Lspsaga show_line_diagnostics ++unfocus<CR>', default_settings)
+map_key(n, '[e', '<cmd>Lspsaga diagnostic_jump_prev<CR>', default_settings)
+map_key(n, ']e', '<cmd>Lspsaga diagnostic_jump_next<CR>', default_settings)
+map_key(n, '<leader>o', '<cmd>Lspsaga outline<CR>', default_settings)
+map_key(n, '[E', function() require('alex.keymaps.utils').next_error() end, default_settings)
+map_key(n, ']E', function() require('alex.keymaps.utils').prev_error() end, default_settings)
 
 -- Misc.
 map_key(n, 'gl', '<Cmd>VimtexView<CR>', default_settings)
@@ -104,9 +76,9 @@ map_key(n_v, '<Esc>', '<Cmd>noh<CR>', { silent = true, noremap = false })
 map_key(ex_t, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
 
 -- Debugger Protocol
-map_key(n, 'S', "<Cmd>lua require 'dapui'.float_element('scopes')<CR>", default_settings)
+map_key(n, 'S', function() require 'dapui'.float_element('scopes') end, default_settings)
 map_key(n, '<C-b>', '<Cmd>DapToggleBreakpoint<CR>', default_settings)
-map_key(n, '<F1>', "<Cmd>lua require 'dapui'.toggle()<CR>", default_settings)
+map_key(n, '<F1>', function() require 'dapui'.toggle() end, default_settings)
 map_key(n, '<F2>', '<Cmd>DapContinue<CR>', default_settings)
 map_key(n, '<F3>', '<Cmd>DapStepInto<CR>', default_settings)
 map_key(n, '<F4>', '<Cmd>DapStepOver<CR>', default_settings)

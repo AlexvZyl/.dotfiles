@@ -153,7 +153,7 @@ local tree = {
             {
                 get_short_cwd,
                 padding = 0,
-                icon = { '   ', color = { fg = c.gray2 } },
+                icon = { '  ', color = { fg = c.gray2 } },
                 color = { fg = c.gray3 },
             },
         },
@@ -186,7 +186,7 @@ require('lualine').setup {
             {
                 parent_folder,
                 color = { fg = c.gray3 },
-                icon = { '   ', color = { fg = c.gray2 } },
+                icon = { '  ', color = { fg = c.gray2 } },
                 separator = '',
                 padding = 0,
             },
@@ -200,24 +200,26 @@ require('lualine').setup {
                 'branch',
                 color = { fg = c.gray3 },
                 icon = { '', color = { fg = c.gray3 } },
-                separator = '',
                 padding = 0,
+                separator = ' '
             },
             {
                 get_git_compare,
-                separator = '',
+                separator = ' ',
+                padding = 0,
                 color = { fg = c.gray3 },
             },
             {
                 'diff',
+                padding = 0,
                 color = { fg = c.gray3 },
-                icon = { '', color = { fg = c.gray3 } },
+                icon = { ' ', color = { fg = c.gray3 } },
                 source = diff_source,
                 symbols = { added = ' ', modified = ' ', removed = ' ' },
                 diff_color = {
-                    added = { fg = c.gray3 },
-                    modified = { fg = c.gray3 },
-                    removed = { fg = c.gray3 },
+                    added = { fg = c.gray2 },
+                    modified = { fg = c.gray2 },
+                    removed = { fg = c.gray2 },
                 },
             },
         },
@@ -225,7 +227,7 @@ require('lualine').setup {
             {
                 'diagnostics',
                 sources = { 'nvim_diagnostic' },
-                separator = '',
+                separator = '  ',
                 symbols = { error = ' ', warn = ' ', info = ' ', hint = '󱤅 ', other = '󰠠 ' },
                 diagnostics_color = {
                     error = { fg = c.error },
@@ -237,12 +239,16 @@ require('lualine').setup {
             },
             {
                 get_native_lsp,
+                padding = 0,
                 color = { fg = c.gray3 },
                 icon = { ' ', color = { fg = c.gray3 } },
+                separator = '  ',
             },
             {
                 copilot,
+                color = { fg = c.gray3 },
                 icon = { u.kind_icons.Copilot, color = { fg = c.gray3 } },
+                padding = 1,
             },
         },
         lualine_y = {},

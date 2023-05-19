@@ -73,7 +73,7 @@ function M:get_current_filetype_icon()
 end
 
 function M:get_current_filename_with_icon()
-    local suffix = ' '
+    local suffix = ''
 
     -- Get icon and filename.
     local icon = M.get_current_filetype_icon(self)
@@ -83,7 +83,7 @@ function M:get_current_filename_with_icon()
     local readonly = vim.api.nvim_buf_get_option(0, 'readonly')
     local modifiable = vim.api.nvim_buf_get_option(0, 'modifiable')
     local nofile = get_current_buftype() == 'nofile'
-    if readonly or nofile or not modifiable then suffix = '  ' end
+    if readonly or nofile or not modifiable then suffix = ' ' end
 
     -- Return the formatted string.
     return icon .. ' ' .. f_name .. suffix
@@ -92,7 +92,9 @@ end
 local function parent_folder()
     local current_buffer = vim.api.nvim_get_current_buf()
     local current_file = vim.api.nvim_buf_get_name(current_buffer)
-    return vim.fn.fnamemodify(current_file, ':h:t')
+    local parent = vim.fn.fnamemodify(current_file, ':h:t')
+    if parent == '.' then return '' end
+    return parent
 end
 
 local function get_native_lsp()
@@ -129,7 +131,7 @@ local function get_git_compare()
     if get_current_buftype() == 'nofile' then return '' end
 
     -- Format for lualine.
-    return ' ' .. behind .. '  ' .. ahead
+    return '󱦳' .. behind .. ' 󱦲' .. ahead
 end
 
 -- Required to properly set the colors.
@@ -157,38 +159,34 @@ require('lualine').setup {
                 separator = { right = ' ', left = '' },
             },
         },
-        lualine_b = {
-            {
-                parent_folder,
-                icon = {
-                    '',
-                    color = { fg = c.yellow.dim },
-                },
-            },
-            {
-                M.get_current_filename_with_icon,
-            },
-        },
+        lualine_b = {},
         lualine_c = {
             {
+                M.get_current_filename_with_icon,
+                separator = ''
+            },
+            {
+                parent_folder,
+                color = { fg = c.gray4 },
+                icon = { '', color = { fg = c.gray4 } },
+                separator = '  '
+            },
+            {
                 'branch',
-                icon = {
-                    '',
-                    color = { fg = c.orange.bright, gui = 'bold' },
-                },
-                separator = ' ',
+                color = { fg = c.gray4 },
+                icon = { '', color = { fg = c.orange.bright } },
+                separator = '',
+                padding = 0
             },
             {
                 get_git_compare,
-                separator = ' ',
-                icon = {
-                    ' ',
-                    color = { fg = c.orange.bright, gui = 'bold' },
-                },
+                separator = '',
+                color = { fg = c.gray4 },
+                -- icon = { ' ', color = { fg = c.orange.bright } },
             },
             {
                 'diff',
-                colored = true,
+                icon = { ' ', color = { fg = c.orange.bright } },
                 source = diff_source,
                 symbols = { added = ' ', modified = ' ', removed = ' ' },
                 diff_color = {
@@ -212,43 +210,25 @@ require('lualine').setup {
                 },
                 colored = true,
             },
-        },
-        lualine_y = {
             {
                 get_native_lsp,
-                icon = {
-                    '  ',
-                    align = 'left',
-                    color = {
-                        fg = c.orange.bright,
-                        gui = 'bold',
-                    },
-                },
+                color = { fg = c.gray4 },
+                icon = { ' ', color = { fg = c.gray4 } },
             },
             {
                 copilot,
-                icon = {
-                    u.kind_icons.Copilot,
-                    color = { fg = c.magenta.bright },
-                },
+                icon = { u.kind_icons.Copilot, color = { fg = c.gray4 } },
             },
         },
+        lualine_y = {},
         lualine_z = {
             {
                 'location',
-                icon = {
-                    '',
-                    align = 'left',
-                    color = { fg = c.black },
-                },
+                icon = { '', align = 'left', color = { fg = c.black } }
             },
             {
                 'progress',
-                icon = {
-                    '',
-                    align = 'left',
-                    color = { fg = c.black },
-                },
+                icon = { '', align = 'left', color = { fg = c.black } },
                 separator = { right = '', left = '' },
             },
         },

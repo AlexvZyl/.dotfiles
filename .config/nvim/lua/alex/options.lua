@@ -1,3 +1,5 @@
+local u = require 'alex.utils'
+
 -- Neovim specific options.
 
 -- Do not show the current mode in cmdline.
@@ -48,13 +50,13 @@ vim.g.VM_silent_exit = 1
 -- ─
 -- │
 vim.opt.fillchars = {
-    -- horiz = '─',
-    horizup = '─',
-    horizdown = '─',
+    horiz = u.bottom_thin,
+    horizup = u.bottom_thin,
+    horizdown = ' ',
     vert = ' ',
-    vertleft = '─',
-    vertright = '─',
-    verthoriz = '─',
+    vertleft = u.right_thin,
+    vertright = u.left_thin,
+    verthoriz = ' ',
     eob = ' ',
     diff = '╱',
 }

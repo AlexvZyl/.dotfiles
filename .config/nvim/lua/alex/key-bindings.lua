@@ -104,17 +104,15 @@ map_key(n_v, '<Esc>', '<Cmd>noh<CR>', { silent = true, noremap = false })
 map_key(ex_t, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
 
 -- Debugger Protocol
--- TODO: Change chese keys!
-map_key(ex_t, '<A-d>', '<Cmd>DapContinue<CR>', default_settings)
-map_key(ex_t, '<A-b>', '<Cmd>DapToggleBreakpoint<CR>', default_settings)
-map_key(ex_t, '<A-o>', '<Cmd>DapStepOver<CR>', default_settings)
-map_key(ex_t, '<A-T>', '<Cmd>DapTerminate<CR>', default_settings)
-map_key(ex_t, '<A-i>', '<Cmd>DapStepInto<CR>', default_settings)
-map_key(ex_t, '<A-u>', '<Cmd>DapStepOut<CR>', default_settings)
-map_key(ex_t, '<A-c>', '<Cmd>DapContinue<CR>', default_settings)
-map_key(ex_t, '<A-r>', '<Cmd>DapRestartFrame<CR>', default_settings)
-map_key(ex_t, '<A-l>', "<Cmd>lua require 'dapui'.float_element('scopes')<CR>", default_settings)
-map_key(ex_t, '<A-W>', "<Cmd>lua require 'dapui'.toggle()<CR>", default_settings)
+map_key(n, 'S', "<Cmd>lua require 'dapui'.float_element('scopes')<CR>", default_settings)
+map_key(n, '<C-b>', '<Cmd>DapToggleBreakpoint<CR>', default_settings)
+map_key(n, '<F1>', "<Cmd>lua require 'dapui'.toggle()<CR>", default_settings)
+map_key(n, '<F2>', '<Cmd>DapContinue<CR>', default_settings)
+map_key(n, '<F3>', '<Cmd>DapStepInto<CR>', default_settings)
+map_key(n, '<F4>', '<Cmd>DapStepOver<CR>', default_settings)
+map_key(n, '<F5>', '<Cmd>DapStepOut<CR>', default_settings)
+map_key(n, '<F6>', '<Cmd>DapRestartFrame<CR>', default_settings)
+map_key(n, '<F7>', '<Cmd>DapTerminate<CR>', default_settings)
 
 -- Completion.
 local cmp = require 'cmp'

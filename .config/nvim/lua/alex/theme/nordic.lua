@@ -1,6 +1,6 @@
 -- Initial setup.
 require('nordic').setup {
-    bright_border = true,
+    bright_border = false,
     telescope = {
         style = 'flat',
     },
@@ -42,6 +42,8 @@ local override = {
     CmpItemKindCopilot = { fg = p.red.base },
     TelescopePreviewLine = { bg = p.gray0 },
     CopilotSuggestion = { fg = p.gray2 },
+    NvimTreeWinSeparator = { fg = p.gray1, bg = p.bg },
+    WinSeparator = { fg = p.gray1 }
 }
 require('nordic').setup { override = override }
 

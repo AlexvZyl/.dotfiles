@@ -1,3 +1,6 @@
+local p = require 'nordic.colors'
+local u = require 'alex.utils'
+
 -- Nvim-Tree.lua advises to do this at the start.
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -84,12 +87,8 @@ require('nvim-tree').setup {
     view = view,
     system_open = system_open,
     renderer = renderer,
-    git = {
-        ignore = false,
-    },
-    diagnostics = {
-        enable = true,
-    },
+    git = { ignore = false },
+    diagnostics = { enable = true }
 }
 
 -- Set window local options.
@@ -98,6 +97,8 @@ local Event = api.events.Event
 api.events.subscribe(Event.TreeOpen, function(_)
     vim.cmd [[setlocal statuscolumn=\ ]]
     vim.cmd [[setlocal cursorlineopt=number]]
+    vim.cmd('setlocal fillchars+=vert:' .. u.left_thin )
+    vim.cmd('setlocal fillchars+=vertright:' .. u.left_thin )
 end)
 
 -- Refresh on enter.

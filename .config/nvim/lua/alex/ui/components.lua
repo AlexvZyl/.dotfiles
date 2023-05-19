@@ -38,8 +38,8 @@ require('indent_blankline').setup {
 -- which-key
 require('which-key').setup {
     window = {
-        border = { '', '▔', '', '', '', ' ', '', '' }
-    }
+        border = { '', '▔', '', '', '', ' ', '', '' },
+    },
 }
 vim.cmd 'set timeoutlen =1000'
 

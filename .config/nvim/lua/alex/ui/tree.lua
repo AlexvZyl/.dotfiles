@@ -88,7 +88,7 @@ require('nvim-tree').setup {
     system_open = system_open,
     renderer = renderer,
     git = { ignore = false },
-    diagnostics = { enable = true }
+    diagnostics = { enable = true },
 }
 
 -- Set window local options.
@@ -97,8 +97,8 @@ local Event = api.events.Event
 api.events.subscribe(Event.TreeOpen, function(_)
     vim.cmd [[setlocal statuscolumn=\ ]]
     vim.cmd [[setlocal cursorlineopt=number]]
-    vim.cmd('setlocal fillchars+=vert:' .. u.left_thin )
-    vim.cmd('setlocal fillchars+=vertright:' .. u.left_thin )
+    vim.cmd('setlocal fillchars+=vert:' .. u.left_thin)
+    vim.cmd('setlocal fillchars+=vertright:' .. u.left_thin)
 end)
 
 -- Refresh on enter.

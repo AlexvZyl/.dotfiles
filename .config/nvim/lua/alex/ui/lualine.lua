@@ -163,20 +163,20 @@ require('lualine').setup {
         lualine_c = {
             {
                 M.get_current_filename_with_icon,
-                separator = ''
+                separator = '',
             },
             {
                 parent_folder,
                 color = { fg = c.gray4 },
                 icon = { '', color = { fg = c.gray4 } },
-                separator = '  '
+                separator = '  ',
             },
             {
                 'branch',
                 color = { fg = c.gray4 },
                 icon = { '', color = { fg = c.orange.bright } },
                 separator = '',
-                padding = 0
+                padding = 0,
             },
             {
                 get_git_compare,
@@ -224,7 +224,7 @@ require('lualine').setup {
         lualine_z = {
             {
                 'location',
-                icon = { '', align = 'left', color = { fg = c.black } }
+                icon = { '', align = 'left', color = { fg = c.black } },
             },
             {
                 'progress',

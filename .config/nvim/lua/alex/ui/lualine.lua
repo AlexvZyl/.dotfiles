@@ -201,7 +201,7 @@ require('lualine').setup {
                 color = { fg = c.gray3 },
                 icon = { ' ', color = { fg = c.gray4 } },
                 padding = 0,
-                separator = ' '
+                separator = ' ',
             },
             {
                 get_git_compare,

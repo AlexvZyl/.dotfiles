@@ -194,7 +194,7 @@ require('lualine').setup {
                 get_current_filename,
                 color = { fg = c.gray3 },
                 separator = '   ',
-                padding = 0
+                padding = 0,
             },
             {
                 'branch',

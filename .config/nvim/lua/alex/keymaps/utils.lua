@@ -23,12 +23,8 @@ function M.save_file()
     if vim.api.nvim_buf_get_option(0, 'modifiable') then vim.cmd 'w!' end
 end
 
-function M.next_error()
-    require('lspsaga.diagnostic').goto_prev { severity = vim.diagnostic.severity.ERROR }
-end
+function M.next_error() require('lspsaga.diagnostic').goto_prev { severity = vim.diagnostic.severity.ERROR } end
 
-function M.prev_error()
-    require('lspsaga.diagnostic').goto_next { severity = vim.diagnostic.severity.ERROR }
-end
+function M.prev_error() require('lspsaga.diagnostic').goto_next { severity = vim.diagnostic.severity.ERROR } end
 
 return M

@@ -22,7 +22,12 @@ end
 
 local function copilot_normal()
     local status = require('copilot.api').status.data.status
-    if string.find(status, 'Online') or string.find(status, 'Enabled') or string.find(status, 'Normal') or string.find(status, 'InProgress') then
+    if
+        string.find(status, 'Online')
+        or string.find(status, 'Enabled')
+        or string.find(status, 'Normal')
+        or string.find(status, 'InProgress')
+    then
         return '  '
     end
     return ''
@@ -30,25 +35,19 @@ end
 
 local function copilot_warn()
     local status = require('copilot.api').status.data.status
-    if string.find(status, 'Warning') then
-        return '  '
-    end
+    if string.find(status, 'Warning') then return '  ' end
     return ''
 end
 
 local function copilot_error()
     local status = require('copilot.api').status.data.status
-    if string.find(status, 'Error') then
-        return '  '
-    end
+    if string.find(status, 'Error') then return '  ' end
     return ''
 end
 
 local function copilot_disabled()
     local status = require('copilot.api').status.data.status
-    if string.find(status, 'Offline') or string.find(status, 'Disabled') then
-        return '  '
-    end
+    if string.find(status, 'Offline') or string.find(status, 'Disabled') then return '  ' end
     return ''
 end
 

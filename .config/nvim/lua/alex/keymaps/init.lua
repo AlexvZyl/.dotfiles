@@ -76,9 +76,9 @@ map_key(n_v, '<Esc>', '<Cmd>noh<CR>', { silent = true, noremap = false })
 map_key(ex_t, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
 
 -- Debugger Protocol
-map_key(n, 'S', function() require 'dapui'.float_element('scopes') end, default_settings)
+map_key(n, 'S', function() require('dapui').float_element 'scopes' end, default_settings)
 map_key(n, '<C-b>', '<Cmd>DapToggleBreakpoint<CR>', default_settings)
-map_key(n, '<F1>', function() require 'dapui'.toggle() end, default_settings)
+map_key(n, '<F1>', function() require('dapui').toggle() end, default_settings)
 map_key(n, '<F2>', '<Cmd>DapContinue<CR>', default_settings)
 map_key(n, '<F3>', '<Cmd>DapStepInto<CR>', default_settings)
 map_key(n, '<F4>', '<Cmd>DapStepOver<CR>', default_settings)

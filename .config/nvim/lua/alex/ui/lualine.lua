@@ -143,8 +143,29 @@ local tree = {
     sections = {
         lualine_a = {
             {
-                get_short_cwd,
+                'mode',
+                icon = { '' },
                 separator = { right = ' ', left = '' },
+            },
+        },
+        lualine_b = {},
+        lualine_c = {
+            {
+                get_short_cwd,
+                padding = 0,
+                icon = { '   ', color = { fg = c.gray2 } },
+                color = { fg = c.gray3 }
+            },
+        },
+        lualine_z = {
+            {
+                'location',
+                icon = { '', align = 'left', color = { fg = c.black } },
+            },
+            {
+                'progress',
+                icon = { '', align = 'left', color = { fg = c.black } },
+                separator = { right = '', left = '' },
             },
         },
     },

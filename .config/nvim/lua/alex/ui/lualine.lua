@@ -65,7 +65,7 @@ function M:get_current_filetype_icon()
             icon_highlight = self:create_hl({ fg = highlight_color }, icon_highlight_group)
             Icon_hl_cache[highlight_color] = icon_highlight
         end
-        icon = self:format_hl(icon_highlight) .. icon .. default_highlight
+        -- icon = self:format_hl(icon_highlight) .. icon .. default_highlight
     end
 
     -- Return the formatted string.
@@ -94,7 +94,7 @@ local function parent_folder()
     local current_file = vim.api.nvim_buf_get_name(current_buffer)
     local parent = vim.fn.fnamemodify(current_file, ':h:t')
     if parent == '.' then return '' end
-    return parent
+    return parent .. '/'
 end
 
 local function get_native_lsp()
@@ -163,39 +163,40 @@ require('lualine').setup {
         lualine_b = {},
         lualine_c = {
             {
-                M.get_current_filename_with_icon,
-                color = { fg = c.gray4 },
+                parent_folder,
+                color = { fg = c.gray3 },
+                icon = { '   ', color = { fg = c.gray2 } },
                 separator = '',
+                padding = 0,
             },
             {
-                parent_folder,
-                color = { fg = c.gray4 },
-                icon = { ' ', color = { fg = c.gray4 } },
-                separator = '  ',
+                get_current_filename,
+                color = { fg = c.gray3 },
+                separator = '   ',
+                padding = 0
             },
             {
                 'branch',
                 color = { fg = c.gray3 },
                 icon = { '', color = { fg = c.gray3 } },
-                separator = ' ',
+                separator = '',
                 padding = 0,
             },
             {
                 get_git_compare,
                 separator = '',
                 color = { fg = c.gray3 },
-                -- icon = { ' ', color = { fg = c.orange.bright } },
             },
             {
                 'diff',
                 color = { fg = c.gray3 },
                 icon = { '', color = { fg = c.gray3 } },
                 source = diff_source,
-                symbols = { added = ' ', modified = ' ', removed = ' ' },
+                symbols = { added = ' ', modified = ' ', removed = ' ' },
                 diff_color = {
-                    added = { fg = c.gray2 },
-                    modified = { fg = c.gray2 },
-                    removed = { fg = c.gray2 },
+                    added = { fg = c.gray3 },
+                    modified = { fg = c.gray3 },
+                    removed = { fg = c.gray3 },
                 },
             },
         },
@@ -215,12 +216,12 @@ require('lualine').setup {
             },
             {
                 get_native_lsp,
-                color = { fg = c.gray4 },
-                icon = { ' ', color = { fg = c.gray4 } },
+                color = { fg = c.gray3 },
+                icon = { ' ', color = { fg = c.gray3 } },
             },
             {
                 copilot,
-                icon = { u.kind_icons.Copilot, color = { fg = c.gray4 } },
+                icon = { u.kind_icons.Copilot, color = { fg = c.gray3 } },
             },
         },
         lualine_y = {},

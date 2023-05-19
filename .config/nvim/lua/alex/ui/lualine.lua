@@ -154,7 +154,7 @@ local tree = {
                 get_short_cwd,
                 padding = 0,
                 icon = { '   ', color = { fg = c.gray2 } },
-                color = { fg = c.gray3 }
+                color = { fg = c.gray3 },
             },
         },
         lualine_z = {

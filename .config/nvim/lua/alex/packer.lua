@@ -190,8 +190,7 @@ return require('packer').startup {
         -- use 'Mofiqul/vscode.nvim'
         -- use 'navarasu/onedark.nvim'
         -- use 'frenzyexists/aquarium-vim'
-        -- use 'projekt0n/github-nvim-theme'
-        --
+        use 'projekt0n/github-nvim-theme'
         use 'Shatur/neovim-ayu'
 
         -- Bootstrap.

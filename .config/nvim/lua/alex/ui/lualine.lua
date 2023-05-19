@@ -45,12 +45,6 @@ local function copilot_error()
     return ''
 end
 
-local function copilot_disabled()
-    local status = require('copilot.api').status.data.status
-    if string.find(status, 'Offline') or string.find(status, 'Disabled') then return '  ' end
-    return ''
-end
-
 -- Gets the current buffer's filename with the filetype icon supplied
 -- by devicons.
 local M = require('lualine.components.filetype'):extend()
@@ -119,12 +113,12 @@ end
 local function get_native_lsp()
     local buf_ft = get_current_filetype()
     local clients = vim.lsp.get_active_clients()
-    if next(clients) == nil then return 'None' end
+    if next(clients) == nil then return '' end
     for _, client in ipairs(clients) do
         local filetypes = client.config.filetypes
         if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then return client.name end
     end
-    return 'None'
+    return ''
 end
 
 -- Display the difference in commits between local and head.
@@ -255,18 +249,18 @@ require('lualine').setup {
                     hint = { fg = c.hint },
                 },
                 colored = true,
+                padding = 0,
             },
             {
                 get_native_lsp,
                 padding = 1,
                 color = { fg = c.gray3 },
                 icon = { ' ', color = { fg = c.gray4 } },
-                separator = '  ',
+                separator = ' ',
             },
-            { copilot_normal, color = { fg = c.green.base }, padding = 0 },
+            { copilot_normal, color = { fg = c.gray4 }, padding = 0 },
             { copilot_warn, color = { fg = c.yellow.base }, padding = 0 },
             { copilot_error, color = { fg = c.red.base }, padding = 0 },
-            { copilot_disabled, color = { fg = c.gray2 }, padding = 0 },
         },
         lualine_y = {},
         lualine_z = {

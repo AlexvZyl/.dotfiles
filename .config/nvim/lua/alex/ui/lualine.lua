@@ -129,9 +129,10 @@ local function get_git_compare()
 
     -- No file, so no git.
     if get_current_buftype() == 'nofile' then return '' end
-
-    -- Format for lualine.
-    return '󱦳' .. behind .. ' 󱦲' .. ahead
+    local string = ''
+    if behind ~= '0' then string = string .. '󱦳' .. behind end
+    if ahead ~= '0' then string = string .. '󱦲' .. ahead end
+    return string
 end
 
 -- Required to properly set the colors.
@@ -163,30 +164,32 @@ require('lualine').setup {
         lualine_c = {
             {
                 M.get_current_filename_with_icon,
+                color = { fg = c.gray4 },
                 separator = '',
             },
             {
                 parent_folder,
                 color = { fg = c.gray4 },
-                icon = { '', color = { fg = c.gray4 } },
+                icon = { ' ', color = { fg = c.gray4 } },
                 separator = '  ',
             },
             {
                 'branch',
-                color = { fg = c.gray4 },
-                icon = { '', color = { fg = c.orange.bright } },
-                separator = '',
+                color = { fg = c.gray3 },
+                icon = { '', color = { fg = c.gray3 } },
+                separator = ' ',
                 padding = 0,
             },
             {
                 get_git_compare,
                 separator = '',
-                color = { fg = c.gray4 },
+                color = { fg = c.gray3 },
                 -- icon = { ' ', color = { fg = c.orange.bright } },
             },
             {
                 'diff',
-                icon = { ' ', color = { fg = c.orange.bright } },
+                color = { fg = c.gray3 },
+                icon = { '', color = { fg = c.gray3 } },
                 source = diff_source,
                 symbols = { added = ' ', modified = ' ', removed = ' ' },
                 diff_color = {

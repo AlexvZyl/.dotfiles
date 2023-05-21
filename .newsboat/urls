@@ -1,6 +1,6 @@
 # News.
-https://archlinux.org/feeds/news/ Linux "Arch Linux" FOSS News
-https://www.techhut.tv/rss/ News FOSS Linux
+https://archlinux.org/feeds/news/ Linux "Arch Linux" FOSS
+https://www.techhut.tv/rss/ FOSS Linux
 
 # GitHub.
 https://github.com/neovim/neovim/releases.atom GitHub Neovim FOSS Programming
@@ -10,17 +10,6 @@ https://www.ctrlshiftesc.co.za/blogs/product-updates.atom Keyboards
 
 # Gaming.
 https://www.teamfortress.com/rss.xml Gaming
-https://www.nomanssky.com/news/rss Gaming
-
-# Guitar.
-https://www.strymon.net/blogs/rss Guitar Strymon
-
-# Youtube.
-https://www.youtube.com/feeds/videos.xml?channel_id=UC_Oa7Ph3v94om5OyxY1nPKg YouTube Guitar # Paul Davids.
-https://www.youtube.com/feeds/videos.xml?channel_id=UCCJ56k8nBeqWLoxNa6DToAQ YouTube Guitar # Rhett Shull.
-https://www.youtube.com/feeds/videos.xml?channel_id=UCL_f53ZEJxp8TtlOkHwMV9Q YouTube Wisdom # Jordan Peterson.
-https://www.youtube.com/feeds/videos.xml?channel_id=UC2D2CMWXMOVWx7giW1n3LIg YouTube Wisdom Health # Andrew Huberman.
-https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA YouTube Security FOSS # Mental Outlaw.
 
 # Example of grouping tags into a single feed.
 # "query:Linux:tags # \"Linux\""

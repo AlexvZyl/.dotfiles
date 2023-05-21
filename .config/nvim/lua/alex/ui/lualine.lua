@@ -213,8 +213,8 @@ require('lualine').setup {
                 'branch',
                 color = { fg = c.gray3 },
                 icon = { ' ', color = { fg = c.gray4 } },
-                padding = 0,
                 separator = ' ',
+                padding = 0,
             },
             {
                 get_git_compare,
@@ -226,7 +226,7 @@ require('lualine').setup {
                 'diff',
                 padding = 0,
                 color = { fg = c.gray3 },
-                icon = { ' ', color = { fg = c.gray3 } },
+                icon = {  ' ', color = { fg = c.gray3 } },
                 source = diff_source,
                 symbols = { added = ' ', modified = ' ', removed = ' ' },
                 diff_color = {
@@ -248,11 +248,12 @@ require('lualine').setup {
                     hint = { fg = c.hint },
                 },
                 colored = true,
-                padding = 0,
+                padding = 1
             },
             {
                 get_native_lsp,
-                padding = 3,
+                padding = 2,
+                separator = ' ',
                 color = { fg = c.gray3 },
                 icon = { ' ', color = { fg = c.gray4 } },
             },

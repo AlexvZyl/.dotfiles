@@ -1,10 +1,6 @@
 local u = require 'alex.utils'
 
---------------------
--- Plugins config --
---------------------
-
--- Bootstrap packer.
+-- Bootstrap.
 local ensure_packer = function()
     local fn = vim.fn
     local install_path = fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
@@ -15,13 +11,9 @@ local ensure_packer = function()
     end
     return false
 end
-
 local packer_bootstrap = ensure_packer()
 
--- Setup before plugins are loaded.
-vim.g.ale_disable_lsp = 1
-
--- Cuszotmize.
+-- UI.
 require('packer').init {
     display = { prompt_border = u.border_chars_outer_thin },
 }

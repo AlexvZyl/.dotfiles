@@ -228,7 +228,7 @@ require('lualine').setup {
                 'diff',
                 padding = 0,
                 color = { fg = c.gray3 },
-                icon = {  ' ', color = { fg = c.gray3 } },
+                icon = { ' ', color = { fg = c.gray3 } },
                 source = diff_source,
                 symbols = { added = ' ', modified = ' ', removed = ' ' },
                 diff_color = {
@@ -250,7 +250,7 @@ require('lualine').setup {
                     hint = { fg = c.hint },
                 },
                 colored = true,
-                padding = 1
+                padding = 1,
             },
             {
                 get_native_lsp,

@@ -240,7 +240,6 @@ require('lualine').setup {
             {
                 'diagnostics',
                 sources = { 'nvim_diagnostic' },
-                separator = ' ',
                 symbols = { error = ' ', warn = ' ', info = ' ', hint = '󱤅 ', other = '󰠠 ' },
                 diagnostics_color = {
                     error = { fg = c.error },
@@ -253,10 +252,9 @@ require('lualine').setup {
             },
             {
                 get_native_lsp,
-                padding = 1,
+                padding = 3,
                 color = { fg = c.gray3 },
                 icon = { ' ', color = { fg = c.gray4 } },
-                separator = ' ',
             },
             { copilot_normal, color = { fg = c.gray4 }, padding = 0 },
             { copilot_warn, color = { fg = c.yellow.base }, padding = 0 },

@@ -118,6 +118,7 @@ A few notes on the bindings:
 | Super + s | Tmux sessions |
 | Super + p | Powermenu |
 | Super + t | Terminal |
+| Super + T | Tor terminal session |
 | Super + n | Neovim |
 | Super + b | BTop++ |
 | Super + g | NVtop |

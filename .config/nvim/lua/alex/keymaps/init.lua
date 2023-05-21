@@ -1,7 +1,7 @@
 -- I want to keep all of the key bindings in one file so that it is easy to see
 -- what is being used and ensure nothing being overwritten by accident.
 
-local n,i,v = 'n','i','v'
+local n, i, v = 'n', 'i', 'v'
 local ex_t = { n, i, v }
 local n_v = { n, v }
 

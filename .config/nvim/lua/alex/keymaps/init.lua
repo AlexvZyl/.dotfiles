@@ -1,14 +1,13 @@
 -- I want to keep all of the key bindings in one file so that it is easy to see
 -- what is being used and ensure nothing being overwritten by accident.
 
-local ex_t = { 'n', 'i', 'v' }
-local n_v = { 'n', 'v' }
-local n = 'n'
-local i = 'i'
-local v = 'v'
+local n,i,v = 'n','i','v'
+local ex_t = { n, i, v }
+local n_v = { n, v }
 
 local keymap = vim.keymap.set
 local default_settings = { noremap = true, silent = true }
+local allow_remap = { noremap = false, silent = true }
 
 -- Tree.
 keymap(n_v, 'gc', function() require('alex.keymaps.utils').cwd_current_buffer() end, default_settings)
@@ -22,7 +21,7 @@ keymap(n_v, 'fs', '<Cmd>Telescope live_grep<CR>', default_settings)
 keymap(n_v, 'fS', '<Cmd>Telescope live_grep cwd=~<CR>', default_settings)
 keymap(n_v, '<C-f>', '<Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>', default_settings)
 keymap(ex_t, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
-keymap(n, '<leader><leader>', '<Cmd>Telescope buffers<CR>', default_settings)
+keymap(n, '<leader>b', '<Cmd>Telescope buffers<CR>', default_settings)
 
 -- Windows.
 keymap(ex_t, '<C-w><C-c>', '<Cmd>wincmd c<CR>', default_settings)
@@ -72,7 +71,7 @@ keymap(n, ']E', function() require('alex.keymaps.utils').prev_error() end, defau
 
 -- Misc.
 keymap(n, 'gl', '<Cmd>VimtexView<CR>', default_settings)
-keymap(n, '<Esc>', '<Cmd>noh<CR>', { silent = true, noremap = false })
+keymap(n, '<Esc>', '<Cmd>noh<CR>', allow_remap)
 
 -- Debugger.
 keymap(n, 'S', function() require('dapui').float_element 'scopes' end, default_settings)

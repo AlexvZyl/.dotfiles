@@ -101,12 +101,6 @@ api.events.subscribe(Event.TreeOpen, function(_)
     vim.cmd('setlocal fillchars+=vertright:' .. u.left_thin)
 end)
 
--- Refresh on enter.
-vim.api.nvim_create_autocmd({ 'WinEnter' }, {
-    command = 'NvimTreeRefresh',
-    pattern = 'NvimTree',
-})
-
 -- When neovim opens.
 local function open_nvim_tree(data)
     vim.cmd.cd(data.file:match '(.+)/[^/]*$')

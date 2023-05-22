@@ -1,7 +1,7 @@
 -- I want to keep all of the key bindings in one file so that it is easy to see
 -- what is being used and ensure nothing being overwritten by accident.
 
-local n, i, v = 'n', 'i', 'v'
+local n, i, v, t = 'n', 'i', 'v', 't'
 local n_i = { n, i }
 local ex_t = { n, i, v }
 local n_v = { n, v }
@@ -43,7 +43,7 @@ keymap(n_i, '/', '<Nop>', default_settings)
 keymap(n, '?', '<Nop>', default_settings)
 keymap(ex_t, '<C-s>', function() require('alex.keymaps.utils').save_file() end, default_settings)
 keymap(v, '<Esc>', 'v', default_settings)
-keymap(n, '/', '<Cmd>Commentary<CR>', default_settings)
+keymap(n_v, '/', '<Cmd>Commentary<CR>', default_settings)
 keymap(n, 'f', function() require('leap').leap {} end)
 keymap(n, 'F', function() require('leap').leap { backward = true } end)
 

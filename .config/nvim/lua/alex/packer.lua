@@ -102,7 +102,6 @@ return require('packer').startup {
             config = function() require('copilot_cmp').setup() end,
         }
         use 'lukas-reineke/indent-blankline.nvim'
-        use 'mg979/vim-visual-multi'
         use 'RRethy/vim-illuminate'
         use 'windwp/nvim-autopairs'
         use 'preservim/nerdcommenter'

@@ -284,9 +284,9 @@ require('lualine').setup {
     extensions = { ['nvim-tree'] = tree },
 }
 
--- Update lualine when leaving dashboard.
-vim.api.nvim_create_autocmd({ 'BufEnter' }, {
+-- Ensure correct backgrond for lualine.
+vim.api.nvim_create_autocmd({ 'BufWinEnter', 'WinEnter' }, {
     callback = function(_) require('lualine').setup() end,
+    pattern = { '*.*' },
     once = true,
-    pattern = '*.*',
 })

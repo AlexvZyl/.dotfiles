@@ -103,8 +103,8 @@ end)
 
 -- Refresh on enter.
 vim.api.nvim_create_autocmd({ 'WinEnter' }, {
-    pattern = '*',
     command = 'NvimTreeRefresh',
+    pattern = 'NvimTree',
 })
 
 -- When neovim opens.

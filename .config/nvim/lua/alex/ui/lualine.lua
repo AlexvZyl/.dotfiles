@@ -288,5 +288,5 @@ require('lualine').setup {
 vim.api.nvim_create_autocmd({ 'BufEnter' }, {
     callback = function(_) require('lualine').setup() end,
     once = true,
-    pattern = '*.*'
+    pattern = '*.*',
 })

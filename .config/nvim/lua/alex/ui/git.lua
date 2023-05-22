@@ -1,4 +1,4 @@
--- TODO: Git Conflict 
+-- TODO: Git Conflict
 require('git-conflict').setup {}
 
 -- Gitsigns

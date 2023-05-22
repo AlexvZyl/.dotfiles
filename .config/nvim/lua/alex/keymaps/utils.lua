@@ -36,7 +36,7 @@ end
 
 function M.dap_float_scope()
     if not M.dap_ui_enabled then return end
-    require('dapui').float_element('scopes')
+    require('dapui').float_element 'scopes'
 end
 
 return M

@@ -1,14 +1,7 @@
-# News.
-https://archlinux.org/feeds/news/ Linux "Arch Linux" FOSS
-https://www.techhut.tv/rss/ FOSS Linux
-
-# GitHub.
-https://github.com/neovim/neovim/releases.atom GitHub Neovim FOSS Programming
-
-# Keyboards.
+https://archlinux.org/feeds/news/ Linux
+https://neovim.io/news.xml Neovim Programming
+https://www.techhut.tv/rss/ Linux
 https://www.ctrlshiftesc.co.za/blogs/product-updates.atom Keyboards
-
-# Gaming.
 https://www.teamfortress.com/rss.xml Gaming
 
 # Example of grouping tags into a single feed.

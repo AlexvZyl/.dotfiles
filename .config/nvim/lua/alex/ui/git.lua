@@ -1,21 +1,8 @@
-------------------
--- Git Conflict --
-------------------
-
+-- TODO: Git Conflict 
 require('git-conflict').setup {}
 
---------------
--- Gitsigns --
---------------
-
+-- Gitsigns
 local git_char = '│'
--- local git_char = '▕'
--- local git_char = '▏'
--- local git_char = '|'
--- local git_char = '┆'
--- local git_char = '╎'
-
--- Display git changes.
 require('gitsigns').setup {
     signs = {
         add = { text = git_char },
@@ -29,10 +16,7 @@ require('gitsigns').setup {
     numhl = false,
 }
 
-------------------
--- Git worktree --
-------------------
-
+-- Git worktree
 require('git-worktree').setup {
     change_directory_command = 'cd',
     update_on_change = true,
@@ -41,10 +25,7 @@ require('git-worktree').setup {
     autopush = false,
 }
 
---------------
--- Diffview --
---------------
-
+-- Diffview
 require('diffview').setup {
     enhanced_diff_hl = true,
 }

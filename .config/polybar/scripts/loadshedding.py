@@ -33,4 +33,4 @@ try:
             print("%{F#EBCB8B}%{F-} " + start.strftime("%H:%M") + " %{F#EBCB8B}󱎫 %{F-}" + str(int(duration.total_seconds()/3600)) + "h")
 
 except:
-    print("%{F#EBCB8B}%{F-} 󰧠 ")
+    print("%{F#EBCB8B}%{F-} 󰧠 ")   

@@ -2,6 +2,7 @@
 -- what is being used and ensure nothing being overwritten by accident.
 
 local n, i, v = 'n', 'i', 'v'
+local n_i = { n, i }
 local ex_t = { n, i, v }
 local n_v = { n, v }
 
@@ -35,14 +36,16 @@ keymap(ex_t, '<C-Left>', ':vertical resize -2<CR>', default_settings)
 keymap(ex_t, '<C-Right>', ':vertical resize +2<CR>', default_settings)
 
 -- Editing.
-keymap(ex_t, '<C-/>', '<Cmd>Commentary<CR>', default_settings)
 keymap(ex_t, '<C-z>', '<Cmd>undo<CR>', default_settings)
 keymap(ex_t, '<C-y>', '<Cmd>redo<CR>', default_settings)
 keymap(i, '<Esc>', '<Esc>`^', default_settings)
-keymap(n, '/', '<Nop>', default_settings)
+keymap(n_i, '/', '<Nop>', default_settings)
 keymap(n, '?', '<Nop>', default_settings)
 keymap(ex_t, '<C-s>', function() require('alex.keymaps.utils').save_file() end, default_settings)
 keymap(v, '<Esc>', 'v', default_settings)
+keymap(n, '/', '<Cmd>Commentary<CR>', default_settings)
+keymap(n, 'f', function() require('leap').leap {} end)
+keymap(n, 'F', function() require('leap').leap { backward = true } end)
 
 -- Barbar
 keymap(n, '<C-q>', '<Cmd>BufferDelete<CR>', default_settings)
@@ -74,9 +77,9 @@ keymap(n, 'gl', '<Cmd>VimtexView<CR>', default_settings)
 keymap(n, '<Esc>', '<Cmd>noh<CR>', allow_remap)
 
 -- Debugger.
-keymap(n, 'S', function() require('dapui').float_element 'scopes' end, default_settings)
 keymap(n, '<C-b>', '<Cmd>DapToggleBreakpoint<CR>', default_settings)
-keymap(n, '<F1>', function() require('dapui').toggle() end, default_settings)
+keymap(n, 'S', function() require('alex.keymaps.utils').dap_float_scope() end, default_settings)
+keymap(n, '<F1>', function() require('alex.keymaps.utils').dap_toggle_ui() end, default_settings)
 keymap(n, '<F2>', '<Cmd>DapContinue<CR>', default_settings)
 keymap(n, '<F3>', '<Cmd>DapStepInto<CR>', default_settings)
 keymap(n, '<F4>', '<Cmd>DapStepOver<CR>', default_settings)

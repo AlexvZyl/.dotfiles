@@ -27,4 +27,16 @@ function M.next_error() require('lspsaga.diagnostic').goto_prev { severity = vim
 
 function M.prev_error() require('lspsaga.diagnostic').goto_next { severity = vim.diagnostic.severity.ERROR } end
 
+M.dap_ui_enabled = false
+
+function M.dap_toggle_ui()
+    require('dapui').toggle()
+    M.dap_ui_enabled = true
+end
+
+function M.dap_float_scope()
+    if not M.dap_ui_enabled then return end
+    require('dapui').float_element('scopes')
+end
+
 return M

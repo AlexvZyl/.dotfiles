@@ -7,8 +7,7 @@ TMUX_DIR="$WORK_TREE/.config/tmux"
 GIT_DIR="$NVIM_DIR/.git"
 SPARSE_FILE="$GIT_DIR/info/sparse-checkout"
 
-# $1 Directory to be used.
-# $2 Bacup directory.
+# $1 Directory to backup.
 function backup() {
     BACKUP="$1.backup"
     if [ -d $BACKUP ]; then
@@ -25,7 +24,7 @@ function backup() {
 backup "$NVIM_DIR"
 backup "$TMUX_DIR"
 
-# Clone.
+# Init repo.
 mkdir -p "$GIT_DIR"
 cd "$GIT_DIR" || exit
 git init --bare
@@ -34,9 +33,9 @@ git remote add -f origin https://github.com/AlexvZyl/.dotfiles
 # Prepare partial clone.
 git config core.sparseCheckout true
 touch "$SPARSE_FILE"
-echo "$WORK_TREE/.config/nvim/*" >> "$SPARSE_FILE"
-echo "$WORK_TREE/.config/tmux/*" >> "$SPARSE_FILE"
-echo "$WORK_TREE/.tmux/*" >> "$SPARSE_FILE"
+echo ".config/nvim/*" >> "$SPARSE_FILE"
+echo ".config/tmux/*" >> "$SPARSE_FILE"
+echo ".tmux/*" >> "$SPARSE_FILE"
 
 # Clone.
 git --work-tree=$WORK_TREE --git-dir=$GIT_DIR checkout main

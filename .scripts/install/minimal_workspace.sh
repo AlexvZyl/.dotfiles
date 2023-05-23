@@ -1,12 +1,11 @@
 #!/bin/bash
 
 # Install dependencies.
-pacman -Syu git neovim fish tmux
+pacman -Syu git neovim fish tmux kitty
 
 # Paths.
 WORK_TREE="$HOME"
 NVIM_DIR="$WORK_TREE/.config/nvim"
-TMUX_DIR="$WORK_TREE/.config/tmux"
 GIT_DIR="$NVIM_DIR/.git"
 SPARSE_FILE="$GIT_DIR/info/sparse-checkout"
 
@@ -24,8 +23,13 @@ function backup() {
 }
 
 # Create backups.
-backup "$NVIM_DIR"
-backup "$TMUX_DIR"
+if [ "$1" != "-f" ]; then
+    backup "$NVIM_DIR"
+    backup "$HOME/.config/kitty"
+    backup "$HOME/.config/fish"
+    backup "$HOME/.config/tmux"
+    backup "$HOME/.tmux"
+fi
 
 # Init repo.
 mkdir -p "$GIT_DIR"
@@ -40,6 +44,7 @@ echo ".config/nvim/*" >> "$SPARSE_FILE"
 echo ".config/tmux/*" >> "$SPARSE_FILE"
 echo ".tmux/*" >> "$SPARSE_FILE"
 echo ".config/fish/*" >> "$SPARSE_FILE"
+echo ".config/kitty/*" >> "$SPARSE_FILE"
 
 # Clone.
 git --work-tree=$WORK_TREE --git-dir=$GIT_DIR checkout main

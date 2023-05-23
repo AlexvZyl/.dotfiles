@@ -33,6 +33,6 @@ local tex = {
         { name = 'latex_symbols' },
         { name = 'luasnip' },
         { name = 'nvim_lsp' },
-    }
+    },
 }
 cmp.setup.filetype({ 'tex', 'latex' }, tex)

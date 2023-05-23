@@ -66,4 +66,4 @@ git --work-tree=$WORK_TREE --git-dir=$GIT_DIR checkout main
 git --work-tree=$WORK_TREE --git-dir=$GIT_DIR pull origin main
 
 # Setup fish.
-"$WORK_TREE/.scripts/install/fish.sh"
+"$WORK_TREE/.scripts/install/shell.sh"

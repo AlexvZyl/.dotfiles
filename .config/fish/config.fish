@@ -2,7 +2,7 @@
 set fish_greeting "" 
 
 # Tide.
-set -g tide_left_prompt_items context pwd git newline character 
+set -g tide_left_prompt_items context pwd aws docker git newline character
 set -g tide_right_prompt_items jobs cmd_duration status time
 set -g tide_right_prompt_items jobs status os
 set -g tide_git_icon ''

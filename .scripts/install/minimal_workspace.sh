@@ -2,9 +2,12 @@
 
 # Install dependencies.
 if command -v pacman &>/dev/null; then
-    sudo pacman -Syu git neovim fish tmux
+    sudo pacman -Syu
+    sudo pacman -Syu git neovim fish tmux ttf-jetbrains-mono-nerd python kitty
 elif command -v apt &>/dev/null; then
-    sudo apt install git neovim fish tmux
+    sudo apt update
+    sudo apt upgrade
+    sudo apt install git neovim fish tmux python kitty
 else
     echo "This script only supports Debian and Arch based systems."
     exit 0

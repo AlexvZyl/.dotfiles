@@ -2,7 +2,8 @@
 
 # Install dependencies.
 if command -v pacman &>/dev/null; then
-    sudo pacman -Syu git neovim fish tmux ttf-jetbrains-mono-nerd python kitty
+    sudo pacman -Syyu 
+    sudo pacman -S git neovim fish tmux ttf-jetbrains-mono-nerd python kitty
 elif command -v apt &>/dev/null; then
     sudo apt update
     sudo apt upgrade

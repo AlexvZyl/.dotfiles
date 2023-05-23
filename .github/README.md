@@ -148,6 +148,8 @@ nvim-git pull
 <details>
 
 <summary>📷 Preview</summary>
+  
+</br>
 
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/4032df89-74da-4152-b606-8d608d828de3)
 

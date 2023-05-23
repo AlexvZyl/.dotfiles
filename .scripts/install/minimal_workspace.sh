@@ -2,7 +2,6 @@
 
 # Install dependencies.
 if command -v pacman &>/dev/null; then
-    sudo pacman -Syu
     sudo pacman -Syu git neovim fish tmux ttf-jetbrains-mono-nerd python kitty
 elif command -v apt &>/dev/null; then
     sudo apt update
@@ -41,6 +40,7 @@ else
     backup "$WORK_TREE/.config/fish"
     backup "$WORK_TREE/.config/tmux"
     backup "$WORK_TREE/.tmux"
+    backup "$WORK_TREE/.scripts"
 fi
 
 # Init repo.
@@ -57,8 +57,12 @@ echo ".config/fish/*" >> "$SPARSE_FILE"
 echo ".config/kitty/*" >> "$SPARSE_FILE"
 echo ".config/tmux/*" >> "$SPARSE_FILE"
 echo ".tmux/*" >> "$SPARSE_FILE"
+echo ".scripts/" >> "$SPARSE_FILE"
 echo ".profile" >> "$SPARSE_FILE"
 
 # Clone.
 git --work-tree=$WORK_TREE --git-dir=$GIT_DIR checkout main
 git --work-tree=$WORK_TREE --git-dir=$GIT_DIR pull origin main
+
+# Setup fish.
+$WORK_TREE/.scripts/install/fish.sh

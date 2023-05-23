@@ -1,8 +1,12 @@
 # 🗃️ .dotfiles
 
-![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/955fdbbc-c39b-4e6f-92d0-1b7a4777eb37)
-
 <div align="center">
+  
+```markdown
+ℹ️ These are my personal dotfiles, which means they will continuously change.
+```
+  
+![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/955fdbbc-c39b-4e6f-92d0-1b7a4777eb37)
 
 [![ShellCheck](https://github.com/AlexvZyl/.dotfiles/workflows/ShellCheck/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=ShellCheck) 
 [![StyLua](https://github.com/AlexvZyl/.dotfiles/workflows/StyLua/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=StyLua) 
@@ -11,23 +15,13 @@
 
 </div>
 
-<div align="center">
-
-⚠️ &nbsp; **These are my personal dotfiles, which means they will continuously change.** &nbsp; ⚠️ 
-
-</div>
-
-The configuration files for my Linux desktop.  Supports Arch based distros using Gnome and/or i3.  Also, currently it assumes you have an Nvidia GPU and Intel CPU.
-
-I mainly use i3, but I also install Gnome for when people do not want to mess around with a tiling WM.  All of the screenshots are for i3 and the gnome configs are very basic.  
+The configuration files for my Linux desktop.  Supports Arch based distros using Gnome and/or i3.  Also, currently it assumes you have an Nvidia GPU and Intel CPU.  I mainly use i3, but I also install Gnome for when people do not want to mess around with a tiling WM.  All of the screenshots are for i3 and the gnome configs are very basic.  
 
 # Installation
 
 To install everything, simply copy and paste this into the terminal.
 
-> ℹ️ &nbsp; This script assumes that you have a working Arch installation.
-
-> ℹ️ &nbsp; Remember to choose i3 at the login screen.
+> ℹ️ &nbsp; This script assumes that you have a working Arch installation.  Remember to choose i3 at the login screen.
 
 > ⚠️ &nbsp; I still need to properly test this.
 
@@ -43,7 +37,7 @@ Although I like posting on r/unixporn, these dotfiles also try to be private and
 
 <details>
 
-<summary>Measures</summary>
+<summary>🛡️ Measures</summary>
 
 </br>
 
@@ -61,9 +55,7 @@ Although I like posting on r/unixporn, these dotfiles also try to be private and
 
 # Theme
 
-The theme is based on my Neovim plugin, [nordic.nvim](https://github.com/AlexvZyl/nordic.nvim).  It is a warmer and darker version of the [Nord](https://www.nordtheme.com/) color palette.
-
-Wallpapers can be found at [this ImageGoNord repo](https://github.com/linuxdotexe/nordic-wallpapers) (they "norded" some nice wallpapers) and [locally](https://github.com/AlexvZyl/.dotfiles/tree/main/.wallpapers).
+The theme is based on my Neovim plugin, [nordic.nvim](https://github.com/AlexvZyl/nordic.nvim).  It is a warmer and darker version of the [Nord](https://www.nordtheme.com/) color palette.  Wallpapers can be found at [this ImageGoNord repo](https://github.com/linuxdotexe/nordic-wallpapers) (they "norded" some nice wallpapers) and [locally](https://github.com/AlexvZyl/.dotfiles/tree/main/.wallpapers).
 
 # Showcase
 
@@ -73,7 +65,7 @@ Some screenshots showing off the desktop and rice, as well as some custom featur
 
 <details>
 
-<summary>Images</summary>
+<summary>📷 Preview</summary>
 
 </br>
 
@@ -108,7 +100,7 @@ A few notes on the bindings:
 
 <details>
 
-<summary>Bindings table</summary>
+<summary>⌨️ Bindings table</summary>
 
 </br>
 
@@ -136,9 +128,7 @@ A few notes on the bindings:
 
 This [config](https://github.com/AlexvZyl/.dotfiles/tree/main/.config/nvim) has a decent amount of work and is basically a fully fledged IDE.  Why didn't I use [LunarVim](https://github.com/LunarVim/LunarVim), [NvChad](https://github.com/NvChad/NvChad) or [SpaceVim](https://github.com/liuchengxu/space-vim)?  I like doing things myself.
 
-> ℹ️ &nbsp; I try to keep all of the key bindings in [one file](https://github.com/AlexvZyl/.dotfiles/blob/main/.config/nvim/lua/alex/keymaps/init.lua).  So if you want to use the configs, this is the only file you have to familiarise yourself with.
-
-> ℹ️ &nbsp; You can add more LSPs to the end of [this file](https://github.com/AlexvZyl/.dotfiles/blob/main/.config/nvim/lua/alex/lang/lsp/clients.lua).
+> ℹ️ &nbsp; I try to keep all of the key bindings in [one file](https://github.com/AlexvZyl/.dotfiles/blob/main/.config/nvim/lua/alex/keymaps/init.lua).  So if you want to use the configs, this is the only file you have to familiarise yourself with.  You can add more LSPs to the end of [this file](https://github.com/AlexvZyl/.dotfiles/blob/main/.config/nvim/lua/alex/lang/lsp/clients.lua).
 
 ## Installation
 
@@ -155,9 +145,15 @@ nvim-git fetch
 nvim-git pull
 ```
 
+<details>
+
+<summary>📷 Preview</summary>
+
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/4032df89-74da-4152-b606-8d608d828de3)
 
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/c0a1c04d-5665-4402-98f2-e5a92f7c12c1)
+  
+</details>
 
 ---
 

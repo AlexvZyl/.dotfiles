@@ -136,8 +136,8 @@ This [config](https://github.com/AlexvZyl/.dotfiles/tree/main/.config/nvim) has 
 If you wish to only use the Neovim configs, you can install them with:
 
 ```bash
-curl -s https://raw.githubusercontent.com/AlexvZyl/.dotfiles/main/.scripts/install/minimal_workspace.sh | bash
-
+curl -s https://raw.githubusercontent.com/AlexvZyl/.dotfiles/main/.scripts/install/minimal_workspace.sh > ~/bootstrap.sh
+chmod +x ~/bootstrap.sh && ~/bootstrap.sh && rm ~/bootstrap.sh
 ```
 And to update:
 ```bash

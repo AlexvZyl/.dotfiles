@@ -131,21 +131,6 @@ This [config](https://github.com/AlexvZyl/.dotfiles/tree/main/.config/nvim) has 
 
 > ℹ️ &nbsp; I try to keep all of the key bindings in [one file](https://github.com/AlexvZyl/.dotfiles/blob/main/.config/nvim/lua/alex/keymaps/init.lua).  So if you want to use the configs, this is the only file you have to familiarise yourself with.  You can add more LSPs to the end of [this file](https://github.com/AlexvZyl/.dotfiles/blob/main/.config/nvim/lua/alex/lang/lsp/clients.lua).
 
-## Installation
-
-If you wish to only use the Neovim configs, you can install them with:
-
-```bash
-curl -s https://raw.githubusercontent.com/AlexvZyl/.dotfiles/main/.scripts/install/minimal_workspace.sh | bash
-
-```
-And to update:
-```bash
-alias nvim-git="git --work-tree=\"$HOME/\" --git-dir=\"$HOME/.config/nvim/.git/\""
-nvim-git fetch
-nvim-git pull
-```
-
 <details>
 
 <summary>📷 Preview</summary>
@@ -156,6 +141,37 @@ nvim-git pull
 
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/c0a1c04d-5665-4402-98f2-e5a92f7c12c1)
   
+</details>
+
+# Minimal Installation
+
+A minimal installation can be done with:
+
+```bash
+curl -s https://raw.githubusercontent.com/AlexvZyl/.dotfiles/main/.scripts/install/minimal_workspace.sh > ~/bootstrap.sh
+chmod +x ~/bootstrap.sh && ~/bootstrap.sh && rm ~/bootstrap.sh
+```
+And to update:
+```bash
+alias min-git="git --work-tree=\"$HOME/\" --git-dir=\"$HOME/.config/nvim/.git/\""
+min-git fetch
+min-git pull
+```
+
+<details>
+
+<summary>⚙️ Components</summary>
+
+</br>
+
+- Neovim
+- Kitty
+- Tmux
+- Fonts
+- Fish
+- exa
+- bat
+
 </details>
 
 ---

@@ -15,7 +15,7 @@ local function get_current_buftype() return vim.api.nvim_buf_get_option(0, 'buft
 -- Get the buffer's filename.
 local function get_current_filename()
     local bufname = vim.api.nvim_buf_get_name(0)
-    return bufname ~= '' and vim.fn.fnamemodify(bufname, ':t') or ' [No Name]'
+    return bufname ~= '' and vim.fn.fnamemodify(bufname, ':t') or ''
 end
 
 local function copilot_normal()
@@ -168,6 +168,8 @@ local tree = {
                 color = { fg = c.gray3 },
             },
         },
+        lualine_x = {},
+        lualine_y = {},
         lualine_z = {
             {
                 'location',
@@ -181,6 +183,44 @@ local tree = {
         },
     },
     filetypes = { 'NvimTree' },
+}
+
+local function telescope_text()
+    return 'Telescope'
+end
+
+local telescope = {
+    sections = {
+        lualine_a = {
+            {
+                'mode',
+                icon = { '' },
+                separator = { right = ' ', left = '' },
+            },
+        },
+        lualine_b = {},
+        lualine_c = {
+            {
+                telescope_text,
+                color = { fg = c.gray3 },
+                icon = { '  ', color = { fg = c.gray4 } },
+            }
+        },
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {
+            {
+                'location',
+                icon = { '', align = 'left', color = { fg = c.black } },
+            },
+            {
+                'progress',
+                icon = { '', align = 'left', color = { fg = c.black } },
+                separator = { right = '', left = '' },
+            },
+        },
+    },
+    filetypes = { 'TelescopePrompt' },
 }
 
 require('lualine').setup {
@@ -204,13 +244,13 @@ require('lualine').setup {
             {
                 get_current_filename,
                 color = { fg = c.gray3 },
-                separator = '   ',
+                separator = ' ',
                 padding = 0,
             },
             {
                 'branch',
                 color = { fg = c.gray3 },
-                icon = { ' ', color = { fg = c.gray4 } },
+                icon = { '   ', color = { fg = c.gray4 } },
                 separator = ' ',
                 padding = 0,
             },
@@ -279,7 +319,10 @@ require('lualine').setup {
         component_separators = { left = '', right = '' },
         theme = 'nordic',
     },
-    extensions = { ['nvim-tree'] = tree },
+    extensions = {
+        telescope,
+        ['nvim-tree'] = tree,
+    },
 }
 
 -- Ensure correct backgrond for lualine.

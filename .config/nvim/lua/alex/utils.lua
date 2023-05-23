@@ -39,6 +39,7 @@ M.top_right_thin = '🭾'
 M.top_left_thin = '🭽'
 M.bottom_left_thin = '🭼'
 M.bottom_right_thin = '🭿'
+M.top_and_bottom = '🮀'
 
 M.diagnostic_signs = {
     error = ' ',

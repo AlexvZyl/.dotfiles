@@ -11,8 +11,6 @@ end
 
 function M.toggle_tree()
     local tree = require('nvim-tree.api').tree
-    if not tree.is_visible() then
-    end
     tree.toggle {}
 end
 

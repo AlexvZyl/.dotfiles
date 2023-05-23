@@ -3,7 +3,7 @@
 # Ensure packages are up to date.
 yay -Syyu
 
-# Install lsps.
+# Install LSPs.
 yay -S  lua-language-server     \
         julia-bin               \
         bash-language-server    \

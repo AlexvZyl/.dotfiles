@@ -1,7 +1,13 @@
 #!/bin/bash
 
 # Install dependencies.
-pacman -Syu git neovim fish tmux
+if command -v pacman &>/dev/null; then
+    pacman -Syu git neovim fish tmux
+elif command -v apt &>/dev/null; then
+    apt install git neovim fish tmux
+else
+    echo "This script only supports Debian and Arch based systems."
+fi
 
 # Paths.
 WORK_TREE="$HOME"
@@ -23,12 +29,14 @@ function backup() {
 }
 
 # Create backups.
-if [ "$1" != "-f" ]; then
+if [ "$1" == "force" ]; then
+    echo "Forcing! Could override configs!"
+else
     backup "$NVIM_DIR"
-    backup "$HOME/.config/kitty"
-    backup "$HOME/.config/fish"
-    backup "$HOME/.config/tmux"
-    backup "$HOME/.tmux"
+    backup "$WORK_TREE/.config/kitty"
+    backup "$WORK_TREE/.config/fish"
+    backup "$WORK_TREE/.config/tmux"
+    backup "$WORK_TREE/.tmux"
 fi
 
 # Init repo.
@@ -41,10 +49,10 @@ git remote add -f origin https://github.com/AlexvZyl/.dotfiles
 git config core.sparseCheckout true
 touch "$SPARSE_FILE"
 echo ".config/nvim/*" >> "$SPARSE_FILE"
-echo ".config/tmux/*" >> "$SPARSE_FILE"
-echo ".tmux/*" >> "$SPARSE_FILE"
 echo ".config/fish/*" >> "$SPARSE_FILE"
 echo ".config/kitty/*" >> "$SPARSE_FILE"
+echo ".config/tmux/*" >> "$SPARSE_FILE"
+echo ".tmux/*" >> "$SPARSE_FILE"
 
 # Clone.
 git --work-tree=$WORK_TREE --git-dir=$GIT_DIR checkout main

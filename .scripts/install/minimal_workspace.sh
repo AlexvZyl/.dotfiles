@@ -2,11 +2,12 @@
 
 # Install dependencies.
 if command -v pacman &>/dev/null; then
-    pacman -Syu git neovim fish tmux
+    sudo pacman -Syu git neovim fish tmux
 elif command -v apt &>/dev/null; then
-    apt install git neovim fish tmux
+    sudo apt install git neovim fish tmux
 else
     echo "This script only supports Debian and Arch based systems."
+    exit 0
 fi
 
 # Paths.

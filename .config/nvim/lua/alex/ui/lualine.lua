@@ -185,9 +185,7 @@ local tree = {
     filetypes = { 'NvimTree' },
 }
 
-local function telescope_text()
-    return 'Telescope'
-end
+local function telescope_text() return 'Telescope' end
 
 local telescope = {
     sections = {
@@ -204,7 +202,7 @@ local telescope = {
                 telescope_text,
                 color = { fg = c.gray3 },
                 icon = { '  ', color = { fg = c.gray4 } },
-            }
+            },
         },
         lualine_x = {},
         lualine_y = {},

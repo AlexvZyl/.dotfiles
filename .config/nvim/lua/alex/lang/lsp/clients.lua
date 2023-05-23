@@ -8,22 +8,27 @@ local lsp_flags = {
     debounce_text_changes = 250, -- ms
 }
 
+local default = {
+    lsp_flags = lsp_flags,
+    capabilities = capabilities
+}
+
 -- Setup LSPs.
 lsp_config.ccls.setup {
-    flags = lsp_flags,
     init_options = {
         compilationDatabaseDirectory = 'build',
         index = { threads = 0 },
         clang = { excludeArgs = { '-frounding-math' } },
     },
+    flags = lsp_flags,
     capabilities = capabilities,
 }
-lsp_config.lua_ls.setup { flags = lsp_flags, capabilities = capabilities }
-lsp_config.julials.setup { flags = lsp_flags, capabilities = capabilities }
-lsp_config.bashls.setup { flags = lsp_flags, capabilities = capabilities }
-lsp_config.pyright.setup { flags = lsp_flags, capabilities = capabilities }
-lsp_config.rust_analyzer.setup { flags = lsp_flags, capabilities = capabilities }
-lsp_config.texlab.setup { flags = lsp_flags, capabilities = capabilities }
-lsp_config.cmake.setup { flags = lsp_flags, capabilities = capabilities }
-lsp_config.jsonls.setup { flags = lsp_flags, capabilities = capabilities }
-lsp_config.yamlls.setup { flags = lsp_flags, capabilities = capabilities }
+lsp_config.lua_ls.setup { default }
+lsp_config.julials.setup { default }
+lsp_config.bashls.setup { default }
+lsp_config.pyright.setup { default }
+lsp_config.rust_analyzer.setup { default }
+lsp_config.texlab.setup { default }
+lsp_config.cmake.setup { default }
+lsp_config.jsonls.setup { default }
+lsp_config.yamlls.setup { default }

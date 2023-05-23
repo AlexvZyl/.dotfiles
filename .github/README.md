@@ -3,7 +3,8 @@
 <div align="center">
   
 ```markdown
-ℹ️ These are my personal dotfiles, which means they will continuously change.
+👋 Welcome to my personal dotfiles!
+Continuous change is to be expected...
 ```
   
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/955fdbbc-c39b-4e6f-92d0-1b7a4777eb37)

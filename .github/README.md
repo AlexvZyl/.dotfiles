@@ -155,7 +155,9 @@ nvim-git fetch
 nvim-git pull
 ```
 
-![image](https://user-images.githubusercontent.com/81622310/233982609-f9c15e39-da60-43d8-8c5c-4761db95ad9d.png)
+![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/4032df89-74da-4152-b606-8d608d828de3)
+
+![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/c0a1c04d-5665-4402-98f2-e5a92f7c12c1)
 
 ---
 

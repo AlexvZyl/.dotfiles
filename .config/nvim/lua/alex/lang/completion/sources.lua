@@ -26,3 +26,13 @@ local commands = {
     },
 }
 cmp.setup.cmdline(':', commands)
+
+-- Tex.
+local tex = {
+    sources = {
+        { name = 'latex_symbols' },
+        { name = 'luasnip' },
+        { name = 'nvim_lsp' },
+    }
+}
+cmp.setup.filetype({ 'tex', 'latex' }, tex)

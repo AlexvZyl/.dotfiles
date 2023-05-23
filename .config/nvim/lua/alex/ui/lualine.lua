@@ -1,7 +1,5 @@
 -- Using Lualine as the statusline.
 
--- local u = require 'alex.utils'
-
 -- Show git status.
 local function diff_source()
     local gitsigns = vim.b.gitsigns_status_dict

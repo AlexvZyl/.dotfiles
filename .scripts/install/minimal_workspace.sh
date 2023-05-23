@@ -16,7 +16,7 @@ fi
 # Paths.
 WORK_TREE="$HOME"
 NVIM_DIR="$WORK_TREE/.config/nvim"
-GIT_DIR="$NVIM_DIR/.git"
+GIT_DIR="$WORK_TREE/.workspace"
 SPARSE_FILE="$GIT_DIR/info/sparse-checkout"
 
 # $1 Directory to backup.

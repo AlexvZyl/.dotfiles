@@ -153,7 +153,7 @@ chmod +x ~/bootstrap.sh && ~/bootstrap.sh && rm ~/bootstrap.sh
 ```
 And to update:
 ```bash
-alias min-git="git --work-tree=\"$HOME/\" --git-dir=\"$HOME/.config/nvim/.git/\""
+alias min-git="git --work-tree=\"$HOME/\" --git-dir=\"$HOME/.workspace/\""
 min-git fetch
 min-git pull
 ```

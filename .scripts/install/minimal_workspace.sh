@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install dependencies.
-pacman -Syu git neovim fish tmux kitty
+pacman -Syu git neovim fish tmux
 
 # Paths.
 WORK_TREE="$HOME"

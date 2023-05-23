@@ -3,11 +3,11 @@
 # Install dependencies.
 if command -v pacman &>/dev/null; then
     sudo pacman -Syyu 
-    sudo pacman -S git neovim fish tmux ttf-jetbrains-mono-nerd python kitty
+    sudo pacman -S git neovim fish tmux ttf-jetbrains-mono-nerd python kitty exa bat
 elif command -v apt &>/dev/null; then
     sudo apt update
     sudo apt upgrade
-    sudo apt install git neovim fish tmux python kitty
+    sudo apt install git neovim fish tmux python kitty exa bat
 else
     echo "This script only supports Debian and Arch based systems."
     exit 0
@@ -66,4 +66,4 @@ git --work-tree=$WORK_TREE --git-dir=$GIT_DIR checkout main
 git --work-tree=$WORK_TREE --git-dir=$GIT_DIR pull origin main
 
 # Setup fish.
-$WORK_TREE/.scripts/install/fish.sh
+"$WORK_TREE/.scripts/install/fish.sh"

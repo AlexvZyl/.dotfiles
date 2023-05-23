@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Install dependencies.
+pacman -Syu git neovim fish tmux
+
 # Paths.
 WORK_TREE="$HOME"
 NVIM_DIR="$WORK_TREE/.config/nvim"
@@ -36,7 +39,8 @@ touch "$SPARSE_FILE"
 echo ".config/nvim/*" >> "$SPARSE_FILE"
 echo ".config/tmux/*" >> "$SPARSE_FILE"
 echo ".tmux/*" >> "$SPARSE_FILE"
+echo ".config/fish/*" >> "$SPARSE_FILE"
 
 # Clone.
 git --work-tree=$WORK_TREE --git-dir=$GIT_DIR checkout main
-git --work-tree=$WORK_TREE --git-dir=$GIT_DIR pull --depth=1 origin main
+git --work-tree=$WORK_TREE --git-dir=$GIT_DIR pull origin main

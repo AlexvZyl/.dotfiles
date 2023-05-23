@@ -10,7 +10,7 @@ local lsp_flags = {
 
 local default = {
     lsp_flags = lsp_flags,
-    capabilities = capabilities
+    capabilities = capabilities,
 }
 
 -- Setup LSPs.

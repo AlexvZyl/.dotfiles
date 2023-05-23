@@ -1,4 +1,4 @@
-# .dotfiles
+# 🗃️ .dotfiles
 
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/955fdbbc-c39b-4e6f-92d0-1b7a4777eb37)
 

@@ -64,6 +64,8 @@ echo ".profile" >> "$SPARSE_FILE"
 # Clone.
 git --work-tree=$WORK_TREE --git-dir=$GIT_DIR checkout main
 git --work-tree=$WORK_TREE --git-dir=$GIT_DIR pull origin main
+git --work-tree=$WORK_TREE --git-dir=$GIT_DIR submodule update --recursive --remote
 
 # Setup fish.
 "$WORK_TREE/.scripts/install/shell.sh"
+fish

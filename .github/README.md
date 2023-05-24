@@ -73,7 +73,8 @@ Although I like posting on r/unixporn, these dotfiles also try to be private and
 
 </br>
 
-- Keeping system up to date (`yay -Syyu`)
+- [Scripts](https://github.com/AlexvZyl/.dotfiles/tree/main/.scripts/security) I sometimes use.
+- Manually keeping system up to date (`yay -Syyu`)
 - Malware scanning and database updating ([clamav](https://github.com/Cisco-Talos/clamav))
 - Firewall ([ufw](https://wiki.archlinux.org/title/Uncomplicated_Firewall))
 - Ban IPs ([fail2ban](https://github.com/fail2ban/fail2ban))
@@ -81,7 +82,7 @@ Although I like posting on r/unixporn, these dotfiles also try to be private and
 - Hosting API keys in a private repo
 - Hardened firefox ([user.js](https://github.com/arkenfox/user.js/))
 - I could install the hardened Linux kernel, but that might be slightly pedantic...
-- Port scanning ([rustscan](https://github.com/RustScan/RustScan))
+- Port scanning ([nmap](https://github.com/nmap/nmap), [rustscan](https://github.com/RustScan/RustScan))
 
 </details>
 

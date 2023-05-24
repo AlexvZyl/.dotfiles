@@ -57,6 +57,7 @@ min-git pull
 - Tmux
 - Fonts
 - Fish
+- Scripts
 - exa
 - bat
 

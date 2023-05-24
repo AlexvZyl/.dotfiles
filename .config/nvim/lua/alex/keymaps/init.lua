@@ -44,8 +44,8 @@ keymap(n, '?', '<Nop>', default_settings)
 keymap(ex_t, '<C-s>', function() require('alex.keymaps.utils').save_file() end, default_settings)
 keymap(v, '<Esc>', 'v', default_settings)
 keymap(n_v, '/', '<Cmd>Commentary<CR>', default_settings)
-keymap(n, 'f', function() require('leap').leap {} end)
-keymap(n, 'F', function() require('leap').leap { backward = true } end)
+keymap(n, 's', function() require('leap').leap {} end)
+keymap(n, 'S', function() require('leap').leap { backward = true } end)
 
 -- Barbar
 keymap(n, '<C-q>', '<Cmd>BufferDelete<CR>', default_settings)
@@ -78,7 +78,7 @@ keymap(n, '<Esc>', '<Cmd>noh<CR>', allow_remap)
 
 -- Debugger.
 keymap(n, '<C-b>', '<Cmd>DapToggleBreakpoint<CR>', default_settings)
-keymap(n, 'S', function() require('alex.keymaps.utils').dap_float_scope() end, default_settings)
+keymap(n, '\\', function() require('alex.keymaps.utils').dap_float_scope() end, default_settings)
 keymap(n, '<F1>', function() require('alex.keymaps.utils').dap_toggle_ui() end, default_settings)
 keymap(n, '<F2>', '<Cmd>DapContinue<CR>', default_settings)
 keymap(n, '<F3>', '<Cmd>DapStepInto<CR>', default_settings)

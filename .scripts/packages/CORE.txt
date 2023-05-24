@@ -66,3 +66,4 @@ cava
 etcher-bin
 kdenlive
 onlyoffice-bin
+nyxt

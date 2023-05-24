@@ -32,8 +32,8 @@ keymap(ex_t, '<C-k>', '<Cmd>wincmd k<CR>', default_settings)
 keymap(ex_t, '<C-l>', '<Cmd>wincmd l<CR>', default_settings)
 keymap(ex_t, '<C-Up>', ':resize -2<CR>', default_settings)
 keymap(ex_t, '<C-Down>', ':resize +2<CR>', default_settings)
-keymap(ex_t, '<C-Left>', ':vertical resize -2<CR>', default_settings)
-keymap(ex_t, '<C-Right>', ':vertical resize +2<CR>', default_settings)
+keymap(ex_t, '<C-Left>', ':vertical resize +2<CR>', default_settings)
+keymap(ex_t, '<C-Right>', ':vertical resize -2<CR>', default_settings)
 
 -- Editing.
 keymap(ex_t, '<C-z>', '<Cmd>undo<CR>', default_settings)

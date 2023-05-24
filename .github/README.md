@@ -145,8 +145,8 @@ A few notes on the bindings:
 | Super + t | Terminal |
 | Super + T | Tor terminal session |
 | Super + n | Neovim |
-| Super + b | BTop++ |
-| Super + g | NVtop |
+| Super + m | Resource monitor (BTop++) |
+| Super + g | GPU monitor (NVtop) |
 | Super + R | Toggle read mode |
 | Super + tab | Windows |
 | Super + Arrow | Cycle windows |

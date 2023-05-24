@@ -37,6 +37,7 @@ xdotool
 xborder-git
 
 kitty
+nushell
 git
 github-cli
 neovim
@@ -51,6 +52,7 @@ nvtop
 zathura
 ranger
 frogmouth
+dust
 
 signal
 discord

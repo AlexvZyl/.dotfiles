@@ -17,7 +17,7 @@ Continuous change is to be expected...
 
 The configuration files for my Linux desktop.  Supports Arch based distros using Gnome and/or i3.  Also, currently it assumes you have an Nvidia GPU and Intel CPU.  I mainly use i3, but I also install Gnome for when people do not want to mess around with a tiling WM.  All of the screenshots are for i3 and the gnome configs are very basic.  
 
-# Installation
+# Full Installation
 
 To install everything, simply copy and paste this into the terminal.
 
@@ -30,6 +30,37 @@ curl -s https://raw.githubusercontent.com/AlexvZyl/.dotfiles/main/.scripts/insta
 chmod +x ~/bootstrap.sh && ~/bootstrap.sh && rm ~/bootstrap.sh
 reboot
 ```
+
+# Minimal Installation
+
+A minimal installation can be done with:
+
+```bash
+curl -s https://raw.githubusercontent.com/AlexvZyl/.dotfiles/main/.scripts/install/minimal_workspace.sh > ~/bootstrap.sh
+chmod +x ~/bootstrap.sh && ~/bootstrap.sh && rm ~/bootstrap.sh
+```
+And to update:
+```bash
+alias min-git="git --work-tree=\"$HOME/\" --git-dir=\"$HOME/.workspace/\""
+min-git fetch
+min-git pull
+```
+
+<details>
+
+<summary>⚙️ Components</summary>
+
+</br>
+
+- Neovim
+- Kitty
+- Tmux
+- Fonts
+- Fish
+- exa
+- bat
+
+</details>
 
 # Privacy and Security
 
@@ -140,37 +171,6 @@ This [config](https://github.com/AlexvZyl/.dotfiles/tree/main/.config/nvim) has 
 
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/c0a1c04d-5665-4402-98f2-e5a92f7c12c1)
   
-</details>
-
-# Minimal Installation
-
-A minimal installation can be done with:
-
-```bash
-curl -s https://raw.githubusercontent.com/AlexvZyl/.dotfiles/main/.scripts/install/minimal_workspace.sh > ~/bootstrap.sh
-chmod +x ~/bootstrap.sh && ~/bootstrap.sh && rm ~/bootstrap.sh
-```
-And to update:
-```bash
-alias min-git="git --work-tree=\"$HOME/\" --git-dir=\"$HOME/.workspace/\""
-min-git fetch
-min-git pull
-```
-
-<details>
-
-<summary>⚙️ Components</summary>
-
-</br>
-
-- Neovim
-- Kitty
-- Tmux
-- Fonts
-- Fish
-- exa
-- bat
-
 </details>
 
 ---

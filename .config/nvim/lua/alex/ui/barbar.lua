@@ -20,7 +20,7 @@ local icons = {
 }
 
 local sidebar = {
-    NvimTree = true,
+    NvimTree = { text = "File Explorer" },
 }
 
 require('bufferline').setup {

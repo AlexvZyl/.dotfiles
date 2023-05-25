@@ -5,7 +5,7 @@
     nvidia-force-comp-pipeline
     ~/.screenlayout/default_triple_monitor.sh
     # feh --bg-fill ~/.wallpapers/Cloud_2_Nord.png &
-    feh --bg-center --bg-fill ~/.wallpapers/Space_Spiral_Nord.png &
+    feh --bg-fill ~/.wallpapers/Space_Spiral_Nord.png &
     (
         picom -b 
         xborders -c ~/.config/picom/xborder.json
@@ -19,4 +19,4 @@ dbus-launch dunst --config ~/.config/dunst/dunstrc &
 ~/.config/tmux/utils/start_all_servers.sh &
 
 # Remap capslock to escape
-setxkbmap -option caps:escape
+setxkbmap -option caps:escape &

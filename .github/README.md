@@ -8,6 +8,8 @@ Continuous change is to be expected...
 ```
   
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/955fdbbc-c39b-4e6f-92d0-1b7a4777eb37)
+  
+![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/550f9794-0531-4f27-9433-ea76ceb381d7)
 
 [![ShellCheck](https://github.com/AlexvZyl/.dotfiles/workflows/ShellCheck/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=ShellCheck) 
 [![StyLua](https://github.com/AlexvZyl/.dotfiles/workflows/StyLua/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=StyLua) 

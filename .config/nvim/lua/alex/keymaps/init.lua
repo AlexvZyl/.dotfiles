@@ -50,7 +50,7 @@ keymap(n, 'S', function() require('leap').leap { backward = true } end)
 -- Barbar
 keymap(n, '<C-q>', '<Cmd>BufferDelete<CR>', default_settings)
 keymap(n, 'Q', '<Cmd>BufferDelete<CR>', default_settings)
-keymap(n, 'db', '<Cmd>BufferPickDelete<CR>', default_settings)
+keymap(n, 'dB', '<Cmd>BufferPickDelete<CR>', default_settings)
 keymap(n, 'gb', '<Cmd>BufferPick<CR>', default_settings)
 keymap(n, 'H', '<Cmd>BufferPrevious<CR>', default_settings)
 keymap(n, 'L', '<Cmd>BufferNext<CR>', default_settings)

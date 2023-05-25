@@ -1,3 +1,5 @@
+vim.loader.enable()
+
 -- Environment.
 local u = require 'alex.utils'
 local env_file = os.getenv 'HOME' .. '/.private/nvim_env.lua'

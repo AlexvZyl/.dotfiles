@@ -35,7 +35,7 @@ reboot
 
 # Minimal Installation
 
-A minimal installation can be done with:
+Sometimes I just want to get work done on a Linux machine.  A minimal installation can be done with:
 
 ```bash
 curl -s https://raw.githubusercontent.com/AlexvZyl/.dotfiles/main/.scripts/install/minimal_workspace.sh > ~/bootstrap.sh
@@ -67,7 +67,7 @@ min-git pull
 
 # Privacy and Security
 
-Although I like posting on r/unixporn, these dotfiles also try to be private and secure.  This is a journey, not a destination, and I am open to any input.
+Although I like making it look as nice as possible, these dotfiles also try to be private and secure.  This is a journey, not a destination, and I am open to any input.
 
 <details>
 
@@ -89,6 +89,8 @@ Although I like posting on r/unixporn, these dotfiles also try to be private and
 </details>
 
 # Theme
+
+Personally, I want a balance between good looking colors that stand out, and soft colors that will not destroy my eyes.
 
 The theme is based on my Neovim plugin, [nordic.nvim](https://github.com/AlexvZyl/nordic.nvim).  It is a warmer and darker version of the [Nord](https://www.nordtheme.com/) color palette.  Wallpapers can be found at [this ImageGoNord repo](https://github.com/linuxdotexe/nordic-wallpapers) (they "norded" some nice wallpapers) and [locally](https://github.com/AlexvZyl/.dotfiles/tree/main/.wallpapers).
 

@@ -8,8 +8,6 @@ Continuous change is to be expected...
 ```
   
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/955fdbbc-c39b-4e6f-92d0-1b7a4777eb37)
-  
-![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/550f9794-0531-4f27-9433-ea76ceb381d7)
 
 [![ShellCheck](https://github.com/AlexvZyl/.dotfiles/workflows/ShellCheck/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=ShellCheck) 
 [![StyLua](https://github.com/AlexvZyl/.dotfiles/workflows/StyLua/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=StyLua) 
@@ -98,33 +96,17 @@ The theme is based on my Neovim plugin, [nordic.nvim](https://github.com/AlexvZy
 
 Some screenshots showing off the desktop and rice, as well as some custom features I wrote.  Everything has to be *just right*.  I am spending 8+ hours a day on this working, so it might as well be a nice experience.
 
-> ⚠️ &nbsp; All of these are outdated, I will update them at a later stage.
-
 <details>
 
 <summary>📷 Preview</summary>
 
 </br>
 
-*For Reddit:*
-
-![image](https://user-images.githubusercontent.com/81622310/212382904-0502af7d-653a-4834-8663-c449cfbcfb3c.png)
-
-![image](https://user-images.githubusercontent.com/81622310/212382132-597b93e8-04b3-4497-93ce-8264bdc02fc0.png)
-
-![image](https://user-images.githubusercontent.com/81622310/212382290-a923c5be-9d16-4e44-8fc0-090b05865316.png)
-
-*Notifications via [dunst](https://github.com/dunst-project/dunst):*
-![image](https://user-images.githubusercontent.com/81622310/210980911-cb7825d5-1ac2-4db9-b34a-f92887701d1d.png)
-
 *Launcher via [rofi](https://github.com/adi1090x/rofi):*
-![image](https://user-images.githubusercontent.com/81622310/211895894-663f3480-d2d9-4546-8f1b-04217cb2dd75.png)
+![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/550f9794-0531-4f27-9433-ea76ceb381d7)
 
-*Powermenu via [rofi](https://github.com/adi1090x/rofi):*
-![image](https://user-images.githubusercontent.com/81622310/211911407-050741e9-d7d7-412c-ac12-044f002e8b6f.png)
-
-*Lock screen via [betterlockscreen](https://github.com/betterlockscreen/betterlockscreen):*
-![image](https://user-images.githubusercontent.com/81622310/211187368-5d8e1215-4482-4506-9cd9-6508d980f1f3.png)
+*Lock screen via [betterlockscreen](https://github.com/betterlockscreen/betterlockscreen):*  
+![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/4eeeab12-e778-4f6b-aa19-4f6e0cbe9767)
 
 </details>
 

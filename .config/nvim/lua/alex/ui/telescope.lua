@@ -23,7 +23,7 @@ ts.setup {
         results_title = '',
         winblend = 0,
         wrap_results = true,
-        mappings = { i = { ["<Esc>"] = require('telescope.actions').close } }
+        mappings = { i = { ['<Esc>'] = require('telescope.actions').close } },
     },
 }
 

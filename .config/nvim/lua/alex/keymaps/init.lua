@@ -78,7 +78,7 @@ keymap(n, '<Esc>', '<Cmd>noh<CR>', allow_remap)
 
 -- Debugger.
 keymap(n, '<C-b>', '<Cmd>DapToggleBreakpoint<CR>', default_settings)
-keymap(n, '\\', function() require('alex.keymaps.utils').dap_float_scope() end, default_settings)
+keymap(n, '<leader>s', function() require('alex.keymaps.utils').dap_float_scope() end, default_settings)
 keymap(n, '<F1>', function() require('alex.keymaps.utils').dap_toggle_ui() end, default_settings)
 keymap(n, '<F2>', '<Cmd>DapContinue<CR>', default_settings)
 keymap(n, '<F3>', '<Cmd>DapStepInto<CR>', default_settings)

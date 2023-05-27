@@ -219,9 +219,6 @@ bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-# Power Profiles menu switcher (rofi)
-bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
-
 ##########################################
 # configuration for workspace behaviour: #
 ##########################################
@@ -265,7 +262,7 @@ for_window [class="Brave-browser"] exec --no-startup-id ~/.config/i3/browser.sh
 bindsym $mod+d exec ~/.config/rofi/launcher/run.sh
 
 # Power menu.
-bindsym $mod+p exec ~/.config/rofi/powermenu/run.sh
+bindsym $mod+Shift+p exec ~/.config/rofi/powermenu/run.sh
 
 # Tmux sessions.
 bindsym $mod+s exec ~/.config/rofi/tmux/run.sh

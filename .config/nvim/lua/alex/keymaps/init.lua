@@ -5,6 +5,7 @@ local n, i, v, t = 'n', 'i', 'v', 't'
 local n_i = { n, i }
 local ex_t = { n, i, v }
 local n_v = { n, v }
+local all  = { n, v, i, t }
 
 local keymap = vim.keymap.set
 local default_settings = { noremap = true, silent = true }
@@ -75,6 +76,7 @@ keymap(n, ']E', function() require('alex.keymaps.utils').prev_error() end, defau
 -- Misc.
 keymap(n, 'gl', '<Cmd>VimtexView<CR>', default_settings)
 keymap(n, '<Esc>', '<Cmd>noh<CR>', allow_remap)
+keymap(n, 'q', '<Nop>', default_settings)
 
 -- Debugger.
 keymap(n, '<C-b>', '<Cmd>DapToggleBreakpoint<CR>', default_settings)

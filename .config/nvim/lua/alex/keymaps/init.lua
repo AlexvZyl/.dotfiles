@@ -5,7 +5,7 @@ local n, i, v, t = 'n', 'i', 'v', 't'
 local n_i = { n, i }
 local ex_t = { n, i, v }
 local n_v = { n, v }
-local all  = { n, v, i, t }
+local all = { n, v, i, t }
 
 local keymap = vim.keymap.set
 local default_settings = { noremap = true, silent = true }

@@ -56,8 +56,6 @@ RCS
 deadzone
 Logit
 logit
-#ezier
-Bezier/!
 CSIR
 asin
 SPI
@@ -69,7 +67,7 @@ spectrums
 COVID
 LOs
 oscilattor
-LO's
+LOs
 velcro
 NN
 DBSCAN
@@ -79,9 +77,9 @@ bistatic
 intersattelite
 bandlimited
 LPF
-gaussian
+Gaussian
 GMM
-markov
+Markov
 cepstral
 mel
 PCA
@@ -93,10 +91,8 @@ thresholding
 heterodyning
 backends
 Filesystem
-SDR's
+SDRs
 SLL
-#andwith
-bandwith/!
 overlayed
 viable
 explainability
@@ -126,11 +122,10 @@ RhinoNet
 DCR
 DSHR
 DSHRs
-DCR's
+DCRs
 DCRs
 filesystem
 FOPEN
-phasor's
 Rician
 MTI
 sinc
@@ -143,9 +138,6 @@ ezier
 ezier
 ezier
 LP0965
-#hz
-Ghz/!
-del
 LP0410
 MIMO
 begin
@@ -154,10 +146,8 @@ RDF
 EIRP
 CORDIC
 X310
-dependant/!
 hyperparameter
 tanh
 FGPAs
 KNNs
-One/!
 One

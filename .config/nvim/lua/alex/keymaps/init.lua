@@ -1,11 +1,9 @@
 -- I want to keep all of the key bindings in one file so that it is easy to see
 -- what is being used and ensure nothing being overwritten by accident.
 
-local n, i, v, t = 'n', 'i', 'v', 't'
-local n_i = { n, i }
+local n, i, v = 'n', 'i', 'v'
 local ex_t = { n, i, v }
 local n_v = { n, v }
-local all = { n, v, i, t }
 
 local keymap = vim.keymap.set
 local default_settings = { noremap = true, silent = true }
@@ -49,7 +47,6 @@ keymap(n, 's', function() require('leap').leap {} end)
 keymap(n, 'S', function() require('leap').leap { backward = true } end)
 
 -- Barbar
-keymap(n, '<C-q>', '<Cmd>BufferDelete<CR>', default_settings)
 keymap(n, 'Q', '<Cmd>BufferDelete<CR>', default_settings)
 keymap(n, 'dB', '<Cmd>BufferPickDelete<CR>', default_settings)
 keymap(n, 'gb', '<Cmd>BufferPick<CR>', default_settings)
@@ -64,12 +61,12 @@ keymap(n, 'gr', '<Cmd>Lspsaga lsp_finder<CR>', default_settings)
 keymap(n_v, 'ca', '<Cmd>Lspsaga code_action<CR>', default_settings)
 keymap(n_v, 'RR', '<Cmd>Lspsaga rename<CR>', default_settings)
 keymap(n, 'gd', '<Cmd>Lspsaga peek_definition<CR>', default_settings)
-keymap(n, 'gf', '<Cmd>Lspsaga goto_definition<CR>zz', default_settings)
 keymap(n, 'gD', '<Cmd>Lspsaga hover_doc<CR>', default_settings)
+keymap(n, 'gf', '<Cmd>Lspsaga goto_definition<CR>zz', default_settings)
 keymap(n, 'e', '<Cmd>Lspsaga show_line_diagnostics ++unfocus<CR>', default_settings)
+keymap(n, '<leader>o', '<Cmd>Lspsaga outline<CR>', default_settings)
 keymap(n, '[e', '<Cmd>Lspsaga diagnostic_jump_prev<CR>', default_settings)
 keymap(n, ']e', '<Cmd>Lspsaga diagnostic_jump_next<CR>', default_settings)
-keymap(n, '<leader>o', '<Cmd>Lspsaga outline<CR>', default_settings)
 keymap(n, '[E', function() require('alex.keymaps.utils').next_error() end, default_settings)
 keymap(n, ']E', function() require('alex.keymaps.utils').prev_error() end, default_settings)
 

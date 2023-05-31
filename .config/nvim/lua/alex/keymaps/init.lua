@@ -80,11 +80,11 @@ keymap(n, '<C-b>', '<Cmd>DapToggleBreakpoint<CR>', default_settings)
 keymap(n, '<leader>s', function() require('alex.keymaps.utils').dap_float_scope() end, default_settings)
 keymap(n, '<F1>', function() require('alex.keymaps.utils').dap_toggle_ui() end, default_settings)
 keymap(n, '<F2>', '<Cmd>DapContinue<CR>', default_settings)
-keymap(n, '<F3>', '<Cmd>DapStepInto<CR>', default_settings)
-keymap(n, '<F4>', '<Cmd>DapStepOver<CR>', default_settings)
-keymap(n, '<F5>', '<Cmd>DapStepOut<CR>', default_settings)
-keymap(n, '<F6>', '<Cmd>DapRestartFrame<CR>', default_settings)
-keymap(n, '<F7>', '<Cmd>DapTerminate<CR>', default_settings)
+keymap(n, '<Down>', '<Cmd>DapStepInto<CR>', default_settings)
+keymap(n, '<Right>', '<Cmd>DapStepOver<CR>', default_settings)
+keymap(n, '<Up>', '<Cmd>DapStepOut<CR>', default_settings)
+keymap(n, '<Left>', '<Cmd>DapRestartFrame<CR>', default_settings)
+-- keymap(n, '<F7>', '<Cmd>DapTerminate<CR>', default_settings)
 
 -- Completion.
 local cmp = require 'cmp'

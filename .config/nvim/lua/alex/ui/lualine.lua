@@ -4,7 +4,7 @@
 local mode_map = {
     ['COMMAND'] = 'COMMND',
     ['V-BLOCK'] = 'V-BLCK',
-    ['TERMINAL'] = 'TERMNL'
+    ['TERMINAL'] = 'TERMNL',
 }
 local function fmt_mode(s) return mode_map[s] or s end
 

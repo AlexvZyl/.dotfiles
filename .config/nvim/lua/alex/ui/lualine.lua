@@ -1,40 +1,8 @@
 -- Using Lualine as the statusline.
 
 -- Custom mode names.
-local mode_map = {
-    ['n'] = 'NORMAL',
-    ['no'] = 'O-PDNG',
-    ['nov'] = 'O-PDNG',
-    ['noV'] = 'O-PDNG',
-    ['niI'] = 'NORMAL',
-    ['niR'] = 'NORMAL',
-    ['niV'] = 'NORMAL',
-    ['nt'] = 'NORMAL',
-    ['v'] = 'VISUAL',
-    ['vs'] = 'VISUAL',
-    ['V'] = 'V-LINE',
-    ['Vs'] = 'V-LINE',
-    ['s'] = 'SELECT',
-    ['S'] = 'S-LINE',
-    ['i'] = 'INSERT',
-    ['ic'] = 'INSERT',
-    ['ix'] = 'INSERT',
-    ['R'] = 'RPLACE',
-    ['Rc'] = 'RPLACE',
-    ['Rx'] = 'RPLACE',
-    ['Rv'] = 'V-RPLC',
-    ['Rvc'] = 'V-RPLC',
-    ['Rvx'] = 'V-RPLC',
-    ['c'] = 'COMMND',
-    ['cv'] = 'EX    ',
-    ['ce'] = 'EX    ',
-    ['r'] = 'RPLACE',
-    ['rm'] = 'MORE  ',
-    ['r?'] = 'CNFIRM',
-    ['!'] = 'SHELL ',
-    ['t'] = 'TRMNAL',
-}
-local function vim_mode() return mode_map[vim.api.nvim_get_mode().mode] or '__' end
+local mode_map = { ['COMMAND'] = 'COMMND' }
+local function fmt_mode(s) return mode_map[s] or s end
 
 -- Show git status.
 local function diff_source()
@@ -190,7 +158,8 @@ local tree = {
     sections = {
         lualine_a = {
             {
-                vim_mode,
+                'mode',
+                fmt = fmt_mode,
                 icon = { '' },
                 separator = { right = ' ', left = '' },
             },
@@ -227,7 +196,8 @@ local telescope = {
     sections = {
         lualine_a = {
             {
-                vim_mode,
+                'mode',
+                fmt = fmt_mode,
                 icon = { '' },
                 separator = { right = ' ', left = '' },
             },
@@ -261,7 +231,8 @@ require('lualine').setup {
     sections = {
         lualine_a = {
             {
-                vim_mode,
+                'mode',
+                fmt = fmt_mode,
                 icon = { '' },
                 separator = { right = ' ', left = '' },
             },

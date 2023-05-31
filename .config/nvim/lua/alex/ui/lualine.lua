@@ -3,7 +3,7 @@
 -- Custom mode names.
 local mode_map = {
     ['COMMAND'] = 'COMMND',
-    ['V-BLOCK'] = 'V-BLCK'
+    ['V-BLOCK'] = 'V-BLCK',
 }
 local function fmt_mode(s) return mode_map[s] or s end
 

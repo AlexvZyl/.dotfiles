@@ -1,7 +1,10 @@
 -- Using Lualine as the statusline.
 
 -- Custom mode names.
-local mode_map = { ['COMMAND'] = 'COMMND' }
+local mode_map = {
+    ['COMMAND'] = 'COMMND',
+    ['V-BLOCK'] = 'V-BLCK'
+}
 local function fmt_mode(s) return mode_map[s] or s end
 
 -- Show git status.

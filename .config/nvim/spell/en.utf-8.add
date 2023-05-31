@@ -66,7 +66,7 @@ HackRF
 spectrums
 COVID
 LOs
-oscilattor
+#scilattor
 LOs
 velcro
 NN
@@ -155,3 +155,6 @@ FITUR
 frontend
 RFIC
 daughterboards
+LO's
+oscilattor/!
+SDR's

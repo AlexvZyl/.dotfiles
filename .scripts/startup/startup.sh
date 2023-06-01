@@ -3,7 +3,7 @@
 # Core components (order is important!)
 (
     nvidia-force-comp-pipeline
-    ~/.screenlayout/default_triple_monitor.sh
+    ~/.screenlayout/external_only.sh
     # feh --bg-fill ~/.wallpapers/Cloud_2_Nord.png &
     feh --bg-fill ~/.wallpapers/Space_Spiral_Nord.png &
     (

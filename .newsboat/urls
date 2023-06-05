@@ -1,12 +1,15 @@
-https://archlinux.org/feeds/news/ Linux FOSS
-https://hnrss.org/newest?points=300 FOSS Linux
-https://hnrss.org/best FOSS Linux
-https://www.youtube.com/feeds/videos.xml?channel_id=UCUMwY9iS8oMyWDYIe6_RmoA Programming YouTube # NoBoilerPlate
-https://www.youtube.com/feeds/videos.xml?channel_id=UCSp-OaMpsO8K0KkOqyBl7_w Programming YouTube # Let's Get Rusty
-https://neovim.io/news.xml Programming FOSS
-https://charm.sh/blog/rss.xml CLI FOSS
-https://www.techhut.tv/rss/ Linux FOSS
+https://archlinux.org/feeds/news/ Linux News
+https://hnrss.org/newest?points=1000 News 
+https://www.techhut.tv/rss/ News FOSS Linux
+
+https://neovim.io/news.xml FOSS Programming
+https://charm.sh/blog/rss.xml FOSS
+
 https://www.ctrlshiftesc.co.za/blogs/product-updates.atom Keyboards
+
+https://www.youtube.com/feeds/videos.xml?channel_id=UCUMwY9iS8oMyWDYIe6_RmoA YouTube Programming # NoBoilerPlate
+https://www.youtube.com/feeds/videos.xml?channel_id=UCSp-OaMpsO8K0KkOqyBl7_w YouTube Programming # Let's Get Rusty
+
 https://www.teamfortress.com/rss.xml Gaming
 
 # Example of grouping tags into a single feed.

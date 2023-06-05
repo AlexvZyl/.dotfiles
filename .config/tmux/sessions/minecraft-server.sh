@@ -1,10 +1,10 @@
 #!/bin/bash
 
 source ~/.config/tmux/utils/workspace_env.sh
-session="minecraft-modpack"
+session="minecraft-server"
 
 if ! tmux has-session -t $session >/dev/null 2>&1; then
-    path="$HOME/Repositories/minecraft-modpack"
+    path="$HOME/Repositories/minecraft-server"
     file="$path/README.md"
     tmux new-session -d -s $session -c $path -n nvim "nvim $file"
     tmux new-window -c $path -n "git" "lazygit"

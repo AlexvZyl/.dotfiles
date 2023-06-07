@@ -5,12 +5,11 @@ session="minecraft-server"
 
 if ! tmux has-session -t $session >/dev/null 2>&1; then
     path="$HOME/Repositories/minecraft-server"
-    file="$path/README.md"
+    file="$path/.github/README.md"
     tmux new-session -d -s $session -c $path -n nvim "nvim $file"
     tmux new-window -c $path -n "git" "lazygit"
-    tmux new-window -c "$path/modpack/packwiz" -n "packwiz"
-    tmux new-window -c $path -n "server"
-    tmux select-window -t 1
+    tmux new-window -c $path -n "remote" "ssh mc-server@160.119.253.57"
+    tmux split-window -h "ssh mc-server@160.119.253.57"
 fi
 
 tmux attach-session -t $session

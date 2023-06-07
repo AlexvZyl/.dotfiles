@@ -1,4 +1,6 @@
 #!/bin/bash
 
 source "env.sh"
-notify-send --urgency=critical " 󰚩  Sit die geyser aan. "
+CUR_PATH=$(dirname "$0")
+
+notify-send --urgency=critical "󰚩  Sit die geyser aan."

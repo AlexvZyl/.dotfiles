@@ -12,8 +12,6 @@
 
 # Update loadshedding schedule.
 0 * * * * ~/.config/cron/update_loadshedding.sh
-30 * * * * ~/.config/cron/update_loadshedding.sh
 
 # DawnCraft.
-*/10 * * * * ~/.config/cron/sync_dawncraft.sh
-
+0 0 * * * ~/.config/cron/sync_dawncraft.sh

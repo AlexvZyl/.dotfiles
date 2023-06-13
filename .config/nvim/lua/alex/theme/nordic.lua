@@ -45,7 +45,6 @@ local override = {
     NvimTreeWinSeparator = { fg = p.gray1, bg = p.bg },
     WinSeparator = { fg = p.gray1 },
     WhichKeyBorder = { fg = p.gray1, bg = p.bg_dark },
-    MatchParen = { underline = true, bold = false, fg = p.yellow.bright },
 }
 require('nordic').setup { override = override }
 

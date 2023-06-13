@@ -22,7 +22,7 @@ ts.setup {
         hl_result_eol = true,
         results_title = '',
         winblend = 0,
-        wrap_results = true,
+        wrap_results = false,
         mappings = { i = { ['<Esc>'] = require('telescope.actions').close } },
     },
 }

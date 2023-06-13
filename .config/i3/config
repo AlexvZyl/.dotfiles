@@ -147,7 +147,7 @@ bindsym $mod+m exec kitty --config ~/.config/kitty/padding.conf --execute btop
 # GPU.
 bindsym $mod+g exec kitty --config ~/.config/kitty/padding.conf --execute nvtop
 # RSS Feed.
-bindsym $mod+r exec kitty --config ~/.config/kitty/padding.conf --execute newsboat
+bindsym $mod+r exec kitty --execute tmux new-session -n "newsboat" newsboat
 # Wifi.
 bindsym $mod+w exec kitty --config ~/.config/kitty/padding.conf --execute ~/.config/i3/scripts/iwctl.sh
 # Kill focused window.
@@ -249,7 +249,7 @@ for_window [class="kitty"] floating enable
 for_window [class="Gufw.py"] floating enable
 
 # Floating config.
-for_window [class=".*"] resize set 960 600
+for_window [class=".*"] resize set 960 594
 for_window [class=".*"] move position center
 
 # Browser fullscreen some windows.

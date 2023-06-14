@@ -32,13 +32,12 @@ color listnormal_unread green default
 
 # UI.
 
-# datetime-format "%d-%m-%Y"
-datetime-format "%d-%m"
+datetime-format "%d-%m-%Y"
 feedlist-title-format "       󰋻 %2u     Feeds"
 feedlist-format "  %10u    %t"
 itemview-title-format "  󱓷     %T"
 articlelist-title-format "       󰋻 %2u     %T"
-articlelist-format "%3i %f %D     %?T?|%-17T|  ?%t"
+articlelist-format "%3i  %D  %?T?|%-17T|  ?%t"
 selecttag-title-format "      Tags"	
 selecttag-format "%3i    %T"
 notify-format "  RSS feed updated  ( 󱓷  %n )"

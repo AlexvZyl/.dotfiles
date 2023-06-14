@@ -147,7 +147,7 @@ bindsym $mod+m exec kitty --config ~/.config/kitty/padding.conf --execute btop
 # GPU.
 bindsym $mod+g exec kitty --config ~/.config/kitty/padding.conf --execute nvtop
 # RSS Feed.
-bindsym $mod+r exec kitty --execute tmux new-session -n "newsboat" newsboat
+bindsym $mod+r exec kitty --execute ~/.config/tmux/utils/start_newsboat.sh
 # Wifi.
 bindsym $mod+w exec kitty --config ~/.config/kitty/padding.conf --execute ~/.config/i3/scripts/iwctl.sh
 # Kill focused window.

@@ -134,22 +134,22 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 ######################################
 
 # Terminal.
-bindsym $mod+t exec kitty --config ~/.config/kitty/padding.conf --execute ~/.config/tmux/utils/start_terminal.sh
-bindsym $mod+shift+t exec proxychains4 -q kitty --config ~/.config/kitty/padding.conf --execute ~/.config/tmux/utils/start_tor_terminal.sh
+bindsym $mod+t exec kitty --execute ~/.config/tmux/utils/start_terminal.sh
+bindsym $mod+shift+t exec proxychains4 -q kitty --execute ~/.config/tmux/utils/start_tor_terminal.sh
 # Dotfiles git.
-bindsym $mod+c exec kitty --class dotfiles-git --config ~/.config/kitty/padding.conf --execute tmux -f ~/.config/tmux/terminal.conf new-session -n ".dotfiles" "lazygit-dotfiles"
+bindsym $mod+c exec kitty --class dotfiles-git --execute tmux -f ~/.config/tmux/terminal.conf new-session -n ".dotfiles" "lazygit-dotfiles"
 # Editor.
 bindsym $mod+n exec kitty --class neovim --execute ~/.config/tmux/utils/start_editor.sh
 # Files.
-bindsym $mod+shift+f exec kitty --config ~/.config/kitty/padding.conf --execute tmux -f ~/.config/tmux/terminal.conf new-session -n "files" "ranger"
+bindsym $mod+shift+f exec kitty --execute tmux -f ~/.config/tmux/terminal.conf new-session -n "files" "ranger"
 # CPU.
-bindsym $mod+m exec kitty --config ~/.config/kitty/padding.conf --execute btop 
+bindsym $mod+m exec kitty --execute btop 
 # GPU.
-bindsym $mod+g exec kitty --config ~/.config/kitty/padding.conf --execute nvtop
+bindsym $mod+g exec kitty --execute nvtop
 # RSS Feed.
 bindsym $mod+r exec kitty --execute ~/.config/tmux/utils/start_newsboat.sh
 # Wifi.
-bindsym $mod+w exec kitty --config ~/.config/kitty/padding.conf --execute ~/.config/i3/scripts/iwctl.sh
+bindsym $mod+w exec kitty --execute ~/.config/i3/scripts/iwctl.sh
 # Kill focused window.
 bindsym $mod+q kill
 # Lock the screen.

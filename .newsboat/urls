@@ -1,6 +1,7 @@
-https://archlinux.org/feeds/news/ Linux News
-https://hnrss.org/newest?points=1200 News 
-https://www.techhut.tv/rss/ News FOSS Linux
+https://archlinux.org/feeds/news/ Linux
+https://hnrss.org/newest?points=1200 FOSS Linux
+https://www.techhut.tv/rss/ FOSS Linux
+https://christitus.com/categories/linux/index.xml FOSS Linux
 
 https://neovim.io/news.xml FOSS Programming
 https://charm.sh/blog/rss.xml FOSS

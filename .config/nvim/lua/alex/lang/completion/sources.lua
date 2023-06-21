@@ -17,16 +17,6 @@ cmp.setup {
     snippet = snippet,
 }
 
--- Commands.
-local commands = {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources {
-        { name = 'path' },
-        { name = 'cmdline' },
-    },
-}
-cmp.setup.cmdline(':', commands)
-
 -- Tex.
 local tex = {
     sources = {

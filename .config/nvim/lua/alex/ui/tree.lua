@@ -69,7 +69,7 @@ local view = {
     mappings = {
         list = {
             -- Allow moving out of the explorer.
-            { key = '<C-i>', action = 'toggle_file_info' },
+            { key = 'i', action = 'toggle_file_info' },
             { key = '<C-k>', action = '' },
             { key = '[', action = 'dir_up' },
             { key = ']', action = 'cd' },

@@ -72,7 +72,7 @@ if not vim.g.neovide then
                     padding = { 0, 1 },
                 },
                 win_options = {
-                    winhighlight = 'NormalFloat:NormalFloat,FloatBorder:FloatBorder',
+                    winhighlight = 'NormalFloat:PopupNormal,FloatBorder:PopupBorder',
                 },
             },
         },

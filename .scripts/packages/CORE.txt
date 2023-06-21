@@ -67,3 +67,5 @@ etcher-bin
 kdenlive
 onlyoffice-bin
 nyxt
+
+termtyper-git

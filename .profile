@@ -8,6 +8,9 @@ export EDITOR="nvim"
 export VISUAL="vscodium"
 export JULIA_NUM_THREADS=8
 
+# PATH
+export PATH="$HOME/.local/bin/:$PATH"
+
 # Aliasses.
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias lg='lazygit'

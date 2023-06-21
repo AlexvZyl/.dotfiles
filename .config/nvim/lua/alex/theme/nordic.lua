@@ -54,7 +54,7 @@ local override = {
     DiagnosticUnderlineError = { undercurl = true, underline = false },
     DiagnosticUnderlineHint = { undercurl = true, underline = false },
     DiagnosticUnderlineInfo = { undercurl = true, underline = false },
-    DiagnosticUnderlineWarn = { undercurl = true, underline = false }
+    DiagnosticUnderlineWarn = { undercurl = true, underline = false },
 }
 require('nordic').setup { override = override }
 

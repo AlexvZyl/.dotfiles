@@ -31,19 +31,19 @@ local window = {
     completion = cmp.config.window.bordered {
         winhighlight = 'Normal:Pmenu,FloatBorder:PmenuBorder,CursorLine:PmenuSel,Search:None',
         scrollbar = true,
-        border = u.border_chars_outer_thick,
+        border = u.border_chars_cmp_items,
         col_offset = -1,
         side_padding = 0,
     },
     documentation = cmp.config.window.bordered {
         winhighlight = 'Normal:Pmenu,FloatBorder:PmenuBorder,CursorLine:PmenuSel,Search:None',
         scrollbar = true,
-        border = u.border_chars_outer_thick,
+        border = u.border_chars_cmp_doc,
     },
 }
 
-window.documentation.max_height = 12
-window.documentation.max_width = 55
+window.documentation.max_height = 18
+window.documentation.max_width = 80
 window.documentation.side_padding = 1
 
 cmp.setup {

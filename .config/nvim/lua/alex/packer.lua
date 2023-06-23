@@ -95,12 +95,6 @@ return require('packer').startup {
         }
 
         -- Programming experience.
-        use 'zbirenbaum/copilot.lua'
-        use {
-            'zbirenbaum/copilot-cmp',
-            after = { 'copilot.lua' },
-            config = function() require('copilot_cmp').setup() end,
-        }
         use 'lukas-reineke/indent-blankline.nvim'
         use 'RRethy/vim-illuminate'
         use 'windwp/nvim-autopairs'

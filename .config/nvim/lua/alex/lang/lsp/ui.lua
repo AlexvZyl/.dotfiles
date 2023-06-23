@@ -51,7 +51,7 @@ local diagnostic = {
 }
 
 local hover = {
-    max_width = 0.5
+    max_width = 0.5,
 }
 
 require('lspsaga').setup {

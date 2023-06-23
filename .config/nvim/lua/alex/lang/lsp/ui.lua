@@ -50,12 +50,17 @@ local diagnostic = {
     on_insert = false,
 }
 
+local hover = {
+    max_width = 0.5
+}
+
 require('lspsaga').setup {
     lightbulb = lightbulb,
     ui = ui,
     definition = definition,
     symbol_in_winbar = winbar,
     diagnostic = diagnostic,
+    hover = hover,
 }
 
 -- Trouble.

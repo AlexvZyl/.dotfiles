@@ -15,6 +15,7 @@ require('nvim-treesitter.configs').setup {
         'regex',
         'bash',
         'markdown',
+        'markdown_inline',
         'yaml',
         'kdl',
         'latex',

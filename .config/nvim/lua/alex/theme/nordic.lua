@@ -31,9 +31,6 @@ local override = {
     NormalFloat = { bg = p.bg_dark },
     FloatBorder = { bg = p.bg_dark },
 
-    SagaBorder = { bg = p.bg_dark, fg = p.grey1 },
-    SagaNormal = { bg = p.bg_dark },
-
     NoiceCmdlineIcon = { bg = p.bg_dark },
     NoiceCmdlinePopupBorder = { fg = p.cyan.base },
     NoiceLspProgressTitle = { fg = p.yellow.base, bg = p.bg, bold = true },
@@ -60,7 +57,3 @@ require('nordic').setup { override = override }
 
 -- Load the scheme.
 vim.cmd.colorscheme 'nordic'
-
--- After, not sure what is happening here...
-vim.cmd([[highlight DiagnosticShowBorder guibg=]] .. p.bg_dark .. ' guifg=' .. p.grey1)
-vim.cmd([[highlight SagaNormal guibg=]] .. p.bg_dark)

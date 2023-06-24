@@ -138,7 +138,11 @@ return require('packer').startup {
         }
         use 'neovim/nvim-lspconfig'
         use { 'glepnir/lspsaga.nvim', branch = 'main' }
-        use { 'L3MON4D3/LuaSnip', run = 'make install_jsregexp' }
+        use {
+            'L3MON4D3/LuaSnip',
+            run = 'make install_jsregexp',
+            requires = { 'rafamadriz/friendly-snippets' }
+        }
         use {
             'hrsh7th/nvim-cmp',
             requires = {

@@ -141,7 +141,7 @@ return require('packer').startup {
         use {
             'L3MON4D3/LuaSnip',
             run = 'make install_jsregexp',
-            requires = { 'rafamadriz/friendly-snippets' }
+            requires = { 'rafamadriz/friendly-snippets' },
         }
         use {
             'hrsh7th/nvim-cmp',

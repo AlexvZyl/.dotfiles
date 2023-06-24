@@ -42,6 +42,7 @@ keymap(v, 'i', 'I', default_settings)
 keymap(n_v, '/', '<Cmd>Commentary<CR>', default_settings)
 keymap(n, 's', function() require('leap').leap {} end)
 keymap(n, 'S', function() require('leap').leap { backward = true } end)
+keymap(n, '<leader>v', function() require('alex.keymaps.utils').toggle_diffview() end)
 
 -- Barbar
 keymap(n, 'Q', '<Cmd>BufferDelete<CR>', default_settings)
@@ -96,7 +97,7 @@ cmp.setup {
         ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
+            elseif luasnip.expand_or_locally_jumpable() then
                 luasnip.expand_or_jump()
             else
                 fallback()

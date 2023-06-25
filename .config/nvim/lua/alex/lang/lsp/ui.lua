@@ -35,7 +35,7 @@ local definition = {
     edit = '<C-e>',
     vsplit = '<C-v>',
     split = '<C-h>',
-    quit = 'q',
+    quit = '<C-q>',
 }
 
 local winbar = {

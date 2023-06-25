@@ -66,7 +66,6 @@ return require('packer').startup {
             },
         }
         use 'glepnir/dashboard-nvim'
-        -- use 'AlexvZyl/dashboard-nvim'
         use {
             'romgrk/barbar.nvim',
             requires = 'nvim-tree/nvim-web-devicons',

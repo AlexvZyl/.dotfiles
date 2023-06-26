@@ -51,7 +51,7 @@ local diagnostic = {
     show_source = false,
     border_follow = false,
     text_hl_follow = true,
-    extend_relatedInformation = true
+    extend_relatedInformation = true,
 }
 
 local hover = {

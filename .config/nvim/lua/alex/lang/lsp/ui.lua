@@ -48,7 +48,7 @@ local winbar = {
 local diagnostic = {
     show_code_action = false,
     on_insert = false,
-    show_source = false
+    show_source = false,
 }
 
 local hover = {

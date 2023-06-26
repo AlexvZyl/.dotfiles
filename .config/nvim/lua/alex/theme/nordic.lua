@@ -41,7 +41,6 @@ local override = {
     NoiceCmdlineIconSearch = { bg = p.bg_dark, fg = p.yellow.base },
     NoiceCmdline = { bg = p.bg_dark, fg = p.fg },
 
-
     CmpItemKindTabNine = { fg = p.red.base },
     CmpItemKindCopilot = { fg = p.red.base },
 

@@ -63,6 +63,8 @@ if not vim.g.neovide then
                 help = { title = '', icon = ' 󰋖 ' },
                 input = { title = '', icon = '  ' },
                 filter = { title = '', icon = '  ' },
+                search_up = { icon = '    ' },
+                search_down = { icon = '    ' },
             },
         },
         views = {

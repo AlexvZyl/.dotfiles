@@ -26,6 +26,7 @@ function M.next_error()
         severity = vim.diagnostic.severity.ERROR,
         float = false,
     }
+    vim.cmd [[normal zz]]
     vim.cmd [[Lspsaga show_line_diagnostics ++unfocus]]
 end
 
@@ -34,6 +35,7 @@ function M.prev_error()
         severity = vim.diagnostic.severity.ERROR,
         float = false,
     }
+    vim.cmd [[normal zz]]
     vim.cmd [[Lspsaga show_line_diagnostics ++unfocus]]
 end
 
@@ -41,13 +43,15 @@ function M.next_diag()
     vim.diagnostic.goto_next {
         float = false,
     }
-    vim.cmd [[<Cmd>Lspsaga show_line_diagnostics ++unfocus]]
+    vim.cmd [[normal zz]]
+    vim.cmd [[Lspsaga show_line_diagnostics ++unfocus]]
 end
 
 function M.prev_diag()
     vim.diagnostic.goto_next {
         float = false,
     }
+    vim.cmd [[normal zz]]
     vim.cmd [[Lspsaga show_line_diagnostics ++unfocus]]
 end
 

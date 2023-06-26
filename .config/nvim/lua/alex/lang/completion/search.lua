@@ -7,19 +7,18 @@ local cmdline_window = {
         winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
         scrollbar = true,
         border = u.border_chars_outer_thin,
-        col_offset = -4,
+        col_offset = -1,
         side_padding = 0,
     },
 }
 
 -- Source
-local cmdline = {
+local search = {
     window = cmdline_window,
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources {
-        { name = 'path' },
-        { name = 'cmdline' },
+        { name = 'buffer' },
     },
 }
 
-cmp.setup.cmdline(':', cmdline)
+cmp.setup.cmdline({ '/', '?' }, search)

@@ -49,6 +49,9 @@ local diagnostic = {
     show_code_action = false,
     on_insert = false,
     show_source = false,
+    border_follow = false,
+    text_hl_follow = true,
+    extend_relatedInformation = true
 }
 
 local hover = {

@@ -28,11 +28,11 @@ local override = {
     PmenuSel = { bg = p.grey0 },
     PmenuBorder = { link = 'PopupBorder' },
 
-    NormalFloat = { bg = p.bg_dark },
-    FloatBorder = { bg = p.bg_dark },
+    NormalFloat = { bg = p.black1 },
+    FloatBorder = { bg = p.black1, fg = p.black },
 
-    NoiceCmdlineIcon = { bg = p.bg_dark },
-    NoiceCmdlinePopupBorder = { fg = p.cyan.base },
+    NoiceCmdlineIcon = { bg = p.black1 },
+    NoiceCmdlinePopupBorder = { fg = p.black },
     NoiceLspProgressTitle = { fg = p.yellow.base, bg = p.bg, bold = true },
     NoiceLspProgressClient = { fg = p.gray4, bg = p.bg },
     NoiceLspProgressSpinner = { fg = p.cyan.bright, bg = p.bg },
@@ -40,7 +40,6 @@ local override = {
     NoiceFormatProgressTodo = { bg = p.gray5, fg = p.black },
     NoiceCmdlineIconSearch = { bg = p.bg_dark, fg = p.yellow.base },
     NoiceCmdline = { bg = p.bg_dark, fg = p.fg },
-
 
     CmpItemKindTabNine = { fg = p.red.base },
     CmpItemKindCopilot = { fg = p.red.base },

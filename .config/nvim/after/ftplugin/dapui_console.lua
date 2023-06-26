@@ -6,7 +6,7 @@ end
 
 vim.api.nvim_create_autocmd({ 'BufWinEnter', 'WinEnter' }, {
     callback = Dap_repl,
-    pattern = { 'dapui-console' },
+    pattern = { 'dapui_console' },
 })
 
 Dap_repl()

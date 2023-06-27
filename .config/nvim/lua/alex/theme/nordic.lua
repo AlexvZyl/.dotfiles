@@ -48,7 +48,6 @@ local override = {
     CopilotSuggestion = { fg = p.gray2 },
     NvimTreeWinSeparator = { fg = p.gray1, bg = p.bg },
     WinSeparator = { fg = p.gray1 },
-    WhichKeyBorder = { fg = p.gray1, bg = p.bg_dark },
 
     DiagnosticUnderlineError = { undercurl = true, underline = false },
     DiagnosticUnderlineHint = { undercurl = true, underline = false },

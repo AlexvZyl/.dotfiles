@@ -1,3 +1,10 @@
+-- VSCode
+if vim.g.vscode then
+    require 'alex.vscode'
+    return
+end
+
+-- Neovim
 vim.loader.enable()
 
 -- Environment.

@@ -147,7 +147,8 @@ bindsym $mod+g exec kitty --execute nvtop
 # RSS Feed.
 bindsym $mod+r exec kitty --execute ~/.config/tmux/utils/start_newsboat.sh
 # Wifi.
-bindsym $mod+w exec kitty --execute ~/.config/i3/scripts/iwctl.sh
+bindsym $mod+w exec kitty --execute ~/.config/tmux/utils/start_iwctl.sh
+
 # Kill focused window.
 bindsym $mod+q kill
 # Lock the screen.

@@ -7,7 +7,7 @@
 Continuous change is to be expected...
 ```
   
-![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/c539f904-440a-4f93-b94f-faf6c6fab064)
+![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/55c6780d-00c6-451e-9066-0a2365c4d7a9)
 
 [![ShellCheck](https://github.com/AlexvZyl/.dotfiles/workflows/ShellCheck/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=ShellCheck) 
 [![StyLua](https://github.com/AlexvZyl/.dotfiles/workflows/StyLua/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=StyLua) 

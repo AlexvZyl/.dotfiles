@@ -1,7 +1,5 @@
 local u = require 'alex.utils'
 
--- Neovim specific options.
-
 -- Do not show the current mode in cmdline.
 vim.cmd 'set noshowmode'
 
@@ -47,15 +45,13 @@ vim.g.VM_set_statusline = 0
 vim.g.VM_silent_exit = 1
 
 -- Neovim fill characters.
--- ─
--- │
 vim.opt.fillchars = {
     horiz = u.bottom_thin,
-    horizup = u.bottom_thin,
+    horizup = ' ',
     horizdown = ' ',
     vert = ' ',
-    vertleft = u.right_thin,
-    vertright = u.left_thin,
+    vertleft = ' ',
+    vertright = ' ',
     verthoriz = ' ',
     eob = ' ',
     diff = '╱',
@@ -71,6 +67,3 @@ vim.cmd 'hi SpellBad gui=undercurl'
 vim.cmd 'set winblend=0'
 vim.cmd 'set pumblend=0'
 vim.opt.pumheight = 10
-
--- Some windows I want to be in insert mode, for example, telescope.
--- vim.api.nvim_create_autocmd({ 'WinEnter' }, { callback = function() vim.api.nvim_input('<Esc>') end })

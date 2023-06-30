@@ -175,7 +175,7 @@ return require('packer').startup {
         -- use 'cocopon/iceberg.vim'
         -- use 'marko-cerovac/material.nvim'
         -- use 'sainnhe/sonokai'
-        -- use 'Mofiqul/vscode.nvim'
+        use 'Mofiqul/vscode.nvim'
         -- use 'navarasu/onedark.nvim'
         -- use 'frenzyexists/aquarium-vim'
         use 'projekt0n/github-nvim-theme'

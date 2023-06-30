@@ -21,6 +21,7 @@ local p = require 'nordic.colors'
 local override = {
     CursorLine = { bg = p.bg },
     CursorLineNr = { bold = false },
+    -- Normal = { bg = p.black1 },
 
     PopupNormal = { bg = p.bg_dark },
     PopupBorder = { bg = p.bg_dark, fg = p.bg },
@@ -46,8 +47,8 @@ local override = {
 
     TelescopePreviewLine = { bg = p.gray0 },
     CopilotSuggestion = { fg = p.gray2 },
-    NvimTreeWinSeparator = { fg = p.gray1, bg = p.bg },
-    WinSeparator = { fg = p.black },
+    WinSeparator = { fg = p.black, bg = p.bg },
+    NvimTreeWinSeparator = { link = 'WinSeparator' },
 
     DiagnosticUnderlineError = { undercurl = true, underline = false },
     DiagnosticUnderlineHint = { undercurl = true, underline = false },

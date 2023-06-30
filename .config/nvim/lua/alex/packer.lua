@@ -66,10 +66,7 @@ return require('packer').startup {
             },
         }
         use 'glepnir/dashboard-nvim'
-        use {
-            'romgrk/barbar.nvim',
-            requires = 'nvim-tree/nvim-web-devicons',
-        }
+        use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
         use {
             'folke/trouble.nvim',
             requires = 'kyazdani42/nvim-web-devicons',

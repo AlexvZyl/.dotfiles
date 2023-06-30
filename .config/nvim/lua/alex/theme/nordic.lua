@@ -48,7 +48,7 @@ local override = {
     TelescopePreviewLine = { bg = p.gray0 },
     CopilotSuggestion = { fg = p.gray2 },
     WinSeparator = { fg = p.black, bg = p.bg },
-    NvimTreeWinSeparator = { link = 'WinSeparator' },
+    NvimTreeWinSeparator = { bg = p.bg_dark, fg = p.bg_dark },
 
     DiagnosticUnderlineError = { undercurl = true, underline = false },
     DiagnosticUnderlineHint = { undercurl = true, underline = false },

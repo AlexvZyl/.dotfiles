@@ -72,4 +72,10 @@ function M.toggle_diffview()
     end
 end
 
+function M.delete_buffer()
+    local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
+    if buftype == 'nofile' or buftype == 'prompt' then return end
+    vim.cmd [[:bp | bdelete #]]
+end
+
 return M

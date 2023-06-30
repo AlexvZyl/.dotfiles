@@ -77,7 +77,7 @@ local view = {
             { key = 'o', action = 'system_open' },
         },
     },
-    width = { max = 41, min = 40, padding = 1 },
+    width = { max = 38, min = 38, padding = 1 },
 }
 
 -- Setup.

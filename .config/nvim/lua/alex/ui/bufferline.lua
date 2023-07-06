@@ -5,7 +5,7 @@ local offsets = {
         text_align = "center",
         highlight = 'BufferLineOffset',
         separator = true,
-    }
+    },
 }
 
 local options = {
@@ -18,4 +18,4 @@ local options = {
     indicator = { style = 'none' }
 }
 
-require 'bufferline' .setup { options = options }
+require('bufferline').setup { options = options }

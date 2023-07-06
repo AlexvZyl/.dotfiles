@@ -43,7 +43,7 @@ keymap(n, 'S', function() require('leap').leap { backward = true } end)
 keymap(n, '<leader>v', function() require('alex.keymaps.utils').toggle_diffview() end)
 
 -- Barbar
-keymap(n, 'Q', function() require 'alex.keymaps.utils'.delete_buffer() end, default_settings)
+keymap(n, 'Q', function() require('alex.keymaps.utils').delete_buffer() end, default_settings)
 keymap(n, 'dB', '<Cmd>BufferLinePickClose<CR>', default_settings)
 keymap(n, 'gb', '<Cmd>BufferLinePick<CR>', default_settings)
 keymap(n, 'H', '<Cmd>BufferLineCyclePrev<CR>', default_settings)

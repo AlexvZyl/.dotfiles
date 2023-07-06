@@ -17,8 +17,6 @@ vim.cmd 'set signcolumn=yes'
 -- Syntax.
 vim.cmd 'set number'
 vim.cmd 'set relativenumber'
-vim.cmd 'set cursorline'
-vim.cmd 'set cursorlineopt=both'
 vim.cmd 'set hlsearch'
 vim.cmd 'set ignorecase'
 vim.cmd 'set smartcase'

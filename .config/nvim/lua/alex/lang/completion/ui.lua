@@ -29,16 +29,18 @@ local formatting = {
 
 local window = {
     completion = cmp.config.window.bordered {
-        winhighlight = 'Normal:Pmenu,FloatBorder:PmenuBorder,CursorLine:PmenuSel,Search:None',
         scrollbar = true,
-        border = u.border_chars_cmp_items,
+        winhighlight = 'Normal:Pmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
+        -- border = u.border_chars_cmp_items,
+        border = u.border_chars_outer_thin,
         col_offset = -1,
         side_padding = 0,
     },
     documentation = cmp.config.window.bordered {
-        winhighlight = 'Normal:Pmenu,FloatBorder:PmenuBorder,CursorLine:PmenuSel,Search:None',
+        winhighlight = 'Normal:Pmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
         scrollbar = true,
-        border = u.border_chars_cmp_doc,
+        -- border = u.border_chars_cmp_doc,
+        border = u.border_chars_outer_thin,
     },
 }
 

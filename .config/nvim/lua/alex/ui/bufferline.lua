@@ -1,7 +1,7 @@
 local offsets = {
     {
         filetype = "NvimTree",
-        text = "File Explorer",
+        text = "󰙅 Explorer",
         text_align = "center",
         highlight = 'BufferLineOffset',
         separator = true,
@@ -14,7 +14,7 @@ local options = {
     close_icon = '',
     diagnostics = 'nvim_lsp',
     color_icons = true,
-    separator_style = { ' ', ' ' },
+    separator_style = { '', '' },
     indicator = { style = 'none' }
 }
 

@@ -73,9 +73,6 @@ if not vim.g.neovide then
                     style = u.border_chars_outer_thin,
                     padding = { 0, 1 },
                 },
-                win_options = {
-                    winhighlight = 'NormalFloat:PopupNormal,FloatBorder:PopupBorder',
-                },
             },
         },
         lsp = {

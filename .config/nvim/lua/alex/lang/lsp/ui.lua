@@ -20,7 +20,6 @@ vim.diagnostic.config(config)
 -- LSP Saga.
 
 local ui = {
-    theme = 'round',
     border = u.border_chars_outer_thin,
     winblend = 0,
     title = false,

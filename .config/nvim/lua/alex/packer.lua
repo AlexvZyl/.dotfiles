@@ -39,18 +39,14 @@ return require('packer').startup {
         -- Debugger.
         use {
             'mfussenegger/nvim-dap',
-            -- opt = true,
             config = function() require('alex.lang.debugger.dap').setup_dap() end,
-            -- cmd = { 'DapContinue' }
         }
         use {
             'rcarriga/nvim-dap-ui',
-            -- opt = true,
             config = function() require('alex.lang.debugger.ui').setup_dap_ui() end,
             requires = {
                 'mfussenegger/nvim-dap',
             },
-            -- cmd = { 'DapContinue' }
         }
 
         -- General UI.
@@ -154,27 +150,19 @@ return require('packer').startup {
         -- Language specific.
         use 'lervag/vimtex'
 
-        -- Theme using.
+        -- Themes
         use { 'AlexvZyl/nordic.nvim', branch = 'dev' }
-        -- List of nice themes:
-        -- use 'bluz71/vim-nightfly-colors'
         use 'morhetz/gruvbox'
         use 'sainnhe/gruvbox-material'
         use 'EdenEast/nightfox.nvim'
         use 'catppuccin/nvim'
         use 'folke/tokyonight.nvim'
-        -- use 'sainnhe/everforest'
-        -- use 'sainnhe/edge'
+        use 'sainnhe/everforest'
         use 'shaunsingh/nord.nvim'
-        -- use 'dracula/vim'
-        -- use 'sam4llis/nvim-tundra'
         use 'rebelot/kanagawa.nvim'
-        -- use 'cocopon/iceberg.vim'
-        -- use 'marko-cerovac/material.nvim'
-        -- use 'sainnhe/sonokai'
+        use 'marko-cerovac/material.nvim'
         use 'Mofiqul/vscode.nvim'
-        -- use 'navarasu/onedark.nvim'
-        -- use 'frenzyexists/aquarium-vim'
+        use 'navarasu/onedark.nvim'
         use 'projekt0n/github-nvim-theme'
         use 'Shatur/neovim-ayu'
 

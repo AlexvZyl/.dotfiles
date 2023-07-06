@@ -1,8 +1,8 @@
 local offsets = {
     {
-        filetype = "NvimTree",
-        text = "󰙅 Explorer",
-        text_align = "center",
+        filetype = 'NvimTree',
+        text = '󰙅 Explorer',
+        text_align = 'center',
         highlight = 'BufferLineOffset',
         separator = true,
     },
@@ -15,7 +15,7 @@ local options = {
     diagnostics = 'nvim_lsp',
     color_icons = true,
     separator_style = { '', '' },
-    indicator = { style = 'none' }
+    indicator = { style = 'none' },
 }
 
 require('bufferline').setup { options = options }

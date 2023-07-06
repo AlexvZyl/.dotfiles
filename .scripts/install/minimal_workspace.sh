@@ -8,8 +8,10 @@ elif command -v apt &>/dev/null; then
     sudo apt update
     sudo apt upgrade
     sudo apt install git neovim fish tmux python kitty exa bat
+elif command -v brew &>/dev/null; then
+    brew install neovim tmux kitty fish git exa bat python
 else
-    echo "This script only supports Debian and Arch based systems."
+    echo "This script only supports Debian, Arch and MacOS systems."
     exit 0
 fi
 

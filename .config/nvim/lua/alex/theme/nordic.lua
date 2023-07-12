@@ -5,10 +5,12 @@ require('nordic').setup {
     italic_comments = true,
     transparent_bg = false,
     noice = { style = 'flat' },
+    swap_backgrounds = false,
     cursorline = {
         theme = 'dark',
         bold = false,
-        hide_unfocused = true,
+        bold_number = true,
+        blend = 0.7
     },
 }
 

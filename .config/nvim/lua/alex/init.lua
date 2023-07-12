@@ -1,18 +1,17 @@
--- VSCode
 if vim.g.vscode then
     require 'alex.vscode'
     return
 end
 
--- Neovim
+-- This makes the neovim load faster
 vim.loader.enable()
 
--- Environment.
-local u = require 'alex.utils'
+-- Setup environment
+local U = require 'alex.utils'
 local env_file = os.getenv 'HOME' .. '/.private/nvim_env.lua'
-if u.file_exists(env_file) then vim.cmd('luafile ' .. env_file) end
+if U.file_exists(env_file) then vim.cmd('luafile ' .. env_file) end
 
--- Order is important.
+-- Order is important
 -- require 'alex.lazy'
 require 'alex.packer'
 require 'alex.options'

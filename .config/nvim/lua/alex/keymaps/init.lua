@@ -53,7 +53,7 @@ keymap(n, '<C-p>', '<Cmd>BufferLineTogglePin<CR>', default_settings)
 -- LSP.
 keymap(n, '<leader>d', '<Cmd>TroubleToggle document_diagnostics<CR>', default_settings)
 keymap(n, '<leader>D', '<Cmd>TroubleToggle workspace_diagnostics<CR>', default_settings)
-keymap(n, 'gr', '<Cmd>Lspsaga lsp_finder<CR>', default_settings)
+keymap(n, 'gr', '<Cmd>Lspsaga finder<CR>', default_settings)
 keymap(n_v, 'ca', '<Cmd>Lspsaga code_action<CR>', default_settings)
 keymap(n_v, 'RR', '<Cmd>Lspsaga rename<CR>', default_settings)
 keymap(n, 'gd', '<Cmd>Lspsaga peek_definition<CR>', default_settings)

@@ -10,7 +10,7 @@ require('nordic').setup {
         theme = 'dark',
         bold = false,
         bold_number = true,
-        blend = 0.7
+        blend = 0.7,
     },
 }
 

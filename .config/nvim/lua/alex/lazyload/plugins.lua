@@ -17,7 +17,8 @@ return {
     {
         'glepnir/dashboard-nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
-        lazy = false, priority = 999,
+        lazy = false,
+        priority = 999,
     },
     { 'NvChad/nvim-colorizer.lua', event = 'VeryLazy' },
     {

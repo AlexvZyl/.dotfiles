@@ -50,7 +50,7 @@ local plugins = {
     {
         'ggandor/leap.nvim',
         dependencies = 'tpope/vim-repeat',
-        keys = { 's', 'S' }
+        keys = { 's', 'S' },
     },
     { 'lewis6991/gitsigns.nvim', event = 'VeryLazy' },
     { 'sindrets/diffview.nvim', event = 'VeryLazy' },

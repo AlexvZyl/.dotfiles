@@ -67,17 +67,17 @@ local view = {
 }
 
 local function on_attach(bufnr)
-  local api = require('nvim-tree.api')
-  local function opts(desc)
-    return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-  end
-  vim.keymap.set('n', '<C-k>', '', { buffer = bufnr })
-  vim.keymap.del('n', '<C-k>', { buffer = bufnr })
-  vim.keymap.set('n', 'i', api.node.show_info_popup, opts('Info'))
-  vim.keymap.set('n', '[', api.tree.change_root_to_parent, opts('Up'))
-  vim.keymap.set('n', ']', api.tree.change_root_to_node, opts('CD'))
-  vim.keymap.set('n', '<Tab>', api.node.open.edit, opts('Open'))
-  vim.keymap.set('n', 'o', api.node.run.system, opts('Run System'))
+    local api = require 'nvim-tree.api'
+    local function opts(desc)
+        return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+    end
+    vim.keymap.set('n', '<C-k>', '', { buffer = bufnr })
+    vim.keymap.del('n', '<C-k>', { buffer = bufnr })
+    vim.keymap.set('n', 'i', api.node.show_info_popup, opts 'Info')
+    vim.keymap.set('n', '[', api.tree.change_root_to_parent, opts 'Up')
+    vim.keymap.set('n', ']', api.tree.change_root_to_node, opts 'CD')
+    vim.keymap.set('n', '<Tab>', api.node.open.edit, opts 'Open')
+    vim.keymap.set('n', 'o', api.node.run.system, opts 'Run System')
 end
 
 require('nvim-tree').setup {
@@ -88,7 +88,7 @@ require('nvim-tree').setup {
     renderer = renderer,
     git = { ignore = false },
     diagnostics = { enable = true },
-    on_attach = on_attach
+    on_attach = on_attach,
 }
 
 -- Set window local options.

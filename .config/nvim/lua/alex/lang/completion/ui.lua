@@ -31,7 +31,6 @@ local window = {
     completion = cmp.config.window.bordered {
         scrollbar = true,
         winhighlight = 'Normal:Pmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
-        -- border = u.border_chars_cmp_items,
         border = u.border_chars_outer_thin,
         col_offset = -1,
         side_padding = 0,
@@ -39,7 +38,6 @@ local window = {
     documentation = cmp.config.window.bordered {
         winhighlight = 'Normal:Pmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
         scrollbar = true,
-        -- border = u.border_chars_cmp_doc,
         border = u.border_chars_outer_thin,
     },
 }

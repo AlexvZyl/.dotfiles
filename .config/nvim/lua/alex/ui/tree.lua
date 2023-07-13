@@ -1,6 +1,3 @@
-local p = require 'nordic.colors'
-local u = require 'alex.utils'
-
 -- Nvim-Tree.lua advises to do this at the start.
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -66,21 +63,23 @@ local view = {
     cursorline = false,
     hide_root_folder = false,
     signcolumn = 'no',
-    mappings = {
-        list = {
-            -- Allow moving out of the explorer.
-            { key = 'i', action = 'toggle_file_info' },
-            { key = '<C-k>', action = '' },
-            { key = '[', action = 'dir_up' },
-            { key = ']', action = 'cd' },
-            { key = '<Tab>', action = 'edit' },
-            { key = 'o', action = 'system_open' },
-        },
-    },
     width = { max = 38, min = 38, padding = 1 },
 }
 
--- Setup.
+local function on_attach(bufnr)
+  local api = require('nvim-tree.api')
+  local function opts(desc)
+    return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+  vim.keymap.set('n', '<C-k>', '', { buffer = bufnr })
+  vim.keymap.del('n', '<C-k>', { buffer = bufnr })
+  vim.keymap.set('n', 'i', api.node.show_info_popup, opts('Info'))
+  vim.keymap.set('n', '[', api.tree.change_root_to_parent, opts('Up'))
+  vim.keymap.set('n', ']', api.tree.change_root_to_node, opts('CD'))
+  vim.keymap.set('n', '<Tab>', api.node.open.edit, opts('Open'))
+  vim.keymap.set('n', 'o', api.node.run.system, opts('Run System'))
+end
+
 require('nvim-tree').setup {
     hijack_cursor = true,
     sync_root_with_cwd = true,
@@ -89,6 +88,7 @@ require('nvim-tree').setup {
     renderer = renderer,
     git = { ignore = false },
     diagnostics = { enable = true },
+    on_attach = on_attach
 }
 
 -- Set window local options.

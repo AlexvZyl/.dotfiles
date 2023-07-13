@@ -8,7 +8,7 @@ return {
     {
         'mfussenegger/nvim-dap',
         dependencies = { 'rcarriga/nvim-dap-ui' },
-        keys = { { 'F1' }, { 'F2' } },
+        event = 'UIEnter',
         lazy = true,
         config = function()
             require 'alex.lang.debugger.dap'

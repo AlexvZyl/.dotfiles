@@ -113,7 +113,7 @@ return {
         'nvim-treesitter/nvim-treesitter',
         dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/playground' },
         event = 'UIEnter',
-        build = { ':TSUpdate', ':TSUpdateSync' },
+        build = { ':TSUpdate' },
         config = function() require 'alex.lang.treesitter' end,
     },
     {

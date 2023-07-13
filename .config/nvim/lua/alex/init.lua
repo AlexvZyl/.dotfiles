@@ -16,4 +16,4 @@ require 'alex.options'
 require 'alex.lazyload'
 require 'alex.ui'
 require 'alex.lang'
-require 'alex.keymaps'.init()
+require('alex.keymaps').init()

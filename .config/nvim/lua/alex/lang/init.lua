@@ -1,3 +1,7 @@
+vim.opt.pumblend = 0
+vim.opt.pumheight = 10
+
+-- Modules
 require 'alex.lang.syntax-hl'
 require 'alex.lang.lsp'
 require 'alex.lang.debugger'

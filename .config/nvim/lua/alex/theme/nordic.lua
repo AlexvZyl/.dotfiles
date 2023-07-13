@@ -1,4 +1,4 @@
-require('nordic').setup {
+require('nordic').load {
     bright_border = false,
     telescope = { style = 'flat' },
     bold_keywords = false,
@@ -13,5 +13,3 @@ require('nordic').setup {
         blend = 0.7
     },
 }
-
-vim.cmd.colorscheme 'nordic'

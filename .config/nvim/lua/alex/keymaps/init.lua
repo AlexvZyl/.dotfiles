@@ -9,6 +9,9 @@ local keymap = vim.keymap.set
 local default_settings = { noremap = true, silent = true }
 local allow_remap = { noremap = false, silent = true }
 
+-- Leader
+vim.g.mapleader = ' '
+
 -- Tree.
 keymap(n_v, 'gc', function() require('alex.keymaps.utils').cwd_current_buffer() end, default_settings)
 keymap(n_v, '<Leader>f', function() require('alex.keymaps.utils').toggle_tree() end, default_settings)

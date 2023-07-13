@@ -51,15 +51,14 @@ function M.prev_diag()
     vim.cmd [[Lspsaga show_line_diagnostics ++unfocus]]
 end
 
-M.dap_ui_enabled = false
-
+M.DAP_UI_ENABLED = false
 function M.dap_toggle_ui()
     require('dapui').toggle()
-    M.dap_ui_enabled = true
+    M.DAP_UI_ENABLED = true
 end
 
 function M.dap_float_scope()
-    if not M.dap_ui_enabled then return end
+    if not M.DAP_UI_ENABLED then return end
     require('dapui').float_element 'scopes'
 end
 

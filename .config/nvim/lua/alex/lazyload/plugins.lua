@@ -1,9 +1,9 @@
 return {
     {
-        "williamboman/mason.nvim",
-        build = ":MasonUpdate",
+        'williamboman/mason.nvim',
+        build = ':MasonUpdate',
         event = 'UIEnter',
-        config = function() require 'alex.lang.lsp.mason' end
+        config = function() require 'alex.lang.lsp.mason' end,
     },
     {
         'nvim-telescope/telescope.nvim',

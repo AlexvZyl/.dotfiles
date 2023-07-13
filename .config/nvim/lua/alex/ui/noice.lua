@@ -1,4 +1,3 @@
-
 if not vim.g.neovide then
     local u = require 'alex.utils'
 

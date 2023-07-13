@@ -8,6 +8,9 @@ config.mru.limit = 5
 config.project = {}
 config.project.limit = 10
 
+local updates = require("lazy.status").updates()
+if not updates then updates = '0' end
+
 config.shortcut = {
     {
         desc = '  New file ',
@@ -22,15 +25,15 @@ config.shortcut = {
         key = 'f',
     },
     {
-        desc = '   Update ',
+        desc = '   Update (' ..  updates .. ') ',
         action = 'Lazy sync',
-        group = '@keyword',
+        group = '@string',
         key = 'u',
     },
     {
         desc = ' 󰓅  Profile ',
         action = 'Lazy profile',
-        group = '@keyword',
+        group = '@string',
         key = 'p',
     },
     {

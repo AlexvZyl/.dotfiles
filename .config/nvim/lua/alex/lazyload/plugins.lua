@@ -7,10 +7,11 @@ return {
     {
         'mfussenegger/nvim-dap',
         dependencies = { 'rcarriga/nvim-dap-ui' },
-        keys = { 'F1', 'F2' },
-        config = function(plugin, _)
-            require('alex.lang.debugger.dap').setup_dap(plugin)
-            require('alex.lang.debugger.ui').setup_dap_ui(plugin)
+        keys = { { 'F1' }, { 'F2' } },
+        lazy = true,
+        config = function()
+            require('alex.lang.debugger.dap').setup()
+            require('alex.lang.debugger.ui').setup()
         end,
     },
     {
@@ -67,7 +68,7 @@ return {
     {
         'nvim-treesitter/nvim-treesitter',
         dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/playground' },
-        build = 'TSUpdate',
+        build = { 'TSUpdate', 'TSUpdateSync' },
         event = 'VeryLazy',
     },
     { 'neovim/nvim-lspconfig', event = 'VeryLazy' },
@@ -90,10 +91,10 @@ return {
         },
         event = 'VeryLazy',
     },
-    { 'lervag/vimtex', event = 'VeryLazy' },
+    { 'lervag/vimtex', ft = { 'tex', 'latex' } },
 
     -- Themes
-    { 'AlexvZyl/nordic.nvim', branch = 'dev', priority = 1000 },
+    { 'AlexvZyl/nordic.nvim', branch = 'dev', priority = 1000, lazy = false },
     { 'sainnhe/gruvbox-material', lazy = true },
     { 'EdenEast/nightfox.nvim', lazy = true },
     { 'catppuccin/nvim', lazy = true },

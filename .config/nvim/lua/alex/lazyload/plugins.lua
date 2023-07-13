@@ -18,7 +18,6 @@ return {
     {
         'glepnir/dashboard-nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
-        lazy = false,
         priority = 999,
         config = function() require 'alex.ui.dashboard' end,
     },
@@ -30,14 +29,12 @@ return {
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
-        lazy = false,
         config = function() require 'alex.ui.lualine' end,
     },
     {
         'akinsho/bufferline.nvim',
         version = '*',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
-        lazy = false,
         config = function() require 'alex.ui.bufferline' end,
     },
     {
@@ -82,8 +79,8 @@ return {
     },
     {
         'sindrets/diffview.nvim',
-        keys = { '<leader>v' },
         config = function() require 'alex.ui.diffview' end,
+        cmd = { 'DiffviewClose', 'DiffviewOpen' },
     },
     {
         'folke/which-key.nvim',
@@ -105,7 +102,7 @@ return {
         event = 'UIEnter',
         config = function() require 'alex.lang.linter' end,
     },
-    { 'fladson/vim-kitty', ft = 'kitty.conf' },
+    { 'fladson/vim-kitty', event = 'UIEnter' },
     {
         'nvim-treesitter/nvim-treesitter',
         dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/playground' },
@@ -154,7 +151,6 @@ return {
         'AlexvZyl/nordic.nvim',
         branch = 'dev',
         priority = 1000,
-        lazy = false,
         config = function() require 'alex.themes.nordic' end,
     },
     { 'sainnhe/gruvbox-material', lazy = true },

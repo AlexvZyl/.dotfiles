@@ -1,6 +1,3 @@
--- TODO: Git Conflict
-require('git-conflict').setup {}
-
 -- Gitsigns
 local git_char = '│'
 require('gitsigns').setup {
@@ -14,15 +11,6 @@ require('gitsigns').setup {
     },
     signcolumn = true,
     numhl = false,
-}
-
--- Git worktree
-require('git-worktree').setup {
-    change_directory_command = 'cd',
-    update_on_change = true,
-    update_on_change_command = 'e .',
-    clearjumps_on_change = true,
-    autopush = false,
 }
 
 -- Diffview

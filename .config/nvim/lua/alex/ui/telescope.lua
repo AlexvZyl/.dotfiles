@@ -29,4 +29,3 @@ ts.setup {
 
 -- Extensions.
 ts.load_extension 'notify'
-ts.load_extension 'git_worktree'

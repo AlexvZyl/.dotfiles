@@ -1,13 +1,5 @@
 local u = require 'alex.utils'
 
--- Allow FAR to undo.
-vim.cmd 'let g:far#enable_undo=1'
-
--- Auto pairs
-require('nvim-autopairs').setup {
-    map_cr = false,
-}
-
 -- Leap
 local leap = require 'leap'
 leap.setup {}

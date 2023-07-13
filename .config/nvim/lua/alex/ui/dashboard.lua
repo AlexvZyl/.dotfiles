@@ -17,7 +17,7 @@ config.shortcut = {
     },
     {
         desc = '   Update ',
-        action = 'PackerSync',
+        action = 'Lazy sync',
         group = '@string',
         key = 'u',
     },

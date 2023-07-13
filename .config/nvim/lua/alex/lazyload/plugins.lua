@@ -8,8 +8,8 @@ return {
     {
         'nvim-telescope/telescope.nvim',
         dependencies = { 'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim' },
-        config = function() require 'alex.ui.telescope' end,
         cmd = 'Telescope',
+        config = function() require 'alex.ui.telescope' end,
     },
     {
         'mfussenegger/nvim-dap',
@@ -57,8 +57,8 @@ return {
     },
     {
         'aserowy/tmux.nvim',
-        config = function() return require('tmux').setup() end,
         event = 'UIEnter',
+        config = function() return require('tmux').setup() end,
     },
     {
         'lukas-reineke/indent-blankline.nvim',
@@ -112,8 +112,8 @@ return {
     {
         'nvim-treesitter/nvim-treesitter',
         dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/playground' },
-        build = { 'TSUpdate', 'TSUpdateSync' },
         event = 'UIEnter',
+        build = { ':TSUpdate', ':TSUpdateSync' },
         config = function() require 'alex.lang.treesitter' end,
     },
     {

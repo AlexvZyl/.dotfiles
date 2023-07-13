@@ -1,5 +1,11 @@
 return {
     {
+        "williamboman/mason.nvim",
+        build = ":MasonUpdate",
+        event = 'UIEnter',
+        config = function() require 'alex.lang.lsp.mason' end
+    },
+    {
         'nvim-telescope/telescope.nvim',
         dependencies = { 'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim' },
         config = function() require 'alex.ui.telescope' end,

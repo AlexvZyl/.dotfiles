@@ -7,7 +7,7 @@ vim.cmd 'set hlsearch'
 vim.cmd 'set ignorecase'
 vim.cmd 'set smartcase'
 
-vim.opt.tabstop	= 4
+vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.textwidth = 0

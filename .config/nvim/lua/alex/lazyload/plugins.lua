@@ -1,4 +1,4 @@
-local plugins = {
+return {
     {
         'nvim-telescope/telescope.nvim',
         dependencies = { 'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim' },
@@ -16,23 +16,23 @@ local plugins = {
     {
         'glepnir/dashboard-nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
+        lazy = false,
     },
     { 'NvChad/nvim-colorizer.lua', event = 'VeryLazy' },
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
-        event = 'VeryLazy',
     },
     {
         'akinsho/bufferline.nvim',
         version = '*',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
-        event = 'VeryLazy',
     },
     {
         'folke/trouble.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         keys = { '<leader>d', '<leader>D' },
+        event = 'VeryLazy'
     },
     {
         'folke/noice.nvim',
@@ -42,8 +42,9 @@ local plugins = {
     {
         'aserowy/tmux.nvim',
         config = function() return require('tmux').setup() end,
+        event = 'VeryLazy',
     },
-    { 'lukas-reineke/indent-blankline.nvim' },
+    { 'lukas-reineke/indent-blankline.nvim', event = 'VeryLazy' },
     { 'RRethy/vim-illuminate', event = 'VeryLazy' },
     { 'preservim/nerdcommenter', event = 'VeryLazy' },
     { 'tpope/vim-commentary', event = 'VeryLazy' },
@@ -67,13 +68,15 @@ local plugins = {
         'nvim-treesitter/nvim-treesitter',
         dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/playground' },
         build = 'TSUpdate',
+        event = 'VeryLazy',
     },
-    { 'neovim/nvim-lspconfig' },
+    { 'neovim/nvim-lspconfig', event = 'VeryLazy', },
     { 'glepnir/lspsaga.nvim', event = 'VeryLazy' },
     {
         'L3MON4D3/LuaSnip',
         dependencies = { 'rafamadriz/friendly-snippets' },
         build = 'make install_jsregexp',
+        -- This breaks when lazyloading, not sure why...
     },
     {
         'hrsh7th/nvim-cmp',
@@ -85,6 +88,7 @@ local plugins = {
             'hrsh7th/cmp-cmdline',
             'saadparwaiz1/cmp_luasnip',
         },
+        event = 'VeryLazy',
     },
     { 'lervag/vimtex', event = 'VeryLazy' },
 
@@ -103,7 +107,3 @@ local plugins = {
     { 'projekt0n/github-nvim-theme', lazy = true },
     { 'Shatur/neovim-ayu', lazy = true },
 }
-
-local opts = {}
-
-require('lazy').setup(plugins, opts)

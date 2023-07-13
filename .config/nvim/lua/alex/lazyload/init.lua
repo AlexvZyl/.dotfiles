@@ -1,2 +1,9 @@
 require 'alex.lazyload.bootstrap'
-require 'alex.lazyload.plugins'
+
+local U = require 'alex.utils'
+
+local plugins = require 'alex.lazyload.plugins'
+local opts = {
+    ui = { border = U.border_chars_outer_thin }
+}
+require('lazy').setup(plugins, opts)

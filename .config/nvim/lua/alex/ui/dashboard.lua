@@ -16,16 +16,22 @@ config.shortcut = {
         key = 'n',
     },
     {
-        desc = '   Update ',
-        action = 'Lazy sync',
-        group = '@string',
-        key = 'u',
-    },
-    {
         desc = '   File/path ',
         action = 'Telescope find_files find_command=rg,--hidden,--files',
         group = '@string',
         key = 'f',
+    },
+    {
+        desc = '   Update ',
+        action = 'Lazy sync',
+        group = '@keyword',
+        key = 'u',
+    },
+    {
+        desc = ' 󰓅  Profile ',
+        action = 'Lazy profile',
+        group = '@keyword',
+        key = 'p',
     },
     {
         desc = '   Quit ',

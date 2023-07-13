@@ -32,7 +32,7 @@ return {
         'folke/trouble.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         keys = { '<leader>d', '<leader>D' },
-        event = 'VeryLazy'
+        event = 'VeryLazy',
     },
     {
         'folke/noice.nvim',
@@ -70,7 +70,7 @@ return {
         build = 'TSUpdate',
         event = 'VeryLazy',
     },
-    { 'neovim/nvim-lspconfig', event = 'VeryLazy', },
+    { 'neovim/nvim-lspconfig', event = 'VeryLazy' },
     { 'glepnir/lspsaga.nvim', event = 'VeryLazy' },
     {
         'L3MON4D3/LuaSnip',

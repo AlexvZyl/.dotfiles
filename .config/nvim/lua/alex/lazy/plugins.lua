@@ -1,7 +1,7 @@
 local plugins = {
     {
         'nvim-telescope/telescope.nvim',
-        dependencies = { 'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim' }
+        dependencies = { 'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim' },
     },
     {
         'mfussenegger/nvim-dap',
@@ -23,17 +23,18 @@ local plugins = {
         dependencies = { 'nvim-tree/nvim-web-devicons' },
     },
     {
-        'akinsho/bufferline.nvim', version = "*",
-        dependencies = { 'nvim-tree/nvim-web-devicons' }
+        'akinsho/bufferline.nvim',
+        version = '*',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
     },
     {
-        "folke/trouble.nvim",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
+        'folke/trouble.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
     },
     {
-        "folke/noice.nvim",
-        event = "VeryLazy",
-        dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" }
+        'folke/noice.nvim',
+        event = 'VeryLazy',
+        dependencies = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' },
     },
     {
         'aserowy/tmux.nvim',
@@ -45,33 +46,34 @@ local plugins = {
     { 'tpope/vim-commentary' },
     {
         'ggandor/leap.nvim',
-        dependencies= 'tpope/vim-repeat',
+        dependencies = 'tpope/vim-repeat',
     },
     { 'lewis6991/gitsigns.nvim' },
     { 'sindrets/diffview.nvim' },
     { 'folke/which-key.nvim' },
     { 'sudormrfbin/cheatsheet.nvim' },
     {
-        "nvim-tree/nvim-tree.lua", version = "*",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
+        'nvim-tree/nvim-tree.lua',
+        version = '*',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
     },
     { 'mfussenegger/nvim-lint' },
     { 'fladson/vim-kitty' },
     {
         'nvim-treesitter/nvim-treesitter',
-        dependencies= { 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/playground' },
+        dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/playground' },
         cmd = 'TSUpdate',
     },
     { 'neovim/nvim-lspconfig' },
     { 'glepnir/lspsaga.nvim' },
     {
-	    "L3MON4D3/LuaSnip",
-	    build = "make install_jsregexp",
+        'L3MON4D3/LuaSnip',
+        build = 'make install_jsregexp',
         dependencies = { 'rafamadriz/friendly-snippets' },
     },
     {
         'hrsh7th/nvim-cmp',
-        dependencies= {
+        dependencies = {
             'hrsh7th/cmp-omni',
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-buffer',
@@ -98,8 +100,6 @@ local plugins = {
     { 'Shatur/neovim-ayu' },
 }
 
-local opts = {
-
-}
+local opts = {}
 
 require('lazy').setup(plugins, opts)

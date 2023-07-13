@@ -45,7 +45,7 @@ return {
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         keys = { '<leader>d', '<leader>D' },
         event = 'VeryLazy',
-        config = function() require 'alex.lang.lsp.ui.trouble' end
+        config = function() require 'alex.lang.lsp.trouble' end
     },
     {
         'folke/noice.nvim',
@@ -111,8 +111,16 @@ return {
         event = 'VeryLazy',
         config = function () require 'alex.lang.treesitter' end
     },
-    { 'neovim/nvim-lspconfig', event = 'VeryLazy' },
-    { 'glepnir/lspsaga.nvim', event = 'VeryLazy' },
+    {
+        'neovim/nvim-lspconfig',
+        event = 'VeryLazy',
+        config = function() require 'alex.lang.lsp.clients' end
+    },
+    {
+        'glepnir/lspsaga.nvim',
+        event = 'VeryLazy',
+        config = function()  require 'alex.lang.lsp.lspsaga' end
+    },
     {
         'L3MON4D3/LuaSnip',
         dependencies = { 'rafamadriz/friendly-snippets' },
@@ -138,7 +146,12 @@ return {
     },
 
     -- Themes
-    { 'AlexvZyl/nordic.nvim', branch = 'dev', priority = 1000, lazy = false },
+    {
+        'AlexvZyl/nordic.nvim',
+        branch = 'dev',
+        priority = 1000, lazy = false,
+        config = function() require 'alex.themes.nordic' end
+    },
     { 'sainnhe/gruvbox-material', lazy = true },
     { 'EdenEast/nightfox.nvim', lazy = true },
     { 'catppuccin/nvim', lazy = true },

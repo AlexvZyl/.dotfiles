@@ -12,5 +12,3 @@ local config = {
 }
 
 vim.diagnostic.config(config)
-
-require 'alex.lang.lsp.clients'

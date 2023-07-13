@@ -12,8 +12,8 @@ local env_file = os.getenv 'HOME' .. '/.private/nvim_env.lua'
 if U.file_exists(env_file) then vim.cmd('luafile ' .. env_file) end
 
 -- Order is important
-require 'alex.lazyload'
 require 'alex.options'
-require 'alex.theme'
+require 'alex.ui'
+require 'alex.lazyload'
 require 'alex.lang'
 require 'alex.keymaps'

@@ -1,5 +1,8 @@
 local u = require 'alex.utils'
 
+-- Important to place this before loading plugins.
+vim.g.mapleader = ' '
+
 vim.cmd 'set noshowmode'
 vim.cmd 'set clipboard+=unnamedplus'
 vim.cmd 'set noswapfile'
@@ -47,3 +50,5 @@ vim.opt.winblend = 0
 
 vim.opt.pumblend = 0
 vim.opt.pumheight = 10
+
+vim.opt.background = 'dark'

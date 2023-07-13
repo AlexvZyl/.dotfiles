@@ -1,6 +1,3 @@
-local M = {}
-
-function M.setup()
     require('dapui').setup {
 
         icons = {
@@ -96,6 +93,3 @@ function M.setup()
             max_value_lines = 100, -- Can be integer or nil.
         },
     }
-end
-
-return M

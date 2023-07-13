@@ -1,10 +1,7 @@
 local config = {}
 
-config.mru = {}
-config.mru.limit = 10
-
-config.project = {}
-config.project.limit = 10
+config.mru = { limit = 10 }
+config.project = { limit = 10 }
 
 local updates = require('lazy.status').updates()
 if not updates then updates = '0' end
@@ -42,16 +39,9 @@ config.shortcut = {
     },
 }
 
-config.week_header = {}
-config.week_header.enable = true
-
-config.footer = {
-    '',
-    '󰛨  Dala what you must.',
-}
-
-config.packages = {}
-config.packages.enable = true
+config.week_header = { enable = true }
+config.footer = { '', '󰛨  Dala what you must.' }
+config.packages = { enable = true }
 
 require('dashboard').setup {
     theme = 'hyper',

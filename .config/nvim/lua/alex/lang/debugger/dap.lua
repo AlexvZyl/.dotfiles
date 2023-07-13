@@ -1,6 +1,3 @@
-local M = {}
-
-function M.setup()
     local dap = require 'dap'
 
     dap.adapters.cppdbg = {
@@ -29,6 +26,3 @@ function M.setup()
     -- Setup for C and Rust.
     dap.configurations.c = dap.configurations.cpp
     dap.configurations.rust = dap.configurations.cpp
-end
-
-return M

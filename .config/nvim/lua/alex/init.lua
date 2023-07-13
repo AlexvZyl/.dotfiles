@@ -15,6 +15,5 @@ if U.file_exists(env_file) then vim.cmd('luafile ' .. env_file) end
 require 'alex.lazyload'
 require 'alex.options'
 require 'alex.theme'
-require 'alex.ui'
 require 'alex.lang'
 require 'alex.keymaps'

@@ -1,3 +1,5 @@
+local u = require 'alex.utils'
+
 vim.cmd 'set noshowmode'
 vim.cmd 'set clipboard+=unnamedplus'
 vim.cmd 'set noswapfile'
@@ -20,3 +22,28 @@ vim.cmd 'set nowrap'
 vim.opt.cmdheight = 0
 vim.g.VM_set_statusline = 0
 vim.g.VM_silent_exit = 1
+
+vim.opt.fillchars = {
+    horiz = u.bottom_thin,
+    horizup = ' ',
+    horizdown = ' ',
+    vert = ' ',
+    vertleft = ' ',
+    vertright = ' ',
+    verthoriz = ' ',
+    eob = ' ',
+    diff = '╱',
+}
+
+vim.cmd 'set number'
+vim.cmd 'set relativenumber'
+vim.cmd 'set signcolumn=yes'
+
+vim.cmd 'set cursorline'
+-- vim.cmd 'set cursorlineopt=both'
+vim.cmd 'set cursorlineopt=number'
+
+vim.opt.winblend = 0
+
+vim.opt.pumblend = 0
+vim.opt.pumheight = 10

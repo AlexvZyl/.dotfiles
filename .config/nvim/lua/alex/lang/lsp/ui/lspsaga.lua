@@ -1,24 +1,5 @@
 local u = require 'alex.utils'
 
--- Native.
-
-vim.cmd [[
-    sign define DiagnosticSignError text= texthl= linehl= numhl=DiagnosticSignError 
-    sign define DiagnosticSignWarn  text= texthl= linehl= numhl=DiagnosticSignWarn
-    sign define DiagnosticSignInfo  text= texthl= linehl= numhl=DiagnosticSignInfo
-    sign define DiagnosticSignHint  text=󱤅 texthl= linehl= numhl=DiagnosticSignHint
-]]
-
-local config = {
-    virtual_text = false,
-    signs = true,
-    update_on_insert = true,
-}
-
-vim.diagnostic.config(config)
-
--- LSP Saga.
-
 local ui = {
     border = u.border_chars_outer_thin,
     winblend = 0,
@@ -65,16 +46,3 @@ require('lspsaga').setup {
     diagnostic = diagnostic,
     hover = hover,
 }
-
--- Trouble.
-
-require('trouble').setup {
-    padding = true,
-    height = 11,
-    use_diagnostic_signs = false,
-    position = 'bottom',
-    signs = u.diagnostic_signs,
-    auto_preview = false,
-}
-
-vim.cmd [[ autocmd BufEnter * TroubleRefresh ]]

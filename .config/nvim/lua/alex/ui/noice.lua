@@ -1,52 +1,7 @@
-local u = require 'alex.utils'
 
--- Leap
-local leap = require 'leap'
-leap.setup {}
-leap.set_default_keymaps(true)
-
--- Illuminate
-require('illuminate').configure {
-    under_cursor = false,
-    delay = 500,
-    filetypes_denylist = {
-        'startify',
-        'NvimTree',
-    },
-}
-
--- Indentation
-require('indent_blankline').setup {
-    show_end_of_line = true,
-    show_current_context = true,
-    show_current_context_start = false,
-    filetype_exclude = { 'NvimTree', 'startify', 'dashboard' },
-    use_treesitter = false,
-    use_treesitter_scope = false,
-    context_char = '│',
-    char = '┆',
-}
-
--- which-key
-require('which-key').setup {
-    window = {
-        border = { '', '▔', '', '', '', ' ', '', '' },
-        margin = { 0, 0, 1, 0 },
-        padding = { 0, 0, 0, 0 },
-    },
-}
-vim.cmd 'set timeoutlen =1000'
-
--- Notifiactions
-local notify = require 'notify'
-notify.setup {
-    fps = 60,
-    level = 'ERROR',
-}
-vim.notify = notify
-
--- Noice
 if not vim.g.neovide then
+    local u = require 'alex.utils'
+
     require('noice').setup {
         cmdline = {
             format = {
@@ -86,14 +41,11 @@ if not vim.g.neovide then
     }
 end
 
--- Colorizer
-require('colorizer').setup {
-    user_default_options = {
-        mode = 'virtualtext',
-        RRGGBB = true,
-        RRGGBBAA = true,
-        names = false,
-        RGB = false,
-        virtualtext = ' ',
-    },
+-- Notifiactions
+local notify = require 'notify'
+notify.setup {
+    fps = 60,
+    level = 'ERROR',
 }
+
+vim.notify = notify

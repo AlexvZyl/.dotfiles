@@ -17,17 +17,19 @@ return {
     {
         'glepnir/dashboard-nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
-        lazy = false,
+        lazy = false, priority = 999,
     },
     { 'NvChad/nvim-colorizer.lua', event = 'VeryLazy' },
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
+        lazy = false,
     },
     {
         'akinsho/bufferline.nvim',
         version = '*',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
+        lazy = false,
     },
     {
         'folke/trouble.nvim',

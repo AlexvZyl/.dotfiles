@@ -2,8 +2,8 @@ return {
     {
         'nvim-telescope/telescope.nvim',
         dependencies = { 'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim' },
-        event = 'VeryLazy',
         config = function() require 'alex.ui.telescope' end,
+        cmd = 'Telescope'
     },
     {
         'mfussenegger/nvim-dap',
@@ -24,7 +24,7 @@ return {
     },
     {
         'NvChad/nvim-colorizer.lua',
-        event = 'VeryLazy',
+        event = 'UIEnter',
         config = function() require 'alex.ui.colorizer' end,
     },
     {
@@ -44,32 +44,31 @@ return {
         'folke/trouble.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         keys = { '<leader>d', '<leader>D' },
-        event = 'VeryLazy',
         config = function() require 'alex.lang.lsp.trouble' end,
     },
     {
         'folke/noice.nvim',
         dependencies = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' },
-        event = 'VeryLazy',
+        event = 'UIEnter',
         config = function() require 'alex.ui.noice' end,
     },
     {
         'aserowy/tmux.nvim',
         config = function() return require('tmux').setup() end,
-        event = 'VeryLazy',
+        event = 'UIEnter',
     },
     {
         'lukas-reineke/indent-blankline.nvim',
-        event = 'VeryLazy',
+        event = 'UIEnter',
         config = function() require 'alex.ui.indent-blankline' end,
     },
     {
         'RRethy/vim-illuminate',
-        event = 'VeryLazy',
+        event = 'UIEnter',
         config = function() require 'alex.ui/illuminate' end,
     },
-    { 'preservim/nerdcommenter', event = 'VeryLazy' },
-    { 'tpope/vim-commentary', event = 'VeryLazy' },
+    { 'preservim/nerdcommenter', event = 'UIEnter' },
+    { 'tpope/vim-commentary', event = 'UIEnter' },
     {
         'ggandor/leap.nvim',
         dependencies = 'tpope/vim-repeat',
@@ -78,20 +77,23 @@ return {
     },
     {
         'lewis6991/gitsigns.nvim',
-        event = 'VeryLazy',
+        event = 'UIEnter',
         config = function() require 'alex.ui.gitsigns' end,
     },
     {
         'sindrets/diffview.nvim',
-        event = 'VeryLazy',
+        keys = { '<leader>v' },
         config = function() require 'alex.ui.diffview' end,
     },
     {
         'folke/which-key.nvim',
-        event = 'VeryLazy',
+        event = 'UIEnter',
         config = function() require 'alex.ui.which-key' end,
     },
-    { 'sudormrfbin/cheatsheet.nvim', event = 'VeryLazy' },
+    {
+        'sudormrfbin/cheatsheet.nvim',
+        cmd = { 'Cheatsheet' },
+    },
     {
         'nvim-tree/nvim-tree.lua',
         version = '*',
@@ -100,32 +102,32 @@ return {
     },
     {
         'mfussenegger/nvim-lint',
-        event = 'VeryLazy',
+        event = 'UIEnter',
         config = function() require 'alex.lang.linter' end,
     },
-    { 'fladson/vim-kitty', event = 'VeryLazy' },
+    { 'fladson/vim-kitty', ft = 'kitty.conf' },
     {
         'nvim-treesitter/nvim-treesitter',
         dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/playground' },
         build = { 'TSUpdate', 'TSUpdateSync' },
-        event = 'VeryLazy',
+        event = 'UIEnter',
         config = function() require 'alex.lang.treesitter' end,
     },
     {
         'neovim/nvim-lspconfig',
-        event = 'VeryLazy',
+        event = 'UIEnter',
         config = function() require 'alex.lang.lsp.clients' end,
     },
     {
         'glepnir/lspsaga.nvim',
-        event = 'VeryLazy',
+        event = 'UIEnter',
         config = function() require 'alex.lang.lsp.lspsaga' end,
     },
     {
         'L3MON4D3/LuaSnip',
         dependencies = { 'rafamadriz/friendly-snippets' },
         build = 'make install_jsregexp',
-        -- This breaks when lazyloading, not sure why...
+        event = 'UIEnter',
     },
     {
         'hrsh7th/nvim-cmp',
@@ -136,8 +138,10 @@ return {
             'hrsh7th/cmp-path',
             'hrsh7th/cmp-cmdline',
             'saadparwaiz1/cmp_luasnip',
+            'L3MON4D3/LuaSnip',
         },
-        event = 'VeryLazy',
+        event = 'UIEnter',
+        config = function() require 'alex.lang.completion' end,
     },
     {
         'lervag/vimtex',

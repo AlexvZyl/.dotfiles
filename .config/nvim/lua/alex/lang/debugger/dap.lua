@@ -23,6 +23,5 @@ dap.configurations.cpp = {
     },
 }
 
--- Setup for C and Rust.
 dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp

@@ -9,6 +9,10 @@ local keymap = vim.keymap.set
 local default_settings = { noremap = true, silent = true }
 local allow_remap = { noremap = false, silent = true }
 
+local M = {}
+
+function M.init()
+
 -- Tree.
 keymap(n_v, 'gc', function() require('alex.keymaps.utils').cwd_current_buffer() end, default_settings)
 keymap(n_v, '<Leader>f', function() require('alex.keymaps.utils').toggle_tree() end, default_settings)
@@ -81,6 +85,10 @@ keymap(n, '<Left>', '<Cmd>DapStepOut<CR>', default_settings)
 keymap(n, '<Up>', '<Cmd>DapRestartFrame<CR>', default_settings)
 -- keymap(n, '<F7>', '<Cmd>DapTerminate<CR>', default_settings)
 
+end
+
+function M.completion()
+
 -- Completion.
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
@@ -111,3 +119,7 @@ cmp.setup {
         end, { 'i', 's' }),
     },
 }
+
+end
+
+return M

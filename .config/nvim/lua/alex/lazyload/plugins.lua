@@ -7,10 +7,10 @@ local plugins = {
     {
         'mfussenegger/nvim-dap',
         dependencies = { 'rcarriga/nvim-dap-ui' },
-        keys = { 'F1' },
-        config = function()
-            require('alex.lang.debugger.dap').setup_dap()
-            require('alex.lang.debugger.ui').setup_dap_ui()
+        keys = { 'F1', 'F2' },
+        config = function(plugin, _)
+            require('alex.lang.debugger.dap').setup_dap(plugin)
+            require('alex.lang.debugger.ui').setup_dap_ui(plugin)
         end,
     },
     {
@@ -49,9 +49,9 @@ local plugins = {
     {
         'ggandor/leap.nvim',
         dependencies = 'tpope/vim-repeat',
-        event = 'VeryLazy',
+        keys = { 's', 'S' }
     },
-    { 'lewis6991/gitsigns.nvim' },
+    { 'lewis6991/gitsigns.nvim', event = 'VeryLazy' },
     { 'sindrets/diffview.nvim', event = 'VeryLazy' },
     { 'folke/which-key.nvim', event = 'VeryLazy' },
     { 'sudormrfbin/cheatsheet.nvim', event = 'VeryLazy' },
@@ -65,10 +65,10 @@ local plugins = {
     {
         'nvim-treesitter/nvim-treesitter',
         dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/playground' },
-        cmd = 'TSUpdate',
+        build = 'TSUpdate',
     },
     { 'neovim/nvim-lspconfig' },
-    { 'glepnir/lspsaga.nvim' },
+    { 'glepnir/lspsaga.nvim', event = 'VeryLazy' },
     {
         'L3MON4D3/LuaSnip',
         dependencies = { 'rafamadriz/friendly-snippets' },

@@ -1,8 +1,6 @@
 local M = {}
 
-function M.setup_dap()
-    local dap = require 'dap'
-
+function M.setup_dap(dap)
     dap.adapters.cppdbg = {
         id = 'cppdbg',
         type = 'executable',

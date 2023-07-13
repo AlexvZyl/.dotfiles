@@ -1,7 +1,7 @@
 local M = {}
 
-function M.setup_dap_ui()
-    require('dapui').setup {
+function M.setup_dap_ui(dapui)
+    dapui.setup {
 
         icons = {
             expanded = '',

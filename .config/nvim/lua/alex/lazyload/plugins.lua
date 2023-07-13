@@ -24,7 +24,8 @@ local plugins = {
         event = 'VeryLazy',
     },
     {
-        'akinsho/bufferline.nvim', version = '*',
+        'akinsho/bufferline.nvim',
+        version = '*',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         event = 'VeryLazy',
     },

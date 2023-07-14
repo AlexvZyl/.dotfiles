@@ -3,7 +3,7 @@ return {
         'williamboman/mason.nvim',
         build = ':MasonUpdate',
         event = { 'User NvimStartupDone' },
-        config = function() require 'alex.lang.lsp.mason' end,
+        config = function() require 'alex.lang.mason' end,
     },
     {
         'nvim-telescope/telescope.nvim',

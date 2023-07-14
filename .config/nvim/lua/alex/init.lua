@@ -13,7 +13,6 @@ if U.file_exists(env_file) then vim.cmd('luafile ' .. env_file) end
 
 -- Order is important
 require 'alex.options'
-require 'alex.events'
 require 'alex.lazyload'
 require 'alex.ui'
 require 'alex.lang'

@@ -78,6 +78,8 @@ local function on_attach(bufnr)
     vim.keymap.set('n', ']', api.tree.change_root_to_node, opts 'CD')
     vim.keymap.set('n', '<Tab>', api.node.open.edit, opts 'Open')
     vim.keymap.set('n', 'o', api.node.run.system, opts 'Run System')
+    vim.keymap.set('n', 'a', api.fs.create, { buffer = bufnr })
+    vim.keymap.set('n', 'd', api.fs.remove, { buffer = bufnr })
 end
 
 require('nvim-tree').setup {

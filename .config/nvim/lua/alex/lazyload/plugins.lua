@@ -2,7 +2,7 @@ return {
     {
         'williamboman/mason.nvim',
         build = ':MasonUpdate',
-        event = 'UIEnter',
+        event = { 'User NvimStartupDone' },
         config = function() require 'alex.lang.lsp.mason' end,
     },
     {
@@ -14,8 +14,7 @@ return {
     {
         'mfussenegger/nvim-dap',
         dependencies = { 'rcarriga/nvim-dap-ui' },
-        event = 'UIEnter',
-        lazy = true,
+        event = { 'User NvimStartupDone' },
         config = function()
             require 'alex.lang.debugger.dap'
             require 'alex.lang.debugger.ui'
@@ -25,22 +24,25 @@ return {
         'glepnir/dashboard-nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         priority = 999,
+        lazy = false,
         config = function() require 'alex.ui.dashboard' end,
     },
     {
         'NvChad/nvim-colorizer.lua',
-        event = 'UIEnter',
+        event = { 'User NvimStartupDone' },
         config = function() require 'alex.ui.colorizer' end,
     },
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
+        event = { 'User NvimStartupDone' },
         config = function() require 'alex.ui.lualine' end,
     },
     {
         'akinsho/bufferline.nvim',
         version = '*',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
+        event = { 'User NvimStartupDone' },
         config = function() require 'alex.ui.bufferline' end,
     },
     {
@@ -52,26 +54,32 @@ return {
     {
         'folke/noice.nvim',
         dependencies = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' },
-        event = 'UIEnter',
+        event = { 'User NvimStartupDone' },
         config = function() require 'alex.ui.noice' end,
     },
     {
         'aserowy/tmux.nvim',
-        event = 'UIEnter',
+        event = { 'User NvimStartupDone' },
         config = function() return require('tmux').setup() end,
     },
     {
         'lukas-reineke/indent-blankline.nvim',
-        event = 'UIEnter',
+        event = { 'User NvimStartupDone' },
         config = function() require 'alex.ui.indent-blankline' end,
     },
     {
         'RRethy/vim-illuminate',
-        event = 'UIEnter',
+        event = { 'User NvimStartupDone' },
         config = function() require 'alex.ui/illuminate' end,
     },
-    { 'preservim/nerdcommenter', event = 'UIEnter' },
-    { 'tpope/vim-commentary', event = 'UIEnter' },
+    {
+        'preservim/nerdcommenter',
+        event = { 'User NvimStartupDone' },
+    },
+    {
+        'tpope/vim-commentary',
+        event = { 'User NvimStartupDone' },
+    },
     {
         'ggandor/leap.nvim',
         dependencies = 'tpope/vim-repeat',
@@ -80,7 +88,7 @@ return {
     },
     {
         'lewis6991/gitsigns.nvim',
-        event = 'UIEnter',
+        event = { 'User NvimStartupDone' },
         config = function() require 'alex.ui.gitsigns' end,
     },
     {
@@ -90,7 +98,7 @@ return {
     },
     {
         'folke/which-key.nvim',
-        event = 'UIEnter',
+        event = { 'User NvimStartupDone' },
         config = function() require 'alex.ui.which-key' end,
     },
     {
@@ -105,32 +113,35 @@ return {
     },
     {
         'mfussenegger/nvim-lint',
-        event = 'UIEnter',
+        event = { 'User NvimStartupDone' },
         config = function() require 'alex.lang.linter' end,
     },
-    { 'fladson/vim-kitty', event = 'UIEnter' },
+    {
+        'fladson/vim-kitty',
+        event = { 'User NvimStartupDone' },
+    },
     {
         'nvim-treesitter/nvim-treesitter',
         dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/playground' },
-        event = 'UIEnter',
+        event = { 'User NvimStartupDone' },
         build = { ':TSUpdate' },
         config = function() require 'alex.lang.treesitter' end,
     },
     {
         'neovim/nvim-lspconfig',
-        event = 'UIEnter',
+        event = { 'User NvimStartupDone' },
         config = function() require 'alex.lang.lsp.clients' end,
     },
     {
         'glepnir/lspsaga.nvim',
-        event = 'UIEnter',
+        event = { 'User NvimStartupDone' },
         config = function() require 'alex.lang.lsp.lspsaga' end,
     },
     {
         'L3MON4D3/LuaSnip',
         dependencies = { 'rafamadriz/friendly-snippets' },
         build = 'make install_jsregexp',
-        event = 'UIEnter',
+        event = { 'User NvimStartupDone' },
     },
     {
         'hrsh7th/nvim-cmp',
@@ -143,7 +154,7 @@ return {
             'saadparwaiz1/cmp_luasnip',
             'L3MON4D3/LuaSnip',
         },
-        event = 'UIEnter',
+        event = { 'User NvimStartupDone' },
         config = function() require 'alex.lang.completion' end,
     },
     {

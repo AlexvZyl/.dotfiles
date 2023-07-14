@@ -15,10 +15,7 @@ return {
         'mfussenegger/nvim-dap',
         dependencies = { 'rcarriga/nvim-dap-ui' },
         event = { 'User NvimStartupDone' },
-        config = function()
-            require 'alex.lang.debugger.dap'
-            require 'alex.lang.debugger.ui'
-        end,
+        config = function() require 'alex.lang.debugger' end,
     },
     {
         'glepnir/dashboard-nvim',
@@ -130,7 +127,7 @@ return {
     {
         'neovim/nvim-lspconfig',
         event = { 'User NvimStartupDone' },
-        config = function() require 'alex.lang.lsp.clients' end,
+        config = function() require 'alex.lang.lsp' end,
     },
     {
         'glepnir/lspsaga.nvim',
@@ -160,7 +157,7 @@ return {
     {
         'lervag/vimtex',
         ft = { 'tex', 'latex' },
-        config = function() require 'alex.lang.tools.latex' end,
+        config = function() require 'alex.lang.latex' end,
     },
 
     -- Themes

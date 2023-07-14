@@ -60,7 +60,7 @@ return {
     {
         'aserowy/tmux.nvim',
         event = { 'User NvimStartupDone' },
-        config = function() return require('tmux').setup() end,
+        config = function() require('tmux').setup() end,
     },
     {
         'lukas-reineke/indent-blankline.nvim',
@@ -93,8 +93,8 @@ return {
     },
     {
         'sindrets/diffview.nvim',
-        config = function() require 'alex.ui.diffview' end,
         cmd = { 'DiffviewClose', 'DiffviewOpen' },
+        config = function() require 'alex.ui.diffview' end,
     },
     {
         'folke/which-key.nvim',

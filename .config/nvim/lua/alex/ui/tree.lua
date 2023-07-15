@@ -80,6 +80,12 @@ local function on_attach(bufnr)
     vim.keymap.set('n', 'o', api.node.run.system, opts 'Run System')
     vim.keymap.set('n', 'a', api.fs.create, { buffer = bufnr })
     vim.keymap.set('n', 'd', api.fs.remove, { buffer = bufnr })
+    vim.keymap.set('n', 'x', api.fs.cut, opts('Cut'))
+    vim.keymap.set('n', 'c', api.fs.copy.filename, opts('Copy Name'))
+    vim.keymap.set('n', 'p', api.fs.paste, opts('Paste'))
+    vim.keymap.set('n', 'r', api.fs.rename, opts('Rename'))
+    vim.keymap.set('n', 'W', api.tree.collapse_all, opts('Collapse'))
+    vim.keymap.set('n', 'E', api.tree.expand_all, opts('Expand All'))
 end
 
 require('nvim-tree').setup {

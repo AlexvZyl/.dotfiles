@@ -45,13 +45,11 @@ function M.init()
     keymap(n, 'S', function() require('leap').leap { backward = true } end)
     keymap(n, '<leader>v', function() require('alex.keymaps.utils').toggle_diffview() end)
 
-    -- Barbar
+    -- Cokeline 
     keymap(n, 'Q', function() require('alex.keymaps.utils').delete_buffer() end, default_settings)
-    keymap(n, 'dB', '<Cmd>BufferLinePickClose<CR>', default_settings)
-    keymap(n, 'gb', '<Cmd>BufferLinePick<CR>', default_settings)
-    keymap(n, 'H', '<Cmd>BufferLineCyclePrev<CR>', default_settings)
-    keymap(n, 'L', '<Cmd>BufferLineCycleNext<CR>', default_settings)
-    keymap(n, '<C-p>', '<Cmd>BufferLineTogglePin<CR>', default_settings)
+    keymap(n, 'H', '<Plug>(cokeline-focus-prev)', default_settings)
+    keymap(n, 'L', '<Plug>(cokeline-focus-next)', default_settings)
+    keymap(n, 'gb', '<Plug>(cokeline-focus-pick)', default_settings)
 
     -- LSP.
     keymap(n, '<leader>d', '<Cmd>TroubleToggle document_diagnostics<CR>', default_settings)

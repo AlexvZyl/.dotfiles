@@ -1,22 +1,5 @@
 return {
-    {
-        'williamboman/mason.nvim',
-        build = ':MasonUpdate',
-        event = { 'User NvimStartupDone' },
-        config = function() require 'alex.lang.mason' end,
-    },
-    {
-        'nvim-telescope/telescope.nvim',
-        dependencies = { 'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim' },
-        cmd = 'Telescope',
-        config = function() require 'alex.ui.telescope' end,
-    },
-    {
-        'mfussenegger/nvim-dap',
-        dependencies = { 'rcarriga/nvim-dap-ui' },
-        event = { 'User NvimStartupDone' },
-        config = function() require 'alex.lang.debugger' end,
-    },
+    -- General UI/UX
     {
         'glepnir/dashboard-nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -28,6 +11,12 @@ return {
         'NvChad/nvim-colorizer.lua',
         event = { 'User NvimStartupDone' },
         config = function() require 'alex.ui.colorizer' end,
+    },
+    {
+        'nvim-telescope/telescope.nvim',
+        dependencies = { 'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim' },
+        cmd = 'Telescope',
+        config = function() require 'alex.ui.telescope' end,
     },
     {
         'nvim-lualine/lualine.nvim',
@@ -43,21 +32,10 @@ return {
         config = function() require 'alex.ui.bufferline' end,
     },
     {
-        'folke/trouble.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        keys = { '<leader>d', '<leader>D' },
-        config = function() require 'alex.lang.lsp.trouble' end,
-    },
-    {
         'folke/noice.nvim',
         dependencies = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' },
         event = { 'User NvimStartupDone' },
         config = function() require 'alex.ui.noice' end,
-    },
-    {
-        'aserowy/tmux.nvim',
-        event = { 'User NvimStartupDone' },
-        config = function() require('tmux').setup() end,
     },
     {
         'lukas-reineke/indent-blankline.nvim',
@@ -68,20 +46,6 @@ return {
         'RRethy/vim-illuminate',
         event = { 'User NvimStartupDone' },
         config = function() require 'alex.ui/illuminate' end,
-    },
-    {
-        'preservim/nerdcommenter',
-        event = { 'User NvimStartupDone' },
-    },
-    {
-        'tpope/vim-commentary',
-        event = { 'User NvimStartupDone' },
-    },
-    {
-        'ggandor/leap.nvim',
-        dependencies = 'tpope/vim-repeat',
-        keys = { 's', 'S' },
-        config = function() require 'alex.ui.leap' end,
     },
     {
         'lewis6991/gitsigns.nvim',
@@ -108,14 +72,30 @@ return {
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function() require 'alex.ui.tree' end,
     },
+
+    -- Language/Tools/LSP/Comp
+    {
+        'williamboman/mason.nvim',
+        build = ':MasonUpdate',
+        event = { 'User NvimStartupDone' },
+        config = function() require 'alex.lang.mason' end,
+    },
+    {
+        'mfussenegger/nvim-dap',
+        dependencies = { 'rcarriga/nvim-dap-ui' },
+        event = { 'User NvimStartupDone' },
+        config = function() require 'alex.lang.debugger' end,
+    },
+    {
+        'folke/trouble.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        keys = { '<leader>d', '<leader>D' },
+        config = function() require 'alex.lang.lsp.trouble' end,
+    },
     {
         'mfussenegger/nvim-lint',
         event = { 'User NvimStartupDone' },
         config = function() require 'alex.lang.linter' end,
-    },
-    {
-        'fladson/vim-kitty',
-        event = { 'User NvimStartupDone' },
     },
     {
         'nvim-treesitter/nvim-treesitter',
@@ -135,12 +115,6 @@ return {
         config = function() require 'alex.lang.lsp.lspsaga' end,
     },
     {
-        'L3MON4D3/LuaSnip',
-        dependencies = { 'rafamadriz/friendly-snippets' },
-        build = 'make install_jsregexp',
-        event = { 'User NvimStartupDone' },
-    },
-    {
         'hrsh7th/nvim-cmp',
         dependencies = {
             'hrsh7th/cmp-omni',
@@ -155,9 +129,42 @@ return {
         config = function() require 'alex.lang.completion' end,
     },
     {
+        'L3MON4D3/LuaSnip',
+        dependencies = { 'rafamadriz/friendly-snippets' },
+        build = 'make install_jsregexp',
+        event = { 'User NvimStartupDone' },
+    },
+
+    -- Compatiiblity/Support/Language tools
+    {
+        'aserowy/tmux.nvim',
+        event = { 'User NvimStartupDone' },
+        config = function() require('tmux').setup() end,
+    },
+    {
+        'fladson/vim-kitty',
+        event = { 'User NvimStartupDone' },
+    },
+    {
         'lervag/vimtex',
         ft = { 'tex', 'latex' },
         config = function() require 'alex.lang.latex' end,
+    },
+
+    -- Editing/Modal
+    {
+        'preservim/nerdcommenter',
+        event = { 'User NvimStartupDone' },
+    },
+    {
+        'tpope/vim-commentary',
+        event = { 'User NvimStartupDone' },
+    },
+    {
+        'ggandor/leap.nvim',
+        dependencies = 'tpope/vim-repeat',
+        keys = { 's', 'S' },
+        config = function() require 'alex.ui.leap' end,
     },
 
     -- Themes

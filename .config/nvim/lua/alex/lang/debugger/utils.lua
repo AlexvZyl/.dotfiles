@@ -20,7 +20,7 @@ function M._get_cache_tab()
     local file_string = cache_file:read 'a'
     cache_file:close()
     if file_string == nil or file_string:len() == 0 then return {} end
-    return require('cjson').decode(file_string)
+    return vim.json.decode(file_string)
 end
 
 function M.check_exe_cache(path)
@@ -35,7 +35,7 @@ function M.update_exe_cache(path, exe_path)
     if cache_file == nil then return end
     json_tab[path] = exe_path
     -- Write to the file.
-    local json_string = require('cjson').encode(json_tab)
+    local json_string = vim.json.encode(json_tab)
     cache_file:write(json_string)
     cache_file:close()
 end

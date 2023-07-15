@@ -6,7 +6,7 @@ dap.adapters.cppdbg = {
     command = '/home/alex/.config/nvim/lua/alex/lang/debugger/tools/vscode-cpptools/extension/debugAdapters/bin/OpenDebugAD7',
 }
 
-local cache = require 'alex.lang.debugger.utils'
+local cache = require 'alex.lang.debugger.cache'
 dap.configurations.cpp = {
     {
         name = 'Executable',

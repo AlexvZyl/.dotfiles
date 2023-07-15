@@ -52,3 +52,7 @@ vim.opt.pumblend = 0
 vim.opt.pumheight = 10
 
 vim.opt.background = 'dark'
+
+-- Default new window to vertical split.
+-- Messes up debugger windows.
+-- vim.cmd ':autocmd WinNew * wincmd H'

@@ -43,7 +43,7 @@ config.shortcut = {
 }
 
 config.week_header = { enable = true }
-config.footer = { '', '󰛨  Dala what you must.' }
+config.footer = { '', '󰛨  Dala what you must' }
 config.packages = { enable = true }
 
 require('dashboard').setup {

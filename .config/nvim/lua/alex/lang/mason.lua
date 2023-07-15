@@ -10,6 +10,7 @@ local packages = {
     'rust-analyzer',
     'lua-language-server',
     'stylua',
+    'luacheck',
     'julia-lsp',
     'bash-language-server',
     'pyright',

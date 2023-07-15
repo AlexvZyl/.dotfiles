@@ -82,11 +82,9 @@ function M.init()
     keymap(n, '<Down>', '<Cmd>DapStepOver<CR>', default_settings)
     keymap(n, '<Left>', '<Cmd>DapStepOut<CR>', default_settings)
     keymap(n, '<Up>', '<Cmd>DapRestartFrame<CR>', default_settings)
-    -- keymap(n, '<F7>', '<Cmd>DapTerminate<CR>', default_settings)
 end
 
 function M.completion()
-    -- Completion.
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
     cmp.setup {

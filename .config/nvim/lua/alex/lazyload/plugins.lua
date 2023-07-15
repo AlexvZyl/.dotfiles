@@ -21,14 +21,14 @@ return {
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
-        event = { 'User NvimStartupDone' },
+        event = { 'BufWinEnter' },
         config = function() require 'alex.ui.lualine' end,
     },
     {
         'akinsho/bufferline.nvim',
         version = '*',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
-        event = { 'User NvimStartupDone' },
+        event = { 'BufWinEnter' },
         config = function() require 'alex.ui.bufferline' end,
     },
     {
@@ -39,7 +39,7 @@ return {
     },
     {
         'lukas-reineke/indent-blankline.nvim',
-        event = { 'User NvimStartupDone' },
+        event = { 'VeryLazy' },
         config = function() require 'alex.ui.indent-blankline' end,
     },
     {
@@ -157,10 +157,6 @@ return {
         event = { 'User NvimStartupDone' },
     },
     {
-        'tpope/vim-commentary',
-        event = { 'User NvimStartupDone' },
-    },
-    {
         'ggandor/leap.nvim',
         dependencies = 'tpope/vim-repeat',
         keys = { 's', 'S' },
@@ -186,4 +182,5 @@ return {
     { 'navarasu/onedark.nvim', lazy = true },
     { 'projekt0n/github-nvim-theme', lazy = true },
     { 'Shatur/neovim-ayu', lazy = true },
+    { 'oxfist/night-owl.nvim', lazy = true },
 }

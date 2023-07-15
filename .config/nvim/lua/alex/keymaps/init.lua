@@ -45,7 +45,7 @@ function M.init()
     keymap(n, 'S', function() require('leap').leap { backward = true } end)
     keymap(n, '<leader>v', function() require('alex.keymaps.utils').toggle_diffview() end)
 
-    -- Cokeline 
+    -- Cokeline
     keymap(n, 'Q', function() require('alex.keymaps.utils').delete_buffer() end, default_settings)
     keymap(n, 'H', '<Plug>(cokeline-focus-prev)', default_settings)
     keymap(n, 'L', '<Plug>(cokeline-focus-next)', default_settings)

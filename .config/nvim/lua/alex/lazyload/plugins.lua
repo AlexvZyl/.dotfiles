@@ -25,11 +25,11 @@ return {
         config = function() require 'alex.ui.lualine' end,
     },
     {
-        "willothy/nvim-cokeline",
+        'willothy/nvim-cokeline',
         dependencies = {
-            "nvim-lua/plenary.nvim",
+            'nvim-lua/plenary.nvim',
             --"kyazdani42/nvim-web-devicons",
-            "nvim-tree/nvim-web-devicons",
+            'nvim-tree/nvim-web-devicons',
         },
         config = function() require 'alex.ui.cokeline' end,
     },

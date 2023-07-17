@@ -153,7 +153,7 @@ return {
         config = function() require 'alex.lang.tools.latex' end,
     },
     {
-        "folke/neodev.nvim",
+        'folke/neodev.nvim',
         event = { 'VeryLazy' },
         config = function() require 'alex.lang.tools.neodev' end,
     },

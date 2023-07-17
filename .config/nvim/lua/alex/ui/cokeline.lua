@@ -1,6 +1,6 @@
 local P = require 'nordic.colors'
 
-local blend = require 'nordic.utils'.blend
+local blend = require('nordic.utils').blend
 local inactive_bg = blend(P.bg, P.black, 0.4)
 
 require('cokeline').setup {
@@ -25,12 +25,10 @@ require('cokeline').setup {
     components = {
         {
             text = function(buffer)
-                if (buffer.index == 1) and require('nvim-tree.api').tree.is_visible() then
-                    return ' '
-                end
+                if (buffer.index == 1) and require('nvim-tree.api').tree.is_visible() then return ' ' end
                 return ''
             end,
-            bg = P.black0
+            bg = P.black0,
         },
         {
             text = function(buffer) return (buffer.index ~= 1) and '▏' or '' end,

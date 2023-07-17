@@ -48,18 +48,18 @@ require('cokeline').setup {
         {
             text = function(buffer)
                 local error_count = length(vim.diagnostic.get(buffer.number, { severity = vim.diagnostic.severity.E }))
-                if error_count ~=0 then return '' end
+                if error_count ~= 0 then return '' end
                 local warn_count = length(vim.diagnostic.get(buffer.number, { severity = vim.diagnostic.severity.W }))
-                if warn_count ~=0 then return '' end
+                if warn_count ~= 0 then return '' end
                 return ''
             end,
             delete_buffer_on_left_click = true,
             fg = function(buffer)
                 local error_count = length(vim.diagnostic.get(buffer.number, { severity = vim.diagnostic.severity.E }))
-                if error_count ~=0 then return P.error end
+                if error_count ~= 0 then return P.error end
                 local warn_count = length(vim.diagnostic.get(buffer.number, { severity = vim.diagnostic.severity.W }))
-                if warn_count ~=0 then return P.warn end
-            end
+                if warn_count ~= 0 then return P.warn end
+            end,
         },
         {
             text = '  ',

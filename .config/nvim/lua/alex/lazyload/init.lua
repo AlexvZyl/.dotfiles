@@ -9,7 +9,7 @@ local opts = {
     defaults = { lazy = false },
     checker = {
         notify = false,
-        enabled = true
+        enabled = true,
     },
 }
 require('lazy').setup(plugins, opts)

@@ -1,6 +1,7 @@
 local P = require 'nordic.colors'
 
 local blend = require('nordic.utils').blend
+local length = require('alex.utils').length
 local inactive_bg = blend(P.bg, P.black, 0.4)
 
 require('cokeline').setup {
@@ -45,8 +46,20 @@ require('cokeline').setup {
             text = function(buffer) return buffer.filename .. ' ' end,
         },
         {
-            text = '',
+            text = function(buffer)
+                local error_count = length(vim.diagnostic.get(buffer.number, { severity = vim.diagnostic.severity.E }))
+                if error_count ~=0 then return '' end
+                local warn_count = length(vim.diagnostic.get(buffer.number, { severity = vim.diagnostic.severity.W }))
+                if warn_count ~=0 then return '' end
+                return ''
+            end,
             delete_buffer_on_left_click = true,
+            fg = function(buffer)
+                local error_count = length(vim.diagnostic.get(buffer.number, { severity = vim.diagnostic.severity.E }))
+                if error_count ~=0 then return P.error end
+                local warn_count = length(vim.diagnostic.get(buffer.number, { severity = vim.diagnostic.severity.W }))
+                if warn_count ~=0 then return P.warn end
+            end
         },
         {
             text = '  ',

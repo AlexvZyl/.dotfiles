@@ -1,4 +1,3 @@
-if not vim.g.neovide then
     local u = require 'alex.utils'
 
     require('noice').setup {
@@ -38,7 +37,6 @@ if not vim.g.neovide then
             lsp_doc_border = false, -- add a border to hover docs and signature help
         },
     }
-end
 
 -- Notifiactions
 local notify = require 'notify'

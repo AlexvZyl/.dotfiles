@@ -31,34 +31,33 @@ require('cokeline').setup {
             bg = P.black0,
         },
         {
-            text = function(buffer) return (buffer.index ~= 1) and '▎' or '' end,
+            text = function(buffer) return (buffer.index ~= 1) and '▎  ' or '   ' end,
             fg = P.black0,
         },
         {
-            text = '  ',
-        },
-        {
-            text = function(buffer) return buffer.devicon.icon .. ' ' end,
-            fg = function(buffer) return buffer.is_focused and buffer.devicon.color end,
-        },
-        {
-            text = function(buffer) return buffer.filename .. '  ' end,
-        },
-        {
             text = function(buffer)
-                if buffer.diagnostics.errors ~=0 then return '' end
-                if buffer.diagnostics.warnings ~= 0 then return '' end
-                if buffer.is_modified then return '󰝥' end
-                return ''
+                if buffer.diagnostics.errors ~=0 then return ' ' end
+                if buffer.diagnostics.warnings ~= 0 then return ' ' end
+                return buffer.devicon.icon
             end,
-            delete_buffer_on_left_click = true,
             fg = function(buffer)
                 if buffer.diagnostics.errors ~=0 then return P.error end
                 if buffer.diagnostics.warnings ~=0 then return P.warn end
-            end
+                return buffer.is_focused and buffer.devicon.color
+            end,
         },
         {
-            text = '   ',
+            text = function(buffer) return buffer.filename .. ' ' end,
         },
+        {
+            text = function(buffer)
+                if buffer.is_modified then return '●' end
+                return ''
+            end,
+            delete_buffer_on_left_click = true,
+        },
+        {
+            text = '   '
+        }
     },
 }

@@ -36,13 +36,13 @@ require('cokeline').setup {
         },
         {
             text = function(buffer)
-                if buffer.diagnostics.errors ~=0 then return ' ' end
+                if buffer.diagnostics.errors ~= 0 then return ' ' end
                 if buffer.diagnostics.warnings ~= 0 then return ' ' end
                 return buffer.devicon.icon
             end,
             fg = function(buffer)
-                if buffer.diagnostics.errors ~=0 then return P.error end
-                if buffer.diagnostics.warnings ~=0 then return P.warn end
+                if buffer.diagnostics.errors ~= 0 then return P.error end
+                if buffer.diagnostics.warnings ~= 0 then return P.warn end
                 return buffer.is_focused and buffer.devicon.color
             end,
         },
@@ -57,7 +57,7 @@ require('cokeline').setup {
             delete_buffer_on_left_click = true,
         },
         {
-            text = '   '
-        }
+            text = '   ',
+        },
     },
 }

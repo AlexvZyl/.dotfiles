@@ -57,7 +57,9 @@ M.horizontal_default = '─'
 M.diagnostic_signs = {
     error = ' ',
     warning = ' ',
+    warn = ' ',
     info = ' ',
+    information = ' ',
     hint = '󱤅 ',
     other = '󰠠 ',
 }

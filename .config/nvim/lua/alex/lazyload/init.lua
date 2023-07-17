@@ -7,6 +7,9 @@ local plugins = require 'alex.lazyload.plugins'
 local opts = {
     ui = { border = U.border_chars_outer_thin },
     defaults = { lazy = false },
-    checker = { enabled = true },
+    checker = {
+        notify = false,
+        enabled = true
+    },
 }
 require('lazy').setup(plugins, opts)

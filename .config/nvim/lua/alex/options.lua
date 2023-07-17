@@ -28,7 +28,7 @@ vim.g.VM_silent_exit = 1
 
 vim.opt.fillchars = {
     horiz = u.bottom_thin,
-    horizup = ' ',
+    horizup = u.bottom_thin,
     horizdown = ' ',
     vert = ' ',
     vertleft = ' ',

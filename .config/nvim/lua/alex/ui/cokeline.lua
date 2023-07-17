@@ -31,8 +31,11 @@ require('cokeline').setup {
             bg = P.black0,
         },
         {
-            text = function(buffer) return (buffer.index ~= 1) and '▎  ' or '   ' end,
+            text = function(buffer) return (buffer.index ~= 1) and '▎' or ' ' end,
             fg = P.black0,
+        },
+        {
+            text = '  ',
         },
         {
             text = function(buffer)
@@ -47,7 +50,10 @@ require('cokeline').setup {
             end,
         },
         {
-            text = function(buffer) return buffer.filename .. ' ' end,
+            text = ' ',
+        },
+        {
+            text = function(buffer) return buffer.filename .. '  ' end,
         },
         {
             text = function(buffer)

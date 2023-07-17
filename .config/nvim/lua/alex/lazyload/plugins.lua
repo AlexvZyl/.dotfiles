@@ -73,7 +73,6 @@ return {
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function() require 'alex.ui.tree' end,
     },
-
     -- Language/Tools/LSP/Comp
     {
         'williamboman/mason.nvim',

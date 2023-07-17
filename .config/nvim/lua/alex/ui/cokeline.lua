@@ -46,16 +46,16 @@ require('cokeline').setup {
         },
         {
             text = function(buffer)
-                if buffer.diagnostics.errors ~=0 then return '' end
+                if buffer.diagnostics.errors ~= 0 then return '' end
                 if buffer.diagnostics.warnings ~= 0 then return '' end
                 if buffer.is_modified then return '󰝥' end
                 return ''
             end,
             delete_buffer_on_left_click = true,
             fg = function(buffer)
-                if buffer.diagnostics.errors ~=0 then return P.error end
-                if buffer.diagnostics.warnings ~=0 then return P.warn end
-            end
+                if buffer.diagnostics.errors ~= 0 then return P.error end
+                if buffer.diagnostics.warnings ~= 0 then return P.warn end
+            end,
         },
         {
             text = '   ',

@@ -1,2 +1,2 @@
 vim.cmd "setlocal winbar=\\ REPL"
-vim.cmd "setlocal statuscolumn=\\ "
+vim.opt.statuscolumn = "%= %{v:virtnum < 1 ? (v:lnum) : ''}%=%s "

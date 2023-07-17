@@ -28,7 +28,6 @@ return {
         'willothy/nvim-cokeline',
         dependencies = {
             'nvim-lua/plenary.nvim',
-            --"kyazdani42/nvim-web-devicons",
             'nvim-tree/nvim-web-devicons',
         },
         config = function() require 'alex.ui.cokeline' end,
@@ -109,6 +108,13 @@ return {
     {
         'neovim/nvim-lspconfig',
         event = { 'User NvimStartupDone' },
+        dependencies = {
+            {
+                "folke/neodev.nvim", -- For Neovim lua
+                event = { 'VeryLazy' },
+                config = function() require 'alex.lang.tools.neodev' end,
+            },
+        },
         config = function() require 'alex.lang.lsp' end,
     },
     {
@@ -125,19 +131,17 @@ return {
             'hrsh7th/cmp-path',
             'hrsh7th/cmp-cmdline',
             'saadparwaiz1/cmp_luasnip',
-            'L3MON4D3/LuaSnip',
+            {
+                'L3MON4D3/LuaSnip',
+                dependencies = { 'rafamadriz/friendly-snippets' },
+                build = 'make install_jsregexp',
+            },
         },
         event = { 'User NvimStartupDone' },
         config = function() require 'alex.lang.completion' end,
     },
-    {
-        'L3MON4D3/LuaSnip',
-        dependencies = { 'rafamadriz/friendly-snippets' },
-        build = 'make install_jsregexp',
-        event = { 'User NvimStartupDone' },
-    },
 
-    -- Compatiiblity/Support/Language tools
+    -- Compatibility/Support/Language tools
     {
         'aserowy/tmux.nvim',
         event = { 'User NvimStartupDone' },
@@ -151,11 +155,6 @@ return {
         'lervag/vimtex',
         ft = { 'tex', 'latex' },
         config = function() require 'alex.lang.tools.latex' end,
-    },
-    {
-        "folke/neodev.nvim",
-        event = { 'VeryLazy' },
-        config = function() require 'alex.lang.tools.neodev' end,
     },
 
     -- Editing/Modal

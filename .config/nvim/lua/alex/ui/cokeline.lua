@@ -1,14 +1,13 @@
 local P = require 'nordic.colors'
 
 local blend = require('nordic.utils').blend
-local length = require('alex.utils').length
 local inactive_bg = blend(P.bg, P.black, 0.4)
 
 require('cokeline').setup {
     default_hl = {
         fg = function(buffer) return buffer.is_focused and P.fg or P.gray4 end,
         bg = function(buffer) return buffer.is_focused and P.bg or inactive_bg end,
-        --style = function(buffer) return buffer.is_focused and 'underline' end,
+        --style = function(buffer) return not buffer.is_focused and 'underline' end,
         --sp = P.black0,
     },
     sidebar = {
@@ -32,37 +31,34 @@ require('cokeline').setup {
             bg = P.black0,
         },
         {
-            text = function(buffer) return (buffer.index ~= 1) and '▏' or '' end,
+            text = function(buffer) return (buffer.index ~= 1) and '▎' or '' end,
             fg = P.black0,
         },
         {
             text = '  ',
         },
         {
-            text = function(buffer) return buffer.devicon.icon end,
+            text = function(buffer) return buffer.devicon.icon .. ' ' end,
             fg = function(buffer) return buffer.is_focused and buffer.devicon.color end,
         },
         {
-            text = function(buffer) return buffer.filename .. ' ' end,
+            text = function(buffer) return buffer.filename .. '  ' end,
         },
         {
             text = function(buffer)
-                local error_count = length(vim.diagnostic.get(buffer.number, { severity = vim.diagnostic.severity.E }))
-                if error_count ~=0 then return '' end
-                local warn_count = length(vim.diagnostic.get(buffer.number, { severity = vim.diagnostic.severity.W }))
-                if warn_count ~=0 then return '' end
+                if buffer.diagnostics.errors ~=0 then return '' end
+                if buffer.diagnostics.warnings ~= 0 then return '' end
+                if buffer.is_modified then return '󰝥' end
                 return ''
             end,
             delete_buffer_on_left_click = true,
             fg = function(buffer)
-                local error_count = length(vim.diagnostic.get(buffer.number, { severity = vim.diagnostic.severity.E }))
-                if error_count ~=0 then return P.error end
-                local warn_count = length(vim.diagnostic.get(buffer.number, { severity = vim.diagnostic.severity.W }))
-                if warn_count ~=0 then return P.warn end
+                if buffer.diagnostics.errors ~=0 then return P.error end
+                if buffer.diagnostics.warnings ~=0 then return P.warn end
             end
         },
         {
-            text = '  ',
+            text = '   ',
         },
     },
 }

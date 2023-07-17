@@ -110,7 +110,7 @@ return {
         event = { 'User NvimStartupDone' },
         dependencies = {
             {
-                "folke/neodev.nvim", -- For Neovim lua
+                'folke/neodev.nvim', -- For Neovim lua
                 event = { 'VeryLazy' },
                 config = function() require 'alex.lang.tools.neodev' end,
             },

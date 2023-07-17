@@ -150,7 +150,12 @@ return {
     {
         'lervag/vimtex',
         ft = { 'tex', 'latex' },
-        config = function() require 'alex.lang.latex' end,
+        config = function() require 'alex.lang.tools.latex' end,
+    },
+    {
+        "folke/neodev.nvim",
+        event = { 'VeryLazy' },
+        config = function() require 'alex.lang.tools.neodev' end,
     },
 
     -- Editing/Modal

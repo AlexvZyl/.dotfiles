@@ -40,7 +40,7 @@ function M.init()
     keymap(ex_t, '<C-s>', function() require('alex.keymaps.utils').save_file() end, default_settings)
     keymap(v, '<Esc>', 'v', default_settings)
     keymap(v, 'i', 'I', default_settings)
-    vim.cmd 'map <C-c> <plug>NERDCommenterToggle'
+    keymap(n_v, '<C-c>', '<plug>NERDCommenterToggle', default_settings)
     keymap(n, 's', function() require('leap').leap {} end)
     keymap(n, 'S', function() require('leap').leap { backward = true } end)
     keymap(n, '<leader>v', function() require('alex.keymaps.utils').toggle_diffview() end)

@@ -10,7 +10,7 @@ ts.setup {
             prompt_position = 'top',
         },
         borderchars = {
-            prompt = u.border_chars_outer_thin_telescope,
+            prompt = { '▔', '▕', ' ', '▏', '🭽', '🭾', '▕', '▏' },
             results = u.border_chars_outer_thin_telescope,
             preview = u.border_chars_outer_thin_telescope,
         },

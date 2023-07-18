@@ -31,11 +31,8 @@ require('cokeline').setup {
             bg = P.black0,
         },
         {
-            text = function(buffer) return (buffer.index ~= 1) and '▎' or ' ' end,
+            text = function(buffer) return (buffer.index ~= 1) and '▎  ' or '   ' end,
             fg = P.black0,
-        },
-        {
-            text = '  ',
         },
         {
             text = function(buffer)
@@ -57,6 +54,7 @@ require('cokeline').setup {
         },
         {
             text = function(buffer)
+                if buffer.is_readonly then return '' end
                 if buffer.is_modified then return '●' end
                 return ''
             end,

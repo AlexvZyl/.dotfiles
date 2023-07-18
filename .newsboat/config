@@ -1,29 +1,23 @@
 # Settings.
-
 auto-reload yes
 notify-program "notify-send"
 # browser "firefox"
 browser "tmux new-window lynx %u"
 
 # Key bindings.
-
 show-keymap-hint no
-
 unbind-key h
 unbind-key j
 unbind-key k
 unbind-key l
-
 bind-key h quit
 bind-key j down
 bind-key k up
 bind-key l open
-
 bind-key ^U halfpageup
 bind-key ^D halfpagedown
 
 # Colors.
-
 color info yellow black underline
 color listnormal white default
 color listfocus white black 
@@ -31,7 +25,6 @@ color listfocus_unread green black
 color listnormal_unread green default 
 
 # UI.
-
 datetime-format "%d-%m-%Y"
 feedlist-title-format "       󰋻 %2u     Feeds"
 feedlist-format "  %10u    %t"

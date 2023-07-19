@@ -27,4 +27,4 @@ ts.setup {
 }
 
 ts.load_extension 'notify'
-require 'alex.keymaps'.telescope()
+require('alex.keymaps').telescope()

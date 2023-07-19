@@ -44,7 +44,6 @@ function M.init()
     -- Misc.
     keymap(n, 'gl', '<Cmd>VimtexView<CR>', default_settings)
     keymap(n, '<Esc>', '<Cmd>noh<CR>', allow_remap)
-
 end
 
 function M.lspsaga()
@@ -59,7 +58,6 @@ function M.lspsaga()
     keymap(n, ']e', function() require('alex.keymaps.utils').next_diag() end, default_settings)
     keymap(n, '[E', function() require('alex.keymaps.utils').prev_error() end, default_settings)
     keymap(n, ']E', function() require('alex.keymaps.utils').next_error() end, default_settings)
-
 end
 
 function M.trouble()

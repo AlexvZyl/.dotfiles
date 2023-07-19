@@ -47,4 +47,4 @@ require('lspsaga').setup {
     hover = hover,
 }
 
-require 'alex.keymaps' .lspsaga()
+require('alex.keymaps').lspsaga()

@@ -12,4 +12,4 @@ local cfg = {
     --toggle_key_flip_floatwin_setting = true,
 }
 
-require 'lsp_signature' .setup(cfg)
+require('lsp_signature').setup(cfg)

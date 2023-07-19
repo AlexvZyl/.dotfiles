@@ -8,4 +8,4 @@ require('nordic').load {
 }
 
 local C = require 'nordic.colors'
-vim.cmd("highlight LspSignatureActiveParameter guibg=" .. C.bg_float .. " guisp=" .. C.white0)
+vim.cmd('highlight LspSignatureActiveParameter guibg=' .. C.bg_float .. ' guisp=' .. C.white0)

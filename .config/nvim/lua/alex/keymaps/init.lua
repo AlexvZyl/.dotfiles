@@ -12,18 +12,29 @@ local allow_remap = { noremap = false, silent = true }
 local M = {}
 
 function M.init()
-    -- Tree.
+    -- Telescope
+    keymap(n_v, '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
+    keymap(n_v, 'ff', '<Cmd>Telescope find_files<CR>', default_settings)
+    keymap(n_v, 'fF', '<Cmd>Telescope find_files cwd=~<CR>', default_settings)
+    keymap(n_v, 'fs', '<Cmd>Telescope live_grep<CR>', default_settings)
+    keymap(n_v, 'fS', '<Cmd>Telescope live_grep cwd=~<CR>', default_settings)
+    keymap(n_v, '<C-f>', '<Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>', default_settings)
+    keymap(ex_t, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
+    keymap(n, '<leader>b', '<Cmd>Telescope buffers<CR>', default_settings)
+    keymap(n, 'gr', '<Cmd>Telescope lsp_references<CR>', default_settings)
+
+    -- Tree
     keymap(n_v, 'gc', function() require('alex.keymaps.utils').cwd_current_buffer() end, default_settings)
     keymap(n_v, '<Leader>f', function() require('alex.keymaps.utils').toggle_tree() end, default_settings)
 
-    -- Windows.
+    -- Windows
     keymap(ex_t, '<C-w><C-c>', '<Cmd>wincmd c<CR>', default_settings)
     keymap(ex_t, '<C-h>', '<Cmd>wincmd h<CR>', default_settings)
     keymap(ex_t, '<C-j>', '<Cmd>wincmd j<CR>', default_settings)
     keymap(ex_t, '<C-k>', '<Cmd>wincmd k<CR>', default_settings)
     keymap(ex_t, '<C-l>', '<Cmd>wincmd l<CR>', default_settings)
 
-    -- Editing.
+    -- Editing
     keymap(ex_t, '<C-z>', '<Cmd>undo<CR>', default_settings)
     keymap(ex_t, '<C-y>', '<Cmd>redo<CR>', default_settings)
     keymap(i, '<Esc>', '<Esc>`^', default_settings)
@@ -41,7 +52,7 @@ function M.init()
     keymap(n, 'L', '<Plug>(cokeline-focus-next)', default_settings)
     keymap(n, 'gb', '<Plug>(cokeline-focus-pick)', default_settings)
 
-    -- Misc.
+    -- Misc
     keymap(n, 'gl', '<Cmd>VimtexView<CR>', default_settings)
     keymap(n, '<Esc>', '<Cmd>noh<CR>', allow_remap)
 
@@ -65,18 +76,6 @@ end
 function M.trouble()
     keymap(n, '<leader>d', '<Cmd>TroubleToggle document_diagnostics<CR>', default_settings)
     keymap(n, '<leader>D', '<Cmd>TroubleToggle workspace_diagnostics<CR>', default_settings)
-end
-
-function M.telescope()
-    keymap(n_v, '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
-    keymap(n_v, 'ff', '<Cmd>Telescope find_files<CR>', default_settings)
-    keymap(n_v, 'fF', '<Cmd>Telescope find_files cwd=~<CR>', default_settings)
-    keymap(n_v, 'fs', '<Cmd>Telescope live_grep<CR>', default_settings)
-    keymap(n_v, 'fS', '<Cmd>Telescope live_grep cwd=~<CR>', default_settings)
-    keymap(n_v, '<C-f>', '<Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>', default_settings)
-    keymap(ex_t, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
-    keymap(n, '<leader>b', '<Cmd>Telescope buffers<CR>', default_settings)
-    keymap(n, 'gr', '<Cmd>Telescope lsp_references<CR>', default_settings)
 end
 
 function M.debugger()

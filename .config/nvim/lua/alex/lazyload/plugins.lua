@@ -139,6 +139,11 @@ return {
         event = { 'User NvimStartupDone' },
         config = function() require 'alex.lang.completion' end,
     },
+    {
+        'ray-x/lsp_signature.nvim',
+        event = { 'User NvimStartupDone' },
+        config = function() require 'alex.lang.lsp.signature' end,
+    },
 
     -- Compatibility/Support/Language tools
     {

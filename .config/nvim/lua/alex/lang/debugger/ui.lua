@@ -95,3 +95,5 @@ vim.schedule(function()
         },
     }
 end)
+
+require 'alex.keymaps' .debugger()

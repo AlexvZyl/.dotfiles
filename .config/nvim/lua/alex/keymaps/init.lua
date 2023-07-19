@@ -16,16 +16,6 @@ function M.init()
     keymap(n_v, 'gc', function() require('alex.keymaps.utils').cwd_current_buffer() end, default_settings)
     keymap(n_v, '<Leader>f', function() require('alex.keymaps.utils').toggle_tree() end, default_settings)
 
-    -- Telescope.
-    keymap(n_v, '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
-    keymap(n_v, 'ff', '<Cmd>Telescope find_files<CR>', default_settings)
-    keymap(n_v, 'fF', '<Cmd>Telescope find_files cwd=~<CR>', default_settings)
-    keymap(n_v, 'fs', '<Cmd>Telescope live_grep<CR>', default_settings)
-    keymap(n_v, 'fS', '<Cmd>Telescope live_grep cwd=~<CR>', default_settings)
-    keymap(n_v, '<C-f>', '<Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>', default_settings)
-    keymap(ex_t, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
-    keymap(n, '<leader>b', '<Cmd>Telescope buffers<CR>', default_settings)
-
     -- Windows.
     keymap(ex_t, '<C-w><C-c>', '<Cmd>wincmd c<CR>', default_settings)
     keymap(ex_t, '<C-h>', '<Cmd>wincmd h<CR>', default_settings)
@@ -51,10 +41,13 @@ function M.init()
     keymap(n, 'L', '<Plug>(cokeline-focus-next)', default_settings)
     keymap(n, 'gb', '<Plug>(cokeline-focus-pick)', default_settings)
 
-    -- LSP.
-    keymap(n, '<leader>d', '<Cmd>TroubleToggle document_diagnostics<CR>', default_settings)
-    keymap(n, '<leader>D', '<Cmd>TroubleToggle workspace_diagnostics<CR>', default_settings)
-    keymap(n, 'gr', '<Cmd>Telescope lsp_references<CR>', default_settings)
+    -- Misc.
+    keymap(n, 'gl', '<Cmd>VimtexView<CR>', default_settings)
+    keymap(n, '<Esc>', '<Cmd>noh<CR>', allow_remap)
+
+end
+
+function M.lspsaga()
     keymap(n_v, 'ca', '<Cmd>Lspsaga code_action<CR>', default_settings)
     keymap(n_v, 'RR', '<Cmd>Lspsaga rename<CR>', default_settings)
     keymap(n, 'gd', '<Cmd>Lspsaga peek_definition<CR>', default_settings)
@@ -67,11 +60,26 @@ function M.init()
     keymap(n, '[E', function() require('alex.keymaps.utils').prev_error() end, default_settings)
     keymap(n, ']E', function() require('alex.keymaps.utils').next_error() end, default_settings)
 
-    -- Misc.
-    keymap(n, 'gl', '<Cmd>VimtexView<CR>', default_settings)
-    keymap(n, '<Esc>', '<Cmd>noh<CR>', allow_remap)
+end
 
-    -- Debugger.
+function M.trouble()
+    keymap(n, '<leader>d', '<Cmd>TroubleToggle document_diagnostics<CR>', default_settings)
+    keymap(n, '<leader>D', '<Cmd>TroubleToggle workspace_diagnostics<CR>', default_settings)
+end
+
+function M.telescope()
+    keymap(n_v, '<C-t>', '<Cmd>Telescope oldfiles<CR>', default_settings)
+    keymap(n_v, 'ff', '<Cmd>Telescope find_files<CR>', default_settings)
+    keymap(n_v, 'fF', '<Cmd>Telescope find_files cwd=~<CR>', default_settings)
+    keymap(n_v, 'fs', '<Cmd>Telescope live_grep<CR>', default_settings)
+    keymap(n_v, 'fS', '<Cmd>Telescope live_grep cwd=~<CR>', default_settings)
+    keymap(n_v, '<C-f>', '<Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>', default_settings)
+    keymap(ex_t, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
+    keymap(n, '<leader>b', '<Cmd>Telescope buffers<CR>', default_settings)
+    keymap(n, 'gr', '<Cmd>Telescope lsp_references<CR>', default_settings)
+end
+
+function M.debugger()
     keymap(n, '<C-b>', '<Cmd>DapToggleBreakpoint<CR>', default_settings)
     keymap(n, '<leader>s', function() require('alex.keymaps.utils').dap_float_scope() end, default_settings)
     keymap(n, '<F1>', function() require('alex.keymaps.utils').dap_toggle_ui() end, default_settings)

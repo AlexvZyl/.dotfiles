@@ -1,7 +1,6 @@
 local ts = require 'telescope'
-local u = require 'alex.utils'
+local U = require 'alex.utils'
 
--- Setup.
 ts.setup {
     defaults = {
         sort_mru = true,
@@ -11,8 +10,8 @@ ts.setup {
         },
         borderchars = {
             prompt = { '▔', '▕', ' ', '▏', '🭽', '🭾', '▕', '▏' },
-            results = u.border_chars_outer_thin_telescope,
-            preview = u.border_chars_outer_thin_telescope,
+            results = U.border_chars_outer_thin_telescope,
+            preview = U.border_chars_outer_thin_telescope,
         },
         border = true,
         multi_icon = '',
@@ -27,5 +26,5 @@ ts.setup {
     },
 }
 
--- Extensions.
 ts.load_extension 'notify'
+require 'alex.keymaps'.telescope()

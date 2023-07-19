@@ -46,3 +46,5 @@ require('lspsaga').setup {
     diagnostic = diagnostic,
     hover = hover,
 }
+
+require 'alex.keymaps' .lspsaga()

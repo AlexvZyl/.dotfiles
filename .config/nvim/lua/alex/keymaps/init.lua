@@ -21,7 +21,6 @@ function M.init()
     keymap(n_v, '<C-f>', '<Cmd>Telescope current_buffer_fuzzy_find previewer=false<CR>', default_settings)
     keymap(ex_t, '<F12>', '<Cmd>Cheatsheet<CR>', default_settings)
     keymap(n, '<leader>b', '<Cmd>Telescope buffers<CR>', default_settings)
-    keymap(n, 'gr', '<Cmd>Telescope lsp_references<CR>', default_settings)
 
     -- Tree
     keymap(n_v, 'gc', function() require('alex.keymaps.utils').cwd_current_buffer() end, default_settings)
@@ -69,6 +68,7 @@ function M.lspsaga()
     keymap(n, ']e', function() require('alex.keymaps.utils').next_diag() end, default_settings)
     keymap(n, '[E', function() require('alex.keymaps.utils').prev_error() end, default_settings)
     keymap(n, ']E', function() require('alex.keymaps.utils').next_error() end, default_settings)
+    keymap(n, 'gr', '<Cmd>Telescope lsp_references<CR>', default_settings)
 end
 
 function M.trouble()

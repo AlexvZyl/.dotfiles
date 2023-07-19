@@ -5,9 +5,7 @@ ts.setup {
     defaults = {
         sort_mru = true,
         sorting_strategy = 'ascending',
-        layout_config = {
-            prompt_position = 'top',
-        },
+        layout_config = { prompt_position = 'top' },
         borderchars = {
             prompt = { '▔', '▕', ' ', '▏', '🭽', '🭾', '▕', '▏' },
             results = U.border_chars_outer_thin_telescope,

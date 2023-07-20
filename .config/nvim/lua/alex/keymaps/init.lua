@@ -1,9 +1,10 @@
 -- I want to keep all of the key bindings in one file so that it is easy to see
 -- what is being used and ensure nothing being overwritten by accident.
 
-local n, i, v = 'n', 'i', 'v'
+local n, i, v, t = 'n', 'i', 'v', 't'
 local ex_t = { n, i, v }
 local n_v = { n, v }
+local all = { n, i, v, t }
 
 local keymap = vim.keymap.set
 local default_settings = { noremap = true, silent = true }
@@ -44,6 +45,10 @@ function M.init()
     keymap(n, 's', function() require('leap').leap {} end)
     keymap(n, 'S', function() require('leap').leap { backward = true } end)
     keymap(n, '<leader>v', function() require('alex.keymaps.utils').toggle_diffview() end)
+    keymap(n, '<C-a>', 'ggvG', default_settings)
+    keymap(all, 'dd', '"_dd', default_settings)
+    keymap(all, 'dw', '"_dw', default_settings)
+    keymap(all, 'd', '"_d', default_settings)
 
     -- Cokeline
     keymap(n, 'Q', function() require('alex.keymaps.utils').delete_buffer() end, default_settings)

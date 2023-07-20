@@ -1,5 +1,7 @@
 local u = require 'alex.utils'
 
+vim.cmd 'filetype plugin indent on'
+
 -- Important to place this before loading plugins.
 vim.g.mapleader = ' '
 

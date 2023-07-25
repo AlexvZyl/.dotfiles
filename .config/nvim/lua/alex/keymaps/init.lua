@@ -80,7 +80,6 @@ function M.lspsaga()
     keymap(n, 'gr', '<Cmd>Telescope lsp_references<CR>', default_settings)
 end
 
-
 function M.debugger()
     keymap(n, '<C-b>', '<Cmd>DapToggleBreakpoint<CR>', default_settings)
     keymap(n, '<leader>s', function() require('alex.keymaps.utils').dap_float_scope() end, default_settings)

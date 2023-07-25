@@ -10,5 +10,3 @@ require('trouble').setup {
 }
 
 vim.cmd [[ autocmd BufEnter * TroubleRefresh ]]
-
-require('alex.keymaps').trouble()

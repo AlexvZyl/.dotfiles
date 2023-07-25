@@ -27,6 +27,7 @@ lsp_config.lua_ls.setup { default }
 lsp_config.julials.setup { default }
 lsp_config.bashls.setup { default }
 lsp_config.pyright.setup { default }
+--lsp_config.pylsp.setup { default }
 lsp_config.rust_analyzer.setup { default }
 lsp_config.texlab.setup { default }
 lsp_config.cmake.setup { default }

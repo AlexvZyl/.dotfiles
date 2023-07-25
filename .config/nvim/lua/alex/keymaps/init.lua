@@ -59,6 +59,10 @@ function M.init()
     -- Misc
     keymap(n, 'gl', '<Cmd>VimtexView<CR>', default_settings)
     keymap(n, '<Esc>', '<Cmd>noh<CR>', allow_remap)
+
+    -- Trouble
+    keymap(n, '<leader>d', '<Cmd>TroubleToggle document_diagnostics<CR>', default_settings)
+    keymap(n, '<leader>D', '<Cmd>TroubleToggle workspace_diagnostics<CR>', default_settings)
 end
 
 function M.lspsaga()
@@ -76,10 +80,6 @@ function M.lspsaga()
     keymap(n, 'gr', '<Cmd>Telescope lsp_references<CR>', default_settings)
 end
 
-function M.trouble()
-    keymap(n, '<leader>d', '<Cmd>TroubleToggle document_diagnostics<CR>', default_settings)
-    keymap(n, '<leader>D', '<Cmd>TroubleToggle workspace_diagnostics<CR>', default_settings)
-end
 
 function M.debugger()
     keymap(n, '<C-b>', '<Cmd>DapToggleBreakpoint<CR>', default_settings)

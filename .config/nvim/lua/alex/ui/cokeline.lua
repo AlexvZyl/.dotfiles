@@ -25,7 +25,7 @@ require('cokeline').setup {
     components = {
         {
             text = function(buffer)
-                if buffer.is_first and require('nvim-tree.api').tree.is_visible() then return ' ' end
+                if buffer.index == 1 and require('nvim-tree.api').tree.is_visible() then return ' ' end
                 return ''
             end,
             bg = P.black0,

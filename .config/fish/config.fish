@@ -26,5 +26,3 @@ set -gx PF_COL3 "1"
 
 # Environment
 source ~/.profile
-
-echo "" && pfetch

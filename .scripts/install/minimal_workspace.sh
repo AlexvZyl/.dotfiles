@@ -3,15 +3,13 @@
 # Install dependencies.
 if command -v pacman &>/dev/null; then
     sudo pacman -Syyu 
-    sudo pacman -S git neovim fish tmux ttf-jetbrains-mono-nerd python kitty exa bat
+    sudo pacman -S git neovim fish tmux trash
 elif command -v apt &>/dev/null; then
     sudo apt update
     sudo apt upgrade
-    sudo apt install git neovim fish tmux python bat
-elif command -v brew &>/dev/null; then
-    brew install neovim tmux kitty fish git exa bat python
+    sudo apt install git neovim fish tmux trash-cli
 else
-    echo "This script only supports Debian, Arch and MacOS systems."
+    echo "This script only supports Debian and Arch systems."
     exit 0
 fi
 

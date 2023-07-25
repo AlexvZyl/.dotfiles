@@ -7,9 +7,12 @@ if command -v pacman &>/dev/null; then
 elif command -v apt &>/dev/null; then
     sudo apt update
     sudo apt upgrade
-    sudo apt install git neovim fish tmux trash-cli
+    sudo apt install git neovim fish tmux
+elif command brew -v &>/dev/null; then
+    brwe update
+    brew install neovim fish git tmux
 else
-    echo "This script only supports Debian and Arch systems."
+    echo "This script only supports Debian, Arch and MacOS."
     exit 0
 fi
 

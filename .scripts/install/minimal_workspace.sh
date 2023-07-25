@@ -71,4 +71,3 @@ git --work-tree=$WORK_TREE --git-dir=$GIT_DIR submodule update --recursive --rem
 
 # Setup fish.
 "$WORK_TREE/.scripts/install/shell.sh"
-fish

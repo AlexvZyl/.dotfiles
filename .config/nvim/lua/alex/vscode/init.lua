@@ -1,1 +1,1 @@
-require 'alex.keymaps'.vscode()
+require('alex.keymaps').vscode()

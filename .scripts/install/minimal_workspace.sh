@@ -7,9 +7,12 @@ if command -v pacman &>/dev/null; then
 elif command -v apt &>/dev/null; then
     sudo apt update
     sudo apt upgrade
-    sudo apt install git neovim fish tmux trash-cli
+    sudo apt install git neovim fish tmux
+elif command brew -v &>/dev/null; then
+    brwe update
+    brew install neovim fish git tmux
 else
-    echo "This script only supports Debian and Arch systems."
+    echo "This script only supports Debian, Arch and MacOS."
     exit 0
 fi
 
@@ -60,6 +63,7 @@ echo ".config/tmux/*" >> "$SPARSE_FILE"
 echo ".tmux/*" >> "$SPARSE_FILE"
 echo ".scripts/" >> "$SPARSE_FILE"
 echo ".profile" >> "$SPARSE_FILE"
+echo ".gitignore" >> "$SPARSE_FILE"
 
 # Clone.
 git --work-tree=$WORK_TREE --git-dir=$GIT_DIR checkout main
@@ -68,4 +72,3 @@ git --work-tree=$WORK_TREE --git-dir=$GIT_DIR submodule update --recursive --rem
 
 # Setup fish.
 "$WORK_TREE/.scripts/install/shell.sh"
-fish

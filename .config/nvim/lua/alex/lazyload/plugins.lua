@@ -114,8 +114,8 @@ return {
                 config = function() require 'alex.lang.tools.neodev' end,
             },
             {
-	            "linux-cultist/venv-selector.nvim",
-	            dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim" },
+                'linux-cultist/venv-selector.nvim',
+                dependencies = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim' },
                 config = true,
                 event = { 'User NvimStartupDone' },
             },

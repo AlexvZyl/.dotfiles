@@ -27,14 +27,33 @@ function M.init()
     keymap(n_v, 'gc', function() require('alex.keymaps.utils').cwd_current_buffer() end, default_settings)
     keymap(n_v, '<Leader>f', function() require('alex.keymaps.utils').toggle_tree() end, default_settings)
 
-    -- Windows
+    -- Cokeline
+    keymap(n, 'Q', function() require('alex.keymaps.utils').delete_buffer() end, default_settings)
+    keymap(n, 'H', '<Plug>(cokeline-focus-prev)', default_settings)
+    keymap(n, 'L', '<Plug>(cokeline-focus-next)', default_settings)
+    keymap(n, 'gb', '<Plug>(cokeline-focus-pick)', default_settings)
+
+    -- Misc
+    keymap(n, 'gl', '<Cmd>VimtexView<CR>', default_settings)
+    keymap(n, '<Esc>', '<Cmd>noh<CR>', allow_remap)
+
+    -- Trouble
+    keymap(n, '<leader>d', '<Cmd>TroubleToggle document_diagnostics<CR>', default_settings)
+    keymap(n, '<leader>D', '<Cmd>TroubleToggle workspace_diagnostics<CR>', default_settings)
+
+    M.editing()
+    M.windows()
+end
+
+function M.windows()
     keymap(ex_t, '<C-w><C-c>', '<Cmd>wincmd c<CR>', default_settings)
     keymap(ex_t, '<C-h>', '<Cmd>wincmd h<CR>', default_settings)
     keymap(ex_t, '<C-j>', '<Cmd>wincmd j<CR>', default_settings)
     keymap(ex_t, '<C-k>', '<Cmd>wincmd k<CR>', default_settings)
     keymap(ex_t, '<C-l>', '<Cmd>wincmd l<CR>', default_settings)
+end
 
-    -- Editing
+function M.editing()
     keymap(ex_t, '<C-z>', '<Cmd>undo<CR>', default_settings)
     keymap(ex_t, '<C-y>', '<Cmd>redo<CR>', default_settings)
     keymap(i, '<Esc>', '<Esc>`^', default_settings)
@@ -49,20 +68,11 @@ function M.init()
     keymap(ex_i, 'dd', '"_dd', default_settings)
     keymap(ex_i, 'dw', '"_dw', default_settings)
     keymap(ex_i, 'd', '"_d', default_settings)
+end
 
-    -- Cokeline
-    keymap(n, 'Q', function() require('alex.keymaps.utils').delete_buffer() end, default_settings)
-    keymap(n, 'H', '<Plug>(cokeline-focus-prev)', default_settings)
-    keymap(n, 'L', '<Plug>(cokeline-focus-next)', default_settings)
-    keymap(n, 'gb', '<Plug>(cokeline-focus-pick)', default_settings)
-
-    -- Misc
-    keymap(n, 'gl', '<Cmd>VimtexView<CR>', default_settings)
-    keymap(n, '<Esc>', '<Cmd>noh<CR>', allow_remap)
-
-    -- Trouble
-    keymap(n, '<leader>d', '<Cmd>TroubleToggle document_diagnostics<CR>', default_settings)
-    keymap(n, '<leader>D', '<Cmd>TroubleToggle workspace_diagnostics<CR>', default_settings)
+function M.vscode()
+    M.editing()
+    M.windows()
 end
 
 function M.lspsaga()

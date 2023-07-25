@@ -1,0 +1,13 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "space+b",
+        "command": "workbench.action.toggleSidebarVisibility"
+        "when": "editorTextFocus && neovim.mode != insert",
+    },
+    {
+        "key": "space+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+        "when": "neovim.mode != insert",
+    },
+]

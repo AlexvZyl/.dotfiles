@@ -63,6 +63,7 @@ echo ".config/tmux/*" >> "$SPARSE_FILE"
 echo ".tmux/*" >> "$SPARSE_FILE"
 echo ".scripts/" >> "$SPARSE_FILE"
 echo ".profile" >> "$SPARSE_FILE"
+echo ".gitignore" >> "$SPARSE_FILE"
 
 # Clone.
 git --work-tree=$WORK_TREE --git-dir=$GIT_DIR checkout main

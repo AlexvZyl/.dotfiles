@@ -1,7 +1,7 @@
 #!/bin/bash
 
 fish <<'END_FISH'
-    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+    curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
     fisher install IlanCosman/tide@v5t
     echo "3\
           2\

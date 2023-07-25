@@ -7,7 +7,7 @@ if command -v pacman &>/dev/null; then
 elif command -v apt &>/dev/null; then
     sudo apt update
     sudo apt upgrade
-    sudo apt install git neovim fish tmux python kitty exa bat
+    sudo apt install git neovim fish tmux python bat
 elif command -v brew &>/dev/null; then
     brew install neovim tmux kitty fish git exa bat python
 else

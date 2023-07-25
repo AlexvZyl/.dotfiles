@@ -109,9 +109,15 @@ return {
         event = { 'User NvimStartupDone' },
         dependencies = {
             {
-                'folke/neodev.nvim', -- For Neovim lua
+                'folke/neodev.nvim',
                 event = { 'VeryLazy' },
                 config = function() require 'alex.lang.tools.neodev' end,
+            },
+            {
+	            "linux-cultist/venv-selector.nvim",
+	            dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim" },
+                config = true,
+                event = { 'User NvimStartupDone' },
             },
         },
         config = function() require 'alex.lang.lsp' end,

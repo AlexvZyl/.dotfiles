@@ -4,6 +4,7 @@
 (
     nvidia-force-comp-pipeline
     ~/.screenlayout/external_only.sh
+    #~/.screenlayout/default_double_monitor.sh
     # feh --bg-fill ~/.wallpapers/Cloud_2_Nord.png &
     feh --bg-fill ~/.wallpapers/Space_Spiral_Nord.png &
     (

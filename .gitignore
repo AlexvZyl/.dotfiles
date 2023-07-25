@@ -16,5 +16,5 @@ lazy-lock.json
 .trash/
 .private/
 .config/nvim/lazy-lock.json
-.config/fish/functions/fisher.fish
-.config/fish/completions/fisher.fish
+.config/fish/functions/*
+.config/fish/completions/*

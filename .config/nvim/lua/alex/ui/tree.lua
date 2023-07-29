@@ -1,6 +1,6 @@
 -- Nvim-Tree.lua advises to do this at the start.
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+--vim.g.loaded_netrw = 1
+--vim.g.loaded_netrwPlugin = 1
 
 local function root_label(path)
     path = path:gsub('/home/alex', ' ') .. '/'

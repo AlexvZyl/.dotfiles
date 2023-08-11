@@ -1,7 +1,7 @@
 // Nord palette with some extra colors.
 
 * {
-    black:      #191C24;
+    black:      #191D24;
     gray0:      #242933;
     gray1:      #2E3440;
     gray2:      #3B4252;

@@ -428,19 +428,19 @@
     alignment = left
 
 [urgency_low]
-    background = "#191C24"
+    background = "#191D24"
     foreground = "#E5E9F0"
     frame_color = "#4C566A"
     timeout = 3
 
 [urgency_normal]
-    background = "#191C24"
+    background = "#191D24"
     foreground = "#E5E9F0"
     frame_color = "#8FBCBB"
     timeout = 15
 
 [urgency_critical]
-    background = "#191C24"
+    background = "#191D24"
     foreground = "#E5E9F0"
     frame_color = "#BF616A"
     timeout = 60

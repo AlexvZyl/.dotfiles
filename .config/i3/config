@@ -6,7 +6,7 @@ set $mod Mod4
 workspace_layout default
 
 # Nordic colors.
-set $black      #191C24
+set $black      #191D24
 set $gray0      #242933
 set $gray1      #2E3440
 set $gray2      #3B4252

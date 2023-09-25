@@ -25,6 +25,7 @@ tor
 privoxy
 proxychains-ng
 lynx
+pass
 
 i3-wm
 polybar-git
@@ -36,6 +37,7 @@ ttf-jetbrains-mono-nerd
 xdotool
 xborder-git
 
+lazygit
 kitty
 nushell
 git

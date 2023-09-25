@@ -5,7 +5,6 @@
 	sudo systemctl enable ufw.service
 	sudo systemctl start ufw.service
 	sudo ufw enable
- 	sudo ufw add sshd
 ) &
 
 # fail2ban
@@ -13,6 +12,7 @@
 	sudo systemctl enable fail2ban.service
 	sudo systemctl start fail2ban.service
 	sudo fail2ban-client start
+	sudo fail2ban-client add sshd 
 ) &
 
 # clamav 

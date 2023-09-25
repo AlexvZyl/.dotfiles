@@ -24,7 +24,7 @@ gh auth login
 git --git-dir=$USER_HOME/.dotfiles/ --work-tree=$USER_HOME config --local status.showUntrackedFiles no
 
 # Get modules.
-git --git-dir=$USER_HOME/.dotfiles/ --work-tree=$USER_HOME submodule update --recursive --remote
+git --git-dir=$USER_HOME/.dotfiles/ --work-tree=$USER_HOME submodule update --recursive --init
 
 # Run main install script.
 $USER_HOME/.scripts/install/install.sh

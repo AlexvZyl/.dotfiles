@@ -28,7 +28,8 @@ lynx
 pass
 
 i3-wm
-polybar-git
+refind
+polybar
 picom
 sddm
 sddm-sugar-dark
@@ -36,7 +37,10 @@ betterlockscreen-git
 ttf-jetbrains-mono-nerd
 xdotool
 xborder-git
+pfetch
 
+newsboat
+rofi
 lazygit
 kitty
 nushell

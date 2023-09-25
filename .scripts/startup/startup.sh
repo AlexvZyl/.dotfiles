@@ -20,5 +20,6 @@
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
 ~/.config/tmux/utils/start_all_servers.sh &
 
-# Remap capslock to escape
+# Keyboard stuff
 setxkbmap -option caps:escape &
+xset r rate 150 35

@@ -21,13 +21,14 @@ privoxy
 proxychains-ng
 lynx
 pass
+trash
 
 i3-wm
 refind
 polybar
 picom
 sddm
-sddm-sugar-dark
+sddm-sugar-candy
 betterlockscreen-git
 ttf-jetbrains-mono-nerd
 xdotool

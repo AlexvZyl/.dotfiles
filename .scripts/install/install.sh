@@ -1,9 +1,11 @@
 #!/bin/bash
 
-~/.scripts/install/dual-boot.sh
-~/.scripts/install/shell.sh
-~/.scripts/install/display.sh
-~/.scripts/install/hardware.sh
-~/.scripts/install/misc.sh
-~/.scripts/install/security.sh
-~/.tmux/plugins/tpm/bin/install_plugins
+source "$(dirname $0)/../utils.sh"
+
+$USER_HOME/.scripts/install/dual-boot.sh
+$USER_HOME/.scripts/install/shell.sh
+$USER_HOME/.scripts/install/display.sh
+$USER_HOME/.scripts/install/hardware.sh
+$USER_HOME/.scripts/install/misc.sh
+$USER_HOME/.scripts/install/security.sh
+$USER_HOME/.tmux/plugins/tpm/bin/install_plugins

@@ -1,7 +1,9 @@
 #!/bin/bash
 
+source "$(dirname $0)/../utils.sh"
+
 # Cron.
-crontab ~/.config/cron/crontab
+crontab $USER_HOME/.config/cron/crontab
 sudo systemctl enable cronie
 
 # Enable SysRq keys.

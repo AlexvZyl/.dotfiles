@@ -1,3 +1,5 @@
 #!/bin/bash
 
-yay -S $(cat ~/.scripts/packages/CORE.txt)
+source "$(dirname $0)/../utils.sh"
+
+yay -S $(cat $USER_HOME/.scripts/packages/CORE.txt)

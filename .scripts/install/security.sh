@@ -5,7 +5,7 @@
 	sudo systemctl enable ufw.service
 	sudo systemctl start ufw.service
 	sudo ufw enable
- 	sudo uf2 add sshd
+ 	sudo ufw add sshd
 ) &
 
 # fail2ban

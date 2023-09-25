@@ -22,4 +22,4 @@ dbus-launch dunst --config ~/.config/dunst/dunstrc &
 
 # Keyboard stuff
 setxkbmap -option caps:escape &
-xset r rate 175 33
+xset r rate 175 40

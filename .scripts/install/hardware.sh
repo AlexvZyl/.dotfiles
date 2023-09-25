@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source "$(dirname $0)/../utils.sh"
+
 # Make the function keys on the keyboard default over media keys.
 # (This is currently specific to my keychron keyboard)
 FILE=/etc/modprobe.d/hid_apple.conf
@@ -23,10 +25,11 @@ systemctl start tlp.service
 sudo tlp start
 
 # Setup optimus manager.
-# NB: For Nvidia cards only!
-sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm/custom.conf
-sudo touch /etc/optimus-manager/optimus-manager.conf 
-sudo sh -c "echo '[optimus]' > /etc/optimus-manager/optimus-manager.conf" 
-sudo sh -c "echo 'startup_mode=nvidia' > /etc/optimus-manager/optimus-manager.conf" 
-systemctl enable optimus-manager
-systemctl start optimus-manager &
+if $NVIDIA_GPU; then
+    sudo sed -i 's/#WaylandEnable=false/WaylandEnable=false/g' /etc/gdm/custom.conf
+    sudo touch /etc/optimus-manager/optimus-manager.conf 
+    sudo sh -c "echo '[optimus]' > /etc/optimus-manager/optimus-manager.conf" 
+    sudo sh -c "echo 'startup_mode=nvidia' > /etc/optimus-manager/optimus-manager.conf" 
+    systemctl enable optimus-manager
+    systemctl start optimus-manager &
+fi

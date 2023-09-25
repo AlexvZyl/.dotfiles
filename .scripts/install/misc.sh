@@ -11,4 +11,4 @@ sudo touch /etc/sysctl.d/99-sysctl.conf
 sudo sh -c "echo 'kernel.sysrq=1' >> /etc/sysctl.d/99-sysctl.conf"
 
 # Add bnaries to sudoers.
-sudo sh -c "echo '$USER ALL = NOPASSWD: /usr/bin/s-tui, /usr/bin/pacman, /usr/bin/fail2ban' > /etc/sudoers"
+sudo sh -c "echo '$USER ALL = NOPASSWD: /usr/bin/s-tui, /usr/bin/pacman, /usr/bin/fail2ban' >> /etc/sudoers"

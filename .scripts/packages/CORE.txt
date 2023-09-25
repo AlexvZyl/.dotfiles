@@ -21,7 +21,7 @@ privoxy
 proxychains-ng
 lynx
 pass
-trash
+trash-cli
 
 i3-wm
 refind

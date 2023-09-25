@@ -28,7 +28,7 @@ refind
 polybar
 picom
 sddm
-sddm-sugar-candy
+sddm-sugar-candy-git
 betterlockscreen-git
 ttf-jetbrains-mono-nerd
 xdotool

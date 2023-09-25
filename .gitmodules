@@ -10,3 +10,6 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = https://github.com/AlexvZyl/nvim
+[submodule ".password-store"]
+	path = .password-store
+	url = https://github.com/AlexvZyl/.password-store

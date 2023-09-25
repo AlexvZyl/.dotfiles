@@ -3,6 +3,7 @@
 source "$(dirname $0)/../utils.sh"
 
 $USER_HOME/.scripts/install/dual-boot.sh
+$USER_HOME/.scripts/install/links.sh
 $USER_HOME/.scripts/install/shell.sh
 $USER_HOME/.scripts/install/display.sh
 $USER_HOME/.scripts/install/hardware.sh

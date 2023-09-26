@@ -1,6 +1,6 @@
 format = """
 [](bright-white)\
-[  ](bold fg:black bg:bright-white)\
+[ 󰣇 ](bold fg:black bg:bright-white)\
 [](bg:blue fg:bright-white)\
 $directory\
 [](fg:blue bg:green)\

@@ -4,6 +4,11 @@ linux-lts-headers
 linux-zen
 linux-zen-headers
 
+pipewire
+pipewire-alsa
+pipewire-pulse
+pamixer
+
 tlp
 arandr
 brightnessctl
@@ -39,7 +44,6 @@ newsboat
 rofi
 lazygit
 kitty
-nushell
 git
 github-cli
 neovim
@@ -53,12 +57,10 @@ btop
 nvtop
 zathura
 ranger
-frogmouth
 dust
 
 signal-desktop
 discord
-whatsapp-nativefier
 
 feh
 pinta
@@ -66,8 +68,5 @@ brave-bin
 xournalpp
 cava
 etcher-bin
-kdenlive
 onlyoffice-bin
 nyxt
-
-termtyper-git

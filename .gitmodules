@@ -1,15 +1,6 @@
-[submodule ".private"]
-	path = .private
-	url = https://github.com/AlexvZyl/.private
 [submodule ".modules/user.js"]
 	path = .modules/user.js
 	url = https://github.com/arkenfox/user.js/
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule ".config/nvim"]
-	path = .config/nvim
-	url = https://github.com/AlexvZyl/nvim
-[submodule ".password-store"]
-	path = .password-store
-	url = https://github.com/AlexvZyl/.password-store

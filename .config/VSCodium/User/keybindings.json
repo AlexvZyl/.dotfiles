@@ -1,0 +1,154 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    // Windows
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.navigateDown",
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.navigateUp",
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.navigateLeft",
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.navigateRight",
+    },
+    {
+        "key": "ctrl+a",
+        "command": "editor.action.selectAll",
+    },
+    {
+        "key": "ctrl+w c",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+w v",
+        "command": "workbench.action.splitEditorRight"
+    },
+    {
+        "key": "ctrl+w s",
+        "command": "workbench.action.splitEditorDown"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.nextEditor",
+        "when": "neovim.mode != 'insert'"
+    },
+    {
+        "key": "ctrl+shift+h",
+        "command": "workbench.action.previousEditor",
+        "when": "neovim.mode != 'insert'"
+    },
+    {
+        "key": "ctrl+shift+q",
+        "command": "workbench.action.closeActiveEditor",
+        "when": "neovim.mode != 'insert'"
+    },
+
+    // Terminal
+    {
+        "key": "alt+j",
+        "command": "workbench.action.terminal.resizePaneDown",
+        "when": "panelVisible"
+    },
+    {
+        "key": "alt+j",
+        "command": "workbench.action.toggleMaximizedPanel",
+        "when": "panelMaximized"
+    },
+    {
+        "key": "alt+k",
+        "command": "workbench.action.terminal.resizePaneUp",
+        "when": "panelVisible"
+    },
+
+    // LSP
+    {
+        "key": "tab",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+    },
+    {
+        "key": "shift+tab",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "editor.action.scrollDownHover",
+        "when": "editorHoverFocused"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "editor.action.scrollUpHover",
+        "when": "editorHoverFocused"
+    },
+
+    // Editing
+    {
+        "key": "ctrl+s",
+        "command": "workbench.action.files.save"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "actions.find"
+    },
+    {
+        "key": "f1",
+        "command": "workbench.action.toggleMaximizedPanel",
+        "when": "!panelMaximized"
+    },
+    {
+        "key": "f1",
+        "command": "workbench.action.closePanel",
+        "when": "panelMaximized"
+    },
+    {
+        "key": "ctrl+shift+q",
+        "command": "-workbench.action.quickOpenNavigatePreviousInViewPicker",
+        "when": "inQuickOpen && inViewsPicker"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "editor.action.showHover",
+        "when": "editorHoverVisible && !editorHoverFocused"
+    },
+    {
+        "key": "f2",
+        "command": "workbench.action.toggleActivityBarVisibility"
+    },
+    {
+        "key": "down",
+        "command": "workbench.action.debug.stepOver",
+        "when": "debugState != 'inactive'"
+    },
+    {
+        "key": "f10",
+        "command": "-workbench.action.debug.stepOver",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "right",
+        "command": "workbench.action.debug.stepInto",
+        "when": "debugState != 'inactive'"
+    },
+    {
+        "key": "f11",
+        "command": "-workbench.action.debug.stepInto",
+        "when": "debugState != 'inactive'"
+    },
+    {
+        "key": "left",
+        "command": "workbench.action.debug.stepOut",
+        "when": "debugState != 'inactive'"
+    },
+    {
+        "key": "shift+f11",
+        "command": "-workbench.action.debug.stepOut",
+        "when": "debugState == 'stopped'"
+    },
+]

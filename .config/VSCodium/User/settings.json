@@ -1,0 +1,96 @@
+{
+    "editor.inlayHints.enabled": "off",
+    "workbench.iconTheme": "eq-material-theme-icons-palenight",
+    "editor.minimap.enabled": false,
+    "git.openRepositoryInParentFolders": "always",
+    "editor.lineNumbers": "relative",
+    "breadcrumbs.filePath": "off",
+    "workbench.layoutControl.enabled": false,
+    "editor.lightbulb.enabled": false,
+    "breadcrumbs.enabled": false,
+    "notebook.breadcrumbs.showCodeCells": false,
+    "workbench.editor.enablePreview": false,
+    "editor.scrollbar.verticalScrollbarSize": 6,
+    "window.titleSeparator": " | ",
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "explorer.openEditors.visible": 1,
+    "workbench.startupEditor": "none",
+    "editor.cursorBlinking": "phase",
+    "terminal.integrated.tabs.separator": " | ",
+    "git.autofetch": true,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.autoReveal": false,
+    "errorLens.gutterIconsEnabled": true,
+    "errorLens.gutterIconSize": "115%",
+    "errorLens.messageBackgroundMode": "message",
+    "errorLens.enabledDiagnosticLevels": [
+        "error",
+        "warning",
+        "info",
+        "hint"
+    ],
+    "window.title": "!Neovim",
+    "python.linting.flake8Args": [
+        "--extend-ignore=E501"
+    ],
+    "python.linting.flake8CategorySeverity.F": "Warning",
+    "errorLens.messageEnabled": false,
+    "vscode-neovim.highlightGroups.highlights": {
+        "IncSearch": {
+            "backgroundColor": "theme.editor.findMatchBackground",
+            "borderColor": "theme.editor.findMatchBorder"
+        },
+        "Search": {
+            "backgroundColor": "theme.editor.findMatchHighlightBackground",
+            "borderColor": "theme.editor.findMatchHighlightBorder"
+        },
+        "Visual": {
+            "backgroundColor": "theme.editor.selectionBackground"
+        }
+    },
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
+    "editor.renderLineHighlight": "none",
+    "editor.renderLineHighlightOnlyWhenFocus": true,
+    "terminal.integrated.allowChords": false,
+    "terminal.integrated.commandsToSkipShell": [
+        "workbench.action.closePanel"
+    ],
+    "errorLens.scrollbarHackEnabled": true,
+    "errorLens.gutterIconSet": "borderless",
+    "window.titleBarStyle": "native",
+    "apc.electron": {
+        "frame": false,
+        "transparent": true,
+        // "titleBarStyle": "hiddenInset",
+        "vibrancy": "ultra-dark",
+        "opacity": 1,
+        // "visualEffectState": "active"
+    },
+    "apc.activityBar": {
+        // "size": 38,
+    },
+    "apc.sidebar.titlebar": {
+        "height": 30,
+        "fontSize": 12
+    },
+    "apc.header": {
+        "height": 30,
+        "fontSize": 13
+    },
+    "gruvboxMaterial.darkContrast": "hard",
+    "gruvboxMaterial.darkWorkbench": "flat",
+    "redhat.telemetry.enabled": false,
+    "workbench.colorTheme": "Tokyo Night",
+    "python.envFile": "${workspaceF older}/.env",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "flake8.severity": {
+        "E": "Information",
+        "F": "Hint",
+        "W": "Error"
+    },
+    "terminal.integrated.tabs.enabled": false,
+}

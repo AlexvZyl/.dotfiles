@@ -7,10 +7,10 @@ sudo systemctl disable display-manager
 sudo systemctl enable sddm
 
 # Nordic
-# sudo cp $USER_HOME/.wallpapers/National_Park_Nord.png /usr/share/sddm/themes/sugar-candy/Backgrounds/Mountains.jpg
+# sudo cp $USER_HOME/.wallpapers/National_Park_Nord.png /usr/share/sddm/themes/sugar-candy/Backgrounds/Mountain.jpg
 
 # Tokyonight
-sudo cp $USER_HOME/.wallpapers/Tokyonight_Street_1.png /usr/share/sddm/themes/sugar-candy/Backgrounds/Mountains.jpg
+sudo cp $USER_HOME/.wallpapers/Tokyonight_Street_1.png /usr/share/sddm/themes/sugar-candy/Backgrounds/Mountain.jpg
 
 # Setup lock screen.
 # Should this script run every time the screens change?  Yeah.

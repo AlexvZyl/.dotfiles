@@ -27,6 +27,7 @@ proxychains-ng
 lynx
 pass
 trash-cli
+ripgrep
 
 i3-wm
 refind

@@ -1,4 +1,5 @@
 {
+    "keyboard.dispatch": "keyCode",
     "editor.inlayHints.enabled": "off",
     "workbench.iconTheme": "eq-material-theme-icons-palenight",
     "editor.minimap.enabled": false,

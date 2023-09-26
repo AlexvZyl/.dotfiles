@@ -4,3 +4,12 @@
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule ".config/nvim"]
+	path = .config/nvim
+	url = https://github.com/AlexvZyl/nvim
+[submodule "/home/alex/.password-store"]
+	path = /home/alex/.password-store
+	url = https://github.com/AlexvZyl/.password-store
+[submodule ".private"]
+	path = .private
+	url = https://github.com/AlexvZyl/.private

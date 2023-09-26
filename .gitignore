@@ -14,7 +14,6 @@ lazy-lock.json
 .newsboat/queue
 .config/lazygit/development.log
 .trash/
-.private/
 .config/nvim/lazy-lock.json
 .config/fish/functions/*
 .config/fish/completions/*

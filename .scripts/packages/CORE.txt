@@ -42,6 +42,7 @@ pfetch
 
 newsboat
 rofi
+rofi-pass
 lazygit
 kitty
 git

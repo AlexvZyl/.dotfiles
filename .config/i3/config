@@ -144,6 +144,7 @@ bindsym $mod+shift+f exec kitty --execute tmux -f ~/.config/tmux/terminal.conf n
 bindsym $mod+m exec kitty --execute tmux new-session -n "monitor" btop
 # GPU.
 bindsym $mod+g exec kitty --execute nvtop
+bindsym $mod+p exec kitty --execute rofi-pass
 # RSS Feed.
 bindsym $mod+r exec kitty --execute ~/.config/tmux/utils/start_newsboat.sh
 # Wifi.

@@ -13,3 +13,6 @@
 [submodule ".private"]
 	path = .private
 	url = https://github.com/AlexvZyl/.private
+[submodule ".password-store"]
+	path = .password-store
+	url = https://github.com/AlexvZyl/.password-store

@@ -44,8 +44,11 @@ hide_edge_borders both
 for_window [class="^.*"] border pixel 0
 
 # Set inner/outer gaps
-gaps inner 11
-gaps horizontal 1
+gaps inner 10
+gaps vertical 1
+gaps right 1
+#gaps bottom 1
+#gaps horizontal 1
 smart_gaps off
 
 # show window title bars (not officially supported with i3gaps)
@@ -245,7 +248,7 @@ for_window [class="kitty"] floating enable
 for_window [class="Gufw.py"] floating enable
 
 # Floating config.
-for_window [class=".*"] resize set 960 594
+for_window [class=".*"] resize set 954 588
 for_window [class=".*"] move position center
 
 # Browser fullscreen some windows.

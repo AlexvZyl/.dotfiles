@@ -64,6 +64,7 @@ dust
 signal-desktop
 discord
 
+starship
 feh
 pinta
 brave-bin

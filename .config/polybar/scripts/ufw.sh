@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if systemctl is-active --quiet ufw; then
-    echo "%{F#A3BE8C}󱨑 "
+    echo "%{F#9ece6a}󱨑 "
 else
-    echo "%{F#BF616A}󱨑 "
+    echo "%{F#db4b4b}󱨑 "
 fi
 
 

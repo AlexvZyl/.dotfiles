@@ -8,4 +8,7 @@ $USER_HOME/.scripts/install/display.sh
 $USER_HOME/.scripts/install/hardware.sh
 $USER_HOME/.scripts/install/misc.sh
 $USER_HOME/.scripts/install/security.sh
+
+
+$USER_HOME/.tmux/plugins/tpm/tpm
 $USER_HOME/.tmux/plugins/tpm/bin/install_plugins

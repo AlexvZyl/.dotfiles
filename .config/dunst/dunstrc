@@ -95,7 +95,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = "#242933"
+    separator_color = "#1a1b26"
 
     # Sort messages by urgency.
     sort = yes
@@ -428,19 +428,19 @@
     alignment = left
 
 [urgency_low]
-    background = "#191D24"
-    foreground = "#E5E9F0"
-    frame_color = "#4C566A"
+    background = "#16161e"
+    foreground = "#c0caf5"
+    frame_color = "#1f2335"
     timeout = 3
 
 [urgency_normal]
-    background = "#191D24"
-    foreground = "#E5E9F0"
-    frame_color = "#8FBCBB"
+    background = "#16161e"
+    foreground = "#c0caf5"
+    frame_color = "#3d59a1"
     timeout = 15
 
 [urgency_critical]
     background = "#191D24"
-    foreground = "#E5E9F0"
-    frame_color = "#BF616A"
+    foreground = "#c0caf5"
+    frame_color = "#db4b4b"
     timeout = 60

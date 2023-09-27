@@ -5,7 +5,7 @@
     nvidia-force-comp-pipeline
     ~/.screenlayout/default_double_monitor.sh
     # feh --bg-fill ~/.wallpapers/Space_Spiral_Nord.png & # Nordic
-    feh --bg-fill ~/.wallpapers/alena-aenami-horizon-1k.jpg
+    feh --bg-fill ~/.wallpapers/alena-aenami-horizon-1k_upscaled.jpg
     picom -b 
     xborders -c ~/.config/picom/xborder.json
     ~/.config/polybar/launch.sh

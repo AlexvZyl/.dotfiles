@@ -39,7 +39,6 @@ sddm-sugar-candy-git
 betterlockscreen-git
 ttf-jetbrains-mono-nerd
 xdotool
-xborder-git
 pfetch
 
 newsboat

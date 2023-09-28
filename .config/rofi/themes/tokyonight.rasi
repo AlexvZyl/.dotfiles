@@ -1,0 +1,29 @@
+* {
+    black:      #16161e;
+    gray0:      #1a1b26;
+    gray1:      #1f2335;
+    gray2:      #1f2335;
+    gray3:      #1f2335;
+    gray4:      #1f2335;
+    gray5:      #1f2335;
+    white0:     #c0caf5;
+    white1:     #c0caf5;
+    white2:     #c0caf5;
+    blue0:      #3d59a1;
+    blue1:      #2ac3de;
+    blue2:      #0db9d7;
+    cyan:       #7dcfff;
+    red:        #db4b4b;
+    orange:     #ff9e64;
+    yellow:     #e0af68;
+    green:      #9ece6a;
+    magenta:    #ff007c;
+
+    background:     @black;
+    background-alt: @black;
+    foreground:     @white2;
+    selected:       @yellow;
+    active:         @blue2;
+    urgent:         @red;
+    border:         @cyan;
+}

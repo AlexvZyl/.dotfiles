@@ -1,0 +1,66 @@
+format = """
+[](bright-white)\
+[ 󰣇 ](bold fg:black bg:bright-white)\
+[](bg:blue fg:bright-white)\
+$directory\
+[](fg:blue bg:green)\
+$git_branch\
+$git_status\
+[](fg:green)\
+$fill\
+[](fg:red)\
+$username\
+[ ](fg:yellow bg:red)\
+$hostname\
+[](fg:bright-white bg:yellow)\
+$time\
+[](fg:bright-white)\
+\n$character"""
+
+[fill]
+symbol = '-'
+style = 'fg:bright-black'
+
+[character]
+success_symbol = '[ ](bold green)'
+error_symbol = '[ ](bold red)'
+
+[directory]
+style = "bold fg:black bg:blue"
+format = "[ $path]($style)"
+truncation_length = 5
+truncation_symbol = "󰉒 /"
+home_symbol = " "
+truncate_to_repo = false
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bold bg:green"
+format = '[[ $symbol $branch](bold fg:black bg:green)]($style)'
+
+[git_status]
+style = "bold bg:green"
+format = '[[($all_status$ahead_behind)](bold fg:black bg:green)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+format = '[[  $time ](bold fg:black bg:bright-white)]($style)'
+
+[hostname]
+ssh_only = true
+format = '[󰌘 ](bold fg:black bg:yellow)[$ssh_symbol](bold fg:black bg:yellow)'
+trim_at = ''
+disabled = false
+
+[username]
+style_user = "bold bg:red fg:black"
+format = '[ ]($style)[$user]($style)'
+disabled = false
+show_always = true

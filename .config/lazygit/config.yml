@@ -2,23 +2,6 @@ gui:
   # single' | 'double' | 'rounded' | 'hidden'
   border: 'rounded'
   theme:
-    activeBorderColor:
-      - "#8FBCBB" 
-      - bold
     inactiveBorderColor:
-      - "#4C566A"
-    optionsTextColor:
-      - blue
-    selectedLineBgColor:
-      - "#181C24" # set to `default` to have no background colour
-    selectedRangeBgColor:
-      - blue
-    cherryPickedCommitBgColor:
-      - cyan
-    cherryPickedCommitFgColor:
-      - blue
-    unstagedChangesColor:
-      - red
-    defaultFgColor:
-      - default
-
+      #- "#4C566A" # nordic
+      - "#292e42"

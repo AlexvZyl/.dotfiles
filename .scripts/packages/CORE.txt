@@ -29,6 +29,7 @@ pass
 trash-cli
 ripgrep
 
+papirus-icon-theme
 i3-wm
 refind
 polybar
@@ -38,7 +39,6 @@ sddm-sugar-candy-git
 betterlockscreen-git
 ttf-jetbrains-mono-nerd
 xdotool
-xborder-git
 pfetch
 
 newsboat
@@ -64,6 +64,7 @@ dust
 signal-desktop
 discord
 
+starship
 feh
 pinta
 brave-bin

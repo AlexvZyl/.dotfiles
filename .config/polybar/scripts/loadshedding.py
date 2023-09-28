@@ -26,11 +26,11 @@ try:
             time_left = end - now
             hours, remainder = divmod(int(time_left.total_seconds()), 3600)
             minutes, _ = divmod(remainder, 60)
-            print("%{F#BF616A} %{F#EBCB8B}󱎫 %{F-}" + f"{hours:02d}:{minutes:02d}" + " %{F#BF616A}")
+            print("%{F#BF616A} %{F#e0af68}󱎫 %{F-}" + f"{hours:02d}:{minutes:02d}" + " %{F#e0af68}")
         # Display next loadshedding.
         else:
             duration = end - start
-            print("%{F#EBCB8B}%{F-} " + start.strftime("%H:%M") + " %{F#EBCB8B}󱎫 %{F-}" + str(int(duration.total_seconds()/3600)) + "h")
+            print("%{F#e0af68}%{F-} " + start.strftime("%H:%M") + " %{F#e0af68}󱎫 %{F-}" + str(int(duration.total_seconds()/3600)) + "h")
 
 except:
-    print("%{F#EBCB8B}%{F-} 󰧠 ")   
+    print("%{F#e0af68}%{F-} 󰧠 ")   

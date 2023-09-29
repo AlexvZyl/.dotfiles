@@ -4,10 +4,15 @@ linux-lts-headers
 linux-zen
 linux-zen-headers
 
+man-db
+man-pages
+
 pipewire
 pipewire-alsa
 pipewire-pulse
 pamixer
+
+python-pytz
 
 tlp
 arandr
@@ -72,4 +77,5 @@ xournalpp
 cava
 etcher-bin
 onlyoffice-bin
+thunar
 nyxt

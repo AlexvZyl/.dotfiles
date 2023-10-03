@@ -28,4 +28,11 @@ alias clear-trash="/usr/bin/rm -rdf .trash/files/*"
 alias kitty-ssh='kitty +kitten ssh'
 alias workspace-git="git --work-tree=$HOME --git-dir=$HOME/.workspace"
 alias workspace-lazygit="lazygit --git-dir=$HOME/.workspace --work-tree=$HOME"
-alias ssh="kitty +kitten ssh"
+
+# Remoting
+alias ssh='kitty +kitten ssh'
+alias rsync-aid="rsync -avz --progress --include src/data/ --exclude build/ --exclude .vscode --exclude .pytest_cache --exclude .git/ \
+    --exclude venv/ --exclude \"*.egg-info\" --exclude \"*.pkl\" --exclude aws/ --exclude data/ --exclude output/ --exclude beats-models \
+    --exclude models --exclude \"*.csv\" --exclude \"*.png\""
+alias rsync-aid-to-local="rsync-aid AdvanceGuidance_EC2:/home/ubuntu/mnt/tb-mdel-dev/ ~/AdvanceGuidance/Remotes/tb-model-dev/"
+alias rsync-aid-to-remote="rsync-aid ~/AdvanceGuidance/Remotes/tb-model-dev/ AdvanceGuidance_EC2:/home/ubuntu/mnt/tb-mdel-dev/"

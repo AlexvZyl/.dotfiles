@@ -11,8 +11,8 @@ quiet=true
 
 # Formatting.
 locktext=" Locked"
-veriftext="Verifying..."
-wrongtext="Failure!"
+veriftext="..."
+wrongtext=""
 font="JetBrainsMono Nerd Font"
 time_format="%H:%M"
 

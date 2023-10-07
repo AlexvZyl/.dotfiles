@@ -29,6 +29,7 @@ config submodule update --init --force --remote .password-store/
 config submodule update --init --force --remote .private/
 config submodule update --init --force --remote .modules/user.js/
 config submodule update --init --force --remote .config/nvim/
+config submodule update --init --force --remote .tmux/plugins/tpm
 
 # Run main install script.
 $USER_HOME/.scripts/install/install.sh

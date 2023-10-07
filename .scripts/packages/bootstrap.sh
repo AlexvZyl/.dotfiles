@@ -14,7 +14,7 @@ sudo pacman-key --populate archlinux
 
 # Mirrors.
 yay -Syyu reflector rsync
-~/.scripts/packages/update_mirrorlist.sh
+~/.scripts/packages/update_mirrorlist.sh &
 
 # Packages.
 ~/.scripts/packages/install.sh

@@ -20,5 +20,5 @@ sudo cp $USER_HOME/.wallpapers/Tokyonight_Street_2.png /usr/share/sddm/themes/su
 # betterlockscreen -u $USER_HOME/.wallpapers/National_Park_Nord.png --blur 0.5 --display 1
 
 # Tokyonight
-betterlockscreen -u $USER_HOME/.wallpapers/tokyo-night-space_upscaled.png --display 1
-betterlockscreen -u $USER_HOME/.wallpapers/tokyo-night-space_upscaled.png --blur 0.5 --display 1
+betterlockscreen -u $USER_HOME/.wallpapers/tokyo-night-space_upscaled.png --display 1 &
+betterlockscreen -u $USER_HOME/.wallpapers/tokyo-night-space_upscaled.png --blur 0.5 --display 1 &

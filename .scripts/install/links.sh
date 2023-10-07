@@ -2,8 +2,8 @@
 
 source "$(dirname $0)/../utils.sh"
 
-ln -f -s "$USER_HOME/.etc/pacman.conf" "/etc/pacman.conf"
-ln -f -s "$USER_HOME/.etc/sddm.conf" "/etc/sddm.conf"
+sudo ln -f -s "$USER_HOME/.etc/pacman.conf" "/etc/pacman.conf"
+sudo ln -f -s "$USER_HOME/.etc/sddm.conf" "/etc/sddm.conf"
 
-rm -rdf "$USER_HOME/.ssh"
-ln -f -s -d "$USER_HOME/.private/.ssh/" "$USER_HOME/"
+sudo rm -rdf "$USER_HOME/.ssh"
+sudo ln -f -s -d "$USER_HOME/.private/.ssh/" "$USER_HOME/"

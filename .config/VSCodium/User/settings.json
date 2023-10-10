@@ -83,7 +83,6 @@
     "gruvboxMaterial.darkContrast": "hard",
     "gruvboxMaterial.darkWorkbench": "flat",
     "redhat.telemetry.enabled": false,
-    "workbench.colorTheme": "Tokyo Night",
     "python.envFile": "${workspaceF older}/.env",
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
@@ -95,5 +94,6 @@
     },
     "terminal.integrated.tabs.enabled": false,
     "editor.scrollbar.horizontalScrollbarSize": 0,
+    "workbench.colorTheme": "Tokyo Night",
     "workbench.activityBar.visible": false,
 }

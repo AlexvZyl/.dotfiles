@@ -12,6 +12,7 @@ pipewire
 pipewire-alsa
 pipewire-pulse
 pamixer
+flameshot
 
 python-pytz
 
@@ -80,3 +81,5 @@ etcher-bin
 onlyoffice-bin
 thunar
 nyxt
+npm
+zathura-pfd-mupdf

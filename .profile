@@ -29,6 +29,10 @@ alias kitty-ssh='kitty +kitten ssh'
 alias workspace-git="git --work-tree=$HOME --git-dir=$HOME/.workspace"
 alias workspace-lazygit="lazygit --git-dir=$HOME/.workspace --work-tree=$HOME"
 
+# Gotta go fast
+alias c="clear"
+alias nh="nvim ."
+
 # Remoting
 alias ssh='kitty +kitten ssh'
 alias rsync-aid="rsync -avz --progress --include src/data/ --exclude build/ --exclude .vscode --exclude .pytest_cache --exclude .git/ \

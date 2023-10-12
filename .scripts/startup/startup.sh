@@ -4,6 +4,7 @@
 (
     nvidia-force-comp-pipeline
     ~/.screenlayout/default_double_monitor.sh
+    #~/.screenlayout/default_double_monitor_ag.sh
     # feh --bg-fill ~/.wallpapers/Space_Spiral_Nord.png &
     feh --bg-fill ~/.wallpapers/alena-aenami-horizon-1k_upscaled.jpg
     picom -b 

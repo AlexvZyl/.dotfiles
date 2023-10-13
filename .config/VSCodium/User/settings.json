@@ -95,5 +95,6 @@
     "terminal.integrated.tabs.enabled": false,
     "editor.scrollbar.horizontalScrollbarSize": 0,
     "workbench.colorTheme": "Tokyo Night",
-    "workbench.activityBar.visible": false,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
 }

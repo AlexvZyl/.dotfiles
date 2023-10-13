@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # Setup.
-source ~/.config/tmux/utils/workspace_env.sh
 dir="$HOME/.config/tmux/sessions"
 prefix="󱫋  "
 active=" (active)"

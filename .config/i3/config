@@ -136,27 +136,23 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 # keybindings for different actions: #
 ######################################
 
-# Terminal.
+# Terminal stuff
 bindsym $mod+t exec kitty --execute ~/.config/tmux/utils/start_terminal.sh
 bindsym $mod+shift+t exec proxychains4 -q kitty --execute ~/.config/tmux/utils/start_tor_terminal.sh
-# Editor.
 bindsym $mod+n exec kitty --class neovim --execute ~/.config/tmux/utils/start_editor.sh
-# Files.
-bindsym $mod+shift+f exec kitty --execute tmux -f ~/.config/tmux/terminal.conf new-session -n "files" "ranger"
-# CPU.
+bindsym $mod+shift+f exec kitty --execute tmux new-session -n "files" "ranger"
 bindsym $mod+m exec kitty --execute tmux new-session -n "monitor" btop
-# GPU.
 bindsym $mod+g exec kitty --execute nvtop
-bindsym $mod+p exec kitty --execute rofi-pass
-# RSS Feed.
 bindsym $mod+r exec kitty --execute ~/.config/tmux/utils/start_newsboat.sh
-# Wifi.
 bindsym $mod+w exec kitty --execute ~/.config/tmux/utils/start_iwctl.sh
 
 # Kill focused window.
 bindsym $mod+q kill
 # Lock the screen.
 bindsym $mod+Escape exec "betterlockscreen --lock --display 1"
+
+# Passwords
+bindsym $mod+p exec rofi-pass
 
 # Backlight control
 bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set +10% && notify-send --urgency=low -r 9999 "󰃠  Brightness: $((($(brightnessctl g)*100)/$(brightnessctl m)))%"

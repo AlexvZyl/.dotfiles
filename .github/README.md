@@ -15,15 +15,17 @@ Continuous change is to be expected...
 
 </div>
 
-The configuration files for my Linux desktop.  Supports Arch based distros using Gnome and/or i3.  Also, currently it assumes you have an Nvidia GPU and Intel CPU.  I mainly use i3, but I also install Gnome for when people do not want to mess around with a tiling WM.  All of the screenshots are for i3 and the gnome configs are very basic.  
+The configuration files for my Linux desktop.  Supports Arch based distros using Gnome and/or i3.  I mainly use i3, but I also install Gnome for when people do not want to mess around with a tiling WM.  All of the screenshots are for i3 and the gnome configs are very basic.  
 
 # Full Installation
 
 To install everything, simply copy and paste this into the terminal.
 
-> ℹ️ &nbsp; This script assumes that you have a working Arch installation.  Remember to choose i3 at the login screen.
+> [!NOTE]
+> This script assumes that you have a working Arch installation.  Remember to choose i3 at the login screen.
 
-> ⚠️ &nbsp; I still need to properly test this.
+> [!WARNING]
+> Works on my machine.
 
 ```bash
 curl -s https://raw.githubusercontent.com/AlexvZyl/.dotfiles/main/.scripts/install/bootstrap.sh > ~/bootstrap.sh
@@ -31,6 +33,7 @@ chmod +x ~/bootstrap.sh && ~/bootstrap.sh && rm ~/bootstrap.sh
 reboot
 ```
 
+<!--
 # Minimal Installation
 
 Sometimes I just want to get work done on a Linux machine.  A minimal installation can be done with:
@@ -62,6 +65,8 @@ workspace-git pull
 
 </details>
 
+-->
+
 # Privacy and Security
 
 Although I like making it look as nice as possible, these dotfiles also try to be private and secure.  This is a journey, not a destination, and I am open to any input.
@@ -88,6 +93,9 @@ Although I like making it look as nice as possible, these dotfiles also try to b
 # Theme
 
 Personally, I want a balance between good looking colors that stand out, and soft colors that will not destroy my eyes.
+
+> [!NOTE]
+> Not using nordic at the moment.
 
 The theme is based on my Neovim plugin, [nordic.nvim](https://github.com/AlexvZyl/nordic.nvim).  It is a warmer and darker version of the [Nord](https://www.nordtheme.com/) color palette.  Wallpapers can be found at [this ImageGoNord repo](https://github.com/linuxdotexe/nordic-wallpapers) (they "norded" some nice wallpapers) and [locally](https://github.com/AlexvZyl/.dotfiles/tree/main/.wallpapers).
 

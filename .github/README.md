@@ -15,14 +15,14 @@ Continuous change is to be expected...
 
 </div>
 
-The configuration files for my Linux desktop.  Supports Arch based distros using Gnome and/or i3.  I mainly use i3, but I also install Gnome for when people do not want to mess around with a tiling WM.  All of the screenshots are for i3 and the gnome configs are very basic.  
+The configuration files for my Arch Linux desktop.
 
 # Full Installation
 
-To install everything, simply copy and paste this into the terminal.
+To install everything, simply copy and paste this into the terminal.  User input is requested at various stages.
 
 > [!NOTE]
-> This script assumes that you have a working Arch installation.  Remember to choose i3 at the login screen.
+> This script assumes that you have a working Arch X11/i3 installation.  Remember to choose i3 at the login screen.
 
 > [!WARNING]
 > Works on my machine.

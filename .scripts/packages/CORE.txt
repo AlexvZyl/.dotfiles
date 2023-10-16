@@ -11,6 +11,7 @@ polkit-gnome
 pipewire
 pipewire-alsa
 pipewire-pulse
+pipewire-jack
 pamixer
 flameshot
 

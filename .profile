@@ -24,7 +24,7 @@ alias pdf="nohup zathura"
 alias rst="reset && echo \"\" && pfetch"
 # alias cat="cat && bat"
 alias rm="trash --trash-dir ~/.trash"  # This one has saved me a lot of heartache...
-alias clear-trash="/usr/bin/rm -rdf .trash/files/*"
+alias clear-trash="/usr/bin/rm -rdf ~/.trash/files/*"
 alias kitty-ssh='kitty +kitten ssh'
 alias workspace-git="git --work-tree=$HOME --git-dir=$HOME/.workspace"
 alias workspace-lazygit="lazygit --git-dir=$HOME/.workspace --work-tree=$HOME"

@@ -2,7 +2,7 @@
 auto-reload yes
 notify-program "notify-send"
 # browser "firefox"
-browser "tmux new-window lynx %u"
+browser "librewolf"
 
 # Key bindings.
 show-keymap-hint no

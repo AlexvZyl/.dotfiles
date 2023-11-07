@@ -37,6 +37,47 @@ set render-loading-fg           "#434C5E"
 set recolor-lightcolor          "#232831"
 set recolor-darkcolor           "#ECEFF4"
 
+# Tokyonight colors.
+
+set notification-error-bg       "#1a1b26"
+set notification-error-fg       "#f7768e"
+set notification-warning-bg     "#1a1b26"
+set notification-warning-fg     "#D08770"
+set notification-bg             "#1a1b26"
+set notification-fg             "#c0caf5"
+
+set completion-bg               "#1a1b26"
+set completion-fg               "#c0caf5"
+set completion-group-bg         "#414868"
+set completion-group-fg         "#c0caf5"
+set completion-highlight-bg     "#7dcfff"
+set completion-highlight-fg     "#414868"
+
+set index-bg                    "#1a1b26"
+set index-fg                    "#e0af68"
+set index-active-bg             "#414868"
+set index-active-fg             "#e0af68"
+
+set inputbar-bg                 "#1a1b26"
+set inputbar-fg                 "#c0caf5"
+
+set statusbar-bg                "#16161e"
+set statusbar-fg                "#c0caf5"
+
+set highlight-color             "#ff9e64"
+set highlight-active-color      "#f7768e"
+
+set default-bg                  "#1a1b26"
+set default-fg                  "#c0caf5"
+set render-loading              "true"
+set render-loading-bg           "#1a1b26"
+set render-loading-fg           "#414868"
+
+set recolor-lightcolor          "#1a1b26"
+set recolor-darkcolor           "#c0caf5"
+
+
+
 # Dark mode/invert.
 set recolor                     "true" 
 

@@ -98,5 +98,5 @@
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
     "haskell.manageHLS": "GHCup",
-    "workbench.activityBar.visible": false,
+    "workbench.activityBar.location": "hidden",
 }

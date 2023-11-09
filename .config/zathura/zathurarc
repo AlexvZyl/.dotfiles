@@ -68,7 +68,7 @@ set highlight-color             "#ff9e64"
 set highlight-active-color      "#f7768e"
 
 set default-bg                  "#1a1b26"
-set default-fg                  "#c0caf5"
+set default-fg                  "#f5f5f5"
 set render-loading              "true"
 set render-loading-bg           "#1a1b26"
 set render-loading-fg           "#414868"

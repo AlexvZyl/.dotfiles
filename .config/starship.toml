@@ -1,18 +1,18 @@
 format = """
 [](bright-white)\
-[ 󰣇 ](bold fg:black bg:bright-white)\
-[](bg:blue fg:bright-white)\
-$directory\
-[](fg:blue bg:green)\
+[󰣇 ](bold fg:black bg:bright-white)\
+[](bg:green fg:bright-white)\
 $git_branch\
 $git_status\
-[](fg:green)\
+[](fg:green bg:blue)\
+$directory\
+[](fg:blue)\
 $fill\
 [](fg:red)\
 $username\
-[ ](fg:yellow bg:red)\
+[ ](fg:yellow bg:red)\
 $hostname\
-[](fg:bright-white bg:yellow)\
+[](fg:bright-white bg:yellow)\
 $time\
 [](fg:bright-white)\
 \n$character"""
@@ -27,10 +27,10 @@ error_symbol = '[ ](bold red)'
 
 [directory]
 style = "bold fg:black bg:blue"
-format = "[ $path]($style)"
+format = "[$path]($style)"
 truncation_length = 5
 truncation_symbol = "󰉒 /"
-home_symbol = " "
+home_symbol = "  "
 truncate_to_repo = false
 
 [directory.substitutions]
@@ -46,7 +46,7 @@ format = '[[ $symbol $branch](bold fg:black bg:green)]($style)'
 
 [git_status]
 style = "bold bg:green"
-format = '[[($all_status$ahead_behind)](bold fg:black bg:green)]($style)'
+format = '[[($all_status$ahead_behind) ](bold fg:black bg:green)]($style)'
 
 [time]
 disabled = false

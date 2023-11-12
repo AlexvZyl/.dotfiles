@@ -1,7 +1,9 @@
 format = """
-[](bright-white)\
+[ ](bright-white)\
 [󰣇 ](bold fg:black bg:bright-white)\
-[](bg:green fg:bright-white)\
+[](bg:purple fg:bright-white)\
+$python\
+[](fg:purple bg:green)\
 $git_branch\
 $git_status\
 [](fg:green bg:blue)\
@@ -14,16 +16,22 @@ $username\
 $hostname\
 [](fg:bright-white bg:yellow)\
 $time\
-[](fg:bright-white)\
+[ ](fg:bright-white)\
 \n$character"""
 
 [fill]
 symbol = '-'
 style = 'fg:bright-black'
 
+[python]
+style = "bold fg:black bg:purple"
+format = '[ ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+symbol = ' '
+pyenv_version_name = false
+
 [character]
-success_symbol = '[ ](bold green)'
-error_symbol = '[ ](bold red)'
+success_symbol = '[  ](bold green)'
+error_symbol = '[  ](bold red)'
 
 [directory]
 style = "bold fg:black bg:blue"

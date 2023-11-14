@@ -3,6 +3,7 @@ format = """
 [󰣇 ](bold fg:black bg:bright-white)\
 [](bg:purple fg:bright-white)\
 $python\
+$rust\
 [](fg:purple bg:green)\
 $git_branch\
 $git_status\
@@ -28,6 +29,12 @@ style = "bold fg:black bg:purple"
 format = '[ ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 symbol = ' '
 pyenv_version_name = false
+
+[rust]
+style = "bold fg:black bg:purple"
+symbol = ' 󱘗 '
+format = '[$symbol($version )]($style)'
+
 
 [character]
 success_symbol = '[  ](bold green)'
@@ -59,7 +66,7 @@ format = '[[($all_status$ahead_behind) ](bold fg:black bg:green)]($style)'
 [time]
 disabled = false
 time_format = "%R"
-format = '[[  $time ](bold fg:black bg:bright-white)]($style)'
+format = '[[  $time](bold fg:black bg:bright-white)]($style)'
 
 [hostname]
 ssh_only = true

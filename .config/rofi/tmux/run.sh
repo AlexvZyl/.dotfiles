@@ -30,7 +30,7 @@ all_sessions=("${active_sessions[@]}")
 all_sessions+=("${files[@]}")
 
 # Display with rofi.
-selected_file=$(printf '%s\n' "${all_sessions[@]}" | sort -u | \
+selected_file=$(printf '%s\n' "${all_sessions[@]}" | \
     rofi \
         -config "$HOME/.config/rofi/tmux/style.rasi" \
         -dmenu \

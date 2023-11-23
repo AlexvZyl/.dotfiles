@@ -9,6 +9,7 @@
     feh --bg-fill ~/.wallpapers/alena-aenami-horizon-1k_upscaled.jpg
     picom -b 
     ~/.config/polybar/launch.sh
+    nice -n 19 betterlockscreen -u "${HOME}/.wallpapers/tokyo-night-space_upscaled.png" --display 1 &
 ) &
 
 # Services

@@ -2,6 +2,8 @@ format = """
 [ ](bright-white)\
 [󰣇 ](bold fg:black bg:bright-white)\
 [](bg:purple fg:bright-white)\
+$nodejs\
+$julia\
 $python\
 $rust\
 [](fg:purple bg:green)\
@@ -24,17 +26,26 @@ $time\
 symbol = '-'
 style = 'fg:bright-black'
 
+[nodejs]
+style = "bold fg:black bg:purple"
+symbol = " 󰎙 "
+format = "[$symbol($version )]($style)"
+
 [python]
 style = "bold fg:black bg:purple"
-format = '[ ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-symbol = ' '
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+symbol = "  "
 pyenv_version_name = false
+
+[julia]
+style = "bold fg:black bg:purple"
+format = "[$symbol($version )]($style)"
+symbol = "  "
 
 [rust]
 style = "bold fg:black bg:purple"
 symbol = ' 󱘗 '
 format = '[$symbol($version )]($style)'
-
 
 [character]
 success_symbol = '[  ](bold green)'
@@ -61,7 +72,7 @@ format = '[[ $symbol $branch](bold fg:black bg:green)]($style)'
 
 [git_status]
 style = "bold bg:green"
-format = '[[($all_status$ahead_behind) ](bold fg:black bg:green)]($style)'
+format = '[[ ($all_status $ahead_behind)](bold fg:black bg:green)]($style)'
 
 [time]
 disabled = false

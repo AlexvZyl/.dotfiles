@@ -42,3 +42,6 @@ alias rsync-aid="rsync -avz --progress --include src/data/ --exclude build/ --ex
     --exclude models --exclude \"*.csv\" --exclude \"*.png\""
 alias rsync-aid-to-local="rsync-aid AdvanceGuidance_GPU:/home/ubuntu/mnt/tb-mdel-dev/ ~/AdvanceGuidance/Remotes/tb-model-dev/"
 alias rsync-aid-to-remote="rsync-aid ~/AdvanceGuidance/Remotes/tb-model-dev/ AdvanceGuidance_GPU:/home/ubuntu/mnt/tb-mdel-dev/"
+
+# AWS
+alias sky-status="sky status --refresh"

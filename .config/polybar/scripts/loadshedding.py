@@ -11,7 +11,7 @@ def no_loadshedding(events):
     return len(events) == 0
 
 
-def find_next_time(events):
+def find_next_event(events):
     now = get_current_time()
     index = 0
     next = events[index]
@@ -50,6 +50,8 @@ def main():
             if no_loadshedding(events):
                 print("%{F#9ece6a}%{F-} None %{F#9ece6a}%{F-}")
                 return
+
+            find_next_event(events)
 
     except Exception:
         print("%{F#e0af68}%{F-} 󰧠 ")

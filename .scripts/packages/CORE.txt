@@ -39,6 +39,7 @@ trash-cli
 ripgrep
 aircrack-ng
 reaver
+macchanger
 
 papirus-icon-theme
 i3-wm

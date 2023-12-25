@@ -14,6 +14,7 @@ pipewire-pulse
 pipewire-jack
 pamixer
 flameshot
+lshw
 
 python-pytz
 
@@ -36,6 +37,8 @@ lynx
 pass
 trash-cli
 ripgrep
+aircrack-ng
+reaver
 
 papirus-icon-theme
 i3-wm

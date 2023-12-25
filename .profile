@@ -3,6 +3,7 @@ export TERMINAL="xterm-kitty"
 export TERM="xterm-kitty"
 export COLORTERM="xterm-kitty"
 export MANPAGER='nvim +Man!'
+#export MANPAGER='less'
 export MANWIDTH=999
 export EDITOR="nvim"
 export VISUAL="vscodium"
@@ -34,6 +35,8 @@ alias pexec="pyenv exec python3"
 alias c="clear"
 alias nh="nvim ."
 alias z="zathura"
+alias tks="tmux kill-session"
+alias gl="git log --oneline --graph"
 
 # Remoting
 alias ssh='kitty +kitten ssh'

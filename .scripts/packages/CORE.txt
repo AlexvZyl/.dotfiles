@@ -1,8 +1,7 @@
 linux-headers
-linux-lts
-linux-lts-headers
-linux-zen
-linux-zen-headers
+linux-firmware
+linux-docs
+linux
 
 man-db
 man-pages

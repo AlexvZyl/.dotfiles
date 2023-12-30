@@ -37,6 +37,8 @@ alias nh="nvim ."
 alias z="zathura"
 alias tks="tmux kill-session"
 alias gl="git log --oneline --graph"
+alias picom-restart="pkill picom;\
+    picom -b"
 
 # Remoting
 alias ssh='kitty +kitten ssh'

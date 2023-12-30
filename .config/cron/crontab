@@ -1,17 +1,17 @@
 # Geyser notifications.
-0 8 * * * ~/.config/cron/geyser_off.sh
-30 8 * * * ~/.config/cron/geyser_off.sh
-0 9 * * * ~/.config/cron/geyser_off.sh
-30 9 * * * ~/.config/cron/geyser_off.sh
-0 10 * * * ~/.config/cron/geyser_off.sh
-0 17 * * * ~/.config/cron/geyser_on.sh
-30 17 * * * ~/.config/cron/geyser_on.sh
-0 18 * * * ~/.config/cron/geyser_on.sh
-30 18 * * * ~/.config/cron/geyser_on.sh
-0 19 * * * ~/.config/cron/geyser_on.sh
+# 0 8 * * * ~/.config/cron/geyser_off.sh
+# 30 8 * * * ~/.config/cron/geyser_off.sh
+# 0 9 * * * ~/.config/cron/geyser_off.sh
+# 30 9 * * * ~/.config/cron/geyser_off.sh
+# 0 10 * * * ~/.config/cron/geyser_off.sh
+# 0 17 * * * ~/.config/cron/geyser_on.sh
+# 30 17 * * * ~/.config/cron/geyser_on.sh
+# 0 18 * * * ~/.config/cron/geyser_on.sh
+# 30 18 * * * ~/.config/cron/geyser_on.sh
+# 0 19 * * * ~/.config/cron/geyser_on.sh
 
 # Update loadshedding schedule.
 0 * * * * ~/.config/cron/update_loadshedding.sh
 
 # DawnCraft.
-0 0 * * * ~/.config/cron/sync_dawncraft.sh
+# 0 0 * * * ~/.config/cron/sync_dawncraft.sh

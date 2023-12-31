@@ -17,6 +17,7 @@
 ~/.config/tmux/utils/start_all_servers.sh &
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+birdtray &
 
 # Apps
 xdg-settings set default-web-browser librewolf.desktop

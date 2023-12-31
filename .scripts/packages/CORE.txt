@@ -87,3 +87,6 @@ thunar
 nyxt
 npm
 zathura-pfd-mupdf
+
+thunderbird
+birdtray

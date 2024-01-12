@@ -44,4 +44,5 @@ alias z="zathura"
 alias tks="tmux kill-session"
 alias gl="git log --oneline --graph"
 alias picom-restart="pkill picom;\
+    sleep 0.01;\
     picom -b"

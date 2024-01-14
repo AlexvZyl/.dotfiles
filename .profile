@@ -37,7 +37,7 @@ alias sky-status="sky status --refresh"
 
 # Utils
 alias ssh='kitty +kitten ssh'
-alias check-root="sudo dust -X /home  /"
+alias check-root="dua -i /home  i /"
 alias c="clear"
 alias nh="nvim ."
 alias z="zathura"

@@ -32,6 +32,7 @@ rustscan
 tor
 privoxy
 proxychains-ng
+dua-cli
 lynx
 pass
 trash-cli

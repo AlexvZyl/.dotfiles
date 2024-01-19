@@ -36,7 +36,6 @@ alias pexec="pyenv exec python3"
 alias sky-status="sky status --refresh"
 
 # Utils
-alias ssh='kitty +kitten ssh'
 alias check-root="dua -i /home  i /"
 alias c="clear"
 alias nh="nvim ."

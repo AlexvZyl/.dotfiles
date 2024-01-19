@@ -30,7 +30,7 @@ all_sessions=("${active_sessions[@]}")
 all_sessions+=("${files[@]}")
 
 # Display with rofi.
-selected_file=$(printf '%s\n' "${all_sessions[@]}" | \
+selected_file=$(printf '%s\n' "${all_sessions[@]}" | sort -u | uniq |\
     rofi \
         -config "$HOME/.config/rofi/tmux/style.rasi" \
         -dmenu \
@@ -39,8 +39,8 @@ selected_file=$(printf '%s\n' "${all_sessions[@]}" | \
 
 # Start selected session.
 if [[ -n $selected_file ]]; then
-    script="${selected_file#$prefix}"
-    session_name="${script%$active}"
+    script="${selected_file#"$prefix"}"
+    session_name="${script%"$active"}"
     if tmux has-session -t "$session_name" >/dev/null 2>&1; then
         kitty --class "tmux-$session_name" --execute tmux attach -t "$session_name"
     else

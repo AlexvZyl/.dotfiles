@@ -45,3 +45,6 @@ alias gl="git log --oneline --graph"
 alias picom-restart="pkill picom;\
     sleep 0.01;\
     picom -b"
+
+alias setup-keyboard="setxkbmap -option caps:escape;\
+    xset r rate 165 50"

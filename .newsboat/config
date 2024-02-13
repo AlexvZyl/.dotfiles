@@ -20,9 +20,9 @@ bind-key ^D halfpagedown
 # Colors.
 color info yellow black underline
 color listnormal white default
-color listfocus white black 
-color listfocus_unread green black 
-color listnormal_unread green default 
+color listfocus white black
+color listfocus_unread green black
+color listnormal_unread green default
 
 # UI.
 datetime-format "%d-%m-%Y"
@@ -31,6 +31,6 @@ feedlist-format "  %10u    %t"
 itemview-title-format "  󱓷     %T"
 articlelist-title-format "       󰋻 %2u     %T"
 articlelist-format "%3i  %D  %?T?|%-17T|  ?%t"
-selecttag-title-format "      Tags"	
+selecttag-title-format "      Tags"
 selecttag-format "%3i    %T"
 notify-format "  RSS feed updated  ( 󱓷  %n )"

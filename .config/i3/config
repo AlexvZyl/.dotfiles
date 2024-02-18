@@ -1,7 +1,7 @@
 # Settings.
 font pango: JetBrainsMono Nerd Font 10
 focus_follows_mouse no
-mouse_warping none 
+mouse_warping none
 set $mod Mod4
 workspace_layout default
 
@@ -62,10 +62,10 @@ floating_modifier $mod
 
 # switch to workspace
 bindsym $mod+1    workspace  $ws1
-bindsym $mod+2    workspace  $ws2 
-bindsym $mod+3    workspace  $ws3 
-bindsym $mod+4    workspace  $ws4 
-bindsym $mod+5    workspace  $ws5 
+bindsym $mod+2    workspace  $ws2
+bindsym $mod+3    workspace  $ws3
+bindsym $mod+4    workspace  $ws4
+bindsym $mod+5    workspace  $ws5
 bindsym $mod+6    workspace  $ws6
 bindsym $mod+7    workspace  $ws7
 bindsym $mod+8    workspace  $ws8
@@ -137,14 +137,14 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 ######################################
 
 # Terminal stuff
-bindsym $mod+t exec kitty --execute ~/.config/tmux/utils/start_terminal.sh
-bindsym $mod+shift+t exec proxychains4 -q kitty --execute ~/.config/tmux/utils/start_tor_terminal.sh
-bindsym $mod+n exec kitty --class neovim --execute ~/.config/tmux/utils/start_editor.sh
-bindsym $mod+shift+f exec kitty --execute tmux new-session -n "files" "ranger"
-bindsym $mod+m exec kitty --execute tmux new-session -n "monitor" btop
-bindsym $mod+g exec kitty --execute nvtop
-bindsym $mod+r exec kitty --execute ~/.config/tmux/utils/start_newsboat.sh
-bindsym $mod+w exec kitty --execute ~/.config/tmux/utils/start_iwctl.sh
+bindsym $mod+t exec wezterm -e ~/.config/tmux/utils/start_terminal.sh
+bindsym $mod+shift+t exec proxychains4 -q wezterm -e ~/.config/tmux/utils/start_tor_terminal.sh
+bindsym $mod+n exec wezterm --class neovim -e ~/.config/tmux/utils/start_editor.sh
+bindsym $mod+shift+f exec wezterm -e tmux new-session -n "files" "ranger"
+bindsym $mod+m exec wezterm -e tmux new-session -n "monitor" btop
+bindsym $mod+g exec wezterm -e nvtop
+bindsym $mod+r exec wezterm -e ~/.config/tmux/utils/start_newsboat.sh
+bindsym $mod+w exec wezterm -e ~/.config/tmux/utils/start_iwctl.sh
 
 # Kill focused window.
 bindsym $mod+q kill
@@ -243,11 +243,10 @@ set $ws10 "10"
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
 for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
-for_window [class="kitty"] floating enable
+for_window [class="wezterm"] floating enable
 for_window [class="Gufw.py"] floating enable
 
 # Floating config.
-for_window [class=".*"] resize set 954 588
 for_window [class=".*"] move position center
 
 # Browser fullscreen some windows.

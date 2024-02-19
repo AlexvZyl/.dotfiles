@@ -139,7 +139,7 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 # Terminal stuff
 bindsym $mod+t exec wezterm -e ~/.config/tmux/utils/start_terminal.sh
 bindsym $mod+shift+t exec proxychains4 -q wezterm -e ~/.config/tmux/utils/start_tor_terminal.sh
-bindsym $mod+n exec wezterm --class neovim -e ~/.config/tmux/utils/start_editor.sh
+bindsym $mod+n exec wezterm start --class neovim "$HOME/.config/tmux/utils/start_editor.sh"
 bindsym $mod+shift+f exec wezterm -e tmux new-session -n "files" "ranger"
 bindsym $mod+m exec wezterm -e tmux new-session -n "monitor" btop
 bindsym $mod+g exec wezterm -e nvtop
@@ -247,6 +247,7 @@ for_window [class="wezterm"] floating enable
 for_window [class="Gufw.py"] floating enable
 
 # Floating config.
+for_window [class=".*"] resize set 954 588
 for_window [class=".*"] move position center
 
 # Browser fullscreen some windows.

@@ -1,7 +1,7 @@
 # Environment.
-export TERMINAL="xterm-kitty"
-export TERM="xterm-kitty"
-export COLORTERM="xterm-kitty"
+export TERMINAL="xterm-256color"
+export TERM="xterm-256color"
+export COLORTERM="xterm-256color"
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 export EDITOR="nvim"
@@ -36,7 +36,7 @@ alias pexec="pyenv exec python3"
 alias sky-status="sky status --refresh"
 
 # Utils
-alias check-root="dua -i /home  i /"
+alias check-root="sudo dua -i /home  i /"
 alias c="clear"
 alias nh="nvim ."
 alias z="zathura"

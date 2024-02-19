@@ -25,6 +25,11 @@ config.window_padding = {
   bottom = 0,
 }
 
+
+local scheme = wezterm.get_builtin_color_schemes()['Tokyo Night']
+--scheme.brights[1] = scheme.ansi[1]
+config.color_schemes = { ['Tokyo Night'] = scheme }
 config.color_scheme = 'Tokyo Night'
+
 
 return config

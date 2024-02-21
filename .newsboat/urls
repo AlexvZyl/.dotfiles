@@ -2,6 +2,7 @@ https://archlinux.org/feeds/news/ Linux
 https://hnrss.org/newest?points=1000 FOSS Linux
 https://www.techhut.tv/rss/ FOSS Linux
 https://christitus.com/categories/linux/index.xml FOSS Linux
+https://signal.org/blog/rss.xml FOSS
 
 https://neovim.io/news.xml FOSS Programming
 https://charm.sh/blog/rss.xml FOSS
@@ -12,6 +13,7 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCUMwY9iS8oMyWDYIe6_RmoA You
 https://www.youtube.com/feeds/videos.xml?channel_id=UCSp-OaMpsO8K0KkOqyBl7_w YouTube Programming # Let's Get Rusty
 
 https://www.teamfortress.com/rss.xml Gaming
+
 
 # Example of grouping tags into a single feed.
 # "query:Linux:tags # \"Linux\""

@@ -10,6 +10,13 @@ config.animation_fps = 75
 config.window_background_opacity = 0.96
 
 config.font_size = 11.5
+config.underline_thickness = 1
+config.underline_position = -4.0
+config.freetype_load_target = "Normal"
+config.bold_brightens_ansi_colors = false
+--config.freetype_render_target = 'Normal'
+--config.freetype_load_flags = 'NO_HINTING'
+
 config.warn_about_missing_glyphs = false
 config.font = wezterm.font({
     family = 'JetBrainsMono Nerd Font',

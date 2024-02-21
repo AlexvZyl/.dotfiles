@@ -1,7 +1,7 @@
 # Environment.
-export TERMINAL="xterm-256color"
-export TERM="xterm-256color"
-export COLORTERM="xterm-256color"
+export TERM="wezterm"
+export TERMINAL=$TERM
+export COLORTERM=$TERM
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 export EDITOR="nvim"
@@ -27,7 +27,7 @@ alias rst="reset && echo \"\" && pfetch"
 alias cat="bat"
 alias rm="trash --trash-dir ~/.trash"  # This one has saved me a lot of heartache...
 alias clear-trash="/usr/bin/rm -rdf ~/.trash/files/*"
-alias kitty-ssh='kitty +kitten ssh'
+alias tssh='TERM=xterm-256color ssh'
 alias workspace-git="git --work-tree=$HOME --git-dir=$HOME/.workspace"
 alias workspace-lazygit="lazygit --git-dir=$HOME/.workspace --work-tree=$HOME"
 alias pexec="pyenv exec python3"

@@ -5,7 +5,7 @@ export COLORTERM=$TERM
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 export EDITOR="nvim"
-export VISUAL="vscodium"
+export VISUAL=$EDITOR
 export JULIA_NUM_THREADS=8
 export BAT_THEME="base16-256"
 
@@ -13,7 +13,7 @@ export BAT_THEME="base16-256"
 export PATH="$HOME/.local/bin/:$PATH"
 
 # Dotfiles.
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=\$HOME/.dotfiles/ --work-tree=\$HOME'
 
 # Aliasses.
 alias lg='lazygit'
@@ -28,8 +28,8 @@ alias cat="bat"
 alias rm="trash --trash-dir ~/.trash"  # This one has saved me a lot of heartache...
 alias clear-trash="/usr/bin/rm -rdf ~/.trash/files/*"
 alias tssh='TERM=xterm-256color ssh'
-alias workspace-git="git --work-tree=$HOME --git-dir=$HOME/.workspace"
-alias workspace-lazygit="lazygit --git-dir=$HOME/.workspace --work-tree=$HOME"
+alias workspace-git="git --work-tree=\$HOME --git-dir=\$HOME/.workspace"
+alias workspace-lazygit="lazygit --git-dir=\$HOME/.workspace --work-tree=\$HOME"
 alias pexec="pyenv exec python3"
 
 # AWS
@@ -48,3 +48,6 @@ alias picom-restart="pkill picom;\
 
 alias setup-keyboard="setxkbmap -option caps:escape;\
     xset r rate 165 50"
+
+alias setup-monitors="feh --bg-fill \$HOME/.wallpapers/alena-aenami-horizon-1k_upscaled.jpg
+    nice -n 19 betterlockscreen -u \"\$HOME/.wallpapers/tokyo-night-space_upscaled.png\" --display 1"

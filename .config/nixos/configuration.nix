@@ -2,9 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
-
-{
+{ config, pkgs, ... }: {
   imports =
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
@@ -26,6 +24,8 @@
     powerManagement.enable = true;
     powerManagement.finegrained = false;
   };
+
+  nix.settings.experimental-features = ["nix-command"];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -70,12 +70,27 @@
   # Touchpad support.
   services.xserver.libinput.enable = true;
 
+  environment.systemPackages = with pkgs; [
+      vim
+    ];
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.alex = {
     isNormalUser = true;
     description = "Alexander van Zyl";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
+    packages = with pkgs;
+    let
+      polybar = pkgs.polybar.override {
+        i3Support = true;
+        pulseSupport = true;
+      };
+    in
+    [
+      polybar
+      i3
+      i3ipc-glib
+      pulseaudio
       librewolf
       neovim
       git
@@ -103,7 +118,6 @@
       feh
       nodejs
       gh
-      polybar
       arandr
       gnome.nautilus
       picom
@@ -113,6 +127,7 @@
       unzip
       starship
       tree-sitter
+      wezterm
 
       (python311.withPackages(ps: with ps; [pytz]))
 
@@ -122,9 +137,6 @@
       polkit_gnome
       gnupg
       pinentry
-
-      i3
-      pulseaudio
     ];
   };
 
@@ -134,11 +146,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  environment.systemPackages = with pkgs; [
-    vim
-  ];
-
 
   programs.gnupg.agent.enable = true;
 

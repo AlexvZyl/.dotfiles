@@ -15,7 +15,10 @@ Continuous change is to be expected...
 
 </div>
 
-The configuration files for my Arch Linux desktop.
+The configuration files for my NixOS Linux desktop.
+
+> [!NOTE]
+> The old Arch Linux dotfiles can be found on the [archlinux branch](https://github.com/AlexvZyl/.dotfiles/tree/archlinux).
 
 # Full Installation
 

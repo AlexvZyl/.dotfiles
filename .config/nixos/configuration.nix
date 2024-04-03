@@ -65,12 +65,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
   # Touchpad support.
@@ -118,10 +112,19 @@
       gcc
       unzip
       starship
+      tree-sitter
 
       (python311.withPackages(ps: with ps; [pytz]))
 
-      ungoogled-chromium
+      brave
+      dua
+      polkit
+      polkit_gnome
+      gnupg
+      pinentry
+
+      i3
+      pulseaudio
     ];
   };
 
@@ -135,6 +138,9 @@
   environment.systemPackages = with pkgs; [
     vim
   ];
+
+
+  programs.gnupg.agent.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -163,13 +169,20 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
 
-  # Startup script.
-  systemd.user.services.startup = {
-    description = "Run script at startup.";
-    serviceConfig.PassEnvironment = "DISPLAY";
-    script = ''
-        bash -c ./home/alex/.scripts/startup/startup.s
-    '';
-    wantedBy = [ "multi-user.target" ];
+  security.polkit.enable = true;
+  systemd = {
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+          Type = "simple";
+          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+          Restart = "on-failure";
+          RestartSec = 1;
+          TimeoutStopSec = 10;
+        };
+    };
   };
 }

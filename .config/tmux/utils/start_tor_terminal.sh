@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 export TMUX="/tmp/tmux-tor"
 tmux start-server

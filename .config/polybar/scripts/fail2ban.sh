@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 KNOWN_THREATS=0
 RESULT=$(sudo fail2ban-client status sshd | grep "Currently banned" | grep -Eo "[0-9]+")

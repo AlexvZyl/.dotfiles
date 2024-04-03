@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
-config.default_prog = { '/bin/fish' }
+config.default_prog = { 'fish' }
 config.enable_tab_bar = false
 
 config.max_fps = 75
@@ -21,10 +21,10 @@ config.bold_brightens_ansi_colors = false
 --config.freetype_load_flags = 'NO_HINTING'
 
 config.warn_about_missing_glyphs = false
-config.font = wezterm.font({
-    family = 'JetBrainsMono Nerd Font',
-    weight = 'Medium'
-})
+--config.font = wezterm.font({
+--    family = 'JetBrainsMono Nerd Font',
+--    weight = 'Medium'
+--})
 
 config.default_cursor_style = 'BlinkingBlock'
 

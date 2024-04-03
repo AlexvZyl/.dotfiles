@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 OUTPUT=$(newsboat -x reload print-unread)
 

@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
 # Core components (order is important!)
 (
-    nvidia-force-comp-pipeline
+    #nvidia-force-comp-pipeline
     ~/.screenlayout/default_double_monitor.sh
     #~/.screenlayout/default_double_monitor_ag.sh
     #feh --bg-fill ~/.wallpapers/Space_Spiral_Nord.png &
@@ -16,8 +16,6 @@
 ~/.config/cron/update_loadshedding.sh &
 ~/.config/tmux/utils/start_all_servers.sh &
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-birdtray &
 
 # Apps
 xdg-settings set default-web-browser librewolf.desktop

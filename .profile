@@ -13,20 +13,20 @@ export BAT_THEME="base16-256"
 export PATH="$HOME/.local/bin/:$PATH"
 
 # Dotfiles.
-alias config='/usr/bin/git --git-dir=\$HOME/.dotfiles/ --work-tree=\$HOME'
+alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Aliasses.
 alias lg='lazygit'
 alias lazygit-dotfiles='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias lgd='lazygit-dotfiles'
-alias ls='exa --grid --long --header --no-permissions --no-time --across'
+#alias ls='exa --grid --long --header --no-permissions --no-time --across'
 alias unlock='sudo rm /var/lib/pacman/db.lck'
 alias julia="clear && julialauncher"
 alias pdf="nohup zathura"
 alias rst="reset && echo \"\" && pfetch"
 alias cat="bat"
 alias rm="trash --trash-dir ~/.trash"  # This one has saved me a lot of heartache...
-alias clear-trash="/usr/bin/rm -rdf ~/.trash/files/*"
+alias clear-trash="rm -rdf ~/.trash/files/*"
 alias tssh='TERM=xterm-256color ssh'
 alias workspace-git="git --work-tree=\$HOME --git-dir=\$HOME/.workspace"
 alias workspace-lazygit="lazygit --git-dir=\$HOME/.workspace --work-tree=\$HOME"

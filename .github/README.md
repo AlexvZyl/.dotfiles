@@ -1,4 +1,7 @@
-# 🗃️ .dotfiles
+# 🗃️ .dotfiles (Arch Linux)
+
+> [!NOTE]
+> This branch contains my dotfiles before I moved from Arch linux to NixOS.  They are no longer being used.
 
 <div align="center">
   

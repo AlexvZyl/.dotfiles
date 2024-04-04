@@ -70,8 +70,45 @@
   # Touchpad support.
   services.xserver.libinput.enable = true;
 
+  # Package overried.
+  nixpkgs.config = {
+    packageOverrides = pkgs: rec {
+      polybar = pkgs.polybar.override {
+        i3Support = true;
+        pulseSupport = true;
+      };
+    };
+  };
+
   environment.systemPackages = with pkgs; [
       vim
+      postgresql
+      libpqxx
+      cron
+      pinentry
+      pamixer
+      gnupg
+      polkit
+      polkit_gnome
+      gcc
+      unzip
+      git
+      pass
+      lshw
+      libgcc
+      pulseaudio
+      picom
+      blueman
+      betterlockscreen
+      (python311.withPackages(ps: with ps; [pytz]))
+      polybar
+      i3
+      i3ipc-glib
+      nodejs
+      tmux
+      fish
+      trash-cli
+      neovim
     ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -79,35 +116,16 @@
     isNormalUser = true;
     description = "Alexander van Zyl";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs;
-    let
-      polybar = pkgs.polybar.override {
-        i3Support = true;
-        pulseSupport = true;
-      };
-    in
-    [
-      polybar
-      i3
-      i3ipc-glib
-      pulseaudio
+    packages = with pkgs; [
       librewolf
-      neovim
-      git
-      pass
-      lshw
       flameshot
-      libgcc
       dunst
       ripgrep
-      trash-cli
       newsboat
       rofi
       rofi-pass
       pfetch
       lazygit
-      fish
-      tmux
       bat
       zoxide
       btop
@@ -116,27 +134,14 @@
       ranger
       dunst
       feh
-      nodejs
       gh
       arandr
       gnome.nautilus
-      picom
-      blueman
-      betterlockscreen
-      gcc
-      unzip
       starship
       tree-sitter
       wezterm
-
-      (python311.withPackages(ps: with ps; [pytz]))
-
-      brave
+      chromium
       dua
-      polkit
-      polkit_gnome
-      gnupg
-      pinentry
     ];
   };
 
@@ -157,16 +162,19 @@
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
+  services.openssh.enable = true;
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = true;
+
+  # Cron.
+  services.cron = {
+    enable = true;
+    systemCronJobs = [
+        "0 * * * * ~/.config/cron/update_loadshedding.sh"
+    ];
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -176,6 +184,7 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
 
+  # Emable polkit.
   security.polkit.enable = true;
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {

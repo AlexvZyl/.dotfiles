@@ -17,6 +17,9 @@ Continuous change is to be expected...
 
 The configuration files for my NixOS Linux desktop.
 
+> [!WARNING]
+> The NixOS setup is still under heavy development.
+
 > [!NOTE]
 > The old Arch Linux dotfiles can be found on the [archlinux branch](https://github.com/AlexvZyl/.dotfiles/tree/archlinux).
 

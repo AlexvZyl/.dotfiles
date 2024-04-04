@@ -1,5 +1,6 @@
 local wezterm = require 'wezterm'
-local config = wezterm.config_builder()
+
+config = {}
 
 config.default_prog = { 'fish' }
 config.enable_tab_bar = false
@@ -20,11 +21,13 @@ config.bold_brightens_ansi_colors = false
 --config.freetype_render_target = 'Normal'
 --config.freetype_load_flags = 'NO_HINTING'
 
+config.audible_bell = "Disabled"
+
 config.warn_about_missing_glyphs = false
---config.font = wezterm.font({
---    family = 'JetBrainsMono Nerd Font',
---    weight = 'Medium'
---})
+config.font = wezterm.font({
+    family = 'JetBrainsMono Nerd Font',
+    weight = 'Medium'
+})
 
 config.default_cursor_style = 'BlinkingBlock'
 
@@ -35,11 +38,9 @@ config.window_padding = {
   bottom = 0,
 }
 
-
 local scheme = wezterm.get_builtin_color_schemes()['Tokyo Night']
 --scheme.brights[1] = scheme.ansi[1]
 config.color_schemes = { ['Tokyo Night'] = scheme }
 config.color_scheme = 'Tokyo Night'
-
 
 return config

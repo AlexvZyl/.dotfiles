@@ -2,7 +2,9 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+
+{
   imports =
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
@@ -43,7 +45,7 @@
   # Setup GUI environment.
   services.xserver.enable = true;
   services.xserver.windowManager.i3.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -70,7 +72,7 @@
   # Touchpad support.
   services.xserver.libinput.enable = true;
 
-  # Package overried.
+  # Package overrides.
   nixpkgs.config = {
     packageOverrides = pkgs: rec {
       polybar = pkgs.polybar.override {
@@ -82,8 +84,6 @@
 
   environment.systemPackages = with pkgs; [
       vim
-      postgresql
-      libpqxx
       cron
       pinentry
       pamixer
@@ -100,15 +100,17 @@
       picom
       blueman
       betterlockscreen
-      (python311.withPackages(ps: with ps; [pytz]))
+      python311
       polybar
       i3
       i3ipc-glib
-      nodejs
       tmux
       fish
       trash-cli
       neovim
+      efibootmgr
+      refind
+      wget
     ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -119,11 +121,15 @@
     packages = with pkgs; [
       librewolf
       flameshot
+      nodejs
       dunst
       ripgrep
       newsboat
+      postgresql
+      libpqxx
       rofi
       rofi-pass
+      gparted
       pfetch
       lazygit
       bat
@@ -142,6 +148,7 @@
       wezterm
       chromium
       dua
+      (python311.withPackages(ps: with ps; [pytz]))
     ];
   };
 
@@ -151,17 +158,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
   programs.gnupg.agent.enable = true;
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
   services.openssh.enable = true;
 
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -172,7 +169,7 @@
   services.cron = {
     enable = true;
     systemCronJobs = [
-        "0 * * * * ~/.config/cron/update_loadshedding.sh"
+        "0 * * * * ~/.config/polybar/scripts/update_loadshedding.sh"
     ];
   };
 

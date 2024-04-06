@@ -84,16 +84,20 @@
 
   environment.systemPackages = with pkgs; [
       vim
+      zip
+      p7zip
       cron
       pinentry
       pamixer
       gnupg
       polkit
+      openssh
       polkit_gnome
       gcc
       unzip
       git
       pass
+      zip
       lshw
       libgcc
       pulseaudio
@@ -109,6 +113,7 @@
       trash-cli
       neovim
       efibootmgr
+      rustup
       refind
       wget
     ];
@@ -119,6 +124,8 @@
     description = "Alexander van Zyl";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      steam
+      discord
       librewolf
       flameshot
       nodejs
@@ -149,6 +156,7 @@
       chromium
       dua
       (python311.withPackages(ps: with ps; [pytz]))
+      vscodium
     ];
   };
 

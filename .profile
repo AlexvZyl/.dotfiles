@@ -51,3 +51,6 @@ alias setup-keyboard="setxkbmap -option caps:escape;\
 
 alias setup-monitors="feh --bg-fill \$HOME/.wallpapers/alena-aenami-horizon-1k_upscaled.jpg
     nice -n 19 betterlockscreen -u \"\$HOME/.wallpapers/tokyo-night-space_upscaled.png\" --display 1"
+
+alias tmux-workspace="~/.config/tmux/utils/create_workspace.sh"
+alias tw="tmux-workspace"

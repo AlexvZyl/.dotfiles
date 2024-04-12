@@ -84,9 +84,14 @@
 
   environment.systemPackages = with pkgs; [
       vim
+      parallel
+      glibc
       zip
+      openfortivpn
       p7zip
       cron
+      file
+      iwd
       pinentry
       pamixer
       gnupg
@@ -97,6 +102,10 @@
       unzip
       git
       pass
+      go
+      julia
+      zulu
+      luarocks
       zip
       lshw
       libgcc
@@ -105,16 +114,26 @@
       blueman
       betterlockscreen
       python311
+      python311Packages.pip
       polybar
       i3
+      ffmpeg
       i3ipc-glib
+      nodejs
       tmux
       fish
+      bat
       trash-cli
       neovim
+      ripgrep
+      btop
+      nvtop
       efibootmgr
       rustup
       refind
+      libpqxx
+      postgresql.lib
+      postgresql
       wget
     ];
 
@@ -128,27 +147,24 @@
       discord
       librewolf
       flameshot
-      nodejs
       dunst
-      ripgrep
       newsboat
-      postgresql
-      libpqxx
       rofi
       rofi-pass
+      thunderbird
       gparted
       pfetch
       lazygit
-      bat
+      audacity
       zoxide
-      btop
-      nvtop
       zathura
       ranger
       dunst
+      awscli2
       feh
       gh
       arandr
+      rustdesk
       gnome.nautilus
       starship
       tree-sitter

@@ -1,5 +1,5 @@
 # Fish.
-set fish_greeting "" 
+set fish_greeting ""
 
 # Pfetch.
 set -gx PF_INFO "ascii title kernel os wm pkgs memory uptime"
@@ -11,4 +11,4 @@ set -gx PF_COL3 "1"
 source ~/.profile
 
 eval  $(starship init fish)
-echo "" && pfetch
+echo "" &&  pfetch | sed 's/^/  /'

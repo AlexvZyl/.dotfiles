@@ -14,7 +14,6 @@
       ./system.nix
       ./gpu.nix
       ./services.nix
-      ./packages.nix
       ./lsp.nix
       ./user.nix
     ];

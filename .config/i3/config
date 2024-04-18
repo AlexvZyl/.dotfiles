@@ -33,6 +33,30 @@ client.unfocused	    	$blue       $blue       $gray		$black          $gray0
 client.focused_inactive		$blue       $blue       $gray		$black          $black
 client.urgent		    	$red        $red        $red        $black          $red
 
+# Set up a "dummy" bar that polybar will render over (to prevent maximized windows from covering polybar)
+bar {
+  # command in i3-gaps to allow rgba colors for i3bar
+  i3bar_command i3bar -t
+
+  position            top
+  tray_output         none  # do not show tray output
+  workspace_buttons   no    # do not show workspace buttons
+  height              32    # same height as polybar
+  output HDMI-1-0
+
+  # prevent any accidental clicks/scrolls
+  bindsym button1 nop
+  bindsym button2 nop
+  bindsym button3 nop
+  bindsym button4 nop
+  bindsym button5 nop
+
+  colors {
+    # set bar background to transparent
+    background #00000000
+  }
+}
+
 ##############################
 # extra options for windows: #
 ##############################
@@ -44,11 +68,11 @@ hide_edge_borders both
 for_window [class="^.*"] border pixel 0
 
 # Set inner/outer gaps
-gaps inner 10
-gaps vertical 1
-gaps right 1
-#gaps bottom 1
-#gaps horizontal 1
+gaps inner 9
+gaps bottom 1
+gaps horizontal 1
+gaps right 2
+
 smart_gaps off
 
 # show window title bars (not officially supported with i3gaps)

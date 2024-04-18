@@ -33,7 +33,7 @@
     origin = bottom-right
 
     # Offset from the origin
-    offset = 6x30
+    offset = 6x5
     # offset = 10x35 # i3 gaps = 20x20
     # (H_Right_Gap/2) x (25+V_Bottom_Gap/2)
 
@@ -113,7 +113,7 @@
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
-    line_height = 5 
+    line_height = 5
 
     # Possible values are:
     # full: Allow a small subset of html markup in notifications:
@@ -360,7 +360,7 @@
    msg_urgency = critical
    fullscreen = show
 [fullscreen_show_normal]
-   msg_urgency = normal 
+   msg_urgency = normal
    fullscreen = show
 
 
@@ -413,7 +413,7 @@
 
 [flameshot-urgency]
     appname = flameshot
-    urgency = low 
+    urgency = low
 
 [whatsapp-alignment]
     appname = whatsapp-nativefier-d40211
@@ -424,7 +424,7 @@
     alignment = left
 
 [signal-alignment]
-    appname = Signal 
+    appname = Signal
     alignment = left
 
 [urgency_low]

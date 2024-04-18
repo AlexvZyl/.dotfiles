@@ -33,6 +33,8 @@
     zip
     openfortivpn
     p7zip
+    xclip
+    gnumake
     cron
     file
     pinentry
@@ -93,6 +95,10 @@
 
   programs.steam.enable = true;
   programs.neovim.enable = true;
+
+  services.fail2ban.enable = true;
+  services.fail2ban.maxretry = 5;
+  services.fail2ban.bantime = "-1";
 
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })

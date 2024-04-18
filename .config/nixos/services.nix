@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 {
-
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -48,7 +47,6 @@
         "0 * * * * ~/.config/polybar/scripts/update_loadshedding.sh"
     ];
   };
-
 
   # Enable polkit.
   security.polkit.enable = true;

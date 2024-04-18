@@ -15,6 +15,7 @@
       rofi-pass
       thunderbird
       gparted
+      pinta
       pfetch
       lazygit
       audacity
@@ -29,6 +30,7 @@
       rustdesk
       gnome.nautilus
       starship
+      cava
       tree-sitter
       wezterm
       chromium

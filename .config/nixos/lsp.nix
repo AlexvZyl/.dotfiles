@@ -13,6 +13,8 @@
     vscode-extensions.ms-vscode.cpptools
     terraform-ls
     gopls
+    docker-ls
+    nixd
   ];
 }
 

@@ -1,13 +1,13 @@
 https://weekly.nixos.org/feeds/all.rss.xml Linux NixOS
 https://nixos.org/news-rss.xml Linux NixOS
-# https://archlinux.org/feeds/news/ Linux
-https://hnrss.org/newest?points=1200 FOSS Linux
-https://www.techhut.tv/rss/ FOSS Linux
-https://christitus.com/categories/linux/index.xml FOSS Linux
+
+https://hnrss.org/newest?points=1200 FOSS
+https://www.techhut.tv/rss/ FOSS
+
 https://signal.org/blog/rss.xml FOSS
 
+https://www.computerenhance.com/feed Programming
 https://neovim.io/news.xml FOSS Programming
-https://charm.sh/blog/rss.xml FOSS
 
 https://www.ctrlshiftesc.co.za/blogs/product-updates.atom Keyboards
 
@@ -15,7 +15,3 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCUMwY9iS8oMyWDYIe6_RmoA You
 https://www.youtube.com/feeds/videos.xml?channel_id=UCSp-OaMpsO8K0KkOqyBl7_w YouTube Programming # Let's Get Rusty
 
 https://www.teamfortress.com/rss.xml Gaming
-
-
-# Example of grouping tags into a single feed.
-# "query:Linux:tags # \"Linux\""

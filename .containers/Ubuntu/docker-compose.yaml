@@ -1,8 +1,0 @@
-version: '3'
-services:
-  ubuntu:
-    image: ubuntu 
-    container_name: testing_ubuntu
-    restart: no 
-    tty: true
-    command: /usr/bin/bash

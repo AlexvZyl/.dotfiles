@@ -15,6 +15,7 @@
     gopls
     docker-ls
     nixd
+    nodePackages_latest.bash-language-server
   ];
 }
 

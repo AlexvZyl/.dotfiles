@@ -11,11 +11,13 @@
       flameshot
       dunst
       newsboat
+      obs-studio
       rofi
       rofi-pass
       thunderbird
       gparted
       pinta
+      speedtest-cli
       pfetch
       lazygit
       audacity

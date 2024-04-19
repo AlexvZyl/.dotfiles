@@ -3,19 +3,29 @@
 <div align="center">
   
 ```markdown
+<div align="center">
 👋 Welcome to my personal dotfiles!
 Continuous change is to be expected...
+</div>
 ```
+
+![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/6b87665e-7b22-459f-8fed-50dbbb50f95d)
+![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/a6fe2b0b-29c4-45ec-a4cb-2e348a6d1a1d)
+
+<details>
+
+<summary>Old Two Bar Config</summary>
 
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/09d5adbe-63fb-435a-824f-39fca06e56d8)
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/55c6780d-00c6-451e-9066-0a2365c4d7a9)
 
 [![ShellCheck](https://github.com/AlexvZyl/.dotfiles/workflows/ShellCheck/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=ShellCheck) 
 ![Size](https://img.shields.io/github/repo-size/AlexvZyl/.dotfiles?style=flat)
+</details>
 
 </div>
 
-The configuration files for my NixOS Linux desktop.
+The configuration files for my NixOS (Linux) desktop.
 
 > [!WARNING]
 > The NixOS setup is still under heavy development.

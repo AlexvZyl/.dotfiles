@@ -11,10 +11,12 @@
       flameshot
       dunst
       newsboat
+      vlc
       obs-studio
       rofi
       rofi-pass
       thunderbird
+      pavucontrol
       gparted
       pinta
       speedtest-cli

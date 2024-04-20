@@ -1,7 +1,7 @@
 # 🗃️ .dotfiles
 
 <div align="center">
-  
+
 ```markdown
 <div align="center">
 👋 Welcome to my personal dotfiles!
@@ -19,7 +19,7 @@ Continuous change is to be expected...
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/09d5adbe-63fb-435a-824f-39fca06e56d8)
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/55c6780d-00c6-451e-9066-0a2365c4d7a9)
 
-[![ShellCheck](https://github.com/AlexvZyl/.dotfiles/workflows/ShellCheck/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=ShellCheck) 
+[![ShellCheck](https://github.com/AlexvZyl/.dotfiles/workflows/ShellCheck/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=ShellCheck)
 ![Size](https://img.shields.io/github/repo-size/AlexvZyl/.dotfiles?style=flat)
 </details>
 
@@ -32,6 +32,8 @@ The configuration files for my NixOS (Linux) desktop.
 
 > [!NOTE]
 > The old Arch Linux dotfiles can be found on the [archlinux branch](https://github.com/AlexvZyl/.dotfiles/tree/archlinux).
+
+<!--
 
 # Full Installation
 
@@ -48,6 +50,7 @@ curl -s https://raw.githubusercontent.com/AlexvZyl/.dotfiles/main/.scripts/insta
 chmod +x ~/bootstrap.sh && ~/bootstrap.sh && rm ~/bootstrap.sh
 reboot
 ```
+-->
 
 <!--
 # Minimal Installation
@@ -128,7 +131,7 @@ Some screenshots showing off the desktop and rice, as well as some custom featur
 *Launcher via [rofi](https://github.com/adi1090x/rofi):*
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/550f9794-0531-4f27-9433-ea76ceb381d7)
 
-*Lock screen via [betterlockscreen](https://github.com/betterlockscreen/betterlockscreen):*  
+*Lock screen via [betterlockscreen](https://github.com/betterlockscreen/betterlockscreen):*
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/4eeeab12-e778-4f6b-aa19-4f6e0cbe9767)
 
 </details>
@@ -137,7 +140,7 @@ Some screenshots showing off the desktop and rice, as well as some custom featur
 
 A few notes on the bindings:
 
-- Keys combined with the `Super` key are reserved for OS and WM related actions.  
+- Keys combined with the `Super` key are reserved for OS and WM related actions.
 - Arrows and `hjkl` keys are interchangeable.
 
 <details>
@@ -173,7 +176,7 @@ The config can be found [here](https://github.com/AlexvZyl/nvim).
 ---
 
 <div align="center">
-  
+
 *These dotfiles were briefly featured in a [TechHut Video](https://youtu.be/7NLtw26qJtU?t=789).*
-  
+
 </div>

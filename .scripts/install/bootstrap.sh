@@ -17,9 +17,6 @@ source $USER_HOME/.profile
 # Needed for install.
 $USER_HOME/.scripts/install/links.sh
 
-# Install yay and packages.
-$USER_HOME/.scripts/packages/bootstrap.sh
-
 # Setup git.
 gh auth login
 config config --local status.showUntrackedFiles no

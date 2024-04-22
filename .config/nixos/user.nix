@@ -9,7 +9,6 @@
       discord
       librewolf
       flameshot
-      dunst
       newsboat
       vlc
       obs-studio
@@ -26,6 +25,7 @@
       zoxide
       zathura
       ranger
+      glab
       dunst
       awscli2
       feh

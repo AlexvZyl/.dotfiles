@@ -21,9 +21,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
-
-  # Allow proprietary software.
+  system.stateVersion = "23.11"; # Did you read the comment? Allow proprietary software.
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
@@ -33,10 +31,13 @@
     zip
     openfortivpn
     p7zip
+    dunst
     xclip
     gnumake
+    zellij
     cron
     file
+    picom
     pinentry
     fd
     pamixer
@@ -57,7 +58,6 @@
     lshw
     libgcc
     pulseaudio
-    picom
     blueman
     betterlockscreen
     python311

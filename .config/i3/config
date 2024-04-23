@@ -41,7 +41,7 @@ bar {
   position            top
   tray_output         none  # do not show tray output
   workspace_buttons   no    # do not show workspace buttons
-  height              36    # same height as polybar
+  height              35    # same height as polybar
   output HDMI-1-0
 
   # prevent any accidental clicks/scrolls
@@ -68,10 +68,13 @@ hide_edge_borders both
 for_window [class="^.*"] border pixel 0
 
 # Set inner/outer gaps
-gaps inner 9
-gaps bottom 1
-gaps horizontal 1
-gaps right 2
+gaps inner 8
+#gaps vertical 0
+#gaps bottom 0
+#gaps top 0
+gaps horizontal 2
+gaps right 3
+#gaps left 1
 
 smart_gaps off
 

@@ -20,6 +20,4 @@ dbus-launch dunst --config ~/.config/dunst/dunstrc &
 # Apps
 xdg-settings set default-web-browser librewolf.desktop
 
-# Keyboard stuff
-setxkbmap -option caps:escape
-xset r rate 165 50
+~/.scripts/utils/setup_keyboard.sh

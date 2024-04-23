@@ -21,7 +21,7 @@ alias lazygit-dotfiles='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias lgd='lazygit-dotfiles'
 #alias ls='exa --grid --long --header --no-permissions --no-time --across'
 alias unlock='sudo rm /var/lib/pacman/db.lck'
-alias julia="clear && julialauncher"
+#alias julia="clear && julialauncher"
 alias pdf="nohup zathura"
 alias rst="reset && echo \"\" && pfetch"
 alias cat="bat"
@@ -46,8 +46,7 @@ alias picom-restart="pkill picom;\
     sleep 0.01;\
     picom -b"
 
-alias setup-keyboard="setxkbmap -option caps:escape;\
-    xset r rate 165 50"
+alias setup-keyboard="~/.scripts/utils/setup_keyboard.sh"
 
 alias setup-monitors="feh --bg-fill \$HOME/.wallpapers/alena-aenami-horizon-1k_upscaled.jpg
     nice -n 19 betterlockscreen -u \"\$HOME/.wallpapers/tokyo-night-space_upscaled.png\" --display 1"

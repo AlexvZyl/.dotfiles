@@ -12,6 +12,7 @@
 
       # Custom configs.
       ./system.nix
+      ./network.nix
       ./gpu.nix
       ./services.nix
       ./lsp.nix

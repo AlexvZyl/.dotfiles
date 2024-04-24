@@ -8,7 +8,7 @@
   networking.firewall.allowedUDPPorts = [ 80 443 ];
   networking.firewall.enable = true;
 
-  services.fail2ban.enable = false;
+  services.fail2ban.enable = true;
   services.fail2ban.maxretry = 5;
   services.fail2ban.bantime = "-1";
 }

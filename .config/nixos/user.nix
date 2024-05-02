@@ -1,12 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  # PolyMC.
-  nixpkgs.overlays = [
-    (import (builtins.fetchTarball "https://github.com/PolyMC/PolyMC/archive/develop.tar.gz")).overlay
-  ];
-  environment.systemPackages = with pkgs; [ polymc ];
-
   users.users.alex = {
     isNormalUser = true;
     description = "Alexander van Zyl";
@@ -55,6 +49,7 @@
       mangohud
       protonup
       heroic
+      xournalpp
     ];
   };
 
@@ -66,4 +61,18 @@
     STEAM_EXTRA_COMPAT_TOOLS_PATHS =
       "$HOME/.steam/root/compatibilitytools.d";
   };
+
+  # PolyMC and xournalpp.
+  nixpkgs.overlays = [
+    (import (builtins.fetchTarball "https://github.com/PolyMC/PolyMC/archive/develop.tar.gz")).overlay
+  ];
+  environment.systemPackages = with pkgs; [
+    gnome.adwaita-icon-theme
+    shared-mime-info
+    polymc
+  ];
+  environment.pathsToLink = [
+    "/share/icons"
+    "/share/mime"
+  ];
 }

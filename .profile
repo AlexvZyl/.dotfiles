@@ -41,7 +41,7 @@ alias c="clear"
 alias nh="nvim ."
 alias z="zathura"
 alias tks="tmux kill-session"
-alias gl="git log --oneline --graph"
+alias gl="git log --oneline --decorate --graph"
 alias picom-restart="pkill picom;\
     sleep 0.01;\
     picom -b"

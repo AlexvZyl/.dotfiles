@@ -31,6 +31,8 @@
     parallel
     glibc
     zip
+    libGL
+    pciutils
     openfortivpn
     xorg.xev
     p7zip
@@ -98,7 +100,6 @@
     };
   };
 
-  programs.steam.enable = true;
   programs.neovim.enable = true;
 
   fonts.packages = with pkgs; [

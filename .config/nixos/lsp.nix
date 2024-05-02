@@ -3,19 +3,22 @@
 {
   environment.systemPackages = with pkgs; [
     rust-analyzer
-    python311Packages.flake8
     lua-language-server
     pyright
     stylua
-    luajitPackages.luacheck
-    pylint
     shellcheck
-    vscode-extensions.ms-vscode.cpptools
     terraform-ls
     gopls
     docker-ls
     nixd
-    nodePackages_latest.bash-language-server
+    yaml-language-server
+    pylint
+    python311Packages.flake8
+    vscode-extensions.ms-vscode.cpptools
+    luajitPackages.luacheck
+    nodePackages.bash-language-server
+    nodePackages.vscode-html-languageserver-bin
+    nodePackages.typescript-language-server
   ];
 }
 

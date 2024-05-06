@@ -22,7 +22,7 @@
   };
 
   hardware.nvidia.prime = {
-    sync.enable = true;
+    sync.enable = false;
     offload = {
         enable = false;
         enableOffloadCmd = false;

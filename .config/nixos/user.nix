@@ -1,15 +1,37 @@
 { config, pkgs, ... }:
 
 {
+  programs.steam.enable = true;
+  #programs.steam.gamescopeSession.enable = true;
+  #programs.gamemode.enable = true;
+
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS =
+      "$HOME/.steam/root/compatibilitytools.d";
+  };
+
+  # PolyMC and xournalpp.
+  nixpkgs.overlays = [
+    (import (builtins.fetchTarball "https://github.com/PolyMC/PolyMC/archive/develop.tar.gz")).overlay
+  ];
+  environment.pathsToLink = [
+    "/share/icons"
+    "/share/mime"
+  ];
+
   users.users.alex = {
     isNormalUser = true;
     description = "Alexander van Zyl";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      gnome.adwaita-icon-theme
+      xournalpp
+      shared-mime-info
+      polymc
       discord
+      zulu8
       librewolf
       flameshot
-      polymc
       newsboat
       vlc
       wineWowPackages.stable
@@ -49,30 +71,6 @@
       mangohud
       protonup
       heroic
-      xournalpp
     ];
   };
-
-  programs.steam.enable = true;
-  programs.steam.gamescopeSession.enable = true;
-  programs.gamemode.enable = true;
-
-  environment.sessionVariables = {
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS =
-      "$HOME/.steam/root/compatibilitytools.d";
-  };
-
-  # PolyMC and xournalpp.
-  nixpkgs.overlays = [
-    (import (builtins.fetchTarball "https://github.com/PolyMC/PolyMC/archive/develop.tar.gz")).overlay
-  ];
-  environment.systemPackages = with pkgs; [
-    gnome.adwaita-icon-theme
-    shared-mime-info
-    polymc
-  ];
-  environment.pathsToLink = [
-    "/share/icons"
-    "/share/mime"
-  ];
 }

@@ -25,7 +25,7 @@ window {
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
-    border-radius:               10px;
+    border-radius:               11px;
     border-color:                @border;
     background-color:            @background;
     cursor:                      "default";
@@ -38,7 +38,7 @@ mainbox {
     margin:                      0px;
     padding:                     20px;
     border:                      2px solid;
-    border-radius:               10px;
+    border-radius:               11px;
     border-color:                @border;
     background-color:            transparent;
     children:                    [ "inputbar", "listview" ];
@@ -51,7 +51,7 @@ inputbar {
     margin:                      0px;
     padding:                     0px 0px 20px 0px;
     border:                      0px solid;
-    border-radius:               10px;
+    border-radius:               11px;
     border-color:                @selected;
     background-color:            @background-alt;
     text-color:                  @foreground;
@@ -65,7 +65,7 @@ prompt {
     text-color:                  @background;
     border:                      0px;
     border-color:                @blue2;
-    border-radius:               10px;
+    border-radius:               11px;
     padding:                     10px 20px;
 }
 
@@ -108,7 +108,7 @@ element {
     margin:                      0px;
     padding:                     5px;
     border:                      0px;
-    border-radius:               10px;
+    border-radius:               11px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
@@ -146,7 +146,7 @@ element-text {
 error-message {
     padding:                     20px;
     border:                      2px solid;
-    border-radius:               10px;
+    border-radius:               11px;
     border-color:                @urgent;
     background-color:            @background;
     text-color:                  @foreground;

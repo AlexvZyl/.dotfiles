@@ -2,8 +2,8 @@
 
 {
   programs.steam.enable = true;
+  programs.gamemode.enable = true;
   #programs.steam.gamescopeSession.enable = true;
-  #programs.gamemode.enable = true;
 
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS =
@@ -30,8 +30,10 @@
       polymc
       discord
       zulu8
+      loc
       librewolf
       flameshot
+      onlyoffice-bin
       newsboat
       vlc
       wineWowPackages.stable
@@ -39,6 +41,7 @@
       obs-studio
       lutris
       rofi
+      gource
       rofi-pass
       thunderbird
       inkscape
@@ -71,6 +74,7 @@
       mangohud
       protonup
       heroic
+      signal-desktop
     ];
   };
 }

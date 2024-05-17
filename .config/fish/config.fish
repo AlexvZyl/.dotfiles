@@ -10,5 +10,16 @@ set -gx PF_COL3 "1"
 # Environment
 source ~/.profile
 
-eval  $(starship init fish)
-echo "" &&  pfetch | sed 's/^/  /'
+# Setup with transience.
+function starship_transient_prompt_func
+  starship module character
+end
+function starship_transient_rprompt_func
+  starship module time
+end
+starship init fish | source
+enable_transience
+
+# Previous simple setup.
+# eval  $(starship init fish)
+# echo "" &&  pfetch | sed 's/^/  /'

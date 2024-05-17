@@ -1,49 +1,44 @@
 format = """
 [ ](bright-white)\
-[󰣇 ](bold fg:black bg:bright-white)\
-[](bg:purple fg:bright-white)\
+[ ](bold fg:black bg:bright-white)\
+[](bg:red fg:bright-white)\
 $nodejs\
 $julia\
 $python\
 $rust\
-[](fg:purple bg:green)\
+[](fg:red bg:green)\
 $git_branch\
 $git_status\
 [](fg:green bg:blue)\
 $directory\
 [](fg:blue)\
 $fill\
-[](fg:red)\
-$username\
-[ ](fg:yellow bg:red)\
-$hostname\
-[](fg:bright-white bg:yellow)\
 $time\
-[ ](fg:bright-white)\
 \n$character"""
 
 [fill]
-symbol = '-'
+#symbol = '-'
+symbol = ' '
 style = 'fg:bright-black'
 
 [nodejs]
-style = "fg:black bg:purple"
+style = "fg:black bg:red"
 symbol = " 󰎙 "
 format = "[$symbol($version )]($style)"
 
 [python]
-style = "fg:black bg:purple"
+style = "fg:black bg:red"
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 symbol = "  "
 pyenv_version_name = false
 
 [julia]
-style = "fg:black bg:purple"
+style = "fg:black bg:red"
 format = "[$symbol($version )]($style)"
 symbol = "  "
 
 [rust]
-style = "fg:black bg:purple"
+style = "fg:black bg:red"
 symbol = ' 󱘗 '
 format = '[$symbol($version )]($style)'
 
@@ -77,7 +72,7 @@ format = '[[ ($all_status $ahead_behind)](fg:black bg:green)]($style)'
 [time]
 disabled = false
 time_format = "%R"
-format = '[[  $time](fg:black bg:bright-white)]($style)'
+format = '[[$time   ](fg:bright-black)]($style)'
 
 [hostname]
 ssh_only = true

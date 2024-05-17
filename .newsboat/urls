@@ -1,7 +1,7 @@
 https://weekly.nixos.org/feeds/all.rss.xml Linux NixOS
 https://nixos.org/news-rss.xml Linux NixOS
 
-https://hnrss.org/newest?points=1200 FOSS
+https://hnrss.org/newest?points=1200 "~Hacker News" FOSS
 https://www.techhut.tv/rss/ FOSS
 
 https://signal.org/blog/rss.xml FOSS
@@ -17,7 +17,7 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCSp-OaMpsO8K0KkOqyBl7_w You
 
 https://mikesmithgh.github.io/index.xml
 
-https://www.teamfortress.com/rss.xml Gaming
-https://store.steampowered.com/feeds/news/app/2073850/?cc=ZA&l=english Gaming
+https://www.teamfortress.com/rss.xml "~TF2 Blog" Gaming
+https://store.steampowered.com/feeds/news/app/2073850/?cc=ZA&l=english "~The Finals Updates" Gaming
 
-https://iala.co.za/feed/
+https://iala.co.za/feed/ "~IALA"

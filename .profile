@@ -53,3 +53,7 @@ alias setup-monitors="feh --bg-fill \$HOME/.wallpapers/alena-aenami-horizon-1k_u
 
 alias tmux-workspace="~/.config/tmux/utils/create_workspace.sh"
 alias tw="tmux-workspace"
+
+# Nix alias`.
+alias nix-build="sudo nixos-rebuild switch --flake \$HOME/.nixos#default --impure"
+alias nix-clear="sudo nix-collect-garbage --delete-older-than 7d"

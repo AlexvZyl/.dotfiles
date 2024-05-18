@@ -6,11 +6,20 @@
     neovim.url = "github:neovim/neovim?dir=contrib&rev=27fb62988e922c2739035f477f93cc052a4fee1e";
   };
 
-  outputs = { self, nixpkgs, neovim, ... }@inputs: {
+  outputs = { nixpkgs, ... }@inputs: {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./configuration.nix
+        # Auto generated hardware config.
+        /etc/nixos/hardware-configuration.nix
+
+        # Custom configs.
+        ./system.nix
+        ./network.nix
+        ./gpu.nix
+        ./services.nix
+        ./lsp.nix
+        ./user.nix
       ];
     };
   };

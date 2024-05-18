@@ -7,12 +7,14 @@
   # Setup GUI environment.
   services.xserver.enable = true;
   services.xserver.windowManager.i3.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "za";
-    xkb.options = "caps:escape";
+    xkb = {
+        options = "caps:escape";
+        layout = "za";
+    };
     autoRepeatDelay = 165;
     autoRepeatInterval = 50;
   };
@@ -32,7 +34,7 @@
   };
 
   # Touchpad support.
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   # Cron.
   services.cron = {

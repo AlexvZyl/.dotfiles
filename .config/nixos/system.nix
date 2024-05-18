@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   swapDevices = [ {
@@ -6,7 +6,7 @@
     size = 16*1024;  # Mb
   } ];
 
-  nix.settings.experimental-features = ["nix-command"];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -80,7 +80,7 @@
     trash-cli
     ripgrep
     btop
-    nvtop
+    nvtopPackages.full
     efibootmgr
     rustup
     refind
@@ -100,7 +100,10 @@
     };
   };
 
-  programs.neovim.enable = true;
+  programs.neovim = {
+    enable = true;
+    package = inputs.neovim.defaultPackage.x86_64-linux;
+  };
 
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })

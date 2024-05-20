@@ -54,6 +54,12 @@ alias setup-monitors="feh --bg-fill \$HOME/.wallpapers/alena-aenami-horizon-1k_u
 alias tmux-workspace="~/.config/tmux/utils/create_workspace.sh"
 alias tw="tmux-workspace"
 
-# Nix alias`.
+# Nix aliases.
 alias nix-build="sudo nixos-rebuild switch --flake \$HOME/.nixos#default --impure"
 alias nix-clear="sudo nix-collect-garbage --delete-older-than 7d"
+alias nix-python-activate="LD_LIBRARY_PATH=\$(nix eval --raw nixpkgs#stdenv.cc.cc.lib)/lib \
+    nix-shell \
+    -p python3 python3Packages.virtualenv \
+    --command 'virtualenv venv; source venv/bin/activate; return'\
+"
+alias npa="nix-python-activate"

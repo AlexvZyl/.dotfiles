@@ -17,4 +17,4 @@ lazy-lock.json
 .config/nvim/lazy-lock.json
 .config/fish/functions/*
 .config/fish/completions/*
-.nixos/result/
+.nixos/result

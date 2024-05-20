@@ -28,7 +28,7 @@
         enableOffloadCmd = false;
     };
 
-    # NOTE: These values are different on each system.
+    # NOTE(alex): These values are different on each system.
     # Integrated.
     intelBusId = "PCI:0:2:0";
     # Dedicated.

@@ -27,6 +27,7 @@
       gnome.adwaita-icon-theme
       xournalpp
       shared-mime-info
+      slack
       polymc
       discord
       zulu8

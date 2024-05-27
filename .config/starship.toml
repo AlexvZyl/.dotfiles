@@ -48,17 +48,17 @@ error_symbol = '[  ](bold red)'
 
 [directory]
 style = "fg:black bg:blue"
-format = "[$path]($style)"
+format = "[ $path]($style)"
 truncation_length = 5
 truncation_symbol = "󰉒 /"
-home_symbol = "  "
+#home_symbol = "  "
 truncate_to_repo = false
 
 [directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
+#"Documents" = "󰈙 "
+#"Downloads" = " "
+#"Music" = " "
+#"Pictures" = " "
 
 [git_branch]
 symbol = ""

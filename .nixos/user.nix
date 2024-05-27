@@ -1,19 +1,7 @@
 { pkgs, ... }:
 
 {
-  programs.steam.enable = true;
-  programs.gamemode.enable = true;
-  #programs.steam.gamescopeSession.enable = true;
-
-  environment.sessionVariables = {
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS =
-      "$HOME/.steam/root/compatibilitytools.d";
-  };
-
-  # PolyMC and xournalpp.
-  nixpkgs.overlays = [
-    (import (builtins.fetchTarball "https://github.com/PolyMC/PolyMC/archive/develop.tar.gz")).overlay
-  ];
+  # Xournal fix.
   environment.pathsToLink = [
     "/share/icons"
     "/share/mime"
@@ -25,10 +13,10 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       gnome.adwaita-icon-theme
+      xfce.thunar
       xournalpp
       shared-mime-info
       slack
-      polymc
       discord
       zulu8
       loc
@@ -37,10 +25,8 @@
       onlyoffice-bin
       newsboat
       vlc
-      wineWowPackages.stable
       kalker
       obs-studio
-      lutris
       rofi
       gource
       rofi-pass
@@ -72,10 +58,10 @@
       dua
       (python311.withPackages(ps: with ps; [pytz]))
       vscodium
-      mangohud
-      protonup
-      heroic
       signal-desktop
+      sniffnet
+
+      ventoy-full
     ];
   };
 }

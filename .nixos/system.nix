@@ -26,6 +26,10 @@
   # Allow proprietary software.
   nixpkgs.config.allowUnfree = true;
 
+  # pkgs.btop = pkgs.btop.overrideAttrs (oldAttrs: {
+  #   nativeBuildInputs = (oldAttrs.nativeBuildInputs or []) ++ [addOpenGLRunpath]
+  # });
+
   environment.systemPackages = with pkgs; [
     vim
     parallel
@@ -39,6 +43,7 @@
     dunst
     xclip
     xorg.xmodmap
+    eza
     gnumake
     zellij
     libz
@@ -88,6 +93,7 @@
     postgresql.lib
     postgresql
     wget
+    libxkbcommon
   ];
 
   # Package overrides.

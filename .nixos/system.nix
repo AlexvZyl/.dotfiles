@@ -31,6 +31,7 @@
   # });
 
   environment.systemPackages = with pkgs; [
+    fzf
     vim
     parallel
     glibc

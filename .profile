@@ -44,10 +44,11 @@ alias tks="tmux kill-session"
 
 # Nix aliases.
 alias nix-build="sudo nixos-rebuild switch --flake \$HOME/.nixos#default --impure"
-alias nix-clear="sudo nix-collect-garbage --delete-older-than "
+alias nix-update="sudo nix-channel --update && nix-build"
+alias nix-clear="sudo nix-collect-garbage --delete-older-than 7d"
 alias nix-python-activate="LD_LIBRARY_PATH=\$(nix eval --raw nixpkgs#stdenv.cc.cc.lib)/lib \
     nix-shell \
     -p python3 python3Packages.virtualenv \
-    --command 'virtualenv venv; source venv/bin/activate; return'\
+    --command 'virtualenv venv; source venv/bin/activate; clear; fish;'\
 "
 alias npa="nix-python-activate"

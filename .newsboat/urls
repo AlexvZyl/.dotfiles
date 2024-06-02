@@ -1,3 +1,6 @@
+https://github.blog/feed/ "~GitHub Blog"
+https://github.blog/changelog/feed/ "~GitHub Changelog"
+
 https://frame.work/blog.rss "~Framework Laptops" PCs
 
 https://weekly.nixos.org/feeds/all.rss.xml Linux NixOS
@@ -10,7 +13,8 @@ https://signal.org/blog/rss.xml FOSS
 
 https://www.computerenhance.com/feed Programming
 https://neovim.io/news.xml FOSS Programming
-https://www.bitsaboutmoney.com/archive/rss/
+
+#https://www.bitsaboutmoney.com/archive/rss/
 
 https://www.ctrlshiftesc.co.za/blogs/product-updates.atom "~CSE Products" Keyboards
 https://www.ctrlshiftesc.co.za/blogs/announcements.atom "~CSE Announcements" Keyboards
@@ -20,8 +24,7 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCSp-OaMpsO8K0KkOqyBl7_w You
 
 https://mikesmithgh.github.io/index.xml
 
-https://www.teamfortress.com/rss.xml "~TF2 Blog" Gaming
+#https://www.teamfortress.com/rss.xml "~TF2 Blog" Gaming
 https://store.steampowered.com/feeds/news/app/2073850/?cc=ZA&l=english "~The Finals Updates" Gaming
 
 https://iala.co.za/feed/ "~IALA"
-

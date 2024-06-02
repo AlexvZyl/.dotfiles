@@ -14,6 +14,8 @@
     packages = with pkgs; [
       gnome.adwaita-icon-theme
       xfce.thunar
+      terraform
+      terraform-providers.aws
       xournalpp
       shared-mime-info
       slack

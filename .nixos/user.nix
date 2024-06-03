@@ -66,4 +66,15 @@
       ventoy-full
     ];
   };
+
+
+  security.sudo.extraRules = [
+    {
+      users = [ "alex" ];
+      commands = [
+        { command = "/usr/bin/s-tui"; options = [ "NOPASSWD" ]; }
+        { command = "/usr/bin/fail2ban-client"; options = [ "NOPASSWD" ]; }
+      ];
+    }
+  ];
 }

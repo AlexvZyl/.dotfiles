@@ -10,7 +10,7 @@
   users.users.alex = {
     isNormalUser = true;
     description = "Alexander van Zyl";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [
       gnome.adwaita-icon-theme
       xfce.thunar
@@ -66,7 +66,6 @@
       ventoy-full
     ];
   };
-
 
   security.sudo.extraRules = [
     {

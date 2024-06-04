@@ -44,7 +44,7 @@ alias tks="tmux kill-session"
 
 # Nix aliases.
 alias nix-build="sudo nixos-rebuild switch --flake \$HOME/.nixos#default --impure"
-alias nix-update="sudo nix-channel --update && nix-build"
+alias nix-update="sudo nix-channel --update"
 alias nix-clear="sudo nix-collect-garbage --delete-older-than 7d"
 alias nix-python-activate="LD_LIBRARY_PATH=\$(nix eval --raw nixpkgs#stdenv.cc.cc.lib)/lib \
     nix-shell \

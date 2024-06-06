@@ -5,7 +5,6 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   # Setup GUI environment.
-  services.xserver.enable = true;
   services.xserver.windowManager.i3.enable = true;
   services.displayManager.sddm.enable = true;
 

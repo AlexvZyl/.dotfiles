@@ -7,15 +7,15 @@
     "/share/mime"
   ];
 
+  users.groups.alex = {};
   users.users.alex = {
-    isNormalUser = true;
     description = "Alexander van Zyl";
+    group = "alex";
+    isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [
       gnome.adwaita-icon-theme
       xfce.thunar
-      terraform
-      terraform-providers.aws
       xournalpp
       shared-mime-info
       slack
@@ -80,7 +80,9 @@
   system.activationScripts.binbash = {
     deps = [ "binsh" ];
     text = ''
-         ln -s /bin/sh /bin/bash
+        if [ ! -f "/bin/bash" ]; then
+            ln -s "/bin/sh" "/bin/bash"
+        fi
     '';
   };
 

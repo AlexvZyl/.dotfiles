@@ -19,7 +19,7 @@
         ./network.nix
         ./gpu.nix
         ./services.nix
-        ./lsp.nix
+        ./dev.nix
         ./user.nix
       ];
     };

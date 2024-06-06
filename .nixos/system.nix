@@ -79,8 +79,8 @@
     i3
     ffmpeg
     i3ipc-glib
-    nodejs
     tmux
+    nodejs
     fish
     bat
     trash-cli
@@ -95,6 +95,8 @@
     postgresql
     wget
     libxkbcommon
+    libnotify
+    dmidecode
   ];
 
   # Package overrides.

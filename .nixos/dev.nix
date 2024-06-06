@@ -9,7 +9,6 @@
     shellcheck
     terraform-ls
     gopls
-    docker-ls
     nixd
     yaml-language-server
     pylint
@@ -19,6 +18,20 @@
     nodePackages.bash-language-server
     nodePackages.vscode-html-languageserver-bin
     nodePackages.typescript-language-server
+    nodePackages_latest.vscode-json-languageserver-bin
+    docker-ls
+    dockerfile-language-server-nodejs
+    clang-tools
+    cmake-language-server
+    terraform
+    terraform-providers.aws
+    cmake
+    vscode-langservers-extracted
+    nodePackages.eslint
+    cppcheck
+    ninja
+    rocmPackages.llvm.clang
+    ccls
   ];
 }
 

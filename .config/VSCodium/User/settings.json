@@ -7,7 +7,7 @@
     "editor.lineNumbers": "relative",
     "breadcrumbs.filePath": "off",
     "workbench.layoutControl.enabled": false,
-    "editor.lightbulb.enabled": false,
+    "editor.lightbulb.enabled": "off",
     "breadcrumbs.enabled": false,
     "notebook.breadcrumbs.showCodeCells": false,
     "workbench.editor.enablePreview": false,
@@ -98,7 +98,13 @@
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
     "haskell.manageHLS": "GHCup",
-    "workbench.activityBar.location": "hidden",
-    "clangd.path": "/home/alex/.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/17.0.3/clangd_17.0.3/bin/clangd",
+    "clangd.path": "/home/alex/.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/18.1.3/clangd_18.1.3/bin/clangd",
     "remote.autoForwardPortsSource": "hybrid",
+    "window.menuBarVisibility": "toggle",
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "cmake.showOptionsMovedNotification": false,
+    "terminal.integrated.gpuAcceleration": "off",
 }

@@ -43,9 +43,9 @@ alias tw="tmux-workspace"
 alias tks="tmux kill-session"
 
 # Nix aliases.
-alias nix-build="sudo nixos-rebuild switch --flake \$HOME/.nixos#default --impure"
-alias nix-update="sudo nix-channel --update"
-alias nix-clear="sudo nix-collect-garbage --delete-older-than 7d"
+alias nix-build="sudo nixos-rebuild switch --flake \$HOME/.nixos#default --impure; notify-send 'NixOS' 'Build complete.' || notify-send --urgency=critical 'NixOS' 'Build failed.'"
+alias nix-update="sudo nix-channel --update && notify-send 'NixOS' 'Channels updated.' || notify-send --urgency=critical 'NixOS' 'Upgrade failed.'"
+alias nix-clear="sudo nix-collect-garbage --delete-older-than"
 alias nix-python-activate="LD_LIBRARY_PATH=\$(nix eval --raw nixpkgs#stdenv.cc.cc.lib)/lib \
     nix-shell \
     -p python3 python3Packages.virtualenv \

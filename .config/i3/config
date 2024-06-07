@@ -42,7 +42,7 @@ bar {
   tray_output         none  # do not show tray output
   workspace_buttons   no    # do not show workspace buttons
   height              35    # same height as polybar
-  output HDMI-1-0
+  output HDMI-0
   #output eDP1
 
   # prevent any accidental clicks/scrolls

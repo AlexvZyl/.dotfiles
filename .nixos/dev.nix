@@ -18,7 +18,8 @@
     nodePackages.bash-language-server
     nodePackages.vscode-html-languageserver-bin
     nodePackages.typescript-language-server
-    nodePackages_latest.vscode-json-languageserver-bin
+    nodePackages.vscode-json-languageserver-bin
+    nodePackages.vscode-css-languageserver-bin
     docker-ls
     dockerfile-language-server-nodejs
     clang-tools

@@ -14,10 +14,6 @@
   # Allow proprietary software.
   nixpkgs.config.allowUnfree = true;
 
-  # pkgs.btop = pkgs.btop.overrideAttrs (oldAttrs: {
-  #   nativeBuildInputs = (oldAttrs.nativeBuildInputs or []) ++ [addOpenGLRunpath]
-  # });
-
   environment.systemPackages = with pkgs; [
     openvpn
     fzf
@@ -106,12 +102,4 @@
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
-
-  powerManagement = {
-    enable = true;
-    powertop.enable = true;
-    cpuFreqGovernor = "powersave";
-    # cpufreq.max = 2000000;
-    cpufreq.max = 10000000;
-  };
 }

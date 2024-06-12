@@ -16,6 +16,7 @@
         ./system.nix
         ./network.nix
         ./gpu.nix
+        ./cpu.nix
         ./services.nix
         ./dev.nix
         ./user.nix

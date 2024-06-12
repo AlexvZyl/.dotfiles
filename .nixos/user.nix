@@ -62,6 +62,7 @@
       vscodium
       signal-desktop
       sniffnet
+      gimp
 
       ventoy-full
     ];

@@ -41,7 +41,6 @@
     pamixer
     gnupg
     polkit
-    openssh
     polkit_gnome
     gcc
     unzip

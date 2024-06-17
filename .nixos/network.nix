@@ -11,4 +11,12 @@
   services.fail2ban.enable = true;
   services.fail2ban.maxretry = 5;
   services.fail2ban.bantime = "-1";
+
+  services.openssh = {
+    enable = true;
+    settings.PasswordAuthentication = true;
+  };
+
+  security.pam.sshAgentAuth.enable = true;
+  programs.ssh.startAgent = true;
 }

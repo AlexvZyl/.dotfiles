@@ -13,9 +13,8 @@
     yaml-language-server
     pylint
     python311Packages.flake8
-    vscode-extensions.ms-vscode.cpptools
     luajitPackages.luacheck
-    nodePackages.bash-language-server
+    bash-language-server
     nodePackages.vscode-html-languageserver-bin
     nodePackages.typescript-language-server
     nodePackages.vscode-json-languageserver-bin

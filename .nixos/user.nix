@@ -40,6 +40,7 @@
       speedtest-cli
       pfetch
       lazygit
+      lazydocker
       audacity
       zoxide
       zathura

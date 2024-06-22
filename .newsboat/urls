@@ -1,5 +1,5 @@
 https://github.blog/feed/ "~GitHub Blog"
-https://github.blog/changelog/feed/ "~GitHub Changelog"
+#https://github.blog/changelog/feed/ "~GitHub Changelog"
 
 https://frame.work/blog.rss "~Framework Laptops" PCs
 
@@ -27,4 +27,4 @@ https://mikesmithgh.github.io/index.xml
 #https://www.teamfortress.com/rss.xml "~TF2 Blog" Gaming
 https://store.steampowered.com/feeds/news/app/2073850/?cc=ZA&l=english "~The Finals Updates" Gaming
 
-https://iala.co.za/feed/ "~IALA"
+#https://iala.co.za/feed/ "~IALA"

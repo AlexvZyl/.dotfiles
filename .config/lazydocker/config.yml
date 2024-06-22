@@ -1,0 +1,7 @@
+gui:
+  # single' | 'double' | 'rounded' | 'hidden'
+  border: 'rounded'
+  theme:
+    inactiveBorderColor:
+      #- "#4C566A" # nordic
+      - "#292e42"

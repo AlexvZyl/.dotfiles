@@ -35,7 +35,8 @@ alias setup-monitors="feh --bg-fill \$HOME/.wallpapers/alena-aenami-horizon-1k_u
     nice -n 19 betterlockscreen -u \"\$HOME/.wallpapers/tokyo-night-space_upscaled.png\" --display 1"
 
 # Dev.
-alias lg='lazygit'
+alias lg="lazygit"
+alias lzd="lazydocker"
 alias nh="nvim ."
 alias gl="git log --oneline --decorate --graph"
 alias tmux-workspace="~/.config/tmux/utils/create_workspace.sh"

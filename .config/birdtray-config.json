@@ -14,7 +14,7 @@
     "advanced/onlyShowIconOnUnreadMessages": false,
     "advanced/runProcessOnChange": "",
     "advanced/tbcmdline": [
-        "/usr/bin/thunderbird"
+        "/etc/profiles/per-user/alex/bin/thunderbird"
     ],
     "advanced/tbprocessname": "thunderbird",
     "advanced/tbwindowmatch": " Mozilla Thunderbird",

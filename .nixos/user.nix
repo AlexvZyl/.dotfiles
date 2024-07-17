@@ -46,7 +46,6 @@
       zathura
       ranger
       glab
-      dunst
       awscli2
       feh
       gh
@@ -64,6 +63,9 @@
       signal-desktop
       sniffnet
       gimp
+      glow
+      thunderbird-bin
+      birdtray
 
       ventoy-full
     ];

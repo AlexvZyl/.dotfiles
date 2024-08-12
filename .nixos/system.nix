@@ -81,6 +81,8 @@
     libxkbcommon
     libnotify
     dmidecode
+    nmap
+    ethtool
   ];
 
   # Package overrides.

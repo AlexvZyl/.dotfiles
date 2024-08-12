@@ -66,7 +66,9 @@
       glow
       thunderbird-bin
       birdtray
+      sshs
 
+      firefox
       ventoy-full
     ];
   };

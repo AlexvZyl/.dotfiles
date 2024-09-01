@@ -2,7 +2,7 @@
 
 {
   services.xserver.videoDrivers = ["nvidia"];
-  # services.xserver.videoDrivers = ["nvidia" "intel"];
+  #services.xserver.videoDrivers = ["nvidia" "intel"];
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -16,9 +16,7 @@
     nvidiaPersistenced = true;
   };
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
   };
 }

@@ -14,80 +14,81 @@
   # Allow proprietary software.
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    openvpn
-    fzf
-    vim
-    parallel
-    glibc
-    zip
-    libGL
-    pciutils
-    openfortivpn
-    xorg.xev
-    p7zip
-    dunst
-    xclip
-    xorg.xmodmap
-    eza
-    gnumake
-    zellij
-    libz
-    cron
-    file
-    picom
-    pinentry
-    fd
-    pamixer
-    gnupg
-    polkit
-    polkit_gnome
-    gcc
-    unzip
-    git
-    luajitPackages.luarocks-nix
-    pass
-    go
-    julia
-    zulu
-    luarocks
-    zip
-    lshw
-    libgcc
-    pulseaudio
-    blueman
-    betterlockscreen
-    python311
-    python311Packages.pip
-    polybar
-    i3
-    ffmpeg
-    i3ipc-glib
-    tmux
-    nodejs
-    fish
-    bat
-    trash-cli
-    ripgrep
-    btop
-    nvtopPackages.full
-    efibootmgr
-    rustup
-    refind
-    libpqxx
-    postgresql.lib
-    postgresql
-    wget
-    libxkbcommon
-    libnotify
-    dmidecode
-    nmap
-    ethtool
+  environment.systemPackages = [
+    pkgs.openvpn
+    pkgs.fzf
+    pkgs.vim
+    pkgs.parallel
+    pkgs.glibc
+    pkgs.zip
+    pkgs.libGL
+    pkgs.pciutils
+    pkgs.openfortivpn
+    pkgs.xorg.xev
+    pkgs.p7zip
+    pkgs.dunst
+    pkgs.xclip
+    pkgs.xorg.xmodmap
+    pkgs.eza
+    pkgs.gnumake
+    pkgs.zellij
+    pkgs.libz
+    pkgs.cron
+    pkgs.file
+    pkgs.pinentry
+    pkgs.fd
+    pkgs.pamixer
+    pkgs.gnupg
+    pkgs.polkit
+    pkgs.polkit_gnome
+    pkgs.gcc
+    pkgs.unzip
+    pkgs.git
+    pkgs.luajitPackages.luarocks-nix
+    pkgs.pass
+    pkgs.go
+    pkgs.julia
+    pkgs.zulu
+    pkgs.luarocks
+    pkgs.zip
+    pkgs.lshw
+    pkgs.libgcc
+    pkgs.pulseaudio
+    pkgs.blueman
+    pkgs.betterlockscreen
+    pkgs.python311
+    pkgs.python311Packages.pip
+    pkgs.polybar
+    pkgs.i3
+    pkgs.ffmpeg
+    pkgs.i3ipc-glib
+    pkgs.tmux
+    pkgs.nodejs
+    pkgs.fish
+    pkgs.bat
+    pkgs.trash-cli
+    pkgs.ripgrep
+    pkgs.btop
+    pkgs.nvtopPackages.full
+    pkgs.efibootmgr
+    pkgs.rustup
+    pkgs.refind
+    pkgs.libpqxx
+    pkgs.postgresql.lib
+    pkgs.postgresql
+    pkgs.wget
+    pkgs.libxkbcommon
+    pkgs.libnotify
+    pkgs.dmidecode
+    pkgs.nmap
+    pkgs.ethtool
+
+    inputs.picom.packages.${pkgs.system}.default
   ];
 
-  # Package overrides.
   nixpkgs.config = {
     packageOverrides = pkgs: rec {
+      # Enable support for polybar.
       polybar = pkgs.polybar.override {
         i3Support = true;
         pulseSupport = true;
@@ -97,9 +98,10 @@
 
   programs.neovim = {
     enable = true;
-    package = inputs.neovim.defaultPackage.x86_64-linux;
+    package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
   };
 
+  # Just install jetbrains from nerdfonts.
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];

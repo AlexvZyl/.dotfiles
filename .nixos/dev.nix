@@ -15,10 +15,7 @@
     python311Packages.flake8
     luajitPackages.luacheck
     bash-language-server
-    nodePackages.vscode-html-languageserver-bin
     nodePackages.typescript-language-server
-    nodePackages.vscode-json-languageserver-bin
-    nodePackages.vscode-css-languageserver-bin
     docker-ls
     dockerfile-language-server-nodejs
     clang-tools

@@ -1,12 +1,6 @@
 { pkgs, ... }:
 
 {
-  # Xournal fix.
-  environment.pathsToLink = [
-    "/share/icons"
-    "/share/mime"
-  ];
-
   users.groups.alex = {};
   users.users.alex = {
     description = "Alexander van Zyl";
@@ -14,7 +8,7 @@
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [
-      gnome.adwaita-icon-theme
+      adwaita-icon-theme
       xfce.thunar
       xournalpp
       shared-mime-info
@@ -35,13 +29,13 @@
       thunderbird
       inkscape
       pavucontrol
+      kitty
       gparted
       pinta
       speedtest-cli
       pfetch
       lazygit
       lazydocker
-      audacity
       zoxide
       zathura
       ranger
@@ -50,8 +44,8 @@
       feh
       gh
       arandr
-      rustdesk
-      gnome.nautilus
+      #rustdesk # Failing...
+      nautilus
       starship
       cava
       tree-sitter
@@ -59,17 +53,16 @@
       chromium
       dua
       (python311.withPackages(ps: with ps; [pytz]))
-      vscodium
       signal-desktop
-      sniffnet
       gimp
-      glow
       thunderbird-bin
       birdtray
+      dig
       sshs
+      termshark
+      tshark
 
-      firefox
-      ventoy-full
+      vscode
     ];
   };
 

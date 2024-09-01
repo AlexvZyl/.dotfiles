@@ -22,7 +22,6 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -60,5 +59,12 @@
           TimeoutStopSec = 10;
         };
     };
+  };
+
+  # Security.  Not sure if this will even help at all.
+  services.clamav = {
+    scanner.enable = true;
+    daemon.enable = true;
+    updater.enable = true;
   };
 }

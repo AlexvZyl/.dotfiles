@@ -2,24 +2,34 @@
   description = "Nixos config flake";
 
   inputs = {
-    # Channel.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # Neovim 0.10.0
-    neovim.url = "github:neovim/neovim?dir=contrib&rev=27fb62988e922c2739035f477f93cc052a4fee1e";
+    picom.url = "github:yshui/picom?rev=9bc657433ddbd2e2a630a6fb7d3264ce13b39a16"; # Picom 12-rc3
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
-  outputs = { nixpkgs, ... }@inputs: {
+  outputs = { nixpkgs, ... }@inputs:
+    let
+      overlays = [
+        inputs.neovim-nightly-overlay.overlays.default
+      ];
+    in
+    {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+      specialArgs = { inherit inputs; };
       modules = [
+        { nixpkgs.overlays = overlays; }
+
+        # Pre-generated
         /etc/nixos/configuration.nix
 
-        # Custom configs.
+        # System
         ./system.nix
         ./network.nix
         ./gpu.nix
         ./cpu.nix
         ./services.nix
+
+        # User
         ./dev.nix
         ./user.nix
       ];

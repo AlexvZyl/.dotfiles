@@ -16,7 +16,8 @@
     nvidiaPersistenced = true;
   };
 
-  hardware.graphics = {
+  hardware.opengl = {
     enable = true;
+    driSupport = true;
   };
 }

@@ -8,7 +8,7 @@
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [
-      adwaita-icon-theme
+      gnome.adwaita-icon-theme
       xfce.thunar
       xournalpp
       shared-mime-info
@@ -29,7 +29,6 @@
       thunderbird
       inkscape
       pavucontrol
-      kitty
       gparted
       pinta
       speedtest-cli
@@ -44,8 +43,8 @@
       feh
       gh
       arandr
-      #rustdesk # Failing...
-      nautilus
+      rustdesk
+      gnome.nautilus
       starship
       cava
       tree-sitter

@@ -14,7 +14,7 @@
     pylint
     python311Packages.flake8
     luajitPackages.luacheck
-    bash-language-server
+    nodePackages.bash-language-server
     nodePackages.typescript-language-server
     docker-ls
     dockerfile-language-server-nodejs

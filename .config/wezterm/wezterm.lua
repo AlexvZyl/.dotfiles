@@ -1,6 +1,6 @@
 local wezterm = require 'wezterm'
 
-config = {}
+local config = {}
 
 config.default_prog = { 'fish' }
 config.enable_tab_bar = false
@@ -42,5 +42,10 @@ local scheme = wezterm.get_builtin_color_schemes()['Tokyo Night']
 --scheme.brights[1] = scheme.ansi[1]
 config.color_schemes = { ['Tokyo Night'] = scheme }
 config.color_scheme = 'Tokyo Night'
+
+
+local gpus = wezterm.gui.enumerate_gpus()
+config.webgpu_preferred_adapter = gpus[1]
+config.front_end = 'WebGpu'
 
 return config

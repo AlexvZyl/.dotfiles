@@ -107,4 +107,5 @@
     ],
     "cmake.showOptionsMovedNotification": false,
     "terminal.integrated.gpuAcceleration": "off",
+    "workbench.activityBar.location": "hidden",
 }

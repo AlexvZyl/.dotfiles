@@ -24,6 +24,7 @@
     terraform-providers.aws
     cmake
     vscode-langservers-extracted
+    nodePackages.vscode-json-languageserver-bin
     nodePackages.eslint
     cppcheck
     ninja

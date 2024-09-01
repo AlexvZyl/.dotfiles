@@ -32,10 +32,10 @@ config.font = wezterm.font({
 config.default_cursor_style = 'BlinkingBlock'
 
 config.window_padding = {
-  left = 0,
-  right = 0,
-  top = 0,
-  bottom = 0,
+    left = 0,
+    right = 0,
+    top = 0,
+    bottom = 0,
 }
 
 local scheme = wezterm.get_builtin_color_schemes()['Tokyo Night']
@@ -46,6 +46,7 @@ config.color_scheme = 'Tokyo Night'
 
 local gpus = wezterm.gui.enumerate_gpus()
 config.webgpu_preferred_adapter = gpus[1]
-config.front_end = 'WebGpu'
+-- config.front_end = 'WebGpu'
+config.front_end = 'OpenGL'
 
 return config

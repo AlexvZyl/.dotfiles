@@ -67,4 +67,8 @@
     daemon.enable = true;
     updater.enable = true;
   };
+
+  # Needed for drives.
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
 }

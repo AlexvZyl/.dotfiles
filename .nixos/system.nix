@@ -14,6 +14,7 @@
   # Allow proprietary software.
   nixpkgs.config.allowUnfree = true;
 
+  # TODO: Sort this out
   environment.systemPackages = [
     pkgs.openvpn
     pkgs.fzf
@@ -82,6 +83,9 @@
     pkgs.dmidecode
     pkgs.nmap
     pkgs.ethtool
+    pkgs.iperf
+    pkgs.iperf2
+    pkgs.bc
 
     inputs.picom.packages.${pkgs.system}.default
   ];

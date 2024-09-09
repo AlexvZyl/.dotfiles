@@ -59,8 +59,10 @@
       dig
       sshs
       termshark
+      ventoy-bin-full
       tshark
 
+      helix
       vscode
     ];
   };

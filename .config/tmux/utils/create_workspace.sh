@@ -23,4 +23,6 @@ tmux rename-window "editor"
 tmux new-window -c "./" -n "git" "lazygit"
 tmux new-window -c "./" -n "shell" "fish"
 tmux select-window -t "$CURRENT_WINDOW"
+tmux swap-window -t +1
+tmux next-window
 nvim .

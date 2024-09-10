@@ -63,6 +63,7 @@
       tshark
 
       helix
+      networkmanagerapplet
       vscode
     ];
   };
@@ -71,8 +72,7 @@
     {
       users = [ "alex" ];
       commands = [
-        { command = "/usr/bin/s-tui"; options = [ "NOPASSWD" ]; }
-        { command = "/usr/bin/fail2ban-client"; options = [ "NOPASSWD" ]; }
+        { command = "/run/current-system/sw/bin/fail2ban-client"; options = [ "NOPASSWD" ]; }
       ];
     }
   ];

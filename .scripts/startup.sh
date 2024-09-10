@@ -20,4 +20,3 @@ dbus-launch dunst --config ~/.config/dunst/dunstrc &
 # Apps
 xdg-settings set default-web-browser librewolf.desktop
 "$HOME/.scripts/utils/setup_keyboard.sh"
-birdtray &

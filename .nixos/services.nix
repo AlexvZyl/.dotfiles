@@ -64,7 +64,7 @@
   # Security.  Not sure if this will even help at all.
   services.clamav = {
     scanner.enable = true;
-    daemon.enable = true;
+    daemon.enable = false;
     updater.enable = true;
   };
 

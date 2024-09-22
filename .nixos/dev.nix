@@ -30,6 +30,7 @@
     ninja
     rocmPackages.llvm.clang
     ccls
+    black
   ];
 }
 

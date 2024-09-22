@@ -86,8 +86,10 @@
     pkgs.iperf
     pkgs.iperf2
     pkgs.bc
+    pkgs.openssl
 
     inputs.picom.packages.${pkgs.system}.default
+    inputs.zen-browser.packages."${pkgs.system}".default
   ];
 
   nixpkgs.config = {

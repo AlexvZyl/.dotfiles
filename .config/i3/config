@@ -172,6 +172,7 @@ bindsym $mod+shift+f exec wezterm -e tmux new-session -n "files" "ranger"
 bindsym $mod+m exec wezterm -e tmux new-session -n "monitor" btop
 bindsym $mod+g exec wezterm -e nvtop
 bindsym $mod+r exec wezterm -e ~/.config/tmux/apps/start_newsboat.sh
+bindsym $mod+b exec zen
 
 # Kill focused window.
 bindsym $mod+q kill

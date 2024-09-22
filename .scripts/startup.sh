@@ -7,10 +7,11 @@
     #~/.screenlayout/default_double_monitor.sh
     ~/.screenlayout/box_double_monitor.sh
     #feh --bg-fill ~/.wallpapers/Space_Spiral_Nord.png &
-    feh --bg-fill ~/.wallpapers/alena-aenami-horizon-1k_upscaled.jpg
+    #feh --bg-fill ~/.wallpapers/alena-aenami-horizon-1k_upscaled.jpg
+    feh --bg-fill ~/.wallpapers/stay_by_aenami_dbnb1k3.png
     picom -b
     ~/.config/polybar/launch.sh
-    nice -n 19 betterlockscreen -u "$HOME/.wallpapers/tokyo-night-space_upscaled.png" --display 1 &
+    nice -n 19 betterlockscreen -u "$HOME/.wallpapers/Gruvbox_Forest_Mountain.png" --display 1 &
 ) &
 
 # Services

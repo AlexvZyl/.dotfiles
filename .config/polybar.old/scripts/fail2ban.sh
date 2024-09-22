@@ -9,13 +9,13 @@ Main() {
     result=$(sudo fail2ban-client status sshd 2>/dev/null | grep "Currently banned" | awk '{print $4}')
 
     if [ -z "$result" ]; then
-        echo "󰦞 "
+        echo "%{F#ff453a}󰦞 "
 
     elif [[ "$result" -eq "$KNOWN_THREATS" ]]; then
-        echo "󰒃 "
+        echo "%{F#FFFFFF}󰒃 "
 
     else
-        echo "󰒃 $((result - KNOWN_THREATS))"
+        echo "%{F#ff453a}󰒃 %{F-}$((result - KNOWN_THREATS))"
     fi
 }
 

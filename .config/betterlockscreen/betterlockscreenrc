@@ -17,31 +17,30 @@ font="JetBrainsMono Nerd Font"
 time_format="%H:%M"
 
 # Green.
-keyhlcolor=9ece6a
+keyhlcolor=30d158
 
 # Yellow.
-modifcolor=e0af68
-bshlcolor=e0af68
+modifcolor=ffd60a
+bshlcolor=ffd60a
 
 # Red.
-wrongcolor=db4b4b
-insidewrongcolor=db4b4b
+wrongcolor=ff453a
+insidewrongcolor=ff453a
 
 # White.
-verifcolor=c0caf5
-timecolor=c0caf5
-greetercolor=c0caf5
-layoutcolor=c0caf5
-ringvercolor=c0caf5
-ringcolor=c0caf5
-ringwrongcolor=c0caf5
-separatorcolor=c0caf5
+verifcolor=FFFFFF
+timecolor=FFFFFF
+greetercolor=FFFFFF
+layoutcolor=FFFFFF
+ringvercolor=FFFFFF
+ringcolor=FFFFFF
+ringwrongcolor=FFFFFF
+separatorcolor=FFFFFF
 
 # Black.
-insidevercolor=15161e
-loginbox=15161e
-bgcolor=15161e
-solid_color=15161e
-insidecolor=15161e
-
+insidevercolor=000000
+loginbox=000000
+bgcolor=000000
+solid_color=000000
+insidecolor=000000
 loginshadow=000000

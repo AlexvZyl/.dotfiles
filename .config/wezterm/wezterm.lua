@@ -10,7 +10,8 @@ config.animation_fps = 75
 --config.cursor_blink_ease_in = 'Constant'
 --config.cursor_blink_ease_out = 'Constant'
 
-config.window_background_opacity = 0.96
+-- config.window_background_opacity = 0.96
+config.window_background_opacity = 1
 config.use_resize_increments = true
 
 config.font_size = 11.5
@@ -38,15 +39,44 @@ config.window_padding = {
     bottom = 0,
 }
 
-local scheme = wezterm.get_builtin_color_schemes()['Tokyo Night']
---scheme.brights[1] = scheme.ansi[1]
-config.color_schemes = { ['Tokyo Night'] = scheme }
-config.color_scheme = 'Tokyo Night'
+-- local scheme = wezterm.get_builtin_color_schemes()['Tokyo Night']
+-- config.color_schemes = { ['Tokyo Night'] = scheme }
+-- config.color_scheme = 'Tokyo Night'
 
+local my_default = wezterm.color.get_default_colors()
+print(my_default)
+
+-- Neovim colors.
+config.colors = {
+    foreground = "#E0E2EA",
+    background = "#14161B",
+    ansi = {
+        '#07080D',
+        '#F08080',
+        '#B3F6C0',
+        '#FCE094',
+        '#87CEFA',
+        '#ffcaff',
+        "#b0e2ff",
+        '#e0e2ea',
+    },
+    brights = {
+        '#4F5258',
+        '#F08080',
+        '#B3F6C0',
+        '#FCE094',
+        '#87CEFA',
+        '#ffcaff',
+        '#E0FFFF',
+        '#e0e2ea',
+    },
+}
+config.colors.cursor_bg = config.colors.foreground
+config.colors.cursor_border = config.colors.foreground
+config.colors.split = config.colors.foreground
 
 local gpus = wezterm.gui.enumerate_gpus()
 config.webgpu_preferred_adapter = gpus[1]
--- config.front_end = 'WebGpu'
 config.front_end = 'OpenGL'
 
 return config

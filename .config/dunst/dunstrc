@@ -428,19 +428,19 @@
     alignment = left
 
 [urgency_low]
-    background = "#16161e"
-    foreground = "#c0caf5"
-    frame_color = "#1f2335"
+    background = "#000000"
+    foreground = "#FFFFFF"
+    frame_color = "#000000"
     timeout = 3
 
 [urgency_normal]
-    background = "#16161e"
-    foreground = "#c0caf5"
-    frame_color = "#3d59a1"
+    background = "#000000"
+    foreground = "#FFFFFF"
+    frame_color = "#000000"
     timeout = 15
 
 [urgency_critical]
-    background = "#16161e"
-    foreground = "#c0caf5"
-    frame_color = "#db4b4b"
+    background = "#000000"
+    foreground = "#FFFFFF"
+    frame_color = "#ff453a"
     timeout = 60

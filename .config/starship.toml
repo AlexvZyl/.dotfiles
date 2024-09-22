@@ -1,87 +1,23 @@
-format = """
-[ ](bright-white)\
-[ ](bold fg:black bg:bright-white)\
-[](bg:red fg:bright-white)\
-$nodejs\
-$julia\
-$python\
-$rust\
-[](fg:red bg:green)\
-$git_branch\
-$git_status\
-[](fg:green bg:blue)\
-$directory\
-[](fg:blue)\
-$fill\
+format = """\
 $time\
-\n$character"""
+$directory\
+$character\
+"""
 
-[fill]
-#symbol = '-'
-symbol = ' '
-style = 'fg:bright-black'
-
-[nodejs]
-style = "fg:black bg:red"
-symbol = " 󰎙 "
-format = "[$symbol($version )]($style)"
-
-[python]
-style = "fg:black bg:red"
-format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-symbol = "  "
-pyenv_version_name = false
-
-[julia]
-style = "fg:black bg:red"
-format = "[$symbol($version )]($style)"
-symbol = "  "
-
-[rust]
-style = "fg:black bg:red"
-symbol = ' 󱘗 '
-format = '[$symbol($version )]($style)'
-
-[character]
-success_symbol = '[  ](bold green)'
-error_symbol = '[  ](bold red)'
+add_newline = false
 
 [directory]
-style = "fg:black bg:blue"
+style = "fg:white"
 format = "[ $path]($style)"
 truncation_length = 5
-truncation_symbol = "󰉒 /"
-#home_symbol = "  "
 truncate_to_repo = false
-
-[directory.substitutions]
-#"Documents" = "󰈙 "
-#"Downloads" = " "
-#"Music" = " "
-#"Pictures" = " "
-
-[git_branch]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol $branch](fg:black bg:green)]($style)'
-
-[git_status]
-style = "bg:green"
-format = '[[ ($all_status $ahead_behind)](fg:black bg:green)]($style)'
 
 [time]
 disabled = false
-time_format = "%R"
-format = '[[$time   ](fg:bright-black)]($style)'
+time_format = "[%R]"
+style = "fg:white"
+format = '[[$time](fg:bright-black)]($style)'
 
-[hostname]
-ssh_only = true
-format = '[󰌘 ](fg:black bg:yellow)[$ssh_symbol](fg:black bg:yellow)'
-trim_at = ''
-disabled = false
-
-[username]
-style_user = "bg:red fg:black"
-format = '[ ]($style)[$user]($style)'
-disabled = false
-show_always = true
+[character]
+success_symbol = '[ |>](bold green)'
+error_symbol = '[ |>](bold red)'

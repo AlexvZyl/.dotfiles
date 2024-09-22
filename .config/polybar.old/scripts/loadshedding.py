@@ -31,12 +31,12 @@ def find_next_event(events):
         time_left = end - now
         hours, remainder = divmod(int(time_left.total_seconds()), 3600)
         minutes, _ = divmod(remainder, 60)
-        print("󰚦 " + f"{hours:02d}:{minutes:02d}")
+        print("%{F#ff453a} %{F#e0af68}󱎫 %{F-}" + f"{hours:02d}:{minutes:02d}" + " %{F#} ")
 
     # Display next loadshedding.
     else:
         duration = end - start
-        print("󰚦 " + start.strftime("%H:%M") + " 󱎫 " + str(int(duration.total_seconds()/3600)) + "h")
+        print("%{F#ffd60a} %{F-}" + start.strftime("%H:%M") + " %{F#ffd60a}󱎫 %{F-}" + str(int(duration.total_seconds()/3600)) + "h")
 
 
 def main():
@@ -48,13 +48,13 @@ def main():
             events = json.loads(json.load(file))["events"]
 
             if no_loadshedding(events):
-                print("󰚥")
+                print("%{F#30d158} %{F-}None %{F#30d158} %{F-}")
                 return
 
             find_next_event(events)
 
     except Exception:
-        print(" 󰧠 ")
+        print("%{F#e0af68}%{F-} 󰧠 ")
 
 
 if __name__ == "__main__":

@@ -24,12 +24,15 @@ alias cat="bat"
 alias rm="trash --trash-dir ~/.trash"  # This one has saved me a lot of heartache...
 alias clear-trash="$(which rm) -r ~/.trash/files/"
 alias tssh='TERM=xterm-256color ssh'
-alias check-root="sudo dua -i /home  i /"
 alias c="clear"
 alias z="zathura"
 alias picom-restart="pkill picom;\
     sleep 0.01;\
     picom -b"
+
+alias check-root="sudo dua -i /home  i /"
+alias check-trash="dua i \$HOME/.trash/"
+alias check-home="dua i \$HOME/"
 
 # Peripherals.
 alias setup-keyboard="~/.scripts/utils/setup_keyboard.sh"
@@ -46,11 +49,12 @@ alias tw="tmux-workspace"
 alias tks="tmux kill-session"
 
 # Nix aliases.
+alias nix-shell="$(which nix-shell) --command \"echo; fish\""
 alias nix-build="sudo nixos-rebuild switch --flake \$HOME/.nixos#default --impure && notify-send 'NixOS' 'Build complete.' || notify-send --urgency=critical 'NixOS' 'Build failed.'"
 alias nix-update="nix flake update \$HOME/.nixos && sudo nix-channel --update && notify-send 'NixOS' 'Channels updated.' || notify-send --urgency=critical 'NixOS' 'Update failed.'"
 alias nix-clear="sudo nix-collect-garbage --delete-older-than"
 alias nix-python-activate="LD_LIBRARY_PATH=\$(nix eval --raw nixpkgs#stdenv.cc.cc.lib)/lib \
-    nix-shell \
+    $(which nix-shell) \
     -p python3 python3Packages.virtualenv \
     --command 'virtualenv venv; source venv/bin/activate; clear; fish;'\
 "

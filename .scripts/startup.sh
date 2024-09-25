@@ -4,10 +4,7 @@
 
 # Core components (order is important!)
 (
-    #~/.screenlayout/default_double_monitor.sh
     ~/.screenlayout/box_double_monitor.sh
-    #feh --bg-fill ~/.wallpapers/Space_Spiral_Nord.png &
-    #feh --bg-fill ~/.wallpapers/alena-aenami-horizon-1k_upscaled.jpg
     feh --bg-fill ~/.wallpapers/stay_by_aenami_dbnb1k3.png
     picom -b
     ~/.config/polybar/launch.sh
@@ -19,5 +16,8 @@
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
 
 # Apps
-xdg-settings set default-web-browser librewolf.desktop
+xdg-settings set default-web-browser zen
 "$HOME/.scripts/utils/setup_keyboard.sh"
+
+# TODO: This is probably not necessary
+nmcli device disconnect wlp0s20f0u10

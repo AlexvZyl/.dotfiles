@@ -3,6 +3,7 @@
 {
   users.groups.alex = {};
   users.users.alex = {
+    shell = pkgs.fish;
     description = "Alexander van Zyl";
     group = "alex";
     isNormalUser = true;
@@ -87,4 +88,6 @@
   };
 
   virtualisation.docker.enable = true;
+
+  programs.fish.enable = true;
 }

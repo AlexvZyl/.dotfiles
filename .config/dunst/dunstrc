@@ -87,7 +87,7 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 2
+    frame_width = 1
 
     # Define a color for the separator.
     # possible values are:
@@ -430,17 +430,17 @@
 [urgency_low]
     background = "#000000"
     foreground = "#FFFFFF"
-    frame_color = "#000000"
+    frame_color = "#FFFFFF"
     timeout = 3
 
 [urgency_normal]
     background = "#000000"
     foreground = "#FFFFFF"
-    frame_color = "#000000"
+    frame_color = "#FFFFFF"
     timeout = 15
 
 [urgency_critical]
     background = "#000000"
     foreground = "#FFFFFF"
     frame_color = "#ff453a"
-    timeout = 60
+    timeout = 30

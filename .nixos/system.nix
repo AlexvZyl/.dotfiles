@@ -65,7 +65,6 @@
     pkgs.i3ipc-glib
     pkgs.tmux
     pkgs.nodejs
-    pkgs.fish
     pkgs.bat
     pkgs.trash-cli
     pkgs.ripgrep

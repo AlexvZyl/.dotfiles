@@ -1,6 +1,8 @@
 #https://github.blog/feed/ "~GitHub Blog"
 #https://github.blog/changelog/feed/ "~GitHub Changelog"
 
+https://dotfyle.com/this-week-in-neovim/rss.xml Neovim FOSS Programming
+
 https://frame.work/blog.rss "~Framework Laptops" PCs
 
 https://weekly.nixos.org/feeds/all.rss.xml Linux NixOS

@@ -9,18 +9,32 @@ Continuous change is to be expected...
 </div>
 ```
 
+[![ShellCheck](https://github.com/AlexvZyl/.dotfiles/workflows/ShellCheck/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=ShellCheck)
+![Size](https://img.shields.io/github/repo-size/AlexvZyl/.dotfiles?style=flat)
+
+![image](https://github.com/user-attachments/assets/63023f2f-cb27-4383-a8a2-72e574837406)
+![image](https://github.com/user-attachments/assets/c5f57798-55ed-48b0-a5e0-36afdf1bce42)
+<details>
+<summary>Lock screen</summary>
+  
+![image](https://github.com/user-attachments/assets/4883b6af-5ab8-4dd0-a764-4ea29f857c48)
+
+</details>
+
+<details>
+<summary>Old Single Bar config</summary>
+  
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/6b87665e-7b22-459f-8fed-50dbbb50f95d)
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/a6fe2b0b-29c4-45ec-a4cb-2e348a6d1a1d)
 
+</details>
+
 <details>
-
 <summary>Old Two Bar Config</summary>
-
+  
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/09d5adbe-63fb-435a-824f-39fca06e56d8)
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/55c6780d-00c6-451e-9066-0a2365c4d7a9)
 
-[![ShellCheck](https://github.com/AlexvZyl/.dotfiles/workflows/ShellCheck/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=ShellCheck)
-![Size](https://img.shields.io/github/repo-size/AlexvZyl/.dotfiles?style=flat)
 </details>
 
 </div>
@@ -32,59 +46,6 @@ The configuration files for my NixOS (Linux) desktop.
 
 > [!NOTE]
 > The old Arch Linux dotfiles can be found on the [archlinux branch](https://github.com/AlexvZyl/.dotfiles/tree/archlinux).
-
-<!--
-
-# Full Installation
-
-To install everything, simply copy and paste this into the terminal.  User input is requested at various stages.
-
-> [!NOTE]
-> This script assumes that you have a working Arch X11/i3 installation.  Remember to choose i3 at the login screen.
-
-> [!WARNING]
-> Works on my machine.
-
-```bash
-curl -s https://raw.githubusercontent.com/AlexvZyl/.dotfiles/main/.scripts/install/bootstrap.sh > ~/bootstrap.sh
-chmod +x ~/bootstrap.sh && ~/bootstrap.sh && rm ~/bootstrap.sh
-reboot
-```
--->
-
-<!--
-# Minimal Installation
-
-Sometimes I just want to get work done on a Linux machine.  A minimal installation can be done with:
-
-```bash
-curl -s https://raw.githubusercontent.com/AlexvZyl/.dotfiles/main/.scripts/install/minimal_workspace.sh > ~/bootstrap.sh
-chmod +x ~/bootstrap.sh && ~/bootstrap.sh && rm ~/bootstrap.sh
-```
-And to update:
-```bash
-workspace-git fetch
-workspace-git pull
-```
-
-<details>
-
-<summary>⚙️ Components</summary>
-
-</br>
-
-- Neovim
-- Kitty
-- Tmux
-- Fonts
-- Fish
-- Scripts
-- exa
-- bat
-
-</details>
-
--->
 
 # Privacy and Security
 
@@ -173,10 +134,9 @@ A few notes on the bindings:
 
 The config can be found [here](https://github.com/AlexvZyl/nvim).
 
+<!--
 ---
-
 <div align="center">
-
 *These dotfiles were briefly featured in a [TechHut Video](https://youtu.be/7NLtw26qJtU?t=789).*
-
 </div>
+-->

@@ -16,14 +16,14 @@ Continuous change is to be expected...
 ![image](https://github.com/user-attachments/assets/c5f57798-55ed-48b0-a5e0-36afdf1bce42)
 <details>
 <summary>Lock screen</summary>
-  
+
 ![image](https://github.com/user-attachments/assets/4883b6af-5ab8-4dd0-a764-4ea29f857c48)
 
 </details>
 
 <details>
 <summary>Old Single Bar config</summary>
-  
+
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/6b87665e-7b22-459f-8fed-50dbbb50f95d)
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/a6fe2b0b-29c4-45ec-a4cb-2e348a6d1a1d)
 
@@ -31,7 +31,7 @@ Continuous change is to be expected...
 
 <details>
 <summary>Old Two Bar Config</summary>
-  
+
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/09d5adbe-63fb-435a-824f-39fca06e56d8)
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/55c6780d-00c6-451e-9066-0a2365c4d7a9)
 
@@ -47,6 +47,7 @@ The configuration files for my NixOS (Linux) desktop.
 > [!NOTE]
 > The old Arch Linux dotfiles can be found on the [archlinux branch](https://github.com/AlexvZyl/.dotfiles/tree/archlinux).
 
+<!--
 # Privacy and Security
 
 Although I like making it look as nice as possible, these dotfiles also try to be private and secure.  This is a journey, not a destination, and I am open to any input.
@@ -96,6 +97,7 @@ Some screenshots showing off the desktop and rice, as well as some custom featur
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/4eeeab12-e778-4f6b-aa19-4f6e0cbe9767)
 
 </details>
+-->
 
 # Key Bindings
 

@@ -4,7 +4,7 @@
 
 # Core components (order is important!)
 (
-    ~/.screenlayout/box_double_monitor.sh
+    ~/.scripts/screenlayout/box_double_monitor.sh
     feh --bg-fill ~/.wallpapers/stay_by_aenami_dbnb1k3.png
     picom -b
     ~/.config/polybar/launch.sh

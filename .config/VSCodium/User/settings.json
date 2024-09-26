@@ -94,7 +94,6 @@
     },
     "terminal.integrated.tabs.enabled": false,
     "editor.scrollbar.horizontalScrollbarSize": 0,
-    "workbench.colorTheme": "Tokyo Night",
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
     "haskell.manageHLS": "GHCup",
@@ -107,5 +106,4 @@
     ],
     "cmake.showOptionsMovedNotification": false,
     "terminal.integrated.gpuAcceleration": "off",
-    "workbench.activityBar.location": "hidden",
 }

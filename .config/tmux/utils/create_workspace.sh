@@ -25,4 +25,5 @@ tmux new-window -c "./" -n "shell" "fish"
 tmux select-window -t "$CURRENT_WINDOW"
 tmux swap-window -t +1
 tmux next-window
+tmux select-window -t 1
 nvim .

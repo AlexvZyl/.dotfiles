@@ -9,10 +9,12 @@ add_newline = false
 
 [directory]
 style = "fg:white"
-format = " [$path]($style)"
+format = " 󰉋 [$path]($style)"
 truncation_length = 5
 truncate_to_repo = true
-truncation_symbol = "󰉒 "
+repo_root_format = " 󰉒 $repo_root"
+before_repo_root_style = ""
+repo_root_style = ""
 
 [time]
 disabled = false
@@ -21,7 +23,7 @@ style = "fg:white"
 format = '[$time](fg:bright-black)($style)'
 
 [character]
-success_symbol = '[ ](bold green)'
+success_symbol = '[ ](bold cyan)'
 error_symbol = '[ ](bold red)'
 
 [git_branch]

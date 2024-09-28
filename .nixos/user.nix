@@ -15,6 +15,7 @@
       shared-mime-info
       slack
       discord
+      wireshark
       zulu8
       loc
       librewolf
@@ -61,8 +62,8 @@
       sshs
       termshark
       ventoy-bin-full
+      cool-retro-term
       tshark
-
       helix
       networkmanagerapplet
       vscode

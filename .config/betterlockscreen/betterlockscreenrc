@@ -28,19 +28,19 @@ wrongcolor=ff453a
 insidewrongcolor=ff453a
 
 # White.
-verifcolor=FFFFFF
-timecolor=FFFFFF
-greetercolor=FFFFFF
-layoutcolor=FFFFFF
-ringvercolor=FFFFFF
-ringcolor=FFFFFF
-ringwrongcolor=FFFFFF
-separatorcolor=FFFFFF
+verifcolor=FAFAFA
+timecolor=FAFAFA
+greetercolor=FAFAFA
+layoutcolor=FAFAFA
+ringvercolor=FAFAFA
+ringcolor=FAFAFA
+ringwrongcolor=FAFAFA
+separatorcolor=FAFAFA
 
 # Black.
-insidevercolor=000000
-loginbox=000000
-bgcolor=000000
-solid_color=000000
-insidecolor=000000
-loginshadow=000000
+insidevercolor=050505
+loginbox=050505
+bgcolor=050505
+solid_color=050505
+insidecolor=050505
+loginshadow=050505

@@ -1,8 +1,8 @@
 * {
-    black:      #000000;
-    white0:     #FFFFFF;
-    white1:     #FFFFFF;
-    white2:     #FFFFFF;
+    black:      #050505;
+    white0:     #FAFAFA;
+    white1:     #FAFAFA;
+    white2:     #FAFAFA;
     // blue2:      #0a84ff;
     blue2:      @cyan;
     cyan:       #64d2ff;

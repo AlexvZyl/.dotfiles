@@ -58,7 +58,7 @@ config.colors = {
         '#87CEFA',
         '#ffcaff',
         "#8cf8f7",
-        '#e0e2ea',
+        '#eef1f8',
     },
     brights = {
         '#4F5258',
@@ -68,7 +68,7 @@ config.colors = {
         '#87CEFA',
         '#ffcaff',
         "#8cf8f7",
-        '#e0e2ea',
+        '#eef1f8',
     },
 }
 config.colors.cursor_bg = config.colors.foreground

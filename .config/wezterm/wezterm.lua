@@ -11,7 +11,7 @@ config.animation_fps = 75
 --config.cursor_blink_ease_out = 'Constant'
 
 -- config.window_background_opacity = 0.96
-config.window_background_opacity = 1
+config.window_background_opacity = 0.9
 config.use_resize_increments = true
 
 config.font_size = 11.5
@@ -74,6 +74,10 @@ config.colors = {
 config.colors.cursor_bg = config.colors.foreground
 config.colors.cursor_border = config.colors.foreground
 config.colors.split = config.colors.foreground
+
+config.underline_thickness = 1
+config.anti_alias_custom_block_glyphs = true
+config.custom_block_glyphs = true
 
 local gpus = wezterm.gui.enumerate_gpus()
 config.webgpu_preferred_adapter = gpus[1]

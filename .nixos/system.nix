@@ -83,8 +83,10 @@
     pkgs.nmap
     pkgs.ethtool
     pkgs.iperf
+    pkgs.i3lock-color
     pkgs.iperf2
     pkgs.bc
+    pkgs.findutils
     pkgs.openssl
 
     inputs.picom.packages.${pkgs.system}.default

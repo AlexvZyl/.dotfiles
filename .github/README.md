@@ -13,12 +13,14 @@ Continuous change is to be expected...
 ![Size](https://img.shields.io/github/repo-size/AlexvZyl/.dotfiles?style=flat)
 
 ![image](https://github.com/user-attachments/assets/93510f93-1cc9-4cce-ac6a-d762a11a68c6)
+
 ![image](https://github.com/user-attachments/assets/4883b6af-5ab8-4dd0-a764-4ea29f857c48)
 
 <details>
 <summary>Old Single Bar config</summary>
 
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/6b87665e-7b22-459f-8fed-50dbbb50f95d)
+
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/a6fe2b0b-29c4-45ec-a4cb-2e348a6d1a1d)
 
 </details>
@@ -27,6 +29,7 @@ Continuous change is to be expected...
 <summary>Old Two Bar Config</summary>
 
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/09d5adbe-63fb-435a-824f-39fca06e56d8)
+
 ![image](https://github.com/AlexvZyl/.dotfiles/assets/81622310/55c6780d-00c6-451e-9066-0a2365c4d7a9)
 
 </details>

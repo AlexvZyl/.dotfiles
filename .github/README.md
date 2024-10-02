@@ -12,14 +12,8 @@ Continuous change is to be expected...
 [![ShellCheck](https://github.com/AlexvZyl/.dotfiles/workflows/ShellCheck/badge.svg)](https://github.com/AlexvZyl/.dotfiles/actions?workflow=ShellCheck)
 ![Size](https://img.shields.io/github/repo-size/AlexvZyl/.dotfiles?style=flat)
 
-![image](https://github.com/user-attachments/assets/63023f2f-cb27-4383-a8a2-72e574837406)
-![image](https://github.com/user-attachments/assets/c5f57798-55ed-48b0-a5e0-36afdf1bce42)
-<details>
-<summary>Lock screen</summary>
-
+![image](https://github.com/user-attachments/assets/93510f93-1cc9-4cce-ac6a-d762a11a68c6)
 ![image](https://github.com/user-attachments/assets/4883b6af-5ab8-4dd0-a764-4ea29f857c48)
-
-</details>
 
 <details>
 <summary>Old Single Bar config</summary>

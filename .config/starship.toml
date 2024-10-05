@@ -12,7 +12,7 @@ style = "fg:white"
 format = " [󰉋 ](fg:yellow)[$path]($style)"
 truncation_length = 5
 truncate_to_repo = true
-repo_root_format = "[ 󰉒 ](fg:yellow)$repo_root"
+repo_root_format = "[ 󰉒 ](fg:yellow)$repo_root$path"
 before_repo_root_style = ""
 repo_root_style = ""
 

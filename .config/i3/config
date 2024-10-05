@@ -177,7 +177,7 @@ bindsym $mod+b exec zen
 # Kill focused window.
 bindsym $mod+q kill
 # Lock the screen.
-bindsym $mod+Escape exec "betterlockscreen --lock --display 1"
+bindsym $mod+Escape exec "betterlockscreen --lock --display 1 --off 0"
 
 # Passwords
 bindsym $mod+p exec rofi-pass

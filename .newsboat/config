@@ -1,8 +1,7 @@
 # Settings.
 auto-reload yes
 notify-program "notify-send"
-# browser "firefox"
-browser "librewolf"
+browser "zen"
 
 # Key bindings.
 show-keymap-hint no

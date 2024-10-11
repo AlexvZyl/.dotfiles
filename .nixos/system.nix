@@ -89,6 +89,10 @@
     pkgs.findutils
     pkgs.openssl
 
+    pkgs.linux-manual
+    pkgs.man-pages
+    pkgs.man-pages-posix
+
     inputs.picom.packages.${pkgs.system}.default
     inputs.zen-browser.packages."${pkgs.system}".default
   ];
@@ -112,4 +116,12 @@
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
+
+  # Manpages.
+  documentation = {
+    enable = true;
+    man.enable = true;
+    dev.enable = true;
+    man.generateCaches = true;
+  };
 }

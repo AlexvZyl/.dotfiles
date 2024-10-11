@@ -10,8 +10,8 @@ config.animation_fps = 75
 --config.cursor_blink_ease_in = 'Constant'
 --config.cursor_blink_ease_out = 'Constant'
 
-config.window_background_opacity = 0.91
--- config.window_background_opacity = 0.95
+-- config.window_background_opacity = 0.94
+config.window_background_opacity = 1
 config.use_resize_increments = true
 
 config.font_size = 11.5

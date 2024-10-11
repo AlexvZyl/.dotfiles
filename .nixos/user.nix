@@ -67,6 +67,7 @@
       helix
       networkmanagerapplet
       vscode
+      godot_4
     ];
   };
 

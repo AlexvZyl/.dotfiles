@@ -7,8 +7,6 @@ config.enable_tab_bar = false
 
 config.max_fps = 75
 config.animation_fps = 75
---config.cursor_blink_ease_in = 'Constant'
---config.cursor_blink_ease_out = 'Constant'
 
 -- config.window_background_opacity = 0.94
 config.window_background_opacity = 1
@@ -16,7 +14,7 @@ config.use_resize_increments = true
 
 config.font_size = 11.5
 config.underline_thickness = 1
-config.underline_position = -4.0
+config.underline_position = -3.0
 config.freetype_load_target = "Normal"
 config.bold_brightens_ansi_colors = false
 --config.freetype_render_target = 'Normal'
@@ -75,7 +73,6 @@ config.colors.cursor_bg = config.colors.foreground
 config.colors.cursor_border = config.colors.foreground
 config.colors.split = config.colors.foreground
 
-config.underline_thickness = 1
 config.anti_alias_custom_block_glyphs = true
 config.custom_block_glyphs = true
 

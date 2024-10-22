@@ -18,7 +18,6 @@
       wireshark
       zulu8
       loc
-      librewolf
       flameshot
       onlyoffice-bin
       newsboat

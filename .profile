@@ -22,17 +22,18 @@ alias ls='eza --grid --long --header --no-permissions --no-time --across'
 alias pdf="nohup zathura"
 alias cat="bat"
 alias rm="trash --trash-dir ~/.trash"  # This one has saved me a lot of heartache...
-alias clear-trash="$(which rm) -r ~/.trash/files/"
+alias clear-trash="yes | $(which rm) -r ~/.trash/files/"
 alias tssh='TERM=xterm-256color ssh'
 alias c="clear"
 alias z="zathura"
 alias picom-restart="pkill picom;\
     sleep 0.01;\
     picom -b"
+alias git-stats="git log --stat --pretty=tformat: --numstat | awk '{add+=\$1; subs+=\$2} END {print \"Total additions:\", add, \"\nTotal deletions:\", subs}'"
 
-alias check-root="sudo dua -i /home  i /"
-alias check-trash="dua i \$HOME/.trash/"
-alias check-home="dua i \$HOME/"
+alias view-root="sudo dua -i /home  i /"
+alias view-trash="dua i \$HOME/.trash/"
+alias view-home="dua i \$HOME/"
 
 # Peripherals.
 alias setup-keyboard="~/.scripts/utils/setup_keyboard.sh"
@@ -47,6 +48,7 @@ alias gl="git log --oneline --decorate --graph"
 alias tmux-workspace="~/.config/tmux/utils/create_workspace.sh"
 alias tw="tmux-workspace"
 alias tks="tmux kill-session"
+alias tclear="tmux clear-history"
 
 # Nix aliases.
 alias nix-shell="$(which nix-shell) --command \"echo; fish\""

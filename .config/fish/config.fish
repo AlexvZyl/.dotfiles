@@ -2,12 +2,16 @@ source ~/.profile
 
 set fish_greeting ""
 
-if status is-interactive
-	function newline --on-event fish_postexec
-        if test "$argv[1]" != "clear" && test "$argv[1]" != "c"
-            echo
-        end
-	end
+# config.fish
+function starship_transient_prompt_func
+	tput cuu1
+	starship module character
 end
+
+function prompt_newline --on-event fish_postexec
+	echo
+end
+
+alias clear "command clear; commandline -f clear-screen"
 
 starship init fish | source

@@ -122,6 +122,6 @@
     enable = true;
     man.enable = true;
     dev.enable = true;
-    man.generateCaches = true;
+    man.generateCaches = false;
   };
 }

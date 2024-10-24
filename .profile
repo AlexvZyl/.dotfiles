@@ -8,7 +8,6 @@ export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 export EDITOR="nvim"
 export VISUAL=$EDITOR
-export JULIA_NUM_THREADS=8
 export BAT_THEME="base16-256"
 export PATH="$HOME/.local/bin/:$PATH"
 
@@ -62,3 +61,4 @@ alias nix-python-activate="LD_LIBRARY_PATH=\$(nix eval --raw nixpkgs#stdenv.cc.c
 "
 alias npa="nix-python-activate"
 alias nix-update-build="nix-update && nix-build"
+alias nub="nix-update-build"

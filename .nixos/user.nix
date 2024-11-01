@@ -34,6 +34,7 @@
       pinta
       speedtest-cli
       pfetch
+      scrcpy
       lazygit
       lazydocker
       zoxide
@@ -61,12 +62,10 @@
       sshs
       termshark
       ventoy-bin-full
-      cool-retro-term
       tshark
-      helix
-      networkmanagerapplet
       vscode
       godot_4
+      android-tools
     ];
   };
 

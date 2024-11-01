@@ -88,6 +88,7 @@
     pkgs.bc
     pkgs.findutils
     pkgs.openssl
+    pkgs.findutils
 
     pkgs.linux-manual
     pkgs.man-pages
@@ -122,6 +123,6 @@
     enable = true;
     man.enable = true;
     dev.enable = true;
-    man.generateCaches = false;
+    man.generateCaches = true;
   };
 }

@@ -13,3 +13,6 @@
 [submodule ".modules/user.js"]
 	path = .modules/user.js
 	url = https://github.com/arkenfox/user.js/
+[submodule ".config/yazi/plugins"]
+	path = .config/yazi/plugins
+	url = https://github.com/yazi-rs/plugins

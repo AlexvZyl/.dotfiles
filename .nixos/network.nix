@@ -4,7 +4,7 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
-  networking.firewall.allowedTCPPorts = [ 80 443 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 3128 ];
   networking.firewall.allowedUDPPorts = [ 80 443 ];
   networking.firewall.enable = true;
 

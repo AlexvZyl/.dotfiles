@@ -35,11 +35,11 @@
       speedtest-cli
       pfetch
       scrcpy
+      yazi
       lazygit
       lazydocker
       zoxide
       zathura
-      ranger
       glab
       awscli2
       feh
@@ -48,7 +48,6 @@
       rustdesk
       gnome.nautilus
       starship
-      cava
       tree-sitter
       wezterm
       chromium

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   users.groups.alex = {};
@@ -8,63 +8,63 @@
     group = "alex";
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" "docker"];
-    packages = with pkgs; [
-      gnome.adwaita-icon-theme
-      xfce.thunar
-      xournalpp
-      shared-mime-info
-      slack
-      discord
-      wireshark
-      zulu8
-      loc
-      flameshot
-      onlyoffice-bin
-      newsboat
-      vlc
-      kalker
-      obs-studio
-      rofi
-      gource
-      rofi-pass
-      thunderbird
-      inkscape
-      pavucontrol
-      gparted
-      pinta
-      speedtest-cli
-      pfetch
-      scrcpy
-      yazi
-      lazygit
-      lazydocker
-      zoxide
-      zathura
-      glab
-      awscli2
-      feh
-      gh
-      arandr
-      rustdesk
-      gnome.nautilus
-      starship
-      tree-sitter
-      wezterm
-      chromium
-      dua
-      (python311.withPackages(ps: with ps; [pytz]))
-      signal-desktop
-      gimp
-      thunderbird-bin
-      birdtray
-      dig
-      sshs
-      termshark
-      ventoy-bin-full
-      tshark
-      vscode
-      godot_4
-      android-tools
+    packages = [
+      pkgs.gnome.adwaita-icon-theme
+      pkgs.xfce.thunar
+      pkgs.xournalpp
+      pkgs.shared-mime-info
+      pkgs.slack
+      pkgs.discord
+      pkgs.wireshark
+      pkgs.zulu8
+      pkgs.loc
+      pkgs.flameshot
+      pkgs.onlyoffice-bin
+      pkgs.newsboat
+      pkgs.vlc
+      pkgs.kalker
+      pkgs.obs-studio
+      pkgs.rofi
+      pkgs.gource
+      pkgs.rofi-pass
+      pkgs.thunderbird
+      pkgs.inkscape
+      pkgs.pavucontrol
+      pkgs.gparted
+      pkgs.pinta
+      pkgs.speedtest-cli
+      pkgs.pfetch
+      pkgs.scrcpy
+      inputs.yazi.packages.${pkgs.system}.default
+      pkgs.lazygit
+      pkgs.lazydocker
+      pkgs.zoxide
+      pkgs.zathura
+      pkgs.glab
+      pkgs.awscli2
+      pkgs.feh
+      pkgs.gh
+      pkgs.arandr
+      pkgs.rustdesk
+      pkgs.gnome.nautilus
+      pkgs.starship
+      pkgs.tree-sitter
+      pkgs.wezterm
+      pkgs.chromium
+      pkgs.dua
+      (pkgs.python311.withPackages(ps: with ps; [pytz]))
+      pkgs.signal-desktop
+      pkgs.gimp
+      pkgs.thunderbird-bin
+      pkgs.birdtray
+      pkgs.dig
+      pkgs.sshs
+      pkgs.termshark
+      pkgs.ventoy-bin-full
+      pkgs.tshark
+      pkgs.vscode
+      pkgs.godot_4
+      pkgs.android-tools
     ];
   };
 

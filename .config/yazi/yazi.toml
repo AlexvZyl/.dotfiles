@@ -1,3 +1,7 @@
+[manager]
+ratio = [2,5,5]
+show_hidden = true
+
 [[plugin.prepend_fetchers]]
 id   = "git"
 name = "*"
@@ -7,3 +11,4 @@ run  = "git"
 id   = "git"
 name = "*/"
 run  = "git"
+

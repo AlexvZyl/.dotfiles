@@ -1,0 +1,6 @@
+[status]
+mode_normal = {fg = "black", bg ="blue", bold=true}
+mode_select = {fg = "black", bg ="red", bold=true}
+mode_unset = {fg = "black", bg ="yellow", bold=true}
+
+progress_label = {fg = "black", bg ="white"}

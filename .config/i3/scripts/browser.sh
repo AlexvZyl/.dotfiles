@@ -1,3 +1,3 @@
 #!/bin/bash
 xdotool key F11
-xdotool key super+f
+xdotool key super+shift+f

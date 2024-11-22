@@ -94,6 +94,8 @@
     pkgs.man-pages
     pkgs.man-pages-posix
 
+    pkgs.xdotool
+
     inputs.picom.packages.${pkgs.system}.default
     inputs.zen-browser.packages."${pkgs.system}".default
   ];

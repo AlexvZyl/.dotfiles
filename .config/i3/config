@@ -7,15 +7,18 @@ workspace_layout default
 
 # Nordic colors.
 set $black      #191D24
+set $gray       #242933
 set $gray0      #242933
 set $gray1      #2E3440
 set $gray2      #3B4252
 set $gray3      #434C5E
 set $gray4      #4C566A
 set $gray5      #60728A
+set $white     #D8DEE9
 set $white0     #D8DEE9
 set $white1     #E5E9F0
 set $white2     #ECEFF4
+set $blue      #5E81AC
 set $blue0      #5E81AC
 set $blue1      #81A1C1
 set $blue2      #88C0D0
@@ -168,8 +171,8 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 bindsym $mod+t exec wezterm -e ~/.config/tmux/apps/start_terminal.sh
 bindsym $mod+shift+t exec proxychains4 -q wezterm -e ~/.config/tmux/apps/start_tor_terminal.sh
 bindsym $mod+n exec wezterm start --class neovim "$HOME/.config/tmux/apps/start_editor.sh"
-bindsym $mod+shift+f exec wezterm -e tmux new-session -n "files" "ranger"
 bindsym $mod+m exec wezterm -e tmux new-session -n "monitor" btop
+bindsym $mod+f exec wezterm -e tmux new-session -n "files" yazi
 bindsym $mod+g exec wezterm -e nvtop
 bindsym $mod+r exec wezterm -e ~/.config/tmux/apps/start_newsboat.sh
 bindsym $mod+b exec zen
@@ -214,7 +217,7 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+Shift+g layout tabbed
@@ -224,7 +227,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+c sticky toggle
 
 # toggle tiling / floating
-bindsym $mod+space floating toggle
+bindsym $mod+space floating toggle, exec --no-startup-id "i3-msg 'resize set 954 588; move position center'"
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -279,7 +282,7 @@ for_window [class=".*"] resize set 954 588
 for_window [class=".*"] move position center
 
 # Browser fullscreen some windows.
-for_window [class="Brave-browser"] exec --no-startup-id ~/.config/i3/scripts/browser.sh
+for_window [class="Chromium-browser"] exec --no-startup-id ~/.config/i3/scripts/browser.sh
 
 #####################################
 # Application menu handled by rofi: #

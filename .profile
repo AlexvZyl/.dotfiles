@@ -1,3 +1,5 @@
+#shellcheck disable=2139,2148,1091,2142
+
 source "$HOME/.private/env.sh" && true
 
 # Environment.
@@ -54,10 +56,27 @@ alias nix-shell="$(which nix-shell) --command \"echo; fish\""
 alias nix-build="sudo nixos-rebuild switch --flake \$HOME/.nixos#default --impure && notify-send 'NixOS' 'Build complete.' || notify-send --urgency=critical 'NixOS' 'Build failed.'"
 alias nix-update="nix flake update \$HOME/.nixos && sudo nix-channel --update && notify-send 'NixOS' 'Channels updated.' || notify-send --urgency=critical 'NixOS' 'Update failed.'"
 alias nix-clear="sudo nix-collect-garbage --delete-older-than"
+# alias nix-python-activate="LD_LIBRARY_PATH=\$(nix eval --raw nixpkgs#stdenv.cc.cc.lib)/lib \
+#     $(which nix-shell) \
+#     -p python3 python3Packages.virtualenv \
+#     --command '
+#         virtualenv venv;
+#         source venv/bin/activate;
+#         pip install --upgrade pip;
+#         clear;
+#         fish;
+#         '\
+# "
 alias nix-python-activate="LD_LIBRARY_PATH=\$(nix eval --raw nixpkgs#stdenv.cc.cc.lib)/lib \
     $(which nix-shell) \
     -p python3 python3Packages.virtualenv \
-    --command 'virtualenv venv; source venv/bin/activate; clear; fish;'\
+    --command '
+        virtualenv venv;
+        source venv/bin/activate;
+        pip install --upgrade pip;
+        clear;
+        fish;
+        '\
 "
 alias npa="nix-python-activate"
 alias nix-update-build="nix-update && nix-build"

@@ -4,6 +4,7 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
+  # 3128 is for the TSN squid stuff.
   networking.firewall.allowedTCPPorts = [ 80 443 3128 ];
   networking.firewall.allowedUDPPorts = [ 80 443 ];
   networking.firewall.enable = true;

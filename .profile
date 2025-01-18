@@ -30,7 +30,7 @@ alias z="zathura"
 alias picom-restart="pkill picom;\
     sleep 0.01;\
     picom -b"
-alias git-stats="git log --stat --pretty=tformat: --numstat | awk '{add+=\$1; subs+=\$2} END {print \"Total additions:\", add, \"\nTotal deletions:\", subs}'"
+
 
 alias view-root="sudo dua -i /home  i /"
 alias view-trash="dua i \$HOME/.trash/"
@@ -45,17 +45,24 @@ alias setup-monitors="feh --bg-fill \$HOME/.wallpapers/alena-aenami-horizon-1k_u
 alias lg="lazygit"
 alias lzd="lazydocker"
 alias nh="nvim ."
-alias gl="git log --oneline --decorate --graph"
 alias tmux-workspace="~/.config/tmux/utils/create_workspace.sh"
 alias tw="tmux-workspace"
 alias tks="tmux kill-session"
-alias tclear="tmux clear-history"
+alias tclear="clear && tmux clear-history"
+
+# Git.
+alias git-su="git submodule update --init --recursive"
+alias git-stats="git log --stat --pretty=tformat: --numstat | awk '{add+=\$1; subs+=\$2} END {print \"Total additions:\", add, \"\nTotal deletions:\", subs}'"
+alias git-l="git log --oneline --decorate --graph"
 
 # Nix aliases.
 alias nix-shell="$(which nix-shell) --command \"echo; fish\""
 alias nix-build="sudo nixos-rebuild switch --flake \$HOME/.nixos#default --impure && notify-send 'NixOS' 'Build complete.' || notify-send --urgency=critical 'NixOS' 'Build failed.'"
-alias nix-update="nix flake update \$HOME/.nixos && sudo nix-channel --update && notify-send 'NixOS' 'Channels updated.' || notify-send --urgency=critical 'NixOS' 'Update failed.'"
+alias nix-update="sudo nix flake update --flake \$HOME/.nixos && sudo nix-channel --update nixos && notify-send 'NixOS' 'Channels updated.' || notify-send --urgency=critical 'NixOS' 'Update failed.'"
 alias nix-clear="sudo nix-collect-garbage --delete-older-than"
+alias nix-upgrade="sudo nixos-rebuild switch --upgrade --flake \$HOME/.nixos#default --impure && notify-send 'NixOS' 'Build complete.' || notify-send --urgency=critical 'NixOS' 'Build failed.'"
+
+# TODO: Sort this out.
 # alias nix-python-activate="LD_LIBRARY_PATH=\$(nix eval --raw nixpkgs#stdenv.cc.cc.lib)/lib \
 #     $(which nix-shell) \
 #     -p python3 python3Packages.virtualenv \
@@ -67,17 +74,6 @@ alias nix-clear="sudo nix-collect-garbage --delete-older-than"
 #         fish;
 #         '\
 # "
-alias nix-python-activate="LD_LIBRARY_PATH=\$(nix eval --raw nixpkgs#stdenv.cc.cc.lib)/lib \
-    $(which nix-shell) \
-    -p python3 python3Packages.virtualenv \
-    --command '
-        virtualenv venv;
-        source venv/bin/activate;
-        pip install --upgrade pip;
-        clear;
-        fish;
-        '\
-"
 alias npa="nix-python-activate"
-alias nix-update-build="nix-update && nix-build"
+alias nix-update-build="nix-update && nix-upgrade"
 alias nub="nix-update-build"

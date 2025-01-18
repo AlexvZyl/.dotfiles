@@ -2,7 +2,7 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/24.05"; # Latest stable.
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; # Latest stable.
     picom.url = "github:yshui/picom?rev=9bc657433ddbd2e2a630a6fb7d3264ce13b39a16"; # Picom 12-rc3
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 		yazi.url = "github:sxyazi/yazi";

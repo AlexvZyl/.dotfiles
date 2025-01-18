@@ -9,7 +9,7 @@
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = [
-      pkgs.gnome.adwaita-icon-theme
+      pkgs.adwaita-icon-theme
       pkgs.xfce.thunar
       pkgs.xournalpp
       pkgs.shared-mime-info
@@ -46,7 +46,7 @@
       pkgs.gh
       pkgs.arandr
       pkgs.rustdesk
-      pkgs.gnome.nautilus
+      pkgs.nautilus
       pkgs.starship
       pkgs.tree-sitter
       pkgs.wezterm
@@ -65,6 +65,8 @@
       pkgs.vscode
       pkgs.godot_4
       pkgs.android-tools
+      pkgs.drawio
+      pkgs.gnome-font-viewer
     ];
   };
 

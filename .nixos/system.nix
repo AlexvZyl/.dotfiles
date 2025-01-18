@@ -93,6 +93,7 @@
     pkgs.linux-manual
     pkgs.man-pages
     pkgs.man-pages-posix
+    pkgs.libGL
 
     pkgs.xdotool
 
@@ -101,7 +102,7 @@
   ];
 
   nixpkgs.config = {
-    packageOverrides = pkgs: rec {
+    packageOverrides = pkgs: {
       # Enable support for polybar.
       polybar = pkgs.polybar.override {
         i3Support = true;
@@ -110,21 +111,20 @@
     };
   };
 
+  fonts.packages = [
+    pkgs.nerd-fonts.jetbrains-mono
+  ];
+
   programs.neovim = {
     enable = true;
     package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
   };
-
-  # Just install jetbrains from nerdfonts.
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
 
   # Manpages.
   documentation = {
     enable = true;
     man.enable = true;
     dev.enable = true;
-    man.generateCaches = true;
+    man.generateCaches = false;
   };
 }

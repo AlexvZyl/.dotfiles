@@ -3,9 +3,8 @@
 
 https://dotfyle.com/this-week-in-neovim/rss.xml Neovim FOSS Programming
 
-https://frame.work/blog.rss "~Framework Laptops" PCs
+#https://frame.work/blog.rss "~Framework Laptops" PCs
 
-https://weekly.nixos.org/feeds/all.rss.xml Linux NixOS
 https://nixos.org/news-rss.xml Linux NixOS
 
 https://hnrss.org/newest?points=1600 "~Hacker News" FOSS
@@ -23,14 +22,12 @@ https://www.ctrlshiftesc.co.za/blogs/announcements.atom "~CSE Announcements" Key
 
 https://www.youtube.com/feeds/videos.xml?channel_id=UCHvATl70qssFSzclIIhd8xQ "~Arc Raiders" YouTube Gaming
 https://www.youtube.com/feeds/videos.xml?channel_id=UCGKx5XhGuf09VERiw_QIemA "~Hello Games" YouTube Gaming
-https://www.youtube.com/feeds/videos.xml?channel_id=UCh0xkVgaWdvxfrNsXLrSUPw "~Fun Dog Studios" YouTube Gaming
+#https://www.youtube.com/feeds/videos.xml?channel_id=UCh0xkVgaWdvxfrNsXLrSUPw "~Fun Dog Studios" YouTube Gaming
 
 https://www.youtube.com/feeds/videos.xml?channel_id=UCUMwY9iS8oMyWDYIe6_RmoA YouTube Programming # NoBoilerPlate
 https://www.youtube.com/feeds/videos.xml?channel_id=UCSp-OaMpsO8K0KkOqyBl7_w YouTube Programming # Let's Get Rusty
 https://www.youtube.com/feeds/videos.xml?channel_id=UCnHX5FjwtQpxkCGziuh4NJA YouTube Programming # Logan Smith
 
-https://mikesmithgh.github.io/index.xml
+#https://mikesmithgh.github.io/index.xml
 
-#https://www.teamfortress.com/rss.xml "~TF2 Blog" Gaming
-#https://store.steampowered.com/feeds/news/app/2073850/?cc=ZA&l=english "~The Finals Updates" Gaming
-#https://store.steampowered.com/feeds/news.xml "~Steam News" Gaming
+https://www.teamfortress.com/rss.xml "~TF2 Blog" Gaming

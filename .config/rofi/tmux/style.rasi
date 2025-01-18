@@ -2,7 +2,7 @@
 configuration {
 	modi:                       "dmenu";
     show-icons:                 true;
-    font:                       "JetBrainsMono Nerd Font 10";
+    font:                       "JetBrainsMono NerdFont 10";
     icon-theme:                 "Papirus-Dark";
     monitor: -1;
 }

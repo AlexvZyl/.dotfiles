@@ -6,6 +6,7 @@ config.default_prog = { 'fish' }
 config.enable_tab_bar = false
 
 config.max_fps = 75
+-- TODO: Why does picom and wezterm not get along?
 config.animation_fps = 75
 
 -- config.window_background_opacity = 0.94
@@ -24,7 +25,7 @@ config.audible_bell = "Disabled"
 
 config.warn_about_missing_glyphs = false
 config.font = wezterm.font({
-    family = 'JetBrainsMono Nerd Font',
+    family = 'JetBrains Mono',
     weight = 'Medium'
 })
 
@@ -37,12 +38,7 @@ config.window_padding = {
     bottom = 0,
 }
 
--- local scheme = wezterm.get_builtin_color_schemes()['Tokyo Night']
--- config.color_schemes = { ['Tokyo Night'] = scheme }
--- config.color_scheme = 'Tokyo Night'
-
 local my_default = wezterm.color.get_default_colors()
-print(my_default)
 
 -- Neovim colors.
 config.colors = {

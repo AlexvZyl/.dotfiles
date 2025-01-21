@@ -96,8 +96,9 @@
     pkgs.libGL
 
     pkgs.xdotool
+    pkgs.picom
+    pkgs.gdb
 
-    inputs.picom.packages.${pkgs.system}.default
     inputs.zen-browser.packages."${pkgs.system}".default
   ];
 

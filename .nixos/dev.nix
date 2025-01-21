@@ -31,6 +31,8 @@
     ccls
     buf
     black
+    protobuf_29
+    nodejs
   ];
 }
 

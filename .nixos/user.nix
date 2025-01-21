@@ -63,10 +63,7 @@
       pkgs.ventoy-bin-full
       pkgs.tshark
       pkgs.vscode
-      pkgs.godot_4
-      pkgs.android-tools
       pkgs.drawio
-      pkgs.gnome-font-viewer
     ];
   };
 

@@ -24,7 +24,7 @@
     terraform-providers.aws
     cmake
     vscode-langservers-extracted
-    nodePackages.eslint
+    # nodePackages.eslint
     cppcheck
     ninja
     rocmPackages.llvm.clang
@@ -33,6 +33,8 @@
     black
     protobuf_29
     nodejs
+    grpcurl
+    subversionClient
   ];
 }
 

@@ -17,7 +17,7 @@
       pkgs.discord
       pkgs.wireshark
       pkgs.zulu8
-      pkgs.loc
+      pkgs.tokei
       pkgs.flameshot
       pkgs.onlyoffice-bin
       pkgs.newsboat
@@ -64,6 +64,7 @@
       pkgs.tshark
       pkgs.vscode
       pkgs.drawio
+      pkgs.brave
     ];
   };
 

@@ -2,6 +2,9 @@
 
 source "$HOME/.private/env.sh" && true
 
+# TSN.
+export KEEP_SQUID_RUNNING="true"
+
 # Environment.
 export TERM="wezterm"
 export TERMINAL=$TERM
@@ -61,6 +64,7 @@ alias nix-build="sudo nixos-rebuild switch --flake \$HOME/.nixos#default --impur
 alias nix-update="sudo nix flake update --flake \$HOME/.nixos && sudo nix-channel --update nixos && notify-send 'NixOS' 'Channels updated.' || notify-send --urgency=critical 'NixOS' 'Update failed.'"
 alias nix-clear="sudo nix-collect-garbage --delete-older-than"
 alias nix-upgrade="sudo nixos-rebuild switch --upgrade --flake \$HOME/.nixos#default --impure && notify-send 'NixOS' 'Build complete.' || notify-send --urgency=critical 'NixOS' 'Build failed.'"
+alias nix-list-builds="sudo nix-env -p /nix/var/nix/profiles/system --list-generations"
 
 # TODO: Sort this out.
 # alias nix-python-activate="LD_LIBRARY_PATH=\$(nix eval --raw nixpkgs#stdenv.cc.cc.lib)/lib \

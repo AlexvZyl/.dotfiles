@@ -6,7 +6,14 @@
     size = 16*1024;  # Mb
   } ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix = {
+    settings = {
+      experimental-features = ["nix-command" "flakes"];
+      # TODO: This does not seem to work.
+      cores = 5;
+      max-jobs = 2;
+    };
+  };
 
   time.timeZone = "Africa/Johannesburg";
   i18n.defaultLocale = "en_ZA.UTF-8";
@@ -126,6 +133,6 @@
     enable = true;
     man.enable = true;
     dev.enable = true;
-    man.generateCaches = false;
+    man.generateCaches = true;
   };
 }

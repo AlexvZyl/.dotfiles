@@ -20,12 +20,17 @@ config.bold_brightens_ansi_colors = false
 -- config.freetype_render_target = 'Normal'
 -- config.freetype_load_flags = 'NO_HINTING'
 
-config.audible_bell = "Disabled"
+-- Waiting for the update...
+-- config.window_content_alignment = {
+--   horizontal = 'Center',
+--   vertical = 'Center',
+-- }
 
+config.audible_bell = "Disabled"
 config.warn_about_missing_glyphs = false
 config.font = wezterm.font({
     family = 'JetBrains Mono',
-    weight = 'Regular'
+    weight = 'Medium'
 })
 
 config.default_cursor_style = 'BlinkingBlock'

@@ -35,6 +35,7 @@
     nodejs
     grpcurl
     subversionClient
+    nodePackages_latest.vscode-json-languageserver
   ];
 }
 

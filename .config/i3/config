@@ -291,9 +291,6 @@ for_window [class="Chromium-browser"] exec --no-startup-id ~/.config/i3/scripts/
 # Launcher.
 bindsym $mod+d exec ~/.config/rofi/launcher/run.sh
 
-# Power menu.
-bindsym $mod+Shift+p exec ~/.config/rofi/powermenu/run.sh
-
 # Tmux sessions.
 bindsym $mod+s exec ~/.config/rofi/tmux/run.sh
 

@@ -81,3 +81,6 @@ alias nix-list-builds="sudo nix-env -p /nix/var/nix/profiles/system --list-gener
 alias npa="nix-python-activate"
 alias nix-update-build="nix-update && nix-upgrade"
 alias nub="nix-update-build"
+
+# Systemd stuff.
+alias sys-suspend="systemctl suspend"

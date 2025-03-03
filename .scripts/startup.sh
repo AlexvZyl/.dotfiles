@@ -1,31 +1,6 @@
 #!/bin/bash -e
 
 
-Configure_network() {
-    local NIC="enp5s0"
-    local WIFI="wlp0s20f0u10"
-
-    nmcli device connect "$NIC"
-    nmcli device connect "$WIFI"
-
-    local local_conn
-    local_conn=$(nmcli -t -f NAME,DEVICE con show | grep "$NIC" | cut -d':' -f1)
-    echo "$local_conn"
-
-    local wifi_conn
-    wifi_conn=$(nmcli -t -f NAME,DEVICE con show | grep "$WIFI" | cut -d':' -f1)
-    echo "$wifi_conn"
-
-    nmcli con mod "$local_conn" ipv4.addresses 192.168.50.1/24
-    nmcli con mod "$local_conn" ipv4.method manual
-    nmcli con mod "$local_conn" ifname enp5s0
-    nmcli con up "$local_conn"
-
-    nmcli con mod "$wifi_conn" ipv4.method auto
-    nmcli con mod "$wifi_conn" ifname wlp0s20f0u10
-}
-
-
 # TODO: Try to move all of this to nix.
 
 # Core components (order is important!)

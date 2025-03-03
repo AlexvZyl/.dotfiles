@@ -105,6 +105,7 @@
     pkgs.xdotool
     pkgs.picom
     pkgs.gdb
+    pkgs.tealdeer
 
     inputs.zen-browser.packages."${pkgs.system}".default
   ];

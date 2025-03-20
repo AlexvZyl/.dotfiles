@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 
 # TODO: Try to move all of this to nix.
@@ -10,7 +10,7 @@
     feh --bg-fill ~/.wallpapers/Gruvbox_Forest_Mountain.png
     picom -b
     ~/.config/polybar/launch.sh
-    nice -n 19 betterlockscreen -u "$HOME/.wallpapers/Gruvbox_Forest_Mountain.png" --display 1 &
+    # nice -n 19 betterlockscreen -u "$HOME/.wallpapers/Gruvbox_Forest_Mountain.png" --display 1 &
 ) &
 
 # Services
@@ -18,5 +18,5 @@
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
 
 # Apps
-xdg-settings set default-web-browser zen
+# xdg-settings set default-web-browser zen
 "$HOME/.scripts/utils/setup_keyboard.sh"

@@ -54,9 +54,10 @@ alias tks="tmux kill-session"
 alias tclear="clear && tmux clear-history"
 
 # Git.
-alias git-su="git submodule update --init --recursive"
+alias git-su="git submodule update --init --recursive --remote"
 alias git-stats="git log --stat --pretty=tformat: --numstat | awk '{add+=\$1; subs+=\$2} END {print \"Total additions:\", add, \"\nTotal deletions:\", subs}'"
 alias git-l="git log --oneline --decorate --graph"
+alias git-sm-reset="git submodule deinit -f . && git submodule init && git submodule update --recursive"
 
 # Nix aliases.
 alias nix-shell="$(which nix-shell) --command \"echo; fish\""
@@ -83,4 +84,12 @@ alias nix-update-build="nix-update && nix-upgrade"
 alias nub="nix-update-build"
 
 # Systemd stuff.
-alias sys-suspend="systemctl suspend"
+alias syspend="systemctl suspend"
+
+# Misc.
+alias monitor-interrupts="watch -n0.1 --no-title cat /proc/interrupts"
+alias kalker="clear && $(which kalker)"
+alias mount-trace="mount -t tracefs nodev /sys/kernel/tracing/ && ln -s /sys/kernel/tracing ./tracing"
+
+# Security.
+alias nmap-full="nmap -p- -v3 -A -T0 -f -Pn"

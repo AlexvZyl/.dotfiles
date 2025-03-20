@@ -106,6 +106,7 @@
     pkgs.picom
     pkgs.gdb
     pkgs.tealdeer
+    pkgs.trace-cmd
 
     inputs.zen-browser.packages."${pkgs.system}".default
   ];
@@ -136,4 +137,7 @@
     dev.enable = true;
     man.generateCaches = true;
   };
+
+  # Ftrace.
+  boot.kernel.sysctl."kernel.ftrace_enabled" = true;
 }

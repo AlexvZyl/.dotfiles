@@ -36,6 +36,9 @@
     grpcurl
     subversionClient
     nodePackages_latest.vscode-json-languageserver
+    zig
+    zls
+    docker-compose
   ];
 }
 

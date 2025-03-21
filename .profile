@@ -90,6 +90,8 @@ alias syspend="systemctl suspend"
 alias monitor-interrupts="watch -n0.1 --no-title cat /proc/interrupts"
 alias kalker="clear && $(which kalker)"
 alias mount-trace="mount -t tracefs nodev /sys/kernel/tracing/ && ln -s /sys/kernel/tracing ./tracing"
+alias setup-lockscreen="betterlockscreen -u \$HOME/.wallpapers/Gruvbox_Forest_Mountain.png --display 1"
+alias lock-syspend="betterlockscreen -l & systemctl suspend"
 
 # Security.
 alias nmap-full="nmap -p- -v3 -A -T0 -f -Pn"

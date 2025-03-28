@@ -1,14 +1,12 @@
-FROM ubuntu:22.04
+FROM debian:bookworm
 
 # OS Stuff.
 RUN apt-get update && apt-get install -y \
     curl \
     wget \
     python3 python3-pip \
-    software-properties-common
-
-# Python stuff.
-RUN pip install python-a2s
+    software-properties-common \
+    neovim
 
 WORKDIR /app
 

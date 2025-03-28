@@ -43,9 +43,10 @@
       pkgs.glab
       pkgs.awscli2
       pkgs.feh
+      pkgs.lapce
       pkgs.gh
       pkgs.arandr
-      pkgs.rustdesk
+      # pkgs.rustdesk # Always breaking...
       pkgs.nautilus
       pkgs.starship
       pkgs.tree-sitter

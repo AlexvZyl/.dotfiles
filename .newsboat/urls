@@ -1,9 +1,5 @@
-#https://github.blog/feed/ "~GitHub Blog"
-#https://github.blog/changelog/feed/ "~GitHub Changelog"
-
-https://dotfyle.com/this-week-in-neovim/rss.xml Neovim FOSS Programming
-
-#https://frame.work/blog.rss "~Framework Laptops" PCs
+https://dotfyle.com/this-week-in-neovim/rss.xml Neovim
+https://gpanders.com/index.xml "Gregory Anders" Neovim 
 
 https://nixos.org/news-rss.xml Linux NixOS
 
@@ -14,7 +10,6 @@ https://signal.org/blog/rss.xml FOSS
 
 https://www.computerenhance.com/feed Programming
 https://neovim.io/news.xml FOSS Programming
-# https://blog.bytebytego.com/feed "~ByteByteGo" Programming
 https://lo.calho.st/index.xml "~Magic Circular Buffers Guy" Programming
 
 https://www.ctrlshiftesc.co.za/blogs/product-updates.atom "~CSE Products" Keyboards
@@ -29,5 +24,4 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCSp-OaMpsO8K0KkOqyBl7_w You
 https://www.youtube.com/feeds/videos.xml?channel_id=UCnHX5FjwtQpxkCGziuh4NJA YouTube Programming # Logan Smith
 
 #https://mikesmithgh.github.io/index.xml
-
 https://www.teamfortress.com/rss.xml "~TF2 Blog" Gaming

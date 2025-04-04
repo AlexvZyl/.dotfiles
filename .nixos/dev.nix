@@ -39,6 +39,7 @@
     zig
     zls
     docker-compose
+    difftastic
   ];
 }
 

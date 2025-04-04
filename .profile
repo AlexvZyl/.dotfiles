@@ -35,14 +35,14 @@ alias picom-restart="pkill picom;\
     picom -b"
 
 
-alias view-root="sudo dua -i /home  i /"
+alias view-root-only="sudo dua -i /home  i /"
+alias view-root="sudo dua i /"
 alias view-trash="dua i \$HOME/.trash/"
 alias view-home="dua i \$HOME/"
 
 # Peripherals.
 alias setup-keyboard="~/.scripts/utils/setup_keyboard.sh"
-alias setup-monitors="feh --bg-fill \$HOME/.wallpapers/alena-aenami-horizon-1k_upscaled.jpg
-    nice -n 19 betterlockscreen -u \"\$HOME/.wallpapers/tokyo-night-space_upscaled.png\" --display 1"
+alias setup-wallpapers="feh --bg-fill \$HOME/.wallpapers/alena-aenami-quiet-1px.jpg & betterlockscreen -u \"\$HOME/.wallpapers/alena-aenami-quiet-1px.jpg\" --display 1"
 
 # Dev.
 alias lg="lazygit"
@@ -55,7 +55,7 @@ alias tclear="clear && tmux clear-history"
 
 # Git.
 alias git-su="git submodule update --init --recursive --remote"
-alias git-stats="git log --stat --pretty=tformat: --numstat | awk '{add+=\$1; subs+=\$2} END {print \"Total additions:\", add, \"\nTotal deletions:\", subs}'"
+alias git-stats="git log --stat --pretty=tformat: --numstat | awk '!/\.lock\$/ {add+=\$1; subs+=\$2} END {print \"Total additions:\", add, \"\nTotal deletions:\", subs}'"
 alias git-l="git log --oneline --decorate --graph"
 alias git-sm-reset="git submodule deinit -f . && git submodule init && git submodule update --recursive"
 

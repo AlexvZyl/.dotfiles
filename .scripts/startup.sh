@@ -6,8 +6,7 @@
 # Core components (order is important!)
 (
     ~/.scripts/screenlayout/box_double_monitor.sh
-    # feh --bg-fill ~/.wallpapers/stay_by_aenami_dbnb1k3.png
-    feh --bg-fill ~/.wallpapers/Gruvbox_Forest_Mountain.png
+    feh --bg-fill ~/.wallpapers/alena-aenami-quiet-1px.jpg
     picom -b
     ~/.config/polybar/launch.sh
     # nice -n 19 betterlockscreen -u "$HOME/.wallpapers/Gruvbox_Forest_Mountain.png" --display 1 &

@@ -20,11 +20,10 @@ config.bold_brightens_ansi_colors = false
 -- config.freetype_render_target = 'Normal'
 -- config.freetype_load_flags = 'NO_HINTING'
 
--- Waiting for the update...
--- config.window_content_alignment = {
---   horizontal = 'Center',
---   vertical = 'Center',
--- }
+config.window_content_alignment = {
+  horizontal = 'Center',
+  vertical = 'Center',
+}
 
 config.audible_bell = "Disabled"
 config.warn_about_missing_glyphs = false

@@ -9,7 +9,6 @@
     feh --bg-fill ~/.wallpapers/alena-aenami-quiet-1px.jpg
     picom -b
     ~/.config/polybar/launch.sh
-    # nice -n 19 betterlockscreen -u "$HOME/.wallpapers/Gruvbox_Forest_Mountain.png" --display 1 &
 ) &
 
 # Services

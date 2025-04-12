@@ -5,17 +5,30 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   # Setup GUI environment.
-  services.xserver.windowManager.i3.enable = true;
-  services.displayManager.sddm.enable = true;
-
-  # Configure keymap in X11
-  services.xserver = {
-    xkb = {
-        options = "caps:escape";
-        layout = "za";
+  services = {
+    xserver = {
+      enable = true;
+      windowManager = {
+        awesome = {
+          enable = true;
+          luaModules = with pkgs.luaPackages; [ luarocks luadbi-mysql ];
+        };
+        i3 = {
+          enable = true;
+        };
+      };
+      xkb = {
+          options = "caps:escape";
+          layout = "za";
+      };
+      # TODO: Don't think this works.
+      autoRepeatDelay = 165;
+      autoRepeatInterval = 50;
     };
-    autoRepeatDelay = 165;
-    autoRepeatInterval = 50;
+    displayManager = {
+        sddm.enable = true;
+        defaultSession = "none+i3";
+    };
   };
 
   # Enable CUPS to print documents.

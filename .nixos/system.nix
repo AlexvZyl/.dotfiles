@@ -67,9 +67,10 @@
     pkgs.python311
     pkgs.python311Packages.pip
     pkgs.polybar
-    pkgs.i3
+    pkgs.awesome
     pkgs.ffmpeg
     pkgs.i3ipc-glib
+    pkgs.i3lock-color
     pkgs.tmux
     pkgs.nodejs
     pkgs.bat
@@ -90,7 +91,6 @@
     pkgs.nmap
     pkgs.ethtool
     pkgs.iperf
-    pkgs.i3lock-color
     pkgs.iperf2
     pkgs.bc
     pkgs.findutils
@@ -107,11 +107,13 @@
     pkgs.gdb
     pkgs.tealdeer
     pkgs.trace-cmd
+    pkgs.atuin
 
     inputs.zen-browser.packages."${pkgs.system}".default
   ];
 
   nixpkgs.config = {
+    config.cudaSupport = true;
     packageOverrides = pkgs: {
       # Enable support for polybar.
       polybar = pkgs.polybar.override {

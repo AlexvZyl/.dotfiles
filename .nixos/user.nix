@@ -57,7 +57,6 @@
       pkgs.signal-desktop
       pkgs.gimp
       pkgs.thunderbird-bin
-      pkgs.birdtray
       pkgs.dig
       pkgs.sshs
       pkgs.termshark
@@ -66,6 +65,8 @@
       pkgs.vscode
       pkgs.drawio
       pkgs.brave
+      pkgs.blender
+      pkgs.godot
     ];
   };
 

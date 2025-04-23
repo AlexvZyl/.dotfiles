@@ -67,6 +67,7 @@
       pkgs.brave
       pkgs.blender
       pkgs.godot
+      pkgs.renderdoc
     ];
   };
 

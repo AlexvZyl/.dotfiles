@@ -24,7 +24,7 @@
     terraform-providers.aws
     cmake
     vscode-langservers-extracted
-    # nodePackages.eslint
+    nodePackages.eslint
     cppcheck
     ninja
     rocmPackages.llvm.clang
@@ -40,6 +40,7 @@
     zls
     docker-compose
     difftastic
+    docker-compose-language-service
   ];
 }
 

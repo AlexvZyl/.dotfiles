@@ -5,6 +5,6 @@ gui:
       #- "#4C566A" # nordic
       # - "#3b4261"
       - "#9b9ea4"
-git:
-  paging:
-    externalDiffCommand: difft --color=always --syntax-highlight=on --display=inline
+# git:
+#   paging:
+#     externalDiffCommand: difft --color=always --syntax-highlight=on --display=inline

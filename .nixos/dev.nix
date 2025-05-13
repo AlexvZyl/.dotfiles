@@ -12,7 +12,7 @@
     nixd
     yaml-language-server
     pylint
-    python311Packages.flake8
+    python3Packages.flake8
     luajitPackages.luacheck
     nodePackages.bash-language-server
     nodePackages.typescript-language-server

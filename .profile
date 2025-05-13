@@ -33,6 +33,7 @@ alias z="zathura"
 alias picom-restart="pkill picom;\
     sleep 0.01;\
     picom -b"
+alias restart-polybar="pkill polybar; ~/.config/polybar/launch.sh"
 
 
 alias view-root-only="sudo dua -i /home  i /"
@@ -93,9 +94,14 @@ alias mount-trace="mount -t tracefs nodev /sys/kernel/tracing/ && ln -s /sys/ker
 alias setup-lockscreen="betterlockscreen -u \$HOME/.wallpapers/alena-aenami-quiet-1px.jpg --display 1"
 alias lock-syspend="betterlockscreen -l & systemctl suspend"
 alias watch-interrupts="watch -d -c -n0.1 \"cat /proc/interrupts\""
+alias check-internet="bash -c \"while true; do ping google.com; sleep 1; done\""
 
 # Security.
 alias nmap-full="nmap -p- -v3 -A -T0 -f -Pn"
 
 # AwesomeWM.
 alias awesome-restart="'awesome.restart()' | awesome-client"
+
+# Vpn_status() {
+#     local vpn="$1"
+# }

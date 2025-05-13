@@ -53,9 +53,9 @@
       pkgs.wezterm
       pkgs.chromium
       pkgs.dua
-      (pkgs.python311.withPackages(ps: with ps; [pytz numpy pandas matplotlib seaborn scipy])) # TODO: Fix the fricken python issues
+      (pkgs.python3.withPackages(ps: with ps; [pytz numpy pandas matplotlib seaborn scipy])) # TODO: Fix the fricken python issues
       pkgs.signal-desktop
-      pkgs.gimp
+      pkgs.gimp3
       pkgs.thunderbird-bin
       pkgs.dig
       pkgs.sshs

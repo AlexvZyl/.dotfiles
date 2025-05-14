@@ -27,7 +27,7 @@
     };
     displayManager = {
         sddm.enable = true;
-        defaultSession = "none+i3";
+        defaultSession = "none+awesome";
     };
   };
 

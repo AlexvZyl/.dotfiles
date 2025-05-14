@@ -71,14 +71,14 @@
     ];
   };
 
-  security.sudo.extraRules = [
-    {
-      users = [ "alex" ];
-      commands = [
-        { command = "/run/current-system/sw/bin/fail2ban-client"; options = [ "NOPASSWD" ]; }
-      ];
-    }
-  ];
+  # security.sudo.extraRules = [
+  #   {
+  #     users = [ "alex" ];
+  #     commands = [
+  #       { command = "/run/current-system/sw/bin/fail2ban-client"; options = [ "NOPASSWD" ]; }
+  #     ];
+  #   }
+  # ];
 
   system.activationScripts.binbash = {
     deps = [ "binsh" ];
@@ -90,6 +90,5 @@
   };
 
   virtualisation.docker.enable = true;
-
   programs.fish.enable = true;
 }

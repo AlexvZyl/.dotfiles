@@ -74,22 +74,7 @@ awful.screen.padding(primary_screen, {
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    awful.layout.suit.floating,
-    awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier,
-    awful.layout.suit.corner.nw,
-    -- awful.layout.suit.corner.ne,
-    -- awful.layout.suit.corner.sw,
-    -- awful.layout.suit.corner.se,
+    awful.layout.suit.tile
 }
 
 
@@ -105,7 +90,7 @@ local globalkeys = gears.table.join(
     awful.key({ modkey, }, "b", function() awful.spawn("zen") end),
 
     -- Windows.
-    awful.key({ modkey, }, "space", function() awful.layout.inc(1) end),
+    awful.key({ modkey, }, "]", function() awful.layout.inc(1) end),
     awful.key({ modkey, }, "j", function() awful.client.focus.byidx(1) end),
     awful.key({ modkey, }, "k", function() awful.client.focus.byidx(-1) end),
     awful.key({ modkey, "Shift" }, "j", function() awful.client.swap.byidx(1) end),
@@ -160,6 +145,16 @@ end
 
 root.keys(globalkeys)
 
+local clientkeys = gears.table.join(
+    awful.key({ modkey, "Shift" }, "f",
+        function(c)
+            c.fullscreen = not c.fullscreen
+            c:raise()
+        end),
+
+    awful.key({ modkey }, "q", function(c) c:kill() end),
+    awful.key({ modkey }, "space", awful.client.floating.toggle)
+)
 
 -- -----------------------------------------------------------------------------
 -- Client stuff.
@@ -178,10 +173,9 @@ clientbuttons = gears.table.join(
     end)
 )
 
--- {{{ Rules
--- Rules to apply to new clients (through the "manage" signal).
+-- Rules.
 awful.rules.rules = {
-    -- All clients will match this rule.
+    -- All clients.
     {
         rule = {},
         properties = {
@@ -191,50 +185,45 @@ awful.rules.rules = {
             raise = true,
             buttons = clientbuttons,
             screen = awful.screen.preferred,
-            placement = awful.placement.no_overlap + awful.placement.no_offscreen
+            placement = awful.placement.no_overlap + awful.placement.no_offscreen,
+            keys = clientkeys,
+            floating = false
         }
     },
 
     -- Floating clients.
-    {
-        rule_any = {
-            instance = {
-                "DTA",   -- Firefox addon DownThemAll.
-                "copyq", -- Includes session name in class.
-                "pinentry",
-            },
-            class = {
-                "Arandr",
-                "Blueman-manager",
-                "Gpick",
-                "Kruler",
-                "MessageWin",  -- kalarm.
-                "Sxiv",
-                "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
-                "Wpa_gui",
-                "veromix",
-                "xtightvncviewer" },
-
-            -- Note that the name property shown in xprop might be set slightly after creation of the client
-            -- and the name shown there might not match defined rules here.
-            name = {
-                "Event Tester", -- xev.
-            },
-            role = {
-                "AlarmWindow",   -- Thunderbird's calendar.
-                "ConfigManager", -- Thunderbird's about:config.
-                "pop-up",        -- e.g. Google Chrome's (detached) Developer Tools.
-            }
-        },
-        properties = { floating = true }
-    },
-
-    -- Add titlebars to normal clients and dialogs
-    {
-        rule_any = { type = { "normal", "dialog" }
-        },
-        properties = { titlebars_enabled = true }
-    },
+    -- {
+    --     rule_any = {
+    --         instance = {
+    --             "DTA",   -- Firefox addon DownThemAll.
+    --             "copyq", -- Includes session name in class.
+    --             "pinentry",
+    --         },
+    --         class = {
+    --             "Arandr",
+    --             "Blueman-manager",
+    --             "Gpick",
+    --             "Kruler",
+    --             "MessageWin",  -- kalarm.
+    --             "Sxiv",
+    --             "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
+    --             "Wpa_gui",
+    --             "veromix",
+    --             "xtightvncviewer" },
+    --
+    --         -- Note that the name property shown in xprop might be set slightly after creation of the client
+    --         -- and the name shown there might not match defined rules here.
+    --         name = {
+    --             "Event Tester", -- xev.
+    --         },
+    --         role = {
+    --             "AlarmWindow",   -- Thunderbird's calendar.
+    --             "ConfigManager", -- Thunderbird's about:config.
+    --             "pop-up",        -- e.g. Google Chrome's (detached) Developer Tools.
+    --         }
+    --     },
+    --     properties = { floating = true }
+    -- }
 }
 
 -- Signal function to execute when a new client appears.

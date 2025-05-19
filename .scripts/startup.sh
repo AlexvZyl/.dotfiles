@@ -5,7 +5,7 @@
 
 # Core components (order is important!)
 (
-    ~/.scripts/screenlayout/box_double_monitor.sh
+    ~/.scripts/screenlayout/single_1080p_monitor.sh
     feh --bg-fill ~/.wallpapers/alena-aenami-quiet-1px.jpg
     picom -b
     ~/.config/polybar/launch.sh

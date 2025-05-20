@@ -13,9 +13,6 @@
           enable = true;
           luaModules = with pkgs.luaPackages; [ luarocks luadbi-mysql ];
         };
-        i3 = {
-          enable = true;
-        };
       };
       xkb = {
           options = "caps:escape";

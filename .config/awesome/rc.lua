@@ -71,10 +71,17 @@ awful.screen.padding(primary_screen, {
 local globalkeys = gears.table.join(
 -- Apps
     awful.key({ modkey, }, "t", function() awful.spawn("wezterm -e /home/alex/.config/tmux/apps/start_terminal.sh") end),
+    awful.key({ modkey, }, "p", function() awful.spawn("rofi-pass") end),
     awful.key({ modkey, }, "d", function() awful.spawn("/home/alex/.config/rofi/launcher/run.sh") end),
     awful.key({ modkey, }, "r", function() awful.spawn("wezterm -e /home/alex/.config/tmux/apps/start_newsboat.sh") end),
     awful.key({ modkey, }, "f", function() awful.spawn("wezterm -e tmux new-session -n \"files\" yazi") end),
+    awful.key({ modkey, }, "s", function() awful.spawn("/home/alex/.config/rofi/tmux/run.sh") end),
     awful.key({ modkey, }, "b", function() awful.spawn("zen") end),
+
+    -- Audio
+    awful.key({}, "XF86AudioRaiseVolume", function() awful.spawn("pamixer -i 5") end),
+    awful.key({}, "XF86AudioLowerVolume", function() awful.spawn("pamixer -d 5") end),
+    awful.key({}, "XF86AudioMute", function() awful.spawn("pamixer -t") end),
 
     -- Windows.
     awful.key({ modkey, }, "]", function() awful.layout.inc(1) end),

@@ -69,8 +69,6 @@
     pkgs.polybar
     pkgs.awesome
     pkgs.ffmpeg
-    pkgs.i3ipc-glib
-    pkgs.i3lock-color
     pkgs.tmux
     pkgs.nodejs
     pkgs.bat
@@ -117,7 +115,6 @@
     packageOverrides = pkgs: {
       # Enable support for polybar.
       polybar = pkgs.polybar.override {
-        i3Support = true;
         pulseSupport = true;
       };
     };

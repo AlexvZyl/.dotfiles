@@ -19,11 +19,10 @@ config.underline_position = -3.0
 config.bold_brightens_ansi_colors = false
 -- config.freetype_render_target = 'Normal'
 -- config.freetype_load_flags = 'NO_HINTING'
-
-config.window_content_alignment = {
-  horizontal = 'Center',
-  vertical = 'Center',
-}
+-- config.window_content_alignment = {
+--   horizontal = 'Center',
+--   vertical = 'Center',
+-- }
 
 config.audible_bell = "Disabled"
 config.warn_about_missing_glyphs = false
@@ -40,8 +39,6 @@ config.window_padding = {
     top = 0,
     bottom = 0,
 }
-
-local my_default = wezterm.color.get_default_colors()
 
 -- Neovim colors.
 config.colors = {

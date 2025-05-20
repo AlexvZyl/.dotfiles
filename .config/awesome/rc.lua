@@ -2,12 +2,8 @@ pcall(require, "luarocks.loader")
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
-local wibox = require("wibox")
 local beautiful = require("beautiful")
 local naughty = require("naughty")
-local menubar = require("menubar")
-local hotkeys_popup = require("awful.hotkeys_popup")
-require("awful.hotkeys_popup.keys")
 
 -- -----------------------------------------------------------------------------
 -- Error handling (copied from default)
@@ -39,43 +35,34 @@ end
 -- -----------------------------------------------------------------------------
 -- Init.
 
+-- Table of layouts to cover with awful.layout.inc, order matters.
+awful.layout.layouts = {
+    awful.layout.suit.tile
+}
+
+
 -- Setup monitors (copied from default).
 awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
     awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" }, s, awful.layout.layouts[1])
-
-    -- Create a promptbox for each screen
-    s.mypromptbox = awful.widget.prompt()
 end)
--- }}}
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
--- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
+-- Default modkey (This is the super key).
 local modkey = "Mod4"
 
-
--- -----------------------------------------------------------------------------
--- Layout.
-
+-- beautiful.useless_gap = 5
+-- beautiful.gap_single_client = true
 local primary_screen = screen.primary
 awful.screen.padding(primary_screen, {
-    top = 43,
-    left = 8,
-    right = 8,
-    bottom = 1
+    top = 42,
+    left = 9,
+    right = 10,
+    bottom = 7
 })
-
--- Table of layouts to cover with awful.layout.inc, order matters.
-awful.layout.layouts = {
-    awful.layout.suit.tile
-}
 
 
 -- -----------------------------------------------------------------------------
@@ -159,7 +146,7 @@ local clientkeys = gears.table.join(
 -- -----------------------------------------------------------------------------
 -- Client stuff.
 
-clientbuttons = gears.table.join(
+local clientbuttons = gears.table.join(
     awful.button({}, 1, function(c)
         c:emit_signal("request::activate", "mouse_click", { raise = true })
     end),
@@ -179,59 +166,24 @@ awful.rules.rules = {
     {
         rule = {},
         properties = {
-            border_width = beautiful.border_width,
-            border_color = beautiful.border_normal,
-            focus = awful.client.focus.filter,
-            raise = true,
-            buttons = clientbuttons,
-            screen = awful.screen.preferred,
-            placement = awful.placement.no_overlap + awful.placement.no_offscreen,
-            keys = clientkeys,
-            floating = false
+            border_width         = beautiful.border_width,
+            border_color         = beautiful.border_normal,
+            focus                = awful.client.focus.filter,
+            raise                = true,
+            buttons              = clientbuttons,
+            keys                 = clientkeys,
+            screen               = awful.screen.preferred,
+            placement            = awful.placement.no_overlap + awful.placement.no_offscreen,
+            floating             = false,
+            size_hint_honor      = false,
+            maximized_vertical   = false,
+            maximized_horizontal = false,
         }
     },
-
-    -- Floating clients.
-    -- {
-    --     rule_any = {
-    --         instance = {
-    --             "DTA",   -- Firefox addon DownThemAll.
-    --             "copyq", -- Includes session name in class.
-    --             "pinentry",
-    --         },
-    --         class = {
-    --             "Arandr",
-    --             "Blueman-manager",
-    --             "Gpick",
-    --             "Kruler",
-    --             "MessageWin",  -- kalarm.
-    --             "Sxiv",
-    --             "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
-    --             "Wpa_gui",
-    --             "veromix",
-    --             "xtightvncviewer" },
-    --
-    --         -- Note that the name property shown in xprop might be set slightly after creation of the client
-    --         -- and the name shown there might not match defined rules here.
-    --         name = {
-    --             "Event Tester", -- xev.
-    --         },
-    --         role = {
-    --             "AlarmWindow",   -- Thunderbird's calendar.
-    --             "ConfigManager", -- Thunderbird's about:config.
-    --             "pop-up",        -- e.g. Google Chrome's (detached) Developer Tools.
-    --         }
-    --     },
-    --     properties = { floating = true }
-    -- }
 }
 
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function(c)
-    -- Set the windows at the slave,
-    -- i.e. put it at the end of others instead of setting it master.
-    -- if not awesome.startup then awful.client.setslave(c) end
-
     if awesome.startup
         and not c.size_hints.user_position
         and not c.size_hints.program_position then

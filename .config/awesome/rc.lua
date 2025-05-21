@@ -47,7 +47,6 @@ awful.screen.connect_for_each_screen(function(s)
     awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" }, s, awful.layout.layouts[1])
 end)
 
--- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
@@ -58,12 +57,11 @@ local modkey = "Mod4"
 -- beautiful.gap_single_client = true
 local primary_screen = screen.primary
 awful.screen.padding(primary_screen, {
-    top = 42,
+    top = 43,
     left = 9,
     right = 10,
-    bottom = 7
+    bottom = 6
 })
-
 
 -- -----------------------------------------------------------------------------
 -- Keybinds.
@@ -77,6 +75,7 @@ local globalkeys = gears.table.join(
     awful.key({ modkey, }, "f", function() awful.spawn("wezterm -e tmux new-session -n \"files\" yazi") end),
     awful.key({ modkey, }, "s", function() awful.spawn("/home/alex/.config/rofi/tmux/run.sh") end),
     awful.key({ modkey, }, "b", function() awful.spawn("zen") end),
+    awful.key({ modkey, "Shift" }, "s", function() awful.spawn("flameshot gui") end),
 
     -- Audio
     awful.key({}, "XF86AudioRaiseVolume", function() awful.spawn("pamixer -i 5") end),
@@ -185,6 +184,7 @@ awful.rules.rules = {
             size_hint_honor      = false,
             maximized_vertical   = false,
             maximized_horizontal = false,
+            maximized            = false
         }
     },
 }
@@ -209,5 +209,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 awful.spawn("/home/alex/.scripts/startup.sh")
 
+-- Disable awesomewm notifications.
+package.loaded["naughty.dbus"] = {}
+awful.spawn("dunst")
 
 -- -----------------------------------------------------------------------------

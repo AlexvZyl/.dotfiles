@@ -10,7 +10,7 @@ config.animation_fps = 75
 
 -- config.window_background_opacity = 0.94
 config.window_background_opacity = 1
-config.use_resize_increments = true
+config.use_resize_increments = false
 
 config.font_size = 11.5
 config.underline_thickness = 1
@@ -19,10 +19,6 @@ config.underline_position = -3.0
 config.bold_brightens_ansi_colors = false
 -- config.freetype_render_target = 'Normal'
 -- config.freetype_load_flags = 'NO_HINTING'
--- config.window_content_alignment = {
---   horizontal = 'Center',
---   vertical = 'Center',
--- }
 
 config.audible_bell = "Disabled"
 config.warn_about_missing_glyphs = false

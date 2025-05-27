@@ -53,14 +53,14 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 -- Default modkey (This is the super key).
 local modkey = "Mod4"
 
--- beautiful.useless_gap = 5
--- beautiful.gap_single_client = true
+beautiful.useless_gap = 3
+beautiful.gap_single_client = true
 local primary_screen = screen.primary
 awful.screen.padding(primary_screen, {
-    top = 43,
-    left = 9,
-    right = 10,
-    bottom = 6
+    top = 37,
+    left = 3,
+    right = 4,
+    bottom = 0
 })
 
 -- -----------------------------------------------------------------------------
@@ -146,7 +146,14 @@ local clientkeys = gears.table.join(
         end),
 
     awful.key({ modkey }, "q", function(c) c:kill() end),
-    awful.key({ modkey }, "space", awful.client.floating.toggle)
+    awful.key({ modkey }, "space", function(c)
+        awful.client.floating.toggle()
+        if c.floating then
+            c.width = 954
+            c.height = 588
+            awful.placement.centered()
+        end
+    end)
 )
 
 -- -----------------------------------------------------------------------------
@@ -179,14 +186,50 @@ awful.rules.rules = {
             buttons              = clientbuttons,
             keys                 = clientkeys,
             screen               = awful.screen.preferred,
-            placement            = awful.placement.no_overlap + awful.placement.no_offscreen,
-            floating             = false,
+            -- placement            = awful.placement.no_overlap + awful.placement.no_offscreen,
+            -- floating             = false,
             size_hint_honor      = false,
             maximized_vertical   = false,
             maximized_horizontal = false,
             maximized            = false
         }
     },
+
+    -- Floating clients.
+    {
+        rule_any = {
+            instance = {
+                "DTA",
+                "copyq",
+                "pinentry",
+            },
+            class = {
+                "Screen Layout Editor"
+            },
+            name = {
+                "Event Tester",
+            },
+            role = {
+                "AlarmWindow",
+                "ConfigManager",
+                "pop-up",
+            },
+            floating = {true}
+        }
+    },
+
+    -- Add titlebars to normal clients and dialogs
+    {
+        rule_any = { type = { "normal", "dialog" }
+        },
+        properties = { titlebars_enabled = true }
+    },
+
+    -- Floating windows.
+    -- {
+    --     rule_any = { floating = true },
+    --     properties = { }
+    -- },
 }
 
 -- Signal function to execute when a new client appears.
@@ -196,6 +239,11 @@ client.connect_signal("manage", function(c)
         and not c.size_hints.program_position then
         -- Prevent clients from being unreachable after screen count changes.
         awful.placement.no_offscreen(c)
+    end
+
+    -- New floating windows in the center.
+    if c.floating and context == "new" then
+        c.placement = awful.placement.centered + awful.placement.no_overlap
     end
 end)
 

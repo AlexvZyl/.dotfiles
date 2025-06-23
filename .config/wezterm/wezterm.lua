@@ -5,16 +5,16 @@ local config = {}
 config.default_prog = { 'fish' }
 config.enable_tab_bar = false
 
-config.max_fps = 75
-config.animation_fps = 75
+config.max_fps = 100
+config.animation_fps = 100
 
 -- config.window_background_opacity = 0.94
 config.window_background_opacity = 1
-config.use_resize_increments = false
+config.use_resize_increments = true
 
-config.font_size = 11.5
+config.font_size = 13
 config.underline_thickness = 1
-config.underline_position = -3.0
+config.underline_position = -5.0
 -- config.freetype_load_target = "Normal"
 config.bold_brightens_ansi_colors = false
 -- config.freetype_render_target = 'Normal'

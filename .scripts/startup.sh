@@ -5,8 +5,8 @@
 
 # Core components (order is important!)
 (
-    ~/.scripts/screenlayout/single_1080p_monitor.sh
-    feh --bg-fill ~/.wallpapers/alena-aenami-quiet-1px.jpg
+    ~/.scripts/screenlayout/single_1440p.sh
+    feh --bg-fill ~/.wallpapers/FALCON.jpg
     picom -b
     ~/.config/polybar/launch.sh
 ) &

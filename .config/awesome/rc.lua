@@ -57,10 +57,10 @@ beautiful.useless_gap = 3
 beautiful.gap_single_client = true
 local primary_screen = screen.primary
 awful.screen.padding(primary_screen, {
-    top = 37,
-    left = 3,
-    right = 4,
-    bottom = 0
+    top = 42,
+    left = 8,
+    right = 8,
+    bottom = 4
 })
 
 -- -----------------------------------------------------------------------------
@@ -149,8 +149,8 @@ local clientkeys = gears.table.join(
     awful.key({ modkey }, "space", function(c)
         awful.client.floating.toggle()
         if c.floating then
-            c.width = 954
-            c.height = 588
+            c.width = 1200
+            c.height = 805
             awful.placement.centered()
         end
     end)
@@ -186,50 +186,37 @@ awful.rules.rules = {
             buttons              = clientbuttons,
             keys                 = clientkeys,
             screen               = awful.screen.preferred,
-            -- placement            = awful.placement.no_overlap + awful.placement.no_offscreen,
-            -- floating             = false,
-            size_hint_honor      = false,
+            placement            = awful.placement.no_overlap + awful.placement.no_offscreen,
+            floating             = false,
             maximized_vertical   = false,
             maximized_horizontal = false,
-            maximized            = false
+            maximized            = false,
+            sticky               = false,
+            fullscreen           = false,
+            size_hint_honor      = true,
+        }
+    },
+
+    -- NOTE: Sometimes have to do this for force certain windows to float.
+    {
+        rule = { class = "chromium-browser" },
+        properties = {
+            floating = false,
+            maximized = false,
+            maximized_vertical = false,
+            maximized_horizontal = false,
         }
     },
 
     -- Floating clients.
     {
         rule_any = {
-            instance = {
-                "DTA",
-                "copyq",
-                "pinentry",
-            },
-            class = {
-                "Screen Layout Editor"
-            },
-            name = {
-                "Event Tester",
-            },
-            role = {
-                "AlarmWindow",
-                "ConfigManager",
-                "pop-up",
-            },
-            floating = {true}
+            type = {},
+            class = {},
+            role = { "Popup" },
+            floating = { true }
         }
     },
-
-    -- Add titlebars to normal clients and dialogs
-    {
-        rule_any = { type = { "normal", "dialog" }
-        },
-        properties = { titlebars_enabled = true }
-    },
-
-    -- Floating windows.
-    -- {
-    --     rule_any = { floating = true },
-    --     properties = { }
-    -- },
 }
 
 -- Signal function to execute when a new client appears.

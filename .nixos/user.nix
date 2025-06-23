@@ -60,7 +60,7 @@
       pkgs.dig
       pkgs.sshs
       pkgs.termshark
-      pkgs.ventoy-bin-full
+      # pkgs.ventoy-bin-full
       pkgs.tshark
       pkgs.vscode
       pkgs.drawio

@@ -50,7 +50,7 @@
         }
     },
     "editor.fontFamily": "JetBrainsMono Nerd Font",
-    "editor.fontSize": 14,
+    "editor.fontSize": 16,
     "editor.fontLigatures": true,
     "editor.renderLineHighlight": "none",
     "editor.renderLineHighlightOnlyWhenFocus": true,
@@ -106,5 +106,4 @@
     ],
     "cmake.showOptionsMovedNotification": false,
     "terminal.integrated.gpuAcceleration": "off",
-    "workbench.activityBar.location": "hidden",
 }

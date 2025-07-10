@@ -199,7 +199,7 @@ awful.rules.rules = {
 
     -- NOTE: Sometimes have to do this for force certain windows to float.
     {
-        rule = { class = "chromium-browser" },
+        rule = { class = "Chromium-browser" },
         properties = {
             floating = false,
             maximized = false,
@@ -212,10 +212,17 @@ awful.rules.rules = {
     {
         rule_any = {
             type = {},
-            class = {},
-            role = { "Popup" },
-            floating = { true }
-        }
+            class = {
+                "Gcr-prompter"
+            },
+            role = {
+                "Popup"
+            },
+        },
+        properties = {
+            floating = true,
+        },
+        callback = awful.placement.centered
     },
 }
 

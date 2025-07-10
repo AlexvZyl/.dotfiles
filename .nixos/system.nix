@@ -23,6 +23,9 @@
 
   # TODO: Sort this out
   environment.systemPackages = [
+    pkgs.nix-index
+    pkgs.xorg.xhost
+
     pkgs.openvpn
     pkgs.fzf
     pkgs.vim
@@ -67,7 +70,6 @@
     pkgs.python3
     pkgs.python3Packages.pip
     pkgs.polybar
-    pkgs.awesome
     pkgs.ffmpeg
     pkgs.tmux
     pkgs.nodejs
@@ -129,12 +131,40 @@
     package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
   };
 
+  # For non-NixOS binaries.
+  # Currently used for:
+  # - TSNTools
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [ 
+      krb5 
+      libGL
+      glib
+      nss
+      nspr
+      xorg.libXcomposite
+      xorg.libXdamage
+      xorg.libXfixes
+      xorg.libXrender
+      xorg.libXrandr
+      xorg.libXtst
+      freetype
+      expat
+      fontconfig
+      xorg.libX11
+      xorg.libxcb
+      libxkbcommon
+      dbus
+      alsa-lib
+    ];
+  };
+
   # Manpages.
   documentation = {
     enable = true;
     man.enable = true;
     dev.enable = true;
-    man.generateCaches = true;
+    man.generateCaches = false;
   };
 
   # Ftrace.

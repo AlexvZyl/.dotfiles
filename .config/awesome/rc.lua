@@ -198,6 +198,7 @@ awful.rules.rules = {
     },
 
     -- NOTE: Sometimes have to do this for force certain windows to float.
+    -- (reload *with window open* required)
     {
         rule = { class = "Chromium-browser" },
         properties = {

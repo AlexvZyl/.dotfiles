@@ -67,17 +67,7 @@ alias nix-clear="sudo nix-collect-garbage --delete-older-than"
 alias nix-upgrade="sudo nixos-rebuild switch --upgrade --flake \$HOME/.nixos#default --impure && notify-send 'NixOS' 'Build complete.' || notify-send --urgency=critical 'NixOS' 'Build failed.'"
 alias nix-list-builds="sudo nix-env -p /nix/var/nix/profiles/system --list-generations"
 
-alias nix-python-activate="LD_LIBRARY_PATH=\$(nix eval --raw nixpkgs#stdenv.cc.cc.lib)/lib \
-    $(which nix-shell) \
-    -p python3 python3Packages.virtualenv \
-    --command '
-        virtualenv venv;
-        source venv/bin/activate;
-        pip install --upgrade pip;
-        clear;
-        fish;
-        '\
-"
+alias nix-python-activate="~/.scripts/nix/python.sh"
 alias npa="nix-python-activate"
 alias nix-update-build="nix-update && nix-upgrade"
 alias nub="nix-update-build"

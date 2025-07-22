@@ -26,6 +26,8 @@
     pkgs.nix-index
     pkgs.xorg.xhost
 
+    pkgs.desktop-file-utils
+
     pkgs.openvpn
     pkgs.fzf
     pkgs.vim

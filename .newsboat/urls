@@ -1,7 +1,8 @@
 https://dotfyle.com/this-week-in-neovim/rss.xml Neovim
 https://gpanders.com/index.xml "Gregory Anders" Neovim 
 https://bevyengine.org/atom.xml "Bevy"
-https://godotengine.org/rss.xml "~Godot Engine"
+https://godotengine.org/rss.xml "~Godot"
+https://bevy.org/atom.xml "~Bevy"
 
 https://nixos.org/news-rss.xml Linux NixOS
 
@@ -26,3 +27,5 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCnHX5FjwtQpxkCGziuh4NJA You
 
 #https://mikesmithgh.github.io/index.xml
 https://www.teamfortress.com/rss.xml "~TF2 Blog" Gaming
+
+

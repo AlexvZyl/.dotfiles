@@ -77,11 +77,9 @@
     pkgs.nodejs
     pkgs.bat
     pkgs.trash-cli
-    pkgs.ripgrep
     pkgs.btop
     pkgs.nvtopPackages.full
     pkgs.efibootmgr
-    pkgs.rustup
     pkgs.refind
     pkgs.libpqxx
     pkgs.postgresql.lib
@@ -98,12 +96,15 @@
     pkgs.findutils
     pkgs.openssl
     pkgs.findutils
+    pkgs.linuxHeaders
+    pkgs.ripgrep
 
     pkgs.linux-manual
     pkgs.man-pages
     pkgs.man-pages-posix
     pkgs.libGL
 
+    pkgs.jq
     pkgs.xdotool
     pkgs.picom
     pkgs.gdb

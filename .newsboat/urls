@@ -1,31 +1,31 @@
-https://dotfyle.com/this-week-in-neovim/rss.xml Neovim
-https://gpanders.com/index.xml "Gregory Anders" Neovim 
-https://bevyengine.org/atom.xml "Bevy"
-https://godotengine.org/rss.xml "~Godot"
-https://bevy.org/atom.xml "~Bevy"
-
-https://nixos.org/news-rss.xml Linux NixOS
-
+# General.
 https://hnrss.org/newest?points=1800 "~Hacker News" FOSS
 
-https://signal.org/blog/rss.xml FOSS
+# People.
+https://www.computerenhance.com/feed "Casey" Programming
+https://lo.calho.st/index.xml Programming "~Travis Mick"
+https://www.rfleury.com/feed Programming "~Ryan Fleury"
+https://gpanders.com/index.xml "Gregory Anders" Neovim
 
-https://www.computerenhance.com/feed Programming
+# Software.
+https://godotengine.org/rss.xml "~Godot Engine"
+https://bevy.org/atom.xml "~Bevy Engine"
+https://signal.org/blog/rss.xml "~Signal Blog"
+https://tigerbeetle.com/blog/atom.xml
+https://us13.campaign-archive.com/feed?u=32cd932058e988b44c838f7bc&id=fca295a96e "~TigerBeetle Newsletter"
 https://neovim.io/news.xml FOSS Programming
-https://lo.calho.st/index.xml "~Magic Circular Buffers Guy" Programming
+https://nixos.org/news-rss.xml Linux NixOS
 
+# Keyboards
 https://www.ctrlshiftesc.co.za/blogs/product-updates.atom "~CSE Products" Keyboards
 https://www.ctrlshiftesc.co.za/blogs/announcements.atom "~CSE Announcements" Keyboards
 
-https://www.youtube.com/feeds/videos.xml?channel_id=UCHvATl70qssFSzclIIhd8xQ "~Arc Raiders" YouTube Gaming
-https://www.youtube.com/feeds/videos.xml?channel_id=UCGKx5XhGuf09VERiw_QIemA "~Hello Games" YouTube Gaming
-#https://www.youtube.com/feeds/videos.xml?channel_id=UCh0xkVgaWdvxfrNsXLrSUPw "~Fun Dog Studios" YouTube Gaming
+# Programming youtube.
+https://www.youtube.com/feeds/videos.xml?channel_id=UCUMwY9iS8oMyWDYIe6_RmoA YouTube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCSp-OaMpsO8K0KkOqyBl7_w YouTube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCnHX5FjwtQpxkCGziuh4NJA YouTube
 
-https://www.youtube.com/feeds/videos.xml?channel_id=UCUMwY9iS8oMyWDYIe6_RmoA YouTube Programming # NoBoilerPlate
-https://www.youtube.com/feeds/videos.xml?channel_id=UCSp-OaMpsO8K0KkOqyBl7_w YouTube Programming # Let's Get Rusty
-https://www.youtube.com/feeds/videos.xml?channel_id=UCnHX5FjwtQpxkCGziuh4NJA YouTube Programming # Logan Smith
-
-#https://mikesmithgh.github.io/index.xml
+# Gaming.
+https://www.youtube.com/feeds/videos.xml?channel_id=UCHvATl70qssFSzclIIhd8xQ "~Arc Raiders" YouTube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCGKx5XhGuf09VERiw_QIemA "~Hello Games" YouTube
 https://www.teamfortress.com/rss.xml "~TF2 Blog" Gaming
-
-

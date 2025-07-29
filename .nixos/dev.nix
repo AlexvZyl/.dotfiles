@@ -2,8 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    rust-analyzer
-    lua-language-server
     pyright
     stylua
     shellcheck
@@ -39,8 +37,16 @@
     zig
     zls
     docker-compose
+    lua-language-server
     difftastic
     docker-compose-language-service
+
+    rust-analyzer
+    rustc
+    rustfmt
+    cargo
+    tokio-console
+    cargo-flamegraph
   ];
 }
 

@@ -68,6 +68,7 @@
       pkgs.blender
       pkgs.godot
       pkgs.renderdoc
+      pkgs.zed-editor-fhs
     ];
   };
 

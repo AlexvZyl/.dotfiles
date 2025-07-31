@@ -51,7 +51,6 @@ alias tmux-workspace="~/.config/tmux/utils/create_workspace.sh"
 alias tw="tmux-workspace"
 alias tks="tmux kill-session"
 alias tclear="clear && tmux clear-history"
-alias nvim-lsp-logs="nvim ~/.local/state/nvim/lsp.log" # TODO: Add to neovim itself?
 
 # Git.
 alias git-su="git submodule update --init --recursive --remote"

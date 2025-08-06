@@ -5,6 +5,10 @@ gui:
       #- "#4C566A" # nordic
       # - "#3b4261"
       - "#9b9ea4"
+
+os:
+  edit: "nvim -c 'DiffviewOpen' {{filename}}"
+
 # git:
 #   paging:
 #     externalDiffCommand: difft --color=always --syntax-highlight=on --display=inline

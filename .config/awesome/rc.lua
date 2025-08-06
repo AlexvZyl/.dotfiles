@@ -72,7 +72,6 @@ local globalkeys = gears.table.join(
     awful.key({ modkey, }, "p", function() awful.spawn("rofi-pass") end),
     awful.key({ modkey, }, "d", function() awful.spawn("/home/alex/.config/rofi/launcher/run.sh") end),
     awful.key({ modkey, }, "r", function() awful.spawn("wezterm -e /home/alex/.config/tmux/apps/start_newsboat.sh") end),
-    awful.key({ modkey, }, "f", function() awful.spawn("wezterm -e tmux new-session -n \"files\" yazi") end),
     awful.key({ modkey, }, "s", function() awful.spawn("/home/alex/.config/rofi/tmux/run.sh") end),
     awful.key({ modkey, }, "b", function() awful.spawn("zen") end),
     awful.key({ modkey, "Shift" }, "s", function() awful.spawn("flameshot gui") end),
@@ -139,7 +138,7 @@ end
 root.keys(globalkeys)
 
 local clientkeys = gears.table.join(
-    awful.key({ modkey, "Shift" }, "f",
+    awful.key({ modkey }, "f",
         function(c)
             c.fullscreen = not c.fullscreen
             c:raise()

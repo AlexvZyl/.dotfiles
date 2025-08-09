@@ -3,7 +3,7 @@
 {
   swapDevices = [ {
     device = "/var/lib/swapfile";
-    size = 16*1024;  # Mb
+    size = 32*1024;  # Mb
   } ];
 
   nix = {
@@ -27,6 +27,7 @@
     pkgs.xorg.xhost
 
     pkgs.desktop-file-utils
+    pkgs.testdisk
 
     pkgs.openvpn
     pkgs.fzf

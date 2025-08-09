@@ -47,6 +47,7 @@
     cargo
     tokio-console
     cargo-flamegraph
+    claude-code
   ];
 }
 

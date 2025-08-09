@@ -6,6 +6,7 @@ https://www.computerenhance.com/feed "Casey" Programming
 https://lo.calho.st/index.xml Programming "~Travis Mick"
 https://www.rfleury.com/feed Programming "~Ryan Fleury"
 https://gpanders.com/index.xml "Gregory Anders" Neovim
+https://without.boats/index.xml
 
 # Software.
 https://godotengine.org/rss.xml "~Godot Engine"
@@ -15,6 +16,7 @@ https://tigerbeetle.com/blog/atom.xml
 https://us13.campaign-archive.com/feed?u=32cd932058e988b44c838f7bc&id=fca295a96e "~TigerBeetle Newsletter"
 https://neovim.io/news.xml FOSS Programming
 https://nixos.org/news-rss.xml Linux NixOS
+https://tokio.rs/blog/index.xml
 
 # Keyboards
 https://www.ctrlshiftesc.co.za/blogs/product-updates.atom "~CSE Products" Keyboards

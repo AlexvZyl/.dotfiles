@@ -5,9 +5,12 @@ gui:
       #- "#4C566A" # nordic
       # - "#3b4261"
       - "#9b9ea4"
+confirmOnQuit: false
+promptToReturnFromSubprocess: false # display confirmation when subprocess terminates
 
 os:
   edit: "nvim -c 'DiffviewOpen' {{filename}}"
+  editAtLine: "nvim -c 'DiffviewOpen' {{filename}}"
 
 # git:
 #   paging:

@@ -137,38 +137,19 @@
 
   # For non-NixOS binaries.
   # Currently used for:
-  # - TSNTools
-  programs.nix-ld = {
-    enable = true;
-    libraries = with pkgs; [ 
-      krb5 
-      libGL
-      glib
-      nss
-      nspr
-      xorg.libXcomposite
-      xorg.libXdamage
-      xorg.libXfixes
-      xorg.libXrender
-      xorg.libXrandr
-      xorg.libXtst
-      freetype
-      expat
-      fontconfig
-      xorg.libX11
-      xorg.libxcb
-      libxkbcommon
-      dbus
-      alsa-lib
-    ];
-  };
+  # - None
+  # programs.nix-ld = {
+  #   enable = false;
+  #   libraries = with pkgs; [
+  #   ];
+  # };
 
   # Manpages.
   documentation = {
     enable = true;
     man.enable = true;
     dev.enable = true;
-    man.generateCaches = true;
+    man.generateCaches = false;
   };
 
   # Ftrace.

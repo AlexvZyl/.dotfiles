@@ -24,7 +24,7 @@ alias lgd='lazygit-dotfiles'
 alias ls='eza --grid --long --header --no-permissions --no-time --across'
 alias pdf="nohup zathura"
 alias cat="bat"
-alias rm="trash --trash-dir ~/.trash"  # This one has saved me a lot of heartache...
+# alias rm="trash --trash-dir ~/.trash"  # This one has saved me a lot of heartache...
 alias clear-trash="yes | $(which rm) -r ~/.trash/files/"
 alias tssh='TERM=xterm-256color ssh'
 alias c="clear"

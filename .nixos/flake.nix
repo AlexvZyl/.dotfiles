@@ -26,15 +26,12 @@
         /etc/nixos/configuration.nix
 
         # System
-        ./system.nix
+        ./root.nix
         ./network.nix
         ./gpu.nix
         ./cpu.nix
         ./services.nix
-
-        # User
-        ./dev.nix
-        ./user.nix
+        ./alex.nix
       ];
     };
   };

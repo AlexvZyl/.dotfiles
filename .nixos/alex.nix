@@ -53,7 +53,7 @@
       pkgs.wezterm
       pkgs.chromium
       pkgs.dua
-      (pkgs.python3.withPackages(ps: with ps; [pytz numpy pandas matplotlib seaborn scipy])) # TODO: Fix the fricken python issues
+      (pkgs.python3.withPackages(ps: with ps; [pytz numpy pandas]))
       pkgs.signal-desktop
       pkgs.gimp3
       pkgs.thunderbird-bin
@@ -69,23 +69,70 @@
       pkgs.godot
       pkgs.renderdoc
       pkgs.zed-editor-fhs
+
+      # Devving
+      pkgs.pyright
+      pkgs.stylua
+      pkgs.shellcheck
+      pkgs.terraform-ls
+      pkgs.gopls
+      pkgs.nixd
+      pkgs.yaml-language-server
+      pkgs.pylint
+      pkgs.python3Packages.flake8
+      pkgs.luajitPackages.luacheck
+      pkgs.nodePackages.bash-language-server
+      pkgs.nodePackages.typescript-language-server
+      pkgs.docker-ls
+      pkgs.dockerfile-language-server-nodejs
+      pkgs.clang-tools
+      pkgs.cmake-language-server
+      pkgs.terraform
+      pkgs.terraform-providers.aws
+      pkgs.cmake
+      pkgs.vscode-langservers-extracted
+      pkgs.nodePackages.eslint
+      pkgs.cppcheck
+      pkgs.ninja
+      pkgs.rocmPackages.llvm.clang
+      pkgs.ccls
+      pkgs.buf
+      pkgs.black
+      pkgs.protobuf_29
+      pkgs.nodejs
+      pkgs.grpcurl
+      pkgs.subversionClient
+      pkgs.nodePackages_latest.vscode-json-languageserver
+      pkgs.zig
+      pkgs.zls
+      pkgs.docker-compose
+      pkgs.lua-language-server
+      pkgs.difftastic
+      pkgs.docker-compose-language-service
+      pkgs.rust-analyzer
+      pkgs.rustc
+      pkgs.rustfmt
+      pkgs.cargo
+      pkgs.tokio-console
+      pkgs.cargo-flamegraph
+      pkgs.claude-code
+      pkgs.unclutter-xfixes
     ];
   };
-
-  # security.sudo.extraRules = [
-  #   {
-  #     users = [ "alex" ];
-  #     commands = [
-  #       { command = "/run/current-system/sw/bin/fail2ban-client"; options = [ "NOPASSWD" ]; }
-  #     ];
-  #   }
-  # ];
 
   system.activationScripts.binbash = {
     deps = [ "binsh" ];
     text = ''
         if [ ! -f "/bin/bash" ]; then
             ln -s "/bin/sh" "/bin/bash"
+        fi
+    '';
+  };
+
+  system.activationScripts.python3 = {
+    text = ''
+        if [ ! -f "/usr/bin/python3" ]; then
+            ln -s ${pkgs.python3}/bin/python3 /usr/bin/python3
         fi
     '';
   };

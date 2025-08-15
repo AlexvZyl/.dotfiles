@@ -38,7 +38,7 @@ config.window_padding = {
 
 -- Neovim colors.
 config.colors = {
-    foreground = "#E0E2EA",
+    foreground = "#EEF1F8",
     background = "#14161B",
     ansi = {
         '#07080D',

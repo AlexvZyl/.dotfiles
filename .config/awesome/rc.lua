@@ -255,4 +255,6 @@ awful.spawn("/home/alex/.scripts/startup.sh")
 package.loaded["naughty.dbus"] = {}
 awful.spawn("dunst")
 
+awful.spawn("unclutter --fork --start-hidden")
+
 -- -----------------------------------------------------------------------------

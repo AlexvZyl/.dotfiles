@@ -12,7 +12,7 @@ Get_current_buffer_file() {
     mkdir -p "$tmp_dir"
     tmux send-keys -t 0 ":!echo %:p > ${tmp_file} && exit" C-m
     # Give neovim some time.
-    sleep 0.1
+    sleep 0.25
 
     cat "$tmp_file"
     rm -rd "$tmp_dir"
@@ -47,7 +47,7 @@ Main() {
     xclip -selection clipboard <<< "$current_buffer"
     pwd=$(Get_pwd "$current_buffer")
     
-    tmux split-window -h -c "$pwd" "claude"
+    tmux split-window -h -p 40 -c "$pwd" "claude"
 }
 
 

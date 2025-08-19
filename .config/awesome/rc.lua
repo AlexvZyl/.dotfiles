@@ -1,3 +1,5 @@
+package.loaded["naughty.dbus"] = {} 
+
 pcall(require, "luarocks.loader")
 local gears = require("gears")
 local awful = require("awful")
@@ -75,6 +77,7 @@ local globalkeys = gears.table.join(
     awful.key({ modkey, }, "s", function() awful.spawn("/home/alex/.config/rofi/tmux/run.sh") end),
     awful.key({ modkey, }, "b", function() awful.spawn("zen") end),
     awful.key({ modkey, "Shift" }, "s", function() awful.spawn("flameshot gui") end),
+    awful.key({ modkey, }, "m", function() awful.spawn("/home/alex/.config/polybar/scripts/dunst.sh") end),
 
     -- Audio
     awful.key({}, "XF86AudioRaiseVolume", function() awful.spawn("pamixer -i 5") end),
@@ -252,9 +255,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 awful.spawn("/home/alex/.scripts/startup.sh")
 
 -- Disable awesomewm notifications.
+-- FIXME: This does not work :(
 package.loaded["naughty.dbus"] = {}
 awful.spawn("dunst")
-
-awful.spawn("unclutter --fork --start-hidden")
 
 -- -----------------------------------------------------------------------------

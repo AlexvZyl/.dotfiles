@@ -1,5 +1,6 @@
 #!/bin/bash
 
+pkill polybar
 
 # TODO: Try to move all of this to nix.
 
@@ -18,3 +19,5 @@ dbus-launch dunst --config ~/.config/dunst/dunstrc &
 # Apps
 # xdg-settings set default-web-browser zen
 "$HOME/.scripts/utils/setup_keyboard.sh"
+
+unclutter --fork --start-hidden

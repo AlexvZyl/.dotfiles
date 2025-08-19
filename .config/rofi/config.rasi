@@ -3,28 +3,33 @@
 * {
     border-radius: 11px;
     padding-normal: 1.5%;
-    padding-main: 1.5% 1.5% 1.5% 1%;
+    padding-main: 1.5% 1% 0% 1%;
     padding-normal-bottom: 0 0 1.5% 0;
     padding-half: 1%;
     input-icon-padding: 1% 1.5%;
     input-text-padding: 1% 0 0 0;
     icon-size: 2.75%;
     element-spacing: 1%;
-    element-padding: 0.486%;
+    element-padding: 0.416%;
 }
 
 configuration {
     show-icons:                true;
-    font:                      "JetBrainsMono Nerd Font Bold 11.5";
+    font:                      "JetBrainsMono Nerd Font Bold 10.5";
     icon-theme:                "Papirus-Dark";
-    fallback-application-icon: "";
+    drun {
+        fallback-icon:          "kblackbox";
+    }
+    dmenu {
+        fallback-icon:          "gpa";
+    }
     monitor: -1;
 }
 
 // Main window.
 window {
-    width:                      37%;
-    height:                     43%;
+    width:                      35%;
+    height:                     41%;
     border-radius:              @border-radius;
     border-color:               @border;
     background-color:           @background;
@@ -81,6 +86,7 @@ listview {
     border:                     0px;
     border-radius:              0;
     text-color:                 @foreground;
+    scrollbar:                  false;
 }
 
 // Items in the list.

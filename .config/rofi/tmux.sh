@@ -35,6 +35,7 @@ Main() {
         rofi \
             -config "$HOME/.config/rofi/config.rasi" \
             -dmenu \
+            -dmenu-fallback-icon "terminal" \
             -p "󱓞  Tmux")
 
     # Start selected session.

@@ -1,4 +1,4 @@
-package.loaded["naughty.dbus"] = {} 
+package.loaded["naughty.dbus"] = {}
 
 pcall(require, "luarocks.loader")
 local gears = require("gears")
@@ -72,9 +72,9 @@ local globalkeys = gears.table.join(
 -- Apps
     awful.key({ modkey, }, "t", function() awful.spawn("wezterm -e /home/alex/.config/tmux/apps/start_terminal.sh") end),
     awful.key({ modkey, }, "p", function() awful.spawn("rofi-pass") end),
-    awful.key({ modkey, }, "d", function() awful.spawn("/home/alex/.config/rofi/launcher/run.sh") end),
+    awful.key({ modkey, }, "d", function() awful.spawn("/home/alex/.config/rofi/apps.sh") end),
     awful.key({ modkey, }, "r", function() awful.spawn("wezterm -e /home/alex/.config/tmux/apps/start_newsboat.sh") end),
-    awful.key({ modkey, }, "s", function() awful.spawn("/home/alex/.config/rofi/tmux/run.sh") end),
+    awful.key({ modkey, }, "s", function() awful.spawn("/home/alex/.config/rofi/tmux.sh") end),
     awful.key({ modkey, }, "b", function() awful.spawn("zen") end),
     awful.key({ modkey, "Shift" }, "s", function() awful.spawn("flameshot gui") end),
     awful.key({ modkey, }, "m", function() awful.spawn("/home/alex/.config/polybar/scripts/dunst.sh") end),

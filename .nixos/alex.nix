@@ -46,6 +46,7 @@
       pkgs.lapce
       pkgs.gh
       pkgs.arandr
+      pkgs.papirus-icon-theme
       # pkgs.rustdesk # Always breaking...
       pkgs.nautilus
       pkgs.starship

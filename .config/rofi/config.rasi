@@ -81,7 +81,6 @@ listview {
     border:                     0px;
     border-radius:              0;
     text-color:                 @foreground;
-    cursor:                     "default";
 }
 
 // Items in the list.
@@ -93,8 +92,6 @@ element {
     border-radius:              @border-radius;
     border-color:               @selected;
     text-color:                 @foreground;
-    cursor:                     pointer;
-    orientation:                horizontal;
 }
 element normal.normal {
     background-color:           @background;
@@ -118,7 +115,6 @@ element-text {
 
 // The error message.
 error-message {
-    padding:                    1%;
     border:                     2px solid;
     border-radius:              @border-radius;
     border-color:               @urgent;
@@ -126,9 +122,7 @@ error-message {
     text-color:                 @foreground;
 }
 textbox {
-    background-color:           @background;
-    text-color:                 @foreground;
     vertical-align:             0.5;
-    horizontal-align:           0.0;
+    horizontal-align:           0.5;
     highlight:                  none;
 }

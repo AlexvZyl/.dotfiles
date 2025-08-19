@@ -15,6 +15,7 @@ pkill polybar
 # Services
 ~/.config/tmux/utils/start_all_servers.sh &
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
+dunstctl set-paused true
 
 # Apps
 # xdg-settings set default-web-browser zen

@@ -251,12 +251,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- -----------------------------------------------------------------------------
 -- Third party.
-
 awful.spawn("/home/alex/.scripts/startup.sh")
-
--- Disable awesomewm notifications.
--- FIXME: This does not work :(
-package.loaded["naughty.dbus"] = {}
-awful.spawn("dunst")
 
 -- -----------------------------------------------------------------------------

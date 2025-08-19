@@ -4,7 +4,6 @@ packer_compiled.lua
 __pycache__/
 vscode-cpptools/
 .cache.json
-btop.log
 lazy-lock.json
 .newsboat/cache.db
 .newsboat/cache.db.lock
@@ -12,9 +11,9 @@ lazy-lock.json
 .config/polybar/scripts/loadshedding.json
 .config/lazygit/state.yml
 .newsboat/queue
-.config/lazygit/development.log
 .trash/
 .config/nvim/lazy-lock.json
 .config/fish/functions/*
 .config/fish/completions/*
 .nixos/result
+*.log

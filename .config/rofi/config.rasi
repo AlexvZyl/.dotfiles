@@ -1,156 +1,134 @@
 @import "~/.config/rofi/apple.rasi"
 
+* {
+    border-radius: 11px;
+    padding-normal: 1.5%;
+    padding-main: 1.5% 1.5% 1.5% 1%;
+    padding-normal-bottom: 0 0 1.5% 0;
+    padding-half: 1%;
+    input-icon-padding: 1% 1.5%;
+    input-text-padding: 1% 0 0 0;
+    icon-size: 2.75%;
+    element-spacing: 1%;
+    element-padding: 0.486%;
+}
+
 configuration {
-    show-icons:                 true;
-    display-drun:               "󱓞  Apps";
-    font:                       "JetBrainsMono Nerd Font Bold 10";
-    icon-theme:                 "Papirus-Dark";
-    fallback-application-icon:  "";
+    show-icons:                true;
+    font:                      "JetBrainsMono Nerd Font Bold 11.5";
+    icon-theme:                "Papirus-Dark";
+    fallback-application-icon: "";
     monitor: -1;
 }
 
 // Main window.
 window {
-    transparency:                "real";
-    location:                    center;
-    anchor:                      center;
-    fullscreen:                  false;
-    width:                       700px;
-    x-offset:                    0px;
-    y-offset:                    0px;
-    enabled:                     true;
-    margin:                      0px;
-    padding:                     0px;
-    border:                      0px solid;
-    border-radius:               11px;
-    border-color:                @border;
-    background-color:            @background;
-    cursor:                      "default";
+    width:                      37%;
+    height:                     43%;
+    border-radius:              @border-radius;
+    border-color:               @border;
+    background-color:           @background;
+    padding:                    0;
+    margin:                     0;
 }
 
 // Main box.
 mainbox {
-    enabled:                     true;
-    spacing:                     0px;
-    margin:                      0px;
-    padding:                     20px;
-    border:                      2px solid;
-    border-radius:               11px;
-    border-color:                @border;
-    background-color:            transparent;
-    children:                    [ "inputbar", "listview" ];
+    padding:                    @padding-main;
+    border-radius:              @border-radius;
+    border-color:               @border;
+    children:                   [ "inputbar", "listview" ];
 }
 
 // Bar where search field is.
 inputbar {
-    enabled:                     true;
-    spacing:                     20px;
-    margin:                      0px;
-    padding:                     0px 0px 20px 0px;
-    border:                      0px solid;
-    border-radius:               11px;
-    border-color:                @selected;
-    background-color:            @background-alt;
-    text-color:                  @foreground;
-    children:                    [ "prompt", "entry" ];
+    spacing:                    @padding-normal;
+    padding:                    @padding-normal-bottom;
+    border-radius:              @border-radius;
+    border-color:               @selected;
+    background-color:           @background-alt;
+    text-color:                 @foreground;
+    children:                   [ "prompt", "entry" ];
 }
 
 // Icon area.
 prompt {
-    enabled:                     true;
-    background-color:            @blue2;
-    text-color:                  @background;
-    border:                      0px;
-    border-color:                @blue2;
-    border-radius:               11px;
-    padding:                     10px 20px;
+    background-color:           @blue2;
+    text-color:                 @background;
+    border-color:               @blue2;
+    border-radius:              @border-radius;
+    padding:                    @input-icon-padding;
 }
 
 // Search field.
 entry {
-    enabled:                     true;
-    background-color:            inherit;
-    text-color:                  inherit;
-    padding:                     10px 0px 0px 0px;
-    cursor:                      text;
-    placeholder:                 "Search...";
+    padding:                    @input-text-padding;
+    placeholder:                "Search...";
 }
 
-// Area where all of the results are displayed.
+// Area where all of the result are displayed.
 listview {
-    enabled:                     true;
-    columns:                     2;
-    lines:                       8;
-    cycle:                       true;
-    dynamic:                     true;
-    scrollbar:                   false;
-    layout:                      vertical;
-    reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;
-    spacing:                     5px;
-    margin:                      0px;
-    padding:                     0px;
-    border:                      0px;
-    background-color:            transparent;
-    text-color:                  @foreground;
-    cursor:                      "default";
+    columns:                    2;
+    cycle:                      true;
+    dynamic:                    true;
+    layout:                     vertical;
+    reverse:                    false;
+    fixed-height:               true;
+    fixed-columns:              true;
+    spacing:                    5px;
+    margin:                     0px;
+    padding:                    0px;
+    border:                     0px;
+    border-radius:              0;
+    text-color:                 @foreground;
+    cursor:                     "default";
 }
 
 // Items in the list.
 element {
-    enabled:                     true;
-    spacing:                     15px;
-    margin:                      0px;
-    padding:                     5px;
-    border:                      0px;
-    border-radius:               11px;
-    border-color:                @selected;
-    background-color:            transparent;
-    text-color:                  @foreground;
-    cursor:                      pointer;
-    orientation:                 horizontal;
+    spacing:                    @element-spacing;
+    margin:                     0px;
+    padding:                    @element-padding;
+    border:                     0px;
+    border-radius:              @border-radius;
+    border-color:               @selected;
+    text-color:                 @foreground;
+    cursor:                     pointer;
+    orientation:                horizontal;
 }
 element normal.normal {
-    background-color:            @background;
-    text-color:                  @foreground;
+    background-color:           @background;
+    text-color:                 @foreground;
 }
 element alternate.normal {
-    background-color:            @background;
-    text-color:                  @foreground;
+    background-color:           @background;
+    text-color:                 @foreground;
 }
 element selected.normal {
-    background-color:            @selected;
-    text-color:                  @background;
+    background-color:           @selected;
+    text-color:                 @background;
 }
 element-icon {
-    background-color:            transparent;
-    text-color:                  inherit;
-    size:                        32px;
-    cursor:                      inherit;
+    size:                       @icon-size;
 }
 element-text {
-    background-color:            transparent;
-    text-color:                  inherit;
-    highlight:                   inherit;
-    cursor:                      inherit;
-    vertical-align:              0.5;
-    horizontal-align:            0.0;
+    vertical-align:             0.5;
+    horizontal-align:           0.0;
 }
 
 // The error message.
 error-message {
-    padding:                     20px;
-    border:                      2px solid;
-    border-radius:               11px;
-    border-color:                @urgent;
-    background-color:            @background;
-    text-color:                  @foreground;
+    padding:                    1%;
+    border:                     2px solid;
+    border-radius:              @border-radius;
+    border-color:               @urgent;
+    background-color:           @background;
+    text-color:                 @foreground;
 }
 textbox {
-    background-color:            @background;
-    text-color:                  @foreground;
-    vertical-align:              0.5;
-    horizontal-align:            0.0;
-    highlight:                   none;
+    background-color:           @background;
+    text-color:                 @foreground;
+    vertical-align:             0.5;
+    horizontal-align:           0.0;
+    highlight:                  none;
 }

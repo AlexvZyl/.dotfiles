@@ -35,8 +35,7 @@ Main() {
         rofi \
             -config "$HOME/.config/rofi/config.rasi" \
             -dmenu \
-            -p "󱓞  Tmux" \
-            -show-icons false)
+            -p "󱓞  Tmux")
 
     # Start selected session.
     if [[ -n $selected_file ]]; then

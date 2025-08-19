@@ -20,13 +20,19 @@ Get_current_buffer_file() {
 
 
 Get_pwd() (
-    local file="$1"
-    cd "$(dirname "$file")"
+    local path="${1#oil://}"
+    cd "$(dirname "$path")"
+
+    local dir="$path"
+    if [[ -f "$path" ]]; then
+        dir="$(dirname "$path")"
+    fi
+    cd "$dir"
     
     if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
         git rev-parse --show-toplevel
     else
-        dirname "$file"
+        echo "$dir"
     fi
 )
 

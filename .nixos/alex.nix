@@ -43,7 +43,6 @@
       pkgs.glab
       pkgs.awscli2
       pkgs.feh
-      pkgs.lapce
       pkgs.gh
       pkgs.arandr
       pkgs.papirus-icon-theme

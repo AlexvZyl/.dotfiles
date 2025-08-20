@@ -5,14 +5,11 @@ Get_current_buffer_file() {
     local tmp_file, tmp_dir
     tmp_dir="/tmp/${USER}/$(uuidgen)"
     tmp_file="${tmp_dir}/nvim_current_buffer"
+    mkdir -p "$tmp_dir"
 
     # HACK: Use neovim to copy the filepath to the clipboard.
-    tmux send-keys -t ! ':let @+ = expand("%:p")' Enter
-
-    mkdir -p "$tmp_dir"
-    tmux send-keys -t 0 ":!echo %:p > ${tmp_file} && exit" C-m
-    # Give neovim some time.
-    sleep 0.25
+    tmux send-keys ":let @+ = expand('%:p') | !echo %:p > ${tmp_file} && exit" C-m
+    sleep 0.2
 
     cat "$tmp_file"
     rm -rd "$tmp_dir"
@@ -21,7 +18,6 @@ Get_current_buffer_file() {
 
 Get_pwd() (
     local path="${1#oil://}"
-    cd "$(dirname "$path")"
 
     local dir="$path"
     if [[ -f "$path" ]]; then
@@ -38,6 +34,7 @@ Get_pwd() (
 
 
 Exit_if_not_nvim() {
+    # TODO: This is not reliable.
     if [[ ! $(tmux display-message -p '#{pane_current_command}') == "nvim" ]]; then
         exit 0
     fi

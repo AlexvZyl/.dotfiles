@@ -3,8 +3,7 @@
     white0:     #FAFAFA;
     white1:     #FAFAFA;
     white2:     #FAFAFA;
-    // blue2:      #0a84ff;
-    blue2:      @cyan;
+    blue:       @cyan;
     cyan:       #64d2ff;
     red:        #ff453a;
     orange:     #ff9f0a;

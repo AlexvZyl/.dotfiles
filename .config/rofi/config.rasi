@@ -3,19 +3,19 @@
 * {
     border-radius: 11px;
     padding-normal: 1.5%;
-    padding-main: 1.5% 1% 0% 1%;
+    padding-main: 1.5% 1% 1.5% 1%;
     padding-normal-bottom: 0 0 1.5% 0;
     padding-half: 1%;
     input-icon-padding: 1% 1.5%;
     input-text-padding: 1% 0 0 0;
-    icon-size: 2.75%;
+    icon-size: 2.8%;
     element-spacing: 1%;
-    element-padding: 0.416%;
+    element-padding: 0.347%;
 }
 
 configuration {
     show-icons:                true;
-    font:                      "JetBrainsMono Nerd Font Bold 10.5";
+    font:                      "JetBrainsMono Nerd Font Bold 11.5";
     icon-theme:                "Papirus-Dark";
     drun {
         fallback-icon:          "kblackbox";
@@ -34,14 +34,16 @@ window {
     border-color:               @border;
     background-color:           @background;
     padding:                    0;
+    border:                     0;
     margin:                     0;
 }
 
 // Main box.
 mainbox {
-    padding:                    @padding-main;
+    border:                     2px solid;
     border-radius:              @border-radius;
-    border-color:               @border;
+    border-color:               @mint;
+    padding:                    @padding-main;
     children:                   [ "inputbar", "listview" ];
 }
 
@@ -54,21 +56,24 @@ inputbar {
     background-color:           @background-alt;
     text-color:                 @foreground;
     children:                   [ "prompt", "entry" ];
+    margin:                     0;
 }
 
 // Icon area.
 prompt {
-    background-color:           @blue2;
+    background-color:           @blue;
     text-color:                 @background;
-    border-color:               @blue2;
+    border-color:               @blue;
     border-radius:              @border-radius;
     padding:                    @input-icon-padding;
+    margin:                     0;
 }
 
 // Search field.
 entry {
     padding:                    @input-text-padding;
     placeholder:                "Search...";
+    margin:                     0;
 }
 
 // Area where all of the result are displayed.
@@ -76,7 +81,6 @@ listview {
     columns:                    2;
     cycle:                      true;
     dynamic:                    true;
-    layout:                     vertical;
     reverse:                    false;
     fixed-height:               true;
     fixed-columns:              true;
@@ -126,6 +130,7 @@ error-message {
     border-color:               @urgent;
     background-color:           @background;
     text-color:                 @foreground;
+    padding:                    @padding-normal;
 }
 textbox {
     vertical-align:             0.5;

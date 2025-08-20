@@ -42,6 +42,7 @@
     pkgs.p7zip
     pkgs.dunst
     pkgs.xclip
+    pkgs.xsel
     pkgs.xorg.xmodmap
     pkgs.eza
     pkgs.gnumake

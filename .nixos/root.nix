@@ -61,8 +61,6 @@
     pkgs.git
     pkgs.luajitPackages.luarocks-nix
     pkgs.pass
-    pkgs.go
-    pkgs.julia
     pkgs.zulu
     pkgs.luarocks
     pkgs.zip
@@ -100,20 +98,15 @@
     pkgs.findutils
     pkgs.linuxHeaders
     pkgs.ripgrep
-
     pkgs.linux-manual
     pkgs.man-pages
     pkgs.man-pages-posix
     pkgs.libGL
-
     pkgs.jq
     pkgs.xdotool
     pkgs.picom
-    pkgs.gdb
-    pkgs.tealdeer
     pkgs.trace-cmd
     pkgs.atuin
-
     inputs.zen-browser.packages."${pkgs.system}".default
   ];
 

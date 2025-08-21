@@ -9,68 +9,54 @@
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = [
+      # GUI
       pkgs.adwaita-icon-theme
       pkgs.xfce.thunar
       pkgs.xournalpp
-      pkgs.shared-mime-info
-      pkgs.slack
-      pkgs.discord
-      pkgs.wireshark
-      pkgs.zulu8
-      pkgs.tokei
-      pkgs.flameshot
-      pkgs.onlyoffice-bin
-      pkgs.newsboat
-      pkgs.vlc
-      pkgs.kalker
-      pkgs.obs-studio
+      pkgs.nautilus
+      pkgs.papirus-icon-theme
       pkgs.rofi
-      pkgs.gource
-      pkgs.rofi-pass
-      pkgs.thunderbird
+      pkgs.unclutter-xfixes
+      pkgs.onlyoffice-bin
+      pkgs.drawio
+      pkgs.brave
       pkgs.inkscape
       pkgs.pavucontrol
       pkgs.gparted
       pkgs.pinta
+
+      # Communication
+      pkgs.slack
+      pkgs.discord
+      pkgs.signal-desktop
+      pkgs.thunderbird-bin
+      
+      # Terminal tools
+      pkgs.kalker
       pkgs.speedtest-cli
-      pkgs.pfetch
-      pkgs.scrcpy
-      inputs.yazi.packages.${pkgs.system}.default
+      pkgs.zoxide
+      pkgs.starship
+      pkgs.newsboat
+
+      # TSN
+      pkgs.wireshark
+      pkgs.tshark
+
+      # Dev tools
       pkgs.lazygit
       pkgs.lazydocker
-      pkgs.zoxide
-      pkgs.zathura
-      pkgs.glab
-      pkgs.awscli2
-      pkgs.feh
-      pkgs.gh
-      pkgs.arandr
-      pkgs.papirus-icon-theme
-      # pkgs.rustdesk # Always breaking...
-      pkgs.nautilus
-      pkgs.starship
-      pkgs.tree-sitter
-      pkgs.wezterm
-      pkgs.chromium
-      pkgs.dua
-      (pkgs.python3.withPackages(ps: with ps; [pytz numpy pandas]))
-      pkgs.signal-desktop
-      pkgs.gimp3
-      pkgs.thunderbird-bin
-      pkgs.dig
-      pkgs.sshs
-      pkgs.termshark
-      # pkgs.ventoy-bin-full
-      pkgs.tshark
       pkgs.vscode
-      pkgs.drawio
-      pkgs.brave
+      pkgs.glab
+      pkgs.wezterm
+
+      # Game dev
       pkgs.blender
       pkgs.godot
       pkgs.renderdoc
-      pkgs.zed-editor-fhs
 
-      # Devving
+      # Dev environment
+      pkgs.go
+      pkgs.gdb
       pkgs.pyright
       pkgs.stylua
       pkgs.shellcheck
@@ -116,7 +102,35 @@
       pkgs.tokio-console
       pkgs.cargo-flamegraph
       pkgs.claude-code
-      pkgs.unclutter-xfixes
+      pkgs.tree-sitter
+      (pkgs.python3.withPackages(ps: with ps; [pytz numpy pandas]))
+
+      # Uncategorized.
+      pkgs.shared-mime-info
+      pkgs.tealdeer
+      pkgs.zulu8
+      pkgs.tokei
+      pkgs.flameshot
+      pkgs.vlc
+      pkgs.obs-studio
+      pkgs.gource
+      pkgs.rofi-pass
+      pkgs.pfetch
+      pkgs.scrcpy
+      inputs.yazi.packages.${pkgs.system}.default
+      pkgs.zathura
+      pkgs.awscli2
+      pkgs.feh
+      pkgs.gh
+      pkgs.arandr
+      # pkgs.rustdesk # Always breaking...
+      pkgs.chromium
+      pkgs.dua
+      pkgs.gimp3
+      pkgs.dig
+      pkgs.sshs
+      pkgs.termshark
+      # pkgs.ventoy-bin-full
     ];
   };
 

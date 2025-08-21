@@ -3,9 +3,9 @@
 * {
     border-radius: 11px;
     padding-normal: 1.5%;
-    padding-main: 1.5% 1% 1.5% 1%;
+    padding-main: 1.5% 1% 1.5% 0.9%;
     padding-normal-bottom: 0 0 1.5% 0;
-    padding-half: 1%;
+    padding-small: 1%;
     input-icon-padding: 1% 1.5%;
     input-text-padding: 1% 0 0 0;
     icon-size: 2.8%;
@@ -49,7 +49,7 @@ mainbox {
 
 // Bar where search field is.
 inputbar {
-    spacing:                    @padding-normal;
+    spacing:                    @padding-small;
     padding:                    @padding-normal-bottom;
     border-radius:              @border-radius;
     border-color:               @selected;

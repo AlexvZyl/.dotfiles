@@ -50,7 +50,8 @@ Main() {
     xclip -selection clipboard <<< "$current_buffer"
     pwd=$(Get_pwd "$current_buffer")
     
-    tmux split-window -h -p 40 -c "$pwd" "claude"
+    # tmux split-window -h -p 40 -c "$pwd" "claude"
+    tmux split-window -h -p 40 -c "$pwd" "codex"
 }
 
 

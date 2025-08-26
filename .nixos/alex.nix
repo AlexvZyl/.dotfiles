@@ -13,6 +13,7 @@
       pkgs.adwaita-icon-theme
       pkgs.xfce.thunar
       pkgs.xournalpp
+      pkgs.shared-mime-info
       pkgs.nautilus
       pkgs.papirus-icon-theme
       pkgs.rofi
@@ -24,6 +25,19 @@
       pkgs.pavucontrol
       pkgs.gparted
       pkgs.pinta
+      pkgs.rofi-pass
+      pkgs.pfetch
+      pkgs.flameshot
+      pkgs.scrcpy
+      pkgs.obs-studio
+      pkgs.vlc
+      pkgs.zathura
+      pkgs.feh
+      pkgs.arandr
+      pkgs.chromium
+      pkgs.gimp3
+      # pkgs.rustdesk # Always breaking...
+      # pkgs.ventoy-bin-full
 
       # Communication
       pkgs.slack
@@ -37,17 +51,25 @@
       pkgs.zoxide
       pkgs.starship
       pkgs.newsboat
-
-      # TSN
-      pkgs.wireshark
-      pkgs.tshark
-
-      # Dev tools
+      inputs.yazi.packages.${pkgs.system}.default
       pkgs.lazygit
       pkgs.lazydocker
       pkgs.vscode
       pkgs.glab
       pkgs.wezterm
+      pkgs.codex
+      pkgs.gh
+      pkgs.tealdeer
+      pkgs.tokei
+      pkgs.awscli2
+      pkgs.dua
+      pkgs.dig
+      pkgs.sshs
+      pkgs.termshark
+
+      # TSN
+      pkgs.wireshark
+      pkgs.tshark
 
       # Game dev
       pkgs.blender
@@ -55,6 +77,7 @@
       pkgs.renderdoc
 
       # Dev environment
+      pkgs.zulu8
       pkgs.go
       pkgs.gdb
       pkgs.pyright
@@ -102,35 +125,7 @@
       pkgs.tokio-console
       pkgs.cargo-flamegraph
       pkgs.claude-code
-      pkgs.tree-sitter
-      (pkgs.python3.withPackages(ps: with ps; [pytz numpy pandas]))
-
-      # Uncategorized.
-      pkgs.shared-mime-info
-      pkgs.tealdeer
-      pkgs.zulu8
-      pkgs.tokei
-      pkgs.flameshot
-      pkgs.vlc
-      pkgs.obs-studio
-      pkgs.gource
-      pkgs.rofi-pass
-      pkgs.pfetch
-      pkgs.scrcpy
-      inputs.yazi.packages.${pkgs.system}.default
-      pkgs.zathura
-      pkgs.awscli2
-      pkgs.feh
-      pkgs.gh
-      pkgs.arandr
-      # pkgs.rustdesk # Always breaking...
-      pkgs.chromium
-      pkgs.dua
-      pkgs.gimp3
-      pkgs.dig
-      pkgs.sshs
-      pkgs.termshark
-      # pkgs.ventoy-bin-full
+      pkgs.tree-sitter (pkgs.python3.withPackages(ps: with ps; [pytz numpy pandas]))
     ];
   };
 

@@ -28,11 +28,11 @@ alias cat="bat"
 alias clear-trash="yes | $(which rm) -r ~/.trash/files/"
 alias tssh='TERM=xterm-256color ssh'
 alias c="clear"
-alias z="zathura"
 alias picom-restart="pkill picom;\
     sleep 0.01;\
     picom -b"
 alias restart-polybar="pkill polybar; ~/.config/polybar/launch.sh"
+alias cd="z" # This relies on `zoxide init <shell> | source` being ran somewhere else
 
 alias view-root-only="sudo dua -i /home  i /"
 alias view-root="sudo dua i /"

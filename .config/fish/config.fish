@@ -14,4 +14,6 @@ end
 
 alias clear "command clear; commandline -f clear-screen"
 
+# Integrations.
 starship init fish | source
+zoxide init fish | source

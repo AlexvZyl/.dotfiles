@@ -1,16 +1,20 @@
 #!/bin/bash -e
 
 
+# TODO: Try to do this without using a tmp file.
 Get_current_buffer_file() {
     local tmp_file, tmp_dir
     tmp_dir="/tmp/${USER}/$(uuidgen)"
     tmp_file="${tmp_dir}/nvim_current_buffer"
     mkdir -p "$tmp_dir"
 
-    # HACK: Use neovim to copy the filepath to the clipboard.
-    tmux send-keys ":let @+ = expand('%:p') | !echo %:p > ${tmp_file} && exit" C-m
-    sleep 0.2
+    local id
+    id=$(uuidgen)
 
+    # HACK: Use neovim to copy the filepath to the clipboard.
+    tmux send-keys "yp"
+    tmux send-keys ":!echo %:p > ${tmp_file}; tmux wait-for -S $id" C-m
+    tmux wait-for "$id"
     cat "$tmp_file"
     rm -rd "$tmp_dir"
 }
@@ -46,12 +50,10 @@ Main() {
 
     local current_buffer
     current_buffer=$(Get_current_buffer_file)
-
-    xclip -selection clipboard <<< "$current_buffer"
     pwd=$(Get_pwd "$current_buffer")
     
-    # tmux split-window -h -p 40 -c "$pwd" "claude"
-    tmux split-window -h -p 40 -c "$pwd" "codex"
+    tmux split-window -h -p 40 -c "$pwd" "claude"
+    # tmux split-window -h -p 40 -c "$pwd" "codex"
 }
 
 

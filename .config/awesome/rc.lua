@@ -78,6 +78,7 @@ local globalkeys = gears.table.join(
     awful.key({ modkey, }, "b", function() awful.spawn("zen") end),
     awful.key({ modkey, "Shift" }, "s", function() awful.spawn("flameshot gui") end),
     awful.key({ modkey, }, "m", function() awful.spawn("/home/alex/.config/polybar/scripts/dunst.sh") end),
+    awful.key({ modkey, }, "n", function() awful.spawn("dunstctl close-all") end),
 
     -- Audio
     awful.key({}, "XF86AudioRaiseVolume", function() awful.spawn("pamixer -i 5") end),

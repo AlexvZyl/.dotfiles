@@ -12,7 +12,6 @@ Get_current_buffer_file() {
     id=$(uuidgen)
 
     # HACK: Use neovim to copy the filepath to the clipboard.
-    tmux send-keys "yp"
     tmux send-keys ":!echo %:p > ${tmp_file}; tmux wait-for -S $id" C-m
     tmux wait-for "$id"
     cat "$tmp_file"
@@ -52,7 +51,7 @@ Main() {
     current_buffer=$(Get_current_buffer_file)
     pwd=$(Get_pwd "$current_buffer")
     
-    tmux split-window -h -p 40 -c "$pwd" "claude"
+    tmux split-window -h -b -p 33 -c "$pwd" "claude"
     # tmux split-window -h -p 40 -c "$pwd" "codex"
 }
 

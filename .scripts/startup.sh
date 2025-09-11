@@ -7,7 +7,7 @@ pkill polybar
 # Core components (order is important!)
 (
     ~/.scripts/screenlayout/single_1440p.sh
-    feh --bg-fill ~/.wallpapers/FALCON.jpg
+    feh --bg-fill ~/.private/wallpapers/timeless_UltraHD.png
     picom -b
     ~/.config/polybar/launch.sh
 ) &

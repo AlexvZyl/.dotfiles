@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env -S bash -e
 
 
 FILE_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")")

@@ -7,7 +7,14 @@ pkill polybar
 # Core components (order is important!)
 (
     ~/.scripts/screenlayout/single_1440p.sh
-    feh --bg-fill ~/.private/wallpapers/timeless_UltraHD.png
+    
+    # Check if wallpapers directory exists
+    if [ ! -d ~/.private/wallpapers ]; then
+        notify-send "Startup Error" "$HOME/.private/wallpapers is not on the system, cannot set wallpaper :("
+    else
+        feh --bg-fill ~/.private/wallpapers/timeless_UltraHD.png
+    fi
+    
     picom -b
     ~/.config/polybar/launch.sh
 ) &

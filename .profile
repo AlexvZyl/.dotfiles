@@ -88,3 +88,7 @@ alias nmap-full="nmap -p- -v3 -A -T0 -f -Pn"
 
 # AwesomeWM.
 alias awesome-restart="'awesome.restart()' | awesome-client"
+
+# Music
+alias stomp="~/.scripts/utils/listen_to_stomp.sh"
+alias sstomp="~/.scripts/utils/stop_playback.sh"

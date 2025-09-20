@@ -78,6 +78,7 @@
 
       # Dev environment
       pkgs.zulu8
+      pkgs.delta
       pkgs.go
       pkgs.gdb
       pkgs.pyright
@@ -132,7 +133,7 @@
   system.activationScripts.binbash = {
     deps = [ "binsh" ];
     text = ''
-        if [ ! -f "/bin/bash" ]; then
+        if [[ ! -f "/bin/bash" ]]; then
             ln -s "/bin/sh" "/bin/bash"
         fi
     '';
@@ -140,7 +141,7 @@
 
   system.activationScripts.python3 = {
     text = ''
-        if [ ! -f "/usr/bin/python3" ]; then
+        if [[ ! -f "/usr/bin/python3" ]]; then
             ln -s ${pkgs.python3}/bin/python3 /usr/bin/python3
         fi
     '';

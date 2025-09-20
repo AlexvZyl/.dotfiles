@@ -22,7 +22,7 @@ Tmux_create_session() {
 
     if ! Tmux_session_exists "$session"; then
         tmux new-session -d -s "$session" -c "$path" -n "git" "$git_cmd"
-        tmux new-window -c "$path" -n nvim "sleep 0.2 && nvim ." &
+        tmux new-window -c "$path" -n "editor" "sleep 0.2 && nvim ." &
         tmux new-window -c "$path" -n "shell" fish
         wait
         tmux select-window -t 2

@@ -1,12 +1,10 @@
 gui:
-  border: 'rounded'
+  border: "rounded"
   theme:
     inactiveBorderColor:
-      #- "#4C566A" # nordic
-      # - "#3b4261"
       - "#9b9ea4"
 confirmOnQuit: false
-promptToReturnFromSubprocess: false # display confirmation when subprocess terminates
+promptToReturnFromSubprocess: false
 
 os:
   edit: "nvim -c 'DiffviewOpen' {{filename}}"
@@ -14,4 +12,5 @@ os:
 
 # git:
 #   paging:
-#     externalDiffCommand: difft --color=always --syntax-highlight=on --display=inline
+#     colorArg: always
+#     pager: delta --paging=never

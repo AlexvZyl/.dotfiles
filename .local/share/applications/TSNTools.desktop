@@ -1,5 +1,6 @@
 [Desktop Entry]
 Type=Application
 Name=TSNTools
-Exec=sh -c "cd /home/alex/TSN/Repos/docker && ./docker_image_runner.sh ./Dockerfiles/tsntools /bin/bash -c ./TSNTools"
+Exec=sh -c "cd /home/alex/TSN/Repos/docker && ./docker_image_builder.sh ./Dockerfiles/tsntools && ./docker_image_runner.sh ./Dockerfiles/tsntools -c /bin/bash ./TSNTools"
+# TODO: Fix
 Terminal=false

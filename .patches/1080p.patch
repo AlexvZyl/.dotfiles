@@ -1,8 +1,8 @@
 diff --git a/.config/awesome/rc.lua b/.config/awesome/rc.lua
-index 9303fd1c..0d59eef3 100644
+index 6e5116254..1a46c5884 100644
 --- a/.config/awesome/rc.lua
 +++ b/.config/awesome/rc.lua
-@@ -53,14 +53,14 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+@@ -55,14 +55,14 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
  -- Default modkey (This is the super key).
  local modkey = "Mod4"
  
@@ -22,7 +22,7 @@ index 9303fd1c..0d59eef3 100644
  })
  
  -- -----------------------------------------------------------------------------
-@@ -149,8 +149,8 @@ local clientkeys = gears.table.join(
+@@ -152,8 +152,8 @@ local clientkeys = gears.table.join(
      awful.key({ modkey }, "space", function(c)
          awful.client.floating.toggle()
          if c.floating then
@@ -33,25 +33,30 @@ index 9303fd1c..0d59eef3 100644
              awful.placement.centered()
          end
      end)
-diff --git a/.config/nvim b/.config/nvim
---- a/.config/nvim
-+++ b/.config/nvim
-@@ -1 +1 @@
--Subproject commit 038a052350687283c07bde69c4478977c9d9a9ff
-+Subproject commit 038a052350687283c07bde69c4478977c9d9a9ff-dirty
 diff --git a/.config/polybar/config.ini b/.config/polybar/config.ini
-index 9080a985..39e2dcef 100644
+index 97d675673..84a39b15f 100644
 --- a/.config/polybar/config.ini
 +++ b/.config/polybar/config.ini
-@@ -16,7 +16,7 @@ foreground = ${colors.foreground}
+@@ -6,7 +6,7 @@ include-file=~/.config/polybar/system.ini
+ 
+ [bar-base]
+ type = bar
+-width = 98.95%
++width = 98.7%
+ height = 1.4%
+ radius = 0
+ dpi-x = 96
+@@ -16,8 +16,8 @@ foreground = ${colors.foreground}
  line-size = 1pt
  border-size = 4pt
  border-color = ${colors.background}
 -offset-y = 0.65%
+-offset-x = 0.54%
 +offset-y = 0.46%
- offset-x = 0.54%
++offset-x = 0.65%
  padding-left = 0
  padding-right = 0
+ module-margin = 0
 @@ -29,9 +29,9 @@ override-redirect = true
  fixed-center = true
  
@@ -73,8 +78,21 @@ index 9080a985..39e2dcef 100644
  
  [bar/top]
  inherit = bar-base
+diff --git a/.config/rofi/config.rasi b/.config/rofi/config.rasi
+index 2a840dc57..a90c6bdcf 100644
+--- a/.config/rofi/config.rasi
++++ b/.config/rofi/config.rasi
+@@ -50,7 +50,7 @@ configuration {
+ // Main window.
+ window {
+     width:                      35%;
+-    height:                     41%;
++    height:                     42.50%;
+     border-radius:              @border-radius;
+     border-color:               @border;
+     background-color:           @background;
 diff --git a/.config/wezterm/wezterm.lua b/.config/wezterm/wezterm.lua
-index deab1f77..75f3c968 100644
+index 0806b8245..6bf9d2308 100644
 --- a/.config/wezterm/wezterm.lua
 +++ b/.config/wezterm/wezterm.lua
 @@ -12,7 +12,7 @@ config.animation_fps = 100
@@ -84,110 +102,6 @@ index deab1f77..75f3c968 100644
 -config.font_size = 13
 +config.font_size = 11.3
  config.underline_thickness = 1
- config.underline_position = -5.0
+-config.underline_position = -5.0
++config.underline_position = -4.0
  -- config.freetype_load_target = "Normal"
-diff --git a/.patches/1080p.patch b/.patches/1080p.patch
-index 3607bd08..e69de29b 100644
---- a/.patches/1080p.patch
-+++ b/.patches/1080p.patch
-@@ -1,87 +0,0 @@
--diff --git a/.config/awesome/rc.lua b/.config/awesome/rc.lua
--index 9303fd1c..a534ddc2 100644
----- a/.config/awesome/rc.lua
--+++ b/.config/awesome/rc.lua
--@@ -53,14 +53,14 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
-- -- Default modkey (This is the super key).
-- local modkey = "Mod4"
-- 
---beautiful.useless_gap = 3
--+beautiful.useless_gap = 2
-- beautiful.gap_single_client = true
-- local primary_screen = screen.primary
-- awful.screen.padding(primary_screen, {
---    top = 42,
---    left = 8,
---    right = 8,
---    bottom = 4
--+    top = 30,
--+    left = 10,
--+    right = 10,
--+    bottom = 0
-- })
-- 
-- -- -----------------------------------------------------------------------------
--diff --git a/.config/polybar/config.ini b/.config/polybar/config.ini
--index 9080a985..39e2dcef 100644
----- a/.config/polybar/config.ini
--+++ b/.config/polybar/config.ini
--@@ -16,7 +16,7 @@ foreground = ${colors.foreground}
-- line-size = 1pt
-- border-size = 4pt
-- border-color = ${colors.background}
---offset-y = 0.65%
--+offset-y = 0.46%
-- offset-x = 0.54%
-- padding-left = 0
-- padding-right = 0
--@@ -29,9 +29,9 @@ override-redirect = true
-- fixed-center = true
-- 
-- ; Main.
---font-0 = JetBrainsMono Nerd Font:pixelsize=12:weight=bold;3
--+font-0 = JetBrainsMono Nerd Font:pixelsize=9:weight=bold;2
-- ; Main half circle separators.
---font-1 = JetBrainsMono Nerd Font:pixelsize=14;3
--+font-1 = JetBrainsMono Nerd Font:pixelsize=9;2
-- ; Bar (unused atm)
-- font-2 = JetBrainsMono Nerd Font:pixelsize=14:weight=bold:antialias=false;4
-- ; Spaces.
--@@ -39,7 +39,7 @@ font-3 = JetBrainsMono Nerd Font:pixelsize=5:weight=bold;3
-- ; For mod sep.
-- font-4 = JetBrainsMono Nerd Font:pixelsize=15:antialias=false;4
-- ; For workspaces
---font-5 = JetBrainsMono Nerd Font:pixelsize=15:antialias=true;4
--+font-5 = JetBrainsMono Nerd Font:pixelsize=12:antialias=true;3
-- 
-- [bar/top]
-- inherit = bar-base
--diff --git a/.config/wezterm/wezterm.lua b/.config/wezterm/wezterm.lua
--index deab1f77..03b9a149 100644
----- a/.config/wezterm/wezterm.lua
--+++ b/.config/wezterm/wezterm.lua
--@@ -10,9 +10,9 @@ config.animation_fps = 100
-- 
-- -- config.window_background_opacity = 0.94
-- config.window_background_opacity = 1
---config.use_resize_increments = true
--+config.use_resize_increments = false
-- 
---config.font_size = 13
--+config.font_size = 11.3
-- config.underline_thickness = 1
-- config.underline_position = -5.0
-- -- config.freetype_load_target = "Normal"
--diff --git a/.scripts/startup.sh b/.scripts/startup.sh
--index b99c4d76..22624502 100755
----- a/.scripts/startup.sh
--+++ b/.scripts/startup.sh
--@@ -5,7 +5,7 @@
-- 
-- # Core components (order is important!)
-- (
---    ~/.scripts/screenlayout/single_1440p.sh
--+    ~/.scripts/screenlayout/single_1080p.sh
--     feh --bg-fill ~/.wallpapers/FALCON.jpg
--     picom -b
--     ~/.config/polybar/launch.sh
-diff --git a/.scripts/startup.sh b/.scripts/startup.sh
-index b99c4d76..22624502 100755
---- a/.scripts/startup.sh
-+++ b/.scripts/startup.sh
-@@ -5,7 +5,7 @@
- 
- # Core components (order is important!)
- (
--    ~/.scripts/screenlayout/single_1440p.sh
-+    ~/.scripts/screenlayout/single_1080p.sh
-     feh --bg-fill ~/.wallpapers/FALCON.jpg
-     picom -b
-     ~/.config/polybar/launch.sh

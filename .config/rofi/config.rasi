@@ -1,4 +1,25 @@
-@import "~/.config/rofi/apple.rasi"
+// Theme (apple colors).
+* {
+    black:      #050505;
+    white0:     #FAFAFA;
+    white1:     #FAFAFA;
+    white2:     #FAFAFA;
+    blue:       @cyan;
+    cyan:       #64d2ff;
+    red:        #ff453a;
+    orange:     #ff9f0a;
+    yellow:     #ffd60a;
+    green:      #30d158;
+    mint:       #63e6e2;
+
+    background:     @black;
+    background-alt: @black;
+    foreground:     @white2;
+    selected:       @mint;
+    active:         @blue2;
+    urgent:         @red;
+    border:         @black;
+}
 
 * {
     border-radius: 11px;

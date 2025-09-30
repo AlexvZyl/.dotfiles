@@ -94,7 +94,7 @@
       pkgs.nodePackages.bash-language-server
       pkgs.nodePackages.typescript-language-server
       pkgs.docker-ls
-      pkgs.dockerfile-language-server-nodejs
+      pkgs.dockerfile-language-server
       pkgs.clang-tools
       pkgs.cmake-language-server
       pkgs.terraform

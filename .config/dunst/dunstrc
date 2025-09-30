@@ -33,8 +33,7 @@
     origin = bottom-right
 
     # Offset from the origin
-    offset = 6x5
-    # offset = 10x35 # i3 gaps = 20x20
+    offset = 4x39
     # (H_Right_Gap/2) x (25+V_Bottom_Gap/2)
 
     # Scale factor. It is auto-detected if value is 0.
@@ -87,7 +86,7 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 2
+    frame_width = 1
 
     # Define a color for the separator.
     # possible values are:
@@ -436,7 +435,7 @@
 [urgency_normal]
     background = "#050505"
     foreground = "#FAFAFA"
-    frame_color = "#1C1C1E"
+    frame_color = "#64d2ff"
     timeout = 15
 
 [urgency_critical]

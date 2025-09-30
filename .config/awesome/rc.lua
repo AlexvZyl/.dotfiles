@@ -59,10 +59,10 @@ beautiful.useless_gap = 3
 beautiful.gap_single_client = true
 local primary_screen = screen.primary
 awful.screen.padding(primary_screen, {
-    top = 42,
+    top = 2,
     left = 8,
     right = 8,
-    bottom = 4
+    bottom = 44
 })
 
 -- -----------------------------------------------------------------------------

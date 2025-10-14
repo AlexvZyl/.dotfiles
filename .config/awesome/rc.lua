@@ -156,6 +156,27 @@ local clientkeys = gears.table.join(
             c.height = 805
             awful.placement.centered()
         end
+    end),
+
+    awful.key({ modkey }, "o", function(c)
+        c.view_mode = (c.view_mode or false)
+        if not c.view_mode then
+            c.view_mode = true
+            c.ontop = true
+            c.floating = true
+
+            -- There is a min width for the youtube/chromium window, so this just sets it to the min.
+            c.width = 1
+            c.height = 312
+            awful.placement.bottom_right(c, {
+                honor_workarea = true,
+                margins = { right = 16, bottom = 76 }
+            })
+        else
+            c.view_mode = false
+            c.ontop = false
+            c.floating = false
+        end
     end)
 )
 

@@ -51,6 +51,7 @@ alias tmux-workspace="~/.config/tmux/utils/create_workspace.sh"
 alias tw="tmux-workspace"
 alias tks="tmux kill-session"
 alias tclear="clear && tmux clear-history"
+alias oc="opencode"
 
 # Git.
 alias git-su="git submodule update --init --recursive --remote"

@@ -51,8 +51,7 @@ Main() {
     current_buffer=$(Get_current_buffer_file)
     pwd=$(Get_pwd "$current_buffer")
     
-    tmux split-window -h -b -p 33 -c "$pwd" "claude"
-    # tmux split-window -h -p 40 -c "$pwd" "codex"
+    tmux split-window -h -b -p 33 -c "$pwd" "opencode ."
 }
 
 

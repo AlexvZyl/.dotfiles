@@ -44,7 +44,7 @@
       pkgs.discord
       pkgs.signal-desktop
       pkgs.thunderbird-bin
-      
+
       # Terminal tools
       pkgs.kalker
       pkgs.speedtest-cli
@@ -57,7 +57,6 @@
       pkgs.vscode
       pkgs.glab
       pkgs.wezterm
-      pkgs.codex
       pkgs.gh
       pkgs.tealdeer
       pkgs.tokei
@@ -66,6 +65,7 @@
       pkgs.dig
       pkgs.sshs
       pkgs.termshark
+      pkgs.opencode
 
       # TSN
       pkgs.wireshark
@@ -125,7 +125,6 @@
       pkgs.cargo
       pkgs.tokio-console
       pkgs.cargo-flamegraph
-      pkgs.claude-code
       pkgs.tree-sitter (pkgs.python3.withPackages(ps: with ps; [pytz numpy pandas]))
     ];
   };

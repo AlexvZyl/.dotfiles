@@ -275,6 +275,14 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
+client.connect_signal("property::fullscreen", function(c)
+    if c.fullscreen then
+        awful.spawn("polybar-msg cmd hide")
+    else
+        awful.spawn("polybar-msg cmd show")
+    end
+end)
+
 
 -- -----------------------------------------------------------------------------
 -- Third party.

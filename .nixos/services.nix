@@ -4,27 +4,38 @@
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
-  # Setup GUI environment.
+  # Xserver.
   services = {
     xserver = {
       enable = true;
-      windowManager = {
-        awesome = {
-          enable = true;
-          luaModules = with pkgs.luaPackages; [ luarocks luadbi-mysql ];
-        };
-      };
+      # TODO: Don't think this works.
       xkb = {
           options = "caps:escape";
           layout = "za";
       };
-      # TODO: Don't think this works.
       autoRepeatDelay = 165;
       autoRepeatInterval = 50;
     };
-    displayManager = {
-        sddm.enable = true;
-        defaultSession = "none+awesome";
+  };
+
+  # Window manager.
+  services.xserver.windowManager = {
+    awesome = {
+      enable = true;
+      luaModules = with pkgs.luaPackages; [ luarocks luadbi-mysql ];
+    };
+  };
+
+  # Display managers.
+  services.displayManager.ly = {
+    enable = true;
+    x11Support = true;
+    settings = {
+      animation = "matrix";
+      bigclock = true;
+      hide_key_hints = true;
+      clear_password = true;
+      hide_version_string = true;
     };
   };
 

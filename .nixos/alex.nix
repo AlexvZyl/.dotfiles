@@ -20,7 +20,6 @@
       pkgs.unclutter-xfixes
       pkgs.onlyoffice-bin
       pkgs.drawio
-      pkgs.brave
       pkgs.inkscape
       pkgs.pavucontrol
       pkgs.gparted
@@ -42,7 +41,7 @@
       # Communication
       pkgs.slack
       pkgs.discord
-      pkgs.signal-desktop
+      pkgs.signal-desktop-bin
       pkgs.thunderbird-bin
 
       # Terminal tools
@@ -54,7 +53,7 @@
       inputs.yazi.packages.${pkgs.system}.default
       pkgs.lazygit
       pkgs.lazydocker
-      pkgs.vscode
+      pkgs.vscodium-fhs
       pkgs.glab
       pkgs.wezterm
       pkgs.gh

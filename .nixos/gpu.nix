@@ -18,7 +18,7 @@
       nativeBuildInputs = (oldAttrs.nativeBuildInputs or []) ++ [ pkgs.pkg-config ];
     });
 
-    powerManagement.enable = true;
+    powerManagement.enable = false;
     nvidiaPersistenced = true;
   };
 

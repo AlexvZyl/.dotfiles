@@ -98,7 +98,7 @@
       pkgs.clang-tools
       pkgs.cmake-language-server
       pkgs.terraform
-      pkgs.terraform-providers.aws
+      pkgs.terraform-providers.hashicorp_aws
       pkgs.cmake
       pkgs.vscode-langservers-extracted
       pkgs.nodePackages.eslint
@@ -126,6 +126,13 @@
       pkgs.tokio-console
       pkgs.cargo-flamegraph
       pkgs.tree-sitter (pkgs.python3.withPackages(ps: with ps; [pytz numpy pandas]))
+
+      # Gaming.
+      pkgs.lutris
+      pkgs.mangohud
+      pkgs.protonup
+      pkgs.heroic
+      pkgs.bottles
     ];
   };
 
@@ -148,4 +155,15 @@
 
   virtualisation.docker.enable = true;
   programs.fish.enable = true;
+
+  # Gaming stuff.
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+  };
+  programs.gamemode.enable = true;
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS =
+      "\${HOME}/.steam/root/compatibilitytools.d";
+  };
 }

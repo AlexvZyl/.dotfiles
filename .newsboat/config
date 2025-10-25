@@ -1,7 +1,7 @@
 # Settings.
 auto-reload yes
 notify-program "notify-send"
-browser "chromium"
+# browser "chromium"
 
 # Key bindings.
 show-keymap-hint no

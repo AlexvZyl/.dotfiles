@@ -65,6 +65,7 @@
       pkgs.sshs
       pkgs.termshark
       pkgs.opencode
+      pkgs.lynx
 
       # TSN
       pkgs.wireshark
@@ -154,6 +155,8 @@
 
   virtualisation.docker.enable = true;
   programs.fish.enable = true;
+
+  programs.noisetorch.enable = true;
 
   # Gaming stuff.
   programs.steam = {

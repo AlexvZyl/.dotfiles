@@ -51,6 +51,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+  services.power-profiles-daemon.enable = false;
 
   # Touchpad support.
   services.libinput.enable = true;

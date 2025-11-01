@@ -228,6 +228,15 @@ awful.rules.rules = {
         }
     },
 
+    -- Force games (or any Steam window) to stay managed
+    {
+        rule_any = {
+            class = { "steam_app_*", "Steam" },
+            name  = { "Steam", "Proton" },
+        },
+        properties = { floating = true, fullscreen = true, ontop = true },
+    },
+
     -- NOTE: Sometimes have to do this for force certain windows to float.
     -- (reload *with window open* required)
     {

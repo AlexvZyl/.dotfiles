@@ -1,7 +1,8 @@
 # Settings.
 auto-reload yes
 notify-program "notify-send"
-# browser "chromium"
+# browser "lynx -vikeys -accept_all_cookies -force_secure"
+browser "chromium"
 
 # Key bindings.
 show-keymap-hint no

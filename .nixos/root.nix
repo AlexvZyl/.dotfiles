@@ -50,7 +50,7 @@
     pkgs.libz
     pkgs.cron
     pkgs.file
-    pkgs.pinentry
+    pkgs.pinentry-curses # TODO: Might have to be gnome...
     pkgs.fd
     pkgs.pamixer
     pkgs.gnupg

@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   users.groups.alex = {};
@@ -18,7 +18,7 @@
       pkgs.papirus-icon-theme
       pkgs.rofi
       pkgs.unclutter-xfixes
-      pkgs.onlyoffice-bin
+      pkgs.onlyoffice-desktopeditors
       pkgs.drawio
       pkgs.inkscape
       pkgs.pavucontrol
@@ -50,7 +50,7 @@
       pkgs.zoxide
       pkgs.starship
       pkgs.newsboat
-      inputs.yazi.packages.${pkgs.system}.default
+      pkgs.yazi
       pkgs.lazygit
       pkgs.lazydocker
       pkgs.vscodium-fhs
@@ -66,6 +66,8 @@
       pkgs.termshark
       pkgs.opencode
       pkgs.lynx
+      pkgs.traceroute
+      pkgs.crush
 
       # TSN
       pkgs.wireshark
@@ -130,7 +132,7 @@
       # Gaming.
       pkgs.lutris
       pkgs.mangohud
-      pkgs.protonup
+      pkgs.protonup-ng
       pkgs.heroic
       pkgs.bottles
     ];
@@ -169,3 +171,4 @@
       "\${HOME}/.steam/root/compatibilitytools.d";
   };
 }
+

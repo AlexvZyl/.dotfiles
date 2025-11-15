@@ -54,7 +54,7 @@ alias tclear="clear && tmux clear-history"
 alias oc="opencode"
 
 # Git.
-alias git-su="git submodule update --init --recursive --remote"
+alias git-su="git submodule update --init --recursive"
 alias git-stats="git log --stat --pretty=tformat: --numstat | awk '!/\.lock\$/ {add+=\$1; subs+=\$2} END {print \"Total additions:\", add, \"\nTotal deletions:\", subs}'"
 alias git-l="git log --oneline --decorate --graph"
 alias git-sm-reset="git submodule deinit -f . && git submodule init && git submodule update --recursive"

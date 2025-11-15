@@ -31,7 +31,7 @@
     enable = true;
     x11Support = true;
     settings = {
-      animation = "matrix";
+      # animation = "matrix";
       bigclock = true;
       hide_key_hints = true;
       clear_password = true;

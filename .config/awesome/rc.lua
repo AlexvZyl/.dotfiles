@@ -81,6 +81,7 @@ local globalkeys = gears.table.join(
     awful.key({ modkey, }, "n", function() awful.spawn("dunstctl close-all") end),
     awful.key({ modkey, }, "-", function() awful.spawn("/home/alex/.config/MangoHud/modify_fps_cap.sh -10") end),
     awful.key({ modkey, }, "=", function() awful.spawn("/home/alex/.config/MangoHud/modify_fps_cap.sh 10") end),
+    awful.key({ modkey, }, "Escape", function() awful.spawn("betterlockscreen --lock") end),
 
     -- Audio
     awful.key({}, "XF86AudioRaiseVolume", function() awful.spawn("pamixer -i 5") end),

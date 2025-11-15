@@ -50,10 +50,9 @@
     pkgs.libz
     pkgs.cron
     pkgs.file
-    pkgs.pinentry-curses # TODO: Might have to be gnome...
+    pkgs.pinentry-rofi
     pkgs.fd
     pkgs.pamixer
-    pkgs.gnupg
     pkgs.polkit
     pkgs.polkit_gnome
     pkgs.gcc
@@ -110,6 +109,8 @@
     inputs.zen-browser.packages."${pkgs.system}".default
   ];
 
+  programs.i3lock.enable = true;
+
   nixpkgs.config = {
     config.cudaSupport = true;
     packageOverrides = pkgs: {
@@ -129,6 +130,10 @@
     package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
   };
 
+  programs.gnupg.agent = {
+    enable = true;
+  };
+
   # For non-NixOS binaries.
   # Currently used for:
   # - None
@@ -143,7 +148,7 @@
     enable = true;
     man.enable = true;
     dev.enable = true;
-    man.generateCaches = true;
+    man.generateCaches = false;
   };
 
   # Ftrace.

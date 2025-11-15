@@ -12,7 +12,7 @@ pkill polybar
     if [ ! -d ~/.private/wallpapers ]; then
         notify-send "Startup Error" "$HOME/.private/wallpapers is not on the system, cannot set wallpaper :("
     else
-        feh --bg-fill ~/.private/wallpapers/timeless_UltraHD.png
+        feh --bg-fill ~/.private/wallpapers/any_minute_now_UltraHD.png
     fi
     
     picom -b

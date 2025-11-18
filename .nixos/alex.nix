@@ -138,6 +138,11 @@
     ];
   };
 
+  # TSN.
+  services.avahi = {
+    enable = true;
+  };
+
   system.activationScripts.binbash = {
     deps = [ "binsh" ];
     text = ''

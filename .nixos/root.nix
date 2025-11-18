@@ -53,8 +53,6 @@
     pkgs.pinentry-rofi
     pkgs.fd
     pkgs.pamixer
-    pkgs.polkit
-    pkgs.polkit_gnome
     pkgs.gcc
     pkgs.unzip
     pkgs.git
@@ -128,10 +126,6 @@
   programs.neovim = {
     enable = true;
     package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
-  };
-
-  programs.gnupg.agent = {
-    enable = true;
   };
 
   # For non-NixOS binaries.

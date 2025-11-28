@@ -1,6 +1,10 @@
 # General.
 https://hnrss.org/newest?points=1300 "~Hacker News" FOSS
 
+# Security.
+https://www.wiz.io/feed/rss.xml "~Wiz Blog" Security
+https://securitylabs.datadoghq.com/rss/feed.xml "~Data Dog" Security
+
 # People.
 https://www.computerenhance.com/feed "Casey" Programming
 https://lo.calho.st/index.xml Programming "~Travis Mick"

@@ -86,9 +86,9 @@
 
   # Security.  Not sure if this will even help at all.
   services.clamav = {
-    scanner.enable = true;
+    scanner.enable = false;
     daemon.enable = false;
-    updater.enable = true;
+    updater.enable = false;
   };
 
   # Needed for drives.

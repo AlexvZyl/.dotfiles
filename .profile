@@ -14,6 +14,7 @@ export EDITOR="nvim"
 export VISUAL=$EDITOR
 export BAT_THEME="base16-256"
 export PATH="$HOME/.local/bin/:$PATH"
+export PASSWORD_STORE_GENERATED_LENGTH=64
 
 # Dotfiles.
 alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

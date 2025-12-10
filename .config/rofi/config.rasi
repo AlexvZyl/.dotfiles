@@ -22,6 +22,7 @@
 }
 
 * {
+    outer-border-radius: 11px;
     border-radius: 11px;
     padding-normal: 1.5%;
     padding-main: 1.5% 1% 1.5% 0.9%;
@@ -51,7 +52,7 @@ configuration {
 window {
     width:                      35%;
     height:                     41.1112%;
-    border-radius:              @border-radius;
+    border-radius:              @outer-border-radius;
     border-color:               @border;
     background-color:           @background;
     padding:                    0;
@@ -62,7 +63,7 @@ window {
 // Main box.
 mainbox {
     border:                     2px solid;
-    border-radius:              @border-radius;
+    border-radius:              @outer-border-radius;
     border-color:               @mint;
     padding:                    @padding-main;
     children:                   [ "inputbar", "listview" ];

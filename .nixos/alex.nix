@@ -67,7 +67,6 @@
       pkgs.opencode
       pkgs.lynx
       pkgs.traceroute
-      pkgs.crush
 
       # TSN
       pkgs.wireshark

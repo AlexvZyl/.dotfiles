@@ -70,6 +70,19 @@ index cfb3332fa..4ede30fdc 100644
  
  [bar/top]
  inherit = bar-base
+diff --git a/.config/polybar/system.ini b/.config/polybar/system.ini
+index 35ab9f82b..9e3b21365 100644
+--- a/.config/polybar/system.ini
++++ b/.config/polybar/system.ini
+@@ -127,7 +127,7 @@ format-background = ${colors.background}
+ tray-background = ${colors.background}
+ format-padding = 0
+ tray-padding = 0
+-tray-spacing = 6
++tray-spacing = 2
+ tray-size = 21
+ 
+ [module/gitlab-notifications]
 diff --git a/.config/rofi/config.rasi b/.config/rofi/config.rasi
 index 9aa8dc9bb..8eef931cf 100644
 --- a/.config/rofi/config.rasi

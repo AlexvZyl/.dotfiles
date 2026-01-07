@@ -24,7 +24,7 @@ https://us13.campaign-archive.com/feed?u=32cd932058e988b44c838f7bc&id=fca295a96e
 https://neovim.io/news.xml FOSS Programming
 https://nixos.org/news-rss.xml Linux NixOS
 https://tokio.rs/blog/index.xml
-https://lwn.net/headlines/rss
+# https://lwn.net/headlines/rss
 
 # Hardware.
 https://jolla.com/feed/ 

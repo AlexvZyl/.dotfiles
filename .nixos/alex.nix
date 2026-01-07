@@ -11,7 +11,7 @@
     packages = [
       # GUI
       pkgs.adwaita-icon-theme
-      pkgs.xfce.thunar
+      pkgs.thunar
       pkgs.xournalpp
       pkgs.shared-mime-info
       pkgs.nautilus
@@ -142,7 +142,7 @@
     enable = true;
   };
 
-  system.activationScripts.binbash = {
+  stdenv.hostPlatform.system.activationScripts.binbash = {
     deps = [ "binsh" ];
     text = ''
         if [[ ! -f "/bin/bash" ]]; then
@@ -151,7 +151,7 @@
     '';
   };
 
-  system.activationScripts.python3 = {
+  stdenv.hostPlatform.system.activationScripts.python3 = {
     text = ''
         if [[ ! -f "/usr/bin/python3" ]]; then
             ln -s ${pkgs.python3}/bin/python3 /usr/bin/python3

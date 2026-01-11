@@ -1,4 +1,5 @@
 gui:
+  commandLogSize: 20
   border: "rounded"
   theme:
     inactiveBorderColor:

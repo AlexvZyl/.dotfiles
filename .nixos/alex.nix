@@ -35,6 +35,7 @@
       pkgs.arandr
       pkgs.chromium
       pkgs.gimp3
+      # pkgs.zed-editor-fhs
       # pkgs.rustdesk # Always breaking...
       # pkgs.ventoy-bin-full
 
@@ -78,6 +79,7 @@
       pkgs.renderdoc
 
       # Dev environment
+      pkgs.git-filter-repo
       pkgs.zulu8
       pkgs.delta
       pkgs.go
@@ -142,7 +144,7 @@
     enable = true;
   };
 
-  stdenv.hostPlatform.system.activationScripts.binbash = {
+  system.activationScripts.binbash = {
     deps = [ "binsh" ];
     text = ''
         if [[ ! -f "/bin/bash" ]]; then
@@ -151,7 +153,7 @@
     '';
   };
 
-  stdenv.hostPlatform.system.activationScripts.python3 = {
+  system.activationScripts.python3 = {
     text = ''
         if [[ ! -f "/usr/bin/python3" ]]; then
             ln -s ${pkgs.python3}/bin/python3 /usr/bin/python3
@@ -161,18 +163,6 @@
 
   virtualisation.docker.enable = true;
   programs.fish.enable = true;
-
   programs.noisetorch.enable = true;
-
-  # Gaming stuff.
-  programs.steam = {
-    enable = true;
-    gamescopeSession.enable = true;
-  };
-  programs.gamemode.enable = true;
-  environment.sessionVariables = {
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS =
-      "\${HOME}/.steam/root/compatibilitytools.d";
-  };
 }
 

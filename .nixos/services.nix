@@ -66,23 +66,27 @@
 
   # Enable polkit.
   security.polkit.enable = true;
-  programs.gnupg.agent.enable = true;
-  # TODO: This might be messing with polkit.
-  # systemd = {
-  #   user.services.polkit-gnome-authentication-agent-1 = {
-  #     description = "polkit-gnome-authentication-agent-1";
-  #     wantedBy = [ "graphical-session.target" ];
-  #     wants = [ "graphical-session.target" ];
-  #     after = [ "graphical-session.target" ];
-  #     serviceConfig = {
-  #         Type = "simple";
-  #         ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-  #         Restart = "on-failure";
-  #         RestartSec = 1;
-  #         TimeoutStopSec = 10;
-  #       };
-  #   };
-  # };
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-rofi;
+    enableSSHSupport = false; # Can't use ssh-agent (?)
+  };
+  # Enable polkit authentication agent
+  systemd = {
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+          Type = "simple";
+          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+          Restart = "on-failure";
+          RestartSec = 1;
+          TimeoutStopSec = 10;
+        };
+    };
+  };
 
   # Security.  Not sure if this will even help at all.
   services.clamav = {

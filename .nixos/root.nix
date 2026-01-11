@@ -105,6 +105,7 @@
     pkgs.trace-cmd
     pkgs.atuin
     inputs.zen-browser.packages."${pkgs.system}".default
+    pkgs.polkit_gnome
   ];
 
   programs.i3lock.enable = true;

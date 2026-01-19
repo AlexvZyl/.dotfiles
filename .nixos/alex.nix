@@ -129,6 +129,7 @@
       pkgs.tokio-console
       pkgs.cargo-flamegraph
       pkgs.tree-sitter (pkgs.python3.withPackages(ps: with ps; [pytz numpy pandas]))
+      pkgs.clang-tools
 
       # Gaming.
       pkgs.lutris

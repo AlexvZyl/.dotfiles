@@ -11,7 +11,7 @@ Exit_if_not_nvim() {
 
 Main() {
     Exit_if_not_nvim
-    tmux split-window -h -b -p 33 -c "#{pane_current_path}" "opencode ."
+    tmux split-window -h -b -p 36 -c "#{pane_current_path}" "opencode ."
 }
 
 

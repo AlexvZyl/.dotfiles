@@ -3,12 +3,16 @@ FROM ubuntu:22.04
 # OS Stuff.
 RUN apt-get update && apt-get install -y \
     curl wget python3 python3-pip \
-    software-properties-common sudo
+    software-properties-common sudo neovim \
+    # Kernel source.
+    linux-source-6.5.0 linux-headers-6.5.0-45-generic \
+    # Kernel deps.
+    flex bison bc debhelper rsync kmod cpio libelf-dev:native libssl-dev:native
 
 # Python stuff.
 RUN pip install python-a2s
 
-WORKDIR /app
+WORKDIR /root
 
 # Set default command
 CMD ["/bin/bash"]

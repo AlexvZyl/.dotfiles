@@ -1,12 +1,18 @@
 FROM debian:bookworm
 
-# OS Stuff.
+# Set non-interactive mode and fix locales
+ENV DEBIAN_FRONTEND=noninteractive
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+
+# Update package list and install essential packages
 RUN apt-get update && apt-get install -y \
     curl \
     wget \
     python3 python3-pip \
     software-properties-common \
-    neovim
+    neovim \
+    sudo 
 
 WORKDIR /app
 

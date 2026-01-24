@@ -1,5 +1,6 @@
 #!/usr/bin/env -S bash -e
 
+
 Main() {
     local dockerfile="$1"
 
@@ -14,8 +15,6 @@ Main() {
         exit 1
     fi
 
-    shift
-
     # Create distro directory for persistent storage
     local tmp
     tmp="$(basename "$dockerfile")"
@@ -25,8 +24,8 @@ Main() {
     # Build and run container
     local tag="nixos_host_${distro}_container"
     docker build -t "$tag" -f "$dockerfile" .
-
     docker run -v "$(pwd)/$distro:/root" -it "$tag"
 }
+
 
 Main "$@"

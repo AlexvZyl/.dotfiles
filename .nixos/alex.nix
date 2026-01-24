@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   users.groups.alex = {};
   users.users.alex = {
@@ -35,8 +34,7 @@
       pkgs.arandr
       pkgs.chromium
       pkgs.gimp3
-      # pkgs.zed-editor-fhs
-      # pkgs.rustdesk # Always breaking...
+      pkgs.rustdesk 
       # pkgs.ventoy-bin-full
 
       # Communication
@@ -68,6 +66,8 @@
       pkgs.opencode
       pkgs.lynx
       pkgs.traceroute
+      pkgs.netscanner
+      pkgs.impala
 
       # TSN
       pkgs.wireshark
@@ -79,6 +79,7 @@
       pkgs.renderdoc
 
       # Dev environment
+      pkgs.docker-language-server
       pkgs.git-filter-repo
       pkgs.zulu8
       pkgs.delta

@@ -1,6 +1,7 @@
 # User Info
 
-Keep answers concise, I am an expert software engineer.
+- Keep answers concise, I am an expert software engineer.
+- Don't over explain, stick to the question.
 
 # Extra Instructions
 

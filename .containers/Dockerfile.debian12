@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
     # Kernel source
     linux-source-6.1 linux-headers-6.1.0-42-common \
     # Kernel deps
-    pahole
+    pahole bison
 
 
 WORKDIR /root

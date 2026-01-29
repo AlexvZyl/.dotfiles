@@ -1,29 +1,37 @@
 FROM debian:12
+FROM debian:12
 
-# Install modern toolchain first from debian:12
 RUN apt-get update && apt-get install -y \
-    # Complete toolchain compatible with kernel 5.15
     gcc-11 g++-11 make bison flex binutils \
-    # Kernel build dependencies
     build-essential rsync kmod cpio libelf-dev libssl-dev bc pahole \
-    # General utilities
     curl wget python3 python3-pip neovim sudo
-
-# Add snapshot repo for kernel 5.15 source only.
-RUN echo "deb [check-valid-until=no] http://snapshot.debian.org/archive/debian/20211115T152612Z/ experimental main" >> /etc/apt/sources.list
-
-# The snapshot is so old that there are no public keys (or expired or something).
-RUN apt-get update --allow-insecure-repositories && \
-    apt-get install -y --allow-unauthenticated linux-source-5.15
 
 # Set GCC 11 as default (compatible with kernel 5.15 and available in debian:12)
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 100 && \
     update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 100
 
+# Get kernel source.
+# --------------------
+
 # Extract kernel source
-RUN cd /usr/src && tar xf linux-source-5.15.tar.xz
+ADD https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.15.2.tar.xz /usr/src/
+RUN cd /usr/src && tar xf linux-5.15.2.tar.xz
 
+# Get distro config.
+# --------------------
+
+# Add snapshot repo for kernel 5.15 source only
+RUN echo "deb [check-valid-until=no] http://snapshot.debian.org/archive/debian/20211115T152612Z/ experimental main" >> /etc/apt/sources.list
+# The snapshot is so old that there are no public keys (or expired or something).
+RUN apt-get update --allow-insecure-repositories && \
+    apt-get install -y --allow-unauthenticated linux-source-5.15
+RUN cd /usr/src/linux-config-5.15 && unxz config.amd64_none_amd64.xz
+
+# Disable BTF generation, this gives errors.
+RUN sed -i 's/CONFIG_DEBUG_INFO_BTF=y/CONFIG_DEBUG_INFO_BTF=n/' /usr/src/linux-config-5.15/config.amd64_none_amd64
+RUN cp /usr/src/linux-config-5.15/config.amd64_none_amd64 /usr/src/linux-5.15.2/.config
+
+# --------------------
 WORKDIR /root
-
 # Set default command
 CMD ["/bin/bash"]

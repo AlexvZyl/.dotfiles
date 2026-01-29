@@ -1,4 +1,45 @@
 { pkgs, ... }:
+let
+  kotlin-lsp = pkgs.stdenv.mkDerivation rec {
+    pname = "kotlin-lsp";
+    version = "261.13587.0";
+
+    src = pkgs.fetchzip {
+      url = "https://download-cdn.jetbrains.com/kotlin-lsp/${version}/kotlin-lsp-${version}-linux-x64.zip";
+      hash = "sha256-EweSqy30NJuxvlJup78O+e+JOkzvUdb6DshqAy1j9jE=";
+      stripRoot=false;
+    };
+
+    nativeBuildInputs = [ pkgs.makeWrapper pkgs.autoPatchelfHook ];
+    buildInputs = [
+      pkgs.stdenv.cc.cc.lib
+      pkgs.zlib
+      pkgs.xorg.libX11
+      pkgs.xorg.libXext
+      pkgs.xorg.libXrender
+      pkgs.xorg.libXtst
+      pkgs.xorg.libXi
+      pkgs.freetype
+      pkgs.alsa-lib
+      pkgs.wayland
+    ];
+
+    installPhase = ''
+      mkdir -p $out
+      cp -r * $out/
+      chmod +x $out/kotlin-lsp.sh
+
+      # Make JRE binaries executable during build
+      find $out/jre/bin -type f -exec chmod +x {} \;
+
+      # Remove the problematic chmod line from the script
+      # NOTE: If something break, look here.
+      sed -i '/chmod +x.*java/d' $out/kotlin-lsp.sh
+
+      makeWrapper $out/kotlin-lsp.sh $out/bin/kotlin-lsp
+    '';
+  };
+in
 {
   users.groups.alex = {};
   users.users.alex = {
@@ -34,7 +75,7 @@
       pkgs.arandr
       pkgs.chromium
       pkgs.gimp3
-      pkgs.rustdesk 
+      pkgs.rustdesk
       # pkgs.ventoy-bin-full
 
       # Communication
@@ -79,6 +120,7 @@
       pkgs.renderdoc
 
       # Dev environment
+      pkgs.jetbrains.idea-oss
       pkgs.docker-language-server
       pkgs.git-filter-repo
       pkgs.zulu8
@@ -124,6 +166,8 @@
       pkgs.difftastic
       pkgs.docker-compose-language-service
       pkgs.rust-analyzer
+      kotlin-lsp
+      pkgs.w3m
       pkgs.rustc
       pkgs.rustfmt
       pkgs.cargo

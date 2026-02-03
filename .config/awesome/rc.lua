@@ -180,7 +180,7 @@ local clientkeys = gears.table.join(
             c.height = 312
             awful.placement.bottom_right(c, {
                 honor_workarea = true,
-                margins = { right = 16, bottom = 77 }
+                margins = { right = 16, bottom = 34 }
             })
         else
             c.view_mode = false

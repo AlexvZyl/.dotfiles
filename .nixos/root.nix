@@ -143,7 +143,7 @@
     enable = true;
     man.enable = true;
     dev.enable = true;
-    man.generateCaches = false;
+    man.generateCaches = true;
   };
 
   # Ftrace.

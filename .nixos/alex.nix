@@ -123,7 +123,6 @@ in
       pkgs.jetbrains.idea-oss
       pkgs.docker-language-server
       pkgs.git-filter-repo
-      pkgs.zulu8
       pkgs.delta
       pkgs.go
       pkgs.gdb
@@ -175,6 +174,10 @@ in
       pkgs.cargo-flamegraph
       pkgs.tree-sitter (pkgs.python3.withPackages(ps: with ps; [pytz numpy pandas]))
       pkgs.clang-tools
+      pkgs.kotlin
+      pkgs.gradle
+      pkgs.ktlint
+      pkgs.openjdk21
 
       # Gaming.
       pkgs.lutris
@@ -210,5 +213,16 @@ in
   virtualisation.docker.enable = true;
   programs.fish.enable = true;
   programs.noisetorch.enable = true;
+
+  # Gaming stuff.
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+  };
+  programs.gamemode.enable = true;
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS =
+      "\${HOME}/.steam/root/compatibilitytools.d";
+  };
 }
 

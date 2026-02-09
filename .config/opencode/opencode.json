@@ -1,9 +1,28 @@
 {
     "theme": "system",
     "$schema": "https://opencode.ai/config.json",
-    // "lsp": {
-    //     "python": {
-    //         "disabled": false
-    //     }
-    // }
+    "agent": {
+        "build": {
+            "disable": true
+        },
+        "plan": {
+            "disable": true
+        },
+        "google": {
+            "description": "Read-only research agent - concise answers, no edits",
+            "mode": "primary",
+            "color": "#87cefa",
+            "tools": {
+                "write": false,
+                "edit": false
+            },
+            "prompt": "You are a concise research assistant. Answer questions as briefly as possible. Do not make any file changes. Keep responses short to minimize token usage.  You are basically just a replacement for google.  Do not try infer too much, stick to credible sources."
+        },
+        "code": {
+            "description": "Surgical code editing agent - makes precise, minimal changes",
+            "mode": "primary",
+            "color": "#f08080",
+            "prompt": "You are a surgical code editing assistant. Make only the exact changes requested. Do not refactor, reorganize, or modify anything beyond what is explicitly asked. Keep changes minimal and precise. Ask for clarification rather than making assumptions."
+        },
+    }
 }

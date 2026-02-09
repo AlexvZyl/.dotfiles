@@ -76,7 +76,8 @@ in
       pkgs.chromium
       pkgs.gimp3
       pkgs.rustdesk
-      # pkgs.ventoy-bin-full
+      pkgs.vscode-fhs
+      pkgs.ventoy-full
 
       # Communication
       pkgs.slack
@@ -187,6 +188,11 @@ in
       pkgs.bottles
     ];
   };
+
+  # Don't have time for this now.
+  nixpkgs.config.permittedInsecurePackages = [
+    "ventoy-1.1.10"
+  ];
 
   # TSN.
   services.avahi = {

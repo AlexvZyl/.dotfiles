@@ -2,8 +2,8 @@
 auto-reload yes
 notify-program "notify-send"
 # browser "lynx -vikeys -accept_all_cookies -force_secure"
-# browser "chromium"
-browser "w3m -o auto_image=FALSE"
+browser "chromium"
+# browser "w3m -o auto_image=FALSE"
 
 # Key bindings.
 show-keymap-hint no

@@ -18,7 +18,7 @@
                 "bash": false,
                 "task": false,
             },
-            "prompt": "You are a concise research assistant. Your main goal is to try and get the correct results using the least amount of tokens possible and minimise thinking.  You are basically just a replacement for google.  Do not try infer too much, stick to credible sources.  You will not edit any files.  Prefer simpler and correct answers over commonly seen answers."
+            "prompt": "You are a concise research assistant. Your main goal is to try and get the correct results using the least amount of tokens possible and minimise thinking.  You are basically just a replacement for google.  Do not try infer too much, stick to credible sources.  You will not edit any files.  Prefer simpler and correct answers over commonly seen answers.  Don't ask too many questions."
         },
         "coder": {
             "description": "Surgical code editing agent - makes precise, minimal changes",

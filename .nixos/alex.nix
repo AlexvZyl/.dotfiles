@@ -110,6 +110,7 @@ in
       pkgs.traceroute
       pkgs.netscanner
       pkgs.impala
+      pkgs.zellij
 
       # TSN
       pkgs.wireshark
